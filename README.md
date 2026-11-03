@@ -239,7 +239,7 @@ The lab uses an M4 Mac with 16 GB of unified memory and a pinned llama.cpp build
 | V5, a closing-token output-row edit | One proof completed in 679 tokens versus 2,118 for the original. An Euler problem still contained a false displayed derivative despite a correct final solution. | Limited behavior change; not accepted as a general math improvement. |
 | V6, a paired digit-row float edit | Intended float checks passed; the packed Q4 representation failed its correction/guard checks. | Rejected before candidate GGUF creation. |
 | V7, direct packed-code edits | 45 saved-prefix checks passed. Normal generation first diverged at token 12, and the Euler answer contained false working. A linear-system response used 655 more tokens than V5. | Rejected as a math improvement. |
-| V8, internal terminal feed-forward edit | Numerical helpers and initial tracing/calibration prepared; further native control and candidate validation are ongoing. | Experimental, with no accepted model-quality result. |
+| V8, merged internal feed-forward edit | All 2,730 earlier decisions were preserved. The intended token won, but its native full-vocabulary margin was +0.188 against a required +0.5. | Rejected under the frozen gate; complete-answer generation was not run. |
 
 These are selected lab observations, not a benchmark leaderboard or a general speed guarantee. See the [case study](docs/case-study.md) and [public experiment summary](evidence/experiment-summary.json) for definitions, provenance, and limitations.
 
@@ -247,14 +247,14 @@ These are selected lab observations, not a benchmark leaderboard or a general sp
 
 In this checkpoint, the terminal feed-forward down-projection is `blk.63.ffn_down.weight`. Its mathematical shape is `[5120, 17408]`, while the GGML dimension listing is `[17408, 5120]`. The native stored tensor is Q4_K even though the checkpoint filename includes IQ3.
 
-We are investigating a merged internal update:
+V8 saved and tested a merged internal update:
 
 $$
 D_E = \operatorname{F32}(D_C + UV^T), \qquad
 \Delta r = (D_E-D_C)a.
 $$
 
-This is an in-progress method, not a proven repair. The current experiment's limits include rank at most 8, a 1% Frobenius norm budget, a 5% positive-context residual-shift budget, and stored-weight/native checks. The tensor alone occupies 356,515,840 bytes in F32; promoting the entire model is unnecessary for this specific experiment. Memory is still needed for the rest of inference, caches, and fitting.
+The update measured 0.70% of the selected matrix's Frobenius norm and shifted the target residual by 3.69%. These limits passed, but a competing token kept the full-vocabulary margin below its frozen requirement. This establishes a local intervention, with no accepted mathematical-repair claim. The experiment's limits include rank at most 8, a 1% Frobenius norm budget, a 5% positive-context residual-shift budget, and stored-weight/native checks. The tensor alone occupies 356,515,840 bytes in F32; promoting the entire model is unnecessary for this specific experiment. Memory is still needed for the rest of inference, caches, and fitting.
 
 ## Go deeper
 

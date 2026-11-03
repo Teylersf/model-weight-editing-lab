@@ -45,11 +45,19 @@ A saved prefix fixes the model's context. In a fresh rollout, an earlier changed
 
 On Euler, V7 generated 1,980 tokens versus P's 2,952. Its thinking-closing token was at zero-based index 716 (the 717th generated token). The final function was again correct, but the displayed working contained several false equations: incorrect particular-solution derivatives, an incorrect operator calculation, and a later incorrect general derivative. A valid second method did not make those earlier claims true. Other full-output checks also reported formatting/loop regressions. Faster output therefore did not meet the unchanged clean-working criterion.
 
-## V8: internal weight editing remains in progress
+## V8: an internal edit passed preservation but missed the margin gate
 
-V8 is investigating a small update to an internal terminal feed-forward down projection, alongside complete correct mathematical training continuations and counterbalanced examples where coefficients such as `6` are valid. The goal is to improve a coherent solution, rather than merely favor one digit or close thinking sooner.
+V8 saved a rank-one update to the terminal feed-forward down projection in a separate GGUF. It targeted the first token of one mathematically valid correction to the late derivative display. Complete correct training continuations and counterbalanced examples are available for later sequence experiments; this one-point prototype did not train on all of them.
 
-The historical local `terminal-down-stream-v8-verification.json`, which is not bundled here, is explicitly synthetic. It checks streamed F32 materialization and numerical responses, including a case where rounding breaks an intended zero response. Native captures, representation controls, full-prefix behavior, and complete mathematical outputs remain work in progress. No accepted V8 model result is asserted here.
+The promotion-only control reproduced all 2,952 Euler decisions, including EOG and the same final display error. The isolated suffix replay matched native residuals, normalized vectors, recorded logits and full-vocabulary log-sum-exp at seven calibration points. Unrecorded individual native logits were not independently compared in that calibration.
+
+Independent payload validation covered all 5,120 output rows and 2,731 supplied states. The stored update's Frobenius norm was 0.70% of the selected control matrix's norm. Actual native target-residual shift was 19.2509878391 against a control norm of 521.4955821872, or about 3.69%, within its 5% cap.
+
+Native replay preserved all 2,730 earlier token decisions and their required margins. At the selected state, the intended token did win: its logit was 23.9195270538, versus 23.7315139771 for the strongest other token. Their margin, **+0.1880130768**, missed the frozen **+0.5** gate. The pairwise proposal had not controlled every competing row.
+
+V8 remains rejected under that gate. A complete free-running Euler answer and fresh evaluations were not run for this candidate; no mathematical improvement or loop-rate result is claimed. The outcome informs a new experiment, with no retroactive change to the failed gate. The candidate SHA-256 and receipt identifiers are in the [public summary](../evidence/experiment-summary.json).
+
+The [bundled streaming-helper receipt](../numerical/terminal-down-stream-v8-verification.json) remains explicitly synthetic: it verifies the numerical helper, including rounding-induced guard leakage. These later curated native observations are separate evidence, with raw checkpoints and capture caches not distributed here.
 
 ## Keep the evaluation boundary visible
 

@@ -69,7 +69,7 @@
     {
       "version": "V8",
       "mechanism": "Proposed merged internal terminal FFN down-projection edit with full-trajectory guards",
-      "status": "In progress; synthetic helper verification and initial tracing prepared; no accepted candidate-quality result",
+      "status": "REJECTED: native positive margin failed the frozen gate; full-answer and fresh evaluation unrun",
       "tensor": {
         "name": "blk.63.ffn_down.weight",
         "original_encoding": "Q4_K",
@@ -88,7 +88,32 @@
         "intended_and_stored_relative_frobenius": 0.01,
         "positive_state_relative_residual": 0.05
       },
-      "accepted_as_general_math_improvement": false
+      "accepted_as_general_math_improvement": false,
+      "candidate_sha256": "efc8580381bad8e222c73251e77a8530edea60a1bea4d5a6294781b468b1abdf",
+      "cow_receipt_sha256": "d2b8d2b0c71d82f7ecddf8811f63d047be71024307ecdac903702eff1a76938b",
+      "observations": {
+        "promotion_control_Euler_decisions_matched_including_EOG": 2952,
+        "suffix_calibration_states": 7,
+        "suffix_r_h_recorded_logits_logsumexp_errors": 0,
+        "calibration_unrecorded_individual_native_logits_compared": false,
+        "validated_payload_rows": 5120,
+        "validated_supplied_states": 2731,
+        "stored_relative_Frobenius_percent_rounded": 0.7,
+        "native_early_guards": 2730,
+        "native_early_guards_passed": 2730,
+        "target_native_residual_shift_l2": 19.250987839116704,
+        "target_control_residual_l2": 521.4955821871723,
+        "target_desired_token_id": 18,
+        "target_other_token_id": 17,
+        "target_desired_logit": 23.919527053833008,
+        "target_max_other_logit": 23.73151397705078,
+        "target_all_vocab_margin": 0.18801307678222656,
+        "target_required_margin": 0.5,
+        "target_residual_cap_pass": true,
+        "all_2731_upstream_a_skip_bit_identical": true,
+        "full_answer_generated": false,
+        "fresh_evaluations_opened": false
+      }
     }
   ],
   "distinctions": {
