@@ -1,0 +1,285 @@
+{
+  "schema": "toy-rank-one-output-head-edit-v1",
+  "toy_only": true,
+  "real_model_edited": false,
+  "checkpoint_generation": "fixed locally generated dyadic F32 fixture; no downloads or training corpus",
+  "numpy_version": "2.2.1",
+  "tokens": [
+    "POSITIVE",
+    "NEGATIVE",
+    "OTHER"
+  ],
+  "weight_shape_tokens_features": [
+    3,
+    4
+  ],
+  "artifacts": {
+    "parent": {
+      "file": "parent.npz",
+      "sha256": "ce5b97e338159b8a9bb2b439573894634d33294894f7c22c0f4bb5a6118385aa",
+      "read_only_requested": true
+    },
+    "candidate": {
+      "file": "candidate.npz",
+      "sha256": "0cb0d6f889355d441863c928c310226264e55a52a7607513740e4f2274f6df26"
+    }
+  },
+  "parent_sha256_after": "ce5b97e338159b8a9bb2b439573894634d33294894f7c22c0f4bb5a6118385aa",
+  "parent_unchanged": true,
+  "edit": {
+    "formula": "W_candidate = F32(W_parent + u[:,None] @ v[None,:])",
+    "u_tokens": [
+      0.875,
+      -0.875,
+      0.0
+    ],
+    "v_features": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "target_key_response": 1.0,
+    "guard_key_responses": [
+      0.0,
+      0.0
+    ],
+    "intended_delta": [
+      [
+        0.875,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.875,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "actual_reloaded_delta": [
+      [
+        0.875,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.875,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "intended_delta_frobenius": 1.2374368670764582,
+    "actual_delta_frobenius": 1.2374368670764582,
+    "intended_vs_actual_error_frobenius": 0.0,
+    "changed_weights": 2,
+    "serialized_candidate_bit_exact": true
+  },
+  "target": {
+    "hidden": [
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "requested_margin": 1.0,
+    "before": {
+      "logits": [
+        -0.375,
+        0.375,
+        -1.5
+      ],
+      "winner": "NEGATIVE",
+      "expected": "POSITIVE",
+      "correct": false,
+      "expected_margin_over_all_others": -0.75
+    },
+    "after": {
+      "logits": [
+        0.5,
+        -0.5,
+        -1.5
+      ],
+      "winner": "POSITIVE",
+      "expected": "POSITIVE",
+      "correct": true,
+      "expected_margin_over_all_others": 1.0
+    }
+  },
+  "guards": {
+    "hidden_rows": [
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "before_logits": [
+      [
+        0.125,
+        -0.125,
+        -0.5
+      ],
+      [
+        -0.25,
+        0.25,
+        -0.5
+      ]
+    ],
+    "after_logits": [
+      [
+        0.125,
+        -0.125,
+        -0.5
+      ],
+      [
+        -0.25,
+        0.25,
+        -0.5
+      ]
+    ],
+    "maximum_absolute_logit_drift": 0.0,
+    "all_supplied_guard_logits_unchanged": true
+  },
+  "separate_evaluation": {
+    "used_for_fitting": false,
+    "deliberately_engineered_limits_demo": true,
+    "contexts": [
+      {
+        "name": "near_target",
+        "hidden": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "before": {
+          "logits": [
+            -0.5,
+            0.5,
+            -1.0
+          ],
+          "winner": "NEGATIVE",
+          "expected": "POSITIVE",
+          "correct": false,
+          "expected_margin_over_all_others": -1.0
+        },
+        "after": {
+          "logits": [
+            0.375,
+            -0.375,
+            -1.0
+          ],
+          "winner": "POSITIVE",
+          "expected": "POSITIVE",
+          "correct": true,
+          "expected_margin_over_all_others": 0.75
+        },
+        "outcome": "improved"
+      },
+      {
+        "name": "unprotected_shared_feature",
+        "hidden": [
+          1.0,
+          3.0,
+          0.0,
+          0.0
+        ],
+        "before": {
+          "logits": [
+            -0.125,
+            0.125,
+            -2.5
+          ],
+          "winner": "NEGATIVE",
+          "expected": "NEGATIVE",
+          "correct": true,
+          "expected_margin_over_all_others": 0.25
+        },
+        "after": {
+          "logits": [
+            0.75,
+            -0.75,
+            -2.5
+          ],
+          "winner": "POSITIVE",
+          "expected": "NEGATIVE",
+          "correct": false,
+          "expected_margin_over_all_others": -1.5
+        },
+        "outcome": "regressed"
+      },
+      {
+        "name": "orthogonal_unseen",
+        "hidden": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "before": {
+          "logits": [
+            0.25,
+            -0.25,
+            0.0
+          ],
+          "winner": "POSITIVE",
+          "expected": "POSITIVE",
+          "correct": true,
+          "expected_margin_over_all_others": 0.25
+        },
+        "after": {
+          "logits": [
+            0.25,
+            -0.25,
+            0.0
+          ],
+          "winner": "POSITIVE",
+          "expected": "POSITIVE",
+          "correct": true,
+          "expected_margin_over_all_others": 0.25
+        },
+        "outcome": "unchanged_correctness"
+      }
+    ],
+    "parent_correct": 2,
+    "candidate_correct": 2,
+    "total": 3
+  },
+  "toy_rounding": {
+    "toy_uniform_scalar_grid_only": true,
+    "real_LLM_codec": false,
+    "grid_step": 0.1,
+    "intended_delta": 0.001,
+    "stored_edited_minus_control": 0.0,
+    "edit_erased": true
+  },
+  "limitations": [
+    "Only three toy tokens and four supplied features; no transformer or tokenizer.",
+    "Only supplied guard directions are protected; an unprotected context regresses.",
+    "Selected examples demonstrate algebra and limits, not broad model improvement.",
+    "The toy scalar grid is not a real LLM quantization codec."
+  ]
+}

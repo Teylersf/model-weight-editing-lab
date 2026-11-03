@@ -1,0 +1,36 @@
+# Primary references and evidence boundaries
+
+Sources checked on **2026-11-03**. Repository links below pin the inspected revision. A source's reported result is attributed to that source; it is not a replication by this repository.
+
+## The motivating experiment
+
+- [HN item 50341174](https://news.ycombinator.com/item?id=50341174) is the discovery link. Discussion comments are not technical evidence for the editing method.
+- Takehi, Teoh, Zhang, and Khattab, [Sparks of Weight-Space Programming](https://rikiyat.github.io/blog/weight-space-programming/), November 2, 2026: author post, including the Qwen3.5-0.8B looping experiment and a Gemma follow-up without established gains. Its future-facing possibilities are hypotheses.
+- [Released logs repository at `4d09ba6d6a7e891dd8063974dfe81b3d78e3494f`](https://github.com/RikiyaT/lm_understand-logs/tree/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f): primary prompts, outputs, submitted edits, and evaluation records. The repository states that the reported runs are released, with earlier trial prompt versions omitted.
+- [Experiment 8 README](https://github.com/RikiyaT/lm_understand-logs/blob/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp8_math/README.md): training/practice versus evaluation separation, forward-pass harness, no-gradient restrictions, forbidden output/final-norm edits, BF16 evaluation, and reconstruction details. The live harness itself is not included. Its setup is not our supervised head/context fitting setup.
+- [Final selected edit](https://github.com/RikiyaT/lm_understand-logs/blob/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp8_math/runs/p50c/final_answer.md), [stored edit manifest](https://github.com/RikiyaT/lm_understand-logs/blob/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp8_math/runs/p50c/edit/manifest.json), and [reconstruction code](https://github.com/RikiyaT/lm_understand-logs/blob/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp8_math/code/apply_edit.py): verify tensor identity, rounding-aware changed-entry counts, base revision, and checked tensor hashes. They do not describe a quantized 27B GGUF intervention.
+- [Gemma follow-up README](https://github.com/RikiyaT/lm_understand-logs/blob/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp8_math/gemma_followup/README.md): a useful negative result and an explicit limit on interpreting loop removal as new mathematical capability.
+
+## Established model-editing research
+
+- Meng, Bau, Andonian, and Belinkov, [Locating and Editing Factual Associations in GPT — ROME, arXiv:2202.05262v5](https://arxiv.org/abs/2202.05262v5), NeurIPS 2022. The paper's constrained least-squares derivation uses an estimated uncentered key covariance; it is not the finite-guard nullspace formula implemented here. See also the [authors' project](https://rome.baulab.info/) and [official code](https://github.com/kmeng01/rome). Factual editing results do not establish arbitrary multistep math improvement.
+- Meng, Sen Sharma, Andonian, Belinkov, and Bau, [Mass-Editing Memory in a Transformer — MEMIT, arXiv:2210.07229v2](https://arxiv.org/abs/2210.07229v2), ICLR 2023. The method distributes updates over mediating MLP layers and evaluates many factual associations. See the [authors' project](https://memit.baulab.info/) and [official code](https://github.com/kmeng01/memit). Its layer selections, covariance weighting, and targets belong to the evaluated models and tasks.
+
+## Official runtime and format source
+
+All source links in this section pin **llama.cpp commit `8642541b255bfb5dc39cd351a178be09013a55d6`**. Match the actual local build and public function signatures before calling native code. Pinning source alone does not prove the provenance of a binary.
+
+- [GGUF public header](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/ggml/include/gguf.h): documented file structure, tensor descriptors, data offsets and alignment.
+- [Official Python reader](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/gguf-py/gguf/gguf_reader.py) and [package README](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/gguf-py/README.md): tensor metadata inspection and package examples. A metadata editor is not a validated weight-editing pipeline.
+- [Quantization structures, `ggml-common.h`](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/ggml/src/ggml-common.h): Q4_K and IQ3_XXS block definitions and compile-time size assertions.
+- [Quantizers/dequantizers, `ggml-quants.c`](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/ggml/src/ggml-quants.c): Q4_K code ordering, subgroup scale/min decoding and native rounding. Verify exported functions in the actual library rather than guessing internal struct offsets.
+- [Qwen35 graph source](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/src/models/qwen35.cpp) and [shared graph construction](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/src/llama-graph.cpp): a concrete architecture-specific path to inspect for FFN down projections, residual addition, final RMSNorm and output projection. Neither names nor dimensions should be extrapolated to an uninspected release.
+- [Public llama API](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/include/llama.h): model/context, memory and adapter interfaces. This does not grant arbitrary cache compatibility after a custom weight edit.
+
+## Model identity and local numerical evidence
+
+- [Huihui-Qwen3.8-27B-abliterated-GGUF model card](https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF) identifies the motivating model family. The live card displays an Apache-2.0 tag as checked on the date above. For a reproducible experiment, record the exact repository revision, artifact filename, artifact SHA256, and applicable upstream terms; this guide does not redistribute or download weights.
+- [Suffix/context helper](../numerical/suffix_context_math_v8.py), [verification program](../numerical/verify_suffix_context_math_v8.py), [contract](../numerical/suffix-context-math-v8-contract.json), and [receipt](../numerical/suffix-context-math-v8-verification.json): executed F64 synthetic math and validation checks. Native kernel equality and model quality remain separate.
+- [Terminal-down streaming helper](../numerical/terminal_down_stream_v8.py), [verification program](../numerical/verify_terminal_down_stream_v8.py), [contract](../numerical/terminal-down-stream-v8-contract.json), and [receipt](../numerical/terminal-down-stream-v8-verification.json): executed chunked synthetic F32 materialization, complete logical coverage and rounding-leakage checks. No general GGUF writer or native suffix replay engine is implemented by this helper.
+
+The equations and controlled experiment workflow in the [advanced guide](advanced-weight-editing.md) are this repository's engineering construction. Their resemblance to rank-one editing does not make them a replication of ROME, MEMIT, or the source post. Native testing and complete-answer evaluation are required before attributing an observed benefit to a saved-weight intervention.

@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite this guide and identify the specific commit you used."
+type: software
+title: "Model Weight Editing Lab: Direct Weight Edits of Qwen3.8-27B Abliterated"
+authors:
+  - family-names: Kalin
+    given-names: Taylor
+url: "https://github.com/Teylersf/model-weight-editing-lab"
+license: MIT
+abstract: >-
+  A beginner-to-advanced guide, runnable synthetic example, numerical tools,
+  and case study for direct saved-weight editing. Local Qwen3.8-27B Abliterated
+  experiments are ongoing; no generally improved math model is asserted.

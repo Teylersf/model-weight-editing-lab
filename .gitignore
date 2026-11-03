@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+runs/
+.env
+.env.*
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.npz
+*.npy
+*.f32
+*.f64
+*.i32
+*.log
+*.b64

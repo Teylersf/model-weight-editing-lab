@@ -1,0 +1,43 @@
+{
+  "schema": "terminal-down-F32-stream-v8-numerical-contract",
+  "frozen_utc": "2026-11-03T14:46:04.752113+00:00",
+  "source_files": {
+    "terminal_down_stream_v8.py": "5f936d32eb78903e19f880a31b8ad49c42536eb01f57d539c4a2ad6b860965c3",
+    "verify_terminal_down_stream_v8.py": "285656f6c279ff7b1d02254f67cd182b4f66a9d9a847e3ab169904e49a839e37",
+    "terminal-down-stream-v8-verification.json": "6c98b78fb2b06ddf39a0302d7ac9093418ae265ec90da7c0746b4b44eddfd692",
+    "TERMINAL_DOWN_STREAM_V8.md": "f1e611978322c7783ca32a675710f4f37e647673209dbf581a0aac95263e825e"
+  },
+  "D_shape_out_in": [
+    5120,
+    17408
+  ],
+  "F32_matrix_bytes": 356515840,
+  "weight_rule": "E=F32(C+U@V.T), applied in bounded row chunks; C=native-dequantized original D promoted toF32 without fit",
+  "limits": {
+    "rank_per_plan": 8,
+    "rows_per_chunk": 32,
+    "keys_per_batch": 128
+  },
+  "fixed_caps": {
+    "intended_matrix_Frobenius_fraction_of_C": 0.01,
+    "actual_stored_matrix_Frobenius_fraction_of_C": 0.01,
+    "positive_state_residual_fraction_of_C": 0.05
+  },
+  "streamed_effect": "A_control_rows @ (F64(D_E)-F64(D_C)).T; stored-weight response inF64 only",
+  "not_assumed": [
+    "C native inference equalsP",
+    "F64linearresponse equalsnativeF32GEMMresponse",
+    "v dot a nullity survivesF32rounding",
+    "matrixcaps implyargmaxpreservation"
+  ],
+  "external_mandatory_gates": [
+    "actualMacpromotionwriter/source/dtype/offset/tailaudit",
+    "immutableB/P and unchanged allotherpayloadidentity afterrelocation",
+    "actualC ordinarybaselineinference",
+    "actualE-C residualnorms andall-prefixoriginalwinner/margins",
+    "completeindependentmath/format/completionevaluation"
+  ],
+  "io_or_model_or_native_or_Mac_actions": false,
+  "candidate_accepted": false,
+  "workstream_semantics": "Allocation bounds and frozen gates govern an individual experiment; failure does not terminate continuous research."
+}

@@ -1,0 +1,128 @@
+{
+  "verification": "passed",
+  "synthetic_only": true,
+  "model_or_native_or_Mac_actions": false,
+  "full_logical_matrix_bytes": 356515840,
+  "maximum_rows_per_chunk": 32,
+  "matrix_audit": {
+    "shape": [
+      5120,
+      17408
+    ],
+    "F32_bytes": 356515840,
+    "rows_covered": 5120,
+    "chunks": 160,
+    "control_frobenius": 100000000.44561844,
+    "intended_delta_frobenius": 1.4142135623730951,
+    "actual_delta_frobenius": 1.0,
+    "rounding_error_frobenius": 1.0,
+    "frobenius_cap_fraction": 0.01,
+    "frobenius_cap": 1000000.0044561843,
+    "intended_cap_pass": true,
+    "actual_cap_pass": true,
+    "numeric_matrix_gates_pass": true,
+    "actual_changed_values": 1,
+    "rounded_away_nonzero_entries": 2,
+    "control_matrix_F32_sha256": "3af05149d8e4c442ba35131909f9dda06190eead189f12ccf61f93051add5d65",
+    "edited_matrix_F32_sha256": "68c725080bf73478d2b88b7fdbe0f31647c373642ae05c387139c58432506531",
+    "control_native_baseline_equality_to_P_assumed": false,
+    "candidate_accepted": false
+  },
+  "stronger_cap_rejected": {
+    "shape": [
+      5120,
+      17408
+    ],
+    "F32_bytes": 356515840,
+    "rows_covered": 5120,
+    "chunks": 160,
+    "control_frobenius": 100000000.44561844,
+    "intended_delta_frobenius": 1.4142135623730951,
+    "actual_delta_frobenius": 1.0,
+    "rounding_error_frobenius": 1.0,
+    "frobenius_cap_fraction": 1e-09,
+    "frobenius_cap": 0.10000000044561844,
+    "intended_cap_pass": false,
+    "actual_cap_pass": false,
+    "numeric_matrix_gates_pass": false,
+    "actual_changed_values": 1,
+    "rounded_away_nonzero_entries": 2,
+    "control_matrix_F32_sha256": "3af05149d8e4c442ba35131909f9dda06190eead189f12ccf61f93051add5d65",
+    "edited_matrix_F32_sha256": "68c725080bf73478d2b88b7fdbe0f31647c373642ae05c387139c58432506531",
+    "control_native_baseline_equality_to_P_assumed": false,
+    "candidate_accepted": false
+  },
+  "actual_key_response": {
+    "states": 2,
+    "delta_residual_l2": [
+      1.0,
+      1.0
+    ],
+    "C_residual_l2": [
+      71.55417527999327,
+      71.55417527999327
+    ],
+    "positive_mask": [
+      true,
+      false
+    ],
+    "positive_cap_fraction": 0.05,
+    "positive_state_caps_pass": true,
+    "positive_cap_per_state_pass": [
+      true
+    ],
+    "response_uses_actual_stored_F32_weight_delta": true,
+    "F64_linear_response_only": true,
+    "native_C_E_GEMM_response_verified": false,
+    "argmax_and_margin_preservation_verified": false,
+    "candidate_accepted": false
+  },
+  "stronger_positive_cap_rejected": {
+    "states": 2,
+    "delta_residual_l2": [
+      1.0,
+      1.0
+    ],
+    "C_residual_l2": [
+      71.55417527999327,
+      71.55417527999327
+    ],
+    "positive_mask": [
+      true,
+      false
+    ],
+    "positive_cap_fraction": 1e-06,
+    "positive_state_caps_pass": false,
+    "positive_cap_per_state_pass": [
+      false
+    ],
+    "response_uses_actual_stored_F32_weight_delta": true,
+    "F64_linear_response_only": true,
+    "native_C_E_GEMM_response_verified": false,
+    "argmax_and_margin_preservation_verified": false,
+    "candidate_accepted": false
+  },
+  "control_nullity_broken_by_F32_rounding_demonstrated": true,
+  "zero_edit_F32_bytes_exact": true,
+  "scaled_norm_large_and_small_passed": true,
+  "invalid_inputs_rejected": [
+    "incomplete_coverage",
+    "duplicate_coverage",
+    "F32_overflow",
+    "weaker_matrix_cap",
+    "weaker_positive_cap",
+    "nonfinite_factor",
+    "oversized_U",
+    "arbitrary_U",
+    "oversized_C",
+    "wrong_C_dtype",
+    "oversized_key_batch"
+  ],
+  "preconversion_invalid_cases": 5,
+  "preconversion_allocation_or_scan_calls": 0,
+  "source_files": {
+    "terminal_down_stream_v8.py": "5f936d32eb78903e19f880a31b8ad49c42536eb01f57d539c4a2ad6b860965c3",
+    "verify_terminal_down_stream_v8.py": "285656f6c279ff7b1d02254f67cd182b4f66a9d9a847e3ab169904e49a839e37"
+  },
+  "limitations": "Pure numerical stored-weight response; native C/E GEMM rounding, actual residuals, full logits/margins, GGUF relocation and payload identity remain unverified external gates."
+}

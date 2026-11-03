@@ -1,0 +1,65 @@
+{
+  "version": "V8 numerical suffix/context infrastructure; no model candidate",
+  "scope": "Pure NumPy F64 calculations only; no model/native/file I/O, runtime adapters, or model-quality claim",
+  "dimensions": {
+    "max_residual_width": 5120,
+    "max_context_width": 17408,
+    "max_selected_head_rows": 128,
+    "max_dense_context_guards": 4096,
+    "max_sequence_nll_tokens_per_call": 4096,
+    "input_containers": "Exact NumPy ndarray or ordinary list/tuple; all metadata bounds checked before conversion/finite scan",
+    "resource_limit": "No width-square projector. 4096x17408 F64 guard input is 544MiB; thin SVD output/copies/workspace can exceed 1GiB. Unload model before large dense SVD; this API is bounded, not a low-memory streaming SVD."
+  },
+  "suffix": {
+    "formula": "h = gamma*r/sqrt(dot(r,r)/D + epsilon); z_selected = W_selected*h",
+    "native_inputs": "Finite F64 residual, gamma, epsilon, decoded selected head rows, native normalized h and native selected logits from identical fixed prefix",
+    "pair_gradient": "k/s - r*dot(k,r)/(D*s^3), k=gamma*(w_positive-w_negative)",
+    "native_calibration_h_max_absolute_error": 0.00001,
+    "native_calibration_selected_logit_max_absolute_error": 0.0001,
+    "failure_action": "Do not fit if native calibration fails; diagnose instrumentation/formula/kernel correspondence first",
+    "cross_entropy": "Use actual corresponding full-vocabulary logZ minus gold logit. Selected-row softmax is not full-model CE; parent logZ cannot be reused after a residual edit changes all logits."
+  },
+  "context_key": {
+    "rank_rule": "singular_value > float64_epsilon*max(A.shape)*largest_singular_value",
+    "projection": "residual = a_positive - projection onto row span(A); v=residual/dot(a_positive,residual)",
+    "minimum_projected_positive_to_positive_norm_ratio": 0.001,
+    "positive_response_target": 1,
+    "positive_response_absolute_tolerance": 0.00000001,
+    "maximum_recomputed_absolute_guard_response": 0.000001,
+    "failed_separation_behavior": "Return v=null and explicit flag; nonfinite arithmetic rejects input",
+    "interpretation": "Protects only supplied guard activations algebraically; neither unseen contexts nor F32 materialization nor changed token trajectories are established."
+  },
+  "rank_one_edit_orientation": {
+    "D": "[Dout,Din]",
+    "U": "[Dout,rank]",
+    "V": "[Din,rank]",
+    "rank_one": "delta_D = u*v.T; delta_residual = u*dot(v,a)",
+    "causal_prerequisite": "Native verify final-down input activation a and cached KV are independent of this terminal D edit for an identical token prefix. Do not assume this for earlier layers or different prefixes."
+  },
+  "residual_step": {
+    "target_and_cap": "Caller must freeze target pair margin, absolute residual L2 cap, and direction mode before fitting real data",
+    "default_direction": "Analytic pair gradient projected tangent to baseline residual; optional gradient mode is a separate caller-frozen choice",
+    "gradient_relative_threshold": 0.000000000001,
+    "search": "One fixed normalized improving direction; analytic exact-RMS line peak followed by 64 bisections to smallest target-reaching step on improving branch",
+    "bisections": 64,
+    "target_numeric_tolerance": 0.00000001,
+    "missed_target": "Return best capped direction step with target_reached=false; no global infeasibility or global optimum claim",
+    "prohibited": "No dose sweep, implicit candidate rescaling, restart, or automatic promotion"
+  },
+  "external_experiment_requirements": [
+    "Freeze real-data labels, targets, caps, prefix gates and complete-answer rubric before fit; helper constants alone are not a candidate preregistration",
+    "Use complete mathematically valid teacher continuations and explicit hard math spans; arbitrary canonical prose is not mathematical truth",
+    "Keep actual full-vocabulary sequence CE a soft objective; endpoint and all displayed working decide mathematical validity",
+    "Promotion-only direct F32 C must be compared with quantized P before attributing E-C effects to the edit",
+    "Materialize direct weights, compute actual F32 E-C norms and activation shifts, and verify all native prefix/control gates after rounding",
+    "Algebraic context nullity does not guarantee actual rounded D nullity; stream full supplied early-prefix controls and inspect whole-answer behavior",
+    "New evaluation outputs remain excluded from this fit; any later promotion into training must be explicit and replaced with fresh evaluation",
+    "No claim of math learning, readiness calibration or generalization follows from synthetic verification or a few solved questions"
+  ],
+  "synthetic_verification": {
+    "checks": 16,
+    "invalid_inputs_rejected": 11,
+    "max_all_coordinate_pair_gradient_fd_error": 6.745040082023479e-10,
+    "native_model_validation_performed": false
+  }
+}

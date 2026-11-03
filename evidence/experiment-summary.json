@@ -1,0 +1,107 @@
+{
+  "schema": "public-weight-editing-experiment-summary-v1",
+  "date": "2026-11-03",
+  "author": "Taylor Kalin",
+  "status": "ongoing; no generally improved math checkpoint accepted",
+  "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
+  "model": {
+    "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
+    "url": "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
+    "checkpoint": "Huihui-Qwen3.8-27B-abliterated-UD-DW-IQ3_XXS.gguf",
+    "bytes": 11367766944,
+    "sha256": "bfc6892863eceb16f69697e59b038acdc1c709b790c1542e4612dbb0924d3568",
+    "original_preserved": true,
+    "weights_redistributed": false
+  },
+  "runtime": {
+    "llama_cpp_commit": "8642541b255bfb5dc39cd351a178be09013a55d6",
+    "lab_hardware": "Apple M4 Mac, 16 GB unified memory",
+    "comparison_settings": {
+      "context_size": 4096,
+      "temperature": 0,
+      "seed": 42
+    },
+    "limitations": "Pinned lab configuration; no throughput or cross-platform equivalence guarantee. Control prompts, native template and full answer rubric must also match for a causal comparison."
+  },
+  "experiments": [
+    {
+      "version": "V5",
+      "mechanism": "Direct closing-token output-row edit",
+      "candidate_sha256": "49dc50bf253c0292c0b5607660303932cd6e7efd2c8ae4aaf16d7da763f90b74",
+      "observations": {
+        "one_ring_proof_tokens": {
+          "original": 2118,
+          "edited": 679
+        },
+        "euler": "Correct final expression with a false displayed derivative followed by a correct derivative line"
+      },
+      "accepted_as_general_math_improvement": false
+    },
+    {
+      "version": "V6",
+      "mechanism": "Paired digit-row continuous fit followed by packed Q4 validation",
+      "native_candidate_created": false,
+      "report_sha256": "5584777435806cd65ff45d234aa1d7e05630c1824e1bd8b2e2f0a8e3ebc15c03",
+      "outcome": "Float proposal passed intended checks; serialized Q4 correction/guard checks failed",
+      "accepted_as_general_math_improvement": false
+    },
+    {
+      "version": "V7",
+      "mechanism": "Direct packed Q4 code changes in two output rows",
+      "candidate_sha256": "11a02c434bb5b9434abfa49e0ba4381c23d0c6fe331bd92d0253f11f9ed15cc7",
+      "report_sha256": "6aecc609336c600ee980b99267fde410d0621a31e53b25fbf0e57289ae08afc0",
+      "observations": {
+        "saved_prefix_checks_passed": 45,
+        "additional_bytes_changed_relative_to_V5": 70,
+        "euler_first_natural_generated_token_divergence_zero_based": 12,
+        "euler_tokens": {
+          "V5": 2952,
+          "V7": 1980
+        },
+        "euler": "Correct final expression, multiple false intermediate equations",
+        "linear_system_tokens": {
+          "V5": 1293,
+          "V7": 1948
+        }
+      },
+      "accepted_as_general_math_improvement": false
+    },
+    {
+      "version": "V8",
+      "mechanism": "Proposed merged internal terminal FFN down-projection edit with full-trajectory guards",
+      "status": "In progress; synthetic helper verification and initial tracing prepared; no accepted candidate-quality result",
+      "tensor": {
+        "name": "blk.63.ffn_down.weight",
+        "original_encoding": "Q4_K",
+        "ggml_ne": [
+          17408,
+          5120
+        ],
+        "mathematical_shape_out_in": [
+          5120,
+          17408
+        ],
+        "F32_bytes": 356515840
+      },
+      "experiment_caps": {
+        "rank": 8,
+        "intended_and_stored_relative_frobenius": 0.01,
+        "positive_state_relative_residual": 0.05
+      },
+      "accepted_as_general_math_improvement": false
+    }
+  ],
+  "distinctions": {
+    "teaching_example": "Synthetic three-token head only; does not reproduce a 27B architecture or benchmark",
+    "numerical_helpers": "Original pure NumPy infrastructure with synthetic receipts; no native file writer",
+    "native_research": "Real separately saved model candidates and ordinary native runs; results scoped as above",
+    "evaluation": "Earlier observed failures used for new fitting are training material, not unseen evaluation"
+  },
+  "claims_not_established": [
+    "Best high-school or college mathematics model",
+    "Generalized loop removal",
+    "Broad mathematical capability improvement",
+    "Benchmark superiority",
+    "Self-improvement or reproduction of the motivating paper"
+  ]
+}

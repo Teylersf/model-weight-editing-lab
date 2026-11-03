@@ -1,0 +1,3 @@
+* text=auto
+# Frozen numerical copies and receipts retain the exact audited bytes.
+numerical/* -text
