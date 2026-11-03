@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-03",
   "author": "Taylor Kalin",
-  "status": "ongoing; V12 rejected after a required proof regression; V10 remains ACCEPTED_TESTED_SCOPE_PROVISIONAL; V13 TRAIN-only guard preparation has no fit, candidate result or promotion reported",
+  "status": "interim snapshot of verified results; V13 selected proof/native guards passed and 9 of 15 required relative TRAIN nonregressions passed, including preservation of one known proof defect; 6/core/observed DEV pending; V13 unaccepted and V10 accepted",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -495,6 +495,204 @@
         "logical_total_claimed_as_reclaimed_bytes": false,
         "original_current_accepted_representation_anchor_and_active_inputs_preserved": true
       }
+    },
+    {
+      "version": "V13",
+      "mechanism": "Rank-one saved F32 terminal FFN down-projection edit with typed multicase TRAIN-only hard guards",
+      "status": "UNACCEPTED_INTERIM_LAST_VERIFIED_SNAPSHOT: native guards and selected proof passed; 9 of 15 required relative TRAIN nonregressions passed, with one existing proof defect preserved; 6/core/observed DEV pending",
+      "experimental_parent_version": "V10",
+      "experimental_parent_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "candidate_sha256": "d27469b3a17f45095a958217f2dded67983f5d7d941eb8f3ece84a0a23555694",
+      "candidate_bytes": 11674147744,
+      "profile_sha256": "657f8e96c6a98c4a9e8fd1bf7c354712c238e3e4ed9782585e0cff75c23ebc0f",
+      "algorithm_freeze_sha256": "06ff6770900758f8b882d8c824df084e221ff1902008bce1394eefb9cc97b5ad",
+      "proposal_sha256": "5abbe972298eb4f34359cd7807dc460edb388a3b0b5e44d6950cbe3320c98a5e",
+      "solve_count": 1,
+      "proposal_native_margin": 0.75,
+      "cow_receipt_sha256": "5bed2793a798c66ed87ea571ee93dc0fb5ec0c794930b8f8ca82b668db29f2a9",
+      "tensor": {
+        "name": "blk.63.ffn_down.weight",
+        "stored_encoding": "F32"
+      },
+      "accepted_as_general_math_improvement": false,
+      "accepted_research_base": false,
+      "promoted": false,
+      "accepted_reference_unchanged_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "TRAIN_guard_set": {
+        "role": "FIT_TRAIN",
+        "selected_earlier_prefix_rows": 247,
+        "complete_other_accepted_parent_response_rows": [
+          745,
+          1399
+        ],
+        "total_guard_rows": 2391,
+        "engine_guard_row_bound": 4096,
+        "positive_fit_row_index_zero_based": 2391,
+        "selected_generated_token_index_zero_based": 247,
+        "total_fit_states": 2392,
+        "typed_case_and_local_token_row_map_frozen": true,
+        "accepted_parent_features_used": true,
+        "DEV_or_heldout_features_used_for_fitting": false,
+        "prior_V11_V12_gates_relaxed_retroactively": false,
+        "guard_preservation_is_ordinary_regression_completion": false
+      },
+      "independent_stored_validation": {
+        "payload_receipt_sha256": "ca601709491811d1272697a85dea62243eecfc445516d7eeb12bded81464b9d8",
+        "prewrite_receipt_sha256": "4a7f49de4ff69e0056945a129aef1342afaa853f1da04cea79ccfb72578aa824",
+        "status": "PASS",
+        "stored_incremental_matrix_Frobenius_fraction": 0.003923178057094892,
+        "stored_cumulative_matrix_Frobenius_fraction": 0.00464919091159821,
+        "stored_response_validation_is_native_kernel_equality": false,
+        "payload_F32_bits_regenerated_exactly": true,
+        "response_record_count": 2392,
+        "response_records_recomputed_verified": true,
+        "response_float_comparison": {
+          "method": "_close",
+          "relative_tolerance": 1e-08,
+          "absolute_tolerance": 1e-12,
+          "exact_type_flag_and_integer_checks": true,
+          "requires_bitwise_float_equality": false
+        },
+        "actual_response_aggregate_hashes_equal": true,
+        "aggregate_hash_equality_scope": "Observed equality between independently reconstructed canonical aggregate and producer aggregate in this run; separate from the response-float acceptance tolerances",
+        "reporting_precision_receipt_sha256": "25ceecaff85953dc89c818f5e0159ee6407b63870e6e0413a8df4894a2bf6aa8",
+        "reporting_precision_receipt_bytes": 2508,
+        "response_validation_establishes_downstream_native_float_vector_bitwise_equality": false
+      },
+      "native_audit": {
+        "receipt_sha256": "878f3a7d395830aa26a789f2ac0c03a3385a43ce5a70e78992214af6156b09ee",
+        "root_clearance_sha256": "a13865ee558709fbdad97b0c608db4f27acbb0dbd2881f7357439170f3352bcc",
+        "status": "PASS",
+        "early_and_multicase_guards": 2391,
+        "guards_passed": 2391,
+        "audited_states": 2392,
+        "capture_jobs": 3,
+        "all_2392_upstream_feature_skip_pairs_bit_identical": true,
+        "positive_all_vocabulary_margin": 0.75,
+        "positive_native_delta_residual_l2": 16.7976576921692,
+        "positive_control_residual_l2": 453.4557245496817,
+        "positive_residual_cap_l2": 22.672786227484085,
+        "positive_native_residual_shift_fraction": 0.03704365560463623
+      },
+      "selected_ordinary_TRAIN_proof": {
+        "status": "PASS_ACTUAL_COMPLETE_FINAL_PROOF",
+        "generation_receipt_sha256": "d2cb266c93054f20bec4a59068f581c9662e41ccd248d9657554075f14bbba64",
+        "actual_final_sha256": "79fc1ea318f16e3c115ce6c515262b98dc1f8b9e3b1678ad68f080e9ad8f196a",
+        "root_independent_complete_final_and_SymPy_check_sha256": "6ae47f1dbe6318a600c359b6daf441b5509dd366d3c89865ed9bc6891dc505f8",
+        "generated_tokens": 494,
+        "termination": "EOG",
+        "accepted_parent_generated_tokens": 474,
+        "accepted_parent_termination": "EOG",
+        "additional_selected_case_tokens": 20,
+        "speed_gain_claim": false,
+        "private_final_or_thought_bytes_bundled": false
+      },
+      "required_nonregressions": {
+        "other_TRAIN_cases": 15,
+        "other_TRAIN_status": "INTERIM_LAST_VERIFIED_9_RELATIVE_NONREGRESSION_PASSES_6_PENDING",
+        "core_checks_status": "PENDING",
+        "previously_observed_DEV_status": "PENDING",
+        "pending_checks_counted_as_passes": false,
+        "other_TRAIN_completed_passes": 9,
+        "other_TRAIN_remaining": 6,
+        "all_15_other_TRAIN_cases_completed": false,
+        "first_completed_batch": {
+          "cases": 2,
+          "math_nonregression": "PASS",
+          "generated_token_counts": [
+            745,
+            1399
+          ],
+          "termination": "EOG for both",
+          "all_generated_token_ids_equal_accepted_V10": true,
+          "final_body_bytes_equal_accepted_V10": true,
+          "math_review_receipt_sha256": "119f27fcc7f4fac0c5efee9310bc54e3e24530168999ccefbd47568224db218b",
+          "frozen_outputs_receipt_sha256": "a94ecabb1ec81402d1e817633330d6e46199114a200dcab25863929904dae910",
+          "scope": "Known TRAIN cases; no unseen generalization claim"
+        },
+        "snapshot_scope": "Last verified receipt results only; pending cases are not passes and no current worker status is inferred",
+        "pass_criterion": "Required relative mathematical nonregression; not a claim that every requested complete proof or displayed claim is correct",
+        "frozen_but_unreviewed_outputs_counted_as_passes": false,
+        "first_four_completed_batches": [
+          {
+            "batch_index": 1,
+            "cases": 2,
+            "math_nonregression": "PASS",
+            "math_review_receipt_sha256": "119f27fcc7f4fac0c5efee9310bc54e3e24530168999ccefbd47568224db218b",
+            "frozen_outputs_receipt_sha256": "a94ecabb1ec81402d1e817633330d6e46199114a200dcab25863929904dae910"
+          },
+          {
+            "batch_index": 2,
+            "cases": 2,
+            "math_nonregression": "PASS",
+            "math_review_receipt_sha256": "b05c9f795c3b1989307c193e46665c5fc4fd51391dc6df23fca7a84a21681be9",
+            "frozen_outputs_receipt_sha256": "33fbd6b064558c5b0710cc3151dc607182d8aa6d85d9b7047e8bdd9538bf13a0"
+          },
+          {
+            "batch_index": 3,
+            "cases": 2,
+            "math_nonregression": "PASS",
+            "math_review_receipt_sha256": "5d037f65dcd1bc72a13ceaae2ddb2386b72787a7d54406466adef3ac0e5156e7",
+            "frozen_outputs_receipt_sha256": "eb461ce08b44fa4c6b910306c0d0231551de5e05ed133fe722eb70d7850ea863"
+          },
+          {
+            "batch_index": 4,
+            "cases": 2,
+            "required_relative_math_nonregression": "PASS",
+            "math_review_receipt_sha256": "a2a7835c3629ab16cdde8cd3eab7b9d1390dd5ffa982bc159086f7e04a11ee25",
+            "frozen_outputs_receipt_sha256": "05f3d9cf1745287fe3f998c75f2b26c1b94bc2ecb6dc1e6401f4820b214b7a1e",
+            "all_requested_complete_proofs_passed": false,
+            "known_existing_proof_defect_preserved_cases": 1
+          }
+        ],
+        "additional_completed_case": {
+          "cases": 1,
+          "generated_tokens": 633,
+          "termination": "EOG",
+          "all_generated_token_IDs_identical_to_V10": true,
+          "final_body_bytes_identical_to_V10": true,
+          "required_relative_math_nonregression": "PASS",
+          "math_review_receipt_sha256": "ba0e289f5257d9e1fc0dad86bf3c958c348330b9874883a8cd6033b138204217",
+          "math_review_receipt_bytes": 2334,
+          "frozen_outputs_receipt_sha256": "97ea6a253d13630f0602fe361f3e0e4de4a381450438ec3c2395c16aeb8e4dd8",
+          "frozen_outputs_receipt_bytes": 13881,
+          "actual_final_sha256": "328afeed9bc061b33eaf8d310c14287d97d55db1bcf0757086ba7834ce8107de"
+        },
+        "reviewed_nine_case_aggregate": {
+          "required_relative_math_nonregression_passes": 9,
+          "cases_with_all_generated_token_IDs_and_final_bytes_identical_to_V10": 7,
+          "all_requested_complete_proofs_passed": false,
+          "known_existing_proof_defect_preserved_cases": 1,
+          "changed_correct_cases": [
+            {
+              "generated_tokens": 652,
+              "accepted_V10_generated_tokens": 563,
+              "additional_tokens": 89,
+              "complete_math_grade": "PASS"
+            },
+            {
+              "generated_tokens": 753,
+              "termination": "EOG",
+              "accepted_V10_generated_tokens": 601,
+              "additional_tokens": 152,
+              "complete_math_grade": "PASS"
+            }
+          ],
+          "known_defect_preservation_case": {
+            "generated_tokens": 803,
+            "termination": "EOG",
+            "all_generated_token_IDs_identical_to_V10": true,
+            "final_body_bytes_identical_to_V10": true,
+            "complete_requested_proof_passed": false,
+            "all_displayed_claims_correct": false,
+            "required_relative_math_nonregression": true,
+            "known_defect_fixed": false
+          },
+          "overall_V13_speed_figure_reported": false,
+          "scope": "Known TRAIN cases only; nine relative nonregression passes are not nine absolute complete-proof passes"
+        }
+      },
+      "comparison_scope": "Interim verified native preservation, selected complete-proof pass and nine required relative known TRAIN nonregression passes; one existing proof defect is preserved rather than fixed. Required suite remains incomplete, with no acceptance, V13 speed gain, broad ability or generalization established."
     }
   ],
   "promotion_policy": {
@@ -526,7 +724,7 @@
   "next_research_iteration": {
     "version": "V13",
     "parent_accepted_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
-    "status": "PREPARING_NO_FIT_CANDIDATE_RESULT_OR_PROMOTION_REPORTED",
+    "status": "V13_UNACCEPTED_INTERIM_LAST_VERIFIED_SNAPSHOT",
     "guard_set_role": "TRAIN_ONLY",
     "planned_guard_rows": {
       "selected_earlier_prefixes": 247,
@@ -537,6 +735,13 @@
     },
     "both_complete_accepted_parent_guard_captures_qualified": true,
     "DEV_features_used_for_training": false,
-    "prior_V11_V12_gates_relaxed_retroactively": false
+    "prior_V11_V12_gates_relaxed_retroactively": false,
+    "candidate_sha256": "d27469b3a17f45095a958217f2dded67983f5d7d941eb8f3ece84a0a23555694",
+    "one_fit_executed": true,
+    "all_2391_native_guards_passed": true,
+    "selected_ordinary_complete_proof_passed": true,
+    "other_TRAIN_nonregressions_completed_passes": 9,
+    "other_TRAIN_nonregressions_status": "INTERIM_LAST_VERIFIED_9_RELATIVE_NONREGRESSION_PASSES_6_PENDING",
+    "other_TRAIN_nonregressions_remaining": 6
   }
 }
