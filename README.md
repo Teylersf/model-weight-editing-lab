@@ -6,6 +6,8 @@ An AI model stores much of what it has learned in **weights**: arrays of numbers
 
 The experiments are ongoing. Some edits changed the intended behavior; some passed local checks and failed during complete answers. We have **not** established a generally improved math model or a state-of-the-art result. Those failures are part of the guide.
 
+V10 is now the **provisional accepted research base for the tested scope**. It repaired the complete local Euler proof, preserved seven known answers, and solved one of two fresh DEV cases correctly versus zero for the original; the other case remained unresolved for both. The original checkpoint is preserved. See the [case study](docs/case-study.md) for the limits and promotion evidence.
+
 By [Taylor Kalin](https://github.com/Teylersf), with AI-assisted implementation, mathematical checking, and documentation. Independent checking here means separate computational or agent checks, not human peer review.
 
 ## Start here: what are we changing?
