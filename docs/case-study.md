@@ -65,9 +65,13 @@ V9 used a rank-one internal update with a multi-competitor exact-RMS proposal an
 
 The candidate was derived from the F32 D63 promotion-only C of experimental V5/P. Its actual stored matrix change was **0.05199948917%** of the control matrix's Frobenius norm. Its actual native target-residual change was **0.4989041822%** of the control residual norm. Native replay passed the selected full-vocabulary margin at approximately **+0.75** and preserved all **1,215** earlier guarded decisions. All **1,216** checked upstream activation/skip pairs were bit-identical between C and E.
 
-Ordinary Euler generation terminated with EOG after **1,735 tokens**, versus **2,952** for P: 1,217 fewer tokens, about 41.2%. This is a completed-answer length reduction on a training-family case, not a wall-time measurement or a correctness improvement. Manual review of the complete proof was **FAIL**: a displayed derivative used **1/2 where 1/3 was required**. A successful target-token intervention did not establish a correct derivation.
+Ordinary Euler generation terminated with EOG after **1,735 tokens**, versus **2,952** for P: 1,217 fewer tokens, about 41.2%. This is a completed-answer length reduction on a training-family case; length alone does not establish a wall-time gain or complete-answer correctness. Manual review of the complete proof was **FAIL**: a displayed derivative used **1/2 where 1/3 was required**. A successful target-token intervention did not establish a correct derivation.
 
-V9 was **not promoted**. Seven known regression cases were still pending at this snapshot; fresh DEV and private held-out material remained unopened. Their results must not be inferred from the native prefix pass. The candidate and native audit receipt hashes are recorded in the [public summary](../evidence/experiment-summary.json); this update publishes no raw reasoning, private question, final body or native source export.
+An independent SymPy 1.14.0 check of the observed final body passed the final ODE residual and both initial conditions on $t>0$. The displayed general derivative still failed: claimed minus true derivative was $t(\log t)^3/6$. Thus endpoint correctness is **PASS**, while complete-proof correctness remains **FAIL**.
+
+All seven known ordinary regression completions are now complete and unchanged from the prior frozen P pass: full text, prompt token IDs and EOG completion matched. Their generated-token counts were 679, 110, 122, 191, 1,293, 545 and 479. These are preservation results on known cases.
+
+V9 was **not promoted**; it remains an experimental branch. Fresh DEV and private held-out material remained unopened. The candidate, native audit, regression and independent mathematical-check receipt hashes are recorded in the [public summary](../evidence/experiment-summary.json). Those private artifact bytes are not bundled; this update publishes no raw reasoning, private question, final body or native source export.
 
 ## Cumulative promotion and storage policy
 
