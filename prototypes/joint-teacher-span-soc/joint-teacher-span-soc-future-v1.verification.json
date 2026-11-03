@@ -1,0 +1,129 @@
+{
+  "schema": "joint-teacher-span-SOC-synthetic-diagnostics-v1",
+  "status": "PASS_FORMULATION_DIAGNOSTICS_NOT_OPTIMIZER_OR_MODEL_EVIDENCE",
+  "runtime": {
+    "python": "3.13.7",
+    "numpy": "2.2.1"
+  },
+  "groups": [
+    {
+      "name": "RMS_margin_SOC_algebra",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "finite_fixtures": 64,
+      "max_abs_identity_error": 1.7763568394002505e-15
+    },
+    {
+      "name": "convex_violation_Jensen_checks",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "finite_fixtures": 64,
+      "max_Jensen_excess": 0.0,
+      "finite_sampling_is_not_convexity_proof": true
+    },
+    {
+      "name": "normalized_margin_gradient",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "directions": 24,
+      "max_abs_FD_error": 5.407917169630849e-10
+    },
+    {
+      "name": "SOC_violation_gradient",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "directions": 24,
+      "max_abs_FD_error": 5.471827435599153e-10
+    },
+    {
+      "name": "affine_SOC_linear_part_adjoint",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "fixtures": 24,
+      "max_abs_error": 1.7763568394002505e-15
+    },
+    {
+      "name": "orthonormal_null_basis_guard_and_Frobenius",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "intended_guard_max_abs": 0.0,
+      "orthogonality_error": 2.220446049250313e-16
+    },
+    {
+      "name": "nonorthogonal_basis_metric",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "identity_error": 0.0,
+      "gradient_FD_error": 1.3639365192830155e-09,
+      "wrong_orthonormal_shortcut_rejected": true
+    },
+    {
+      "name": "cumulative_matrix_drift_expansion",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "max_abs_error": 7.105427357601002e-15
+    },
+    {
+      "name": "joint_full_rank_feasible_example",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "positive_states": 2,
+      "feasible_convex_mix": true
+    },
+    {
+      "name": "duplicate_key_compatibility_and_opposed_contradiction",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "rank_deficiency_alone_is_not_infeasibility": true,
+      "independent_repairs_sum_rejected": true,
+      "contradiction_scope": "Exact toy identical-r/q opposite-t positive-margin fixture only"
+    },
+    {
+      "name": "zero_key_uneditable_state",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "fixed_baseline_violation": 0.15811388300841897
+    },
+    {
+      "name": "near_collinear_keys_linear_interpolation_stress",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "fixtures": [
+        {
+          "key_separation": 0.1,
+          "condition": 20.050124999218763,
+          "required_interpolant_Frobenius": 14.177446878757825
+        },
+        {
+          "key_separation": 0.001,
+          "condition": 2000.0005000001252,
+          "required_interpolant_Frobenius": 1414.2139159264414
+        },
+        {
+          "key_separation": 1e-05,
+          "condition": 200000.000005,
+          "required_interpolant_Frobenius": 141421.35624084502
+        }
+      ],
+      "not_a_general_SOC_infeasibility_certificate": true
+    },
+    {
+      "name": "F32_materialization_can_break_intended_guard_nullspace",
+      "status": "PASS_SYNTHETIC_DIAGNOSTIC",
+      "intended_guard_response": 0.0,
+      "actual_stored_guard_response": 1.1920928955078125e-07,
+      "actual_stored_delta": [
+        [
+          1.1920928955078125e-07,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "group_count": 13,
+  "claims": {
+    "convexity_proved_by_this_finite_script": false,
+    "SOCP_solver_implemented": false,
+    "real_model_or_weight_data_used": false,
+    "native_or_Mac_execution": false,
+    "teacher_prefix_reachability_established": false,
+    "exact_solver_or_native_certificate": false,
+    "current_V11_method_changed": false
+  },
+  "limitations": [
+    "Tiny invented arrays only",
+    "Finite arithmetic checks support formula implementation, not a proof or a real-fit result",
+    "Near-collinear interpolation stress is not proof the margin problem is infeasible",
+    "F32 counterexample demonstrates possible leakage, not leakage of any actual candidate",
+    "Teacher features, native full-vocabulary scores, stored-weight checks and complete answers remain untested"
+  ],
+  "source_sha256": "5ed9b2cbe94b72a6a10cce5faad0c15a98d913167c2ae09286f42f2abaffea93"
+}

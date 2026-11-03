@@ -16,6 +16,10 @@ Sources checked on **2026-11-03**. Repository links below pin the inspected revi
 - Meng, Bau, Andonian, and Belinkov, [Locating and Editing Factual Associations in GPT — ROME, arXiv:2202.05262v5](https://arxiv.org/abs/2202.05262v5), NeurIPS 2022. The paper's constrained least-squares derivation uses an estimated uncentered key covariance; it is not the finite-guard nullspace formula implemented here. See also the [authors' project](https://rome.baulab.info/) and [official code](https://github.com/kmeng01/rome). Factual editing results do not establish arbitrary multistep math improvement.
 - Meng, Sen Sharma, Andonian, Belinkov, and Bau, [Mass-Editing Memory in a Transformer — MEMIT, arXiv:2210.07229v2](https://arxiv.org/abs/2210.07229v2), ICLR 2023. The method distributes updates over mediating MLP layers and evaluates many factual associations. See the [authors' project](https://memit.baulab.info/) and [official code](https://github.com/kmeng01/memit). Its layer selections, covariance weighting, and targets belong to the evaluated models and tasks.
 
+## Convex formulation background
+
+- [CVXPY authors: second-order cone programming](https://www.cvxpy.org/examples/basic/socp.html) gives the standard affine norm/affine-bound form. The [optional joint teacher-span formulation](../prototypes/joint-teacher-span-soc/README.md) applies that form to a fixed-feature, fixed-head positive-margin idealization. It introduces no CVXPY dependency, implemented joint optimizer or model-quality result; its [diagnostic receipt](../prototypes/joint-teacher-span-soc/joint-teacher-span-soc-future-v1.verification.json) concerns invented arrays only.
+
 ## Official runtime and format source
 
 All source links in this section pin **llama.cpp commit `8642541b255bfb5dc39cd351a178be09013a55d6`**. Match the actual local build and public function signatures before calling native code. Pinning source alone does not prove the provenance of a binary.

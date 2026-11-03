@@ -111,6 +111,23 @@ Complete correct teacher responses are useful soft targets. Identify hard mathem
 
 Preserve the whole early trajectory outside the intended intervention, including spaces, punctuation, numbers, and useful correction steps. At fixed prefixes, measure original all-vocabulary winner retention and frozen margins after materialization. After the first generated divergence, rerun actual generation; old hidden states no longer describe that trajectory. A handful of isolated guarded prefixes cannot certify every intervening token.
 
+## Optional future method: joint teacher-span constraints
+
+The [joint teacher-span SOC formulation](../prototypes/joint-teacher-span-soc/README.md) describes a future shared-matrix proposal, with a byte-exact NumPy diagnostic and 13 synthetic groups. **No joint optimizer or model fit is implemented.** It leaves active experiments and the accepted checkpoint unchanged.
+
+Freeze corrected teacher-prefix features, the decoded bias-free head, RMS gain/epsilon and a guard-null basis $K$. With $\Delta D=UK^\top$ and $s_i=r_i+U(K^\top a_i)$, only $U$ varies. A fixed positive desired-versus-competitor margin $m$ has the ideal constraint
+
+$$
+\left\|\begin{bmatrix}s_i/\sqrt d\\\sqrt\epsilon\end{bmatrix}\right\|_2
+\le \frac{[\gamma\odot(w_y-w_c)]^\top s_i}{m}.
+$$
+
+This is the standard affine [second-order cone form](https://www.cvxpy.org/examples/basic/socp.html). Its epsilon coordinate stays fixed, and the right side must be nonnegative. The convexity claim depends on those fixed quantities and $m>0$; it does not establish native quantized-kernel equivalence.
+
+All teacher states share one $U$. The matrix objective uses the coupled Gram metric $\tfrac12\operatorname{tr}(U(K^\top K)U^\top)$, plus fixed-reference incremental/cumulative norm caps. Independently fitting residual repairs and adding their edits is not the joint solution. Features after an intended token change must come from the corrected prefix, and passing selected-token constraints alone does not establish that greedy generation reaches the later prefixes.
+
+The full formulation covers zero/dependent keys, basis conditioning, cumulative drift and stored-F32 leakage. It still requires actual stored-weight checks, native full-vocabulary/prefix preservation and complete-answer evaluation. Its finite diagnostics establish no real-edit feasibility, model improvement, general speedup or novelty.
+
 ## Packed Q4 edits and no-edit controls
 
 The pinned [Q4_K structure](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/ggml/src/ggml-common.h) uses 256 decoded weights per 144-byte block: shared FP16 scale fields, packed subgroup scale/min fields, and 128 code bytes. It is not an array of independently stored floats. The [native decoder](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/ggml/src/ggml-quants.c) determines value order and rounding. IQ3 and other formats require their own verified handling.

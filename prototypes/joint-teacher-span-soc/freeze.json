@@ -1,0 +1,63 @@
+{
+  "schema": "public-joint-teacher-span-soc-distribution-v1",
+  "status": "OPTIONAL_FUTURE_FORMULATION_SYNTHETIC_DIAGNOSTICS_ONLY",
+  "private_provenance": {
+    "original_private_freeze_sha256": "f9178e784bfd61a7624e0c4d7b713a9e3c627750013593ab1d6a6a24aaf30557",
+    "original_private_design_sha256": "9f85a743ad4345a04265418b6bc38750ae8c58c5350dbe2e4ab7e80d134ea438",
+    "original_private_source_audit_sha256": "c7f923b05bc7fbf5e714159a25a090f7dda686d63ffc333e8c114cba9bc29b49",
+    "original_private_design_audit_and_freeze_bytes_distributed": false,
+    "note": "Public README and audit summary are curated derivatives with new hashes below. Original private provenance hashes do not identify those public derivatives."
+  },
+  "records": [
+    {
+      "file": ".gitattributes",
+      "bytes": 81,
+      "sha256": "8b75e987f1775b34e082db8e646ecdb802b50b0b3394ed9d5dc46260ece3ac7b",
+      "origin": "public_packaging_file"
+    },
+    {
+      "file": "independent-review.json",
+      "bytes": 2781,
+      "sha256": "d9e018eb9926be1dbff6ee35cb7a9604513c3b95c621e3a89dd91d0180a6c28f",
+      "origin": "curated_public_derivative"
+    },
+    {
+      "file": "joint-teacher-span-soc-future-v1.py",
+      "bytes": 9954,
+      "sha256": "5ed9b2cbe94b72a6a10cce5faad0c15a98d913167c2ae09286f42f2abaffea93",
+      "origin": "byte_exact_private_frozen_copy"
+    },
+    {
+      "file": "joint-teacher-span-soc-future-v1.verification.json",
+      "bytes": 4310,
+      "sha256": "1d9d7bdcf2c21650f75d402a1ed62bdd07be9e8cbb4a4ff2be3c76898a4ea47c",
+      "origin": "byte_exact_private_frozen_copy"
+    },
+    {
+      "file": "README.md",
+      "bytes": 9848,
+      "sha256": "82501ea0f6f6e6fe664ebcd0168d471606bfe275916ef7b6b953ad3d6fc0c106",
+      "origin": "curated_public_derivative"
+    }
+  ],
+  "source_and_receipt_byte_exact": true,
+  "tests_rerun_for_public_copy": false,
+  "evidence": {
+    "synthetic_diagnostic_groups_in_original_receipt": 13,
+    "independent_original_math_source_audit": "PASS_SOURCE_MATH_AUDIT_ONLY",
+    "joint_optimizer_implemented": false,
+    "real_model_or_weight_data_used": false,
+    "native_or_Mac_execution": false,
+    "teacher_path_greedy_reachability_established": false,
+    "rigorous_solver_or_native_certificate": false,
+    "model_or_math_improvement_established": false,
+    "active_experiment_or_current_accepted_checkpoint_changed": false
+  },
+  "license": "Original project code/documentation: repository MIT license. No third-party solver/native code or model data included.",
+  "primary_reference": {
+    "title": "CVXPY authors: Second-order cone program",
+    "url": "https://www.cvxpy.org/examples/basic/socp.html",
+    "checked_on": "2026-11-03",
+    "scope": "Standard affine norm/affine-bound form; not evidence of this proposed model method or a dependency."
+  }
+}

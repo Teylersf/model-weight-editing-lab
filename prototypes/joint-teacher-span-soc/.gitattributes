@@ -1,0 +1,2 @@
+# Preserve frozen diagnostic source and receipt bytes on every checkout.
+* -text

@@ -1,0 +1,67 @@
+{
+  "schema": "public-joint-teacher-span-soc-source-audit-summary-v1",
+  "status": "CURATED_SOURCE_MATH_AUDIT_ONLY_NOT_OPTIMIZER_OR_NATIVE_EVIDENCE",
+  "original_verdict": "PASS_SOURCE_MATH_AUDIT_ONLY",
+  "original_private_audit_sha256": "c7f923b05bc7fbf5e714159a25a090f7dda686d63ffc333e8c114cba9bc29b49",
+  "original_private_design_sha256": "9f85a743ad4345a04265418b6bc38750ae8c58c5350dbe2e4ab7e80d134ea438",
+  "diagnostic_source_sha256": "5ed9b2cbe94b72a6a10cce5faad0c15a98d913167c2ae09286f42f2abaffea93",
+  "diagnostic_receipt_sha256": "1d9d7bdcf2c21650f75d402a1ed62bdd07be9e8cbb4a4ff2be3c76898a4ea47c",
+  "reviewer_scope": "Separate AI source/math review agent in the same project context; not human peer review.",
+  "checks": [
+    {
+      "area": "positive_margin_SOC_equivalence",
+      "verdict": "PASS"
+    },
+    {
+      "area": "feasibility_necessary_condition",
+      "verdict": "PASS"
+    },
+    {
+      "area": "margin_violation_gradients_and_adjoint",
+      "verdict": "PASS"
+    },
+    {
+      "area": "coupled_matrix_metric_and_caps",
+      "verdict": "PASS"
+    },
+    {
+      "area": "coupled_projection_and_fixed_height",
+      "verdict": "PASS"
+    },
+    {
+      "area": "rank_conditioning_and_infeasibility_scope",
+      "verdict": "PASS"
+    },
+    {
+      "area": "intended_guards_vs_stored_F32",
+      "verdict": "PASS_SYNTHETIC_COUNTEREXAMPLE"
+    },
+    {
+      "area": "teacher_prefix_state_and_reachability",
+      "verdict": "PASS_CONDITIONAL_ONLY"
+    },
+    {
+      "area": "roles_and_current_experiment",
+      "verdict": "PASS"
+    }
+  ],
+  "evidence_limits": {
+    "synthetic_diagnostic_groups_in_original_bound_receipt": 13,
+    "source_tests_rerun_by_original_reviewer": false,
+    "tests_rerun_for_public_packaging": false,
+    "optimizer_implemented": false,
+    "real_model_or_weight_data_read": false,
+    "native_or_Mac_execution": false,
+    "teacher_path_reachability_established": false,
+    "rigorous_solver_or_native_certificate": false,
+    "model_or_math_capability_improvement_established": false
+  },
+  "public_derivative": true,
+  "curation": "Summarizes area/verdict records from the pinned private audit; omits private experiment context and compresses notes. Original private design/audit bytes are not distributed and their hashes do not identify this derivative or the public README.",
+  "remaining_requirements": [
+    "Independently validate a real joint optimizer before fitting claims.",
+    "Pin actual graph, corrected teacher-prefix features, fixed head/gamma/epsilon, representation and all solver constants.",
+    "Measure stored F32 rounding, cumulative caps, native full-vocabulary preservation, ordinary complete answers, mathematical validity and regressions."
+  ],
+  "blocking_issues_in_original_audit": []
+}
