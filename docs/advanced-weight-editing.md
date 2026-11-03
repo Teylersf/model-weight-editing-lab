@@ -187,6 +187,14 @@ Keep full weights for B, current A, one prior accepted rollback, active P/C/E an
 
 Preserve persistent original/control anchors and explicitly declared inputs for prepared or queued jobs until all applicable dependencies and leases are released. An idle process list alone never establishes that an artifact is obsolete.
 
+### Recover an interrupted experiment
+
+Before restarting, inspect actual process identities and ownership leases; an unavailable app connection does not establish that a worker stopped. Avoid duplicate model workers or writers. Preserve partial captures, outputs and logs as incomplete evidence, without qualifying the candidate.
+
+Reverify checkpoint, runtime, prompt/token and source hashes, plus the accepted-model pointer. Fully frozen, reviewed outputs may be reused with their original generation roles and producer identities intact. Freeze a versioned resume ledger listing reused receipt identities and unfinished cases. Run unfinished cases in a fresh namespace with the original caps, order and gates. Downstream validators must recognize resumed provenance while enforcing the same artifact and role bindings.
+
+An app update supplies no mathematical failure result or authority to weaken gates. Protect queued inputs and persistent original/control anchors until their dependencies and leases are released. Qualification still requires the remaining ordinary proof and regression checks.
+
 ## What has actually been verified here
 
 The bundled numerical checks run without loading a model:
