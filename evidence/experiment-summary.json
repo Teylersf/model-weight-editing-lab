@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-03",
   "author": "Taylor Kalin",
-  "status": "ongoing; V10 is ACCEPTED_TESTED_SCOPE_PROVISIONAL and the next accepted research base; general mathematical improvement is not established",
+  "status": "ongoing; V11 rejected after a required TRAIN completion regression; V10 remains ACCEPTED_TESTED_SCOPE_PROVISIONAL; next V12 is preparing with no result reported",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -313,6 +313,98 @@
         "scope": "Recorded local TRAIN/DEV tests only; not worldwide mastery, state-of-the-art or private held-out evidence",
         "private_record_bytes_bundled": false
       }
+    },
+    {
+      "version": "V11",
+      "mechanism": "Saved F32 terminal FFN down-projection edit targeting one selected TRAIN proof",
+      "status": "REJECTED_REQUIRED_TRAIN_REGRESSION: selected proof passed, but another required case hit the length cap without a final answer while accepted V10 completed correctly",
+      "experimental_parent_version": "V10",
+      "experimental_parent_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "candidate_sha256": "dd3c2585c959e6ff5d78c2d53e91463f9550cc9aad089a288e71c6ad65ad2eed",
+      "candidate_bytes": 11674147744,
+      "tensor": {
+        "name": "blk.63.ffn_down.weight",
+        "stored_encoding": "F32"
+      },
+      "accepted_as_general_math_improvement": false,
+      "accepted_research_base": false,
+      "promoted": false,
+      "accepted_reference_after_rejection_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "stored_validation": {
+        "payload_status": "PASS",
+        "payload_receipt_sha256": "0738e069afdf963bb3eaf51b3335df3ba61c1251a1b8539fb664a381284e6a79",
+        "prewrite_status": "PASS",
+        "prewrite_receipt_sha256": "8faccfa531eb9a6f6ec6ed648abc069de4720892d5c78224ba3fa92a82b06d85",
+        "cow_receipt_sha256": "7d2e90b5ae9e0d7d96a0026dfe8c3033d236dff76a26b1ee9de7a17dd3f2ec1b"
+      },
+      "native_audit": {
+        "receipt_sha256": "ed5dd6f66b67b1eb0556ffd5fd27364be7769636d47a82b110e0efd172fb0e57",
+        "status": "PASS",
+        "early_guards": 483,
+        "early_guards_passed": 483,
+        "positive_all_vocabulary_margin": 0.75,
+        "all_484_upstream_feature_skip_pairs_bit_identical": true
+      },
+      "observations": {
+        "stored_incremental_matrix_Frobenius_percent_rounded": 0.1828,
+        "stored_cumulative_matrix_Frobenius_percent_rounded": 0.3094,
+        "native_positive_residual_shift_percent_rounded": 2.7616,
+        "norm_percentages_are_changed_entry_percentages": false,
+        "selected_TRAIN_proof": {
+          "complete_proof_grade": "PASS",
+          "generated_tokens": 806,
+          "termination": "EOG",
+          "parent_generated_tokens": 803,
+          "complete_generated_token_ids_equal_teacher": false,
+          "later_token_ids_differing_from_teacher": 4,
+          "difference_review": "Mathematically valid later wording; actual complete proof reviewed, rather than assuming token identity",
+          "actual_complete_proof_review_receipt_sha256": "224a7faf6c25e3538c5cb693aec5e248527227ef405e36cac24668113940b0df",
+          "speed_improvement_claim": false
+        },
+        "required_other_TRAIN_regressions": {
+          "other_cases_in_required_suite": 15,
+          "cleared_before_final_batch": 13,
+          "known_error_on_another_TRAIN_case_preserved_not_fixed": true,
+          "all_15_other_cases_passed": false,
+          "failed_case": {
+            "child_generated_tokens": 3072,
+            "child_termination": "LENGTH_CAP",
+            "child_final_answer_present": false,
+            "child_outcome": "INCOMPLETE; required completion/preservation failure",
+            "accepted_V10_generated_tokens": 1399,
+            "accepted_V10_termination": "EOG",
+            "accepted_V10_correct_complete_answer": true,
+            "posthoc_budget_increase": false
+          },
+          "failed_batch_math_review_sha256": "26b04b4da56046a5c589c3815e7c8fb891f560c6a549d27eb53ed2be7b77aad5",
+          "failed_batch_math_review_bytes": 1972,
+          "scope": "Thirteen clearances before the last batch are preservation outcomes, not a claim that all fifteen cases were mathematically correct or passed."
+        },
+        "remaining_Euler": "UNRUN_AFTER_REQUIRED_FAILURE",
+        "remaining_known_DEV": "UNRUN_AFTER_REQUIRED_FAILURE",
+        "remaining_previously_observed_DEV": "UNRUN_AFTER_REQUIRED_FAILURE",
+        "comparison_scope": "Local TRAIN proof repair followed by a required completion regression; no promotion, speed, general capability or state-of-the-art improvement established."
+      },
+      "rejection": {
+        "receipt_sha256": "bef5146cf20e5b34ecb6e1bc277c9fa62e8d4042c7d1f9678ea59a1329935bd0",
+        "receipt_bytes": 2456,
+        "stop_receipt_sha256": "92617634c3c81df97067cb3a64e3ee57ea95c5b5cc4ce7e09f0845b3e6b795c8",
+        "stop_receipt_bytes": 705,
+        "accepted_reference_unchanged": true,
+        "private_receipt_bytes_bundled": false
+      },
+      "cleanup": {
+        "receipt_sha256": "ed4be1e3e69967bbc00ccf6cd2ca722a13d8bb853d83d055a222479b5fa663f7",
+        "receipt_bytes": 2570,
+        "obsolete_GGUF_files_removed": 2,
+        "raw_tensor_payloads_removed": 1,
+        "logical_removed_file_bytes": 23398430528,
+        "actual_free_bytes_before": 31363436544,
+        "actual_free_bytes_after": 32090370048,
+        "actual_free_bytes_increase": 726933504,
+        "logical_total_claimed_as_reclaimed_bytes": false,
+        "original_current_accepted_and_actual_anchor_dependencies_preserved": true
+      }
     }
   ],
   "promotion_policy": {
@@ -340,5 +432,10 @@
     "Broad mathematical capability improvement",
     "Benchmark superiority",
     "Self-improvement or reproduction of the motivating paper"
-  ]
+  ],
+  "next_research_iteration": {
+    "version": "V12",
+    "parent_accepted_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+    "status": "PREPARING_NO_RESULT_OR_PROMOTION_REPORTED"
+  }
 }
