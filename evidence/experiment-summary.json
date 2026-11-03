@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-03",
   "author": "Taylor Kalin",
-  "status": "ongoing; V11 rejected after a required TRAIN completion regression; V10 remains ACCEPTED_TESTED_SCOPE_PROVISIONAL; next V12 is preparing with no result reported",
+  "status": "ongoing; V12 rejected after a required proof regression; V10 remains ACCEPTED_TESTED_SCOPE_PROVISIONAL; V13 TRAIN-only guard preparation has no fit, candidate result or promotion reported",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -405,6 +405,96 @@
         "logical_total_claimed_as_reclaimed_bytes": false,
         "original_current_accepted_and_actual_anchor_dependencies_preserved": true
       }
+    },
+    {
+      "version": "V12",
+      "mechanism": "Saved F32 terminal FFN down-projection edit targeting one selected TRAIN proof",
+      "status": "REJECTED_REQUIRED_PROOF_REGRESSION: selected proof passed, but a required regression retained correct endpoints with an inconsistent intermediate derivation",
+      "experimental_parent_version": "V10",
+      "experimental_parent_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "candidate_sha256": "2eb317ada45596335ff264861529a3e5d8ee16e0e282a24c210fb60b5bb118a3",
+      "proposal_sha256": "d858ef5964351f392fe1b32eb5f3fe622810497772e87909a3dca5a7b3d7173c",
+      "canonical_payload_receipt_sha256": "cff3021506cdd3692ddb04c748262a32e334784636c83e8e56a65891c28580d5",
+      "cow_receipt_sha256": "ac3bc66bc5566b1a650af2c20d785eb3217b41a79cbd094dfa6d64296bdfd060",
+      "tensor": {
+        "name": "blk.63.ffn_down.weight",
+        "stored_encoding": "F32"
+      },
+      "accepted_as_general_math_improvement": false,
+      "accepted_research_base": false,
+      "promoted": false,
+      "accepted_reference_after_rejection_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "native_audit": {
+        "prefix_clearance_sha256": "527599c9cf4fd6965a561661548ad61d63dc533727c89f4925f18c5249a0ff18",
+        "status": "PASS",
+        "early_guards": 247,
+        "early_guards_passed": 247,
+        "positive_all_vocabulary_margin": 0.75,
+        "all_248_upstream_feature_skip_pairs_bit_identical": true
+      },
+      "observations": {
+        "stored_incremental_matrix_Frobenius_percent_rounded": 0.193,
+        "stored_cumulative_matrix_Frobenius_percent_rounded": 0.315,
+        "physical_native_positive_residual_shift_fraction": 0.037043654594865444,
+        "norm_ratios_are_changed_entry_percentages": false,
+        "selected_TRAIN_proof": {
+          "complete_proof_grade": "PASS",
+          "generated_tokens": 494,
+          "termination": "EOG",
+          "parent_generated_tokens": 474,
+          "complete_teacher_token_ID_identity": "NOT_CLAIMED",
+          "token_saving_claim": false,
+          "actual_complete_proof_review_receipt_sha256": "c5fc60c6b4ddba7dc163d4a04e3dbd0f4a669d77f74132e13d1c2864fce06c81"
+        },
+        "first_required_regression_pair": {
+          "moved_to_front_of_suite": true,
+          "original_prompts_and_budgets_unchanged": true,
+          "all_other_cases_remained_required": true,
+          "first_case": {
+            "parent_generated_tokens": 745,
+            "parent_termination": "EOG",
+            "child_generated_tokens": 760,
+            "child_termination": "EOG",
+            "endpoint_correctness": "PASS",
+            "complete_proof_grade": "FAIL",
+            "defect": "False intermediate scale identity; derivation contradicts its own bound/equality claims",
+            "private_equation_or_answer_published": false
+          },
+          "second_case": {
+            "parent_generated_tokens": 1399,
+            "parent_termination": "EOG",
+            "child_generated_tokens": 1373,
+            "child_termination": "EOG",
+            "complete_math_grade": "PASS"
+          },
+          "failed_pair_math_review_sha256": "2a1786d3b3c735f065a74e6283c81d527d398b3df03cc2a116525a59cdb0167d",
+          "independent_SymPy_proof_defect_check_sha256": "43a6c863cc488c9a2a9984c65890ba8bb30dacc79aa8546cfa343205e38f04bc"
+        },
+        "remaining_other_TRAIN_cases": 13,
+        "remaining_other_TRAIN_status": "UNRUN_AFTER_REQUIRED_FAILURE",
+        "remaining_Euler": "UNRUN_AFTER_REQUIRED_FAILURE",
+        "remaining_known_DEV": "UNRUN_AFTER_REQUIRED_FAILURE",
+        "remaining_previously_observed_DEV": "UNRUN_AFTER_REQUIRED_FAILURE",
+        "comparison_scope": "Local selected-proof repair followed by a required proof inconsistency; no promotion, overall speed or general capability improvement established."
+      },
+      "rejection": {
+        "receipt_sha256": "8f6a054b35d724699149d5c208dbb3ca57696bc0416ef01b9386ce967cdba396",
+        "closeout_receipt_sha256": "2fd375d03f954af0c750c2ccfd56ade093a3e9be10457e97461ac7e904035df6",
+        "accepted_reference_unchanged": true,
+        "private_receipt_bytes_bundled": false
+      },
+      "cleanup": {
+        "receipt_sha256": "77f69363f18bc535eb0807f05602b29894c60cfa7d48a3936a266e43d3d74330",
+        "obsolete_GGUF_files_removed": 1,
+        "raw_F32_payloads_removed": 2,
+        "payload_copies": "Canonical and noncanonical",
+        "logical_removed_file_bytes": 12387179424,
+        "observed_free_bytes_before": 29493256192,
+        "observed_free_bytes_after": 30589423616,
+        "observed_free_bytes_increase": 1096167424,
+        "logical_total_claimed_as_reclaimed_bytes": false,
+        "original_current_accepted_representation_anchor_and_active_inputs_preserved": true
+      }
     }
   ],
   "promotion_policy": {
@@ -434,8 +524,19 @@
     "Self-improvement or reproduction of the motivating paper"
   ],
   "next_research_iteration": {
-    "version": "V12",
+    "version": "V13",
     "parent_accepted_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
-    "status": "PREPARING_NO_RESULT_OR_PROMOTION_REPORTED"
+    "status": "PREPARING_NO_FIT_CANDIDATE_RESULT_OR_PROMOTION_REPORTED",
+    "guard_set_role": "TRAIN_ONLY",
+    "planned_guard_rows": {
+      "selected_earlier_prefixes": 247,
+      "complete_first_accepted_parent_response": 745,
+      "complete_second_accepted_parent_response": 1399,
+      "total": 2391,
+      "engine_row_bound": 4096
+    },
+    "both_complete_accepted_parent_guard_captures_qualified": true,
+    "DEV_features_used_for_training": false,
+    "prior_V11_V12_gates_relaxed_retroactively": false
   }
 }

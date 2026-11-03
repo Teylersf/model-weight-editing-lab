@@ -95,9 +95,28 @@ The selected TRAIN proof passed review after ordinary generation: **806 tokens a
 
 V11 was **rejected** after a different required TRAIN case reached the unchanged **3,072-token length cap without a final answer**. Accepted V10 had completed that same case correctly with **1,399 tokens and EOG**. Thirteen other TRAIN regressions had cleared the preservation criteria before the final batch, including preservation of an already-known proof defect on another case; that defect was not fixed. This does **not** establish that all 15 other TRAIN cases passed. The required new completion regression was sufficient to reject V11.
 
-Remaining Euler, known DEV and previously observed DEV checks were recorded **UNRUN_AFTER_REQUIRED_FAILURE**, rather than counted as passes. V11 was not promoted; accepted V10 remains the research base. A next V12 experiment is being prepared from V10, with no result or promotion reported here. The [public summary](../evidence/experiment-summary.json) records the rejection, proof-review, failed-batch and stop receipt hashes without publishing private questions, answers, reasoning or weights.
+Remaining Euler, known DEV and previously observed DEV checks were recorded **UNRUN_AFTER_REQUIRED_FAILURE**, rather than counted as passes. V11 was not promoted; accepted V10 remains the research base. The subsequent V12 attempt also started from V10 and is recorded below. The [public summary](../evidence/experiment-summary.json) records the rejection, proof-review, failed-batch and stop receipt hashes without publishing private questions, answers, reasoning or weights.
 
 After preserving receipts and checking dependencies, cleanup removed two obsolete GGUF files and one raw tensor payload. Their logical lengths totaled **23,398,430,528 bytes**. Actual free space rose from **31,363,436,544** to **32,090,370,048 bytes**, an increase of **726,933,504 bytes**. The logical total is not the amount reclaimed. The original, current accepted model and checkpoint anchors/dependencies needed by active work were preserved.
+
+## V12: local repair passed, another proof became inconsistent
+
+V12 again started from accepted V10 and edited the saved F32 terminal down-projection. Canonical payload and physical-checkpoint validation passed. Native replay preserved **247** earlier guarded decisions, passed the positive full-vocabulary margin at **+0.75**, and found all **248** checked upstream feature/skip pairs bit-identical. Stored matrix norm ratios were **0.193% incremental** and **0.315% cumulative**, both rounded. The physical native positive residual shift was **3.7043654595%**; its exact ratio is recorded separately in the [public summary](../evidence/experiment-summary.json).
+
+The selected TRAIN response completed with **494 tokens and EOG**, versus accepted V10's 474. Its complete proof passed review. No complete teacher-token identity or token-saving claim is made.
+
+Two required regressions were moved to the front of the suite with the same original prompts and budgets; all remaining cases stayed required:
+
+| Required regression | Accepted V10 | V12 | Mathematical assessment |
+|---|---|---|---|
+| First | 745 tokens, EOG | 760 tokens, EOG | Endpoints correct, but a false intermediate scale identity makes the proof inconsistent. |
+| Second | 1,399 tokens, EOG | 1,373 tokens, EOG | Complete mathematics passed. |
+
+Independent mathematical review and a separate SymPy check confirmed the first proof's defect. V12 was **rejected and not promoted**. The remaining **13 TRAIN cases**, Euler, known DEV and previously observed DEV were recorded **UNRUN_AFTER_REQUIRED_FAILURE**, not counted as passes. A correct selected proof and one improved regression length did not outweigh the required proof failure; V10 remains accepted.
+
+Cleanup removed the obsolete V12 GGUF and two raw F32 payloads, including the canonical and noncanonical copies. Their logical lengths totaled **12,387,179,424 bytes**. Observed free space increased from **29,493,256,192** to **30,589,423,616 bytes**, or **1,096,167,424 bytes**. This is the observed free-space change, not recovery of the whole logical total. The original, accepted V10, representation anchor and active inputs were retained.
+
+V13 is **preparing** from accepted V10 with a typed TRAIN-only guard set: 247 selected earlier prefixes plus complete accepted-parent responses of 745 and 1,399 tokens, totaling **2,391** rows within the engine's 4,096-row bound. Both complete-response captures qualified. No V13 fit, candidate result or promotion is reported. DEV features do not enter training, and the V11/V12 gates remain unchanged retrospectively. Only aggregate facts and receipt hashes are published; private equations, questions, answers and reasoning remain unbundled.
 
 ## Cumulative promotion and storage policy
 
