@@ -168,6 +168,8 @@ Keep B immutable, identify every derivative by hash, and record rejection reason
 
 Keep full weights for B, current A, one prior accepted rollback, active P/C/E and any checkpoint an active validator actually reads. Prune older rejected/superseded weights only after checking dependencies; preserve small lineage records and receipts. Use explicit owned, resolved regular files rather than broad recursive deletion. APFS logical sizes do not measure reclaimed space: check actual free space before/after pruning and preflight new allocations. Rollback uses a retained checkpoint and a fresh runtime context; acceptance and activation remain separately recorded actions.
 
+Preserve persistent original/control anchors and explicitly declared inputs for prepared or queued jobs until all applicable dependencies and leases are released. An idle process list alone never establishes that an artifact is obsolete.
+
 ## What has actually been verified here
 
 The bundled numerical checks run without loading a model:
