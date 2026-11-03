@@ -97,6 +97,23 @@ When valid, $a_+^\top v=1$ and $Av\approx0$. Recompute both quantities rather th
 
 It accepts at most 4,096 guards of width 17,408 and avoids a width-square projector. The maximum F64 guard input alone is 544 MiB; thin SVD outputs and workspace add substantial memory. Unload the full model before a large dense projection. Do not drop early prefixes silently to fit the bound. A streamed guard audit can cover more states, but it does not itself solve the larger nullspace problem.
 
+### TRAIN-only hard guards across several cases
+
+For $D\in\mathbb R^{d_{\rm out}\times d_{\rm in}}$, a rank-one edit has $\Delta D=uv^\top$, with $u\in\mathbb R^{d_{\rm out}}$ and $v\in\mathbb R^{d_{\rm in}}$. Stack actual down-input features from the identified accepted parent's declared TRAIN trajectories into $G\in\mathbb R^{m\times d_{\rm in}}$. These can cover earlier prefixes of the selected case and complete, mathematically reviewed parent responses on other TRAIN cases. Capture the actual operation inputs with pinned checkpoint, tokenizer/template and prefix identities; an older candidate's cache is not interchangeable.
+
+Let $a_*$ be the selected repair input. In exact arithmetic, the Moore–Penrose pseudoinverse gives
+
+$$
+p=(I-G^\dagger G)a_*,\qquad
+v=\frac{p}{a_*^\top p}.
+$$
+
+The projector removes the guard row span; a sufficiently separated remainder can distinguish the selected state. Apply it through a thin SVD rather than constructing an input-width-square matrix. Freeze the numerical rank rule; record singular values and projected separation. Require a finite positive normalization denominator; reject insufficient separation or a numerically unresolved projection. Recompute $v^\top a_*=1$ and $Gv\approx0$ directly within frozen tolerances. Only then does the intended algebra give $\Delta D a_*=u$ and $\Delta D G^\top=u(Gv)^\top\approx0$; approximation errors can be amplified by $u$.
+
+Freeze a typed row map: pooled row index, TRAIN case ID, local next-token state index, input-token/capture hashes and guard/positive role. A pooled index is not a token position in one concatenated conversation. Validate each case's coverage and positive-state alignment against its actual buffers. DEV and held-out features must not enter this fitting matrix or key selection; preservation constraints are training exposure too.
+
+After writing F32, measure the stored update's response on **every guard**, then check native winner/margin preservation on every corresponding prefix. Storage rounding and native accumulation can break intended nullity. Ordinary complete-proof, termination, format and regression gates still follow. Passing supplied guards provides no generalization guarantee, and a selected-token margin alone does not qualify an edited model.
+
 ## Sequence objectives and prefix protection
 
 For gold next token $y_i$, full-vocabulary negative log likelihood is
