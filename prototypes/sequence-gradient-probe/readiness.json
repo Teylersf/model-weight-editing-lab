@@ -1,0 +1,54 @@
+{
+  "schema": "synthetic-gradient-probe-public-readiness-v1",
+  "created_utc": "2026-11-03T17:37:55.895177+00:00",
+  "status": "SYNTAX_CHECKED_UNRUN_NATIVE",
+  "source_commit": "8642541b255bfb5dc39cd351a178be09013a55d6",
+  "probe_sha256": "34b5b5da15eb08970d3eaa1967dbf9c2ffac2a502a452c06292e4a342ccb084a",
+  "reference_sha256": "d16e765164f531078fc22be4dbfe73cafd72f60ec0269884b3dce8fc2024b820",
+  "api_source_pins_sha256": "5e300695455678b5cfe3e0e987094bf137763d32b7aeeaef16c64174f80edc19",
+  "compile_check": {
+    "kind": "MSVC_C++17_syntax_only",
+    "compiler": "MSVC 14.44.35207 Hostx64/x64 cl.exe (absolute installation path redacted)",
+    "command": "VsDevCmd.bat -arch=x64 -no_logo && cl /nologo /std:c++17 /EHsc /W4 /Zs /Iapi probe.cpp",
+    "exit_code": 0,
+    "warnings": 0,
+    "linked": false,
+    "binary_generated": false,
+    "compiler_sha256": "fe251ef50a1545b1b0835ee17b1e785459712b38d79e45b5c1d3d28970a36619"
+  },
+  "native_execution": {
+    "status": "UNRUN_NATIVE",
+    "matching_ggml_dll_or_import_lib_found_in_task_workspace": false,
+    "Mac_executed": false,
+    "Q4_K_native_forward_tested": false,
+    "native_OUT_PROD_tested": false
+  },
+  "pure_reference_receipt_sha256": "b6e8b0819ea6e4052a095881e96241577b3ff08e3480e1515884b549736c7f11",
+  "scope": "Synthetic fakeweights only; CPU-only, no model/GGUF/fileinputs, no optimizer or weight edits",
+  "bounds": {
+    "hidden": 256,
+    "vocab": 17,
+    "batch": 3,
+    "rank": 2,
+    "din": 7,
+    "metadata_bytes": 2097152,
+    "maximum_backend_tensor_bytes": 16777216,
+    "threads": 2,
+    "maximum_observed_runtime_RSS_bytes_when_available": 268435456
+  },
+  "critical_caveat": "Decoded-linear/fixed-cotangent surrogate gradient. Native CPUQ4_K forward quantizes its activation toQ8_K; central differences of that actual CPUCE are separate diagnostics, never required to match the surrogate.",
+  "independent_source_review": {
+    "status": "PASS_SOURCE_AUDIT_ONLY",
+    "sha256": "30e2a3ba6cdac94ae6e67824b10da4d754280e1ee90d15e69ec5d053c694c5fd",
+    "native_execution_not_implied": true
+  },
+  "public_distribution": {
+    "redacted_derivative": true,
+    "original_private_sha256": "98955445eb7bae0c30604bbe070adaa0dc57cff7177f6c27d6bcd4697e1dd636",
+    "redactions": [
+      "Replaced absolute compiler installation path with toolchain description.",
+      "Updated the source-review hash to the distributed public redacted derivative."
+    ],
+    "original_private_bytes_distributed": false
+  }
+}

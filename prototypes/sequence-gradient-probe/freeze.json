@@ -1,0 +1,112 @@
+{
+  "schema": "synthetic-sequence-gradient-probe-public-distribution-v1",
+  "status": "FROZEN_PUBLIC_SOURCE_AUDITED_SYNTAX_PASS_UNRUN_NATIVE",
+  "source_pin": "8642541b255bfb5dc39cd351a178be09013a55d6",
+  "private_provenance": {
+    "original_freeze_sha256": "8eb8940449f9c5ec155c552273623892739a104d61442284d606bcf91d7e99cc",
+    "original_freeze_bytes_distributed": false,
+    "original_readiness_sha256": "98955445eb7bae0c30604bbe070adaa0dc57cff7177f6c27d6bcd4697e1dd636",
+    "original_independent_source_review_sha256": "967bc461c199e5bec10d64656f0738858e412b21205a47696c024478c6bc52b4",
+    "original_README_sha256": "8c4b8bbfa85525035dfe413348cf009b8b827e07bd47679676bac39986604d07",
+    "note": "Original private receipt/freeze bytes are not distributed. Public derivative files have new hashes below; original pins are provenance only."
+  },
+  "records": [
+    {
+      "file": ".gitattributes",
+      "bytes": 79,
+      "sha256": "d1b5d14d156fee4a734ffa5f6a4aec0e59f9c84bffb4b76e3e80d43aa5a8c0a3",
+      "origin": "public_packaging_file"
+    },
+    {
+      "file": "api/ggml-alloc.h",
+      "bytes": 3689,
+      "sha256": "d114067f9099c4a0e2bbc0625c676d4894d9cf0ea27168ee072c7de0e71bb51d",
+      "origin": "byte_exact_private_frozen_copy"
+    },
+    {
+      "file": "api/ggml-backend.h",
+      "bytes": 27570,
+      "sha256": "0e5e8e1f16d11ebbf501e38bc6705d79eee819b5f0b17476533f2100ed9674e2",
+      "origin": "byte_exact_private_frozen_copy"
+    },
+    {
+      "file": "api/ggml-cpu.h",
+      "bytes": 7753,
+      "sha256": "316279e004cdeb8e6ef78599acb602bf79a8abdf897fed9fd1914808c1518c6e",
+      "origin": "byte_exact_private_frozen_copy"
+    },
+    {
+      "file": "api/ggml.h",
+      "bytes": 118304,
+      "sha256": "2b4dd92fa992cb4ef484917a6c62fef5097698744160ccc09214fd0c459c92c7",
+      "origin": "byte_exact_private_frozen_copy"
+    },
+    {
+      "file": "api/UPSTREAM-LICENSE.txt",
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+      "origin": "byte_exact_private_frozen_copy"
+    },
+    {
+      "file": "api-source-pins.json",
+      "bytes": 1227,
+      "sha256": "5e300695455678b5cfe3e0e987094bf137763d32b7aeeaef16c64174f80edc19",
+      "origin": "byte_exact_private_frozen_copy"
+    },
+    {
+      "file": "independent-source-review.json",
+      "bytes": 5751,
+      "sha256": "30e2a3ba6cdac94ae6e67824b10da4d754280e1ee90d15e69ec5d053c694c5fd",
+      "origin": "public_redacted_derivative"
+    },
+    {
+      "file": "probe.cpp",
+      "bytes": 13943,
+      "sha256": "34b5b5da15eb08970d3eaa1967dbf9c2ffac2a502a452c06292e4a342ccb084a",
+      "origin": "byte_exact_private_frozen_copy"
+    },
+    {
+      "file": "pure-reference-receipt.json",
+      "bytes": 9970,
+      "sha256": "b6e8b0819ea6e4052a095881e96241577b3ff08e3480e1515884b549736c7f11",
+      "origin": "byte_exact_private_frozen_copy"
+    },
+    {
+      "file": "readiness.json",
+      "bytes": 2487,
+      "sha256": "a78722449bb217782bdeeb7505ca90391b456b24bde52611e8f75a63a76a93d7",
+      "origin": "public_redacted_derivative"
+    },
+    {
+      "file": "README.md",
+      "bytes": 6600,
+      "sha256": "6e615c78a4f31223fbfef507b367a7cd1f148fce2a1878133bcf6c8792a09aa7",
+      "origin": "public_packaging_file"
+    },
+    {
+      "file": "reference.py",
+      "bytes": 13187,
+      "sha256": "d16e765164f531078fc22be4dbfe73cafd72f60ec0269884b3dce8fc2024b820",
+      "origin": "byte_exact_private_frozen_copy"
+    }
+  ],
+  "evidence_from_original_freeze_not_rerun": {
+    "native_linked": false,
+    "native_executed": false,
+    "MSVC_Cpp17_syntax_pass": true,
+    "syntax_warnings": 0,
+    "independent_source_audit_pass": true,
+    "pure_reference_directional_checks": 30,
+    "pure_reference_max_abs_FD_error": 3.9998251932793494e-10,
+    "wrong_gradient_negative_controls_rejected": 2,
+    "Mac_actions": false,
+    "model_or_GGUF_reads_or_writes": false,
+    "sequence_training_or_model_gain_claim": false
+  },
+  "packaging": {
+    "tests_rerun": false,
+    "native_execution_status": "UNRUN_NATIVE",
+    "binaries_or_model_data_distributed": false,
+    "current_experiment_dependency": false
+  }
+}

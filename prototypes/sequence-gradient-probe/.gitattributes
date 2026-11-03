@@ -1,0 +1,2 @@
+# Preserve audited source, header and receipt bytes on every checkout.
+* -text

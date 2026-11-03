@@ -1,0 +1,312 @@
+{
+  "schema": "synthetic-gradient-reference-verification-v1",
+  "reference_sha256": "d16e765164f531078fc22be4dbfe73cafd72f60ec0269884b3dce8fc2024b820",
+  "runtime": {
+    "python": "3.13.7",
+    "numpy": "2.2.1"
+  },
+  "limitations": [
+    "Tiny synthetic fixtures only; no model data or model-quality evidence",
+    "Decoded-linear or fixed-cotangent surrogate gradients, not differentiation of native Q8_K activation quantization",
+    "No Metal/full-model equivalence or sequence-training benefit established"
+  ],
+  "self_test": {
+    "status": "PASS_PURE_REFERENCE_ONLY",
+    "fixture_dimensions": {
+      "hidden": 256,
+      "vocab": 17,
+      "batch": 3,
+      "rank": 2,
+      "din": 7
+    },
+    "directional_checks": [
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "hidden",
+        "step": 0.001,
+        "analytic": 0.008385795043624009,
+        "central_difference": 0.008385795032594956,
+        "absolute_error": 1.102905267114096e-11,
+        "tolerance": 2e-08
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "hidden",
+        "step": 0.0001,
+        "analytic": 0.008385795043624009,
+        "central_difference": 0.008385795049470346,
+        "absolute_error": 5.84633730316142e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "hidden",
+        "step": 1e-05,
+        "analytic": 0.008385795043624009,
+        "central_difference": 0.00838579503614767,
+        "absolute_error": 7.476338992340459e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "r",
+        "step": 0.001,
+        "analytic": -0.17843817442858434,
+        "central_difference": -0.17843817411389296,
+        "absolute_error": 3.1469138406237107e-10,
+        "tolerance": 2e-08
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "r",
+        "step": 0.0001,
+        "analytic": -0.17843817442858434,
+        "central_difference": -0.17843817442741994,
+        "absolute_error": 1.1644019082268642e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "r",
+        "step": 1e-05,
+        "analytic": -0.17843817442858434,
+        "central_difference": -0.17843817441409723,
+        "absolute_error": 1.4487105959304358e-11,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "u",
+        "step": 0.001,
+        "analytic": -0.015076886537257526,
+        "central_difference": -0.015076886534348688,
+        "absolute_error": 2.9088381009456654e-12,
+        "tolerance": 2e-08
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "u",
+        "step": 0.0001,
+        "analytic": -0.015076886537257526,
+        "central_difference": -0.015076886530351885,
+        "absolute_error": 6.905640989596229e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "u",
+        "step": 1e-05,
+        "analytic": -0.015076886537257526,
+        "central_difference": -0.015076886539233668,
+        "absolute_error": 1.9761414726815474e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "v",
+        "step": 0.001,
+        "analytic": 0.015369222352032037,
+        "central_difference": 0.015369222567951368,
+        "absolute_error": 2.1591933102582672e-10,
+        "tolerance": 2e-08
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "v",
+        "step": 0.0001,
+        "analytic": 0.015369222352032037,
+        "central_difference": 0.01536922234812721,
+        "absolute_error": 3.904827849954273e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "v",
+        "step": 1e-05,
+        "analytic": 0.015369222352032037,
+        "central_difference": 0.015369222339245424,
+        "absolute_error": 1.2786613781679002e-11,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "combined_uv",
+        "step": 0.001,
+        "analytic": 0.0002923358147745112,
+        "central_difference": 0.0002923360633566574,
+        "absolute_error": 2.485821461867266e-10,
+        "tolerance": 2e-08
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "combined_uv",
+        "step": 0.0001,
+        "analytic": 0.0002923358147745112,
+        "central_difference": 0.00029233581333443226,
+        "absolute_error": 1.4400789588586704e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "decoded_linear_CE",
+        "parameter": "combined_uv",
+        "step": 1e-05,
+        "analytic": 0.0002923358147745112,
+        "central_difference": 0.000292335755602835,
+        "absolute_error": 5.917167623936681e-11,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "hidden",
+        "step": 0.001,
+        "analytic": 0.0077316687190113614,
+        "central_difference": 0.007731668719035412,
+        "absolute_error": 2.4050206270942454e-14,
+        "tolerance": 2e-08
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "hidden",
+        "step": 0.0001,
+        "analytic": 0.0077316687190113614,
+        "central_difference": 0.0077316687230322145,
+        "absolute_error": 4.020853094921506e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "hidden",
+        "step": 1e-05,
+        "analytic": 0.0077316687190113614,
+        "central_difference": 0.007731668727473106,
+        "absolute_error": 8.461744326060394e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "r",
+        "step": 0.001,
+        "analytic": -0.17798044886737888,
+        "central_difference": -0.17798044846739636,
+        "absolute_error": 3.9998251932793494e-10,
+        "tolerance": 2e-08
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "r",
+        "step": 0.0001,
+        "analytic": -0.17798044886737888,
+        "central_difference": -0.1779804488633019,
+        "absolute_error": 4.0769887466041155e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "r",
+        "step": 1e-05,
+        "analytic": -0.17798044886737888,
+        "central_difference": -0.1779804488455383,
+        "absolute_error": 2.1840584896182236e-11,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "u",
+        "step": 0.001,
+        "analytic": -0.015433807092510781,
+        "central_difference": -0.015433807091014273,
+        "absolute_error": 1.49650777880872e-12,
+        "tolerance": 2e-08
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "u",
+        "step": 0.0001,
+        "analytic": -0.015433807092510781,
+        "central_difference": -0.015433807094566987,
+        "absolute_error": 2.056205899991781e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "u",
+        "step": 1e-05,
+        "analytic": -0.015433807092510781,
+        "central_difference": -0.015433807121212338,
+        "absolute_error": 2.8701556756272062e-11,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "v",
+        "step": 0.001,
+        "analytic": 0.012713673257570871,
+        "central_difference": 0.012713673257280789,
+        "absolute_error": 2.9008219437631766e-13,
+        "tolerance": 2e-08
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "v",
+        "step": 0.0001,
+        "analytic": 0.012713673257570871,
+        "central_difference": 0.012713673258613056,
+        "absolute_error": 1.0421854351738702e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "v",
+        "step": 1e-05,
+        "analytic": 0.012713673257570871,
+        "central_difference": 0.012713673225306364,
+        "absolute_error": 3.22645070383043e-11,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "combined_uv",
+        "step": 0.001,
+        "analytic": -0.00272013383493991,
+        "central_difference": -0.0027201339702909166,
+        "absolute_error": 1.3535100644446185e-10,
+        "tolerance": 2e-08
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "combined_uv",
+        "step": 0.0001,
+        "analytic": -0.00272013383493991,
+        "central_difference": -0.0027201338359539307,
+        "absolute_error": 1.0140204648179107e-12,
+        "tolerance": 5e-09
+      },
+      {
+        "objective": "fixed_cotangent_linear_pullback",
+        "parameter": "combined_uv",
+        "step": 1e-05,
+        "analytic": -0.00272013383493991,
+        "central_difference": -0.002720133829292592,
+        "absolute_error": 5.6473181166138975e-12,
+        "tolerance": 5e-09
+      }
+    ],
+    "negative_controls": [
+      {
+        "name": "omit_RMS_radial_term",
+        "status": "WRONG_GRADIENT_REJECTED",
+        "directional_discrepancy": 0.159485161884029,
+        "minimum_discrepancy": 1e-05
+      },
+      {
+        "name": "omit_batch_mean_reduction",
+        "status": "WRONG_GRADIENT_REJECTED",
+        "directional_discrepancy": 0.5975202445549694,
+        "minimum_discrepancy": 1e-05
+      }
+    ],
+    "native_quantizer_run": false,
+    "Q4_K_encoding_verified": false
+  },
+  "native_evidence_status": "UNRUN_NATIVE"
+}

@@ -1,0 +1,102 @@
+{
+  "schema": "synthetic-gradient-probe-public-source-review-v1",
+  "created_utc": "2026-11-03T17:38:57.506976+00:00",
+  "reviewer": "gradient_reference separate review agent; independent derivation, same project context",
+  "verdict": "PASS_SOURCE_AUDIT_ONLY",
+  "native_execution_status": "UNRUN_NATIVE",
+  "source": {
+    "file": "probe.cpp",
+    "bytes": 13943,
+    "sha256": "34b5b5da15eb08970d3eaa1967dbf9c2ffac2a502a452c06292e4a342ccb084a"
+  },
+  "public_api_pin_manifest": {
+    "file": "api-source-pins.json",
+    "sha256": "5e300695455678b5cfe3e0e987094bf137763d32b7aeeaef16c64174f80edc19",
+    "all_four_local_header_hashes_verified": true,
+    "commit": "8642541b255bfb5dc39cd351a178be09013a55d6"
+  },
+  "kernel_evidence": [
+    {
+      "sha256": "acaa7a406bea976cc82558316ef1cb1996f28d34b8203fc46da09b53783d943d",
+      "official_pinned_bytes_verified_during_review": true,
+      "source": "https://raw.githubusercontent.com/ggml-org/llama.cpp/8642541b255bfb5dc39cd351a178be09013a55d6/ggml/src/ggml-cpu/ops.cpp"
+    },
+    {
+      "sha256": "97a3d16efc5bbb0417b78b9a689b32162b4e16392b044888645ecdcfec23cca1",
+      "official_pinned_bytes_verified_during_review": true,
+      "source": "https://raw.githubusercontent.com/ggml-org/llama.cpp/8642541b255bfb5dc39cd351a178be09013a55d6/ggml/src/ggml-cpu/ggml-cpu.c"
+    },
+    {
+      "sha256": "ccf382d3fbf126b5ddb5850a0a970656fb24e00587da4003419439277c91cd01",
+      "official_pinned_bytes_verified_during_review": true,
+      "source": "https://raw.githubusercontent.com/ggml-org/llama.cpp/8642541b255bfb5dc39cd351a178be09013a55d6/ggml/src/ggml-cpu/ggml-cpu.cpp"
+    },
+    {
+      "sha256": "45e90696c4a766d5747f3443f817cd3be11f0110cf93cd16926698c0f49ed083",
+      "official_pinned_bytes_verified_during_review": true,
+      "source": "https://raw.githubusercontent.com/ggml-org/llama.cpp/8642541b255bfb5dc39cd351a178be09013a55d6/ggml/src/ggml.c"
+    }
+  ],
+  "checks": [
+    {
+      "area": "forward_shape_and_serialization",
+      "verdict": "PASS",
+      "evidence": "GGML W[256,17] times h[256,3] yields z[17,3]; contiguous first dimension matches JSON [batch=3,vocab=17]."
+    },
+    {
+      "area": "quantized_OUT_PROD_shape_stride",
+      "verdict": "PASS_SOURCE_SUPPORTED",
+      "evidence": "W[H,VOC] and transpose(delta[VOC,B]) have common rowsVOC and yield [H,B]. Pinned q_f32 kernel addresses src1 with both nb10 and nb11: transpose strides68 and4bytes address delta[b,k] correctly. No unsupported-contiguous-src1 requirement occurs."
+    },
+    {
+      "area": "backend_support_and_workspace",
+      "verdict": "PASS_SOURCE_SUPPORTED",
+      "evidence": "CPU support predicate accepts Q4_K left/F32 right and equal dimensions2/3; kernel dispatch includes Q4_K. Planner allocates H*n_threads float scratch plus per-thread cache-line padding. Runtime support checks remain enabled."
+    },
+    {
+      "area": "native_CE_cotangent",
+      "verdict": "PASS",
+      "evidence": "Stable full17class softmax and (p-onehot)/batch; cotangent roundedF32 before OUT_PROD. Frozen head has no trainable parameter or optimizer."
+    },
+    {
+      "area": "analytic_RMS_and_factor_pullback",
+      "verdict": "PASS",
+      "evidence": "r=base+(A V^T)U^T; h=gamma*r/sqrt(mean(r^2)+epsilon); radial term uses hidden dimension256. gU=gr^T(A V^T), gV=(gr U)^T A. FixtureU equals baselineU used by chain."
+    },
+    {
+      "area": "quantized_forward_distinction",
+      "verdict": "PASS",
+      "evidence": "CPU vec_dot_type Q8_K asserted; hostF64RMS followed by F32 hidden and cotangent casts disclosed. Actual CPUCE finite differences across1e-2..1e-6 are diagnostics only and are not required to agree with surrogategradient."
+    },
+    {
+      "area": "resource_and_scope",
+      "verdict": "PASS_STATIC_BOUNDS",
+      "evidence": "No input paths/flags or arbitrary shapes; compile-time tiny dimensions,2MiBmetadata, backendallocation<=16MiB beforeallocation,2CPUthreads. No model/GGUF reads or optimizer. PeakRSS check detects>256MiB after computation on supportedOS; it is not an OS-enforced prevention limit."
+    },
+    {
+      "area": "JSON_reference_contract",
+      "verdict": "PASS",
+      "evidence": "Exported fixtures and four native gradient arrays match reference.py schema and mathematical order; baselinecpu_logits saved before perturbation loop. Synthetic native fixture still needs a real run."
+    }
+  ],
+  "blocking_issues": [],
+  "nonblocking_notes": [
+    "An exception during CpuGraph constructor can leave bounded allocations until process exit; this one-shot process exits on failure and has no persistent service.",
+    "Runtime version string and expected source commit do not attest loaded binary source identity; caller must bind actual libraries/build separately."
+  ],
+  "compile_evidence": "Parent reports MSVC14.44 C++17 /W4 /Zs syntax-only pass; not rerun by this source reviewer; no Mac link or execution evidence.",
+  "limitations": [
+    "Source evidence only, not native execution or compiler/link/ABI validation on Mac.",
+    "Actual quantized kernel output, measured RSS and fixture JSON remain unverified until a real native run.",
+    "Decoded-weight pullback is a surrogate; not the exact derivative of Q8_K activation quantization or the F32 casts.",
+    "No Metal equivalence, model weight update, sequence training benefit or mathematical-answer improvement established."
+  ],
+  "public_distribution": {
+    "redacted_derivative": true,
+    "original_private_sha256": "967bc461c199e5bec10d64656f0738858e412b21205a47696c024478c6bc52b4",
+    "redactions": [
+      "Removed four absolute local source-cache paths; pinned public source URLs and all source-audit evidence are retained."
+    ],
+    "original_private_bytes_distributed": false
+  }
+}

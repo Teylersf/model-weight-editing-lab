@@ -262,6 +262,7 @@ The update measured 0.70% of the selected matrix's Frobenius norm and shifted th
 - [Case study](docs/case-study.md): the actual Qwen experiments and why promising local tests were insufficient.
 - [Primary references](docs/references.md): the motivating research, related editing methods, and runtime formats.
 - [Numerical tools](numerical/README.md): the bounded NumPy helpers used in this research and their synthetic verification.
+- [Experimental native gradient probe](prototypes/sequence-gradient-probe/README.md): fake-data packed-head and factor-gradient checks; native execution remains **UNRUN_NATIVE**, with no training or model-improvement result.
 - [Contributing](CONTRIBUTING.md): how to report an edit so others can assess it.
 
 Run the numerical checks separately:
