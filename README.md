@@ -110,19 +110,19 @@ That is why a head edit is a useful starting point: for the **same fixed token p
 
 ### Protect supplied contexts
 
-Let $h_*$ be the target representation. Put protected representations into the rows of a matrix $A$. Remove from $h_*$ the component in the row span of $A$:
+Let $h_{\star}$ be the target representation. Put protected representations into the rows of a matrix $A$. Remove from $h_{\star}$ the component in the row span of $A$:
 
 $$
-q = h_* - \operatorname{proj}_{\operatorname{row}(A)}h_*.
+q = h_{\star} - \operatorname{proj}_{\operatorname{row}(A)}h_{\star}.
 $$
 
 If $q$ is sufficiently nonzero, define:
 
 $$
-v = \frac{q}{h_*^Tq}.
+v = \frac{q}{h_{\star}^Tq}.
 $$
 
-In exact arithmetic, $Av=0$ and $h_*^Tv=1$. An update $\Delta W=uv^T$ therefore has the requested effect $u$ at the target and zero effect at the supplied guards.
+In exact arithmetic, $Av=0$ and $h_{\star}^Tv=1$. An update $\Delta W=uv^T$ therefore has the requested effect $u$ at the target and zero effect at the supplied guards.
 
 For two output tokens, choose $u_+=m/2$ and $u_-=-m/2$, with other entries zero. Their **pairwise** margin increases by $m$ at the target. This alone does not establish an all-vocabulary winner: another token might still score higher.
 
