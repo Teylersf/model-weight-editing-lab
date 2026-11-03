@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-03",
   "author": "Taylor Kalin",
-  "status": "ongoing; no generally improved math checkpoint accepted",
+  "status": "ongoing; V9 native preservation passed but complete proof failed; no improved checkpoint accepted",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -114,8 +114,51 @@
         "full_answer_generated": false,
         "fresh_evaluations_opened": false
       }
+    },
+    {
+      "version": "V9",
+      "mechanism": "Rank-one terminal FFN down-projection edit; multi-competitor exact-RMS proposal with full-vocabulary native cutting planes",
+      "status": "NOT PROMOTED: native target/prefix checks passed; manual complete-proof grade failed; seven known regressions pending",
+      "experimental_parent_sha256": "49dc50bf253c0292c0b5607660303932cd6e7efd2c8ae4aaf16d7da763f90b74",
+      "control_sha256": "d2f55312eb3252f177abaac20211f95056299641cc982a026ece1bc0e91ae6e1",
+      "candidate_sha256": "f48d121bcd485c6a2128475c3508c5b0a899274524f48783c018c09dbfbdf3f2",
+      "algorithm_freeze_sha256": "49872d8a092d1be2780d85fca2384f684ddef989f51e5c3da824050375569ba8",
+      "native_audit_receipt_sha256": "c552730b0cd8eaa4eaa1248f2f77e3cdc6e94ef038bebe9a507a8a5a0baba092",
+      "accepted_as_general_math_improvement": false,
+      "promoted": false,
+      "observations": {
+        "target_generated_token_index_zero_based": 1215,
+        "target_desired_token_id": 426,
+        "target_archived_token_id": 560,
+        "intended_rank": 1,
+        "actual_stored_matrix_relative_Frobenius": 0.0005199948917118506,
+        "actual_native_target_relative_residual_shift": 0.004989041821940098,
+        "target_all_vocab_margin_rounded": 0.75,
+        "native_early_guards": 1215,
+        "native_early_guards_passed": 1215,
+        "all_1216_upstream_a_skip_bit_identical": true,
+        "full_answer_generated": true,
+        "Euler_tokens": {"experimental_parent": 2952, "V9": 1735},
+        "Euler_termination": "EOG",
+        "complete_proof_grade": "FAIL",
+        "complete_proof_defect": "A displayed derivative contains 1/2 where 1/3 is required",
+        "endpoint_correctness": "Not separately established by this update",
+        "known_regressions_pending": 7,
+        "fresh_DEV_opened": false,
+        "private_holdout_opened": false,
+        "comparison_scope": "Completed-answer token reduction on a training-family case; not wall-time, correctness or general ability improvement"
+      }
     }
   ],
+  "promotion_policy": {
+    "current_accepted_reference_sha256": "bfc6892863eceb16f69697e59b038acdc1c709b790c1542e4612dbb0924d3568",
+    "experimental_V5_parent_is_accepted": false,
+    "requires": "Stored/native and complete-answer gates, comparison against immediate experimental parent and current accepted reference, and preservation of earlier accepted fixes",
+    "after_qualification": "Use the accepted checkpoint as the next default research parent; refresh caches and controls",
+    "rejection": "Accepted reference unchanged",
+    "retention": "Original, current accepted, one prior accepted rollback, active experimental files and checkpoints actual active validators read; preserve small lineage/receipts and prune obsolete weights after dependency checks",
+    "disk_measurement": "APFS logical size is not reclaimed bytes; measure actual free space before/after cleanup and preflight new allocations"
+  },
   "distinctions": {
     "teaching_example": "Synthetic three-token head only; does not reproduce a 27B architecture or benchmark",
     "numerical_helpers": "Original pure NumPy infrastructure with synthetic receipts; no native file writer",

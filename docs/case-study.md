@@ -8,7 +8,7 @@ The aim was faster, decisive school and university mathematics with correct comp
 
 ## Reading the evidence
 
-**B** denotes the original baseline. **P** is the frozen V5 candidate used as the parent for V6/V7. **C** denotes a no-edit representation or packing control where needed; **E** denotes an edited candidate. A changed file, a successful numerical fit, a passed saved-prefix check, and an improved complete answer are four different observations.
+**B** denotes the original baseline and remains the accepted reference in this snapshot. **P** is the experimental V5 candidate used as the parent through V9; it is not an accepted improvement. **C** denotes a no-edit representation or packing control where needed; **E** denotes an edited candidate. A changed file, a successful numerical fit, a passed saved-prefix check, and an improved complete answer are four different observations.
 
 The published source of run observations is the [curated experiment summary](../evidence/experiment-summary.json). It records artifact hashes and the limits of what is distributed. Historical helper receipts such as `completion-inequality-fit-verification.json`, `paired-readout-fit-verification.json`, and `q4-discrete-optimizer-v7-verification.json` were inspected locally but are not bundled here. They identify synthetic numerical checks, which do not independently reproduce the Mac model runs. Native checkpoints, raw generations, and capture caches are also not distributed; a hash cannot replace those missing bytes. The mathematical checks below verify the stated solution and particular displayed errors, rather than claiming an audit of every generated token. Only aggregate measurements and selected mathematical equations are presented here.
 
@@ -58,6 +58,22 @@ Native replay preserved all 2,730 earlier token decisions and their required mar
 V8 remains rejected under that gate. A complete free-running Euler answer and fresh evaluations were not run for this candidate; no mathematical improvement or loop-rate result is claimed. The outcome informs a new experiment, with no retroactive change to the failed gate. The candidate SHA-256 and receipt identifiers are in the [public summary](../evidence/experiment-summary.json).
 
 The [bundled streaming-helper receipt](../numerical/terminal-down-stream-v8-verification.json) remains explicitly synthetic: it verifies the numerical helper, including rounding-induced guard leakage. These later curated native observations are separate evidence, with raw checkpoints and capture caches not distributed here.
+
+## V9: native margin passed, complete proof failed
+
+V9 used a rank-one internal update with a multi-competitor exact-RMS proposal and full-vocabulary native cutting-plane checks. It targeted an earlier asserted error at zero-based generated-token index 1,215. The preferred token ID was 426, replacing archived token 560 at that fixed prefix. Token IDs identify this tokenizer and context, not a universal mathematical operation.
+
+The candidate was derived from the F32 D63 promotion-only C of experimental V5/P. Its actual stored matrix change was **0.05199948917%** of the control matrix's Frobenius norm. Its actual native target-residual change was **0.4989041822%** of the control residual norm. Native replay passed the selected full-vocabulary margin at approximately **+0.75** and preserved all **1,215** earlier guarded decisions. All **1,216** checked upstream activation/skip pairs were bit-identical between C and E.
+
+Ordinary Euler generation terminated with EOG after **1,735 tokens**, versus **2,952** for P: 1,217 fewer tokens, about 41.2%. This is a completed-answer length reduction on a training-family case, not a wall-time measurement or a correctness improvement. Manual review of the complete proof was **FAIL**: a displayed derivative used **1/2 where 1/3 was required**. A successful target-token intervention did not establish a correct derivation.
+
+V9 was **not promoted**. Seven known regression cases were still pending at this snapshot; fresh DEV and private held-out material remained unopened. Their results must not be inferred from the native prefix pass. The candidate and native audit receipt hashes are recorded in the [public summary](../evidence/experiment-summary.json); this update publishes no raw reasoning, private question, final body or native source export.
+
+## Cumulative promotion and storage policy
+
+The intended improvement loop uses a qualifying accepted checkpoint as the next default research parent. Qualification requires the existing stored/native and complete-answer gates, comparison with both the immediate experimental parent and current accepted reference, and preservation of earlier accepted fixes. A rejected candidate leaves the accepted reference unchanged. Iterative DEV gains do not establish worldwide mastery or an unbiased held-out result.
+
+Retention keeps the original, current accepted checkpoint, one prior accepted rollback, active experimental files and checkpoints that active validators actually read. Older rejected/superseded weights can be pruned after dependency checks while small lineage records and receipts remain. Cleanup uses explicit owned regular-file inventories. On APFS, logical checkpoint size can greatly exceed reclaimed space; actual free space is measured before/after cleanup and before new allocations.
 
 ## Keep the evaluation boundary visible
 

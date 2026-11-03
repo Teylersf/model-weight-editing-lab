@@ -19,6 +19,7 @@ Use distinct names for distinct controls:
 | Artifact | Meaning |
 |---|---|
 | B | Immutable original checkpoint |
+| A | Current accepted reference; initially B until a candidate qualifies |
 | P | Exact parent of this experiment; it can equal B or be a separately identified earlier edit |
 | C | No-edit representation control: for example, the same requantization or promotion as E |
 | E | Intended edit applied through that representation path |
@@ -146,7 +147,9 @@ Grade complete P/C/E answers with equal prompts and budgets. Record endpoint cor
 
 Include counterbalanced token contexts, unfinished problems, correction opportunities, unrelated math families, multilingual formulations when relevant, and ordinary code/prose/format regressions. Freeze new evaluation before seeing candidate outputs. Keep held-out material out of public examples and fitting. Broader claims require broader representative evaluation and uncertainty estimates, not one rescued exercise.
 
-Keep B immutable, identify every derivative by hash, retain a known-good selection, and record rejection reasons. A failed candidate should improve the next diagnosis; it should not be relabeled successful because one local metric improved. Rollback means selecting the preserved checkpoint and starting a clean context. Candidate acceptance and activation are separate recorded actions.
+Keep B immutable, identify every derivative by hash, and record rejection reasons. Promote a qualifying E only after the stored/native and complete-answer gates, comparison with both immediate experimental P and accepted A, and preservation of accepted fixes. Then use the new A as the next default research parent and refresh its activations/controls. Rejection leaves A unchanged. This is an iterative research policy, not evidence that recursive improvement has already succeeded.
+
+Keep full weights for B, current A, one prior accepted rollback, active P/C/E and any checkpoint an active validator actually reads. Prune older rejected/superseded weights only after checking dependencies; preserve small lineage records and receipts. Use explicit owned, resolved regular files rather than broad recursive deletion. APFS logical sizes do not measure reclaimed space: check actual free space before/after pruning and preflight new allocations. Rollback uses a retained checkpoint and a fresh runtime context; acceptance and activation remain separately recorded actions.
 
 ## What has actually been verified here
 
