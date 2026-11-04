@@ -1300,7 +1300,7 @@
       "ordinary_case16_correct_endpoints": true,
       "ordinary_case16_complete_proof": false,
       "newly_observed_relative_math_regressions": 0,
-      "downstream_checks_pending": true,
+      "downstream_checks_pending": false,
       "core_generation_receipt_sha256": "777a7b18ec2f24f29c39eeb8d32bc0545ad36496be962b834d7824cdd17fb0d3",
       "core_independent_math_clearance_sha256": "a109128a8a9d1d030a64160a97569c31fe3544a9bf41a61bbe97f095fcc0c5fc",
       "core_candidate_complete_correct_euler": true,
@@ -1309,7 +1309,26 @@
       "core_known_dev7_historical_and_matched_successes_preserved": true,
       "core_candidate_total_tokens": 5550,
       "core_v10_total_tokens": 5189,
-      "observed_dev2_pending": true
+      "observed_dev2_pending": false,
+      "observed_dev2_generation_sha256": "6d6e39c46eb883b59cc4264421de0b1ef7cc623e2e43beb694a6f07cb947069a",
+      "observed_dev2_math_review_sha256": "24f26550ed8e81f9ea5e3c4cd0635d43f73903c1aa0acfe6b2f41b9b66a5599b",
+      "same_backend_observed_dev2_nonregression": true,
+      "historical_observed_A_success_preserved": false,
+      "observed_A_both_length_capped_tokens": 3072,
+      "observed_B_both_complete_correct": true,
+      "observed_B_e10_tokens": 821,
+      "observed_B_candidate_tokens": 798
+    },
+    "case16_native_near_proof_followup": {
+      "one_token_controlled_closeout_sha256": "c185c39ddb4be0289f56b7b509eeded1f864d5a9dd8181a648f1fe383824b3e7",
+      "conditional_teacher_replay_sha256": "d1f50722b5a7d314c673d0dab447f15c9125426557afe3b40fe46fa64b7119fc",
+      "natural_prefix_token_matches": 1497,
+      "one_token_controlled_eog_tokens": 1516,
+      "added_correct_lower_error_comparison": true,
+      "interval_coverage_and_constructive_sharpness_missing": true,
+      "first_target_native_margin": -3.094219207763672,
+      "second_teacher_token_native_margin": -14.660869598388672,
+      "new_weight_edit_written_at_this_snapshot": false
     }
   }
 }
