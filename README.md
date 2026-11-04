@@ -8,6 +8,8 @@ The experiments are ongoing. Some edits changed the intended behavior; some pass
 
 The saved Windows rank-two checkpoint is the **provisional research base for the cases tested on Windows**. It reproduced complete interval and Euler proofs, passed the matched regression gates, and solved both observed development cases at both budgets. V10 (E10) is the verified rollback, and the original checkpoint remains available. See the [case study](docs/case-study.md) for the evidence and scope.
 
+The first public math evaluation scored the edited checkpoint at **60%** on the full MMLU high-school math split and **64%** on the full college math split. [Benchmark results and reproduction](docs/public-math-benchmarks.md)
+
 By [Taylor Kalin](https://github.com/Teylersf), with AI-assisted implementation, mathematical checking, and documentation. Independent checking here means separate computational or agent checks, not human peer review.
 
 To watch a local run, open the [live trace viewer](prototypes/trace-viewer/README.md). The page follows token generation and displays the measured difference between saved tensors.

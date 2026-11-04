@@ -1,0 +1,27 @@
+{
+  "schema": "public-weight-editing-math-benchmark-summary-v1",
+  "mmlu": {
+    "method": "original-five-shot-raw-mmlu-prompt-full-vocabulary-next-answer-token-argmax",
+    "dataset_archive_url": "https://people.eecs.berkeley.edu/~hendrycks/data.tar",
+    "dataset_archive_sha256": "bec563ba4bac1d6aaf04141cd7d1605d7a5ca833e38f994051e818489592989b",
+    "author_evaluator_revision": "4450500f923c49f1fb1dd3d99108a0bd9717b660",
+    "dev_examples_per_subject": 5,
+    "generation_tokens": 0,
+    "backend": "llama.cpp 8642541b2 CUDA0, Windows, RTX 3090",
+    "native_source_sha256": "c8bed06640ae9c44ca2eb31215590955c1a29fbd46da6e00ba87d5d7ac85f1ea",
+    "candidate": {
+      "checkpoint_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+      "run_receipt_sha256": "493e2545d001aa716dab820707c843661e4deee97b77d5a6485795254d898c3a",
+      "native_logits_sha256": "ffff0a08caf18c19fa785f81d946b6a55b7c75713bb1c7b3692ee04733742688",
+      "native_log_sha256": "ea220f57bfa0a5a06e3f61ec75e34c8a6adc51e880d21a01a5309396b9538fc0",
+      "exact_checkpoint_pre_post_verified": true,
+      "public_standalone_grader_reproduced_all_counts": true,
+      "counts": {
+        "high_school_mathematics": {"correct": 162, "total": 270},
+        "college_mathematics": {"correct": 64, "total": 100},
+        "combined_micro": {"correct": 226, "total": 370, "invalid": 0, "censored": 0, "ties": 0}
+      }
+    },
+    "training_data_overlap_unknown": true
+  }
+}
