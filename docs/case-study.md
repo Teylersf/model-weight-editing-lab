@@ -176,6 +176,12 @@ In ordinary generation, case07 reproduced the 654-token control exactly. Case08 
 
 A separate case16 experiment assembled a mathematically checked compact teacher on the exact CUDA prefix through a complete sentence about nonattainment. The teacher message has **1,362** completion tokens including its end token. This is whole-message token alignment for a proposed intervention. The ordinary case16 control remained capped at **3,072**.
 
+On unchanged V10, emitting just the corrected derivative token at the same case08 prefix produced a **491-token** answer with one closing marker. The persisted candidate and this continuation agreed through that token and diverged at the next step. The shorter answer contained a false intermediate equality, so it did not qualify as a proof target.
+
+In case16, closing the reasoning at the selected semantic boundary produced a free continuation and natural EOG at **1,331 tokens**. The interval and bound were correct. The answer omitted the full coverage and sharpness arguments required by the proof gate. Both interventions were read-only observations.
+
+The rejected checkpoint was moved off the working SSD and verified on the archive drive. The saved comparison and audit receipts remain available.
+
 The [local trace viewer](../prototypes/trace-viewer/README.md) shows the token cap and can display either saved tensor comparison, including C0 versus V10 and V10 versus the Windows candidate. The heatmap summarizes the saved parameter difference by region.
 
 ## Cumulative promotion and storage policy

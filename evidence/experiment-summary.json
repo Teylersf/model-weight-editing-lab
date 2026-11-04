@@ -1227,6 +1227,13 @@
         "case08_token_cap_for_promotion": 564,
         "other14_cases_run": false,
         "core_and_DEV_run": false
+      },
+      "retention": {
+        "archive_receipt_sha256": "d8478c28299faaece5a8f8e43f7fe43676531f2cbfd81032ba4cb3ef51e6f8d0",
+        "rejected_checkpoint_archived_off_working_drive": true,
+        "observed_working_drive_free_increase_bytes": 11671011328,
+        "checkpoint_archive_sha256_verified": true,
+        "aggregate_heatmap_retained": true
       }
     },
     "case16_compact_teacher_alignment": {
@@ -1236,6 +1243,29 @@
       "ordinary_control_length_censored_tokens": 3072,
       "actual_generated_gain_demonstrated": false,
       "weights_mutated": false
+    },
+    "case08_unchanged_controlled_override": {
+      "independent_closeout_sha256": "69d8e2e78f9358bb210786ff47a8280660ce52aa02cb02fe0ce774f23a5f609f",
+      "read_only_e10": true,
+      "observed_tokens": 491,
+      "finish": "eog",
+      "closing_markers": 1,
+      "complete_math_pass": false,
+      "shared_generated_prefix_with_rejected_candidate": 249,
+      "first_divergence_zero_based": 249,
+      "fit_authorized": false
+    },
+    "case16_semantic_boundary_controlled_override": {
+      "independent_closeout_sha256": "1fdfb246e2a9dbd585b4c43b519b83e1e3bd524d9c903e15b675e2b2ff718174",
+      "read_only_e10": true,
+      "forced_non_eog_generated_index_zero_based": 1067,
+      "observed_tokens": 1331,
+      "finish": "eog",
+      "closing_markers": 1,
+      "correct_endpoint_and_domain": true,
+      "complete_proof_gate": false,
+      "ordinary_generation_unchanged_control_length_cap": 3072,
+      "fit_authorized": false
     }
   }
 }
