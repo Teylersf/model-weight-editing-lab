@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-03",
   "author": "Taylor Kalin",
-  "status": "interim snapshot of verified results; V13 selected proof/native guards passed and 9 of 15 required relative TRAIN nonregressions passed, including preservation of one known proof defect; 6/core/observed DEV pending; V13 unaccepted and V10 accepted",
+  "status": "V13 not promoted by quality selection after all 15 required relative TRAIN nonregressions passed; original 16-case TRAIN token cost increased by 1,006 versus accepted V10; remaining core/DEV qualification incomplete; V14 preparing without a fit result",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -138,7 +138,10 @@
         "native_early_guards_passed": 1215,
         "all_1216_upstream_a_skip_bit_identical": true,
         "full_answer_generated": true,
-        "Euler_tokens": {"experimental_parent": 2952, "V9": 1735},
+        "Euler_tokens": {
+          "experimental_parent": 2952,
+          "V9": 1735
+        },
         "Euler_termination": "EOG",
         "complete_proof_grade": "FAIL",
         "complete_proof_defect": "A displayed derivative contains 1/2 where 1/3 is required",
@@ -163,7 +166,15 @@
           "full_text_identical": true,
           "prompt_token_ids_identical": true,
           "EOG_completion_identical": true,
-          "generated_token_counts": [679, 110, 122, 191, 1293, 545, 479],
+          "generated_token_counts": [
+            679,
+            110,
+            122,
+            191,
+            1293,
+            545,
+            479
+          ],
           "receipt_sha256": "798a387e7a62f2d159b6de5796c768a65a061598d1f211c95e1e0ef6c4976bc7"
         },
         "fresh_DEV_opened": false,
@@ -499,7 +510,7 @@
     {
       "version": "V13",
       "mechanism": "Rank-one saved F32 terminal FFN down-projection edit with typed multicase TRAIN-only hard guards",
-      "status": "UNACCEPTED_INTERIM_LAST_VERIFIED_SNAPSHOT: native guards and selected proof passed; 9 of 15 required relative TRAIN nonregressions passed, with one existing proof defect preserved; 6/core/observed DEV pending",
+      "status": "NOT_PROMOTED_BY_QUALITY_SELECTION: all 15 required relative TRAIN nonregressions passed, but higher token cost did not meet the stated fast-output objective; not a predeclared mathematical-gate failure",
       "experimental_parent_version": "V10",
       "experimental_parent_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
       "candidate_sha256": "d27469b3a17f45095a958217f2dded67983f5d7d941eb8f3ece84a0a23555694",
@@ -589,13 +600,13 @@
       },
       "required_nonregressions": {
         "other_TRAIN_cases": 15,
-        "other_TRAIN_status": "INTERIM_LAST_VERIFIED_9_RELATIVE_NONREGRESSION_PASSES_6_PENDING",
-        "core_checks_status": "PENDING",
-        "previously_observed_DEV_status": "PENDING",
+        "other_TRAIN_status": "PASS_ALL_15_REQUIRED_RELATIVE_MATHEMATICAL_NONREGRESSIONS",
+        "core_checks_status": "INTERRUPTED_AFTER_SELECTION_ZERO_COMPLETED_CORE_GROUPS",
+        "previously_observed_DEV_status": "UNRUN_AFTER_SELECTION",
         "pending_checks_counted_as_passes": false,
-        "other_TRAIN_completed_passes": 9,
-        "other_TRAIN_remaining": 6,
-        "all_15_other_TRAIN_cases_completed": false,
+        "other_TRAIN_completed_passes": 15,
+        "other_TRAIN_remaining": 0,
+        "all_15_other_TRAIN_cases_completed": true,
         "first_completed_batch": {
           "cases": 2,
           "math_nonregression": "PASS",
@@ -610,7 +621,7 @@
           "frozen_outputs_receipt_sha256": "a94ecabb1ec81402d1e817633330d6e46199114a200dcab25863929904dae910",
           "scope": "Known TRAIN cases; no unseen generalization claim"
         },
-        "snapshot_scope": "Last verified receipt results only; pending cases are not passes and no current worker status is inferred",
+        "snapshot_scope": "Final required TRAIN-suite outcome. Earlier batches remain as receipt-bound stage history; incomplete core and unrun DEV checks are not passes.",
         "pass_criterion": "Required relative mathematical nonregression; not a claim that every requested complete proof or displayed claim is correct",
         "frozen_but_unreviewed_outputs_counted_as_passes": false,
         "first_four_completed_batches": [
@@ -658,7 +669,8 @@
           "frozen_outputs_receipt_bytes": 13881,
           "actual_final_sha256": "328afeed9bc061b33eaf8d310c14287d97d55db1bcf0757086ba7834ce8107de"
         },
-        "reviewed_nine_case_aggregate": {
+        "known_seven_DEV_checks_status": "UNRUN_AFTER_SELECTION",
+        "interim_nine_case_aggregate": {
           "required_relative_math_nonregression_passes": 9,
           "cases_with_all_generated_token_IDs_and_final_bytes_identical_to_V10": 7,
           "all_requested_complete_proofs_passed": false,
@@ -690,9 +702,100 @@
           },
           "overall_V13_speed_figure_reported": false,
           "scope": "Known TRAIN cases only; nine relative nonregression passes are not nine absolute complete-proof passes"
-        }
+        },
+        "final_other15_aggregate": {
+          "required_relative_math_nonregression_passes": 15,
+          "cases_with_all_generated_token_IDs_and_final_bytes_identical_to_V10": 12,
+          "all_requested_complete_proofs_passed": false,
+          "known_existing_proof_defect_preserved_cases": 1,
+          "known_defect_fixed": false,
+          "changed_correct_cases": [
+            {
+              "generated_tokens": 652,
+              "accepted_V10_generated_tokens": 563,
+              "additional_tokens": 89,
+              "complete_math_grade": "PASS"
+            },
+            {
+              "generated_tokens": 753,
+              "accepted_V10_generated_tokens": 601,
+              "additional_tokens": 152,
+              "complete_math_grade": "PASS"
+            },
+            {
+              "generated_tokens": 1729,
+              "accepted_V10_generated_tokens": 984,
+              "additional_tokens": 745,
+              "termination": "EOG",
+              "complete_math_grade": "PASS"
+            }
+          ],
+          "scope": "Required relative nonregression on known TRAIN cases; not a claim of universally correct exposition or unseen generalization"
+        },
+        "final_pair": {
+          "cases": 2,
+          "candidate_generated_tokens": [
+            466,
+            1729
+          ],
+          "accepted_parent_generated_tokens": [
+            466,
+            984
+          ],
+          "termination": "EOG for both",
+          "first_case_all_generated_IDs_and_final_bytes_identical_to_V10": true,
+          "second_case_changed_complete_math_correct": true,
+          "required_relative_math_nonregression": "PASS",
+          "frozen_outputs_receipt_sha256": "590504c27cb7f7846c795957ca6a014dd43c71fabda1cbbfd34c9fae63f9c6ff",
+          "root_math_review_receipt_sha256": "9d444dccd4073795cda884fe119248af0fa6dc5780c5c3f9e4fb49d778158b16"
+        },
+        "all15_frozen_index_sha256": "71d1178e67a93fda7f4f6b3dd9430f41130f73125a4a2624eaa31d032ae17d4e",
+        "all15_relative_math_clearance_sha256": "873cdfdca35dd17a8b138d16b1ce69c5ec66937144f3e947de7e353dd89c59ef"
       },
-      "comparison_scope": "Interim verified native preservation, selected complete-proof pass and nine required relative known TRAIN nonregression passes; one existing proof defect is preserved rather than fixed. Required suite remains incomplete, with no acceptance, V13 speed gain, broad ability or generalization established."
+      "comparison_scope": "Selected local proof repair and all 15 known TRAIN relative mathematical nonregressions passed, including preservation of an existing invalid proof. Promotion was declined by quality selection on higher token cost; remaining core/DEV qualification is incomplete. No latency, throughput, general ability or generalization result is established.",
+      "original_16_case_TRAIN_seed_token_cost": {
+        "candidate_V13_generated_tokens": 11119,
+        "accepted_V10_generated_tokens": 10113,
+        "additional_generated_tokens": 1006,
+        "generated_token_increase_percent": 9.947592208049045,
+        "changed_response_token_increases": [
+          20,
+          89,
+          152,
+          745
+        ],
+        "reference": "Accepted V10 on the original 16-case TRAIN seed, not immutable original B",
+        "latency_or_throughput_comparison_claimed": false,
+        "speed_gain_claimed": false
+      },
+      "selection_disposition": {
+        "decision": "DECLINED_PROMOTION_UNDER_FAST_OUTPUT_OBJECTIVE",
+        "receipt_sha256": "3ac8d6e10dbb3afca28469e833a7a840c1ba2596425413290aa5caf4d3aa6b3b",
+        "receipt_bytes": 5113,
+        "closeout_receipt_sha256": "44ec60d221dbd11df1f07f32b4cd7e78b828b2c15abfb5351a047e17a2525152",
+        "closeout_receipt_bytes": 1410,
+        "required_TRAIN_relative_mathematical_gate": "PASS",
+        "predeclared_mathematical_gate_failure_claimed": false,
+        "predeclared_numeric_speed_threshold_claimed": false,
+        "complete_remaining_qualification_claimed": false,
+        "accepted_reference_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+        "accepted_reference_unchanged": true,
+        "four_parent_candidate_acceptance_postchecks_matched_own_expected_hashes_and_fingerprints": true
+      },
+      "remaining_qualification_closeout": {
+        "owned_Euler_core_job": "INTERRUPTED_BY_SIGINT_AFTER_SELECTION",
+        "native_return_code": -2,
+        "completed_core_groups": 0,
+        "partial_evidence_retained": true,
+        "partial_evidence_counted_as_pass": false,
+        "known_seven_DEV_checks": "UNRUN_AFTER_SELECTION",
+        "previously_observed_DEV_checks": "UNRUN_AFTER_SELECTION"
+      },
+      "cleanup": {
+        "status": "PENDING_LAST_VERIFIED",
+        "checkpoint_and_raw_payload_deletion_confirmed": false,
+        "deletion_claimed": false
+      }
     }
   ],
   "promotion_policy": {
@@ -722,26 +825,32 @@
     "Self-improvement or reproduction of the motivating paper"
   ],
   "next_research_iteration": {
-    "version": "V13",
+    "version": "V14",
     "parent_accepted_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
-    "status": "V13_UNACCEPTED_INTERIM_LAST_VERIFIED_SNAPSHOT",
+    "status": "PREPARING_METHOD_AND_3375_GUARD_CHOICE_FROZEN_NO_FIT_RESULT_REPORTED",
     "guard_set_role": "TRAIN_ONLY",
-    "planned_guard_rows": {
-      "selected_earlier_prefixes": 247,
-      "complete_first_accepted_parent_response": 745,
-      "complete_second_accepted_parent_response": 1399,
-      "total": 2391,
-      "engine_row_bound": 4096
-    },
-    "both_complete_accepted_parent_guard_captures_qualified": true,
-    "DEV_features_used_for_training": false,
-    "prior_V11_V12_gates_relaxed_retroactively": false,
-    "candidate_sha256": "d27469b3a17f45095a958217f2dded67983f5d7d941eb8f3ece84a0a23555694",
-    "one_fit_executed": true,
-    "all_2391_native_guards_passed": true,
-    "selected_ordinary_complete_proof_passed": true,
-    "other_TRAIN_nonregressions_completed_passes": 9,
-    "other_TRAIN_nonregressions_status": "INTERIM_LAST_VERIFIED_9_RELATIVE_NONREGRESSION_PASSES_6_PENDING",
-    "other_TRAIN_nonregressions_remaining": 6
+    "existing_guard_rows": 2391,
+    "additional_complete_accepted_parent_response_rows": 984,
+    "planned_guard_rows_with_that_response": 3375,
+    "optional_additional_complete_accepted_parent_response_rows": 601,
+    "guard_rows_if_optional_response_resource_admitted": 3976,
+    "engine_guard_row_bound": 4096,
+    "guard_choice_and_method_must_freeze_before_fit": true,
+    "resource_admission_required_before_fit": true,
+    "fit_result_reported": false,
+    "model_improvement_established": false,
+    "promoted": false,
+    "DEV_or_heldout_features_used_for_training": false,
+    "guard_choice_status": "FROZEN_3375_ONLY_BEFORE_FIT",
+    "method_sha256": "370262c669640099f0d9c763c48e79565c734fd9d660f0d06077aeb5c4f2c509",
+    "guard_count": 3375,
+    "fit_state_count": 3376,
+    "new_accepted_parent_control_capture_receipt_sha256": "5fbb3614a300d16e02746bf08e243bb750c313f36f0fc1559f97b52e27b0ed42",
+    "new_capture_root_qualification_sha256": "b6d1fea441f8bb86001ced27db90b8fe85fcf12806be10842e045aeb9cfeb019",
+    "actual_typed_state_map_sha256": "a8b4a458a405701e5434bc9616e1580b9c947954a46c6bd83f074349e12745bd",
+    "resource_rule_sha256": "61909faa340f23272f14ae0de8e193d143ad74f3b54e5ed09af73981185d2d70",
+    "optional_additional_response_status": "DEFERRED_MEMORY_UNCERTAINTY_NOT_CURRENT_FIT_INPUT",
+    "all16_TRAIN_generated_token_selection_max": 10113,
+    "efficiency_rule_frozen_before_fit": true
   }
 }
