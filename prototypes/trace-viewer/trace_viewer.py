@@ -112,10 +112,12 @@ def snapshot(workspace, selection):
         status = "Proposal stopped" if newest.get("status", "").startswith("STOP_") else "Proposal checked"
     elif events:
         status = "Watching" if time.time() - active.stat().st_mtime < 10 else "Last recorded"
-    weights = None
-    heatmap = HERE / "weight-change.json"
-    if heatmap.is_file():
-        weights = json.loads(heatmap.read_bytes())
+    def read_comparison(name):
+        path = HERE / name
+        return json.loads(path.read_bytes()) if path.is_file() else None
+
+    weights = read_comparison("weight-change.json")
+    reference = read_comparison("weight-change-reference.json")
     return {
         "observed_utc": datetime.now(timezone.utc).isoformat(),
         "run": str(active.relative_to(root)).replace("\\", "/") if active else None,
@@ -133,6 +135,7 @@ def snapshot(workspace, selection):
         ),
         "events": stage_events[-22:],
         "weights": weights,
+        "reference_weights": reference,
     }
 
 

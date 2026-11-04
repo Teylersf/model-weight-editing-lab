@@ -20,6 +20,7 @@
   .controls { margin:0 0 15px; }
   select,button { color:var(--text); background:var(--panel); border:1px solid var(--line); border-radius:7px; padding:8px 10px; font:inherit; }
   select { width:min(100%,610px); }
+  #weight-select { margin-top:10px; }
   button:focus-visible,select:focus-visible { outline:2px solid var(--mint); outline-offset:2px; }
   .metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-bottom:12px; }
   .panel,.metric { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
@@ -67,6 +68,7 @@
   </div>
   <section class="panel">
     <div class="section-title"><div><h2>Saved weight changes</h2><p class="muted" id="weight-note">Waiting for the measured tensor comparison</p></div><strong id="weight-ratio"></strong></div>
+    <select id="weight-select" aria-label="Saved tensor comparison" hidden></select>
     <div id="heatmap" class="heatmap" role="img" aria-label="Per-block RMS change in the terminal down-projection tensor"></div>
     <div id="legend" class="legend" hidden><span>Smaller change</span><span class="gradient"></span><span>Larger change</span></div>
   </section>
@@ -75,6 +77,8 @@
   const byId = id => document.getElementById(id);
   const runs = byId("runs");
   const chart = byId("pace");
+  const weightSelect = byId("weight-select");
+  let comparisons = [];
   const pause = byId("pause");
   const svg = "http://www.w3.org/2000/svg";
   let paused = false;
@@ -125,6 +129,19 @@
     grid.replaceChildren(...cells);
     byId("legend").hidden = false;
   }
+  function updateComparisons(current, reference) {
+    comparisons = [current, reference].filter(Boolean);
+    if (comparisons.length === 2 && comparisons[0].id === comparisons[1].id) comparisons.pop();
+    weightSelect.hidden = comparisons.length < 2;
+    const key = weightSelect.value;
+    const choices = comparisons.map(w => w.id+" "+w.label).join("\n");
+    if (weightSelect.dataset.choices !== choices) {
+      weightSelect.replaceChildren(...comparisons.map(w => new Option(w.label,w.id)));
+      weightSelect.dataset.choices = choices;
+      if (comparisons.some(w => w.id === key)) weightSelect.value = key;
+    }
+    drawWeights(comparisons.find(w => w.id === weightSelect.value) || comparisons[0]);
+  }
   function render(data) {
     const selected = runs.value;
     const old = Array.from(runs.options).slice(1).map(x => x.value);
@@ -163,7 +180,7 @@
       return tr;
     });
     byId("events").replaceChildren(...rows);
-    drawWeights(data.weights);
+    updateComparisons(data.weights, data.reference_weights);
   }
   async function refresh() {
     if (paused || pending) return;
@@ -190,6 +207,7 @@
     else refresh();
   });
   runs.addEventListener("change",refresh);
+  weightSelect.addEventListener("change",() => drawWeights(comparisons.find(w => w.id === weightSelect.value)));
   refresh();
   setInterval(refresh,1200);
 </script>
