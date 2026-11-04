@@ -1206,9 +1206,36 @@
       "max_rounded_guard_response_l2": 7.5109630184038425e-06,
       "independent_file": true,
       "outside_tensor_bytes_equal_parent": true,
-      "physical_native_replay": "PENDING_AT_SNAPSHOT",
-      "ordinary_math": "PENDING_AT_SNAPSHOT",
-      "promoted": false
+      "physical_native_replay": "PASS",
+      "ordinary_math": "SELECTED_VISIBLE_MATH_PASS_FORMAT_AND_EFFICIENCY_FAIL",
+      "promoted": false,
+      "disposition": "REJECTED_FOR_REPEATED_PROOF_AND_TOKEN_BUDGET",
+      "physical_native_receipt_sha256": "f07ab139c908d3cd9d3e327799bccd9c726875d087244c5a32a84e6e00d50776",
+      "native_guards_preserved": 2099,
+      "native_upstream_a_p_bitwise_equal_states": 2100,
+      "native_desired_full_vocab_margin": 2.589303970336914,
+      "ordinary_evaluation": {
+        "receipt_sha256": "9b61905b8f20885c9ed040ac6a1e20cd231565642c37d069fb0a9591d8812a31",
+        "independent_final_review_sha256": "6a15d45d53a45ef2d86ae43b6a422e6d5fa2954d167b6b6695f4a08f3a6c59c6",
+        "ordinary_cases_completed": 2,
+        "case07_exact_control_completion_preserved": true,
+        "case08_visible_math_pass": true,
+        "case08_repeated_identical_complete_proof_copies": 2,
+        "case08_generated_closing_markers": 2,
+        "case08_finish": "eog",
+        "case08_tokens": 716,
+        "case08_token_cap_for_promotion": 564,
+        "other14_cases_run": false,
+        "core_and_DEV_run": false
+      }
+    },
+    "case16_compact_teacher_alignment": {
+      "receipt_sha256": "15f2ec32ddab21c0c08ef3361eb3dde9aa0d92ed247ea81e9cd6e3b55cf07cb1",
+      "pivot_generated_index_zero_based": 1067,
+      "teacher_completion_tokens_including_EOG": 1362,
+      "ordinary_control_length_censored_tokens": 3072,
+      "actual_generated_gain_demonstrated": false,
+      "weights_mutated": false
     }
   }
 }
