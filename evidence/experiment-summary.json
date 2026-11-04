@@ -1,8 +1,8 @@
 {
   "schema": "public-weight-editing-experiment-summary-v1",
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "author": "Taylor Kalin",
-  "status": "V14 passed all15 required relative TRAIN mathematical nonregressions but failed its pre-fit frozen 10113-token efficiency ceiling with10139 tokens; unpromoted, core/DEV unrun; V10 remains accepted and V15 is source-reviewed preparation only",
+  "status": "Accepted V10 verified on Windows and used for one CUDA TRAIN13 baseline. Full transfer and CUDA capture qualification are pending in this snapshot.",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -1015,8 +1015,9 @@
     "Benchmark superiority",
     "Self-improvement or reproduction of the motivating paper"
   ],
-  "next_research_iteration": {
+  "historical_V15_source_review": {
     "version": "V15",
+    "status_scope": "Statuses in this entry describe the source-review snapshot",
     "parent_accepted_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
     "status": "SOURCE_REVIEWED_PROPOSAL_METHOD_FREEZE_TOKENIZATION_CAPTURES_AND_FIT_PENDING",
     "proposed_objective": "Joint proof repair and earlier end-of-generation only after a complete correct proof",
@@ -1037,5 +1038,53 @@
     "promoted": false,
     "DEV_or_heldout_features_used_for_training": false,
     "private_teacher_body_bundled": false
+  },
+  "windows_migration": {
+    "status": "TRANSFER_IN_PROGRESS_ACCEPTED_V10_VERIFIED_CUDA_TRAIN13_COMPLETE",
+    "mac_handoff_stage": "V22_TRAIN13_ARCHIVE_CAPTURE_QUALIFIED_ORIGINAL_STATIC_EXECUTION_PENDING",
+    "frozen_transfer_manifest": {
+      "sha256": "06e730b9d003ce2d989260e8604a125644ec5456517c0d50017c0e1ed28e5182",
+      "files": 3414,
+      "logical_bytes": 36069733369,
+      "all_files_verified_at_snapshot": false
+    },
+    "accepted_checkpoint": {
+      "version": "V10",
+      "sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "windows_file_sha256_verified": true
+    },
+    "windows_native_builds": {
+      "llama_cpp_build": 11960,
+      "llama_cpp_short_commit": "8642541b2",
+      "ordinary_executable_sha256": "3296f5ee15fe8a967df1c989e9101ad9002ee533acf8dac2b35f4a53f8d200c4",
+      "capture_executable_sha256": "da68d8b35ecda28ba6119ab61f621b4e19d7a11ee82baccb8a94656cc1848f1b"
+    },
+    "TRAIN13_ordinary_baseline": {
+      "windows_cuda_device": "CUDA0",
+      "windows_gpu": "NVIDIA GeForce RTX 3090",
+      "windows_layers_offloaded": 66,
+      "windows_layers_offloadable": 66,
+      "input_prompt_tokens": 100,
+      "all_input_prompt_token_ids_identical": true,
+      "common_generated_token_prefix": 65,
+      "mac_metal_generated_tokens": 466,
+      "mac_metal_finish_reason": "eog",
+      "windows_cuda_generated_tokens": 626,
+      "windows_cuda_finish_reason": "eog",
+      "windows_complete_final_proof_review_passed": true,
+      "windows_cuda_decode_ms": 15833.9793,
+      "windows_generation_record_sha256": "de292a6193755625980b9e2ae88d421966f4a1ff9305a15b542919372d36d912",
+      "cross_platform_speed_comparison_claimed": false,
+      "generalization_claimed": false
+    },
+    "windows_CPU_archived_mac_state_crosscheck": {
+      "receipt_sha256": "31145af070a12a8716f1df9dd28d1865570f82672fc806a16d776489d2b04059",
+      "pairs_checked": 2,
+      "necessary_support_not_excluded": 2,
+      "joint_fit_feasibility_established": false,
+      "windows_CUDA_capture_parity_qualified": false,
+      "windows_CUDA_baseline_and_captures_required_for_fit": true,
+      "weights_mutated": false
+    }
   }
 }

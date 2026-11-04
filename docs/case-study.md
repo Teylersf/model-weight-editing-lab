@@ -1,6 +1,6 @@
 # Case study: direct saved-weight edits of Qwen3.8-27B Abliterated
 
-**Research snapshot: 2026-11-03. Project lead: Taylor Kalin.** OpenAI Codex and AI assistants helped develop tooling, check mathematics, and write documentation. The results below distinguish recorded behavior from demonstrated mathematical improvement.
+**Research snapshot: 2026-11-04. Project lead: Taylor Kalin.** OpenAI Codex and AI assistants helped develop tooling, check mathematics, and write documentation. The results below distinguish recorded behavior from demonstrated mathematical improvement.
 
 These experiments changed actual saved GGUF weights of **Qwen3.8-27B Abliterated**. The local snapshot was `Huihui-Qwen3.8-27B-abliterated-UD-DW-IQ3_XXS.gguf`, from the [publisher's pinned GGUF repository](https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF/tree/1c69098e9c32db6dc06fc48f1d6cc75ad07da89e). Its verified original SHA-256 was `bfc6892863eceb16f69697e59b038acdc1c709b790c1542e4612dbb0924d3568`. This identifies the specific lab artifact; other conversions and revisions can differ.
 
@@ -146,7 +146,15 @@ The original 16-case TRAIN seed used **10,139 tokens versus accepted V10's 10,11
 
 Cleanup batch009 removed **18 obsolete V14 files**: one GGUF, one raw F32 payload and 16 candidate cache arrays. Their logical sizes totaled **12,473,162,656 bytes**. Observed filesystem free space rose from **33,951,891,456** to **35,145,293,824 bytes**, an increase of **1,193,402,368 bytes**, rather than the whole logical total. Dependency/runtime-lease checks preceded deletion and the accepted reference remained unchanged. The [public summary](../evidence/experiment-summary.json) binds the final TRAIN suite, disposition, closeout and cleanup receipts; private questions, equations, answer/teacher bodies and reasoning remain unbundled.
 
-V15 is **preparing from accepted V10** as a source-reviewed proposal for a joint proof repair and earlier end-of-generation after the complete proof. It plans the same **3,375 TRAIN guards**, two positive states, shared numerical caps and rank at most two. A short complete final proof was frozen privately for mathematical supervision. The method freeze, tokenization, feature captures and fitting are pending; no V15 numerical or improvement result is reported.
+The earlier V15 source review proposed a joint proof repair and earlier end-of-generation after the complete proof, using accepted V10, **3,375 TRAIN guards**, two positive states, shared numerical caps and rank at most two. It froze a short complete final proof privately for mathematical supervision. The recorded V15 stage covers the proposal and source review.
+
+## Windows CUDA migration and V22 handoff
+
+The Mac paused after completing and qualifying the V22 TRAIN13 archive capture, before its planned static execution. The frozen transfer manifest lists **3,414 files** totaling **36,069,733,369 bytes**. The full transfer is in progress at this snapshot. The Windows copy of accepted **V10 (E10)** already matches its recorded SHA-256.
+
+Windows ran the accepted checkpoint on an **NVIDIA GeForce RTX 3090 (CUDA0)** using llama.cpp build **11960** (8642541b2), the same build identifier as the Mac. The Windows log recorded **66 of 66 layers offloaded**. The canonical TRAIN13 prompt had the same **100 input token IDs** on both systems. The generations shared the first **65 generated tokens**. Both ended with EOG, at **466 tokens on Metal** and **626 on CUDA**. The Windows final proof passed review. Its measured decode time was **15,833.9793 ms** for that run. The token trajectories diverged, so this run supplies no cross-platform speed or generalization result.
+
+A separate Windows CPU cross-check reused the unchanged archived Mac states. Both archived pairs cleared the necessary support exclusion test. That limited test leaves joint fit feasibility open. Windows fitting requires a fresh CUDA baseline and matching captures. The [public summary](../evidence/experiment-summary.json) records the manifest, build and check hashes.
 
 ## Cumulative promotion and storage policy
 
