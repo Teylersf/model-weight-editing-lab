@@ -22,6 +22,25 @@
         "combined_micro": {"correct": 226, "total": 370, "invalid": 0, "censored": 0, "ties": 0}
       }
     },
+    "e10": {
+      "checkpoint_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "run_receipt_sha256": "2f48c5d01cbf4ea2a8d8b37012c4de9958ea0adfeb30e726d0613ef5118ec69a",
+      "native_logits_sha256": "a354776e6b04636c38a0df63a413c5901418843942ff4c0378e1b2ed874461aa",
+      "native_log_sha256": "d2b97eefeffc6722e4c15db200728aee0972ddf7b8d1ac2adccd55215a01142c",
+      "exact_checkpoint_pre_post_verified": true,
+      "public_standalone_grader_reproduced_all_counts": true,
+      "counts": {
+        "high_school_mathematics": {"correct": 160, "total": 270},
+        "college_mathematics": {"correct": 64, "total": 100},
+        "combined_micro": {"correct": 224, "total": 370, "invalid": 0, "censored": 0, "ties": 0}
+      }
+    },
+    "paired_e10_to_rank_two": {
+      "comparison_receipt_sha256": "326afa1003d265734b1a75cdfe7eb6f78943451c00ac91417a15ff669f17a675",
+      "high_school_mathematics": {"both_correct": 160, "e10_only_correct": 0, "rank_two_only_correct": 2, "neither_correct": 108, "answer_disagreements": 2},
+      "college_mathematics": {"both_correct": 64, "e10_only_correct": 0, "rank_two_only_correct": 0, "neither_correct": 36, "answer_disagreements": 0},
+      "combined_micro": {"both_correct": 224, "e10_only_correct": 0, "rank_two_only_correct": 2, "neither_correct": 144, "answer_disagreements": 2}
+    },
     "training_data_overlap_unknown": true
   }
 }

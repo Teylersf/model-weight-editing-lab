@@ -8,13 +8,13 @@ We use the entire `high_school_mathematics` and `college_mathematics` test split
 
 The test denominator includes every question. Invalid and censored cases are reported separately and count as incorrect. Combined accuracy gives equal weight to every question. A paired comparison reports questions each checkpoint uniquely got right, so equal totals can still show changes. These public splits may overlap the upstream model's training data. Scores describe these benchmark questions, with no conversion to school grades or student percentiles.
 
-| Full test split | Windows rank-two correct | Accuracy |
+| Full test split | E10 | Windows rank-two |
 | --- | ---: | ---: |
-| High school mathematics | 162 / 270 | 60.0% |
-| College mathematics | 64 / 100 | 64.0% |
-| Combined | 226 / 370 | 61.1% |
+| High school mathematics | 160 / 270 (59.3%) | 162 / 270 (60.0%) |
+| College mathematics | 64 / 100 (64.0%) | 64 / 100 (64.0%) |
+| Combined | 224 / 370 (60.5%) | 226 / 370 (61.1%) |
 
-All 370 questions produced valid four-choice logits, with zero prompt limit hits and zero ties. The published preparation and grading script reproduced these scores against the archived CUDA output. The matched reference runs are pending. [Scoring source and rerun commands](../prototypes/windows-cuda-mmlu-math/README.md) · [Aggregate receipt](../evidence/public-math-benchmarks.json)
+Both checkpoints produced valid logits on all 370 questions, with zero prompt limit hits and zero ties. Rank-two corrected two high-school answers. The other 368 answer choices were identical, including all 100 college answers. The published preparation and grading script reproduced both scores against the archived CUDA outputs. [Scoring source and rerun commands](../prototypes/windows-cuda-mmlu-math/README.md) · [Aggregate receipt](../evidence/public-math-benchmarks.json)
 
 ## Worked solutions
 
