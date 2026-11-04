@@ -100,6 +100,8 @@ All 283 target tokens won the rounded full-vocabulary CUDA check, with no omitte
 
 In ordinary generation, all three calculus variants produced their independently verified exact optima and derivative arguments at 647, 645, and 629 tokens. The inequality also produced its complete rigorous proof. Both algebra cases, the differential equation, and exact Bayes passed, for **8 complete solutions out of 12 known cases**. All twelve ended naturally, and both critical proofs matched exactly. The cube response again gave 6/35 but omitted the exhaustion proof. All three statistics answers gave exact formulas in the working and then rounded their final entries, so this pilot failed the required precision. [Ordinary generation and review receipts](../evidence/public-math-benchmarks.json)
 
+Matched MMLU scored **224/370 (60.5%)**, down two from the accepted parent. High school was 160/270 and college was 64/100. Two high-school items became correct and four became incorrect. The experiment recovered all three calculus solutions while losing exact statistics precision and some broader score, so it was not selected for the fresh comparison. [Paired benchmark receipts](../evidence/public-math-benchmarks.json)
+
 ## Fresh worked comparison plan
 
 The fresh comparison is separate from the development repairs and the repeated MMLU comparison. Its twelve authored questions, five high-school and seven college, and their grader-only answer key were frozen before the repair candidates were selected. The prompts and key are private while the comparison is pending.

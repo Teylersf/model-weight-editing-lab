@@ -287,7 +287,17 @@
     "statistics_exact_final_precision_regressions": 3,
     "cube_endpoint_correct_with_exhaustion_proof_missing": true,
     "critical_proof_exact_matches": 2,
-    "mmlu_followup_pending": true,
+    "mmlu_followup": {
+      "run_receipt_sha256": "af6e471e5a3cc9329ab996df057f6e0be9a5de3f4bc2f0644ec6266f36141c19",
+      "paired_receipt_sha256": "7970820a2897e382789fe53807e00d2456bb3bca15850d635bdd90c80cdb7105",
+      "high_school_correct": 160,
+      "college_correct": 64,
+      "total_correct": 224,
+      "total": 370,
+      "gained": 2,
+      "lost": 4,
+      "mmlu_used_for_weight_fit": false
+    },
     "promoted": false
   },
   "fresh_worked_preregistration": {
