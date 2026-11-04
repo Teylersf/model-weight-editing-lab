@@ -166,6 +166,10 @@ For the derivative repair, the isolated CUDA suffix matched the captured residua
 
 A separate read-only test checked the ordinary CUDA prefix through its first disagreement with Metal in the capped case. At that one step it emitted the observed Metal token and then resumed free CUDA generation. It again reached **3,072 tokens without a final**. That fixed early-branch hypothesis was closed with the parent checkpoint unchanged.
 
+At the derivative repair state, the ideal dequantized dot product differed from the measured CUDA suffix by up to **0.060855** across 248,320 logits. Reconstructing the Q8_1 input reduced maximum error to **0.000001887** at that state. The historical ideal-head qualification stayed unresolved. The reconstruction checked a specific input. The CUDA source shows where the vector path quantizes the input operand. [Pinned CUDA vector path](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/ggml/src/ggml-cuda/mmvq.cu#L1462-L1468)
+
+A separate rank-one proposal used **2,099** Windows guards and a fixed synthetic CUDA gate. Its ideal margin was approximately **0.7500**. CUDA measured **0.7371** against the required **0.7498**, so the attempt stopped before writing a checkpoint. Reconstructing the Q8_1 input at that trial reproduced the observed margin within **0.000001**.
+
 The [local trace viewer](../prototypes/trace-viewer/README.md) shows the token cap and the saved **0.2495% relative Frobenius change** in the block 63 down-projection matrix between C0 and V10. The heatmap summarizes the saved parameter difference by region.
 
 ## Cumulative promotion and storage policy

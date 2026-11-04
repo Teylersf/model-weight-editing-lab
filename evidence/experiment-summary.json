@@ -1168,6 +1168,25 @@
       "weights_mutated": false,
       "candidate_created": false,
       "hypothesis": "CLOSED_WITHOUT_QUALIFIED_COMPLETION"
+    },
+    "case08_rank_one_and_quantized_head_diagnostic": {
+      "q8_selected_state_receipt_sha256": "6257664099c34dcfb9b3ddfdde3e389649688e062bb9da35b216a87db184b79e",
+      "vocabulary_size": 248320,
+      "ideal_decoded_selected_state_full_vocab_max_abs_error": 0.06085507282385216,
+      "q8_reconstructed_selected_state_full_vocab_max_abs_error": 1.8868404367822222e-06,
+      "full_vocab_top64_order_matches_selected_state": true,
+      "historical_ideal_support_qualification": "INPUT_QUALIFICATION_UNKNOWN",
+      "guard_rows": 2099,
+      "closed_proposal_receipt_sha256": "e4b4ce3ffad44b6a7cc23705f6b8073aaff868775dbd53af922290c4f3102692",
+      "closed_proposal_synthetic_cuda_margin": 0.7370872497558594,
+      "closed_proposal_synthetic_cuda_required_margin": 0.7498,
+      "closed_proposal_ideal_margin": 0.7499998790964106,
+      "closed_proposal_q8_reconstructed_margin": 0.7370881713377457,
+      "closed_proposal_q8_diagnostic_sha256": "85a69d393ed0c6d8b8091a6818d40e6d2dbef264588a233ff76dd1e698cc8a07",
+      "checkpoint_written": false,
+      "weights_mutated": false,
+      "promotion": false,
+      "uniform_native_margin_guarantee_established": false
     }
   }
 }

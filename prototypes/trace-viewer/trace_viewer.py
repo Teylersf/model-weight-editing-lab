@@ -16,7 +16,7 @@ NUMBERS = (
     "step", "processed_tokens", "prompt_tokens", "total_prompt_tokens",
     "completion_tokens", "decode_elapsed_ms", "decode_ms", "prefill_ms",
     "elapsed_ms", "load_elapsed_ms", "token_id", "mismatches", "states",
-    "native_next_matches",
+    "native_next_matches", "margin",
 )
 LOG_NAMES = {"native.log", "native-stderr.log", "native.stderr.log"}
 
@@ -58,7 +58,7 @@ def events_from(path):
             item = value.get(key)
             if type(item) in (int, float) and -1e20 <= item <= 1e20:
                 event[key] = item
-        for key in ("case_id", "id", "finish_reason", "device"):
+        for key in ("case_id", "id", "finish_reason", "device", "status"):
             item = value.get(key)
             if isinstance(item, str) and SAFE_LABEL.fullmatch(item):
                 event[key] = item
@@ -108,6 +108,8 @@ def snapshot(workspace, selection):
         status = "Token cap reached" if finish == "length" else "Trace complete"
     elif newest.get("event") == "sequence_run_complete":
         status = "Capture complete"
+    elif newest.get("event") == "proposal_complete":
+        status = "Proposal stopped" if newest.get("status", "").startswith("STOP_") else "Proposal checked"
     elif events:
         status = "Watching" if time.time() - active.stat().st_mtime < 10 else "Last recorded"
     weights = None

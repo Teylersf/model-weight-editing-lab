@@ -133,7 +133,7 @@
       if (data.choices.includes(selected)) runs.value = selected;
     }
     byId("status").textContent = data.status;
-    byId("status").dataset.capped = String(data.status === "Token cap reached");
+    byId("status").dataset.capped = String(["Token cap reached","Proposal stopped"].includes(data.status));
     const latest = data.latest;
     const token = data.latest_token;
     const count = token.step === undefined ? null : token.step+1;
@@ -153,7 +153,9 @@
       const tr = document.createElement("tr");
       const timestamp = event.time ? new Date(event.time).toLocaleTimeString()
         : event.elapsed_ms >= 0 ? (event.elapsed_ms/1000).toFixed(1)+" s" : "—";
-      for (const value of [timestamp,event.event.replaceAll("_"," "),event.step >= 0 ? event.step : event.processed_tokens >= 0 ? event.processed_tokens : "—"]) {
+      const eventName = event.event.replaceAll("_"," ");
+      const eventLabel = event.margin === undefined ? eventName : eventName+" · margin "+event.margin.toFixed(4);
+      for (const value of [timestamp,eventLabel,event.step >= 0 ? event.step : event.processed_tokens >= 0 ? event.processed_tokens : "—"]) {
         const td = document.createElement("td");
         td.textContent = value;
         tr.append(td);
