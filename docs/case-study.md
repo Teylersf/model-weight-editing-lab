@@ -170,7 +170,9 @@ At the derivative repair state, the ideal dequantized dot product differed from 
 
 A separate rank-one proposal used **2,099** Windows guards and a fixed synthetic CUDA gate. Its ideal margin was approximately **0.7500**. CUDA measured **0.7371** against the required **0.7498**, so the attempt stopped before writing a checkpoint. Reconstructing the Q8_1 input at that trial reproduced the observed margin within **0.000001**.
 
-The [local trace viewer](../prototypes/trace-viewer/README.md) shows the token cap and the saved **0.2495% relative Frobenius change** in the block 63 down-projection matrix between C0 and V10. The heatmap summarizes the saved parameter difference by region.
+A distinct proposal accounted for the Q8 operand rounding over the same residual budget. Its synthetic CUDA margin was **2.5893**. We wrote a separate GGUF and independently verified the edited F32 bits and every byte outside the terminal down-projection. Its stored matrix change was **0.5257% versus V10**, and **0.5818% versus C0**. The target residual changed by **4.9634%**. Stored readback qualifies the file. Native replay and complete ordinary proof evaluation remain separate gates at this snapshot.
+
+The [local trace viewer](../prototypes/trace-viewer/README.md) shows the token cap and can display either saved tensor comparison, including C0 versus V10 and V10 versus the Windows candidate. The heatmap summarizes the saved parameter difference by region.
 
 ## Cumulative promotion and storage policy
 
