@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-04",
   "author": "Taylor Kalin",
-  "status": "V10 (E10) remains the provisional accepted research base. The saved Windows rank-two follow-up passed the paired proofs, matched all 16 rank-36 TRAIN generations, passed 10,843 physical replay states, and preserved all eight required core and known development proofs. The observed development pair is pending.",
+  "status": "The saved Windows rank-two checkpoint is provisionally accepted for the tested Windows research scope. It passed both ordinary proofs, the TRAIN16 and physical replay regressions, all eight core cases, and the observed development pair at both budgets. E10 is the verified Windows rollback.",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -990,16 +990,17 @@
     }
   ],
   "promotion_policy": {
-    "current_accepted_reference_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+    "current_accepted_reference_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
     "experimental_V5_parent_is_accepted": false,
     "requires": "Stored/native and complete-answer gates, comparison against immediate experimental parent and current accepted reference, and preservation of earlier accepted fixes",
     "after_qualification": "Use the accepted checkpoint as the next default research parent; refresh caches and controls",
     "rejection": "Accepted reference unchanged",
     "retention": "Original, current accepted, one prior accepted rollback, active experimental files and checkpoints actual active validators read; preserve small lineage/receipts and prune obsolete weights after dependency checks",
     "disk_measurement": "APFS logical size is not reclaimed bytes; measure actual free space before/after cleanup and preflight new allocations",
-    "current_accepted_reference_version": "V10",
+    "current_accepted_reference_version": "Windows rank-two Euler follow-up",
+    "current_accepted_reference_scope": "Known tested Windows research scope",
     "current_acceptance_status": "ACCEPTED_TESTED_SCOPE_PROVISIONAL",
-    "previous_accepted_reference_sha256": "bfc6892863eceb16f69697e59b038acdc1c709b790c1542e4612dbb0924d3568",
+    "previous_accepted_reference_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
     "original_B_preserved": true
   },
   "distinctions": {
