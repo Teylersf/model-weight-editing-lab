@@ -23,3 +23,17 @@ The school sample uses 16 text questions from the released AGIEval exam corpus. 
 The college sample uses one hash-selected open-response stem in each of eight UGMathBench subjects, with all three randomized variants for each stem. It covers abstract algebra, single-variable and multivariable calculus, complex analysis, differential equations, linear algebra, probability, and statistics. We report both variant-level performance and the number of stems whose three variants all pass. Variants from the same stem are related, and this diagnostic uses only eight stems. [UGMathBench paper](https://proceedings.iclr.cc/paper_files/paper/2025/hash/c3af3531df85264decc31382cb319781-Abstract-Conference.html) · [Pinned release](https://huggingface.co/datasets/UGMathBench/ugmathbench/tree/8ab16f0c131a9b3b52195e64175cb5a8f3881bbf)
 
 Worked runs use ordinary greedy CUDA decoding with the same inputs across checkpoints, an 8,192-token context, and a 6,144-token generation limit. The grading tracks the final result, valid and complete visible working, natural completion, and repeated work separately. Token counts and decode time are compared among correct, complete solutions. The small, text-only samples cover specific exam and coursework tasks. They leave coverage of images, wider curricula, and student interactions to separate evaluation. [Frozen protocol hashes](../evidence/public-math-benchmarks.json)
+
+### AGIEval school results
+
+| Measure | E10 | Windows rank-two |
+| --- | ---: | ---: |
+| Correct final answer | 15 / 16 | 14 / 16 |
+| Correct answer with complete valid working | 14 / 16 | 14 / 16 |
+| Natural ending | 15 / 16 | 14 / 16 |
+| Token limit reached without a visible answer | 1 / 16 | 2 / 16 |
+| Serious unproductive repetition | 1 / 16 | 2 / 16 |
+
+Codex reviewed all 32 visible responses with checkpoint names hidden and froze the grades before unblinding. Both checkpoints gave complete solutions to the same eight SAT items, three Gaokao multiple-choice items, and three Gaokao fill-in items. Both reached the limit without a visible answer on the same geometry item. On a second item, E10 selected the correct answer using a false general inequality, while rank-two repeated its working until the token limit. [Aggregate receipt](../evidence/public-math-benchmarks.json)
+
+Across the 14 paired problems where both produced correct, complete solutions and ended naturally, the median was 333 tokens and 8.11 seconds of decoding for E10, versus 321.5 tokens and 8.01 seconds for rank-two. These medians describe only the paired completions. The table retains both censored runs.

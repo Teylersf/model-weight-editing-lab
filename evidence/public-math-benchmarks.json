@@ -89,5 +89,23 @@
     },
     "selection_and_inference_frozen_before_generation": true,
     "benchmark_test_inputs_used_for_tuning": false
+  },
+  "agieval_worked_results": {
+    "matched_generation_sha256": "5d68c9463f36e9180f4d8dd4dd92926f486e6abde8b8486917e15e4df9509e20",
+    "blind_review_freeze_sha256": "ee43c19775c7523b60e282dbf9b714f095db01fb78c92b7324d81b84a259f04b",
+    "reviewer_grades_sha256": "989e38a5f93fc4739b8d07706230d83bd1961c6e3abb87d11eed987a05c6d1bf",
+    "aggregate_sha256": "835a92ee0a5f04f50f31ef176767c50d1d1ca6c81e88f47a8bcf08df8105e52d",
+    "reviewed_visible_responses": 32,
+    "reviewer": "Codex",
+    "grades_frozen_before_unblinding": true,
+    "scope": "16 deterministic text-only sampled problems from public SAT and Gaokao benchmark subsets",
+    "e10": {"final_correct": 15, "complete_worked_correct": 14, "natural_eog": 15, "length_censored_without_visible_answer": 1, "serious_repetition": 1},
+    "rank_two": {"final_correct": 14, "complete_worked_correct": 14, "natural_eog": 14, "length_censored_without_visible_answer": 2, "serious_repetition": 2},
+    "paired_complete_worked_correct": {"both": 14, "e10_only": 0, "rank_two_only": 0, "neither": 2},
+    "paired_correct_complete_natural_eog_efficiency": {
+      "n": 14,
+      "e10": {"median_tokens": 333.0, "median_decode_seconds": 8.10557345},
+      "rank_two": {"median_tokens": 321.5, "median_decode_seconds": 8.01253975}
+    }
   }
 }
