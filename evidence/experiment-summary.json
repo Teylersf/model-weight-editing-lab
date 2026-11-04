@@ -1291,7 +1291,16 @@
       "physical_native_receipt_sha256": "ebe0d95152253400c506d90035fbe288de2ce54a86d03e812fc61e99f9a1dba7",
       "physical_guard_choices_preserved": 2321,
       "exact_upstream_rows": 2322,
-      "stored_cuda_eog_margin": 2.652219772338867
+      "stored_cuda_eog_margin": 2.652219772338867,
+      "full_ordinary_relative_review_sha256": "b0d1264f2d5416f8f91a34c6c05cb178840e016685733c30d556621b33eb7fbe",
+      "ordinary_eog_cases": 16,
+      "matched_eog15_candidate_tokens": 9437,
+      "matched_eog15_v10_tokens": 8889,
+      "ordinary_case16_natural_eog_tokens": 1498,
+      "ordinary_case16_correct_endpoints": true,
+      "ordinary_case16_complete_proof": false,
+      "newly_observed_relative_math_regressions": 0,
+      "downstream_checks_pending": true
     }
   }
 }

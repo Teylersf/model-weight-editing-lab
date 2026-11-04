@@ -190,7 +190,7 @@ The next Windows edit used the first correct proof from the rejected candidate a
 
 Replay of the stored checkpoint preserved all **2,321** guarded token choices. The captured upstream arrays matched exactly across **2,322** states. The end token led by **2.6522** logits at the proof boundary.
 
-In ordinary generation the edited checkpoint reproduced the reviewed derivative proof once and ended naturally at **471 tokens**. The paired case07 control matched all **654 tokens**. These observations cover the priority pair. Promotion requires the remaining regression and proof checks.
+In ordinary generation the edited checkpoint reproduced the reviewed derivative proof once and ended naturally at **471 tokens**. The paired case07 control matched all **654 tokens**. The full same-backend TRAIN16 comparison then completed all 16 runs with natural end tokens. Independent review found no new mathematical regressions. Among the 15 cases completed by both models, the candidate used **9,437 tokens** and V10 used **8,889**. Case16 separately finished at **1,498 tokens** with the correct interval and error bound. Its proof still lacked the full justification, while the V10 control reached the runtime ceiling without a final answer. The accepted Euler and downstream development checks are pending.
 
 ## Cumulative promotion and storage policy
 
