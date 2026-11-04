@@ -169,6 +169,8 @@ $$
 
 Use actual stored differences for norms and response estimates. The [streaming helper](../numerical/terminal_down_stream_v8.py) uses at most 32 output rows and 128 activation states per batch. Its reference dimensions are 5120×17408, a 340 MiB F32 tensor. It enforces intended and actual matrix updates ≤1% of the control Frobenius norm, plus a ≤5% positive-state residual cap for its F64 stored-weight response calculation. These are bounded experiment gates; they do not imply argmax preservation.
 
+For subsequent Windows edits, record the actual stored matrix change relative to the immediate experimental parent, accepted base, and representation control. The 1% ceiling belongs to the historical experiment above. Use the measured magnitudes to compare candidates that pass the same native and mathematical checks. If a solver uses a local search radius, record that radius and its purpose with the trial. Compare additional radii when the observed margins justify a wider search.
+
 Rounding can destroy context nullity. The synthetic verification demonstrates an intended `[+1,-1]` change becoming actual `[0,-1]`: a guard with zero intended response then receives −1. Recompute $\Delta D_{actual}a$, and subsequently native C/E residuals and logits. F64 multiplication of stored differences does not certify native F32 GEMM reduction behavior.
 
 Changing dtype changes tensor size. A reviewed, model-specific writer must account for descriptors, alignment, all relocated tensor ranges, trailing bytes, and exact untouched payload identity. Re-read physical C/E files and compare their entire non-target complement. **There is no universal GGUF byte-patch recipe in this guide**, and the numerical helper performs no GGUF I/O.

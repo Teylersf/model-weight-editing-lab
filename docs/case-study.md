@@ -213,6 +213,8 @@ The improvement loop now uses provisional accepted V10 as the next default resea
 
 For future Windows evaluations, a correct, complete solution may take longer than the matched control. Record token counts, decode time, and repeated work separately. Compare speed among equally correct, complete solutions. Keep the native generation ceiling as an execution limit and record a ceiling hit as a censored run. Use the former per-case and aggregate token thresholds, including the case16 readiness target, as performance references. The historical dispositions above document the rules used at the time.
 
+Measure the actual stored matrix change relative to each relevant reference. Subsequent Windows edits use that measurement to compare candidates, with promotion based on stored-byte verification, native replay, complete solutions, natural completion, and matched regressions. The 1% matrix gate applies to the historical runs that declared it. New trials can explore larger changes when the observed proof and margin evidence justifies doing so.
+
 Retention keeps the original, current accepted checkpoint, one prior accepted rollback, active experimental files and checkpoints that active validators actually read. Older rejected/superseded weights can be pruned after dependency checks while small lineage records and receipts remain. Cleanup uses explicit owned regular-file inventories. On APFS, logical checkpoint size can greatly exceed reclaimed space; actual free space is measured before/after cleanup and before new allocations.
 
 ## Keep the evaluation boundary visible
