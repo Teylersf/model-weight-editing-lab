@@ -24,7 +24,7 @@ LOG_NAMES = {"native.log", "native-stderr.log", "native.stderr.log"}
 def trace_logs(workspace):
     root = workspace / "runs"
     paths = (
-        path for pattern in ("*/*.log", "*/*/*.log")
+        path for pattern in ("*/*.log", "*/*/*.log", "*/*/*/*.log")
         for path in root.glob(pattern)
         if path.name in LOG_NAMES and path.is_file()
         and not path.is_symlink() and path.resolve().is_relative_to(root.resolve())
