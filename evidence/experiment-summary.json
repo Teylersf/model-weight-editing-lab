@@ -1040,13 +1040,14 @@
     "private_teacher_body_bundled": false
   },
   "windows_migration": {
-    "status": "TRANSFER_IN_PROGRESS_ACCEPTED_V10_VERIFIED_CUDA_TRAIN13_COMPLETE",
+    "status": "TRANSFER_FULLY_VERIFIED_WINDOWS_BASELINE_COMPLETE_WITH_LENGTH_CENSORING",
     "mac_handoff_stage": "V22_TRAIN13_ARCHIVE_CAPTURE_QUALIFIED_ORIGINAL_STATIC_EXECUTION_PENDING",
     "frozen_transfer_manifest": {
       "sha256": "06e730b9d003ce2d989260e8604a125644ec5456517c0d50017c0e1ed28e5182",
       "files": 3414,
       "logical_bytes": 36069733369,
-      "all_files_verified_at_snapshot": false
+      "all_files_verified_at_snapshot": true,
+      "verified_utc": "2026-11-04T16:47:28.260949+00:00"
     },
     "accepted_checkpoint": {
       "version": "V10",
@@ -1085,6 +1086,44 @@
       "windows_CUDA_capture_parity_qualified": false,
       "windows_CUDA_baseline_and_captures_required_for_fit": true,
       "weights_mutated": false
+    },
+    "mac_temporary_sender_closed_after_verification": true,
+    "windows_TRAIN16_ordinary_control": {
+      "receipt_sha256": "7c0f1da46d30d78c652c78327acb736fd90620de792b0059a91b4a926f8b2227",
+      "raw_comparison_sha256": "16d7d1d18f463d4b6496d4962d72018c80a95c4b6769ea8501d674415d68b9f2",
+      "independent_math_review_sha256": "dfbf9cb0696ee021b8945d063808556c9b33f9c3585d6703d42e7d80a207d51f",
+      "accepted_parent_verified_unchanged": true,
+      "cases": 16,
+      "prompt_byte_and_ID_matches": 16,
+      "mac_tokens": 10113,
+      "windows_tokens": 11961,
+      "mac_EOG": 16,
+      "mac_LENGTH": 0,
+      "windows_EOG": 15,
+      "windows_LENGTH": 1,
+      "identical_completion_ID_sequences": 1,
+      "windows_tokens_include_length_censored_case": true,
+      "windows_gradable_finals": 15,
+      "windows_correct_gradable_endpoints": 15,
+      "windows_required_mathematical_final_pass": 12,
+      "windows_strict_whole_final_pass": 11,
+      "windows_length_censored_final_empty": true,
+      "cross_platform_speed_comparison_claimed": false,
+      "generalization_claimed": false
+    },
+    "trace_viewer": {
+      "source_commit": "81ad6d6d3472eb57358cb94e5a24674820262963",
+      "saved_tensor": "blk.63.ffn_down.weight",
+      "comparison": "C0 versus accepted V10",
+      "dimensions_rows_columns": [
+        5120,
+        17408
+      ],
+      "relative_frobenius_percent": 0.24948314894745643,
+      "heatmap_rows_columns": [
+        16,
+        32
+      ]
     }
   }
 }

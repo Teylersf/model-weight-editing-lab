@@ -2,13 +2,15 @@
 
 An AI model stores much of what it has learned in **weights**: arrays of numbers used to turn an input into an output. Editing weights means changing those saved numbers, loading the changed model, and measuring what its behavior actually does.
 
-**We are directly editing the saved weights of Qwen3.8-27B Abliterated on a local Mac.** Our goal is faster, more reliable high school and college mathematics, including reducing unproductive thinking loops. This repository explains the process from a small example you can run on an ordinary computer to the equations, quantization issues, and native-runtime checks needed for a large model.
+**We are directly editing the saved weights of Qwen3.8-27B Abliterated.** The experiments began on a local Mac and now run on a Windows RTX 3090. Our goal is faster, more reliable high school and college mathematics, including reducing unproductive thinking loops. This repository explains the process from a small example you can run on an ordinary computer to the equations, quantization issues, and native-runtime checks needed for a large model.
 
 The experiments are ongoing. Some edits changed the intended behavior; some passed local checks and failed during complete answers. We have **not** established a generally improved math model or a state-of-the-art result. Those failures are part of the guide.
 
 V10 is now the **provisional accepted research base for the tested scope**. It repaired the complete local Euler proof, preserved seven known answers, and solved one of two fresh DEV cases correctly versus zero for the original; the other case remained unresolved for both. The original checkpoint is preserved. See the [case study](docs/case-study.md) for the limits and promotion evidence.
 
 By [Taylor Kalin](https://github.com/Teylersf), with AI-assisted implementation, mathematical checking, and documentation. Independent checking here means separate computational or agent checks, not human peer review.
+
+To watch a local run, open the [live trace viewer](prototypes/trace-viewer/README.md). The page follows token generation and displays the measured difference between saved tensors.
 
 ## Start here: what are we changing?
 

@@ -150,11 +150,17 @@ The earlier V15 source review proposed a joint proof repair and earlier end-of-g
 
 ## Windows CUDA migration and V22 handoff
 
-The Mac paused after completing and qualifying the V22 TRAIN13 archive capture, before its planned static execution. The frozen transfer manifest lists **3,414 files** totaling **36,069,733,369 bytes**. The full transfer is in progress at this snapshot. The Windows copy of accepted **V10 (E10)** already matches its recorded SHA-256.
+The Mac paused after completing and qualifying the V22 TRAIN13 archive capture, before its planned static execution. The frozen transfer manifest lists **3,414 files** totaling **36,069,733,369 bytes**. Windows verified every file against its manifest SHA-256 and length. The transfer included accepted **V10 (E10)**, its C0 reference, and the original rollback. The Mac sender was closed after verification and the Mac lab was kept as a fallback.
 
 Windows ran the accepted checkpoint on an **NVIDIA GeForce RTX 3090 (CUDA0)** using llama.cpp build **11960** (8642541b2), the same build identifier as the Mac. The Windows log recorded **66 of 66 layers offloaded**. The canonical TRAIN13 prompt had the same **100 input token IDs** on both systems. The generations shared the first **65 generated tokens**. Both ended with EOG, at **466 tokens on Metal** and **626 on CUDA**. The Windows final proof passed review. Its measured decode time was **15,833.9793 ms** for that run. The token trajectories diverged, so this run supplies no cross-platform speed or generalization result.
 
 A separate Windows CPU cross-check reused the unchanged archived Mac states. Both archived pairs cleared the necessary support exclusion test. That limited test leaves joint fit feasibility open. Windows fitting requires a fresh CUDA baseline and matching captures. The [public summary](../evidence/experiment-summary.json) records the manifest, build and check hashes.
+
+A fresh Windows control run used the same V10 bytes, prompt bytes, prompt token IDs, and generation settings for all 16 TRAIN cases. The output token sequences matched on **1 of 16** cases. Windows emitted an end token on **15 cases**. The remaining case reached the **3,072-token cap** without producing a final answer. The observed Windows total was **11,961 tokens**, including that incomplete case. Metal emitted **10,113 tokens** across 16 completed answers. These totals describe different trajectories and completion outcomes.
+
+An independent review graded the exact Windows finals. **15 of 15 gradable endpoints** were correct. **12 of 16** passed required mathematical working and modeling, and **11 of 16** passed the stricter check that includes auxiliary claims. The length-capped case was ungradable. This control is for known training cases. Future Windows edits require capture and validation on the actual CUDA trajectories.
+
+The [local trace viewer](../prototypes/trace-viewer/README.md) shows the token cap and the saved **0.2495% relative Frobenius change** in the block 63 down-projection matrix between C0 and V10. The heatmap summarizes the saved parameter difference by region.
 
 ## Cumulative promotion and storage policy
 
