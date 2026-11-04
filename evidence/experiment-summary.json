@@ -792,9 +792,27 @@
         "previously_observed_DEV_checks": "UNRUN_AFTER_SELECTION"
       },
       "cleanup": {
-        "status": "PENDING_LAST_VERIFIED",
-        "checkpoint_and_raw_payload_deletion_confirmed": false,
-        "deletion_claimed": false
+        "status": "COMPLETED_BATCH008",
+        "receipt_sha256": "f9e08c67251a2bd7072ec5e019ac8e91af957419e4e63ebf7d42006922b82f1c",
+        "receipt_bytes": 4373,
+        "files_removed": 14,
+        "obsolete_GGUF_files_removed": 1,
+        "raw_F32_payloads_removed": 1,
+        "candidate_cache_arrays_removed": 12,
+        "logical_removed_file_bytes": 12344187808,
+        "observed_filesystem_free_bytes_before": 34197118976,
+        "observed_filesystem_free_bytes_after": 35238629376,
+        "observed_filesystem_free_bytes_increase": 1041510400,
+        "logical_total_claimed_as_reclaimed_bytes": false,
+        "preserved_unchanged": [
+          "Original B",
+          "Accepted V10",
+          "Representation anchor C0",
+          "Accepted-parent control captures",
+          "V14 queued inputs"
+        ],
+        "small_V13_records_and_factors_retained": true,
+        "dependency_check_confirmed_no_active_V13_physical_dependencies": true
       }
     }
   ],
