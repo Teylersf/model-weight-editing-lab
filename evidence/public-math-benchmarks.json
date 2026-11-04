@@ -67,5 +67,27 @@
       "combined_micro": {"both_correct": 224, "e10_only_correct": 0, "rank_two_only_correct": 2, "neither_correct": 144, "answer_disagreements": 2}
     },
     "training_data_overlap_unknown": true
+  },
+  "worked_solutions_protocol": {
+    "models": ["E10", "Windows rank-two"],
+    "inference": {"backend": "CUDA0", "temperature": 0, "seed": 42, "context_tokens": 8192, "generation_limit_tokens": 6144},
+    "agieval": {
+      "dataset_commit": "84ab72d94318290aad2e4ec820d535a95a1f7552",
+      "dataset_version": "v1.1",
+      "freeze_receipt_sha256": "621774af1bcf64e3da0b7ca208338b62c873b335f517d20040dc5e04bd9fd1eb",
+      "prompt_manifest_sha256": "7480e4547f896500c3258595c573ef1e210cc4997bf6ff15de9bac21ce5e024c",
+      "matched_launch_sha256": "acec117f6162a57b63b7e3fb2d5d228949a6f831c93846c35f8b276a5cb074f9",
+      "selected_counts": {"sat_math_multiple_choice": 8, "gaokao_math_multiple_choice": 4, "gaokao_math_fill_in": 4}
+    },
+    "ugmathbench": {
+      "dataset_commit": "8ab16f0c131a9b3b52195e64175cb5a8f3881bbf",
+      "checker_commit": "df47bfa639bfb89bdb0220036a7b2f216e72b0b3",
+      "protocol_sha256": "184f8b4745437bd894f02493b72a27ca491cb4d5f4ef4c897d877d62aef49825",
+      "prompt_manifest_sha256": "651b8bb480eb6005421ba53111a3d4e140857b9248bc50ec20e238b19e680d44",
+      "matched_schedule_sha256": "83c3f20f06cc690410ecd4395dac29d2f464936cc93789503c77b74201d4354d",
+      "selected_counts": {"subjects": 8, "stems": 8, "variants": 24, "answer_blanks": 51}
+    },
+    "selection_and_inference_frozen_before_generation": true,
+    "benchmark_test_inputs_used_for_tuning": false
   }
 }
