@@ -119,6 +119,27 @@
       "rank_two": {"median_tokens": 572.5, "median_decode_seconds": 14.40060715}
     }
   },
+  "known_failure_repair_pilot": {
+    "scope": "Five known worked benchmark repair cases and two archived critical proof regressions",
+    "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+    "saved_candidate_sha256": "a2c19a5192779d81f30785e2cb0c420fdea83ceab50329929246a216d1fe2efe",
+    "readback_receipt_sha256": "be0a8b1ad5511f39c84701a6a75e0264828588e9d92fcfcfb3991345caea2c00",
+    "fit_receipt_sha256": "19f2fa9ac941d71ec354c1fc5c0ba60b76df83a6326268d08fbaaa7f7d93fd54",
+    "native_capture_receipt_sha256": "4513b74bf6ea815f0c97877a1445f1185748806382c0d0c29f5f5be92fb1d85f",
+    "ordinary_generation_receipt_sha256": "c87a52200bf5829a1785c3002322da1ce06a5457b18890b9a74f6143d2c77071",
+    "ordinary_root_math_review_sha256": "733520c1e3df9ca8cd5771374daff62164aa0b5479986a379c7d1b3e6c92ef7f",
+    "rank": 5,
+    "guard_states_in_projection": 11267,
+    "d63_fractional_norm_change_vs_parent": 0.04183030542226234,
+    "outside_d63_byte_identical": true,
+    "rounded_full_vocabulary_wins": 5,
+    "known_case_complete_math_repairs": ["ideal intersection", "missing differential-equation derivation", "exact Bayes result"],
+    "statistics_parent_completion_tokens": [6144, 4168],
+    "statistics_pilot_completion_tokens": [435, 301],
+    "statistics_complete_math_repairs": 0,
+    "critical_proof_exact_matches": 2,
+    "promoted": false
+  },
   "agieval_worked_results": {
     "matched_generation_sha256": "5d68c9463f36e9180f4d8dd4dd92926f486e6abde8b8486917e15e4df9509e20",
     "blind_review_freeze_sha256": "ee43c19775c7523b60e282dbf9b714f095db01fb78c92b7324d81b84a259f04b",
