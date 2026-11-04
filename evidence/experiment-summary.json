@@ -1300,7 +1300,16 @@
       "ordinary_case16_correct_endpoints": true,
       "ordinary_case16_complete_proof": false,
       "newly_observed_relative_math_regressions": 0,
-      "downstream_checks_pending": true
+      "downstream_checks_pending": true,
+      "core_generation_receipt_sha256": "777a7b18ec2f24f29c39eeb8d32bc0545ad36496be962b834d7824cdd17fb0d3",
+      "core_independent_math_clearance_sha256": "a109128a8a9d1d030a64160a97569c31fe3544a9bf41a61bbe97f095fcc0c5fc",
+      "core_candidate_complete_correct_euler": true,
+      "core_candidate_euler_tokens": 1762,
+      "core_v10_euler_tokens": 1401,
+      "core_known_dev7_historical_and_matched_successes_preserved": true,
+      "core_candidate_total_tokens": 5550,
+      "core_v10_total_tokens": 5189,
+      "observed_dev2_pending": true
     }
   }
 }
