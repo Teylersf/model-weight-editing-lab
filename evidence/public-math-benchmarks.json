@@ -260,6 +260,22 @@
     },
     "promoted": false
   },
+  "fresh_worked_preregistration": {
+    "prompt_manifest_sha256": "2bad936ebe51853d46d6fce8995d874cb657ca986b74ea9dc7f86966d9635b35",
+    "grader_only_key_sha256": "1281db874bba4436173d15d181c929444e845d3dbe56a0625cdd222be887a3d4",
+    "selection_criteria_sha256": "fa0381f81c417563d392bf57a2d6d2acf7dce6c822a3f140946979648de5ea92",
+    "levels": {"high_school": 5, "college": 7},
+    "baseline": "accepted rank-two checkpoint",
+    "default_candidate": "pilot-004",
+    "pilot_005_required_preserved_development_cases": 8,
+    "pilot_005_required_additional_complete_development_cases": 1,
+    "pilot_005_required_exact_critical_proofs": 2,
+    "pilot_005_minimum_matched_mmlu_correct": 226,
+    "primary_metric": "correct and complete visible work, required precision, valid natural finish, and no serious repetition",
+    "open_key_after_both_generations_frozen": true,
+    "allow_fresh_data_for_candidate_fit": false,
+    "status": "plan frozen, generation pending"
+  },
   "agieval_worked_results": {
     "matched_generation_sha256": "5d68c9463f36e9180f4d8dd4dd92926f486e6abde8b8486917e15e4df9509e20",
     "blind_review_freeze_sha256": "ee43c19775c7523b60e282dbf9b714f095db01fb78c92b7324d81b84a259f04b",

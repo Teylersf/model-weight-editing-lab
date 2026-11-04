@@ -91,3 +91,9 @@ This rank-eleven edit protected every recorded native decision in all three stat
 Codex verified complete, unforced solutions for **all eight targeted development problems**. This includes both ideal operations cases, the differential equation, exact Bayes, all three statistics variants, and the Gaokao inequality. The inequality now justifies both comparisons with exact bounds. Both critical proofs reproduced their original native token sequences. The calculus variants and Gaokao cube were outside this pilot's eight-problem test. [Checkpoint and review receipts](../evidence/public-math-benchmarks.json)
 
 The checkpoint tied the accepted parent on the same 370 MMLU items: **226/370 (61.1%)**, with 162/270 in high school and 64/100 in college. One high-school answer became correct and one became incorrect; every college choice matched. This pilot recovered more known worked cases while holding overall MMLU accuracy. It remains experimental. [Paired benchmark receipts](../evidence/public-math-benchmarks.json)
+
+## Fresh worked comparison plan
+
+The fresh comparison is separate from the development repairs and the repeated MMLU comparison. Its twelve authored questions, five high-school and seven college, and their grader-only answer key were frozen before the repair candidates were selected. The prompts and key are private while the comparison is pending.
+
+The fourth pilot is the default candidate. The fifth would replace it for this comparison only if it retains all eight reviewed solutions, repairs at least one additional calculus or cube case, preserves both critical proofs exactly, and scores at least 226/370 on matched MMLU. Codex will freeze both models' ordinary outputs, grade complete visible working with randomized model labels, and then reveal the labels. No fresh question, answer key, or result is an input to these fits. [Frozen evaluation and selection commitments](../evidence/public-math-benchmarks.json)
