@@ -194,6 +194,19 @@ In ordinary generation the edited checkpoint reproduced the reviewed derivative 
 
 A read-only follow-up on case16 substituted the runner-up at the candidate's premature end. Free generation added the correct lower-error comparison and ended at **1,516 tokens**. Interval coverage and the argument for approaching the upper bound still need justification. The candidate-free replay showed the next proposed teacher token far below its native competitor, motivating a separate trace at the later ending.
 
+### Saving the partial interval-proof improvement
+
+We used the observed continuation to fit a rank-one edit directly into the F32 terminal down-projection, D63, of the unpromoted Windows proof-stop checkpoint. The fit used **3,722** supplied guard rows. The continuation token trailed the native winner by **3.0942** logits in the experimental parent and led by **2.4680** in the synthetic CUDA preview. Readback of the separate **11,674,147,744-byte** GGUF verified the D63 payload and byte equality outside that tensor. The stored D63 Frobenius differences were **0.6191%** relative to the immediate experimental parent, **0.8564%** relative to V10 (E10), and **0.8919%** relative to the C0 representation control. Each percentage uses its own reference matrix norm.
+
+We loaded the saved candidate and ran case15 and case16 together under the same Windows CUDA settings and exact prompts as the immediate parent. The runner verified the full checkpoint SHA-256 before and after generation. Both answers reached natural end tokens. The case16 candidate emitted the previously reviewed continuation under ordinary greedy decoding.
+
+| Known TRAIN case | Immediate experimental parent | Saved lower-error candidate | Result |
+| --- | --- | --- | --- |
+| 15 | 700 tokens | 700 tokens | Identical generated token sequence and visible answer bytes. |
+| 16 | 1,498 tokens | 1,516 tokens | The candidate added the correct lower-error comparison. Interval coverage and a constructive argument for approaching the upper bound remain missing. |
+
+The interval proof remains incomplete, so the candidate stays unpromoted and V10 (E10) remains the provisional accepted research base. The public summary records the stored matrix fractions and SHA-256 identifiers for the source and receipts. [Public experiment summary](../evidence/experiment-summary.json)
+
 ## Cumulative promotion and storage policy
 
 The improvement loop now uses provisional accepted V10 as the next default research parent. Qualification requires the existing stored/native and complete-answer gates, comparison with both the immediate experimental parent and current accepted reference, and preservation of earlier accepted fixes. A rejected candidate leaves the accepted reference unchanged. Iterative DEV gains do not establish worldwide mastery or an unbiased held-out result.

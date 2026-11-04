@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-04",
   "author": "Taylor Kalin",
-  "status": "Accepted V10 verified on Windows and used for one CUDA TRAIN13 baseline. Full transfer and CUDA capture qualification are pending in this snapshot.",
+  "status": "V10 (E10) remains the provisional accepted research base. A separate Windows D63 edit added part of the case16 proof in matched ordinary generation and remains unpromoted.",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -1329,6 +1329,57 @@
       "first_target_native_margin": -3.094219207763672,
       "second_teacher_token_native_margin": -14.660869598388672,
       "new_weight_edit_written_at_this_snapshot": false
+    },
+    "case16_lower_error_stored_followup": {
+      "scope": "Direct stored D63 follow-up from the unpromoted Windows proof-stop checkpoint, evaluated on two matched TRAIN cases",
+      "checkpoint_sha256": "34bb3599bf91a8888521b67c668743e47b9b4e0b691a98fde0be3e56d95a4085",
+      "checkpoint_bytes": 11674147744,
+      "experimental_parent_sha256": "6b6b857bce980e3e797217f8938dbcde4eff0af61fb284ecd36b4261f405390e",
+      "accepted_reference": "E10 (V10)",
+      "accepted_reference_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "fit_driver_sha256": "e0c2f69fa302e82177877f5e49ef9e7607f65e9c9808cc8ea8d16889590a960f",
+      "fit_receipt_sha256": "84b06686a6725d150dbe360ddc99276958c680c271e4716c53253857b07ef60e",
+      "conditional_replay_receipt_sha256": "a8114e8f38680e236da296fe44de5f9903a7a0b1436275d2df7008146d2a42a2",
+      "materializer_source_sha256": "7a5649b74bbacc1029a5ad5f7b17e2a41f8f29bf800f876a5f7e9397c635cb15",
+      "stored_readback_receipt_sha256": "8321cc7f791b1afa8d0d7096aff1f2b28779dffd3f600da5b2c41da64aa322e7",
+      "ordinary_pair_driver_sha256": "82d0976f295d6f6701c600d1a340b60f44a3657e4e10434be3a388415bdf8451",
+      "ordinary_pair_closeout_sha256": "97988c5a37bcc415e4605aa16628ffc09b57b63cf28e05c929304dad26766dfa",
+      "experimental_parent_ordinary_raw_sha256": "13b800f9b31bcf58539d9e05dc1575d4f0ed5415bdcda3f8e53046c6c7fcfa02",
+      "candidate_ordinary_raw_sha256": "f7193df513a577f8bb42f5488ef0a63e495b0f15f9b0be1d16fbe566d3fd8e6d",
+      "controlled_continuation_independent_math_review_sha256": "c185c39ddb4be0289f56b7b509eeded1f864d5a9dd8181a648f1fe383824b3e7",
+      "target_generated_index_zero_based": 1497,
+      "fit_guard_rows": 3722,
+      "experimental_parent_target_margin": -3.094219207763672,
+      "synthetic_cuda_preview_target_margin": 2.4679908752441406,
+      "synthetic_cuda_preview_receipt_sha256": "c3e2e669081b69e622b09420d9a7abf8317c097194e6f487dcd36e5cb7b677da",
+      "stored_D63_frobenius_fractions": {
+        "experimental_parent": 0.006191247262140381,
+        "E10": 0.008564224092108424,
+        "C0": 0.008918922693722362
+      },
+      "stored_target_residual_shift_fraction_vs_experimental_parent": 0.03802747393998517,
+      "stored_D63_f32_payload_bytes": 356515840,
+      "stored_D63_f32_payload_sha256": "a7d26bbe70167e83828410433e2d411ef257595bc08615a31ed92437dd5ee149",
+      "outside_D63_bytes_equal_experimental_parent": true,
+      "independent_read_only_checkpoint_file": true,
+      "checkpoint_full_sha256_verified_before_and_after_ordinary_run": true,
+      "same_native_settings_and_exact_prompt_bytes_and_token_ids": true,
+      "evaluation_policy": "complete-math-first-v1",
+      "case15": {
+        "experimental_parent_natural_eog_tokens": 700,
+        "candidate_natural_eog_tokens": 700,
+        "exact_parent_token_sequence_and_visible_final": true
+      },
+      "case16": {
+        "experimental_parent_natural_eog_tokens": 1498,
+        "candidate_natural_eog_tokens": 1516,
+        "candidate_matches_previous_reviewed_controlled_continuation": true,
+        "correct_lower_error_comparison_added": true,
+        "interval_coverage_and_constructive_sharpness_missing": true,
+        "complete_proof": false
+      },
+      "candidate_accepted": false,
+      "promotion_authorized": false
     }
   }
 }
