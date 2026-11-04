@@ -92,6 +92,12 @@ Codex verified complete, unforced solutions for **all eight targeted development
 
 The checkpoint tied the accepted parent on the same 370 MMLU items: **226/370 (61.1%)**, with 162/270 in high school and 64/100 in college. One high-school answer became correct and one became incorrect; every college choice matched. This pilot recovered more known worked cases while holding overall MMLU accuracy. It remains experimental. [Paired benchmark receipts](../evidence/public-math-benchmarks.json)
 
+## Fifth repair pilot: build from an experimental checkpoint
+
+The fifth pilot starts from the third pilot on a separate branch, where the three calculus responses and the cube proof had already stopped looping but still lacked correct exact results or complete working. Five reviewed continuations target the exact calculus results and the two incomplete Gaokao proofs. The edit keeps 15,975 recorded states in its guard projection, including full recorded native prefixes for the calculus and inequality repairs.
+
+All 283 target tokens won the rounded full-vocabulary CUDA check, with no omitted targets. The D63 edit has norm 102.09% of its experimental parent's D63 norm. The new GGUF was independently verified, with byte equality outside D63. This unusually large edit is an experiment; fixed-state success alone does not qualify it. [Fit and saved checkpoint receipts](../evidence/public-math-benchmarks.json)
+
 ## Fresh worked comparison plan
 
 The fresh comparison is separate from the development repairs and the repeated MMLU comparison. Its twelve authored questions, five high-school and seven college, and their grader-only answer key were frozen before the repair candidates were selected. The prompts and key are private while the comparison is pending.
