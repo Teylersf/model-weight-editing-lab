@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-04",
   "author": "Taylor Kalin",
-  "status": "V10 (E10) remains the provisional accepted research base. A separate saved Windows rank-36 D63 edit reproduced the complete reviewed case16 proof and three control streams in ordinary generation. Broader regressions are pending.",
+  "status": "V10 (E10) remains the provisional accepted research base. The saved Windows rank-36 candidate solved 14 of 16 known TRAIN cases with complete working, gained three complete solutions over E10, and preserved every previously complete TRAIN result. Downstream checks remain pending.",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -1431,7 +1431,24 @@
         "case14": 1036,
         "case15": 700
       },
-      "full_regression_pending": true,
+      "full_regression_pending_at_four_case_smoke": true,
+      "promotion_authorized": false
+    },
+    "case16_report_only_rank_k_train16_regression": {
+      "scope": "Matched Windows ordinary CUDA generation in eight original TRAIN16 pairs, graded against the exact archived Windows E10 comparison",
+      "generation_receipt_sha256": "5dc128fcf3bb21ea5399fd2e7bf483206aee10165f87c416e89b6e55e0aac2b8",
+      "independent_whole_final_review_sha256": "d254f7ae24245634d5fe3f5efe2445c33adb89385d0935d50f2b90d0843e324e",
+      "reviewed_regression_summary_sha256": "380d507768d4f5db6b2adc18e87174e9f01b6cc93a3b11b23bb16e8939a36c36",
+      "cases": 16,
+      "complete_math": 14,
+      "natural_eog": 16,
+      "length_censored": 0,
+      "new_complete_cases_vs_e10": [8, 11, 16],
+      "previously_complete_regressions_vs_e10": [],
+      "inherited_defects_in_cases": [6, 10],
+      "previously_complete_and_correct_with_more_tokens": [1, 2, 3, 7, 12, 13],
+      "independent_ordinary_proof_review_sha256": "bf6883c958d703a22eeda7323f0eea21e0db67b98c8fadbacf28102253f3c999",
+      "core_and_observed_development_pending": true,
       "promotion_authorized": false
     },
     "case16_lower_error_stored_followup": {

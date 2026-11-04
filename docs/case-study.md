@@ -213,7 +213,9 @@ The next fit kept 35 residual columns and added the missed full-vocabulary compe
 
 In ordinary greedy CUDA generation, the saved checkpoint reproduced the complete reviewed interval proof and ended naturally after **1,628 tokens**. The proof uses a continuous increasing diagonal to cover the entire interval, shows that the excluded upper limit can be approached, and compares both exact endpoint errors. Its immediate parent's ordinary answer ended naturally after **1,516 tokens** and supplied the endpoint comparison while omitting the coverage and approach arguments.
 
-The three paired controls reproduced their exact previously captured token streams and ended naturally at **471**, **1,036**, and **700** tokens. The interval problem was a known fitting case. This four-case run leaves broader matched regressions pending, with E10 still the accepted research base. [Public experiment summary](../evidence/experiment-summary.json)
+The three paired controls reproduced their exact previously captured token streams and ended naturally at **471**, **1,036**, and **700** tokens. The interval problem was a known fitting case. [Public experiment summary](../evidence/experiment-summary.json)
+
+We then ran the candidate through all eight original TRAIN16 prompt pairs on the same CUDA runtime and with the same prompts, context, and generation limit as the archived E10 comparison. All **16** answers ended naturally. Independent review passed **14** complete solutions, including newly complete derivative, probability, and interval cases against E10. The two remaining defects were an inherited false modulus equality and an inherited dimensional claim in an ODE answer. Every previously complete TRAIN16 solution passed again. Six previously complete solutions used more tokens, and their correct working passed under the same rubric. These are known TRAIN results. The core and observed development checks still govern promotion, with E10 retained as the accepted base.
 
 ## Extended Windows check on the observed development pair
 
