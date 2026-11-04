@@ -1124,6 +1124,29 @@
         16,
         32
       ]
+    },
+    "archive_readback": {
+      "all_manifest_files_sha256_verified": true,
+      "manifest_files": 3414,
+      "manifest_bytes": 36069733369,
+      "private_receipt_sha256": "dc6403462eac386bbc9f09871b476e6b0b46cac0f660b8772f90651b05625358"
+    },
+    "windows_actual_id_replays": {
+      "private_closure_sha256": "3b2cf74d4ec2df696b4daaba26388a5120d7d604d2b601fe69e929c783c0f70e",
+      "case08": {
+        "captured_states": 564,
+        "ordinary_next_id_matches": 564,
+        "ordinary_stop": "eog",
+        "private_comparison_sha256": "59a95259e8028a6e8f63d8c72427ae344273bbf069a80e54d74475047e09a20d"
+      },
+      "case16": {
+        "captured_states": 3072,
+        "ordinary_next_id_matches": 3072,
+        "ordinary_stop": "length",
+        "private_comparison_sha256": "74cae3a27b37c60af4b050daff00885bf4598a2d207d18e4ab307cc56dd7c7ae"
+      },
+      "case16_injected_end_token": false,
+      "weights_mutated": false
     }
   }
 }

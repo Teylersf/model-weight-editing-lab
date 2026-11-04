@@ -160,6 +160,8 @@ A fresh Windows control run used the same V10 bytes, prompt bytes, prompt token 
 
 An independent review graded the exact Windows finals. **15 of 15 gradable endpoints** were correct. **12 of 16** passed required mathematical working and modeling, and **11 of 16** passed the stricter check that includes auxiliary claims. The length-capped case was ungradable. This control is for known training cases. Future Windows edits require capture and validation on the actual CUDA trajectories.
 
+A separate archive drive passed independent SHA-256 readback of all **3,414** manifest entries. Forced CUDA replays on accepted V10 matched the ordinary next-token ID at **564 of 564** derivative-proof states and **3,072 of 3,072** states from the length-capped case. The first replay included the observed end token. The second stopped at the observed cap. These are read-only trajectory checks on the unchanged checkpoint.
+
 The [local trace viewer](../prototypes/trace-viewer/README.md) shows the token cap and the saved **0.2495% relative Frobenius change** in the block 63 down-projection matrix between C0 and V10. The heatmap summarizes the saved parameter difference by region.
 
 ## Cumulative promotion and storage policy
