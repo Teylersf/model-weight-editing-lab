@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-03",
   "author": "Taylor Kalin",
-  "status": "V13 not promoted by quality selection after all 15 required relative TRAIN nonregressions passed; original 16-case TRAIN token cost increased by 1,006 versus accepted V10; remaining core/DEV qualification incomplete; V14 preparing without a fit result",
+  "status": "V14 saved candidate passed all 3375 native TRAIN guards and its selected actual complete proof; other TRAIN, full 16-case efficiency and core/DEV qualification pending; V10 remains accepted",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -814,6 +814,104 @@
         "small_V13_records_and_factors_retained": true,
         "dependency_check_confirmed_no_active_V13_physical_dependencies": true
       }
+    },
+    {
+      "version": "V14",
+      "mechanism": "Rank-one saved F32 terminal FFN down-projection edit with 3375 typed TRAIN-only hard guards",
+      "status": "UNACCEPTED_NATIVE_GUARDS_AND_SELECTED_PROOF_PASS: other TRAIN nonregressions, full 16-case efficiency and core/DEV qualification pending",
+      "experimental_parent_version": "V10",
+      "experimental_parent_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "candidate_sha256": "1a9a3b86e78ade042a0d54044c622848dae27fe4aa01658472ea4e7a768a5562",
+      "candidate_bytes": 11674147744,
+      "method_sha256": "370262c669640099f0d9c763c48e79565c734fd9d660f0d06077aeb5c4f2c509",
+      "profile_sha256": "edc7c9772eb6e15ce1892abe87d91c892b0092025fbc48b60e4879c376ad58e3",
+      "algorithm_sha256": "466389a5458ce70c73089faa8fd7da08925a2327a222cf6d3b93c21b7cd0cb69",
+      "proposal_sha256": "7fdca46777db4492b00a668f757ef92d6c5fdaf1c8bb495db08fc2e958474df1",
+      "solve_count": 1,
+      "cow_receipt_sha256": "2d7916c13f284233f929bcdbd50a3fc78c2ebb6e3aa1b6f5db73063cb90f7eb0",
+      "cow_receipt_bytes": 25465,
+      "tensor": {
+        "name": "blk.63.ffn_down.weight",
+        "stored_encoding": "F32"
+      },
+      "accepted_as_general_math_improvement": false,
+      "accepted_research_base": false,
+      "promoted": false,
+      "accepted_reference_unchanged_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "TRAIN_guard_contract": {
+        "role": "FIT_TRAIN",
+        "base_guard_rows": 2391,
+        "additional_complete_accepted_parent_response_rows": 984,
+        "frozen_guard_rows": 3375,
+        "total_fit_states": 3376,
+        "engine_guard_row_bound": 4096,
+        "optional_additional_601_rows": "DEFERRED_MEMORY_UNCERTAINTY_NOT_FIT_INPUT",
+        "guard_choice_and_method_frozen_before_fit": true,
+        "DEV_or_heldout_features_used_for_fitting": false,
+        "all16_TRAIN_generated_token_selection_max": 10113,
+        "efficiency_rule_frozen_before_fit": true,
+        "frozen_efficiency_target_satisfaction": "PENDING_ORDINARY_16_CASE_MEASUREMENT"
+      },
+      "independent_prewrite_validation": {
+        "receipt_sha256": "5dd5823937e8088c2c706b3ea5acb439fac94280c0dffcfa34a6cd1719709dfc",
+        "receipt_bytes": 158625,
+        "response_record_states": 3376,
+        "stored_incremental_matrix_Frobenius_fraction": 0.005010888222645596,
+        "stored_cumulative_matrix_Frobenius_fraction": 0.005597765742027874,
+        "norm_fractions_are_changed_entry_percentages": false,
+        "validation_is_full_native_float_vector_bitwise_equality": false
+      },
+      "physical_positive_screen": {
+        "status": "PASS",
+        "receipt_sha256": "6f29f89bffa159110ab53cb3fa5fab64d51ee21fd771bc470ba3f98423cd6317",
+        "receipt_bytes": 1978,
+        "native_all_vocabulary_margin": 0.7500019073486328,
+        "native_positive_residual_shift_fraction": 0.03704365518969789,
+        "positive_residual_cap_fraction": 0.05
+      },
+      "physical_native_guard_audit": {
+        "status": "PASS",
+        "receipt_sha256": "486708ff2d887db2107edcdc912f6b14052e1f054143595a01fa7ef309057ae9",
+        "receipt_bytes": 24676,
+        "exit_code": 0,
+        "elapsed_ms": 648481,
+        "preregistration_sha256": "3e4cbed90a4848217625d5a51793141b4598eaf417f35df9bf593b77cc33c89b",
+        "preregistration_bytes": 24378,
+        "root_clearance_sha256": "3114b23604fa852dfbe95c2dd4068fb53ac433924fe18bb4f5aa8fd7e4afdb5c",
+        "root_clearance_bytes": 2145,
+        "guards_passed": 3375,
+        "audited_states": 3376,
+        "native_capture_jobs": 4,
+        "all_3376_upstream_feature_skip_pairs_bit_identical": true,
+        "target_native_margin": 0.7500019073486328,
+        "audit_alone_establishes_ordinary_complete_answer_qualification": false
+      },
+      "selected_ordinary_TRAIN_generation": {
+        "status": "PASS_ACTUAL_COMPLETE_FINAL_PROOF",
+        "receipt_sha256": "7aed5df3525049ac6ce91f4759d2c0126926541d98187f9c1fe2378d73be181b",
+        "receipt_bytes": 13910,
+        "generated_tokens": 494,
+        "termination": "EOG",
+        "accepted_parent_generated_tokens": 474,
+        "additional_tokens": 20,
+        "complete_proof_grade": "PASS",
+        "speed_gain_claim": false,
+        "matched_latency_or_throughput_comparison_claimed": false,
+        "actual_final_sha256": "79fc1ea318f16e3c115ce6c515262b98dc1f8b9e3b1678ad68f080e9ad8f196a",
+        "independent_root_math_check_sha256": "55ef57b836865c65dd12a0ec119c33238b1fed4ce47d8ec4f86d9bc132c4e98f",
+        "independent_root_math_check_bytes": 1531,
+        "mac_side_complete_final_review_sha256": "6d90f488f0abaec29f90a2569fb257109ee6233bf2649942c6df4b6a8a2e2a5d",
+        "mac_side_complete_final_review_bytes": 2795
+      },
+      "comparison_scope": "Saved candidate, supplied TRAIN native-guard/positive checks and the selected actual complete proof passed. Other required TRAIN, full efficiency and core/DEV qualification remain pending; no acceptance, general improvement, speed or generalization result is established.",
+      "qualification_checks": {
+        "selected_complete_proof": "PASS_ACTUAL_COMPLETE_FINAL",
+        "other_TRAIN_relative_mathematical_nonregressions": "PENDING",
+        "all16_TRAIN_efficiency_comparison": "PENDING",
+        "core_checks": "PENDING",
+        "known_and_previously_observed_DEV_checks": "PENDING",
+        "pending_checks_counted_as_passes": false
+      }
     }
   ],
   "promotion_policy": {
@@ -845,7 +943,7 @@
   "next_research_iteration": {
     "version": "V14",
     "parent_accepted_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
-    "status": "PREPARING_METHOD_AND_3375_GUARD_CHOICE_FROZEN_NO_FIT_RESULT_REPORTED",
+    "status": "V14_SAVED_CANDIDATE_NATIVE_GUARDS_PASS_UNACCEPTED_QUALIFICATION_PENDING",
     "guard_set_role": "TRAIN_ONLY",
     "existing_guard_rows": 2391,
     "additional_complete_accepted_parent_response_rows": 984,
@@ -855,7 +953,7 @@
     "engine_guard_row_bound": 4096,
     "guard_choice_and_method_must_freeze_before_fit": true,
     "resource_admission_required_before_fit": true,
-    "fit_result_reported": false,
+    "fit_result_reported": true,
     "model_improvement_established": false,
     "promoted": false,
     "DEV_or_heldout_features_used_for_training": false,
@@ -869,6 +967,10 @@
     "resource_rule_sha256": "61909faa340f23272f14ae0de8e193d143ad74f3b54e5ed09af73981185d2d70",
     "optional_additional_response_status": "DEFERRED_MEMORY_UNCERTAINTY_NOT_CURRENT_FIT_INPUT",
     "all16_TRAIN_generated_token_selection_max": 10113,
-    "efficiency_rule_frozen_before_fit": true
+    "efficiency_rule_frozen_before_fit": true,
+    "candidate_sha256": "1a9a3b86e78ade042a0d54044c622848dae27fe4aa01658472ea4e7a768a5562",
+    "native_guard_audit_status": "PASS_ALL_3375_GUARDS",
+    "selected_generation_status": "EOG_ACTUAL_COMPLETE_FINAL_PROOF_PASS",
+    "remaining_qualification_status": "OTHER_TRAIN_ALL16_EFFICIENCY_CORE_DEV_PENDING"
   }
 }
