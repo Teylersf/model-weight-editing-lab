@@ -214,7 +214,18 @@
     "statistics_pilot_completion_tokens": [648, 317, 438],
     "statistics_complete_math_repairs": 3,
     "critical_proof_exact_matches": 2,
-    "held_out_review_pending": true,
+    "mmlu_followup": {
+      "run_receipt_sha256": "2727b1ec2f2914de40b613fbba8b6818fccbe190d01efdfc4748f9b8c8ca84dc",
+      "paired_receipt_sha256": "9dda477951bf41c1b69a81fd350e6a7beb638f159b726b1962cbffd98939679d",
+      "high_school_correct": 161,
+      "college_correct": 64,
+      "total_correct": 225,
+      "total": 370,
+      "gained": 1,
+      "lost": 2,
+      "mmlu_used_for_weight_fit": false
+    },
+    "fresh_worked_review_pending": true,
     "promoted": false
   },
   "agieval_worked_results": {
