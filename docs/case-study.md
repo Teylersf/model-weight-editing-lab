@@ -162,6 +162,10 @@ An independent review graded the exact Windows finals. **15 of 15 gradable endpo
 
 A separate archive drive passed independent SHA-256 readback of all **3,414** manifest entries. Forced CUDA replays on accepted V10 matched the ordinary next-token ID at **564 of 564** derivative-proof states and **3,072 of 3,072** states from the length-capped case. The first replay included the observed end token. The second stopped at the observed cap. These are read-only trajectory checks on the unchanged checkpoint.
 
+For the derivative repair, the isolated CUDA suffix matched the captured residual and hidden state bit-for-bit at the selected prefix and an early control. Recorded logit values and winners matched. The full-vocabulary log-sum-exp discrepancy was below `2e-14`. The captures contain a subset of individual native logits, so the per-ID comparison covers that subset.
+
+A separate read-only test checked the ordinary CUDA prefix through its first disagreement with Metal in the capped case. At that one step it emitted the observed Metal token and then resumed free CUDA generation. It again reached **3,072 tokens without a final**. That fixed early-branch hypothesis was closed with the parent checkpoint unchanged.
+
 The [local trace viewer](../prototypes/trace-viewer/README.md) shows the token cap and the saved **0.2495% relative Frobenius change** in the block 63 down-projection matrix between C0 and V10. The heatmap summarizes the saved parameter difference by region.
 
 ## Cumulative promotion and storage policy

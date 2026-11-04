@@ -1147,6 +1147,27 @@
       },
       "case16_injected_end_token": false,
       "weights_mutated": false
+    },
+    "case08_isolated_CUDA_suffix_calibration": {
+      "receipt_sha256": "2afe33ae114f2625a7fe89a9ce2fb3c1f6e89eef6d19b6134a11bfd22551ba49",
+      "states": 2,
+      "residual_and_hidden_bitwise_equal": true,
+      "recorded_logit_max_abs_error": 0,
+      "all_vocabulary_logsumexp_max_abs_error": 1.7763568394002505e-14,
+      "all_individual_native_logits_compared": false,
+      "weights_mutated": false
+    },
+    "case16_fixed_single_override_observation": {
+      "independent_closeout_sha256": "05cabba00979881595b3252e372b04a4e8741b3fd8583801e4db54eec4833ab2",
+      "common_greedy_prefix_checked_through_winner": 116,
+      "overrides": 1,
+      "override_generated_index_zero_based": 115,
+      "observed_completion_tokens": 3072,
+      "observed_finish": "length",
+      "complete_final": false,
+      "weights_mutated": false,
+      "candidate_created": false,
+      "hypothesis": "CLOSED_WITHOUT_QUALIFIED_COMPLETION"
     }
   }
 }

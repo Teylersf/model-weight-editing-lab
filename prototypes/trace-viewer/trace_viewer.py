@@ -78,8 +78,14 @@ def snapshot(workspace, selection):
     logs = trace_logs(workspace)
     root = workspace / "runs"
     choices = {str(path.relative_to(root)).replace("\\", "/"): path for path in logs}
-    active = choices.get(selection) or next(iter(choices.values()), None)
+    active = choices.get(selection)
     events = events_from(active) if active else []
+    if active is None:
+        for path in choices.values():
+            events = events_from(path)
+            if events:
+                active = path
+                break
     capture = any(item["event"].startswith("sequence_") for item in events)
     case = next((item.get("case_id") or item.get("id") for item in reversed(events)
                  if item.get("case_id") or item.get("id")), None)
