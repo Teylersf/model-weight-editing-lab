@@ -8,13 +8,13 @@ We use the entire `high_school_mathematics` and `college_mathematics` test split
 
 The test denominator includes every question. Invalid and censored cases are reported separately and count as incorrect. Combined accuracy gives equal weight to every question. A paired comparison reports questions each checkpoint uniquely got right, so equal totals can still show changes. These public splits may overlap the upstream model's training data. Scores describe these benchmark questions, with no conversion to school grades or student percentiles.
 
-| Full test split | E10 | Windows rank-two |
-| --- | ---: | ---: |
-| High school mathematics | 160 / 270 (59.3%) | 162 / 270 (60.0%) |
-| College mathematics | 64 / 100 (64.0%) | 64 / 100 (64.0%) |
-| Combined | 224 / 370 (60.5%) | 226 / 370 (61.1%) |
+| Full test split | Original Huihui | E10 | Windows rank-two |
+| --- | ---: | ---: | ---: |
+| High school mathematics | 159 / 270 (58.9%) | 160 / 270 (59.3%) | 162 / 270 (60.0%) |
+| College mathematics | 64 / 100 (64.0%) | 64 / 100 (64.0%) | 64 / 100 (64.0%) |
+| Combined | 223 / 370 (60.3%) | 224 / 370 (60.5%) | 226 / 370 (61.1%) |
 
-Both checkpoints produced valid logits on all 370 questions, with zero prompt limit hits and zero ties. Rank-two corrected two high-school answers. The other 368 answer choices were identical, including all 100 college answers. The published preparation and grading script reproduced both scores against the archived CUDA outputs. [Scoring source and rerun commands](../prototypes/windows-cuda-mmlu-math/README.md) · [Aggregate receipt](../evidence/public-math-benchmarks.json)
+All three checkpoints produced valid logits on all 370 questions, with zero prompt limit hits and zero ties. Rank-two corrected two high-school answers compared with E10 and three compared with original Huihui. It preserved every correct answer from both references. All three checkpoints selected identical answers on all 100 college questions. The published preparation and grading script reproduced all three scores against the archived CUDA outputs. [Scoring source and rerun commands](../prototypes/windows-cuda-mmlu-math/README.md) · [Aggregate receipt](../evidence/public-math-benchmarks.json)
 
 ## Worked solutions
 
