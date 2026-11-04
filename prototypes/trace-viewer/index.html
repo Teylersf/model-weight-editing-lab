@@ -54,15 +54,15 @@
   </div>
   <div class="metrics">
     <div class="metric"><small>Latest stage</small><strong id="stage">Waiting</strong></div>
-    <div class="metric"><small>Generated tokens</small><strong id="tokens">—</strong></div>
-    <div class="metric"><small>Decode rate</small><strong id="rate">—</strong></div>
+    <div class="metric"><small id="count-label">Generated tokens</small><strong id="tokens">—</strong></div>
+    <div class="metric"><small id="rate-label">Decode rate</small><strong id="rate">—</strong></div>
   </div>
   <div class="panels">
-    <section class="panel"><h2>Token trace</h2><p id="case" class="muted">Waiting for a run</p><small id="finish"></small>
+    <section class="panel"><h2 id="trace-label">Token trace</h2><p id="case" class="muted">Waiting for a run</p><small id="finish"></small>
       <svg id="pace" viewBox="0 0 540 188" role="img" aria-label="Generated tokens by elapsed decode time"></svg>
     </section>
     <section class="panel"><h2>Latest events</h2><p class="muted">Native runtime and capture milestones</p>
-      <div class="log"><table><thead><tr><th>Time</th><th>Event</th><th>Step</th></tr></thead><tbody id="events"></tbody></table></div>
+      <div class="log"><table><thead><tr><th>Time / elapsed</th><th>Event</th><th>Step</th></tr></thead><tbody id="events"></tbody></table></div>
     </section>
   </div>
   <section class="panel">
@@ -87,11 +87,12 @@
     if (text !== undefined) node.textContent = text;
     return node;
   }
-  function drawPace(points) {
+  function drawPace(points, unit) {
     chart.replaceChildren();
     const last = points.at(-1);
     if (!last) {
-      chart.append(element("text",{x:12,y:90,class:"axis-label"},"Waiting for generated tokens"));
+      chart.append(element("text",{x:12,y:90,class:"axis-label"},"Waiting for "+unit));
+      chart.setAttribute("aria-label","Waiting for "+unit);
       return;
     }
     const maxX = Math.max(1,last[0]);
@@ -104,13 +105,13 @@
     chart.append(element("text",{x:43,y:25,"text-anchor":"end",class:"axis-label"},String(last[1])));
     chart.append(element("text",{x:44,y:171,class:"axis-label"},"0 s"));
     chart.append(element("text",{x:522,y:171,"text-anchor":"end",class:"axis-label"},last[0].toFixed(1)+" s"));
-    chart.setAttribute("aria-label",last[1]+" tokens in "+last[0].toFixed(1)+" seconds");
+    chart.setAttribute("aria-label",last[1]+" "+unit+" in "+last[0].toFixed(1)+" seconds");
   }
   function drawWeights(w) {
     if (!w || w.id === lastHeatmap) return;
     lastHeatmap = w.id;
     byId("weight-note").textContent = w.label;
-    byId("weight-ratio").textContent = w.relative_percent.toFixed(4)+"% change relative to C0";
+    byId("weight-ratio").textContent = w.relative_percent.toFixed(4)+"% change relative to reference";
     const grid = byId("heatmap");
     grid.style.gridTemplateColumns = "repeat("+w.columns+", minmax(0,1fr))";
     const maximum = Math.max(...w.rms,Number.EPSILON);
@@ -137,15 +138,22 @@
     const token = data.latest_token;
     const count = token.step === undefined ? null : token.step+1;
     byId("stage").textContent = (latest.event || "Waiting").replaceAll("_"," ");
-    byId("tokens").textContent = count ?? "—";
-    byId("rate").textContent = token.decode_elapsed_ms > 0 && count > 1 ? (count*1000/token.decode_elapsed_ms).toFixed(1)+" tok/s" : "—";
+    const capture = data.latest_capture;
+    byId("count-label").textContent = data.capture ? "Captured states" : "Generated tokens";
+    byId("rate-label").textContent = data.capture ? "Next-token matches" : "Decode rate";
+    byId("trace-label").textContent = data.capture ? "Capture trace" : "Token trace";
+    byId("tokens").textContent = (data.capture ? capture.processed_tokens : count) ?? "—";
+    byId("rate").textContent = data.capture
+      ? capture.native_next_matches ?? "—"
+      : token.decode_elapsed_ms > 0 && count > 1 ? (count*1000/token.decode_elapsed_ms).toFixed(1)+" tok/s" : "—";
     byId("case").textContent = data.case || "Waiting for a case";
     byId("finish").textContent = {length:"Stopped at the token cap",eog:"Model emitted an end token"}[data.finish] || "";
-    drawPace(data.pace);
+    drawPace(data.pace, data.capture ? "states" : "tokens");
     const rows = data.events.slice().reverse().map(event => {
       const tr = document.createElement("tr");
-      const timestamp = event.time ? new Date(event.time).toLocaleTimeString() : "—";
-      for (const value of [timestamp,event.event.replaceAll("_"," "),event.step >= 0 ? event.step : event.processed_tokens ?? "—"]) {
+      const timestamp = event.time ? new Date(event.time).toLocaleTimeString()
+        : event.elapsed_ms >= 0 ? (event.elapsed_ms/1000).toFixed(1)+" s" : "—";
+      for (const value of [timestamp,event.event.replaceAll("_"," "),event.step >= 0 ? event.step : event.processed_tokens >= 0 ? event.processed_tokens : "—"]) {
         const td = document.createElement("td");
         td.textContent = value;
         tr.append(td);

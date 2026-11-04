@@ -16,6 +16,7 @@ NUMBERS = (
     "step", "processed_tokens", "prompt_tokens", "total_prompt_tokens",
     "completion_tokens", "decode_elapsed_ms", "decode_ms", "prefill_ms",
     "elapsed_ms", "load_elapsed_ms", "token_id", "mismatches", "states",
+    "native_next_matches",
 )
 LOG_NAMES = {"native.log", "native-stderr.log", "native.stderr.log"}
 
@@ -79,11 +80,15 @@ def snapshot(workspace, selection):
     choices = {str(path.relative_to(root)).replace("\\", "/"): path for path in logs}
     active = choices.get(selection) or next(iter(choices.values()), None)
     events = events_from(active) if active else []
+    capture = any(item["event"].startswith("sequence_") for item in events)
     case = next((item.get("case_id") or item.get("id") for item in reversed(events)
                  if item.get("case_id") or item.get("id")), None)
     tokens = [item for item in events if item["event"] == "token" and item.get("case_id") == case
               and "decode_elapsed_ms" in item and "step" in item]
+    captures = [item for item in events if item["event"] == "sequence_capture_progress"
+                and "elapsed_ms" in item and "processed_tokens" in item]
     latest = tokens[-1] if tokens else {}
+    latest_capture = captures[-1] if captures else {}
     pace = tokens[::max(1, len(tokens) // 100)]
     if pace and pace[-1] != latest:
         pace.append(latest)
@@ -95,6 +100,8 @@ def snapshot(workspace, selection):
     status = "Waiting for trace"
     if newest.get("event") == "run_complete":
         status = "Token cap reached" if finish == "length" else "Trace complete"
+    elif newest.get("event") == "sequence_run_complete":
+        status = "Capture complete"
     elif events:
         status = "Watching" if time.time() - active.stat().st_mtime < 10 else "Last recorded"
     weights = None
@@ -107,10 +114,15 @@ def snapshot(workspace, selection):
         "choices": list(choices),
         "status": status,
         "case": case,
+        "capture": capture,
+        "latest_capture": latest_capture,
         "finish": finish,
         "latest": newest,
         "latest_token": latest,
-        "pace": [[item["decode_elapsed_ms"] / 1000, item["step"] + 1] for item in pace],
+        "pace": (
+            [[item["elapsed_ms"] / 1000, item["processed_tokens"]] for item in captures]
+            if capture else [[item["decode_elapsed_ms"] / 1000, item["step"] + 1] for item in pace]
+        ),
         "events": stage_events[-22:],
         "weights": weights,
     }
