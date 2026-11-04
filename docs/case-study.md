@@ -227,6 +227,8 @@ We fit a rank-two update against **10,841** guarded states, comprising **9,503**
 
 In the saved checkpoint's matched ordinary CUDA run, the interval proof reproduced its exact reviewed answer and ended naturally at **1,628** tokens. The Euler proof reproduced the corrected reviewed answer and ended naturally at **1,340** tokens. Independent review rehashed the saved checkpoint and verified both prompt, token, answer and end-marker streams. This two-case run confirms that both proofs can coexist on the saved weights. The wider regression and physical replay are pending before promotion. [Public experiment summary](../evidence/experiment-summary.json)
 
+The public verifier has been run against the exact local checkpoint and proof streams. The recipe explains how to rerun the pair with the archived inputs and verify the resulting bytes against the reviewed proofs. [Exact reproduction recipe](../prototypes/windows-cuda-ordinary-runner/README.md#verify-the-reviewed-rank-two-proof-pair)
+
 ## Extended Windows check on the observed development pair
 
 We reran the two previously observed development cases on V10 (E10) and the Windows proof-stop checkpoint with a matched **8,192-token context** and **6,144-token generation limit**. All four runs ended naturally and passed independent review of the complete visible mathematics.

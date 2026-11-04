@@ -1,0 +1,58 @@
+{
+  "schema": "public-rank-two-exact-ordinary-proof-pair-v1",
+  "checkpoint_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+  "independent_proof_review_sha256": "b0a282cbd0d3c7cc7ec2352c6f1b8dbea6573b983aeeb48c72b16a2010691bb6",
+  "backend": {
+    "llama_build": "8642541b2",
+    "ggml_version": "0.28.0",
+    "cuda_device": "CUDA0",
+    "cuda_description": "NVIDIA GeForce RTX 3090"
+  },
+  "parameters": {
+    "seed": 42,
+    "temperature": 0,
+    "sampling": "greedy",
+    "max_tokens": 3072,
+    "ctx_requested": 4096,
+    "ctx_actual": 4096,
+    "batch_actual": 64,
+    "ubatch_actual": 64,
+    "threads": 4,
+    "gpu_layers_requested": -1,
+    "model_load_mode": "MMAP",
+    "cache_type_k": "f16",
+    "cache_type_v": "f16",
+    "flash_attention": "enabled",
+    "detokenize_special": true,
+    "trace_enabled": false,
+    "extra_weight_repacking": false,
+    "prompt_mode": "required explicit raw canonical server-rendered prompt",
+    "trace_regex": "^ffn_mul-63$",
+    "trace_events_per_prompt_cap": 0,
+    "trace_global_event_cap": 64,
+    "trace_readback_global_byte_cap": 1048576
+  },
+  "eog_id": 248046,
+  "cases": [
+    {
+      "id": "train-seed-v1-16-sharp-product-error-bound",
+      "prompt_sha256": "990beecabba82a8b5a9c9c2fd1a012964216ff9478fb041fff6284ae21c23775",
+      "prompt_tokens": 154,
+      "prompt_ids_sha256": "bd87380c854f0a3f7b5af5c07112f71af98e771c35b040bdfa3f65a2a4faa9fa",
+      "completion_tokens": 1628,
+      "completion_ids_sha256": "6365119af9b285a144d1c985029e4bb3d4948675fca8fb1e57496d49ed486708",
+      "whole_generation_sha256": "5cdfe429a14bb2fb64d851a5a3cedca86ab2f8d83452a40855ad6854794f88cc",
+      "reviewed_final_sha256": "65f39b41111bb757bc6dd86cbc77691b31fd381c13f4f4f8ca765959c8b293b9"
+    },
+    {
+      "id": "dev-cauchy-euler-double-resonance-ic-v1",
+      "prompt_sha256": "55c76cd97acc6d52c69f273bb1fcdf2a549f5cbb86c9aa411a00f68d7a781c8c",
+      "prompt_tokens": 104,
+      "prompt_ids_sha256": "9b44b3b799213f297d38e070c6bdf8632c4f729e611f9c8971611a4ac2eab837",
+      "completion_tokens": 1340,
+      "completion_ids_sha256": "754dedb17e9dfec4393e2c3a933aab54a61df5722487b0ba5e42cffd4e6583ce",
+      "whole_generation_sha256": "5cfa903df781accde49cb06e163d235246150a9349c6c5b73a0706f910ddc8d8",
+      "reviewed_final_sha256": "fc8c61b45b6c52bd7585b1df5712c1c1e2fa0242555fd3309ac4294eaf45617d"
+    }
+  ]
+}

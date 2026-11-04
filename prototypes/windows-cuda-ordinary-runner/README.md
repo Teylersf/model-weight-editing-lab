@@ -40,3 +40,26 @@ try {
 ```
 
 `--raw` consumes the supplied bytes as the rendered prompt. Use the same serialized prompt and settings across baseline and candidate runs. Check the loader log for actual layer placement and compare prompt token IDs before comparing completions. Different backends can produce different completions with the same checkpoint and prompt IDs.
+
+## Verify the reviewed rank-two proof pair
+
+The [proof pair manifest](../../evidence/rank-two-ordinary-proof-pair.json) publishes the checkpoint hash, exact prompt and output identities, and CUDA settings from the reviewed run. With the archived checkpoint and two raw rendered prompts, rerun the pair using the pinned runner. Run from the repository root and use a fresh private output directory.
+
+```powershell
+$proofPair = Get-Content -Raw evidence/rank-two-ordinary-proof-pair.json | ConvertFrom-Json
+# Supply paths for $runner, $runtime, $model, $intervalPrompt, $eulerPrompt,
+# $result and $log. The matching runtime DLLs must be on PATH.
+& $runner --runtime-dir $runtime --model $model `
+    --prompt-file $intervalPrompt --id $proofPair.cases[0].id `
+    --prompt-file $eulerPrompt --id $proofPair.cases[1].id `
+    --raw --ctx 4096 --max-tokens 3072 --seed 42 --threads 4 `
+    --batch 64 --temperature 0 --gpu-layers -1 --output $result 2> $log
+if ($LASTEXITCODE -ne 0) { throw 'Generation failed' }
+python examples/verify_cuda_proof_pair.py `
+    --manifest evidence/rank-two-ordinary-proof-pair.json `
+    --model $model --result $result --log $log
+```
+
+Use PowerShell 7.4 or later for this command so native stderr redirection preserves the log bytes. The verifier matches the reviewed visible proof bytes, every prompt and completion token ID, and every live token piece. Token IDs are hashed as consecutive signed little-endian 32-bit integers. The completion count includes the natural end token. The whole-generation and final hashes exclude that end token.
+
+The public files supply the runner source, recipe and verification inputs in the form of hashes. The checkpoint, rendered prompts and transcripts are local research inputs required for an exact rerun. Mathematical grading was performed independently on the local visible proofs. Exact byte matching transfers that review to a rerun of this pair. The broader regression results are reported separately in the [case study](../../docs/case-study.md).
