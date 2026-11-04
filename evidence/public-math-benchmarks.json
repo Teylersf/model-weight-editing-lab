@@ -90,6 +90,35 @@
     "selection_and_inference_frozen_before_generation": true,
     "benchmark_test_inputs_used_for_tuning": false
   },
+  "ugmathbench_worked_results": {
+    "matched_generation_sha256": "745a1413cffe6e052add0cad31de8433b763e35d8a4cdf12ca37dda44c25431a",
+    "blind_final_packet_sha256": "50fa480baaa3d2e8916fd46f46773c57c23fd81936c48a2821eb24481408413b",
+    "blind_termination_repetition_packet_sha256": "d92806a8330e4c3a696a460428ce1d1b01de58ef263674098f918b96c4913a9b",
+    "reviewer_grades_sha256": "c40fafffb357d563d728dcfff8a6c99834382dbb6db5a0547a064509e3ff3925",
+    "strict_rule_endpoint_review_sha256": "3bd6b2349a7c12070d675f3bfa331b02756603db3ea3f579535d8b26c82d5420",
+    "aggregate_sha256": "a1baf2fa59d1f8bf7add401709c8918eced71344c8413e56c46c9e1564b32e97",
+    "reviewed_visible_responses": 48,
+    "reviewer": "Codex",
+    "grades_frozen_before_unblinding_and_rule_scores": true,
+    "scope": "24 open-response variants of eight hash-selected undergraduate stems",
+    "strict_rule_precision": 1e-8,
+    "strict_rule_all_blanks": {"e10": 10, "rank_two": 10, "variant_total": 24, "all_three_stems_e10": 2, "all_three_stems_rank_two": 2, "stem_total": 8},
+    "post_review_rule_cli_default": {
+      "precision": 1e-3,
+      "endpoint_review_sha256": "bdb52062212cda7976e40c68eca66d475ca437c271e318970f1a7872d8869342",
+      "all_blanks": {"e10": 14, "rank_two": 14, "variant_total": 24, "all_three_stems_e10": 4, "all_three_stems_rank_two": 4, "stem_total": 8},
+      "no_regeneration_or_tuning": true
+    },
+    "e10": {"mathematical_endpoint_at_displayed_precision": 20, "correct_derivation_and_endpoint_at_displayed_precision": 17, "complete_worked_full_prompt": 13, "natural_eog": 20, "length_censored_without_visible_answer": 4, "serious_repetition": 4},
+    "rank_two": {"mathematical_endpoint_at_displayed_precision": 19, "correct_derivation_and_endpoint_at_displayed_precision": 16, "complete_worked_full_prompt": 14, "natural_eog": 20, "length_censored_without_visible_answer": 4, "serious_repetition": 5},
+    "paired_complete_worked_full_prompt": {"both": 12, "e10_only": 1, "rank_two_only": 2, "neither": 9},
+    "complete_worked_all_three_stem_counts": {"e10": 3, "rank_two": 3, "total": 8},
+    "paired_complete_full_prompt_natural_eog_efficiency": {
+      "n": 12,
+      "e10": {"median_tokens": 519.0, "median_decode_seconds": 12.88805415},
+      "rank_two": {"median_tokens": 572.5, "median_decode_seconds": 14.40060715}
+    }
+  },
   "agieval_worked_results": {
     "matched_generation_sha256": "5d68c9463f36e9180f4d8dd4dd92926f486e6abde8b8486917e15e4df9509e20",
     "blind_review_freeze_sha256": "ee43c19775c7523b60e282dbf9b714f095db01fb78c92b7324d81b84a259f04b",

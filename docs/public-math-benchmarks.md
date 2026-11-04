@@ -37,3 +37,21 @@ Worked runs use ordinary greedy CUDA decoding with the same inputs across checkp
 Codex reviewed all 32 visible responses with checkpoint names hidden and froze the grades before unblinding. Both checkpoints gave complete solutions to the same eight SAT items, three Gaokao multiple-choice items, and three Gaokao fill-in items. Both reached the limit without a visible answer on the same geometry item. On a second item, E10 selected the correct answer using a false general inequality, while rank-two repeated its working until the token limit. [Aggregate receipt](../evidence/public-math-benchmarks.json)
 
 Across the 14 paired problems where both produced correct, complete solutions and ended naturally, the median was 333 tokens and 8.11 seconds of decoding for E10, versus 321.5 tokens and 8.01 seconds for rank-two. These medians describe only the paired completions. The table retains both censored runs.
+
+### UGMathBench college results
+
+| Measure | E10 | Windows rank-two |
+| --- | ---: | ---: |
+| Pinned rule checker, all blanks, `1e-8` precision | 10 / 24 | 10 / 24 |
+| Pinned rule checker, all blanks, CLI default `1e-3` precision | 14 / 24 | 14 / 24 |
+| Mathematically correct final answers at displayed precision | 20 / 24 | 19 / 24 |
+| Correct visible derivation and final answers at displayed precision | 17 / 24 | 16 / 24 |
+| Complete worked solution meeting the full prompt | 13 / 24 | 14 / 24 |
+| All three variants of a stem met the full prompt | 3 / 8 | 3 / 8 |
+| Natural ending | 20 / 24 | 20 / 24 |
+| Token limit reached without a visible answer | 4 / 24 | 4 / 24 |
+| Serious unproductive repetition | 4 / 24 | 5 / 24 |
+
+Codex reviewed all 48 responses with model names hidden before seeing the rule results. The full-prompt grade required a correct and complete visible derivation, relevant conditions and exact requested answers, valid native output format, and no serious repetition. The rule checker measures agreement with the released reference values. The post-review check at the CLI default accepted four additional exact answers for each model where the reference was rounded. Equivalent generators of the same ideal were still rejected when their numeric values differed. All four censored responses per checkpoint counted as incorrect in every accuracy row. [Pinned rule checker](https://github.com/YangLabHKUST/UGMathBench/blob/df47bfa639bfb89bdb0220036a7b2f216e72b0b3/judge_rule.py) · [CLI defaults](https://github.com/YangLabHKUST/UGMathBench/blob/df47bfa639bfb89bdb0220036a7b2f216e72b0b3/eval_rule.py) · [Aggregate receipt](../evidence/public-math-benchmarks.json)
+
+Both checkpoints met the full prompt on all three variants of the multivariable calculus, complex analysis, and linear algebra stems. On the 12 paired variants where both met the full prompt and ended naturally, median generation was 519 tokens and 12.89 seconds of decoding for E10, versus 572.5 tokens and 14.40 seconds for rank-two. This sample shows remaining failures in choosing an answer, valid visible working, and exact final formatting.
