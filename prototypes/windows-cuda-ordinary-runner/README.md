@@ -60,6 +60,6 @@ python examples/verify_cuda_proof_pair.py `
     --model $model --result $result --log $log
 ```
 
-Use PowerShell 7.4 or later for this command so native stderr redirection preserves the log bytes. The verifier matches the reviewed visible proof bytes, every prompt and completion token ID, and every live token piece. Token IDs are hashed as consecutive signed little-endian 32-bit integers. The completion count includes the natural end token. The whole-generation and final hashes exclude that end token.
+Use PowerShell 7 with UTF-8 log output. The verifier accepts Windows and Unix line endings. It matches the reviewed visible proof bytes, every prompt and completion token ID, and every live token piece. Token IDs are hashed as consecutive signed little-endian 32-bit integers. The completion count includes the natural end token. The whole-generation and final hashes exclude that end token.
 
 The public files supply the runner source, recipe and verification inputs in the form of hashes. The checkpoint, rendered prompts and transcripts are local research inputs required for an exact rerun. Mathematical grading was performed independently on the local visible proofs. Exact byte matching transfers that review to a rerun of this pair. The broader regression results are reported separately in the [case study](../../docs/case-study.md).

@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-04",
   "author": "Taylor Kalin",
-  "status": "V10 (E10) remains the provisional accepted research base. A saved Windows rank-two follow-up reproduced both the complete interval proof and the repaired Euler proof in ordinary generation. Broader regression and physical replay are pending.",
+  "status": "V10 (E10) remains the provisional accepted research base. The saved Windows rank-two follow-up passed the paired proofs, matched all 16 rank-36 TRAIN generations, and passed physical replay on all 10,843 captured states. Downstream qualification is pending.",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -1503,6 +1503,33 @@
       },
       "ordinary_token_overrides": 0,
       "broader_regression_and_physical_replay_pending": true,
+      "promotion_authorized": false
+    },
+    "rank_k_euler_report_only_rank_two_train16": {
+      "scope": "Matched ordinary CUDA generation in all eight original TRAIN pairs against reviewed Windows E10 and rank-36 references",
+      "generation_receipt_sha256": "b23f1dcd8de4a68bed44a0887fd88e72c40c4ccd1311a2b53c2a6d5147e09954",
+      "independent_whole_final_review_sha256": "9b35555e6ed48d4f59cd4ee6d948e7e778f4deb4159c3592e90aff2c4297d229",
+      "reviewed_regression_summary_sha256": "c7ec1961795b682159a6b5fc78ba0646cc9e8fa53e0941ce72c31feb75a5d69a",
+      "cases": 16,
+      "exact_prompt_completion_and_final_streams_vs_rank36": 16,
+      "natural_eog": 16,
+      "complete_math": 14,
+      "inherited_defects_in_cases": [6, 10],
+      "new_complete_cases_vs_e10": [8, 11, 16],
+      "previously_complete_regressions_vs_e10_or_rank36": [],
+      "promotion_authorized": false
+    },
+    "rank_k_euler_report_only_rank_two_physical_replay": {
+      "scope": "Saved-checkpoint full-vocabulary CUDA replay against all frozen TRAIN and Euler preservation states",
+      "physical_replay_receipt_sha256": "5f63989bc58ba69e82f61fcc3e3b2acc5a0daa752b167ec9be8b78010739cb81",
+      "saved_checkpoint_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+      "total_expected_winners_passed": 10843,
+      "train_winners_passed": 9503,
+      "euler_winners_passed": 1340,
+      "euler_target_margins": [1.7092170715332031, 1.477212905883789],
+      "required_margin": 0.7498,
+      "upstream_arrays_byte_equal_in_all_three_shards": true,
+      "candidate_full_sha_pre_post_verified": true,
       "promotion_authorized": false
     },
     "case16_lower_error_stored_followup": {
