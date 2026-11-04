@@ -188,6 +188,8 @@ The [local trace viewer](../prototypes/trace-viewer/README.md) shows the token c
 
 The next Windows edit used the first correct proof from the rejected candidate as the experimental reference. At its complete proof boundary, the end token trailed the repeated closing marker by **0.4710** logits. A separate rank-one D63 update targeted that boundary using **2,321** fitted guards. The rounded synthetic CUDA preview favored the end token by **2.6522** logits. Readback verified the separate GGUF and byte equality outside D63. The stored matrix difference relative to V10 was **0.5917%**.
 
+Replay of the stored checkpoint preserved all **2,321** guarded token choices. The captured upstream arrays matched exactly across **2,322** states. The end token led by **2.6522** logits at the proof boundary.
+
 In ordinary generation the edited checkpoint reproduced the reviewed derivative proof once and ended naturally at **471 tokens**. The paired case07 control matched all **654 tokens**. These observations cover the priority pair. Promotion requires the remaining regression and proof checks.
 
 ## Cumulative promotion and storage policy

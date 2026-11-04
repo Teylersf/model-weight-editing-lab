@@ -1287,7 +1287,11 @@
       "ordinary_case08_exact_previously_reviewed_first_proof": true,
       "ordinary_case07_exact_control_tokens": 654,
       "evaluation_policy": "complete-math-first-v1",
-      "candidate_accepted": false
+      "candidate_accepted": false,
+      "physical_native_receipt_sha256": "ebe0d95152253400c506d90035fbe288de2ce54a86d03e812fc61e99f9a1dba7",
+      "physical_guard_choices_preserved": 2321,
+      "exact_upstream_rows": 2322,
+      "stored_cuda_eog_margin": 2.652219772338867
     }
   }
 }
