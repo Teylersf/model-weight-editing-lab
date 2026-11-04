@@ -184,6 +184,12 @@ The rejected checkpoint was moved off the working SSD and verified on the archiv
 
 The [local trace viewer](../prototypes/trace-viewer/README.md) shows the token cap and can display either saved tensor comparison, including C0 versus V10 and V10 versus the Windows candidate. The heatmap summarizes the saved parameter difference by region.
 
+## Preserving the complete proof and ending once
+
+The next Windows edit used the first correct proof from the rejected candidate as the experimental reference. At its complete proof boundary, the end token trailed the repeated closing marker by **0.4710** logits. A separate rank-one D63 update targeted that boundary using **2,321** fitted guards. The rounded synthetic CUDA preview favored the end token by **2.6522** logits. Readback verified the separate GGUF and byte equality outside D63. The stored matrix difference relative to V10 was **0.5917%**.
+
+In ordinary generation the edited checkpoint reproduced the reviewed derivative proof once and ended naturally at **471 tokens**. The paired case07 control matched all **654 tokens**. These observations cover the priority pair. Promotion requires the remaining regression and proof checks.
+
 ## Cumulative promotion and storage policy
 
 The improvement loop now uses provisional accepted V10 as the next default research parent. Qualification requires the existing stored/native and complete-answer gates, comparison with both the immediate experimental parent and current accepted reference, and preservation of earlier accepted fixes. A rejected candidate leaves the accepted reference unchanged. Iterative DEV gains do not establish worldwide mastery or an unbiased held-out result.

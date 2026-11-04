@@ -1266,6 +1266,28 @@
       "complete_proof_gate": false,
       "ordinary_generation_unchanged_control_length_cap": 3072,
       "fit_authorized": false
+    },
+    "case08_proof_stop_followup": {
+      "checkpoint_sha256": "6b6b857bce980e3e797217f8938dbcde4eff0af61fb284ecd36b4261f405390e",
+      "fit_receipt_sha256": "c50b7979716e9b6dc0f2e8d80fde8f67c293e404c370ea0d6ff9443f2ae97793",
+      "readback_receipt_sha256": "ecc854224ffd7051d2d02422bebfb5486138e33d6e42b36295c3a852c3ea894c",
+      "ordinary_priority_pair_receipt_sha256": "0304bc84da5257ebf498e0d660f87b26d9d5d230866eee4bcf418844aa04b3cc",
+      "scope": "direct D63 follow-up using an unpromoted experimental parent",
+      "fit_guards": 2321,
+      "target_generated_index_zero_based": 470,
+      "native_experimental_parent_eog_margin": -0.4710254669189453,
+      "synthetic_cuda_eog_margin": 2.652219772338867,
+      "stored_D63_frobenius_fractions": {
+        "parent": 0.002715305556470143,
+        "E10": 0.005917164201269835,
+        "C0": 0.0064199161624544955
+      },
+      "outside_D63_bytes_equal_experimental_parent": true,
+      "ordinary_case08_natural_eog_tokens": 471,
+      "ordinary_case08_exact_previously_reviewed_first_proof": true,
+      "ordinary_case07_exact_control_tokens": 654,
+      "evaluation_policy": "complete-math-first-v1",
+      "candidate_accepted": false
     }
   }
 }
