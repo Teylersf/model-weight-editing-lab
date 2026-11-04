@@ -1550,6 +1550,46 @@
       "holdout_opened": false,
       "promotion_authorized": false
     },
+    "rank_two_windows_tested_scope_acceptance": {
+      "status": "ACCEPTED_TESTED_SCOPE_PROVISIONAL",
+      "scope": "Known tested Windows research scope",
+      "checkpoint_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+      "rollback_e10_sha256": "6ee779bd8fc2a2b8706b751f2485aeb1aad9d38ef9f03788f0fe7eb1ab9f1932",
+      "original_vendor_sha256": "bfc6892863eceb16f69697e59b038acdc1c709b790c1542e4612dbb0924d3568",
+      "c0_reference_sha256": "d2f55312eb3252f177abaac20211f95056299641cc982a026ece1bc0e91ae6e1",
+      "full_checkpoint_hashes_reverified_at_promotion": true,
+      "independent_gate_audit_sha256": "13182725d1f893ee50111661022c4b0b7290f3d58e27faf34a66c72c574fac28",
+      "read_only_acceptance_receipt_sha256": "d935a63456b5db6d9f16fa8ca551caf796036b1f911c27e05584fb9b1fd598fe",
+      "atomic_windows_pointer_readback_sha256": "ef0f1225289bb4504c83f65ccbd67b1365916ea9bd8d052bd99428ce41b22559",
+      "fresh_or_general_capability_claim": false,
+      "token_count_used_as_math_gate": false
+    },
+    "rank_k_euler_report_only_rank_two_observed_development": {
+      "scope": "Two previously observed evaluation-only problems, with exact same-backend archived E10 comparisons at two matched budgets",
+      "checkpoint_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+      "preoracle_verification_sha256": "d227b48bd69863a91640bbb2ef5c8e4aa9dd0747a063fe2fc62801fe066a8ce5",
+      "candidate_completions_exact_across_budgets": true,
+      "candidate_serious_repetition_cases": 0,
+      "historical_original_gate_rewritten": false,
+      "private_holdout_opened": false,
+      "matched_budgets": {
+        "3072": {
+          "context_tokens": 4096,
+          "generation_receipt_sha256": "ba29641182086cf9b1718ddf7fa11c66ab6eee271100cd8f7db3db7b474c57c5",
+          "independent_math_review_sha256": "3c16ce2e6a10a42dc454b3939369c35473e674e12811285f7cebb67990ca1a4f",
+          "candidate_complete_natural_eog_tokens": {"A": 1419, "B": 1080},
+          "e10_complete_natural_eog_tokens": {"B": 821},
+          "e10_length_censored_without_visible_answer_tokens": {"A": 3072}
+        },
+        "6144": {
+          "context_tokens": 8192,
+          "generation_receipt_sha256": "cee005a55566416814e0886b12e606ed007506ac4854b25ab21671ac80fcc750",
+          "independent_math_review_sha256": "a8ae6d2e52b218761ee10ff4991ea6b3ad438e15403706d86bfa8d6dcd4e6d3f",
+          "candidate_complete_natural_eog_tokens": {"A": 1419, "B": 1080},
+          "e10_complete_natural_eog_tokens": {"A": 5473, "B": 821}
+        }
+      }
+    },
     "case16_lower_error_stored_followup": {
       "scope": "Direct stored D63 follow-up from the unpromoted Windows proof-stop checkpoint, evaluated on two matched TRAIN cases",
       "checkpoint_sha256": "34bb3599bf91a8888521b67c668743e47b9b4e0b691a98fde0be3e56d95a4085",

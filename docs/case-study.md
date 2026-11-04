@@ -231,7 +231,18 @@ All 16 original TRAIN generations then reproduced the rank-36 prompt and complet
 
 Physical replay on the saved checkpoint matched all **10,843** expected token winners across two TRAIN shards and the Euler preservation shard. Both edited Euler positions passed at **1.7092** and **1.4772** logits. The upstream activation and residual-input arrays matched the parent byte for byte in each shard.
 
-The matched downstream core run independently passed all **eight** complete solutions with natural termination. Euler reproduced the corrected proof byte for byte, and all seven other known development cases preserved their complete solutions. The linear-system generation still deliberated about formatting after solving the math, but ended naturally at **1,237** tokens versus **1,504** on rank-36. The separate observed development pair remains a qualification gate.
+The matched downstream core run independently passed all **eight** complete solutions with natural termination. Euler reproduced the corrected proof byte for byte, and all seven other known development cases preserved their complete solutions. The linear-system generation still deliberated about formatting after solving the math, but ended naturally at **1,237** tokens versus **1,504** on rank-36.
+
+The rank-two checkpoint then solved both observed development cases at both matched generation budgets. Independent review checked the complete visible mathematics and confirmed that each candidate answer ended naturally and was identical across budgets.
+
+| Generation budget | Case | E10 | Rank-two |
+| --- | --- | --- | --- |
+| 3,072 | A | Limit reached without a visible answer | Complete at 1,419 tokens |
+| 3,072 | B | Complete at 821 tokens | Complete at 1,080 tokens |
+| 6,144 | A | Complete at 5,473 tokens | Complete at 1,419 tokens |
+| 6,144 | B | Complete at 821 tokens | Complete at 1,080 tokens |
+
+The rank-two checkpoint used **4,054 fewer tokens** on A and **259 more** on B where both models completed. The original historical comparison and its outcome remain archived under their original settings. This evaluation used two previously observed cases. The separate private holdout remained unopened. [Public experiment summary](../evidence/experiment-summary.json)
 
 The public verifier has been run against the exact local checkpoint and proof streams. The recipe explains how to rerun the pair with the archived inputs and verify the resulting bytes against the reviewed proofs. [Exact reproduction recipe](../prototypes/windows-cuda-ordinary-runner/README.md#verify-the-reviewed-rank-two-proof-pair)
 
@@ -248,7 +259,9 @@ Each model's A run reproduced its own first **3,072** generated token IDs exactl
 
 ## Cumulative promotion and storage policy
 
-The improvement loop now uses provisional accepted V10 as the next default research parent. Qualification requires the existing stored/native and complete-answer gates, comparison with both the immediate experimental parent and current accepted reference, and preservation of earlier accepted fixes. A rejected candidate leaves the accepted reference unchanged. Iterative DEV gains do not establish worldwide mastery or an unbiased held-out result.
+The Windows loop now uses the provisional rank-two checkpoint as its next default research parent. The Windows acceptance receipt binds the stored-weight, native replay, complete-answer, and matched regression checks, and the local pointer records E10 as the verified rollback. The original vendor checkpoint and C0 representation reference were independently rehashed before promotion. This decision covers the tested Windows cases. Worldwide curriculum coverage and fresh held-out performance remain open. [Acceptance hashes and gate results](../evidence/experiment-summary.json)
+
+Subsequent edits compare against both the immediate experimental parent and the current accepted reference, and must preserve earlier accepted fixes. A rejected candidate leaves the accepted reference in place.
 
 For future Windows evaluations, a correct, complete solution may take longer than the matched control. Record token counts, decode time, and repeated work separately. Compare speed among equally correct, complete solutions. Keep the native generation ceiling as an execution limit and record a ceiling hit as a censored run. Use the former per-case and aggregate token thresholds, including the case16 readiness target, as performance references. The historical dispositions above document the rules used at the time.
 
