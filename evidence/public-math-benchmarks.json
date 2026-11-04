@@ -228,6 +228,28 @@
     "fresh_worked_review_pending": true,
     "promoted": false
   },
+  "known_failure_repair_pilot_004": {
+    "scope": "Eight targeted worked development cases and two critical proof regressions",
+    "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+    "saved_candidate_sha256": "65f39aa46659f3104430699babe7b56565495bcb7546d947f471790214898e51",
+    "readback_receipt_sha256": "27678878a8dc1f336a00cb91e3477d733934e51202bc55efab9676248a9e2257",
+    "fit_receipt_sha256": "1c3099a0923df654bae97cc60a8d07c65bcd306f0346f0e8b108a1ac9692f9aa",
+    "dense_native_capture_sha256": "fa3e94f5202f1782ebc68f795ce348203e1c27b31808bd358c71332ac5b3afca",
+    "reviewed_fit_plan_sha256": "1f94380a642a4fa3545dee57ae7b920ad060ed0a2668770570a7b6ae398d035e",
+    "ordinary_generation_receipt_sha256": "37d0972f6478c347fe8a1c7684ce6b0c4e86ea8e4024903f7e85a70d42bd3935",
+    "ordinary_root_math_review_sha256": "a761bc247087e448772ef5fe53ca692860203cba7c993fff048718282d0483a6",
+    "d63_fractional_norm_change_vs_parent": 0.2124807702180307,
+    "outside_d63_byte_identical": true,
+    "rank": 11,
+    "guard_states_in_projection": 14838,
+    "rounded_full_vocabulary_wins": 11,
+    "known_development_cases": 8,
+    "known_complete_math_repairs": 8,
+    "known_candidate_natural_endings": 8,
+    "critical_proof_exact_matches": 2,
+    "mmlu_followup_pending": true,
+    "promoted": false
+  },
   "agieval_worked_results": {
     "matched_generation_sha256": "5d68c9463f36e9180f4d8dd4dd92926f486e6abde8b8486917e15e4df9509e20",
     "blind_review_freeze_sha256": "ee43c19775c7523b60e282dbf9b714f095db01fb78c92b7324d81b84a259f04b",

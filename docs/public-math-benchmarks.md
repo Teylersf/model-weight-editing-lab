@@ -83,3 +83,9 @@ On unforced generation, Codex found **7 complete solutions out of 12 known failu
 The two Gaokao problems reached their correct final answers. The inequality left one comparison without rigorous error bounds, and the cube solution omitted the proof that its list was exhaustive. The three calculus variants reached an answer but still made numerical errors. The full worked score counts all five as incorrect. These are development cases used in the edit. [Ordinary generation and review receipts](../evidence/public-math-benchmarks.json)
 
 The same 370-item MMLU replay scored **225/370 (60.8%)**, down one from the parent and two from the second pilot. High-school math was 161/270; college math remained 64/100. One item became correct and two became incorrect relative to the parent. The larger edit has the better worked development result, while the second pilot has the higher matched MMLU score. The accepted checkpoint stayed in place. [Paired benchmark receipts](../evidence/public-math-benchmarks.json)
+
+## Fourth repair pilot: protect the entire solution path
+
+This rank-eleven edit protected every recorded native decision in all three statistics solutions and the Gaokao inequality, alongside the other preservation states, for a total of 14,838. All eleven target tokens won the rounded CUDA check. The D63 matrix changed by 21.25% of the accepted parent's norm, with exact readback outside the matrix.
+
+Codex verified complete, unforced solutions for **all eight targeted development problems**. This includes both ideal operations cases, the differential equation, exact Bayes, all three statistics variants, and the Gaokao inequality. The inequality now justifies both comparisons with exact bounds. Both critical proofs reproduced their original native token sequences. The calculus variants and Gaokao cube were outside this pilot's eight-problem test. [Checkpoint and review receipts](../evidence/public-math-benchmarks.json)
