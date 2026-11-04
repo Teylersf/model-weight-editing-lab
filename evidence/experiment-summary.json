@@ -1374,6 +1374,32 @@
       "factor_fitted": false,
       "weights_mutated": false
     },
+    "case16_report_only_rank_k_proposal_preview": {
+      "scope": "Rounded F32 CPU proposal and synthetic full-vocabulary CUDA preview on exact known TRAIN proof states",
+      "independent_teacher_math_review_sha256": "b961883a2306ff7118839c8f353516fc72b098c5e7250d351c4fb62e5e8e70d9",
+      "capture_closeout_sha256": "4787f841091f339f208d3950132e1073d0d24dc1f0e8de27062ed0304273e47d",
+      "geometry_receipt_sha256": "51e083eae1231ba8564c932bb5d70569e0e04053812747e4e8e67c1a0e7d8d97",
+      "full_vocabulary_calibration_sha256": "4e831e90243d1cd2da9aeb23f3815c352065782aca02a5c2529ac702b1fb3b55",
+      "fit_receipt_sha256": "f849d5158cd1693f179f9bcea9b705c6b2273673777bab0afcf9d7cd793718a1",
+      "synthetic_preview_receipt_sha256": "b088ce3184462e7aaf7b6c161a4e997cb163622016a310cc751364345b462ece",
+      "matrix_change_policy": "report_only",
+      "target_columns": 36,
+      "projection_guard_rows": 3799,
+      "previous_complete_control_trajectories": 3,
+      "rounded_proposal_D63_frobenius_fractions": {
+        "experimental_parent": 0.04668686886777665,
+        "E10": 0.04723017324484279,
+        "C0": 0.0472980790321915
+      },
+      "synthetic_full_vocabulary_winners": 36,
+      "synthetic_required_margin": 0.7498,
+      "synthetic_margin_passes": 35,
+      "remaining_target_margin": 0.26978302001953125,
+      "remaining_competitor_outside_original_four": true,
+      "checkpoint_written_for_this_proposal": false,
+      "ordinary_complete_proof_qualified": false,
+      "promotion_authorized": false
+    },
     "case16_lower_error_stored_followup": {
       "scope": "Direct stored D63 follow-up from the unpromoted Windows proof-stop checkpoint, evaluated on two matched TRAIN cases",
       "checkpoint_sha256": "34bb3599bf91a8888521b67c668743e47b9b4e0b691a98fde0be3e56d95a4085",
