@@ -184,6 +184,27 @@
     },
     "promoted": false
   },
+  "known_failure_repair_pilot_003": {
+    "scope": "Twelve known worked failures; saved weight and fixed-state CUDA evidence",
+    "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+    "saved_candidate_sha256": "1debdcfaf3b2da2edb88bdda6731c37ff1150b8a6793dc3556290ab1e3d056f3",
+    "readback_receipt_sha256": "d671d5293842a05839d82f143721a94c1e89aa8fe37a18be002cfc453d81e0c7",
+    "fit_receipt_sha256": "f092ff6460e23f57a3f0ff42993afde5b629ce5ab85df35fbeb083bc598ac233",
+    "dense_native_capture_sha256": "fa3e94f5202f1782ebc68f795ce348203e1c27b31808bd358c71332ac5b3afca",
+    "reviewed_fit_plan_sha256": "b3b67d73d5596bd50712f5131cf6cd2f2b09d9df6ec415081d5f9ca90c513cad",
+    "d63_sha256": "e8c4c02eca88b7d0e3087ba6601ab7606b674406fa6d797eb46c180d76061ae9",
+    "d63_fractional_norm_change_vs_parent": 0.39496784706384913,
+    "outside_d63_byte_identical": true,
+    "rank": 281,
+    "guard_states_in_projection": 11729,
+    "original_guard_states": 10843,
+    "dense_native_states_captured": 6460,
+    "rounded_full_vocabulary_wins": 281,
+    "minimum_rounded_native_margin": 1.1324958801269531,
+    "omitted_teacher_targets": 0,
+    "ordinary_and_held_out_review_pending": true,
+    "promoted": false
+  },
   "agieval_worked_results": {
     "matched_generation_sha256": "5d68c9463f36e9180f4d8dd4dd92926f486e6abde8b8486917e15e4df9509e20",
     "blind_review_freeze_sha256": "ee43c19775c7523b60e282dbf9b714f095db01fb78c92b7324d81b84a259f04b",
