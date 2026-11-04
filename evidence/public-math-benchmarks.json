@@ -247,7 +247,17 @@
     "known_complete_math_repairs": 8,
     "known_candidate_natural_endings": 8,
     "critical_proof_exact_matches": 2,
-    "mmlu_followup_pending": true,
+    "mmlu_followup": {
+      "run_receipt_sha256": "e81e9c6a3f7547c653fddfa4acdd02d2eb4a5be5f54ad9a3d4bd85de2a6c386d",
+      "paired_receipt_sha256": "caf79af2a2ae06b4c32a5651b2c0a5c34472bab2a4e4d8769359a20812b05949",
+      "high_school_correct": 162,
+      "college_correct": 64,
+      "total_correct": 226,
+      "total": 370,
+      "gained": 1,
+      "lost": 1,
+      "mmlu_used_for_weight_fit": false
+    },
     "promoted": false
   },
   "agieval_worked_results": {
