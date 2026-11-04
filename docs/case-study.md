@@ -219,6 +219,14 @@ We then ran the candidate through all eight original TRAIN16 prompt pairs on the
 
 The saved checkpoint's physical CUDA replay preserved all **3,799** guard winners and passed all **36** target margins, with a minimum of **1.4223** logits. Both upstream activation arrays matched the experimental parent's captured bytes exactly. On the downstream core run, the seven known development solutions remained correct and all eight outputs ended naturally. The Euler answer gave the correct final formula but used a false intermediate derivative. The earlier proof-stop checkpoint had given a complete Euler proof under the same CUDA settings. This historical proof regression blocked promotion and the next observed development stage. E10 remains the accepted base.
 
+### Restoring the Euler proof while preserving the interval proof
+
+A read-only probe corrected the first derivative coefficient, then free generation copied that coefficient into the second term. A second controlled probe changed both decisions. It reproduced the independently verified complete proof and ended naturally. This isolated two target states, including the second decision conditional on the first correction. Euler was used as a known preservation case for this fit. The other development cases remained evaluation inputs.
+
+We fit a rank-two update against **10,841** guarded states, comprising **9,503** matched states from the 14 complete TRAIN solutions and **1,338** other states on the approved Euler trajectory. The rounded update passed full-vocabulary CUDA previews at **1.7092** and **1.4772** logits. Independent file readback verified a separate GGUF with byte equality outside D63. Its D63 change measured **6.41%** of the immediate parent's matrix norm and **7.98%** of E10's.
+
+In the saved checkpoint's matched ordinary CUDA run, the interval proof reproduced its exact reviewed answer and ended naturally at **1,628** tokens. The Euler proof reproduced the corrected reviewed answer and ended naturally at **1,340** tokens. Independent review rehashed the saved checkpoint and verified both prompt, token, answer and end-marker streams. This two-case run confirms that both proofs can coexist on the saved weights. The wider regression and physical replay are pending before promotion. [Public experiment summary](../evidence/experiment-summary.json)
+
 ## Extended Windows check on the observed development pair
 
 We reran the two previously observed development cases on V10 (E10) and the Windows proof-stop checkpoint with a matched **8,192-token context** and **6,144-token generation limit**. All four runs ended naturally and passed independent review of the complete visible mathematics.

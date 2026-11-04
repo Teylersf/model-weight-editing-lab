@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-04",
   "author": "Taylor Kalin",
-  "status": "V10 (E10) remains the provisional accepted research base. The saved Windows rank-36 candidate solved 14 of 16 known TRAIN cases and reproduced the complete interval proof. A downstream Euler proof regression blocked promotion.",
+  "status": "V10 (E10) remains the provisional accepted research base. A saved Windows rank-two follow-up reproduced both the complete interval proof and the repaired Euler proof in ordinary generation. Broader regression and physical replay are pending.",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -1471,6 +1471,38 @@
       "same_backend_e10_complete_successes_preserved": true,
       "historical_complete_proof_regression": true,
       "observed_development_for_this_checkpoint": "BLOCKED_BY_REQUIRED_CORE_PROOF_GATE",
+      "promotion_authorized": false
+    },
+    "rank_k_euler_report_only_rank_two_joint_ordinary": {
+      "scope": "Saved D63 edit on the known Euler preservation case with paired ordinary interval and Euler proof generation",
+      "checkpoint_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+      "experimental_parent_sha256": "53aff4cda1669852b4d115902a225805d57b7a4624ec634fab859bf564d38f9c",
+      "stored_readback_receipt_sha256": "698ede44dd223d504a5855edc67296faa3e95704fb84cdc57539fd21b91896aa",
+      "controlled_euler_independent_proof_review_sha256": "5abf2d754d8925484850f388db5f2c53e6a3b5048eb289d9856eeb885ae37896",
+      "known_euler_capture_closeout_sha256": "656a2df1b35fd14239c4ac6b38d392f0a709d7f8d35c0c37050fd95c4af76204",
+      "geometry_receipt_sha256": "43a18229c3f8beb50ea088517dd3e3dba27619971964bc74cf80cf23e61a450f",
+      "fit_receipt_sha256": "dd12777fbb561c1a54f5c442129f0006c3679a71cf647983485a195328861b74",
+      "synthetic_preview_receipt_sha256": "b149bff524c1de7afb65f784c9c68ad13835fc455f0bdc5757eb222944679094",
+      "ordinary_closeout_sha256": "cbbbeb8bd77840dc3291b798546b2cdf8e43cc483ff152463de947fe0b1fab27",
+      "independent_ordinary_proof_review_sha256": "b0a282cbd0d3c7cc7ec2352c6f1b8dbea6573b983aeeb48c72b16a2010691bb6",
+      "matrix_change_policy": "report_only",
+      "rank_columns": 2,
+      "protected_train_states": 9503,
+      "protected_euler_states": 1338,
+      "synthetic_full_vocabulary_margins": [1.7092170715332031, 1.477212905883789],
+      "stored_D63_f32_payload_sha256": "0c98f90b2c64baa071ada49e9db216040932261a54d791c8656deb07c637d97a",
+      "stored_D63_frobenius_fractions": {
+        "experimental_parent": 0.06408460059445151,
+        "E10": 0.07975411681959635,
+        "C0": 0.07985758612025487
+      },
+      "outside_D63_byte_equal_parent": true,
+      "ordinary_exact_complete_proofs_natural_eog_tokens": {
+        "interval": 1628,
+        "Euler": 1340
+      },
+      "ordinary_token_overrides": 0,
+      "broader_regression_and_physical_replay_pending": true,
       "promotion_authorized": false
     },
     "case16_lower_error_stored_followup": {
