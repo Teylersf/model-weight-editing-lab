@@ -182,11 +182,11 @@ Check shapes, orientation, dtype, graph connections, normalization parameters, a
 
 Teacher-forced replay feeds an archived token sequence through the model. It provides comparable fixed prefixes. It is useful for fitting and diagnosis, but it does not show what the edited model will choose during free generation.
 
-### 5. Calculate an edit with explicit limits
+### 5. Define and calculate the edit
 
 Start with the narrowest mechanism supported by the trace. A head edit changes token scores directly. An internal feed-forward edit can be context dependent but changes the final representation and therefore potentially **every** output score.
 
-Specify the matrix norm limit and any per-context residual-shift limit before fitting. These are engineering limits for an experiment, not universal thresholds for a safe or effective model.
+Record any per-context residual-shift limit and whether the whole-matrix norm is capped or measured for reporting. The Qwen repair pilots report the measured matrix change and use the stored-weight, regression, and worked-math tests to judge the result. A percentage alone does not tell you whether an edit improved the model.
 
 Use complete correct continuations and mathematically meaningful spans. A single changed digit is not a repaired derivative, proof, or algorithm. Do not confuse a preference for one prose wording with mathematical correctness.
 
