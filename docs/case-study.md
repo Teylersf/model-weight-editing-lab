@@ -207,6 +207,14 @@ We loaded the saved candidate and ran case15 and case16 together under the same 
 
 The interval proof remains incomplete, so the candidate stays unpromoted and V10 (E10) remains the provisional accepted research base. The public summary records the stored matrix fractions and SHA-256 identifiers for the source and receipts. [Public experiment summary](../evidence/experiment-summary.json)
 
+### Complete interval proof from a saved rank-36 edit
+
+The next fit kept 35 residual columns and added the missed full-vocabulary competitor to the one deficient target. All **36** synthetic CUDA targets then passed the **0.7498-logit** floor, with a minimum observed margin of **1.4223**. An independent writer reconstructed the rounded D63 payload, saved a separate **11,674,147,744-byte** GGUF, and verified the edited tensor and byte equality outside it. D63 changed by **4.68%** of the immediate parent's matrix norm and **4.74%** of the accepted E10 matrix norm.
+
+In ordinary greedy CUDA generation, the saved checkpoint reproduced the complete reviewed interval proof and ended naturally after **1,628 tokens**. The proof uses a continuous increasing diagonal to cover the entire interval, shows that the excluded upper limit can be approached, and compares both exact endpoint errors. Its immediate parent's ordinary answer ended naturally after **1,516 tokens** and supplied the endpoint comparison while omitting the coverage and approach arguments.
+
+The three paired controls reproduced their exact previously captured token streams and ended naturally at **471**, **1,036**, and **700** tokens. The interval problem was a known fitting case. This four-case run leaves broader matched regressions pending, with E10 still the accepted research base. [Public experiment summary](../evidence/experiment-summary.json)
+
 ## Extended Windows check on the observed development pair
 
 We reran the two previously observed development cases on V10 (E10) and the Windows proof-stop checkpoint with a matched **8,192-token context** and **6,144-token generation limit**. All four runs ended naturally and passed independent review of the complete visible mathematics.

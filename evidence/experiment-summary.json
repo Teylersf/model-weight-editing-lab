@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-04",
   "author": "Taylor Kalin",
-  "status": "V10 (E10) remains the provisional accepted research base. A separate Windows D63 edit added part of the case16 proof in matched ordinary generation and remains unpromoted.",
+  "status": "V10 (E10) remains the provisional accepted research base. A separate saved Windows rank-36 D63 edit reproduced the complete reviewed case16 proof and three control streams in ordinary generation. Broader regressions are pending.",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -1398,6 +1398,40 @@
       "remaining_competitor_outside_original_four": true,
       "checkpoint_written_for_this_proposal": false,
       "ordinary_complete_proof_qualified": false,
+      "promotion_authorized": false
+    },
+    "case16_report_only_rank_k_stored_ordinary": {
+      "scope": "Separate saved F32 D63 edit, exact known interval proof and three ordinary CUDA TRAIN controls",
+      "checkpoint_sha256": "53aff4cda1669852b4d115902a225805d57b7a4624ec634fab859bf564d38f9c",
+      "checkpoint_bytes": 11674147744,
+      "experimental_parent_sha256": "34bb3599bf91a8888521b67c668743e47b9b4e0b691a98fde0be3e56d95a4085",
+      "refined_fit_receipt_sha256": "fffad77ae1043fb35a818df233b7c899d31b6529fddff0a1780994f535f6cab9",
+      "refined_synthetic_full_vocab_receipt_sha256": "60701e9b747c44777fd2ebfc244c2ef95ea9f210f2f8d8876933308650cdc6c8",
+      "stored_readback_receipt_sha256": "57209359599518c250fcdc00c7c978e7bb13e24690d8e6e6a4e03085ed302403",
+      "ordinary_closeout_sha256": "15ccd5e0d3d18bbf0c74b56f4045b6c9783bde50c5bbb854c104b5f3daa8f163",
+      "ordinary_native_raw_sha256": "703b1e55bdbba1219f185a402cdaf9e2c5a2f102a7ccab4696df769a0f6d508d",
+      "independent_exact_teacher_proof_grade_sha256": "b961883a2306ff7118839c8f353516fc72b098c5e7250d351c4fb62e5e8e70d9",
+      "rank_columns": 36,
+      "unchanged_refinement_columns": 35,
+      "synthetic_full_vocab_margin_passes": 36,
+      "synthetic_minimum_margin": 1.4222564697265625,
+      "stored_D63_f32_payload_sha256": "16c4de409e691c0b952d50e643fd27c2c84b187f4bd1970bd91c6d92d6c29fd1",
+      "stored_D63_frobenius_fractions": {
+        "experimental_parent": 0.04683474883161795,
+        "E10": 0.047376308968928235,
+        "C0": 0.04744400315560816
+      },
+      "outside_D63_byte_equal_parent": true,
+      "ordinary_token_overrides": 0,
+      "ordinary_natural_eog_cases": 4,
+      "ordinary_interval_tokens": 1628,
+      "ordinary_interval_exact_independently_reviewed_proof": true,
+      "ordinary_control_exact_token_counts": {
+        "case08": 471,
+        "case14": 1036,
+        "case15": 700
+      },
+      "full_regression_pending": true,
       "promotion_authorized": false
     },
     "case16_lower_error_stored_followup": {
