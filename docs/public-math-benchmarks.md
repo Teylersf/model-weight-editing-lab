@@ -98,8 +98,12 @@ The fifth pilot starts from the third pilot on a separate branch, where the thre
 
 All 283 target tokens won the rounded full-vocabulary CUDA check, with no omitted targets. The D63 edit has norm 102.09% of its experimental parent's D63 norm. The new GGUF was independently verified, with byte equality outside D63. This unusually large edit is an experiment; fixed-state success alone does not qualify it. [Fit and saved checkpoint receipts](../evidence/public-math-benchmarks.json)
 
+In ordinary generation, all three calculus variants produced their independently verified exact optima and derivative arguments at 647, 645, and 629 tokens. The inequality also produced its complete rigorous proof. Both algebra cases, the differential equation, and exact Bayes passed, for **8 complete solutions out of 12 known cases**. All twelve ended naturally, and both critical proofs matched exactly. The cube response again gave 6/35 but omitted the exhaustion proof. All three statistics answers gave exact formulas in the working and then rounded their final entries, so this pilot failed the required precision. [Ordinary generation and review receipts](../evidence/public-math-benchmarks.json)
+
 ## Fresh worked comparison plan
 
 The fresh comparison is separate from the development repairs and the repeated MMLU comparison. Its twelve authored questions, five high-school and seven college, and their grader-only answer key were frozen before the repair candidates were selected. The prompts and key are private while the comparison is pending.
 
 The fourth pilot is the default candidate. The fifth would replace it for this comparison only if it retains all eight reviewed solutions, repairs at least one additional calculus or cube case, preserves both critical proofs exactly, and scores at least 226/370 on matched MMLU. Codex will freeze both models' ordinary outputs, grade complete visible working with randomized model labels, and then reveal the labels. No fresh question, answer key, or result is an input to these fits. [Frozen evaluation and selection commitments](../evidence/public-math-benchmarks.json)
+
+The fourth pilot was selected before fresh generation because the fifth did not retain the required statistics precision. [Frozen launch receipt](../evidence/public-math-benchmarks.json)

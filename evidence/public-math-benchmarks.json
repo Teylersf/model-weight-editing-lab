@@ -276,7 +276,18 @@
     "rounded_full_vocabulary_wins": 283,
     "minimum_rounded_native_margin": 1.276763916015625,
     "omitted_teacher_targets": 0,
-    "ordinary_and_held_out_review_pending": true,
+    "ordinary_generation_receipt_sha256": "34c80a574b3113bc683bd9d62ba7648876e1f54b2a94369d3630bb04d1a4cf31",
+    "ordinary_root_math_review_sha256": "e2811af5ad0276547a704e8f2051be156257af27c147310f700bd1aaef7533c3",
+    "known_development_cases": 12,
+    "known_complete_math_repairs": 8,
+    "known_final_correct": 9,
+    "known_candidate_natural_endings": 12,
+    "calculus_complete_math_repairs": 3,
+    "calculus_candidate_completion_tokens": [647, 645, 629],
+    "statistics_exact_final_precision_regressions": 3,
+    "cube_endpoint_correct_with_exhaustion_proof_missing": true,
+    "critical_proof_exact_matches": 2,
+    "mmlu_followup_pending": true,
     "promoted": false
   },
   "fresh_worked_preregistration": {
@@ -293,7 +304,10 @@
     "primary_metric": "correct and complete visible work, required precision, valid natural finish, and no serious repetition",
     "open_key_after_both_generations_frozen": true,
     "allow_fresh_data_for_candidate_fit": false,
-    "status": "plan frozen, generation pending"
+    "selected_candidate": "pilot-004",
+    "selection_reason": "pilot-005 did not retain required exact statistics finals",
+    "frozen_launch_sha256": "1533f44d54a40a0dff5f8adfc373f843e10788577aecdc36466e2d6ea68ca9aa",
+    "status": "candidate and launch frozen, generation queued"
   },
   "agieval_worked_results": {
     "matched_generation_sha256": "5d68c9463f36e9180f4d8dd4dd92926f486e6abde8b8486917e15e4df9509e20",
