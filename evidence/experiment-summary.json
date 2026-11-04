@@ -2,7 +2,7 @@
   "schema": "public-weight-editing-experiment-summary-v1",
   "date": "2026-11-04",
   "author": "Taylor Kalin",
-  "status": "V10 (E10) remains the provisional accepted research base. The saved Windows rank-two follow-up passed the paired proofs, matched all 16 rank-36 TRAIN generations, and passed physical replay on all 10,843 captured states. Downstream qualification is pending.",
+  "status": "V10 (E10) remains the provisional accepted research base. The saved Windows rank-two follow-up passed the paired proofs, matched all 16 rank-36 TRAIN generations, passed 10,843 physical replay states, and preserved all eight required core and known development proofs. The observed development pair is pending.",
   "evidence_scope": "Curated summary of local lab receipts and independent mathematical checks. Native model checkpoints, raw generations, full capture caches, and private evaluation material are not distributed here. Hashes identify lab artifacts; their bytes are not included, so they are not independently reproducible from this repository alone.",
   "model": {
     "distribution": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
@@ -1530,6 +1530,24 @@
       "required_margin": 0.7498,
       "upstream_arrays_byte_equal_in_all_three_shards": true,
       "candidate_full_sha_pre_post_verified": true,
+      "promotion_authorized": false
+    },
+    "rank_k_euler_report_only_rank_two_core_known_development": {
+      "scope": "Exact ordinary Windows CUDA core and known DEV7 review. Euler was a known preservation target for the edit.",
+      "generation_receipt_sha256": "8b371376c04d21f3914921b1b48a349b0df60bd0608ebe398d8ed7e1fe85354d",
+      "independent_math_review_sha256": "af954e683b337ad09059398bc9ac9fc008b182795be14b61cab26a5880b2a319",
+      "complete_math_and_format_passes": 8,
+      "natural_eog_and_single_close": 8,
+      "historical_complete_successes_preserved": true,
+      "same_backend_e10_complete_successes_preserved": true,
+      "prior_rank36_complete_successes_preserved": true,
+      "exact_known_euler_proof_tokens": 1340,
+      "linear_system_inherited_bounded_format_deliberation": {
+        "prior_rank36_tokens": 1504,
+        "candidate_tokens": 1237
+      },
+      "oracle_opened": false,
+      "holdout_opened": false,
       "promotion_authorized": false
     },
     "case16_lower_error_stored_followup": {

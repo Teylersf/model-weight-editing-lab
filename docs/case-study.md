@@ -229,7 +229,9 @@ In the saved checkpoint's matched ordinary CUDA run, the interval proof reproduc
 
 All 16 original TRAIN generations then reproduced the rank-36 prompt and completion streams exactly, including their natural end tokens. Independent review confirmed **14 complete solutions**, with the inherited modulus equality and dimensional claim still present in cases 6 and 10. The candidate preserved every previously complete solution against both comparison checkpoints.
 
-Physical replay on the saved checkpoint matched all **10,843** expected token winners across two TRAIN shards and the Euler preservation shard. Both edited Euler positions passed at **1.7092** and **1.4772** logits. The upstream activation and residual-input arrays matched the parent byte for byte in each shard. Downstream qualification is a separate gate.
+Physical replay on the saved checkpoint matched all **10,843** expected token winners across two TRAIN shards and the Euler preservation shard. Both edited Euler positions passed at **1.7092** and **1.4772** logits. The upstream activation and residual-input arrays matched the parent byte for byte in each shard.
+
+The matched downstream core run independently passed all **eight** complete solutions with natural termination. Euler reproduced the corrected proof byte for byte, and all seven other known development cases preserved their complete solutions. The linear-system generation still deliberated about formatting after solving the math, but ended naturally at **1,237** tokens versus **1,504** on rank-36. The separate observed development pair remains a qualification gate.
 
 The public verifier has been run against the exact local checkpoint and proof streams. The recipe explains how to rerun the pair with the archived inputs and verify the resulting bytes against the reviewed proofs. [Exact reproduction recipe](../prototypes/windows-cuda-ordinary-runner/README.md#verify-the-reviewed-rank-two-proof-pair)
 
