@@ -207,6 +207,17 @@ We loaded the saved candidate and ran case15 and case16 together under the same 
 
 The interval proof remains incomplete, so the candidate stays unpromoted and V10 (E10) remains the provisional accepted research base. The public summary records the stored matrix fractions and SHA-256 identifiers for the source and receipts. [Public experiment summary](../evidence/experiment-summary.json)
 
+## Extended Windows check on the observed development pair
+
+We reran the two previously observed development cases on V10 (E10) and the Windows proof-stop checkpoint with a matched **8,192-token context** and **6,144-token generation limit**. All four runs ended naturally and passed independent review of the complete visible mathematics.
+
+| Observed case | V10 (E10) | Windows proof-stop checkpoint |
+| --- | --- | --- |
+| A | 5,473 tokens, 128.789 seconds of decoding | 3,840 tokens, 98.551 seconds of decoding |
+| B | 821 tokens, 20.779 seconds of decoding | 798 tokens, 20.949 seconds of decoding |
+
+Each model's A run reproduced its own first **3,072** generated token IDs exactly, then continued to a valid answer. The proof-stop checkpoint used **1,633 fewer tokens (29.8%)** on A in this matched run. Both A traces revisited the same derivation before the final answer. No identical 32-token window repeated within any of the four extended streams. Each B run reproduced its own entire earlier generation and final answer byte for byte. The original 4,096-context, 3,072-generation comparison still records two length-censored A runs and its original promotion decision. The extended comparison covers two observed cases and carries no promotion decision.
+
 ## Cumulative promotion and storage policy
 
 The improvement loop now uses provisional accepted V10 as the next default research parent. Qualification requires the existing stored/native and complete-answer gates, comparison with both the immediate experimental parent and current accepted reference, and preservation of earlier accepted fixes. A rejected candidate leaves the accepted reference unchanged. Iterative DEV gains do not establish worldwide mastery or an unbiased held-out result.
@@ -214,6 +225,8 @@ The improvement loop now uses provisional accepted V10 as the next default resea
 For future Windows evaluations, a correct, complete solution may take longer than the matched control. Record token counts, decode time, and repeated work separately. Compare speed among equally correct, complete solutions. Keep the native generation ceiling as an execution limit and record a ceiling hit as a censored run. Use the former per-case and aggregate token thresholds, including the case16 readiness target, as performance references. The historical dispositions above document the rules used at the time.
 
 Measure the actual stored matrix change relative to each relevant reference. Subsequent Windows edits use that measurement to compare candidates, with promotion based on stored-byte verification, native replay, complete solutions, natural completion, and matched regressions. The 1% matrix gate applies to the historical runs that declared it. New trials can explore larger changes when the observed proof and margin evidence justifies doing so.
+
+A CPU diagnostic reapplied the earlier two-target interval screen without the cumulative matrix cutoff. It tested local residual allowances of **5%, 7.5%, 10%, and 15%**. The stricter target was excluded by the conservative pairwise **+0.75** margin screen below about **9.944%**. Both targets cleared their separate necessary screens at 10% and 15%, conditional on the quantized operand error model. At 10%, the uniform upper estimate for the cumulative D63 Frobenius difference relative to E10 was **1.93%** of the E10 matrix norm. The estimate covers independent residual allowances and leaves joint fit feasibility and native behavior unresolved. The sweep used captured inputs and produced no fitted update or saved weight change.
 
 Retention keeps the original, current accepted checkpoint, one prior accepted rollback, active experimental files and checkpoints that active validators actually read. Older rejected/superseded weights can be pruned after dependency checks while small lineage records and receipts remain. Cleanup uses explicit owned regular-file inventories. On APFS, logical checkpoint size can greatly exceed reclaimed space; actual free space is measured before/after cleanup and before new allocations.
 

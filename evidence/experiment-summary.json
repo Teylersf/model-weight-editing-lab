@@ -1319,6 +1319,34 @@
       "observed_B_e10_tokens": 821,
       "observed_B_candidate_tokens": 798
     },
+    "proof_stop_observed_dev2_extended_diagnostic": {
+      "scope": "Matched ordinary Windows CUDA rerun of the two previously observed cases on E10 and the Windows proof-stop checkpoint",
+      "generation_receipt_sha256": "a1d0f3dff1c85a93578b5af7b879afefa041744816fba96393a1b05f87dc9071",
+      "independent_math_review_sha256": "4ccc9d47b2270758041128c4efd516268c06a3f44b381ffb21d5d32cb5bd34c4",
+      "context_tokens": 8192,
+      "generation_limit_tokens": 6144,
+      "natural_eog_completions": 4,
+      "complete_visible_math_passes": 4,
+      "case_A": {
+        "E10_tokens": 5473,
+        "proof_stop_tokens": 3840,
+        "E10_decode_ms": 128788.647,
+        "proof_stop_decode_ms": 98551.241,
+        "tokens_fewer_than_E10": 1633,
+        "each_model_matches_its_own_prior_prefix_tokens": 3072,
+        "semantic_rechecking_observed_in_both_models": true
+      },
+      "case_B": {
+        "E10_tokens": 821,
+        "proof_stop_tokens": 798,
+        "E10_decode_ms": 20778.985,
+        "proof_stop_decode_ms": 20949.1526,
+        "each_model_reproduced_its_own_prior_tokens_and_visible_final": true
+      },
+      "exact_32_token_windows_repeated_within_a_stream": false,
+      "original_3072_result_rewritten": false,
+      "promotion_authorized": false
+    },
     "case16_native_near_proof_followup": {
       "one_token_controlled_closeout_sha256": "c185c39ddb4be0289f56b7b509eeded1f864d5a9dd8181a648f1fe383824b3e7",
       "conditional_teacher_replay_sha256": "d1f50722b5a7d314c673d0dab447f15c9125426557afe3b40fe46fa64b7119fc",
@@ -1329,6 +1357,22 @@
       "first_target_native_margin": -3.094219207763672,
       "second_teacher_token_native_margin": -14.660869598388672,
       "new_weight_edit_written_at_this_snapshot": false
+    },
+    "case16_report_only_matrix_sweep": {
+      "scope": "CPU necessary-condition diagnostic for the earlier two-target interval proposal, conditional on the quantized operand error model",
+      "diagnostic_receipt_sha256": "070a1f0fdec0c5a8dd5c229ba74a7f86b4a830d0e09b11db25aecba4e3f2a8c0",
+      "cumulative_matrix_cutoff_applied": false,
+      "conservative_surrogate_margin": 0.75,
+      "stricter_target_first_not_excluded_local_residual_fraction": 0.09943978786468505,
+      "local_residual_fractions_tested": [0.05, 0.075, 0.1, 0.15],
+      "local_residual_fractions_clearing_both_separate_necessary_screens": [0.1, 0.15],
+      "at_0_1_local_residual_fraction": {
+        "cumulative_D63_Frobenius_fraction_uniform_upper_estimate_vs_E10": 0.01929686290463548
+      },
+      "joint_fit_established": false,
+      "native_rollout_established": false,
+      "factor_fitted": false,
+      "weights_mutated": false
     },
     "case16_lower_error_stored_followup": {
       "scope": "Direct stored D63 follow-up from the unpromoted Windows proof-stop checkpoint, evaluated on two matched TRAIN cases",
