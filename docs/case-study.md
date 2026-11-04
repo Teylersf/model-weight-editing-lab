@@ -188,6 +188,8 @@ The [local trace viewer](../prototypes/trace-viewer/README.md) shows the token c
 
 The improvement loop now uses provisional accepted V10 as the next default research parent. Qualification requires the existing stored/native and complete-answer gates, comparison with both the immediate experimental parent and current accepted reference, and preservation of earlier accepted fixes. A rejected candidate leaves the accepted reference unchanged. Iterative DEV gains do not establish worldwide mastery or an unbiased held-out result.
 
+For future Windows evaluations, a correct, complete solution may take longer than the matched control. Record token counts, decode time, and repeated work separately. Compare speed among equally correct, complete solutions. Keep the native generation ceiling as an execution limit and record a ceiling hit as a censored run. Use the former per-case and aggregate token thresholds, including the case16 readiness target, as performance references. The historical dispositions above document the rules used at the time.
+
 Retention keeps the original, current accepted checkpoint, one prior accepted rollback, active experimental files and checkpoints that active validators actually read. Older rejected/superseded weights can be pruned after dependency checks while small lineage records and receipts remain. Cleanup uses explicit owned regular-file inventories. On APFS, logical checkpoint size can greatly exceed reclaimed space; actual free space is measured before/after cleanup and before new allocations.
 
 ## Keep the evaluation boundary visible
