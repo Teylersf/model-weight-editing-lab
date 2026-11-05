@@ -12,6 +12,8 @@ The first public math evaluation scored the edited checkpoint at **60%** on the 
 
 By [Taylor Kalin](https://github.com/Teylersf), with AI-assisted implementation, mathematical checking, and documentation. Independent checking here means separate computational or agent checks, not human peer review.
 
+A later rank-one pilot cut one correct development solution from 486 to 204 tokens by editing the decision to finish reasoning. [See the measured result and its limits](docs/case-study.md#sixth-pilot-finish-after-the-calculation-is-settled).
+
 To watch a local run, open the [live trace viewer](prototypes/trace-viewer/README.md). The page follows token generation and displays the measured difference between saved tensors.
 
 ## Start here: what are we changing?

@@ -311,3 +311,13 @@ for label, claimed in defective_lines.items():
 ```
 
 A correct endpoint can coexist with incorrect working. Record correctness, validity of presented steps, completion, formatting, and token cost separately; then report the complete result, including rejected edits.
+
+## Sixth pilot: finish after the calculation is settled
+
+This pilot edits one decision in the accepted rank-two checkpoint. On an authored cylinder problem, the parent found the exact volume \(39.366\pi\) and had enough precision to round it correctly, then started another manual calculation. The edit trains the token that ends the reasoning phase at that decision. It leaves the model free to write its own visible solution.
+
+We fit a rank-one update to the saved layer 63 down projection against 10,876 projected guard states. At the fixed prefix, the desired token went from 10.616 logits behind the winner to 3.150 ahead in the full-vocabulary CUDA preview. The stored D63 difference is 2.994% of the parent's matrix norm. Independent readback verified every byte outside that matrix.
+
+In ordinary generation, the candidate reproduced the first 86 tokens, chose to finish reasoning at the intended decision, and gave the cylinder formula and correct answer, **123.7 cubic centimeters**. It ended naturally in **204 tokens**, compared with **486** for the parent. Decode time was **4.64 seconds** versus **10.55 seconds** on this matched run.
+
+Both models solved all six authored development problems and ended naturally. Two control outputs matched token for token; the other three remained correct and used 9–37 more tokens each. The combined count went from **2,978 to 2,756**. These are development results. The parent already knew the math, and the experiment has not established a general reduction in looping or a gain in accuracy. The accepted checkpoint remains in place. [Saved-weight and matched generation evidence](../evidence/direct-closure-pilot-006.json)

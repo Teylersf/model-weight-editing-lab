@@ -1,0 +1,165 @@
+{
+  "schema": "windows-direct-closure-pilot-v1",
+  "scope": "Six authored development cases; one efficiency target and five local controls.",
+  "status": "EXPERIMENTAL_NOT_PROMOTED",
+  "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+  "candidate_sha256": "761c27a634dd9073c80dc1b5455a2538d946c548c10e3254d71d2df9d3969b6e",
+  "saved_checkpoint_bytes": 11674147744,
+  "edit": {
+    "tensor": "blk.63.ffn_down.weight",
+    "proposed_update_rank": 1,
+    "stored_tensor_sha256": "788d4ee27760028b1fb929298ee7a379d5daeb8077873ac4787149a913c636e3",
+    "outside_tensor_byte_identical": true,
+    "relative_frobenius_difference": 0.029941584943233887,
+    "captured_states": 34,
+    "target_states": 1,
+    "projection_guards": 10876
+  },
+  "decision": {
+    "case_id": "round-cylinder-volume",
+    "generated_index": 86,
+    "desired_token_id": 248069,
+    "parent_winning_token_id": 6558,
+    "parent_margin": -10.616178512573242,
+    "rounded_full_vocabulary_cuda_preview_margin": 3.149721145629883,
+    "ordinary_generation_reached_edit_and_closed_reasoning": true
+  },
+  "generation": {
+    "runtime": "llama.cpp 8642541b2, CUDA0",
+    "context": 4096,
+    "max_generated_tokens": 3072,
+    "sampler": "greedy",
+    "threads": 4,
+    "batch": 64,
+    "parent_complete_correct": 6,
+    "candidate_complete_correct": 6,
+    "reviewer": "Independent agent and Codex checked complete visible reasoning.",
+    "all_answers_ended_naturally": true,
+    "parent_total_tokens": 2978,
+    "candidate_total_tokens": 2756,
+    "cases": [
+      {
+        "id": "exact-plane-distance",
+        "parent": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 9.9358455
+        },
+        "candidate": {
+          "tokens": 495,
+          "think_close_index": 203,
+          "natural_eog": true,
+          "decode_seconds": 10.776656800000001
+        },
+        "common_token_prefix": 93,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "exact-mod-four-probability",
+        "parent": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 13.806640100000001
+        },
+        "candidate": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 13.9850924
+        },
+        "common_token_prefix": 634,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-arctan-integral",
+        "parent": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 9.608276400000001
+        },
+        "candidate": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 10.072349
+        },
+        "common_token_prefix": 443,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "round-cylinder-volume",
+        "parent": {
+          "tokens": 486,
+          "think_close_index": 355,
+          "natural_eog": true,
+          "decode_seconds": 10.5525325
+        },
+        "candidate": {
+          "tokens": 204,
+          "think_close_index": 86,
+          "natural_eog": true,
+          "decode_seconds": 4.6444096
+        },
+        "common_token_prefix": 86,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "round-geometric-count",
+        "parent": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 16.3836349
+        },
+        "candidate": {
+          "tokens": 760,
+          "think_close_index": 722,
+          "natural_eog": true,
+          "decode_seconds": 17.5454016
+        },
+        "common_token_prefix": 198,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "exact-terminating-decimal",
+        "parent": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.4919604
+        },
+        "candidate": {
+          "tokens": 220,
+          "think_close_index": 165,
+          "natural_eog": true,
+          "decode_seconds": 5.1902721000000005
+        },
+        "common_token_prefix": 49,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      }
+    ]
+  },
+  "receipt_sha256": {
+    "capture": "a6fcb496592a1a9607dd3c133ef7aff7c71b9088469bfcd91db8edf32fc1d77e",
+    "fit": "31d1a3cf701725a09f27e34307ca07257a5311946470de023c49afbc7749ca80",
+    "saved_readback": "c99c9e1f76a28d73472430c5619f784b3fbb02bfe92ac0053b2ce12a300e70f8",
+    "matched": "8ec867744788a0a2d39e794972d03109334df52d4fe0c3fcf9e6d20c29788e71",
+    "parent_ordinary": "f68f653fedf7a9aefe78698a455a314e95706d53a51e6946727adeffaf2a4718",
+    "candidate_ordinary": "82f4c4c192aaff1645f641eda41247490884d455eb332dfe9e82cdff2bd68ef9"
+  },
+  "limitations": [
+    "The parent already answered the target correctly.",
+    "Projected guards are constraints during fitting. They do not establish ordinary output identity.",
+    "No general speed or accuracy claim follows from these development cases.",
+    "The accepted rank-two model and rollback remain in place."
+  ]
+}
