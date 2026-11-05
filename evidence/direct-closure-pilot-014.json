@@ -338,5 +338,22 @@
     "max_choice_logit_delta": 0.0,
     "report_sha256": "33004a33ecf556739cb54280a215008c9403bb9de8e882ed9d0b17d2db061262"
   },
-  "fresh_holdout_opened_for_this_candidate": false
+  "fresh_holdout_opened_for_this_candidate": false,
+  "accepted_parent_runtime_recheck": {
+    "schema": "windows-mmlu-accepted-parent-recheck-v1",
+    "model_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+    "original_benchmark_receipt_sha256": "493e2545d001aa716dab820707c843661e4deee97b77d5a6485795254d898c3a",
+    "repeated_benchmark_receipt_sha256": "7cd31a2e5bf823674957302e653e864ff84e480f6efe287e1e3ebd53b93cf607",
+    "pilot_014_paired_receipt_sha256": "61ebcacee65a399081aaef8206ff8cabed6a97809491cfe4dcfa250544216229",
+    "prompt_identity_and_native_settings_equal": true,
+    "cases": 370,
+    "exact_choice_matches": 370,
+    "exact_four_logit_matches": 370,
+    "max_absolute_logit_difference": 0.0,
+    "recurring_loss_parent_margin_original": 0.002170562744140625,
+    "recurring_loss_parent_margin_recheck": 0.002170562744140625,
+    "original_correct": 226,
+    "repeated_correct": 226,
+    "comparison_sha256": "e1d385072b0fa93415c93c6458b6f5ed9ae3cba846d1145bb2169ebcc9503783"
+  }
 }
