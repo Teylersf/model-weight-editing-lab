@@ -341,6 +341,17 @@
     "cost_line_typo_sensitivity": {"baseline_complete_if_waived": 9, "pilot_004_complete": 10},
     "fresh_data_used_for_fitting": false
   },
+  "pilot_004_independent_archived_physical_replay": {
+    "receipt_sha256": "fbab02fa7617a2cb8ba6b49b04db02eb413a53c0b8d053acadf7eb6b8119b85a",
+    "candidate_sha256": "65f39aa46659f3104430699babe7b56565495bcb7546d947f471790214898e51",
+    "states": 10843,
+    "token_winners_preserved": 10843,
+    "upstream_a_and_p_bytes_exact": true,
+    "full_candidate_sha_pre_post_verified": true,
+    "euler_candidate_margins": [1.7092170715332031, 1.477212905883789],
+    "euler_margins_exactly_equal_to_parent": true,
+    "promoted": false
+  },
   "agieval_worked_results": {
     "matched_generation_sha256": "5d68c9463f36e9180f4d8dd4dd92926f486e6abde8b8486917e15e4df9509e20",
     "blind_review_freeze_sha256": "ee43c19775c7523b60e282dbf9b714f095db01fb78c92b7324d81b84a259f04b",
