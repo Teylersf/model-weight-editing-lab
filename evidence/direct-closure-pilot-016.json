@@ -1,0 +1,332 @@
+{
+  "schema": "windows-direct-closure-output-row-pilot-v1",
+  "pilot": 16,
+  "status": "SCREENED_OUT_FOR_EXACT_EULER_PROOF_REPLAY",
+  "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+  "candidate_sha256": "fec6a6decfb22f30114df07f54ac3edb619b2446ed3f377562f8986d5706dda3",
+  "saved_checkpoint_bytes": 11674147744,
+  "fit": {
+    "receipt_sha256": "7aa9a3f3d1179dd7db49a59101163daa117384b27b261671e8133de6997e7cef",
+    "fitter_sha256": "8b4f5d4cde85609d75640cb5a24f20f0ce51b19cb84dee53d7ada7ecbdf6eaae",
+    "capture_driver_sha256": "c0a136e17e577e288ef577e0c5a9935725530ae24c7d0647a1ceb96da8120929",
+    "algorithm": "Greedy bounded signed integer changes to Q4_K nibble values, using CUDA Q8_1 effective activations and fixed block metadata.",
+    "selected_position": 164,
+    "guarded_constraints": 3191,
+    "accepted_ordinary_positions_captured": 2978,
+    "early_close_teacher_positions_captured": 117,
+    "added_authored_guard_positions": 32,
+    "fit_capture_receipt_sha256": [
+      "c56e54d8f9270182f558391f9428c4522fefd1537cf22e7a98b34515ff4eb0dd",
+      "9be4c9a241219baf93a055e23f33f1f1d6eb517bbf595e1b573afe9b92371c72",
+      "12099e08188cc36623ef122748734b22222c41c81ba7317910fdbc42d660b3aa",
+      "cc61b8643f4c55ac2cec3d5ca97145ec56d80e05874da347235040fbaf91205f"
+    ],
+    "historical_proof_activations_used": false,
+    "benchmark_or_fresh_evaluation_used": false,
+    "predicted_target_margin": 0.8211002787575126,
+    "minimum_predicted_guard_slack": 0.0005077540874481312,
+    "changed_codes": 325,
+    "changed_bytes": 315,
+    "row_relative_l2_change": 0.1701276227417586
+  },
+  "saved_edit": {
+    "materializer_receipt_sha256": "718460e6f54440c8843f869ee0a892d4cc57eddc59ad89c0c2ba7fda0eaa7b64",
+    "materializer_sha256": "2c57ce9e62c14629b6b7acbac798edd5a38157246b3a07d0ff8d9cfd21e837de",
+    "tensor": {
+      "offset": 10996640,
+      "bytes": 715161600,
+      "dimensions": [
+        5120,
+        248320,
+        1,
+        1
+      ],
+      "type": 12
+    },
+    "row": {
+      "tensor": "output.weight",
+      "token_id": 248069,
+      "offset": 725435360,
+      "bytes": 2880,
+      "parent_sha256": "27c3ea68e059eecd56c9806ce59ab6db134f52c03d5f1ebaf8692c8cb31a4f40",
+      "sha256": "f2d435ebdd0fa716e64939ca6fc44a68c4b48f9078a20bd4877e21e70253a982"
+    },
+    "spans_sha256": {
+      "prefix": "f249e92fe65ce8debee05cf329790397aeedff85edef1611e97db8162f0c1ed0",
+      "output_row": "f2d435ebdd0fa716e64939ca6fc44a68c4b48f9078a20bd4877e21e70253a982",
+      "suffix": "e8ecc8a3df6db185f285a83e5630133e927dc5addbe70a54e3addba6b8c266fb"
+    },
+    "exact_bytes_outside_row": true,
+    "fixed_q4k_block_metadata": true
+  },
+  "native_fixed_prefix": {
+    "receipt_sha256": "267d6afca06fe5a3c0826a4cd579a6c13d0192705987ae9295561d9609d6ce6a",
+    "script_sha256": "00be20c034c9e92bd0db617bc06cd90363b084424254933659915749f4c8aa03",
+    "parent_suffix_receipt_sha256": "1f25ca1967855ee23f6716a94cd43d54a339985396875908c565c5b075768662",
+    "candidate_suffix_receipt_sha256": "4c074f5ed66615e1ff86889d1b5d76c474dc50beec3ffcf4f35e5392cbafcf00",
+    "exact_hidden_states": true,
+    "exact_other_token_logits": 248319,
+    "close_logit_before": 18.11862564086914,
+    "close_logit_after": 24.431594848632812,
+    "close_margin_after": 0.8211002349853516
+  },
+  "development": {
+    "comparison_sha256": "b7569464cf336a5ce5177d6690a50b3febcdb94ade26bf5e829a770cc532591d",
+    "parent_generation_receipt_sha256": "f68f653fedf7a9aefe78698a455a314e95706d53a51e6946727adeffaf2a4718",
+    "candidate_generation_receipt_sha256": "23b70287f754932d7330429b9d8cfff7904f9ff7ecd7de1c776627e91b24d3c5",
+    "matched_prompt_tokens": true,
+    "independent_math_review": "Separate Codex reviewer checked the frozen raw outputs and reconstructed native tokens and visible bytes.",
+    "candidate_complete_correct": 6,
+    "candidate_natural_eog": 6,
+    "exact_non_target_outputs": 5,
+    "target_correct_answer": "123.7 cubic centimeters",
+    "target_parent_tokens": 486,
+    "target_candidate_tokens": 282,
+    "target_token_reduction": 0.41975308641975306,
+    "target_parent_decode_seconds": 10.5525325,
+    "target_candidate_decode_seconds": 6.456467,
+    "parent_total_tokens": 2978,
+    "candidate_total_tokens": 2774,
+    "parent_total_decode_seconds": 64.7788898,
+    "candidate_total_decode_seconds": 63.9325903,
+    "cases": [
+      {
+        "id": "exact-plane-distance",
+        "parent": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 9.9358455
+        },
+        "candidate": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 10.436653
+        },
+        "common_token_prefix": 458,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-mod-four-probability",
+        "parent": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 13.806640100000001
+        },
+        "candidate": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 14.6717537
+        },
+        "common_token_prefix": 634,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-arctan-integral",
+        "parent": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 9.608276400000001
+        },
+        "candidate": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 10.1970452
+        },
+        "common_token_prefix": 443,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "round-cylinder-volume",
+        "parent": {
+          "tokens": 486,
+          "think_close_index": 355,
+          "natural_eog": true,
+          "decode_seconds": 10.5525325
+        },
+        "candidate": {
+          "tokens": 282,
+          "think_close_index": 164,
+          "natural_eog": true,
+          "decode_seconds": 6.456467
+        },
+        "common_token_prefix": 164,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "round-geometric-count",
+        "parent": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 16.3836349
+        },
+        "candidate": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 17.410494500000002
+        },
+        "common_token_prefix": 751,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-terminating-decimal",
+        "parent": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.4919604
+        },
+        "candidate": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.7601769
+        },
+        "common_token_prefix": 206,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      }
+    ]
+  },
+  "mmlu": {
+    "exact_logit_comparison_receipt_sha256": "418f6b87e7c8e08b129096e6298adc40c43bf7fdcf89be3592261285cc6e1a5b",
+    "comparator_sha256": "a4bec7296119170d6e5ede38e086da1a94a96284b0f1be1ef4c3508ec98ae23b",
+    "exact_logit_comparison": {
+      "schema": "windows-mmlu-close-row-bit-comparison-v1",
+      "baseline_model_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+      "candidate_model_sha256": "fec6a6decfb22f30114df07f54ac3edb619b2446ed3f377562f8986d5706dda3",
+      "baseline_benchmark_receipt_sha256": "493e2545d001aa716dab820707c843661e4deee97b77d5a6485795254d898c3a",
+      "candidate_benchmark_receipt_sha256": "0d9f71628fd78825908e60ac61eb0786092a72795568ab2aa916b16f317b4d68",
+      "candidate_physical_receipt_sha256": "718460e6f54440c8843f869ee0a892d4cc57eddc59ad89c0c2ba7fda0eaa7b64",
+      "paired_receipt_sha256": "08c518eade92cbbd81359253b6d58b147f70281cd464e00d58113b923f04ebfc",
+      "baseline_native_logits_sha256": "ffff0a08caf18c19fa785f81d946b6a55b7c75713bb1c7b3692ee04733742688",
+      "candidate_native_logits_sha256": "b1e7074415e3ed62ea76b92872e1f6061623478700bda9f57c9fc9ad843212fd",
+      "native_settings_equal": true,
+      "ordered_prompt_metadata_equal": true,
+      "cases": 370,
+      "expected_logits": 1480,
+      "compared_logits": 1480,
+      "exact_binary32_logits": 1480,
+      "differing_binary32_logits": 0,
+      "missing_logit_pairs": 0,
+      "exact_four_logit_rows": 370,
+      "nonexact_or_incomplete_rows": 0,
+      "all_four_logits_bit_identical": true,
+      "max_absolute_logit_difference": 0.0,
+      "answer_choice_disagreements": 0,
+      "score_status_disagreements": 0,
+      "both_correct": 226,
+      "baseline_only_correct": 0,
+      "candidate_only_correct": 0,
+      "neither_correct": 144,
+      "baseline_correct": 226,
+      "candidate_correct": 226
+    },
+    "paired_outcomes": {
+      "high_school_mathematics": {
+        "both_correct": 162,
+        "baseline_only_correct": 0,
+        "candidate_only_correct": 0,
+        "neither_correct": 108,
+        "total": 270,
+        "baseline_correct": 162,
+        "candidate_correct": 162,
+        "correct_delta": 0,
+        "accuracy_percentage_point_delta": 0.0,
+        "paired_scored": 270,
+        "paired_scored_answer_letter_disagreements": 0,
+        "any_outcome_disagreements": 0,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "college_mathematics": {
+        "both_correct": 64,
+        "baseline_only_correct": 0,
+        "candidate_only_correct": 0,
+        "neither_correct": 36,
+        "total": 100,
+        "baseline_correct": 64,
+        "candidate_correct": 64,
+        "correct_delta": 0,
+        "accuracy_percentage_point_delta": 0.0,
+        "paired_scored": 100,
+        "paired_scored_answer_letter_disagreements": 0,
+        "any_outcome_disagreements": 0,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "combined_micro": {
+        "both_correct": 226,
+        "baseline_only_correct": 0,
+        "candidate_only_correct": 0,
+        "neither_correct": 144,
+        "total": 370,
+        "baseline_correct": 226,
+        "candidate_correct": 226,
+        "correct_delta": 0,
+        "accuracy_percentage_point_delta": 0.0,
+        "paired_scored": 370,
+        "paired_scored_answer_letter_disagreements": 0,
+        "any_outcome_disagreements": 0,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      }
+    }
+  },
+  "exact_replay": {
+    "capsule_content_sha256": "ae86395f27b64fc20797003ab468c9df6cba8ebac9e29b378328fd2d74b140cd",
+    "full_parent_and_candidate_sha256_verified": true,
+    "full_verify_only_passed": true,
+    "optional_output_test_scope": "Synthetic GGUF with write, readback, existing destination and staged failure cleanup.",
+    "example_source_sha256": "c8b9e36562c83c3ccfb2c320b2e06ed191067d34db8cc7af1039da4dbf479918"
+  },
+  "critical_proofs": {
+    "status": "FAILED_EXACT_REPLAY_GATE",
+    "generation_receipt_sha256": "26adde1517d850aad3a3bbb6e99c6eadce794cea777a8a58404b02d20b4090fe",
+    "exact_prompt_bytes_and_token_ids": true,
+    "exact_proofs": 1,
+    "cases": [
+      {
+        "family": "interval",
+        "exact_complete_proof": true,
+        "exact_final_bytes": true,
+        "parent_completion_tokens": 1628,
+        "candidate_completion_tokens": 1628,
+        "natural_eog": true,
+        "first_divergent_token_index": null,
+        "token_at_first_divergence": null
+      },
+      {
+        "family": "Euler",
+        "exact_complete_proof": false,
+        "exact_final_bytes": false,
+        "parent_completion_tokens": 1340,
+        "candidate_completion_tokens": 1380,
+        "natural_eog": true,
+        "first_divergent_token_index": 620,
+        "token_at_first_divergence": 248069,
+        "independent_visible_math_review": "Incorrect. Substitution of the particular solution produces six times the required forcing term. The initial constants, domain and homogeneous solution were correct."
+      }
+    ]
+  },
+  "fresh_blinded_evaluation": {
+    "status": "SEALED_PROOF_GATE_FAILED",
+    "opened_for_candidate": false
+  },
+  "accepted_checkpoint_updated": false
+}
