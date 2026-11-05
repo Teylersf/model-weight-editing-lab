@@ -1,0 +1,280 @@
+{
+  "schema": "direct-accuracy-pilot-032-exploratory-v1",
+  "pilot": 32,
+  "status": "nested_family_policy_regressed",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "fit_source_sha256": "e1ec9081286a8a03bbff8ca485b89ff39cee2f648d09be6c3a55a463fea8c2ea",
+  "grouped_plan_sha256": "36f0563d1ec817630af5e31f1593da7808abc4332b2727e41ba44edff416169b",
+  "grouped_cpu_report_sha256": "efbaa154bedfcb6b3479e3c428d4a593df7c3040fc69b3dfe77659469cd8e021",
+  "reused_nested_split_plan_sha256": "2b8d96ee14fb9c63501fd9b45ea1648100dcefde73b24bda761d77ace1870643",
+  "authored_corpus": {
+    "source_pilot": 28,
+    "problems": 144,
+    "rotations": 576,
+    "mathematical_families": 18,
+    "template_stems": 36,
+    "whole_family_outer_folds": 3,
+    "problems_per_outer_fold": 48,
+    "nested_validation_families_per_fold": 4,
+    "problem_pack_sha256": "27cdca2de3b134487527a2012f6ec6f0199ddaf919fbb769828a48bec9aa5c1d",
+    "family_manifest_sha256": "40c54e3c36d11ed50197d59ff446808654ac5a131683f0df2f89c9b4c620c122",
+    "independent_key_audit_sha256": "489afde665fc9ed6f2a6c95f8e0137f3fc5538b1a891cde8a8ac8ffd8ddaeb65",
+    "authored_baseline_sha256": "c12451d59c7fa134343ee88ce1e51b37a162e8c830b0eb239e143cdde63e4300",
+    "terminal_capture_sha256": "6920b54ed626630e22ff651d79d5bbec2ea9e8ec37947aeff54e5e43076e357a"
+  },
+  "objective": "Average correct-versus-rival logistic loss within each training family and subtract its parent loss. Compare the equal-family mean with two smooth worst-family objectives.",
+  "policy_temperatures": {
+    "mean": null,
+    "dro-tau-0.02": 0.02,
+    "dro-tau-0.12": 0.12
+  },
+  "inner_selection": "Require gains in both pooled measures and no net drop on either measure within either subject. Rank eligible fits by all-four losses, rotation losses, worst family loss fraction, more rotation gains, more all-four gains, fewer edited codes, and the fixed policy order. Fall back to the exact parent when no policy qualifies.",
+  "signed_guards": {
+    "original_training_and_legacy_inequalities_retained": true,
+    "frozen_b_token_id": 417,
+    "frozen_b_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+    "editable_token_ids": [
+      357,
+      351,
+      414
+    ],
+    "max_absolute_code_delta": 1,
+    "all_q4k_block_metadata_unchanged": true,
+    "sparse_row_hashes_independently_reconstructed": true
+  },
+  "all_outer_fits_frozen_before_held_scoring": true,
+  "scope": "The outer scores measure the nested selection procedure on reused authored families. Both worst-family variants were evaluated within inner folds. The outer choices were parent, mean loss, and parent.",
+  "pooled": {
+    "problems": 144,
+    "rotations": 576,
+    "correct_rotations_parent_candidate": [
+      342,
+      340
+    ],
+    "all_four_parent_candidate": [
+      46,
+      45
+    ],
+    "rotation_gains": 1,
+    "rotation_losses": 3,
+    "all_four_gains": 0,
+    "all_four_losses": 1
+  },
+  "subjects": {
+    "high_school_mathematics": {
+      "problems": 80,
+      "rotations": 320,
+      "correct_rotations_parent_candidate": [
+        205,
+        203
+      ],
+      "all_four_parent_candidate": [
+        32,
+        32
+      ],
+      "rotation_gains": 0,
+      "rotation_losses": 2,
+      "all_four_gains": 0,
+      "all_four_losses": 0
+    },
+    "college_mathematics": {
+      "problems": 64,
+      "rotations": 256,
+      "correct_rotations_parent_candidate": [
+        137,
+        137
+      ],
+      "all_four_parent_candidate": [
+        14,
+        13
+      ],
+      "rotation_gains": 1,
+      "rotation_losses": 1,
+      "all_four_gains": 0,
+      "all_four_losses": 1
+    }
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "selected_policy": null,
+      "parent_fallback": true,
+      "changed_codes_by_token": {
+        "357": 0,
+        "417": 0,
+        "351": 0,
+        "414": 0
+      },
+      "fit_receipt_sha256": "6e9a398de05dac3bcb929b52308a3cb95ca14150bb77292ed1949d062ebc439f",
+      "held_metrics": {
+        "problems": 48,
+        "rotations": 192,
+        "correct_rotations_parent_candidate": [
+          109,
+          109
+        ],
+        "all_four_parent_candidate": [
+          16,
+          16
+        ],
+        "rotation_gains": 0,
+        "rotation_losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "inner_validation": {
+        "mean": {
+          "eligible": false,
+          "candidate_correct_rotations": 234,
+          "candidate_all_four": 29,
+          "rotation_losses": 5,
+          "all_four_losses": 1
+        },
+        "dro-tau-0.02": {
+          "eligible": false,
+          "candidate_correct_rotations": 229,
+          "candidate_all_four": 29,
+          "rotation_losses": 6,
+          "all_four_losses": 1
+        },
+        "dro-tau-0.12": {
+          "eligible": false,
+          "candidate_correct_rotations": 233,
+          "candidate_all_four": 30,
+          "rotation_losses": 5,
+          "all_four_losses": 1
+        }
+      },
+      "inner_parent_scores": {
+        "correct_rotations": 233,
+        "all_four": 30
+      }
+    },
+    {
+      "fold": 1,
+      "selected_policy": "mean",
+      "parent_fallback": false,
+      "changed_codes_by_token": {
+        "357": 19,
+        "417": 0,
+        "351": 33,
+        "414": 37
+      },
+      "fit_receipt_sha256": "67921808ec7c1209afe5825e693a21ae5a7b189df688fc259803bc01a57694ab",
+      "held_metrics": {
+        "problems": 48,
+        "rotations": 192,
+        "correct_rotations_parent_candidate": [
+          113,
+          111
+        ],
+        "all_four_parent_candidate": [
+          15,
+          14
+        ],
+        "rotation_gains": 1,
+        "rotation_losses": 3,
+        "all_four_gains": 0,
+        "all_four_losses": 1
+      },
+      "inner_validation": {
+        "mean": {
+          "eligible": true,
+          "candidate_correct_rotations": 241,
+          "candidate_all_four": 35,
+          "rotation_losses": 2,
+          "all_four_losses": 0
+        },
+        "dro-tau-0.02": {
+          "eligible": true,
+          "candidate_correct_rotations": 241,
+          "candidate_all_four": 35,
+          "rotation_losses": 3,
+          "all_four_losses": 0
+        },
+        "dro-tau-0.12": {
+          "eligible": true,
+          "candidate_correct_rotations": 241,
+          "candidate_all_four": 35,
+          "rotation_losses": 3,
+          "all_four_losses": 0
+        }
+      },
+      "selected_fit_guards": {
+        "signed_constraints": 4239,
+        "prior_correct_training_winners_preserved": 229,
+        "legacy_full_vocabulary_winners_preserved": 635,
+        "legacy_four_choice_winners_preserved": 32,
+        "minimum_signed_slack": 0.0008893427389921049
+      },
+      "selected_fit_training_family_loss_delta": {
+        "mean": -0.014023287531862196,
+        "worst": -0.003069477390110431
+      },
+      "inner_parent_scores": {
+        "correct_rotations": 229,
+        "all_four": 31
+      }
+    },
+    {
+      "fold": 2,
+      "selected_policy": null,
+      "parent_fallback": true,
+      "changed_codes_by_token": {
+        "357": 0,
+        "417": 0,
+        "351": 0,
+        "414": 0
+      },
+      "fit_receipt_sha256": "c2885afaf31e063258b326cecd2ab35053278d63045ef54fb7a047b8c3dfcc2e",
+      "held_metrics": {
+        "problems": 48,
+        "rotations": 192,
+        "correct_rotations_parent_candidate": [
+          120,
+          120
+        ],
+        "all_four_parent_candidate": [
+          15,
+          15
+        ],
+        "rotation_gains": 0,
+        "rotation_losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "inner_validation": {
+        "mean": {
+          "eligible": false,
+          "candidate_correct_rotations": 224,
+          "candidate_all_four": 33,
+          "rotation_losses": 5,
+          "all_four_losses": 1
+        },
+        "dro-tau-0.02": {
+          "eligible": false,
+          "candidate_correct_rotations": 225,
+          "candidate_all_four": 34,
+          "rotation_losses": 5,
+          "all_four_losses": 1
+        },
+        "dro-tau-0.12": {
+          "eligible": false,
+          "candidate_correct_rotations": 224,
+          "candidate_all_four": 33,
+          "rotation_losses": 5,
+          "all_four_losses": 1
+        }
+      },
+      "inner_parent_scores": {
+        "correct_rotations": 222,
+        "all_four": 31
+      }
+    }
+  ],
+  "passed_exploratory_transfer": false,
+  "eligible_for_acceptance": false,
+  "checkpoint_written": false,
+  "gpu_used": false,
+  "official_fresh_proof_guard_only_and_separate_transfer_inputs_excluded": true
+}

@@ -1,4 +1,4 @@
-"""Verify the exact Pilot 026 rank-two D63 replay without writing a GGUF."""
+"""Verify the exact Pilot 026 or 033 low-rank D63 replay without writing a GGUF."""
 
 import argparse
 from hashlib import sha256
@@ -14,29 +14,33 @@ import numpy as np
 
 
 HERE = Path(__file__).resolve().parent
-CAPSULE = HERE.parent / "evidence/direct-accuracy-pilot-026-d63-patch.json"
-CAPSULE_SHA256 = "d5259bf4f303aaddbdbc4747e41f5695e87b10e9f736a3d244f1ae754ab83feb"
+CAPSULES = {
+    26: ("two", 2, "d5259bf4f303aaddbdbc4747e41f5695e87b10e9f736a3d244f1ae754ab83feb"),
+    33: ("three", 3, "70b2ede4d4ee589c021e8fd1d5abbe14c38635bbd49bcd1fc9664296ca1a9a56"),
+}
 ROW_BLOCK = 64
 HELPERS = runpy.run_path(str(HERE / "replay_d63_rank_one_edit.py"))
 require = HELPERS["require"]
 
 
-def load_capsule():
-    patch = json.loads(CAPSULE.read_bytes())
+def load_capsule(pilot=26):
+    rank_name, rank, capsule_sha = CAPSULES[pilot]
+    capsule = HERE.parent / f"evidence/direct-accuracy-pilot-{pilot:03}-d63-patch.json"
+    patch = json.loads(capsule.read_bytes())
     canonical = json.dumps(patch, sort_keys=True, separators=(",", ":")).encode("ascii")
-    require(sha256(canonical).hexdigest() == CAPSULE_SHA256, "Pilot 026 patch capsule SHA-256 differs")
+    require(sha256(canonical).hexdigest() == capsule_sha, f"Pilot {pilot:03} patch capsule SHA-256 differs")
     tensor = patch["tensor"]
     columns, rows = tensor["dimensions"]
-    require(patch["schema"] == "public-direct-d63-rank-two-patch-v1" and patch["pilot"] == 26
+    require(patch["schema"] == f"public-direct-d63-rank-{rank_name}-patch-v1" and patch["pilot"] == pilot
             and patch["factor_encoding"] == "base64+zlib" and patch["factor_dtype"] == "<f8"
             and tensor["name"] == "blk.63.ffn_down.weight" and tensor["ggml_type"] == 0 and tensor["type"] == "F32"
             and (columns, rows) == (17408, 5120) and tensor["bytes"] == columns * rows * 4
             and 0 < tensor["gguf_data_offset"] <= min(tensor["offset"], 16 * 1024 * 1024)
             and tensor["offset"] + tensor["bytes"] <= patch["checkpoint_bytes"], "Invalid F32 D63 patch extent")
     u, v = patch["factors"]["u"], patch["factors"]["v"]
-    require(u["shape"] == [rows, 2] and v["shape"] == [columns, 2], "Rank-two factor shape differs")
+    require(u["shape"] == [rows, rank] and v["shape"] == [columns, rank], "Low-rank factor shape differs")
     factor = HELPERS["factor"]
-    return patch, factor(u, rows * 2).reshape(rows, 2), factor(v, columns * 2).reshape(columns, 2)
+    return patch, factor(u, rows * rank).reshape(rows, rank), factor(v, columns * rank).reshape(columns, rank)
 
 
 def rounded_blocks(source, u, v):
@@ -46,11 +50,14 @@ def rounded_blocks(source, u, v):
             raw = HELPERS["read_exact"](source, len(rows) * len(v) * 4)
             before = np.frombuffer(raw, dtype="<f4").reshape(len(rows), len(v)).astype(np.float64)
             require(np.isfinite(before).all(), "Parent tensor has a nonfinite value")
-            first = np.multiply(rows[:, 0, None], v[None, :, 0], dtype=np.float64)
-            second = np.multiply(rows[:, 1, None], v[None, :, 1], dtype=np.float64)
-            # Sum the two F64 products before adding them to the parent, then round once to F32.
-            np.add(first, second, out=first)
-            np.add(before, first, out=before)
+            correction = np.multiply(rows[:, 0, None], v[None, :, 0], dtype=np.float64)
+            if u.shape[1] == 3:
+                # Pilot 033's streamed fit starts the F64 sum from zero.
+                np.add(0., correction, out=correction)
+            for column in range(1, u.shape[1]):
+                term = np.multiply(rows[:, column, None], v[None, :, column], dtype=np.float64)
+                np.add(correction, term, out=correction)
+            np.add(before, correction, out=before)
             after = before.astype("<f4")
             require(np.isfinite(after).all(), "Replayed tensor has a nonfinite value")
             yield raw, after.tobytes()
@@ -82,12 +89,12 @@ def verify(parent, patch, u, v, tensor_only):
             hash_unchanged(source, patch["checkpoint_bytes"] - source.tell(), model_before, model_after)
             require(source.read(1) == b"", "Parent contains trailing bytes")
             require(model_before.hexdigest() == patch["parent_sha256"], "Full Pilot 024 parent SHA-256 differs")
-            require(model_after.hexdigest() == patch["candidate_sha256"], "Full replayed Pilot 026 candidate SHA-256 differs")
+            require(model_after.hexdigest() == patch["candidate_sha256"], "Full replayed candidate SHA-256 differs")
         after = os.fstat(source.fileno())
         require((before.st_size, before.st_mtime_ns, before.st_ctime_ns)
                 == (after.st_size, after.st_mtime_ns, after.st_ctime_ns), "Parent changed during replay")
 
-    result = dict(status="D63_VERIFIED_ONLY" if tensor_only else "VERIFIED_ONLY", pilot=26, tensor=tensor["name"],
+    result = dict(status="D63_VERIFIED_ONLY" if tensor_only else "VERIFIED_ONLY", pilot=patch["pilot"], tensor=tensor["name"],
                   tensor_bytes=tensor["bytes"], parent_D63_sha256=d63_before.hexdigest(),
                   candidate_D63_sha256=d63_after.hexdigest())
     if not tensor_only:
@@ -98,11 +105,12 @@ def verify(parent, patch, u, v, tensor_only):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--pilot", type=int, choices=CAPSULES, default=26)
     parser.add_argument("--parent", type=Path, required=True, help="Exact Pilot 024 GGUF")
     parser.add_argument("--tensor-only", action="store_true", help="Verify D63 hashes without reading the full GGUF")
     args = parser.parse_args()
     try:
-        patch, u, v = load_capsule()
+        patch, u, v = load_capsule(args.pilot)
         result = verify(args.parent, patch, u, v, args.tensor_only)
     except (OSError, ValueError, FloatingPointError, struct.error, zlib.error) as error:
         parser.exit(1, f"Replay failed. {error}\n")

@@ -1,0 +1,303 @@
+{
+  "schema": "direct-accuracy-pilot-033-d63-v1",
+  "pilot": 33,
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_sha256": "97797213d2321c89cd322aa53aff2f4dad64be523b12f2a099a2acfb8a6e46bc",
+  "fit_only_independently_authored": true,
+  "ordinary_proof_and_cylinder_excluded_from_fitting": true,
+  "official_fresh_guard_only_and_separate_transfer_inputs_excluded_from_fitting": true,
+  "authored_baseline_sha256": "c12451d59c7fa134343ee88ce1e51b37a162e8c830b0eb239e143cdde63e4300",
+  "authored_capture_sha256": "6920b54ed626630e22ff651d79d5bbec2ea9e8ec37947aeff54e5e43076e357a",
+  "edit": {
+    "rank": 3,
+    "name": "blk.63.ffn_down.weight",
+    "offset": 10869117856,
+    "bytes": 356515840,
+    "parent_sha256": "0c98f90b2c64baa071ada49e9db216040932261a54d791c8656deb07c637d97a",
+    "sha256": "3c40afc661a0027e800079afe69dbf17cab59668aa8b530a96f439ce3e1dfc12",
+    "changed_f32_values": 89034485,
+    "delta_frobenius_fraction": 0.0002696098710653202
+  },
+  "grouped_exploratory": {
+    "plan_sha256": "2ca2c9e701e9d3abdf4e80ed13fbd23e0c53ccf298f6eb96aae5b731adddaccc",
+    "report_sha256": "22e313af8f4a4ca9f2a8712f4845138d35dee90edc531c19b8371e00b9916ce8",
+    "source_sha256": "fbc26705117b92167130aaa0dbc705c014431adfb3ba3ebc154fb6bf8cbf71d1",
+    "folds": [
+      {
+        "fold": 0,
+        "fit_sha256": "628c14a775bf1908c1570ceec32b6e2bec95103e23f46c8e25e6865fe2f3ac4e",
+        "held": {
+          "rotations": 192,
+          "problems": 48,
+          "correct_rotations": [
+            109,
+            113
+          ],
+          "all_four": [
+            16,
+            18
+          ],
+          "gains": 6,
+          "losses": 2,
+          "all_four_gains": 2,
+          "all_four_losses": 0
+        },
+        "f32_tensor_sha256": "f43900316403d5ef8df629f08574883b6ec5792bc89fe1483bab8056a2b4ba67",
+        "no_train_prior_correct_losses": true
+      },
+      {
+        "fold": 1,
+        "fit_sha256": "55bed3b4caf33ba219f99ec875cc7835880b674f38ed4fc2db9ddd905b62b8ee",
+        "held": {
+          "rotations": 192,
+          "problems": 48,
+          "correct_rotations": [
+            113,
+            114
+          ],
+          "all_four": [
+            15,
+            14
+          ],
+          "gains": 3,
+          "losses": 2,
+          "all_four_gains": 0,
+          "all_four_losses": 1
+        },
+        "f32_tensor_sha256": "74e29fbd474629c52fdf4735af84211e49d2cbf0a4690df3ed0a853a1c328cf7",
+        "no_train_prior_correct_losses": true
+      },
+      {
+        "fold": 2,
+        "fit_sha256": "530d633f30d725e36dec65f8b06a674983e5e1c0075a16b02f29b69bedd3b6ad",
+        "held": {
+          "rotations": 192,
+          "problems": 48,
+          "correct_rotations": [
+            120,
+            121
+          ],
+          "all_four": [
+            15,
+            16
+          ],
+          "gains": 4,
+          "losses": 3,
+          "all_four_gains": 1,
+          "all_four_losses": 0
+        },
+        "f32_tensor_sha256": "60c9da74020516c6cf3eff7dbe34e0ead7cf3c225fdbce250276364f757023d5",
+        "no_train_prior_correct_losses": true
+      }
+    ],
+    "metrics": {
+      "rotations": 576,
+      "problems": 144,
+      "correct_rotations": [
+        342,
+        348
+      ],
+      "all_four": [
+        46,
+        48
+      ],
+      "gains": 13,
+      "losses": 7,
+      "all_four_gains": 3,
+      "all_four_losses": 1
+    },
+    "subjects": {
+      "high_school_mathematics": {
+        "rotations": 320,
+        "problems": 80,
+        "correct_rotations": [
+          205,
+          206
+        ],
+        "all_four": [
+          32,
+          34
+        ],
+        "gains": 4,
+        "losses": 3,
+        "all_four_gains": 2,
+        "all_four_losses": 0
+      },
+      "college_mathematics": {
+        "rotations": 256,
+        "problems": 64,
+        "correct_rotations": [
+          137,
+          142
+        ],
+        "all_four": [
+          14,
+          14
+        ],
+        "gains": 9,
+        "losses": 4,
+        "all_four_gains": 1,
+        "all_four_losses": 1
+      }
+    },
+    "group_folds_reused": true,
+    "cpu_suffix_surrogate": true
+  },
+  "full_authored_fit": {
+    "plan_sha256": "d5959a640190dcc27167baf02cef7391c84d72eab44a0a11d9acb877f589695d",
+    "receipt_sha256": "a28e56dac6d0c78e1caeca7dbad0b5ab3f238a65ef76ac7290bc6444730e448c",
+    "source_sha256": "892cecff0b6b4134b3752c44d419da0ad5aad083ae61f505f84a9d6aae334127",
+    "scale": 0.5,
+    "trials": [
+      {
+        "scale": 1.0,
+        "correct_rotations": 351,
+        "all_four": 48,
+        "gains": 11,
+        "losses": 2,
+        "selected": false
+      },
+      {
+        "scale": 0.875,
+        "correct_rotations": 350,
+        "all_four": 47,
+        "gains": 10,
+        "losses": 2,
+        "selected": false
+      },
+      {
+        "scale": 0.75,
+        "correct_rotations": 351,
+        "all_four": 47,
+        "gains": 10,
+        "losses": 1,
+        "selected": false
+      },
+      {
+        "scale": 0.625,
+        "correct_rotations": 347,
+        "all_four": 46,
+        "gains": 6,
+        "losses": 1,
+        "selected": false
+      },
+      {
+        "scale": 0.5,
+        "correct_rotations": 346,
+        "all_four": 47,
+        "gains": 4,
+        "losses": 0,
+        "selected": true
+      }
+    ],
+    "final_cpu": {
+      "rotations": 576,
+      "problems": 144,
+      "correct_rotations": [
+        342,
+        346
+      ],
+      "all_four": [
+        46,
+        47
+      ],
+      "gains": 4,
+      "losses": 0,
+      "all_four_gains": 1,
+      "all_four_losses": 0
+    }
+  },
+  "cuda_preview": {
+    "receipt_sha256": "018b0da68aa262024ad2becebf7199caa443db77efb4a33dcb53ba81dab114ce",
+    "metrics": {
+      "rotations": 576,
+      "problems": 144,
+      "correct_rotations": [
+        342,
+        346
+      ],
+      "all_four": [
+        46,
+        47
+      ],
+      "gains": 4,
+      "losses": 0,
+      "all_four_gains": 1,
+      "all_four_losses": 0
+    },
+    "parent_selected_logits_exact": 2304,
+    "parent_max_abs_logit_error": 0.0,
+    "full_vocabulary_winner_changes": 7,
+    "parent_and_overlay_receipts": [
+      {
+        "parent": "c093d2023e9b515960b05710ade3cb68873a338c025b24b092b6f2b5662b4331",
+        "overlay": "1ab99801fb3d721ff9800d31295e5f6eb9ba36203427a9e43e06e5111bb4a54c"
+      },
+      {
+        "parent": "0bfb09d5d553d54206c9784f74ce3af4e3a01ee42c0b1c500e04384f40984055",
+        "overlay": "c9c3d013bba9ce100619bb7eac73fbb1852feb21bdd1abf192cb424e663c273b"
+      },
+      {
+        "parent": "bf8525efbaeb22651677b9f69b845d78a59b905deb58d916092822b4ccbbf72d",
+        "overlay": "676e7648246a13a148fb5b7685492e9a3687d29f6a2818b08b41dd6f9de4fec2"
+      }
+    ],
+    "overlay_binary_sha256": "030f1c7c3b67b2472649b600eea31380d402af1d343ff1926c6907f162e1cffb"
+  },
+  "stored_replay": {
+    "readback_sha256": "fdac10afd64de7f90541a6e21f1f97e1bb4d3120c9a774ab6655802d01cd5c16",
+    "receipt_sha256": "f636322d8843007b7108255925274ca83a6571e15d405e15185cc6ca0109ba8b",
+    "model_bytes": 11674147744,
+    "outside_d63_identical": true,
+    "head_sha256": "a88fc5a0ab6c96f69fce68d9d5a3ade7860defdefd46de152e17573d7ce75098",
+    "finish_row_sha256": "1a0b71b37341e4c72ca36dc4ea1c3f22cd90d4967c0d988a7b5b8a34013681c2",
+    "states": 576,
+    "full_logit_vectors_bit_identical_to_overlay": true,
+    "residual_and_hidden_bit_identical_to_overlay": true,
+    "public_patch_verified_full_sha256": true
+  },
+  "qualification": {
+    "proof_and_cylinder": "failed_exact_proofs",
+    "proof_cylinder_gate_sha256": "e15f778d6aee07dc69aa5087b91073bfe724edd897d829d7890bc30ef466ba3a",
+    "candidate_proof_receipt_sha256": "393b13b6af6902bb931f23a432f7ac71ef781aa60c54c87fa996a0d06edfe46a",
+    "pilot024_proof_receipt_sha256": "f80b4322a7a2371f8ca16abf3e76c14ba3a66d2b20f9b17eee09bcf2850f8244",
+    "exact_proofs": 0,
+    "proof_cases": 2,
+    "interval": {
+      "parent_tokens": 1628,
+      "candidate_tokens": 3072,
+      "finish_reason": "length",
+      "visible_answer": false,
+      "first_divergence": {
+        "index_zero_based": 286,
+        "parent_token_id": 11396,
+        "candidate_token_id": 2233
+      }
+    },
+    "euler": {
+      "parent_tokens": 1340,
+      "candidate_tokens": 1429,
+      "natural_eog": true,
+      "visible_math_correct": true,
+      "visible_sha256": "809862a1106af2dbfa250225fe004fbc16b8a7340356a2ba926a1b1c1a171cc2",
+      "first_divergence": {
+        "index_zero_based": 92,
+        "parent_token_id": 6082,
+        "candidate_token_id": 36
+      }
+    },
+    "cylinder": {
+      "tokens": 282,
+      "natural_eog": true,
+      "generated_ids_and_visible_bytes_exact": true,
+      "correctness_evidence": "exact_independently_reviewed_pilot024_visible_bytes",
+      "generation_receipt_sha256": "047a1321005945b8ca47ec5c651975e7164b176f1040ce47a06233109a24aa8a",
+      "candidate_decode_ms": 6903.871,
+      "pilot024_decode_ms": 6459.28,
+      "earlier_reference_decode_ms": 10550
+    },
+    "matched_mmlu": "not_run_proof_gate_failed",
+    "blinded_fresh": "sealed",
+    "accepted_model_pointer_changed": false
+  }
+}
