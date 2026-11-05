@@ -494,4 +494,6 @@ Ordinary generation reproduced both accepted proofs, their visible answers, and 
 
 The matched public MMLU run preserved every choice and all **1,480 binary32 answer logits** across **370** questions. Both models scored **226/370**, with 162/270 in high-school mathematics and 64/100 in college mathematics. The candidate preserved all 226 previously correct answers. [Matched benchmark receipts](../evidence/direct-closure-pilot-024.json)
 
+On six independently graded fresh problems, both models scored **6/6 complete and correct** with natural endings and zero paired losses. The grader saw only randomly labeled visible answers and the rubric. Five responses matched exactly. The sixth stayed correct and used six more tokens. Median response length was **975.5 tokens** for both models, and measured median decode time was **21.81 seconds** for the candidate versus **21.49** for the parent. The speedup was concentrated in the cylinder case. [Blind grading and matched native receipts](../evidence/direct-closure-pilot-024.json)
+
 Run `python examples/replay_output_row_edit.py --pilot 24 --parent PATH_TO_PARENT.gguf` to verify the whole checkpoint digest from the exact accepted parent. [Patch capsule](../evidence/direct-closure-pilot-024-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)

@@ -16,6 +16,8 @@ A later rank-one pilot cut one correct development solution from 486 to 204 toke
 
 The one-row experiments show how a saved edit can preserve all 370 MMLU choices while changing a worked proof. Their sparse patches let you verify or reproduce the exact checkpoints from the pinned parent. [One-row experiments](docs/case-study.md#sixteenth-pilot-with-one-output-row) · [Checkpoint replay tool](examples/replay_output_row_edit.py)
 
+Pilot 024 cut one correct cylinder solution from **486 to 282 tokens**, reproduced both accepted proofs exactly, preserved all **370** matched MMLU choices, and scored **6/6** on a separate blind fresh math evaluation, tied with the accepted parent. Its patch changes 1,996 stored bytes in the reasoning-finish output row. [Pilot 024 results and exact replay](docs/case-study.md#twenty-fourth-pilot-with-a-blended-finish-direction)
+
 To watch a local run, open the [live trace viewer](prototypes/trace-viewer/README.md). The page follows token generation and displays the measured difference between saved tensors.
 
 ## Start here: what are we changing?
