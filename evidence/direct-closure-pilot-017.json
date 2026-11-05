@@ -1,0 +1,273 @@
+{
+  "schema": "windows-direct-closure-output-row-pilot-v1",
+  "pilot": 17,
+  "status": "SCREENED_OUT_FOR_INTERVAL_PROOF_NO_VISIBLE_ANSWER",
+  "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+  "candidate_sha256": "854ec58a27103c029f281273f1839f7abf4d7a80f0de17c4cf840814e28f0de1",
+  "saved_checkpoint_bytes": 11674147744,
+  "fit": {
+    "receipt_sha256": "c66791fae8f8522e3862403334a44c7c9a643487ec7c7f10780dc95d2788daf2",
+    "fitter_sha256": "509d78f2676f93e2f599f54066ea8d288bb6ae26ce1793e30e6c060cfd927e7d",
+    "exclusion_guard_sha256": "c43d38b45b60f24533202aa5f40888f44faf6090ddd4f86135c25e223bfa3b90",
+    "algorithm": "Ridge localization, Q4_K integer rounding, and coordinate exchanges with a fixed target margin and signed winner constraints.",
+    "selected_position": 164,
+    "guarded_constraints": 3191,
+    "fit_capture_receipt_sha256": [
+      "c56e54d8f9270182f558391f9428c4522fefd1537cf22e7a98b34515ff4eb0dd",
+      "9be4c9a241219baf93a055e23f33f1f1d6eb517bbf595e1b573afe9b92371c72",
+      "12099e08188cc36623ef122748734b22222c41c81ba7317910fdbc42d660b3aa",
+      "cc61b8643f4c55ac2cec3d5ca97145ec56d80e05874da347235040fbaf91205f"
+    ],
+    "historical_proof_activations_used": false,
+    "benchmark_or_fresh_evaluation_used": false,
+    "predicted_target_margin": 0.8200573623398668,
+    "minimum_predicted_guard_slack": 0.004225458367727697,
+    "max_absolute_code_step": 2,
+    "changed_codes": 2347,
+    "changed_bytes": 1797,
+    "row_relative_l2_change": 0.23610812691118407,
+    "pilot_016_development_closer_logit_spill": {
+      "rms": 1.268652319908142,
+      "p95": 2.4161542654037476,
+      "maximum": 5.376026630401611
+    },
+    "pilot_017_development_closer_logit_spill": {
+      "states": 3191,
+      "rms": 0.1440536856677581,
+      "p95": 0.2709288243386254,
+      "maximum": 1.2265951115841744,
+      "minimum_signed_slack": 0.004225458367727697
+    }
+  },
+  "new_proof_controls": {
+    "generation_receipt_sha256": "2dd35bd4d9ae2159e28e9d37642c66727cfa9ba3447b7a28f906c985e0f56315",
+    "independent_review_sha256": "250c9a669d52614cea598464f090c7dbde8baedf6f2c245ad8a7628f779a117d",
+    "cases": 8,
+    "max_completion_tokens": 2048,
+    "token_cap_reached": 8,
+    "blank_visible": 5,
+    "correct_partial": 2,
+    "incorrect_partial": 1,
+    "used_in_fit": 0
+  },
+  "saved_edit": {
+    "materializer_receipt_sha256": "08503a68d7f0164b0a3ba195d0086b66d65e7aaf1132cf885f9d6900c63bf7c6",
+    "materializer_sha256": "eb7de4efbfe588b1ccd876caf5fe4d1aee70e0eea82f0d5b15c35563d3b2223f",
+    "tensor": {
+      "offset": 10996640,
+      "bytes": 715161600,
+      "dimensions": [
+        5120,
+        248320,
+        1,
+        1
+      ],
+      "type": 12
+    },
+    "row": {
+      "tensor": "output.weight",
+      "token_id": 248069,
+      "offset": 725435360,
+      "bytes": 2880,
+      "parent_sha256": "27c3ea68e059eecd56c9806ce59ab6db134f52c03d5f1ebaf8692c8cb31a4f40",
+      "sha256": "0078aeaa2214f63111f203f02de8647babbd8850555640679dd954f86979e3e2"
+    },
+    "spans_sha256": {
+      "prefix": "f249e92fe65ce8debee05cf329790397aeedff85edef1611e97db8162f0c1ed0",
+      "output_row": "0078aeaa2214f63111f203f02de8647babbd8850555640679dd954f86979e3e2",
+      "suffix": "e8ecc8a3df6db185f285a83e5630133e927dc5addbe70a54e3addba6b8c266fb"
+    },
+    "exact_bytes_outside_row": true,
+    "fixed_q4k_block_metadata": true
+  },
+  "native_fixed_prefix": {
+    "receipt_sha256": "74cff1630ef29f24d8fd44b2530272822380daa24450b91884bc303143e0710f",
+    "script_sha256": "c5c87511965242f1d500e05ac954e5559ade3c41cf2bb420b24d5cdd59954886",
+    "parent_suffix_receipt_sha256": "1f25ca1967855ee23f6716a94cd43d54a339985396875908c565c5b075768662",
+    "candidate_suffix_receipt_sha256": "e7a368d79d956c983cbc40b0396d0cc5dfe2a554d63afce0ade1b9691df2c22c",
+    "exact_hidden_states": true,
+    "exact_other_token_logits": 248319,
+    "close_logit_before": 18.11862564086914,
+    "close_logit_after": 24.430551528930664,
+    "close_margin_after": 0.8200569152832031
+  },
+  "development": {
+    "comparison_sha256": "e21ce19197e0956b51c162f15af3a33d34bd651af9c8c508e81e431eaabc7d50",
+    "parent_generation_receipt_sha256": "f68f653fedf7a9aefe78698a455a314e95706d53a51e6946727adeffaf2a4718",
+    "candidate_generation_receipt_sha256": "95eaaf1502023438535ca6274d8846660f6554c23f5ced4b463af6d914c5d8c2",
+    "matched_prompt_tokens": true,
+    "independent_math_review": "Separate Codex reviewer verified all six complete solutions, exact prompt bytes and token IDs, native pieces, and natural EOG.",
+    "exact_non_target_outputs": 5,
+    "target_parent_tokens": 486,
+    "target_candidate_tokens": 282,
+    "target_token_reduction": 0.41975308641975306,
+    "parent_total_tokens": 2978,
+    "candidate_total_tokens": 2774,
+    "cases": [
+      {
+        "id": "exact-plane-distance",
+        "parent": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 9.9358455
+        },
+        "candidate": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 10.4485607
+        },
+        "common_token_prefix": 458,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-mod-four-probability",
+        "parent": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 13.806640100000001
+        },
+        "candidate": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 14.631608
+        },
+        "common_token_prefix": 634,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-arctan-integral",
+        "parent": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 9.608276400000001
+        },
+        "candidate": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 10.1418406
+        },
+        "common_token_prefix": 443,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "round-cylinder-volume",
+        "parent": {
+          "tokens": 486,
+          "think_close_index": 355,
+          "natural_eog": true,
+          "decode_seconds": 10.5525325
+        },
+        "candidate": {
+          "tokens": 282,
+          "think_close_index": 164,
+          "natural_eog": true,
+          "decode_seconds": 6.4613116
+        },
+        "common_token_prefix": 164,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "round-geometric-count",
+        "parent": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 16.3836349
+        },
+        "candidate": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 17.260352599999997
+        },
+        "common_token_prefix": 751,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-terminating-decimal",
+        "parent": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.4919604
+        },
+        "candidate": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.7771551
+        },
+        "common_token_prefix": 206,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      }
+    ],
+    "candidate_complete_correct": 6,
+    "candidate_natural_eog": 6,
+    "target_correct_answer": "123.7 cubic centimeters",
+    "target_parent_decode_seconds": 10.5525325,
+    "target_candidate_decode_seconds": 6.4613116,
+    "parent_total_decode_seconds": 64.7788898,
+    "candidate_total_decode_seconds": 63.7208286
+  },
+  "exact_replay": {
+    "capsule_content_sha256": "7c5f1942b2ca9aabbc110e80fae148e72f8cc570689c7265551c25abc664bfe0",
+    "example_source_sha256": "8c58b888e896c8b9ddd92666d642a1fefa53c05bb4fd4e7c5fd16ef7ec59dc05",
+    "full_parent_and_candidate_sha256_verified": true,
+    "full_verify_only_passed": true
+  },
+  "critical_proofs": {
+    "status": "FAILED_EXACT_REPLAY_GATE",
+    "generation_receipt_sha256": "c62935ef8d76ee4729b8c6f826e80500281a9a7afe84a4e2d2390e20b8b863f0",
+    "exact_prompt_bytes_and_token_ids": true,
+    "exact_proofs": 1,
+    "cases": [
+      {
+        "family": "interval",
+        "exact_complete_proof": false,
+        "exact_final_bytes": false,
+        "parent_completion_tokens": 1628,
+        "candidate_completion_tokens": 3072,
+        "natural_eog": false,
+        "complete_format": false,
+        "candidate_close_token_positions": [],
+        "first_divergent_token_index": 1218,
+        "token_at_first_divergence": 14235
+      },
+      {
+        "family": "Euler",
+        "exact_complete_proof": true,
+        "exact_final_bytes": true,
+        "parent_completion_tokens": 1340,
+        "candidate_completion_tokens": 1340,
+        "natural_eog": true,
+        "complete_format": true,
+        "candidate_close_token_positions": [
+          884
+        ],
+        "first_divergent_token_index": null,
+        "token_at_first_divergence": null
+      }
+    ]
+  },
+  "mmlu": {
+    "status": "SKIPPED_AFTER_PROOF_GATE",
+    "candidate_benchmark_executed": false
+  },
+  "fresh_blinded_evaluation": {
+    "status": "SEALED_PROOF_GATE_FAILED",
+    "opened_for_candidate": false
+  },
+  "accepted_checkpoint_updated": false
+}

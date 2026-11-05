@@ -1,4 +1,4 @@
-"""Verify or replay the exact Pilot 016 output-row patch on its pinned GGUF parent."""
+"""Verify or replay an exact Pilot 016 or 017 output-row patch on its pinned GGUF parent."""
 
 import argparse
 from contextlib import nullcontext
@@ -12,8 +12,11 @@ import struct
 import tempfile
 
 
-CAPSULE = Path(__file__).resolve().parent.parent / "evidence/direct-closure-pilot-016-row-patch.json"
-CAPSULE_CONTENT_SHA256 = "ae86395f27b64fc20797003ab468c9df6cba8ebac9e29b378328fd2d74b140cd"
+EVIDENCE = Path(__file__).resolve().parent.parent / "evidence"
+CAPSULE_CONTENT_SHA256 = {
+    16: "ae86395f27b64fc20797003ab468c9df6cba8ebac9e29b378328fd2d74b140cd",
+    17: "7c5f1942b2ca9aabbc110e80fae148e72f8cc570689c7265551c25abc664bfe0",
+}
 CHUNK_BYTES = 8 * 1024 * 1024
 GGUF_SCALAR_BYTES = {0: 1, 1: 1, 2: 2, 3: 2, 4: 4, 5: 4, 6: 4, 7: 1, 10: 8, 11: 8, 12: 8}
 
@@ -27,11 +30,13 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def load_capsule():
-    patch = json.loads(CAPSULE.read_bytes())
+def load_capsule(pilot=16):
+    capsule = EVIDENCE / f"direct-closure-pilot-{pilot:03d}-row-patch.json"
+    patch = json.loads(capsule.read_bytes())
     # Canonical JSON keeps the pin independent of checkout line endings.
     canonical = json.dumps(patch, sort_keys=True, separators=(",", ":")).encode("ascii")
-    require(digest(canonical) == CAPSULE_CONTENT_SHA256, "Pilot 016 patch capsule SHA-256 differs")
+    require(digest(canonical) == CAPSULE_CONTENT_SHA256[pilot] and patch["pilot"] == pilot,
+            f"Pilot {pilot:03d} patch capsule SHA-256 differs")
 
     tensor, row, sparse = patch["tensor"], patch["row"], patch["sparse_xor"]
     width, count = tensor["dimensions"]
@@ -44,7 +49,7 @@ def load_capsule():
             "Patch tensor and row extents disagree")
 
     offsets, values = sparse["row_relative_offsets"], bytes.fromhex(sparse["xor_hex"])
-    require(len(offsets) == len(values) == sparse["changed_bytes"] == 315
+    require(0 < len(offsets) == len(values) == sparse["changed_bytes"]
             and offsets == sorted(set(offsets)) and 0 <= offsets[0] <= offsets[-1] < row_bytes and all(values),
             "Patch sparse XOR data is malformed")
     require(all(offset % 144 >= 16 for offset in offsets), "Patch touches Q4_K block metadata")
@@ -175,7 +180,7 @@ def replay(parent, output, patch, xor):
                     "Parent must be a regular file of the pinned size")
             verify_gguf_tensor(source, patch["tensor"])
             target = nullcontext() if output is None else tempfile.NamedTemporaryFile(
-                mode="wb", dir=output.parent, prefix=".pilot-016-", suffix=".part", delete=False)
+                mode="wb", dir=output.parent, prefix=f".pilot-{patch['pilot']:03d}-", suffix=".part", delete=False)
             with target as staged:
                 if staged is not None:
                     staged_path = Path(staged.name)
@@ -197,11 +202,13 @@ def replay(parent, output, patch, xor):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--pilot", type=int, choices=tuple(CAPSULE_CONTENT_SHA256), default=16,
+                        help="Choose the patch capsule (default 16)")
     parser.add_argument("--parent", type=Path, required=True, help="Exact accepted parent GGUF")
     parser.add_argument("--output", type=Path, help="Optional fresh GGUF path on a hard-link-capable filesystem")
     args = parser.parse_args()
     try:
-        patch, xor = load_capsule()
+        patch, xor = load_capsule(args.pilot)
         replay(args.parent, args.output, patch, xor)
     except (OSError, ValueError, struct.error) as error:
         parser.exit(1, f"Replay failed. {error}\n")
