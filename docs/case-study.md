@@ -335,3 +335,13 @@ Pilot 007 reused the accepted parent and the pinned development capture from Pil
 The cylinder answer again finished naturally in **204 tokens versus 486**, with the same correct answer and working. Its measured decode time fell from **10.55 to 5.04 seconds**. Both checkpoints got all six development answers right. Combined token count fell from 2,978 to 2,756, while measured decode time for the six cases rose from 64.78 to 68.16 seconds. [Pilot 007 evidence](../evidence/direct-closure-pilot-007.json)
 
 The 370-question MMLU comparison returned **226/370** for each model. One high-school answer became correct and one previously correct answer became incorrect. All 100 college choices matched. The pilot failed the requirement to preserve every correct answer from the accepted checkpoint. [Paired results](../evidence/direct-closure-pilot-007.json)
+
+Pilots 006 and 007 made identical choices on all 370 MMLU questions, including both changed high-school answers.
+
+## Eighth pilot at a later stopping point
+
+Pilot 008 guarded the original continuation at token 86 and targeted the next unnecessary recalculation at token 164, after the parent obtained 123.671. At that state the finish token was 5.492 logits behind the winner. The rounded preview put it 3.143 logits ahead. The saved update measured 1.873% of the parent matrix norm, and both exterior byte spans matched exactly.
+
+The edited cylinder run matched the first 164 tokens of the parent and then ended reasoning. It gave the correct worked answer in **282 tokens versus 486**, with measured decode time of **6.63 seconds versus 10.55**. All six development answers had correct mathematics and ended naturally. The new probability answer had a visible formatting defect in its first LaTeX table. Across the six cases, tokens fell from 2,978 to 2,934 and measured decode time rose from 64.78 to 68.51 seconds. [Pilot 008 evidence](../evidence/direct-closure-pilot-008.json)
+
+On the matched MMLU questions, Pilot 008 scored **225/370 versus 226/370** for the parent. One previously correct high-school answer was lost. All college choices matched the parent. [Paired results](../evidence/direct-closure-pilot-008.json)

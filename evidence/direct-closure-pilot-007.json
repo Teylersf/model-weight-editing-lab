@@ -238,7 +238,9 @@
         "baseline_unscored": 0,
         "candidate_unscored": 0
       }
-    }
+    },
+    "pilot_006_same_choices": 370,
+    "pilot_006_paired_receipt_sha256": "0d190768200c95ecb1c0273fdb6c337d4d52c042afd84be2fd02de5f8832f029"
   },
   "fresh_holdout_opened_for_this_candidate": false
 }
