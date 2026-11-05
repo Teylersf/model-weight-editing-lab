@@ -1,4 +1,4 @@
-"""Verify the exact Pilot 026 or 033 low-rank D63 replay without writing a GGUF."""
+"""Verify the exact Pilot 026, 033, or 034 low-rank D63 replay without writing a GGUF."""
 
 import argparse
 from hashlib import sha256
@@ -17,6 +17,7 @@ HERE = Path(__file__).resolve().parent
 CAPSULES = {
     26: ("two", 2, "d5259bf4f303aaddbdbc4747e41f5695e87b10e9f736a3d244f1ae754ab83feb"),
     33: ("three", 3, "70b2ede4d4ee589c021e8fd1d5abbe14c38635bbd49bcd1fc9664296ca1a9a56"),
+    34: ("three", 3, "20f6c4d12af9eb5356541087fb99b2a10c2c9772fafb71b0b394a752eb3ab485"),
 }
 ROW_BLOCK = 64
 HELPERS = runpy.run_path(str(HERE / "replay_d63_rank_one_edit.py"))
@@ -52,7 +53,7 @@ def rounded_blocks(source, u, v):
             require(np.isfinite(before).all(), "Parent tensor has a nonfinite value")
             correction = np.multiply(rows[:, 0, None], v[None, :, 0], dtype=np.float64)
             if u.shape[1] == 3:
-                # Pilot 033's streamed fit starts the F64 sum from zero.
+                # The rank-three streamed fits start the F64 sum from zero.
                 np.add(0., correction, out=correction)
             for column in range(1, u.shape[1]):
                 term = np.multiply(rows[:, column, None], v[None, :, column], dtype=np.float64)
