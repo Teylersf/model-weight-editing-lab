@@ -353,3 +353,11 @@ Pilot 009 kept the later cylinder target and added 18 guard states from the acce
 The probability answer reproduced the accepted 634-token sequence with both original five-column tables. The cylinder answer again ended reasoning at token 164 and finished in **282 tokens versus 486**, taking **6.56 seconds versus 10.55** to decode. All six development answers were correct and ended naturally. Combined tokens fell from 2,978 to 2,811. Measured decode time was 65.13 seconds versus 64.78 for the parent. [Pilot 009 evidence](../evidence/direct-closure-pilot-009.json)
 
 Pilot 009 made the same choices as Pilot 008 on all 370 MMLU questions. It scored **225/370 versus 226/370** for the parent, with one previously correct high-school answer lost and all college choices preserved. [Paired results](../evidence/direct-closure-pilot-009.json)
+
+## Tenth pilot with a smaller update at the later decision
+
+Pilot 010 reused the pinned Pilot 009 capture and searched five update scales using the development logits. Scale 0.75 led by 0.963 logits and scale 0.85 led by 1.878. The latter cleared the one-logit screen and the rounded preview. The saved change measured 1.598% of the parent matrix norm. Independent readback verified exact bytes outside the matrix.
+
+All six development outputs matched Pilot 009 token for token. The cylinder still finished in **282 versus 486 tokens**, with measured decode time of **6.51 versus 10.55 seconds**. The probability tables retained the accepted format. All answers were correct and ended naturally. Across six cases, total tokens fell from 2,978 to 2,811, with measured decode time of 64.87 seconds versus 64.78 for the parent. [Pilot 010 evidence](../evidence/direct-closure-pilot-010.json)
+
+Pilot 010 scored **225/370 versus 226/370**, with the same 370 choices as Pilot 009. Pilots 006 through 010 all lost the same previously correct high-school item. An independent audit found that the accepted model's correct option had led by only 0.00217 logits on that item. The loss still counts in the paired comparison. [Paired results](../evidence/direct-closure-pilot-010.json)
