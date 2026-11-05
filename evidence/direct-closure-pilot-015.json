@@ -1,0 +1,376 @@
+{
+  "schema": "windows-direct-closure-choice-constrained-pilot-v1",
+  "pilot": 15,
+  "status": "SCREENED_OUT_FOR_ONE_PREVIOUSLY_CORRECT_MMLU_ANSWER",
+  "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+  "candidate_sha256": "c1622058799291c3c577274aedded878732413dce9b31366d3c791edb89350db",
+  "saved_checkpoint_bytes": 11674147744,
+  "fit": {
+    "source": "Pinned six-case development capture with two sets of authored choice prompt endpoints as input guards.",
+    "fitter_sha256": "fb473edccf9337dfe3c13ab03e45a28d7b2b77f661dc7494614d4edc183bbaf9",
+    "plan_sha256": "2b193bc219fa07cbf96123c58f791a925035582c23077afc03e20040e54231fe",
+    "capture_sha256": [
+      "c56e54d8f9270182f558391f9428c4522fefd1537cf22e7a98b34515ff4eb0dd",
+      "9be4c9a241219baf93a055e23f33f1f1d6eb517bbf595e1b573afe9b92371c72",
+      "12099e08188cc36623ef122748734b22222c41c81ba7317910fdbc42d660b3aa"
+    ],
+    "rank_before_storage_rounding": 1,
+    "projected_guard_count": 10940,
+    "authored_prompt_guard_count": 32,
+    "authored_prompt_pack_sha256": "609dcfe8c343f59a8cefbe6682fa13828b73191ba943e65b18b3076fd0f90a66",
+    "authored_guard_discovery_receipt_sha256": "e3238ec9a2afdaf7999e2cf36ea1b25d970ab77f2aeb5610c0986112722cebb3",
+    "authored_guard_sealed_receipt_sha256": "9be4c9a241219baf93a055e23f33f1f1d6eb517bbf595e1b573afe9b92371c72",
+    "stress_guard_pack_sha256": "14d2df5a1865e88a84b21df5dbd63bebb870a4454aebac4c2643acc914a6d0eb",
+    "stress_guard_discovery_receipt_sha256": "f1a775e38107eaa411aeb935be82cee9ea92c7bc0ebcb9c20616628a0f1cd99c",
+    "stress_guard_sealed_receipt_sha256": "12099e08188cc36623ef122748734b22222c41c81ba7317910fdbc42d660b3aa",
+    "stress_guard_plan_manifest_sha256": "3899b9e17dd5cb711101aaa1fb8a3ae3158c42d754c7e5554f59dccb37d3d583",
+    "stress_guard_summary": {
+      "parent_fixed_prompt_states": 16,
+      "minimum_top_two_choice_margin": 0.04391288757324219,
+      "median_top_two_choice_margin": 0.37209320068359375,
+      "maximum_top_two_choice_margin": 1.4928550720214844,
+      "top_two_choice_margins_below_0_02": 0,
+      "top_two_choice_margins_below_0_05": 1,
+      "scope": "Parent endpoints used as mandatory input guards. The smallest observed gap exceeded 0.02 logits."
+    },
+    "historical_replay_inputs": {
+      "closeout_sha256": "5f63989bc58ba69e82f61fcc3e3b2acc5a0daa752b167ec9be8b78010739cb81",
+      "source_receipts_fit_authorized": false,
+      "input_activations_reused_for_guard_projection": 10843,
+      "proof_target_rows_used": 0,
+      "policy_for_subsequent_fits": "evaluation_only"
+    },
+    "target": {
+      "id": "round-cylinder-volume",
+      "index": 164,
+      "desired": 248069,
+      "winner": 248069,
+      "strongest_rival": 6558,
+      "margin": 1.0074176788330078,
+      "passed": true
+    },
+    "native_dose_search": {
+      "target": 248069,
+      "tested": [
+        {
+          "scale": 0.7,
+          "margin": 0.5459232330322266,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 0.72,
+          "margin": 0.7304725646972656,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 0.74,
+          "margin": 0.8843269348144531,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 0.75,
+          "margin": 0.9639244079589844,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 0.755,
+          "margin": 1.0074176788330078,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 0.76,
+          "margin": 1.0591449737548828,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 0.765,
+          "margin": 1.0977954864501953,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 0.775,
+          "margin": 1.197763442993164,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 0.8,
+          "margin": 1.4283103942871094,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 0.825,
+          "margin": 1.6519889831542969,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 0.85,
+          "margin": 1.875885009765625,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 0.95,
+          "margin": 2.6930294036865234,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        },
+        {
+          "scale": 1.0,
+          "margin": 3.136465072631836,
+          "native_receipt_sha256": "ace7e540952b4f73e79fdd8c4316edd54f78658c486a4fb4cc6ae987c3f79fed"
+        }
+      ],
+      "selected": 0.755
+    },
+    "native_preview_receipt_sha256": "791e9fb408867a6cd78049efbf0258c6eb145cea9d748c139aad2bb00ff42572",
+    "choice_constraint": {
+      "literal_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "equality_solver_sha256": "acf3ba317ba0956b28bb00bde65f328858a0b6c0c1c09b5b0bc396fc4dd500a3",
+      "forbidden_dimension": 3,
+      "maximum_unrounded_contrast_dot": 8.396061623727746e-16,
+      "maximum_stored_target_contrast_dot": 9.698188049162004e-08,
+      "stored_pairwise_contrast_operator_norms": [
+        7.499392853064611e-08,
+        7.835681853440473e-08,
+        7.824635060747924e-08,
+        7.850582618840762e-08,
+        7.762086178760079e-08,
+        7.876573694911385e-08
+      ],
+      "fixed_development_target_states": 1,
+      "fixed_development_target_choice_logits_before": [
+        [
+          11.208796501159668,
+          9.152002334594727,
+          10.578374862670898,
+          10.141093254089355
+        ]
+      ],
+      "fixed_development_target_choice_logits_after": [
+        [
+          10.362115859985352,
+          8.280922889709473,
+          9.732719421386719,
+          9.251827239990234
+        ]
+      ],
+      "fixed_development_target_choice_order_equal": true
+    }
+  },
+  "saved_edit": {
+    "tensor": "blk.63.ffn_down.weight",
+    "tensor_sha256": "bfd4f3fd1c4d76125e8c62a1173b27b35229552c8af9f024d8c8da7c747a7fa4",
+    "relative_frobenius_difference": 0.014298074936528092,
+    "outside_tensor_byte_identical": true,
+    "fit_receipt_sha256": "09eb68aed655a9752a5aeaf8484c9cdb6843cc8bccbe6abb7d60fdd67f7a7f42",
+    "readback_receipt_sha256": "392ef253a4684ec26d4cbfacb811acdab5dbd22684c042911117917154ecd4a4"
+  },
+  "development": {
+    "parent_complete_correct": 6,
+    "candidate_complete_correct": 6,
+    "independent_review": "A separate agent verified the three exact fit captures, packed checkpoint readback, math, format, prompt and sampler identity, and natural endings.",
+    "comparison_sha256": "450ccbb8d0f34e907f2488ece6e05e59c3e39c29ce99e5f281b4f1f64fcb4e10",
+    "parent_generation_receipt_sha256": "f68f653fedf7a9aefe78698a455a314e95706d53a51e6946727adeffaf2a4718",
+    "candidate_generation_receipt_sha256": "04910b6991d6811eb26d6c8b465433d9dbed4b599d05618d30f9a4fcb981fed5",
+    "parent_total_tokens": 2978,
+    "candidate_total_tokens": 2811,
+    "parent_total_decode_seconds": 64.7788898,
+    "candidate_total_decode_seconds": 67.4897105,
+    "cases": [
+      {
+        "id": "exact-plane-distance",
+        "parent": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 9.9358455
+        },
+        "candidate": {
+          "tokens": 495,
+          "think_close_index": 203,
+          "natural_eog": true,
+          "decode_seconds": 11.746304899999998
+        },
+        "common_token_prefix": 93,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "exact-mod-four-probability",
+        "parent": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 13.806640100000001
+        },
+        "candidate": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 15.1406162
+        },
+        "common_token_prefix": 634,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-arctan-integral",
+        "parent": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 9.608276400000001
+        },
+        "candidate": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 10.615006600000001
+        },
+        "common_token_prefix": 443,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "round-cylinder-volume",
+        "parent": {
+          "tokens": 486,
+          "think_close_index": 355,
+          "natural_eog": true,
+          "decode_seconds": 10.5525325
+        },
+        "candidate": {
+          "tokens": 282,
+          "think_close_index": 164,
+          "natural_eog": true,
+          "decode_seconds": 6.7586428
+        },
+        "common_token_prefix": 164,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "round-geometric-count",
+        "parent": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 16.3836349
+        },
+        "candidate": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 18.2100859
+        },
+        "common_token_prefix": 751,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-terminating-decimal",
+        "parent": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.4919604
+        },
+        "candidate": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 5.0190541
+        },
+        "common_token_prefix": 206,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      }
+    ]
+  },
+  "matched_mmlu": {
+    "paired_receipt_sha256": "fcf243af0cd77025f0c6739f6fd33de8f36a8ff7be31b8647f5707cac0d7537f",
+    "parent_benchmark_receipt_sha256": "493e2545d001aa716dab820707c843661e4deee97b77d5a6485795254d898c3a",
+    "candidate_benchmark_receipt_sha256": "47c179de3b2c2d1cb4e15f5511189634fe34d2692c7f2e155b1cfa12a89c387e",
+    "pilot_014_paired_receipt_sha256": "61ebcacee65a399081aaef8206ff8cabed6a97809491cfe4dcfa250544216229",
+    "prompt_token_identity_verified": true,
+    "same_choices_as_pilot_014": 370,
+    "exact_four_logit_matches_with_pilot_014": 6,
+    "scores": {
+      "high_school_mathematics": {
+        "both_correct": 161,
+        "baseline_only_correct": 1,
+        "candidate_only_correct": 0,
+        "neither_correct": 108,
+        "total": 270,
+        "baseline_correct": 162,
+        "candidate_correct": 161,
+        "correct_delta": -1,
+        "accuracy_percentage_point_delta": -0.37037037037037035,
+        "paired_scored": 270,
+        "paired_scored_answer_letter_disagreements": 1,
+        "any_outcome_disagreements": 1,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "college_mathematics": {
+        "both_correct": 64,
+        "baseline_only_correct": 0,
+        "candidate_only_correct": 0,
+        "neither_correct": 36,
+        "total": 100,
+        "baseline_correct": 64,
+        "candidate_correct": 64,
+        "correct_delta": 0,
+        "accuracy_percentage_point_delta": 0.0,
+        "paired_scored": 100,
+        "paired_scored_answer_letter_disagreements": 0,
+        "any_outcome_disagreements": 0,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "combined_micro": {
+        "both_correct": 225,
+        "baseline_only_correct": 1,
+        "candidate_only_correct": 0,
+        "neither_correct": 144,
+        "total": 370,
+        "baseline_correct": 226,
+        "candidate_correct": 225,
+        "correct_delta": -1,
+        "accuracy_percentage_point_delta": -0.2702702702702703,
+        "paired_scored": 370,
+        "paired_scored_answer_letter_disagreements": 1,
+        "any_outcome_disagreements": 1,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      }
+    },
+    "recurring_loss": {
+      "subject": "high_school_mathematics",
+      "previously_correct_items_lost": 1,
+      "same_item_and_choice_transition_as_pilot_014": true,
+      "margin_definition": "Correct option logit minus the same competing option logit.",
+      "parent_margin": 0.002170562744140625,
+      "pilot_014_margin": -0.005496978759765625,
+      "pilot_015_margin": -0.00637054443359375
+    }
+  },
+  "saved_authored_guard_replay": {
+    "status": "NOT_RUN",
+    "fit_guard_count": 32
+  },
+  "fresh_holdout_opened_for_this_candidate": false,
+  "post_screen_gates": {
+    "reason": "The benchmark screen requires retaining every previously correct answer.",
+    "critical_proof_replay_completed": false,
+    "full_historical_guard_replay_completed": false,
+    "fresh_holdout_completed": false,
+    "accepted_parent_updated": false
+  }
+}

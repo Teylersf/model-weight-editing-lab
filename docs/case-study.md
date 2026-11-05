@@ -395,3 +395,11 @@ The rounded target margin stayed at **1.007 logits**, and the saved edit measure
 The saved candidate replay reproduced all 16 authored guards' full-vocabulary winners and all four selected choice logits exactly. Its matched MMLU result was **225/370 versus 226/370** for the parent, with the same choices as Pilot 013. Exact preservation on those authored states did not prevent the recurring benchmark loss. [Saved-guard replay and paired results](../evidence/direct-closure-pilot-014.json)
 
 A fresh run of the unchanged accepted checkpoint reproduced **226/370** and every one of the four native logits on all 370 prompts. The correct answer's 0.00217056-logit lead on the recurring loss reproduced exactly. That confirms the regression in the matched edited runs. [Accepted checkpoint recheck](../evidence/direct-closure-pilot-014.json)
+
+## Fifteenth pilot with close-distractor guards
+
+Pilot 015 added 16 independently authored four-choice stress prompts across school and college math. Discovery and guarded capture reproduced their activations and logits exactly. The smallest gap between the two leading choice logits was **0.04391**, and none was below **0.02**. The stress pack therefore gave no direct coverage of the recurring loss's much smaller 0.00217-logit lead. [Pilot 015 evidence](../evidence/direct-closure-pilot-015.json)
+
+The saved layer 63 edit retained six correct development answers with natural stops. The cylinder finished in **282 versus 486 tokens** and took **6.76 versus 10.55 seconds** to decode. Combined development tokens fell from 2,978 to 2,811, while combined measured decode time rose from 64.78 to 67.49 seconds. [Generation results](../evidence/direct-closure-pilot-015.json)
+
+All 370 choices matched Pilot 014. The checkpoint again scored **225/370 versus 226/370** for the accepted parent and lost the same previously correct high-school answer. The run stopped before regenerating the two prior proofs or opening the fresh evaluation. This fit inherited archived proof activations in its guard projection. The next fit excluded those activations so that the proofs could serve as separate generation checks. [Matched benchmark results and input provenance](../evidence/direct-closure-pilot-015.json)
