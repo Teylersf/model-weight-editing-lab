@@ -1,0 +1,174 @@
+{
+  "schema": "windows-direct-closure-d63-pilot-v1",
+  "pilot": 23,
+  "status": "SCREENED_OUT_AT_BOTH_EXACT_PROOF_GATES",
+  "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+  "candidate_sha256": "b6c405fe8cc95e971ba01e9017595eafa463fd5ba91fd1857430f08ac1ee3a59",
+  "saved_checkpoint_bytes": 11674147744,
+  "fit": {
+    "receipt_sha256": "f64ae8f938693386255a0b0f85ff39dbb20f818c1bc8b36f7f93e06b129434ef",
+    "fitter_sha256": "ba5342960a4567a9fba28e9aae42dc071ae08cd8a012809e6588ae3728e4faaf",
+    "support_source_sha256": "a26f78e15dd659031fcca8ca4ec58b9906dc54c646f9f213880d4dd6e0241416",
+    "algorithm": "Project the target key away from the development guard subspace, then fit a residual direction to favor the closing token against competing tokens at the target state. Add the outer product to the terminal FFN down projection in float64, round to F32, and audit the rounded payload with a CPU approximation of the native Q8_1 activation path.",
+    "selected_position": 164,
+    "closing_token_id": 248069,
+    "rank_before_f32_rounding": 1,
+    "guard_constraints": 3563,
+    "guard_effective_rank": 3498,
+    "guard_scope": "Development controls include separately authored short and long forced proof contexts. Those fixed contexts supply native winner constraints.",
+    "historical_proof_activations_used": false,
+    "benchmark_or_fresh_evaluation_used": false,
+    "minimum_cpu_target_margin": 0.1,
+    "smooth_fit_margin": 0.14,
+    "rounded_cpu_target_margin": 0.14522099494934082,
+    "rounded_cpu_guards": {
+      "states": 3563,
+      "minimum_full_vocab_winner_margin_lower_bound": 0.001194000244140625,
+      "unchanged_q8_effective_hidden_states": 3562,
+      "maximum_residual_delta_l2": 8.122398927700511e-06,
+      "p95_residual_delta_l2": 4.401451630722574e-06,
+      "natural_close_states": 15
+    }
+  },
+  "native_synthetic_suffix": {
+    "status": "NATIVE_TARGET_AND_31_DEVELOPMENT_CONTROLS_PASS",
+    "preview_closeout_sha256": "708be04af8f471bdd9ce67762eca3006c4580329dbe02feaafb7a0a2fd10ea68",
+    "preview_plan_sha256": "fab094db629e9bedefb1ab10e6afa815dfe2da3026e93f4a9ac51d81cd931bba",
+    "native_receipt_sha256": "219f1500148048dd486a213ddebd825536ef4fe9145695980801f01cb8a3d5b2",
+    "preview_source_sha256": "e30e4ae6f278e4ce6bac4bcce593b32c6dbaa4906d61e7c5e42df783fb40ebd2",
+    "backend": "CUDA0",
+    "fixed_context_rows": 32,
+    "native_suffix_rows": 96,
+    "full_vocab_size": 248320,
+    "original_and_baked_baseline_rows_with_bitwise_exact_residual_hidden_and_logits": 32,
+    "development_guard_rows_with_bitwise_exact_proposed_full_vocab_logits": 31,
+    "target_baseline_winner": 6558,
+    "target_proposed_winner": 248069,
+    "target_baseline_closing_token_margin": -5.49186897277832,
+    "target_proposed_closing_token_margin": 0.1452198028564453,
+    "native_margin_floor": 0.1,
+    "target_changed_full_vocab_logits": 248320,
+    "target_maximum_absolute_four_choice_logit_shift": 0.745976448059082,
+    "scope": "Each row replayed original inputs, zero activation with the parent residual, and zero activation with the proposed rounded residual. This measures the terminal normalization and native Q4_K head at fixed contexts. The physical edited down projection and free generation require separate tests."
+  },
+  "saved_edit": {
+    "status": "STORED_BYTES_PASS_NATIVE_AND_MATH_PENDING",
+    "materializer_receipt_sha256": "e8307a431bae978f5d457c95cb93b09ec30588ac82e6aeace89912120f1679a5",
+    "materializer_sha256": "0039403476e1f7153f88e54e64048a1b4122895bbfb668ff2c89722754fd7738",
+    "tensor": {
+      "name": "blk.63.ffn_down.weight",
+      "type": "F32",
+      "dimensions": [17408, 5120, 1, 1],
+      "offset": 10869117856,
+      "bytes": 356515840,
+      "parent_sha256": "0c98f90b2c64baa071ada49e9db216040932261a54d791c8656deb07c637d97a",
+      "candidate_sha256": "bc47bafd11c1f0ef3288952339d216e6d3a78bf21578cbf522d1474b73c00675",
+      "relative_frobenius_delta": 0.006314717526289003
+    },
+    "exact_bytes_outside_tensor": true,
+    "output_head_bytes_identical": true,
+    "complement_spans": [
+      {
+        "offset": 0,
+        "bytes": 10869117856,
+        "sha256": "c9922420b2132ce431780f07fb311be32d7bfa2bdfafe227ff37305693d773aa"
+      },
+      {
+        "offset": 11225633696,
+        "bytes": 448514048,
+        "sha256": "f3bade40eed52b90bd1689a7aa449e54d666a9734f4ae945c6e47ed4eb884587"
+      }
+    ]
+  },
+  "physical_original_a_p_replay": {
+    "status": "PHYSICAL_NATIVE_TARGET_AND_GUARD_WINNERS_PASS",
+    "comparison_receipt_sha256": "dd21f5ecf39c3995144653ce3dbe05bb09171fe4e6fba82272a5a3083c438f5e",
+    "candidate_native_receipt_sha256": "61668f7cf62581f8a9651abb23c012e1a898b75a38c54530ec3d9bf7d45d6823",
+    "parent_native_receipt_sha256": "219f1500148048dd486a213ddebd825536ef4fe9145695980801f01cb8a3d5b2",
+    "fixed_context_rows": 32,
+    "same_head_and_gamma": true,
+    "target_parent_winner": 6558,
+    "target_candidate_winner": 248069,
+    "target_candidate_margin": 0.1452198028564453,
+    "development_guard_rows": 31,
+    "development_guard_winners_preserved": 31,
+    "development_guard_rows_with_bitwise_exact_parent_full_vocab_logits": 30,
+    "minimum_development_guard_winner_margin": 0.001194000244140625,
+    "nonexact_guard_bitwise_exact_parent_logits": 121,
+    "maximum_development_guard_absolute_four_choice_logit_shift": 0.0002751350402832031,
+    "rows_with_bitwise_exact_synthetic_residual": 0,
+    "rows_with_bitwise_exact_synthetic_normalized_hidden": 0,
+    "rows_with_bitwise_exact_synthetic_full_vocab_logits": 31,
+    "scope": "The saved candidate ran with original captured activation and skip inputs. Residual and normalized hidden bytes differed from the synthetic preview at every row. The full logit vector matched the synthetic preview at the target and 30 guard rows."
+  },
+  "development": {
+    "status": "INDEPENDENT_MATH_REVIEW_PASS",
+    "comparison_sha256": "4e1ff6ab1ae111418083785988d6284706e9cf9be563d13296a3c072f37eddd5",
+    "parent_generation_receipt_sha256": "f68f653fedf7a9aefe78698a455a314e95706d53a51e6946727adeffaf2a4718",
+    "candidate_generation_receipt_sha256": "d10889358c76770f31723023443d47caab438457f544b19e198d001f77d773dd",
+    "matched_formatted_prompts_and_token_ids": true,
+    "candidate_full_checkpoint_hash_verified_before_and_after": true,
+    "matched_cases": 6,
+    "parent_natural_eog": 6,
+    "candidate_natural_eog": 6,
+    "exact_non_target_token_outputs": 5,
+    "exact_non_target_visible_outputs": 5,
+    "target_parent_tokens": 486,
+    "target_candidate_tokens": 282,
+    "target_token_reduction_fraction": 0.41975308641975306,
+    "target_common_token_prefix": 164,
+    "target_parent_think_close_index": 355,
+    "target_candidate_think_close_index": 164,
+    "target_parent_decode_seconds": 10.5525325,
+    "target_candidate_decode_seconds": 6.5162627,
+    "parent_total_tokens": 2978,
+    "candidate_total_tokens": 2774,
+    "parent_total_decode_seconds": 64.7788898,
+    "candidate_total_decode_seconds": 63.695605,
+    "independent_math_review_receipt_sha256": "5315811aa2318b9bfd388a730456a0ed8b2eb9733d9acbd01a720d174d035832",
+    "candidate_complete_correct": 6,
+    "candidate_valid_work": 6,
+    "candidate_required_format": 6
+  },
+  "critical_proofs": {
+    "status": "FAILED_EXACT_REPLAY_GATE",
+    "generation_receipt_sha256": "5098ed814fc21480ae0973b046135e957f19babfcd2bbdd874c678660b0759e0",
+    "exact_prompt_bytes_and_token_ids": true,
+    "exact_proofs": 0,
+    "independent_complete_correct": 1,
+    "cases": [
+      {
+        "family": "interval",
+        "parent_completion_tokens": 1628,
+        "candidate_completion_tokens": 3072,
+        "first_divergent_token_index": 219,
+        "parent_token_at_first_divergence": 19222,
+        "candidate_token_at_first_divergence": 30,
+        "natural_eog": false,
+        "visible_answer_returned": false,
+        "independent_math_review": "Incomplete. The frozen visible answer was empty."
+      },
+      {
+        "family": "Euler",
+        "parent_completion_tokens": 1340,
+        "candidate_completion_tokens": 1441,
+        "first_divergent_token_index": 53,
+        "parent_token_at_first_divergence": 6558,
+        "candidate_token_at_first_divergence": 1061,
+        "natural_eog": true,
+        "visible_answer_returned": true,
+        "exact_visible_answer": false,
+        "independent_math_review": "Correct exact expression and required format. Symbolic substitution gave zero differential-equation residual and both prescribed initial conditions."
+      }
+    ]
+  },
+  "mmlu": {
+    "status": "SKIPPED_AFTER_PROOF_GATE",
+    "candidate_benchmark_executed": false
+  },
+  "fresh_blinded_evaluation": {
+    "status": "SEALED_PROOF_GATE_FAILED",
+    "opened_for_candidate": false
+  },
+  "accepted_checkpoint_updated": false
+}
