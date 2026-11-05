@@ -1,0 +1,137 @@
+{
+  "schema": "direct-accuracy-pilot-029-exploratory-v1",
+  "pilot": 29,
+  "status": "strict_close_margin_single_move_fit_no_op",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "original_packed_rows_frozen": [
+    417
+  ],
+  "train_only_close_margin_rule": "Lower 25th percentile of prior-correct training minimum choice margins. Each close choice must retain its original minimum lead against every rival.",
+  "prior_legacy_full_vocabulary_guards": 635,
+  "grouped_plan_sha256": "ecc39a5f20cd602c7fd4eb59b05954356e24c106ad71f451fff0c716b81b4bf1",
+  "grouped_cpu_report_sha256": "d29e29245edbfe441c2d57a57ea10afb55bbb22f4456ca10885e349f584d33b0",
+  "authored_baseline_sha256": "c12451d59c7fa134343ee88ce1e51b37a162e8c830b0eb239e143cdde63e4300",
+  "terminal_capture_sha256": "6920b54ed626630e22ff651d79d5bbec2ea9e8ec37947aeff54e5e43076e357a",
+  "reused_authored_folds_are_exploratory": true,
+  "all_patches_frozen_before_held_scoring": true,
+  "prior_ablation_seen": true,
+  "folds": [
+    {
+      "held_fold": 0,
+      "fit_receipt_sha256": "8f5ec6958ed4fe603b3c8465978f94ceaeba3d13763bc446a82582f2cec839c9",
+      "train_correct": 233,
+      "close_train_rows": 59,
+      "cutoff_train_min_margin": 0.6450691223144531,
+      "extra_signed_constraints": 177,
+      "originally_feasible_improving_single_moves": 1211,
+      "feasible_improving_single_moves_after_rule": 0,
+      "changed_packed_codes": 0,
+      "exact_packed_metrics": {
+        "parent_correct_rotations": 109,
+        "candidate_correct_rotations": 109,
+        "parent_all_four": 16,
+        "candidate_all_four": 16,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    },
+    {
+      "held_fold": 1,
+      "fit_receipt_sha256": "b0a0b238bcee8028fbde36ac595914bb2f60838d6bda963e343ff9adc9ad5280",
+      "train_correct": 229,
+      "close_train_rows": 58,
+      "cutoff_train_min_margin": 0.8688850402832031,
+      "extra_signed_constraints": 174,
+      "originally_feasible_improving_single_moves": 1184,
+      "feasible_improving_single_moves_after_rule": 0,
+      "changed_packed_codes": 0,
+      "exact_packed_metrics": {
+        "parent_correct_rotations": 113,
+        "candidate_correct_rotations": 113,
+        "parent_all_four": 15,
+        "candidate_all_four": 15,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    },
+    {
+      "held_fold": 2,
+      "fit_receipt_sha256": "0ce953f422d3ee080189081b8559ed43c72e611ed5f944364d34c6b33767c49f",
+      "train_correct": 222,
+      "close_train_rows": 56,
+      "cutoff_train_min_margin": 0.8141365051269531,
+      "extra_signed_constraints": 168,
+      "originally_feasible_improving_single_moves": 1538,
+      "feasible_improving_single_moves_after_rule": 0,
+      "changed_packed_codes": 0,
+      "exact_packed_metrics": {
+        "parent_correct_rotations": 120,
+        "candidate_correct_rotations": 120,
+        "parent_all_four": 15,
+        "candidate_all_four": 15,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    }
+  ],
+  "pooled": {
+    "unconstrained_continuous": {
+      "parent_correct_rotations": 342,
+      "candidate_correct_rotations": 365,
+      "parent_all_four": 46,
+      "candidate_all_four": 56,
+      "gains": 45,
+      "losses": 22,
+      "all_four_gains": 12,
+      "all_four_losses": 2
+    },
+    "guarded_continuous": {
+      "parent_correct_rotations": 342,
+      "candidate_correct_rotations": 339,
+      "parent_all_four": 46,
+      "candidate_all_four": 44,
+      "gains": 5,
+      "losses": 8,
+      "all_four_gains": 1,
+      "all_four_losses": 3
+    },
+    "exact_decoded_packed_cpu": {
+      "parent_correct_rotations": 342,
+      "candidate_correct_rotations": 342,
+      "parent_all_four": 46,
+      "candidate_all_four": 46,
+      "gains": 0,
+      "losses": 0,
+      "all_four_gains": 0,
+      "all_four_losses": 0
+    }
+  },
+  "checkpoint_written": false,
+  "official_or_fresh_data_used": false,
+  "guard_only_free_response": {
+    "status": "complete",
+    "problems": 16,
+    "complete_correct_and_natural_stop": 15,
+    "high_school_complete_correct": 8,
+    "college_complete_correct": 7,
+    "token_cap": 3072,
+    "cap_without_visible_answer": 1,
+    "capped_topic": "graph walk counting",
+    "problem_pack_sha256": "32b55a7ff9a5b4d38bc77726eea561ee9b6cac121cb54dd40efff75b66894f0c",
+    "independent_solution_audit_sha256": "064c2e396afbc6b5dbc9fea05bf7f0faa7fc1743a82116c8bee09c2e34902698",
+    "launch_sha256": "ebbdc108195e832967726d6bdddf81bb7d151ce6de5aef092bda2865e4fe2ef8",
+    "generation_receipt_sha256": "a66476eb5cab0467f06e288f444c9036f28036a4c4342db64245343d85184cb6",
+    "high_school_review_sha256": "3b9fb8948334506f43b35573be3b15c7d49a305e731465cda6251b5139c2405d",
+    "college_review_sha256": "bbfc06d6eddd3fcf9bc9da4245dea8568c64723b8c6ebcd190f723833e5f9965",
+    "initial_validator_issue": "The first launch rejected the runtime's default trace regex while tracing was disabled. The corrected launch used the same prompts and sampling settings and reproduced the first four visible responses byte for byte.",
+    "used_for_fit": false,
+    "used_for_candidate_selection": false,
+    "used_for_official_acceptance": false
+  }
+}

@@ -539,3 +539,17 @@ The interval proof replayed exactly. Euler completed naturally and gave the corr
 Matched MMLU was **226/370 for both checkpoints**. Ten previous misses became correct and ten previously correct answers became wrong. High school rose from 162/270 to 163/270, while college fell from 64/100 to 63/100. Pilot 028 failed both exact proof preservation and the zero-loss accuracy requirement, so the blinded fresh set stayed sealed. [Paired benchmark results](../evidence/direct-accuracy-pilot-028.json)
 
 Run `python examples/replay_output_row_edit.py --pilot 28 --parent PATH_TO_PILOT_024.gguf` to verify the whole saved checkpoint digest using the exact Pilot 024 model and the packed XOR deltas. [Patch capsule](../evidence/direct-closure-pilot-028-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)
+
+## Twenty-ninth pilot with a strict close-margin guard
+
+Pilot 029 froze the B answer row and refit A, C, and D on the authored training families. For each training split, the closest quarter of prior-correct choices had to retain their original minimum lead over every rival. The original signed winner checks and 635 prior authored controls still applied.
+
+Before adding that rule, the three folds had 1,211, 1,184, and 1,538 feasible improving single-code moves. The strict rule reduced each count to zero. Every packed row remained byte-identical to Pilot 024, with **342/576** correct rotations and **46/144** problems correct in all four orders. The guarded floating-point fit scored **339/576** and **44/144** before packing. These are exploratory measurements on the reused authored families. [Fold receipts and margin thresholds](../evidence/direct-accuracy-pilot-029.json)
+
+On a separate free-response diagnostic, Pilot 024 solved **15/16** with correct visible derivations and natural stops. It completed all eight high-school problems and seven college problems. A college graph-walk problem reached the 3,072-token cap before emitting a visible answer. The first launch's validator rejected a default trace setting while tracing was disabled. The corrected launch reproduced the first four responses byte for byte with the same generation settings. This diagnostic stayed outside fitting, candidate selection, and acceptance. [Diagnostic and independent review receipts](../evidence/direct-accuracy-pilot-029.json)
+
+## Pilots 030 and 031 with coupled moves and a soft margin penalty
+
+Pilot 030 used coordinated changes to packed codes while keeping the B row exact and honoring the same signed floors as Pilot 029. All three folds produced feasible edits. Correct rotations stayed at **342/576** with three gains and three losses. Problems correct in all four orders rose from **46/144 to 47/144**. High school lost one correct rotation and college gained one. [Fold metrics and receipts](../evidence/direct-accuracy-pilots-030-031.json)
+
+Pilot 031 retained the original signed guards and used nested training folds to choose the strength of a soft penalty for shrinking close margins. One fold fell back to the exact parent, one selected zero penalty, and one selected a weight of 0.1. Held correct rotations rose from **342/576 to 345/576** with six gains and three losses. The number of problems correct in all four orders stayed at **46/144**. Both pilots were CPU experiments on reused authored families and stopped before saving a model or running the matched benchmark. [Selection and held-family receipts](../evidence/direct-accuracy-pilots-030-031.json)

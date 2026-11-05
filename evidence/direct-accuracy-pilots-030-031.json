@@ -1,0 +1,90 @@
+{
+  "schema": "direct-accuracy-pilots-030-031-exploratory-v1",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "held_rotations": 576,
+  "held_problems": 144,
+  "reused_authored_folds_are_exploratory": true,
+  "all_patches_frozen_before_held_scoring": true,
+  "b_row_byte_identical_in_all_folds": true,
+  "checkpoint_written": false,
+  "gpu_used": false,
+  "official_fresh_proof_guard_only_and_separate_transfer_inputs_excluded": true,
+  "pilot_030": {
+    "method": "Train-only coupled packed-code seeds and exact descent with the strict Pilot 029 signed margin floors.",
+    "fit_source_sha256": "105c9e5fda2afd6b8ee5f2c7df8f3aa2a622f4d15319bdd3d8a90d703630d22f",
+    "grouped_plan_sha256": "8d333a51a5099b98e9cefbfe3f9f17aba588fd2349a76ca1ecbf63c4b6de8faa",
+    "grouped_cpu_report_sha256": "19ee7680cae9f7c107c5b0686d638a0aad223c405bf0ec150bacdd1d2efd4e8e",
+    "correct_rotations_parent_candidate": [342, 342],
+    "all_four_parent_candidate": [46, 47],
+    "high_school_correct_rotations_parent_candidate": [205, 204],
+    "college_correct_rotations_parent_candidate": [137, 138],
+    "rotation_gains": 3,
+    "rotation_losses": 3,
+    "folds": [
+      {
+        "fold": 0,
+        "changed_codes": 290,
+        "correct_rotations_parent_candidate": [109, 110],
+        "all_four_parent_candidate": [16, 17],
+        "fit_receipt_sha256": "b1f2a1a686da23a6d095b65ceac492bdca9478e02b26ec40a5ea7be311bcf64b"
+      },
+      {
+        "fold": 1,
+        "changed_codes": 27,
+        "correct_rotations_parent_candidate": [113, 113],
+        "all_four_parent_candidate": [15, 15],
+        "fit_receipt_sha256": "cd591f0a1b86688ab5e92ce25753c82ef6f4f2d0bb528c8614fc360f41067a64"
+      },
+      {
+        "fold": 2,
+        "changed_codes": 57,
+        "correct_rotations_parent_candidate": [120, 119],
+        "all_four_parent_candidate": [15, 15],
+        "fit_receipt_sha256": "618b5d25da544ca73350e5744ae963a4cc5831fc669a4d611b43489e5e92b920"
+      }
+    ]
+  },
+  "pilot_031": {
+    "method": "Keep the original hard signed guards and select a soft close-margin penalty on nested training families, with exact parent fallback.",
+    "fit_source_sha256": "d4b85e9c4dffc4b5f9e17610a768ae47c0c656fa9f73fd40bd8e45ddea08852a",
+    "grouped_plan_sha256": "2b8d96ee14fb9c63501fd9b45ea1648100dcefde73b24bda761d77ace1870643",
+    "grouped_cpu_report_sha256": "e9d99563cd078b6dbd0fa9ff71dc7376fac5dbab738f5aaf8ae6e90024b93100",
+    "penalty_weights_considered": [0, 0.1, 1],
+    "correct_rotations_parent_candidate": [342, 345],
+    "all_four_parent_candidate": [46, 46],
+    "high_school_correct_rotations_parent_candidate": [205, 205],
+    "college_correct_rotations_parent_candidate": [137, 140],
+    "rotation_gains": 6,
+    "rotation_losses": 3,
+    "passed_exploratory_transfer": false,
+    "folds": [
+      {
+        "fold": 0,
+        "selected_penalty_weight": null,
+        "parent_fallback": true,
+        "changed_codes": 0,
+        "correct_rotations_parent_candidate": [109, 109],
+        "all_four_parent_candidate": [16, 16],
+        "fit_receipt_sha256": "67d2dd4d1b77044c9c3b777a5e3ecc519d9d6db19fb488b0d689ebe28d6ecdbe"
+      },
+      {
+        "fold": 1,
+        "selected_penalty_weight": 0,
+        "parent_fallback": false,
+        "changed_codes": 126,
+        "correct_rotations_parent_candidate": [113, 112],
+        "all_four_parent_candidate": [15, 14],
+        "fit_receipt_sha256": "db203c88080008d7b7e523b75ae9486192dcab2231648beabb6e04197f5f9643"
+      },
+      {
+        "fold": 2,
+        "selected_penalty_weight": 0.1,
+        "parent_fallback": false,
+        "changed_codes": 128,
+        "correct_rotations_parent_candidate": [120, 124],
+        "all_four_parent_candidate": [15, 16],
+        "fit_receipt_sha256": "e45a734d033750ab5c6c709df0fa74cb90c3346f7ee15afc558a56cf3f9c4732"
+      }
+    ]
+  }
+}
