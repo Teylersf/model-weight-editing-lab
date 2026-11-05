@@ -3,213 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090d18">
 <title>Weight Lab Live</title>
-<style>
-  :root { color-scheme:dark; --bg:#111818; --panel:#192222; --line:#303d3c; --text:#edf4f2; --muted:#a3b4b0; --mint:#70e6bd; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.55 system-ui,sans-serif; }
-  main { max-width:1060px; margin:auto; padding:30px 24px 44px; }
-  h1,h2,p { margin:0; }
-  h1 { font-size:34px; letter-spacing:-.04em; line-height:1.18; }
-  h2 { font-size:17px; margin-bottom:6px; }
-  .muted,small { color:var(--muted); }
-  .top,.controls,.section-title { display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap; }
-  .top { margin-bottom:18px; }
-  .pill { border:1px solid var(--line); padding:5px 12px; border-radius:24px; color:var(--mint); }
-  .pill[data-capped="true"] { color:#ffd18d; }
-  .controls { margin:0 0 15px; }
-  select,button { color:var(--text); background:var(--panel); border:1px solid var(--line); border-radius:7px; padding:8px 10px; font:inherit; }
-  select { width:min(100%,610px); }
-  #weight-select { margin-top:10px; }
-  button:focus-visible,select:focus-visible { outline:2px solid var(--mint); outline-offset:2px; }
-  .metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-bottom:12px; }
-  .panel,.metric { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
-  .metric strong { display:block; font-size:22px; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
-  .panels { display:grid; grid-template-columns:minmax(0,1.28fr) minmax(0,1fr); gap:12px; }
-  .panel { margin-bottom:12px; min-width:0; }
-  .axis { stroke:var(--line); stroke-width:1; }
-  .axis-label { fill:var(--muted); font-size:12px; }
-  .trace-line { stroke:var(--mint); fill:none; stroke-width:2.8; stroke-linecap:round; stroke-linejoin:round; }
-  #pace { width:100%; min-height:175px; display:block; }
-  .log { max-height:242px; overflow:auto; margin-top:9px; }
-  table { width:100%; border-collapse:collapse; font-size:13px; font-variant-numeric:tabular-nums; }
-  td,th { text-align:left; padding:5px 6px; border-bottom:1px solid var(--line); }
-  td:last-child,th:last-child { text-align:right; }
-  th { color:var(--muted); font-weight:500; }
-  .heatmap { display:grid; gap:2px; margin-top:12px; }
-  .heatmap div { aspect-ratio:1.9; border-radius:1px; }
-  .legend { display:flex; align-items:center; gap:9px; margin-top:9px; color:var(--muted); font-size:13px; }
-  [hidden] { display:none !important; }
-  .gradient { width:110px; height:8px; border-radius:3px; background:linear-gradient(90deg,#233232,#70e6bd); }
-  #case { overflow-wrap:anywhere; }
-  @media(max-width:720px) { .panels { grid-template-columns:1fr; } main { padding:18px 14px; } }
-  @media(max-width:440px) { .metrics { grid-template-columns:1fr 1fr; } .metrics .metric:first-child { grid-column:1/-1; } }
-</style>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/viewer.css">
+<script src="/viewer.js" defer></script>
 </head>
 <body>
-<main>
-  <div class="top"><div><h1>Weight Lab Live</h1><p class="muted">Windows CUDA trace and saved weight changes</p></div><span class="pill" id="status" aria-live="polite">Connecting</span></div>
-  <div class="controls">
-    <select id="runs" aria-label="Run to watch"><option value="">Follow newest run</option></select>
-    <button id="pause" type="button" aria-pressed="false">Pause view</button>
+<main class="shell">
+  <header class="masthead">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3 21h6l4-13 5 18 4-12 3 7h4"/></svg></div>
+      <div><p class="eyebrow">MODEL RESEARCH / LOCAL CONSOLE</p><h1>Weight Lab <span>Live</span></h1></div>
+    </div>
+    <div class="session"><span class="badge" id="status" data-tone="neutral" aria-live="polite">Connecting</span><span class="local">LOOPBACK · CUDA</span></div>
+  </header>
+  <div class="controlbar">
+    <label for="runs"><span class="eyebrow">TRACE SOURCE</span><select id="runs"><option value="">Follow newest run</option></select></label>
+    <button id="pause" class="button" type="button" aria-pressed="false">Ⅱ &nbsp; Pause view</button>
   </div>
   <div class="metrics">
-    <div class="metric"><small>Latest stage</small><strong id="stage">Waiting</strong></div>
-    <div class="metric"><small id="count-label">Generated tokens</small><strong id="tokens">—</strong></div>
-    <div class="metric"><small id="rate-label">Decode rate</small><strong id="rate">—</strong></div>
+    <div class="metric" style="--accent:#9a91ff"><small>Runtime stage</small><strong id="stage">Waiting</strong></div>
+    <div class="metric" style="--accent:#64ecff"><small id="count-label">Generated tokens</small><strong id="tokens">—</strong></div>
+    <div class="metric" style="--accent:#66f3b5"><small id="rate-label">Decode rate</small><strong id="rate">—</strong></div>
+    <div class="metric" style="--accent:#ffc381"><small>Trace samples</small><strong id="samples">—</strong></div>
   </div>
-  <div class="panels">
-    <section class="panel"><h2 id="trace-label">Token trace</h2><p id="case" class="muted">Waiting for a run</p><small id="finish"></small>
-      <svg id="pace" viewBox="0 0 540 188" role="img" aria-label="Generated tokens by elapsed decode time"></svg>
+  <div class="observatory">
+    <section class="panel telemetry" aria-labelledby="trace-label">
+      <div class="panel-head">
+        <div><p class="eyebrow"><span class="section-index">01</span> / LIVE SIGNAL</p><h2 id="trace-label">Token trace</h2></div>
+        <div class="segments" id="range" role="group" aria-label="Trace window">
+          <button type="button" data-window="0" aria-pressed="true">Full</button>
+          <button type="button" data-window="128" aria-pressed="false">128</button>
+          <button type="button" data-window="48" aria-pressed="false">48</button>
+        </div>
+      </div>
+      <p id="case" class="context">Waiting for a case</p>
+      <div class="chart" id="chart">
+        <svg id="pace" tabindex="0" role="img" aria-label="Live trace; use the left and right arrows to inspect samples"></svg>
+        <output id="trace-tip" class="tooltip" hidden></output>
+      </div>
+      <div class="chart-footer">
+        <span><i class="line-key"></i><span id="line-key-label">Cumulative tokens</span></span>
+        <span id="chart-domain">Waiting for telemetry</span>
+        <span id="finish"></span>
+      </div>
     </section>
-    <section class="panel"><h2>Latest events</h2><p class="muted">Native runtime and capture milestones</p>
-      <div class="log"><table><thead><tr><th>Time / elapsed</th><th>Event</th><th>Step</th></tr></thead><tbody id="events"></tbody></table></div>
+    <section class="panel activity" aria-labelledby="events-title">
+      <div class="panel-head"><div><p class="eyebrow"><span class="section-index">02</span> / RUNTIME</p><h2 id="events-title">Event stream</h2></div><span id="event-count" class="counter">0</span></div>
+      <div class="log" tabindex="0" aria-label="Recent runtime events">
+        <table><thead><tr><th>Time</th><th>Event</th><th>Step</th></tr></thead><tbody id="events"></tbody></table>
+      </div>
     </section>
   </div>
-  <section class="panel">
-    <div class="section-title"><div><h2>Saved weight changes</h2><p class="muted" id="weight-note">Waiting for the measured tensor comparison</p></div><strong id="weight-ratio"></strong></div>
-    <select id="weight-select" aria-label="Saved tensor comparison" hidden></select>
-    <div id="heatmap" class="heatmap" role="img" aria-label="Per-block RMS change in the terminal down-projection tensor"></div>
-    <div id="legend" class="legend" hidden><span>Smaller change</span><span class="gradient"></span><span>Larger change</span></div>
+  <section class="panel weights" aria-labelledby="weights-title">
+    <div class="panel-head weight-head">
+      <div><p class="eyebrow"><span class="section-index">03</span> / SAVED WEIGHTS</p><h2 id="weights-title">Tensor change map</h2><p class="context" id="weight-note">Waiting for a saved comparison</p></div>
+      <div class="weight-controls"><label for="weight-select" class="eyebrow">COMPARISON</label><select id="weight-select" aria-label="Saved tensor comparison" disabled></select></div>
+    </div>
+    <div class="weight-summary"><strong id="weight-ratio">—</strong><span id="weight-resolution">No measured cells</span><span id="weight-cell"></span></div>
+    <div class="heat-wrap"><canvas id="heatmap" role="img" aria-label="Saved tensor RMS changes"></canvas></div>
+    <div id="legend" class="legend" hidden><span>Lower RMS</span><span class="gradient"></span><span>Higher RMS</span></div>
   </section>
+  <footer>Local telemetry only <span aria-hidden="true">·</span> Trace samples and saved tensor measurements</footer>
 </main>
-<script>
-  const byId = id => document.getElementById(id);
-  const runs = byId("runs");
-  const chart = byId("pace");
-  const weightSelect = byId("weight-select");
-  let comparisons = [];
-  const pause = byId("pause");
-  const svg = "http://www.w3.org/2000/svg";
-  let paused = false;
-  let pending = false;
-  let lastHeatmap = "";
-
-  function element(name, attributes, text) {
-    const node = document.createElementNS(svg, name);
-    for (const [key,value] of Object.entries(attributes)) node.setAttribute(key,value);
-    if (text !== undefined) node.textContent = text;
-    return node;
-  }
-  function drawPace(points, unit) {
-    chart.replaceChildren();
-    const last = points.at(-1);
-    if (!last) {
-      chart.append(element("text",{x:12,y:90,class:"axis-label"},"Waiting for "+unit));
-      chart.setAttribute("aria-label","Waiting for "+unit);
-      return;
-    }
-    const maxX = Math.max(1,last[0]);
-    const maxY = Math.max(1,last[1]);
-    const xy = ([x,y]) => [48+474*x/maxX,152-129*y/maxY];
-    chart.append(element("path",{d:"M48 22 V152 H522",class:"axis"}));
-    chart.append(element("polyline",{points:points.map(p => xy(p).join(",")).join(" "),class:"trace-line"}));
-    const [x,y] = xy(last);
-    chart.append(element("circle",{cx:x,cy:y,r:4,fill:"var(--mint)"}));
-    chart.append(element("text",{x:43,y:25,"text-anchor":"end",class:"axis-label"},String(last[1])));
-    chart.append(element("text",{x:44,y:171,class:"axis-label"},"0 s"));
-    chart.append(element("text",{x:522,y:171,"text-anchor":"end",class:"axis-label"},last[0].toFixed(1)+" s"));
-    chart.setAttribute("aria-label",last[1]+" "+unit+" in "+last[0].toFixed(1)+" seconds");
-  }
-  function drawWeights(w) {
-    if (!w || w.id === lastHeatmap) return;
-    lastHeatmap = w.id;
-    byId("weight-note").textContent = w.label;
-    byId("weight-ratio").textContent = w.relative_percent.toFixed(4)+"% change relative to reference";
-    const grid = byId("heatmap");
-    grid.style.gridTemplateColumns = "repeat("+w.columns+", minmax(0,1fr))";
-    const maximum = Math.max(...w.rms,Number.EPSILON);
-    const cells = w.rms.map((rms,i) => {
-      const cell = document.createElement("div");
-      const t = Math.sqrt(rms/maximum);
-      cell.style.background = "color-mix(in srgb, var(--mint) "+(100*t).toFixed(1)+"%, #233232)";
-      cell.title = "Block "+(Math.floor(i/w.columns)+1)+", "+(i%w.columns+1)+" · RMS "+rms.toExponential(3);
-      return cell;
-    });
-    grid.replaceChildren(...cells);
-    byId("legend").hidden = false;
-  }
-  function updateComparisons(current, reference) {
-    comparisons = [current, reference].filter(Boolean);
-    if (comparisons.length === 2 && comparisons[0].id === comparisons[1].id) comparisons.pop();
-    weightSelect.hidden = comparisons.length < 2;
-    const key = weightSelect.value;
-    const choices = comparisons.map(w => w.id+" "+w.label).join("\n");
-    if (weightSelect.dataset.choices !== choices) {
-      weightSelect.replaceChildren(...comparisons.map(w => new Option(w.label,w.id)));
-      weightSelect.dataset.choices = choices;
-      if (comparisons.some(w => w.id === key)) weightSelect.value = key;
-    }
-    drawWeights(comparisons.find(w => w.id === weightSelect.value) || comparisons[0]);
-  }
-  function render(data) {
-    const selected = runs.value;
-    const old = Array.from(runs.options).slice(1).map(x => x.value);
-    if (old.join("\n") !== data.choices.join("\n")) {
-      runs.replaceChildren(new Option("Follow newest run",""),...data.choices.map(x => new Option(x,x)));
-      if (data.choices.includes(selected)) runs.value = selected;
-    }
-    byId("status").textContent = data.status;
-    byId("status").dataset.capped = String(["Token cap reached","Proposal stopped"].includes(data.status));
-    const latest = data.latest;
-    const token = data.latest_token;
-    const count = token.step === undefined ? null : token.step+1;
-    byId("stage").textContent = (latest.event || "Waiting").replaceAll("_"," ");
-    const capture = data.latest_capture;
-    byId("count-label").textContent = data.capture ? "Captured states" : "Generated tokens";
-    byId("rate-label").textContent = data.capture ? "Next-token matches" : "Decode rate";
-    byId("trace-label").textContent = data.capture ? "Capture trace" : "Token trace";
-    byId("tokens").textContent = (data.capture ? capture.processed_tokens : count) ?? "—";
-    byId("rate").textContent = data.capture
-      ? capture.native_next_matches ?? "—"
-      : token.decode_elapsed_ms > 0 && count > 1 ? (count*1000/token.decode_elapsed_ms).toFixed(1)+" tok/s" : "—";
-    byId("case").textContent = data.case || "Waiting for a case";
-    byId("finish").textContent = {length:"Stopped at the token cap",eog:"Model emitted an end token"}[data.finish] || "";
-    drawPace(data.pace, data.capture ? "states" : "tokens");
-    const rows = data.events.slice().reverse().map(event => {
-      const tr = document.createElement("tr");
-      const timestamp = event.time ? new Date(event.time).toLocaleTimeString()
-        : event.elapsed_ms >= 0 ? (event.elapsed_ms/1000).toFixed(1)+" s" : "—";
-      const eventName = event.event.replaceAll("_"," ");
-      const eventLabel = event.margin === undefined ? eventName : eventName+" · margin "+event.margin.toFixed(4);
-      for (const value of [timestamp,eventLabel,event.step >= 0 ? event.step : event.processed_tokens >= 0 ? event.processed_tokens : "—"]) {
-        const td = document.createElement("td");
-        td.textContent = value;
-        tr.append(td);
-      }
-      return tr;
-    });
-    byId("events").replaceChildren(...rows);
-    updateComparisons(data.weights, data.reference_weights);
-  }
-  async function refresh() {
-    if (paused || pending) return;
-    pending = true;
-    try {
-      const response = await fetch("/api/live?run="+encodeURIComponent(runs.value),{cache:"no-store"});
-      if (!response.ok) throw new Error("Trace read unavailable");
-      const data = await response.json();
-      if (!paused) render(data);
-    } catch {
-      if (!paused) byId("status").textContent = "Waiting for connection";
-    } finally {
-      pending = false;
-    }
-  }
-  pause.addEventListener("click",() => {
-    paused = !paused;
-    pause.textContent = paused ? "Resume view" : "Pause view";
-    pause.setAttribute("aria-pressed",String(paused));
-    if (paused) {
-      byId("status").textContent = "View paused";
-      byId("status").dataset.capped = "false";
-    }
-    else refresh();
-  });
-  runs.addEventListener("change",refresh);
-  weightSelect.addEventListener("change",() => drawWeights(comparisons.find(w => w.id === weightSelect.value)));
-  refresh();
-  setInterval(refresh,1200);
-</script>
 </body>
 </html>
