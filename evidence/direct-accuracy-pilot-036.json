@@ -392,8 +392,8 @@
     "cuda_preview": "pass",
     "checkpoint_materialization": "pass",
     "physical_replay": "pass",
-    "exact_proofs_and_cylinder": "pending",
-    "matched_mmlu": "pending",
+    "exact_proofs_and_cylinder": "pass",
+    "matched_mmlu": "running",
     "blinded_fresh": "pending"
   },
   "scope": "The held scores are exploratory CPU replay on reused authored families. Ordinary winner checks cover the sampled authored states. Final CPU scores use the full fitting cohort.",
@@ -462,5 +462,32 @@
         "physical": "b854c488b2b394b773d4446d81d3d4d68056147d3d735a91117ce47b32acfa5e"
       }
     ]
+  },
+  "proof_and_cylinder": {
+    "gate_receipt_sha256": "934c90682c47916c6df27f6b605b2f69d01c43646e3835a4a66e49eea0787470",
+    "exact_proofs": 2,
+    "total_proofs": 2,
+    "exact_generated_and_visible_proof_bytes": true,
+    "proof_completion_tokens": [
+      1628,
+      1340
+    ],
+    "candidate_proof_receipt_sha256": "647b6c94c543691f0102787c6d165e8aef476aeaefcf1b729edb1d4d41b4fafa",
+    "pilot024_proof_receipt_sha256": "f80b4322a7a2371f8ca16abf3e76c14ba3a66d2b20f9b17eee09bcf2850f8244",
+    "cylinder_completion_tokens": 282,
+    "cylinder_natural_eog": true,
+    "cylinder_visible_exact": true,
+    "cylinder_candidate_receipt_sha256": "2b2bd06eed7e846a1d269072ead55c52d2f0815fd87b46ced72d92287e9ea552",
+    "cylinder_correctness_evidence": "exact_independently_reviewed_pilot024_visible_bytes",
+    "cylinder_decode_ms": {
+      "candidate": 6430.2912,
+      "pilot024": 6459.28,
+      "earlier_reference": 10550
+    }
+  },
+  "matched_mmlu": {
+    "launch_receipt_sha256": "5c89f2ce54a00e3623dac26426da3a623463bc3f170fe4178b57ca8bcefdf3d2",
+    "exact_proof_prerequisite_sha256": "934c90682c47916c6df27f6b605b2f69d01c43646e3835a4a66e49eea0787470",
+    "status": "running"
   }
 }

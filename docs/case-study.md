@@ -598,6 +598,8 @@ The final authored fit changed 16 Q4_K codes, two in C and 14 in D. Each code mo
 
 CUDA confirmed both authored scores and all 90 reviewed ordinary winners. The overlay preserved every untouched vocabulary logit and every bit of the captured residual and hidden activations. The saved GGUF differs by 16 bytes and reproduced all 666 overlay states bit for bit after reload. Verify its full hash with `python examples/replay_output_row_edit.py --pilot 36 --parent PATH_TO_PILOT_024.gguf`. [Packed XOR capsule](../evidence/direct-closure-pilot-036-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)
 
+Both accepted proofs reproduced their full token streams and visible answers exactly. The product-error proof ended naturally at 1,628 tokens and Euler at 1,340. The cylinder answer was byte-identical and ended naturally at **282 tokens**. Its measured decode time was 6.43 seconds, versus 6.46 for Pilot 024 and 10.55 for the earlier reference. [Proof and cylinder receipts](../evidence/direct-accuracy-pilot-036.json)
+
 ## Pilots 037 and 038 with additional D63 constraints
 
 Pilot 037 projected the D63 output directions away from the gradients of ordinary winner margins. The output-only fit reached **346/576** rotations and **47/144** all-four. Adding Pilot 034's input projection reached **348/576** and **49/144**. Relative to Pilot 034, the RMS movement of the seven nearest ordinary margins was 127% for the output-only fit and 92% for the combined fit. Both arms missed the preregistered reduction after adjusting for choice-logit movement. [Pilot 037 receipts](../evidence/direct-accuracy-pilot-037.json)
