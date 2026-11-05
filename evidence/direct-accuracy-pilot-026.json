@@ -1,0 +1,191 @@
+{
+  "schema": "direct-accuracy-pilot-026-v1",
+  "pilot": 26,
+  "status": "rejected_by_exact_proof_and_matched_accuracy_gates",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_checkpoint_sha256": "54d8e303b48398e1a6fc56f825a1ba2fbc748fac054ed022c39dffb166660385",
+  "checkpoint_bytes": 11674147744,
+  "targeted_mechanism": "Immediate choice depended on answer order despite identical question content",
+  "diagnostic_evidence": "mmlu-accuracy-diagnostic-026.json",
+  "authored_development": {
+    "independently_solved_items": 32,
+    "author_and_independent_key_agreements": 32,
+    "trials": 128,
+    "prompt_rotations_per_item": 4,
+    "parent_correct": 42,
+    "parent_order_sensitive_correctness_items": 27,
+    "parent_all_rotations_correct_items": 0,
+    "terminal_capture_matched_parent_choice_logits": 512,
+    "target_trials": 2,
+    "protected_current_authored_trials": 126,
+    "previous_authored_guard_states": 635,
+    "official_benchmark_questions_or_outcomes_used_in_fit": false,
+    "separate_fresh_questions_or_outcomes_used_in_fit": false,
+    "archived_accepted_proof_inputs_used_in_fit": false,
+    "protocol_sha256": "89257a8baa40a43e4c2cb86e63665f4c31bc9eefec13e9e3bc7132fe6667d394",
+    "authored_independent_key_audit_sha256": "44facb22e5a653aa71b7aee1d97f257fb240e96a2765fad22c879f4be3057d63",
+    "target_plan_sha256": "5a5bfbe31d14c2c0c154942a51cc53b4e91058b8237e783281636fe7893152c9",
+    "baseline_score_sha256": "18f8520f1b994370853a0583b0a85af506039b605f1026af9851926c742a5c90",
+    "capture_sha256": "4bd6292299bc4826c0f7952bf507708a53650201a81037a76014ad4e5c5bf8bc",
+    "fit_source_sha256": "ac492ffbba4bee55c2f35e922bb3f12a8f4167ade35d107112feaee9638fc0ae",
+    "fit_receipt_sha256": "3c27bcea24a32e9e80dde60b9a24dbc228438877ab1899510df947b2939db489"
+  },
+  "physical_edit": {
+    "rank": 2,
+    "tensor": {
+      "name": "blk.63.ffn_down.weight",
+      "offset": 10869117856,
+      "bytes": 356515840,
+      "sha256": "2fcda26e3198c12cc9147feed8c3f8862520f69039c1fa6ff9654683354cc940",
+      "parent_sha256": "0c98f90b2c64baa071ada49e9db216040932261a54d791c8656deb07c637d97a",
+      "type": "F32",
+      "dimensions": [
+        17408,
+        5120,
+        1,
+        1
+      ]
+    },
+    "relative_rounded_frobenius_delta": 0.003056996426187296,
+    "all_bytes_outside_tensor_match_parent": true,
+    "output_head_sha256": "a88fc5a0ab6c96f69fce68d9d5a3ade7860defdefd46de152e17573d7ce75098",
+    "reasoning_finish_row_sha256": "1a0b71b37341e4c72ca36dc4ea1c3f22cd90d4967c0d988a7b5b8a34013681c2",
+    "candidate_readback_sha256": "0d3e65a0db236db98d9e9c997b111c428c25dd74cafe71e57695d8b5e4a4eef3"
+  },
+  "cuda_preview_and_saved_replay": {
+    "preview_passed": true,
+    "physical_replay_passed": true,
+    "targets_corrected": 2,
+    "target_margins": [
+      1.1669387817382812,
+      1.2315921783447266
+    ],
+    "unchanged_guard_choice_winners": 126,
+    "max_parent_preview_choice_logit_delta": 0.0,
+    "max_preview_vs_physical_choice_logit_delta": 0.0001468658447265625,
+    "max_parent_vs_physical_guard_choice_logit_delta": 0.0001468658447265625,
+    "native_preview_report_sha256": "c7a4108e3332729969e3e867745a194657b73467e33c153aaa9d079d0605efed",
+    "native_preview_raw_receipt_sha256": "9a3909e5f086bc594ce53c6e3ab7064fc43a7e6f5b19779e4b582f0ae72e8ac6",
+    "physical_replay_report_sha256": "29f8864c4bfc4fa9eca603383ae8397f484db79deb82aea9a865f1df5ebe53ec",
+    "physical_replay_raw_receipt_sha256": "ddd5462d992fd3981e47ea90c85a1dc07f1ee03336b6f2073d5296d279cdc43d"
+  },
+  "ordinary_development": {
+    "status": "passed",
+    "gate_sha256": "b3a2383aa44bda5e7bc8a102956a91ce262789aa4bec5c44a5a682b99c9b17ac",
+    "candidate_native_receipt_sha256": "d72756041b45deeaf548a4de92fbacb9bfd580bd682759bf93895ef71f5744ca",
+    "total_trials": 128,
+    "exact_matched_prompt_bytes_and_token_lengths": true,
+    "parent_correct": 42,
+    "candidate_correct": 44,
+    "gains": 2,
+    "losses": 0,
+    "parent_all_four_correct": 0,
+    "candidate_all_four_correct": 2,
+    "parent_same_content_all_four": 0,
+    "candidate_same_content_all_four": 2
+  },
+  "proof_and_cylinder": {
+    "status": "failed_exact_proof_preservation",
+    "gate_sha256": "de0991dc1d711768189352d51f9b53b8310cebbb0e8ca30129a6bbab457dc248",
+    "exact_proof_cases": 0,
+    "proof_cases": 2,
+    "parent_proof_receipt_sha256": "f80b4322a7a2371f8ca16abf3e76c14ba3a66d2b20f9b17eee09bcf2850f8244",
+    "candidate_proof_receipt_sha256": "b6f343a47bfc24d58c9a1fb90438944f2649eff72f582c749ae73236de08ac99",
+    "proof_results": [
+      {
+        "case": "train-seed-v1-16-sharp-product-error-bound",
+        "parent_tokens": 1628,
+        "candidate_tokens": 3072,
+        "parent_finish": "eog",
+        "candidate_finish": "length",
+        "candidate_visible_bytes": 0
+      },
+      {
+        "case": "dev-cauchy-euler-double-resonance-ic-v1",
+        "parent_tokens": 1340,
+        "candidate_tokens": 3072,
+        "parent_finish": "eog",
+        "candidate_finish": "length",
+        "candidate_visible_bytes": 0
+      }
+    ],
+    "cylinder_parent_completion_tokens": 282,
+    "cylinder_candidate_completion_tokens": 282,
+    "cylinder_candidate_natural_end": true,
+    "cylinder_candidate_visible_exact": true,
+    "cylinder_candidate_correctness": "exact_independently_reviewed_pilot024_visible_bytes",
+    "parent_cylinder_pack_receipt_sha256": "3157581e89a0f189eb7011c0fe6ae171285d37a9a64859bb5253fdca9a2de3f3",
+    "candidate_cylinder_pack_receipt_sha256": "824d387d8b5e844a5cb34c3646f2338ab997adad7f0636fccd0bc86744fc6201"
+  },
+  "matched_mmlu_math": {
+    "status": "failed",
+    "gate_sha256": "4136a692a90db12595dc19b535a7bdb1114505017968e18c7de5e3ff69364a74",
+    "baseline_benchmark_receipt_sha256": "6e380e6a92faed7adf4534c7e4ee7dde9b68bd99fdd0193eb8612526da23bf14",
+    "candidate_benchmark_receipt_sha256": "71d1515480c1c756dab2b211ef93ac99fc282f7949aedbc3b37d8767e54ed748",
+    "exact_ordered_prompt_parity": true,
+    "exact_native_settings_parity": true,
+    "preparation_sha256": "544b275781ba854308ac147aae255df00473d1bfc4b9cad40ea43c59a9548954",
+    "failures": [
+      "previously_correct_item_lost",
+      "no_newly_correct_item"
+    ],
+    "scores": {
+      "high_school_mathematics": {
+        "both_correct": 158,
+        "baseline_only_correct": 4,
+        "candidate_only_correct": 0,
+        "neither_correct": 108,
+        "total": 270,
+        "baseline_correct": 162,
+        "candidate_correct": 158,
+        "correct_delta": -4,
+        "accuracy_percentage_point_delta": -1.4814814814814814,
+        "paired_scored": 270,
+        "paired_scored_answer_letter_disagreements": 7,
+        "any_outcome_disagreements": 7,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "college_mathematics": {
+        "both_correct": 64,
+        "baseline_only_correct": 0,
+        "candidate_only_correct": 0,
+        "neither_correct": 36,
+        "total": 100,
+        "baseline_correct": 64,
+        "candidate_correct": 64,
+        "correct_delta": 0,
+        "accuracy_percentage_point_delta": 0.0,
+        "paired_scored": 100,
+        "paired_scored_answer_letter_disagreements": 0,
+        "any_outcome_disagreements": 0,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "combined_micro": {
+        "both_correct": 222,
+        "baseline_only_correct": 4,
+        "candidate_only_correct": 0,
+        "neither_correct": 144,
+        "total": 370,
+        "baseline_correct": 226,
+        "candidate_correct": 222,
+        "correct_delta": -4,
+        "accuracy_percentage_point_delta": -1.0810810810810811,
+        "paired_scored": 370,
+        "paired_scored_answer_letter_disagreements": 7,
+        "any_outcome_disagreements": 7,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      }
+    }
+  },
+  "independent_blinded_fresh": {
+    "status": "sealed_and_not_scored",
+    "reason": "exact_proof_and_matched_accuracy_gates_failed"
+  },
+  "accepted_model_pointer_changed": false
+}
