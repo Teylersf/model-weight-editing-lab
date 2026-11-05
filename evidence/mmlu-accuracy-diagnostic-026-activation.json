@@ -1,0 +1,147 @@
+{
+  "schema": "windows-evaluation-only-mmlu026-margin-decomposition-v1",
+  "status": "EXACT_NATIVE_PAIRWISE_DECOMPOSITION_COMPLETE",
+  "model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "source_sha256": "8f5d078ab0481235c0fa3fb9bb54266c991b1623bbe81829f86717bc34bceabe",
+  "capture_plan_sha256": "d2fd7a8d477d37b87349c87fed4922818de49928b144c7017e5a27018d5ca7ca",
+  "capture_receipt_sha256": "d858b7964102e0d88cfd7f5089ab15316ee9f4504e0877feb77a96eae520d16f",
+  "rotation_analysis_sha256": "b59fcd60cbfc80eb12c70652a6706d1ef75c7f422efaec70bdb591407e7eceae",
+  "native_logits_sha256": "fa96c34d2c427366246e408a75334e716dd8b65153bf01463686fee148e6faf2",
+  "sealed_rotation_map_sha256": "86539e6ac0f206cc0e2aa753cbb78e7bf009118a93f3df10e8397c12582f7385",
+  "states": 128,
+  "exact_binary32_anchor_logits": 512,
+  "exact_pairwise_closures": 96,
+  "benchmark_evaluation_only": true,
+  "fitting_authorized": false,
+  "only_aggregate_metrics_exported": true,
+  "method": "For each item, use native logits for both terminal H states under both row-to-content assignments. Average both factor orders exactly over binary32 scores. Compare gold against the original selected content for misses and the original best incorrect content for controls. Four-choice counterfactuals check every option, independently of the fixed pairwise comparator.",
+  "limitations": "Four cyclic permutations on a stratified diagnostic sample. Exact algebra on terminal scores. Counterfactual row assignment does not intervene on upstream layers or establish a causal circuit.",
+  "cohorts": {
+    "prior_misses": {
+      "trials": 72,
+      "observed_correct": 31,
+      "observed_correctness_flips": 31,
+      "h_only_correct": 12,
+      "row_assignment_only_correct": 24,
+      "observed_flips_reproduced_by": {
+        "joint_required": 20,
+        "row_assignment_only": 11
+      },
+      "exact_pairwise_closures": 72,
+      "distributions": {
+        "original_margin": {
+          "mean": -1.2733768622080486,
+          "median": -1.2837810516357422,
+          "mean_absolute": 1.2733768622080486,
+          "positive": 0,
+          "zero": 0
+        },
+        "observed_margin": {
+          "mean": 0.08920670880211724,
+          "median": 0.09988784790039062,
+          "mean_absolute": 1.7684406307008531,
+          "positive": 40,
+          "zero": 0
+        },
+        "observed_delta": {
+          "mean": 1.3625835710101657,
+          "median": 0.8922309875488281,
+          "mean_absolute": 2.1210856835047402,
+          "positive": 55,
+          "zero": 0
+        },
+        "terminal_h_component": {
+          "mean": 0.32975587248802185,
+          "median": 0.0,
+          "mean_absolute": 1.5397697918944888,
+          "positive": 32,
+          "zero": 10
+        },
+        "row_assignment_component": {
+          "mean": 1.0328276985221438,
+          "median": 0.9014623165130615,
+          "mean_absolute": 1.991225153207779,
+          "positive": 47,
+          "zero": 0
+        },
+        "interaction": {
+          "mean": -1.3300162355105083,
+          "median": -1.182342529296875,
+          "mean_absolute": 3.6590955323643155,
+          "positive": 31,
+          "zero": 0
+        },
+        "relative_h_l2_change": {
+          "mean": 0.5627977973431535,
+          "median": 0.5549056222168212,
+          "mean_absolute": 0.5627977973431535,
+          "positive": 72,
+          "zero": 0
+        }
+      }
+    },
+    "prior_correct_controls": {
+      "trials": 24,
+      "observed_correct": 17,
+      "observed_correctness_flips": 7,
+      "h_only_correct": 1,
+      "row_assignment_only_correct": 0,
+      "observed_flips_reproduced_by": {
+        "either": 6,
+        "row_assignment_only": 1
+      },
+      "exact_pairwise_closures": 24,
+      "distributions": {
+        "original_margin": {
+          "mean": 2.8794854879379272,
+          "median": 1.9364681243896484,
+          "mean_absolute": 2.8794854879379272,
+          "positive": 24,
+          "zero": 0
+        },
+        "observed_margin": {
+          "mean": 3.249295433362325,
+          "median": 2.2397866249084473,
+          "mean_absolute": 3.5856721003850303,
+          "positive": 20,
+          "zero": 0
+        },
+        "observed_delta": {
+          "mean": 0.36980994542439777,
+          "median": 0.24892520904541016,
+          "mean_absolute": 1.5530335108439128,
+          "positive": 14,
+          "zero": 0
+        },
+        "terminal_h_component": {
+          "mean": -0.21498896678288779,
+          "median": -0.07251453399658203,
+          "mean_absolute": 1.3808058301607768,
+          "positive": 7,
+          "zero": 5
+        },
+        "row_assignment_component": {
+          "mean": 0.5847989122072855,
+          "median": 1.2129716873168945,
+          "mean_absolute": 1.8766290545463562,
+          "positive": 15,
+          "zero": 0
+        },
+        "interaction": {
+          "mean": 8.848225792249044,
+          "median": 6.150294303894043,
+          "mean_absolute": 9.300378680229187,
+          "positive": 23,
+          "zero": 0
+        },
+        "relative_h_l2_change": {
+          "mean": 0.597265283527156,
+          "median": 0.5769828581228229,
+          "mean_absolute": 0.597265283527156,
+          "positive": 24,
+          "zero": 0
+        }
+      }
+    }
+  }
+}
