@@ -1,7 +1,7 @@
 {
   "schema": "windows-direct-closure-one-row-pilot-v1",
   "pilot": 24,
-  "status": "SAVED_NATIVE_TARGET_AND_EXACT_PROOFS_PASS_BENCHMARK_PENDING",
+  "status": "SAVED_TARGET_PROOFS_AND_MMLU_PASS_FRESH_RUNNING",
   "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
   "candidate_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
   "saved_checkpoint_bytes": 11674147744,
@@ -108,7 +108,22 @@
       { "family": "Euler", "parent_and_candidate_completion_tokens": 1340, "exact_full_proof_and_visible_text": true, "natural_eog": true }
     ]
   },
-  "mmlu": { "status": "RUNNING_AFTER_EXACT_PROOF_GATE" },
-  "fresh_blinded_evaluation": { "status": "PENDING_PREREQUISITES" },
+  "mmlu": {
+    "status": "MATCHED_370_NO_LOSS_ALL_LOGITS_EXACT",
+    "baseline_benchmark_receipt_sha256": "493e2545d001aa716dab820707c843661e4deee97b77d5a6485795254d898c3a",
+    "candidate_benchmark_receipt_sha256": "6e380e6a92faed7adf4534c7e4ee7dde9b68bd99fdd0193eb8612526da23bf14",
+    "paired_receipt_sha256": "90de671c7491b9e9ca1c53063684ad53f6144d7b6d13eaaa8f5d481e1927f096",
+    "bitwise_comparison_sha256": "341f21d095774140d691270e283d367490ad65e9bee63df65cac4dd05151c5b8",
+    "matched_scored_questions": 370,
+    "exact_binary32_choice_logits": 1480,
+    "answer_choice_disagreements": 0,
+    "parent_correct": 226,
+    "candidate_correct": 226,
+    "losses": 0,
+    "gains": 0,
+    "high_school": { "correct_each": 162, "total": 270 },
+    "college": { "correct_each": 64, "total": 100 }
+  },
+  "fresh_blinded_evaluation": { "status": "MATCHED_NATIVE_RUNS_STARTED_AFTER_PREREQUISITES" },
   "accepted_checkpoint_updated": false
 }

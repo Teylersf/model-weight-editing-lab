@@ -492,4 +492,6 @@ The saved blended edit changed **1,996 bytes** in the finish-token row. CUDA gav
 
 Ordinary generation reproduced both accepted proofs, their visible answers, and their natural end tokens exactly. The interval proof took **1,628 tokens**, and Euler took **1,340**. This confirmed the archived screen's prediction for the saved checkpoint. [Exact proof receipt](../evidence/direct-closure-pilot-024.json)
 
+The matched public MMLU run preserved every choice and all **1,480 binary32 answer logits** across **370** questions. Both models scored **226/370**, with 162/270 in high-school mathematics and 64/100 in college mathematics. The candidate preserved all 226 previously correct answers. [Matched benchmark receipts](../evidence/direct-closure-pilot-024.json)
+
 Run `python examples/replay_output_row_edit.py --pilot 24 --parent PATH_TO_PARENT.gguf` to verify the whole checkpoint digest from the exact accepted parent. [Patch capsule](../evidence/direct-closure-pilot-024-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)
