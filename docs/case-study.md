@@ -449,3 +449,15 @@ Saved-file readback verified 1,876 changed bytes inside the one output row. The 
 Euler again replayed exactly. The interval output was byte-identical to the failed Pilot 018 stream. It missed the accepted finish decision at index 1218 and hit the 3,072-token cap without a visible proof. The pilot stopped before matched MMLU and fresh evaluation. [Proof receipts](../evidence/direct-closure-pilot-019.json)
 
 Run `python examples/replay_output_row_edit.py --pilot 19 --parent PATH_TO_PARENT.gguf` to verify the checkpoint digest. [Patch data](../evidence/direct-closure-pilot-019-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)
+
+## Twentieth pilot with late proof controls
+
+Four newly authored proofs covered graph optimization, number theory, linear algebra, and probability. Their teacher reasoning ranged from 1,118 to 1,215 tokens. The accepted runtime replayed them and measured 172 states, including 12 positions on either side of each intended finish. The finish token was the native winner at all four authored closing positions. These were forced development contexts. The prior proofs and the fresh evaluation remained outside fitting. [Input and capture evidence](../evidence/direct-closure-pilot-020.json)
+
+The fit retained 3,563 signed winner constraints and small positive changes at the 11 original and four long native closing positions. The long-state 95th-percentile absolute score change fell from **0.659 to 0.206 logits** compared with Pilot 019. On the prior development states it fell from **0.424 to 0.391**, while the maximum rose from 0.653 to 0.669. The decoded packed row passed the declared limits.
+
+Readback verified 1,777 changed bytes in the same output row. The native preview preserved both hidden captures and all 248,319 other logits. Independent review found six correct, complete development solutions with natural stops. Five matched exactly. The cylinder gave **123.7 cm³** in **282 versus 486 tokens**, decoding in **6.38 versus 10.55 seconds**.
+
+Euler replayed exactly. The interval proof diverged at index 1218 and produced the same capped stream as Pilot 019, with no visible proof. The exact proof gate stopped the experiment before MMLU and fresh evaluation. [Proof receipts](../evidence/direct-closure-pilot-020.json)
+
+Run `python examples/replay_output_row_edit.py --pilot 20 --parent PATH_TO_PARENT.gguf` to verify the checkpoint digest. [Patch data](../evidence/direct-closure-pilot-020-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)
