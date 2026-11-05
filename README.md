@@ -14,6 +14,8 @@ By [Taylor Kalin](https://github.com/Teylersf), with AI-assisted implementation,
 
 A later rank-one pilot cut one correct development solution from 486 to 204 tokens by editing the decision to finish reasoning. [See the measured result and its limits](docs/case-study.md#sixth-pilot-finish-after-the-calculation-is-settled).
 
+The one-row experiments show how a saved edit can preserve all 370 MMLU choices while changing a worked proof. Their sparse patches let you verify or reproduce the exact checkpoints from the pinned parent. [One-row experiments](docs/case-study.md#sixteenth-pilot-with-one-output-row) · [Checkpoint replay tool](examples/replay_output_row_edit.py)
+
 To watch a local run, open the [live trace viewer](prototypes/trace-viewer/README.md). The page follows token generation and displays the measured difference between saved tensors.
 
 ## Start here: what are we changing?
