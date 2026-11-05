@@ -1,0 +1,87 @@
+{
+  "schema": "windows-mmlu-accuracy-diagnostic-v1",
+  "pilot": 26,
+  "status": "WORKED_AND_OPTION_ROTATION_DIAGNOSTICS_COMPLETE",
+  "model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "matched_direct_mmlu": {
+    "questions": 370,
+    "correct": 226,
+    "missed": 144,
+    "paired_receipt_sha256": "90de671c7491b9e9ca1c53063684ad53f6144d7b6d13eaaa8f5d481e1927f096",
+    "gold_choice_counts_abcd": [78, 94, 96, 102],
+    "model_choice_counts_abcd": [85, 116, 82, 87]
+  },
+  "sampling": {
+    "questions": 32,
+    "high_school_misses": 18,
+    "college_misses": 6,
+    "high_school_controls": 6,
+    "college_controls": 2,
+    "seed": "accuracy-mmlu-026-stratified-v1",
+    "method": "Within each subject and prior correctness group, sort by the top-two answer-logit margin and source ID. Split into contiguous near-equal bands at floor(i*N/bands) for the number of listed quotas. Rank each band by SHA-256 of seed/within-stratum/source_id and select its quota. Rank the selected IDs by SHA-256 of seed/presentation/source_id for presentation.",
+    "low_to_high_band_quotas": {
+      "high_school_misses": [6, 6, 6],
+      "college_misses": [2, 2, 2],
+      "high_school_controls": [2, 2, 2],
+      "college_controls": [1, 1]
+    },
+    "selector_source_sha256": "c9bbee6c21c009dda0a28218b8b99facc4a4e7379af59a16fb627ca0daf51526",
+    "manifest_sha256": "720281beef7a902179ea7c46a0e413a6e1120891771fe4d189c5c36cc7a10320",
+    "benchmark_prompts_answers_and_outputs_authorized_for_fit": false
+  },
+  "independent_solutions": {
+    "problem_only_pack_sha256": "6371b81686810958ff4fb2debd1e7137280ffb76afad23b886310bc46652c30d",
+    "independent_reference_sha256": "cee01493a1511b9197d2eee3d0bb6d4087842f3b74ac722b3f1b71c5e1ce8f22",
+    "key_comparison_sha256": "0d558ebe17238c2515de220e7b48d6f2fd32471250a5ea265997e5e41b0d10f6",
+    "independently_solved_before_key_comparison": 32,
+    "official_key_agreements": 32,
+    "reference_interpretation_notes": 2
+  },
+  "worked_generation": {
+    "prompt_pack_sha256": "c6deb446f42e5caa224a7f20bb9068ab1fcefecb9a16eabac189c385c76a3071",
+    "generation_source_sha256": "b5cbbd3cc64fb7097fe7c995a69624fcf4389f6f581fed341a292540b43b9b2d",
+    "generation_receipt_sha256": "dbfe1a5332d63ee90e307ae103990080772d2a7b57681542d38e4d2c894f0159",
+    "blind_aggregation_sha256": "667d839d339b411cde01b4d0b9e25e6cfcfb870390599b3f7dd9f96d894ccee0",
+    "backend": "CUDA0",
+    "context_tokens": 4096,
+    "generation_cap_tokens": 3072,
+    "temperature": 0,
+    "protocol": "The verified Pilot 024 checkpoint received the question and choices followed by a request for justified work and a final option. The model received no test labels. Reviewers checked visible answers against independent solutions without access to the direct-choice outcomes. Native runs were joined to those outcomes after grades were frozen.",
+    "sampled_direct_misses": {
+      "denominator": 24,
+      "correct_option": 23,
+      "complete_correct_with_natural_ending": 20,
+      "first_error_counts": {"proof_gap": 2, "arithmetic_or_precision": 1, "no_visible_answer": 1}
+    },
+    "sampled_direct_correct_controls": {
+      "denominator": 8,
+      "correct_option": 8,
+      "complete_correct_with_natural_ending": 8
+    }
+  },
+  "direct_option_rotation": {
+    "protocol": "Score the original order and three cyclic rotations of the same four test options. Keep the question, five development examples and all runtime settings fixed. Score each prediction against the original option content after reversing its permutation.",
+    "native_manifest_sha256": "f9f35cb5941f839f9a128ada7b1466a6d67cd0454ea1c8e3f94676536e34b3bf",
+    "preparation_sha256": "0a9f201e7d0fe3a169e74b16abed5d8dd573efb41daa6101dc7628e20b98b4cf",
+    "scorer_source_sha256": "eaaa557b776e81e8c045352c8b0e0563199e6f2da5578c636c20da1a420b589b",
+    "native_generation_receipt_sha256": "961937bdc78c92a4282a8b6771c614cbe54f3b1e9bb000f43a4023bdfdaeb779",
+    "analysis_sha256": "b59fcd60cbfc80eb12c70652a6706d1ef75c7f422efaec70bdb591407e7eceae",
+    "total_native_trials": 128,
+    "unrotated_prompts_exact": 32,
+    "unrotated_binary32_logits_exact": 128,
+    "items_with_same_content_choice_in_all_orders": 11,
+    "items_with_same_displayed_letter_in_all_orders": 0,
+    "sampled_direct_misses": {
+      "items": 24,
+      "changed_order_trials": 72,
+      "changed_order_correct_trials": 31,
+      "items_correct_in_at_least_one_changed_order": 16
+    },
+    "sampled_direct_correct_controls": {
+      "items": 8,
+      "changed_order_trials": 24,
+      "changed_order_correct_trials": 17,
+      "items_wrong_in_at_least_one_changed_order": 4
+    }
+  }
+}
