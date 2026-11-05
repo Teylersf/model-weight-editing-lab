@@ -1,0 +1,261 @@
+{
+  "schema": "direct-accuracy-pilot-035-exploratory-v1",
+  "pilot": 35,
+  "status": "one_sided_packed_edit_failed_transfer_gate",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "fit_source_sha256": "9919cb25323d4a3c8e2202b4da5621d883468af44bc7917bb96fec89da295c60",
+  "grouped_plan_sha256": "1b282abc2a67ea717611754198819f4fac2d9827acfa88c61249b4682e80d4be",
+  "grouped_cpu_report_sha256": "e645e6097ca743b7605bb709419d260d03fa6789414a2d11a60b77774e90c07c",
+  "authored_corpus": {
+    "source_pilot": 28,
+    "problems": 144,
+    "rotations": 576,
+    "mathematical_families": 18,
+    "whole_family_folds": 3,
+    "train_rotations_per_fold": 384,
+    "held_rotations_per_fold": 192,
+    "manifest_sha256": "40c54e3c36d11ed50197d59ff446808654ac5a131683f0df2f89c9b4c620c122",
+    "independent_key_audit_sha256": "489afde665fc9ed6f2a6c95f8e0137f3fc5538b1a891cde8a8ac8ffd8ddaeb65",
+    "authored_baseline_sha256": "c12451d59c7fa134343ee88ce1e51b37a162e8c830b0eb239e143cdde63e4300",
+    "terminal_capture_sha256": "6920b54ed626630e22ff651d79d5bbec2ea9e8ec37947aeff54e5e43076e357a",
+    "binary32_native_choice_logits_matched": 2304,
+    "q8_boundary_corrections": 4,
+    "maximum_q8_anchor_error": 2.879708517866675e-06
+  },
+  "independent_forced_controls": {
+    "teacher_provenance_sha256": "0f59394eda281d92590ce9fe597396d82d118a30fcb6db910c80cab8279250f4",
+    "teacher_capture_sha256": "f9bb54742c66c94e4025181e98c488aecaa7f1917cd6544ccdd23d92113a0afa",
+    "trajectories": 4,
+    "states": 172,
+    "q8_boundary_corrections": 1,
+    "maximum_q8_anchor_error": 2.891359144996386e-06,
+    "role": "Fit-authorized teacher-forced states used for a spill penalty and signed full-vocabulary winner checks."
+  },
+  "method": "Estimate displayed-position bias from the four rotations of each training item after removing each item’s canonical answer-content mean. Choose one row from A, B and C using training folds only. Optimize exact packed one-code changes to suppress that row while minimizing spill on the independent forced controls.",
+  "constraints": {
+    "edited_token_allowlist": [
+      357,
+      417,
+      351
+    ],
+    "selected_token_by_fold": [
+      417,
+      417,
+      417
+    ],
+    "unchanged_output_rows": [
+      357,
+      351,
+      414
+    ],
+    "q4k_block_metadata_unchanged": true,
+    "independent_packed_readback_passed": true,
+    "selected_row_nonpositive_on_all_train_rotations": true,
+    "selected_row_nonpositive_on_all_held_rotations": true,
+    "original_signed_prior_correct_train_winners_preserved": true,
+    "forced_control_full_vocabulary_winners_preserved": true
+  },
+  "all_outer_fits_frozen_before_held_scoring": true,
+  "folds": [
+    {
+      "held_fold": 0,
+      "fit_receipt_sha256": "927da1bf42011049c1db26b2fcf9d1837cedfd763a3d6513ba6b9480b2c9fa95",
+      "selected_token_id": 417,
+      "train_position_effects_abcd": [
+        0.34455236109594506,
+        0.5311092169334491,
+        -0.34565912125011283,
+        -0.5300024567792813
+      ],
+      "changed_packed_codes": 24,
+      "original_signed_constraints": 2319,
+      "prior_correct_train_winners_preserved": 233,
+      "forced_control_full_vocabulary_winners_preserved": 172,
+      "train_positive_b_drifts": 0,
+      "held_positive_b_drifts": 0,
+      "train_mean_b_drift": -0.09107599035974563,
+      "train_max_b_drift": -0.0006674154074062244,
+      "held_max_b_drift": -0.042365589424662176,
+      "forced_control_rms_b_drift": 0.029336305859324913,
+      "forced_control_max_absolute_b_drift": 0.0815878814437383,
+      "exact_train_metrics": {
+        "correct_rotations_parent_candidate": [
+          233,
+          235
+        ],
+        "all_four_parent_candidate": [
+          30,
+          30
+        ],
+        "rotation_gains": 2,
+        "rotation_losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "exact_held_metrics": {
+        "correct_rotations_parent_candidate": [
+          109,
+          109
+        ],
+        "all_four_parent_candidate": [
+          16,
+          16
+        ],
+        "rotation_gains": 0,
+        "rotation_losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    },
+    {
+      "held_fold": 1,
+      "fit_receipt_sha256": "84d14c0c3e247b88b282d44a52323dbb7dde500355e3862291e7e755e3d11ce5",
+      "selected_token_id": 417,
+      "train_position_effects_abcd": [
+        0.29015006745855015,
+        0.4675704501569271,
+        -0.26348227138320607,
+        -0.4942382462322712
+      ],
+      "changed_packed_codes": 25,
+      "original_signed_constraints": 2291,
+      "prior_correct_train_winners_preserved": 229,
+      "forced_control_full_vocabulary_winners_preserved": 172,
+      "train_positive_b_drifts": 0,
+      "held_positive_b_drifts": 0,
+      "train_mean_b_drift": -0.23620051168921682,
+      "train_max_b_drift": -0.07898091740571545,
+      "held_max_b_drift": -0.0865318887426838,
+      "forced_control_rms_b_drift": 0.05746073884125287,
+      "forced_control_max_absolute_b_drift": 0.16401658001268515,
+      "exact_train_metrics": {
+        "correct_rotations_parent_candidate": [
+          229,
+          235
+        ],
+        "all_four_parent_candidate": [
+          31,
+          33
+        ],
+        "rotation_gains": 6,
+        "rotation_losses": 0,
+        "all_four_gains": 2,
+        "all_four_losses": 0
+      },
+      "exact_held_metrics": {
+        "correct_rotations_parent_candidate": [
+          113,
+          114
+        ],
+        "all_four_parent_candidate": [
+          15,
+          15
+        ],
+        "rotation_gains": 3,
+        "rotation_losses": 2,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    },
+    {
+      "held_fold": 2,
+      "fit_receipt_sha256": "63cdaf5ca688c2948aaa11a1151e5645d5fd1fd5aae0f863005ad7eae5b13c70",
+      "selected_token_id": 417,
+      "train_position_effects_abcd": [
+        0.2977578882128,
+        0.41809567250311375,
+        -0.2455030114700397,
+        -0.4703505492458741
+      ],
+      "changed_packed_codes": 68,
+      "original_signed_constraints": 2242,
+      "prior_correct_train_winners_preserved": 222,
+      "forced_control_full_vocabulary_winners_preserved": 172,
+      "train_positive_b_drifts": 0,
+      "held_positive_b_drifts": 0,
+      "train_mean_b_drift": -0.17800515332107025,
+      "train_max_b_drift": -3.4623826650204137e-06,
+      "held_max_b_drift": -0.089631163609738,
+      "forced_control_rms_b_drift": 0.0660691569514072,
+      "forced_control_max_absolute_b_drift": 0.18863911663265753,
+      "exact_train_metrics": {
+        "correct_rotations_parent_candidate": [
+          222,
+          226
+        ],
+        "all_four_parent_candidate": [
+          31,
+          32
+        ],
+        "rotation_gains": 4,
+        "rotation_losses": 0,
+        "all_four_gains": 1,
+        "all_four_losses": 0
+      },
+      "exact_held_metrics": {
+        "correct_rotations_parent_candidate": [
+          120,
+          120
+        ],
+        "all_four_parent_candidate": [
+          15,
+          15
+        ],
+        "rotation_gains": 1,
+        "rotation_losses": 1,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    }
+  ],
+  "pooled": {
+    "correct_rotations_parent_candidate": [
+      342,
+      343
+    ],
+    "all_four_parent_candidate": [
+      46,
+      46
+    ],
+    "rotation_gains": 4,
+    "rotation_losses": 3,
+    "all_four_gains": 0,
+    "all_four_losses": 0
+  },
+  "subjects": {
+    "high_school_mathematics": {
+      "correct_rotations_parent_candidate": [
+        205,
+        205
+      ],
+      "all_four_parent_candidate": [
+        32,
+        32
+      ],
+      "rotation_gains": 1,
+      "rotation_losses": 1,
+      "all_four_gains": 0,
+      "all_four_losses": 0
+    },
+    "college_mathematics": {
+      "correct_rotations_parent_candidate": [
+        137,
+        138
+      ],
+      "all_four_parent_candidate": [
+        14,
+        14
+      ],
+      "rotation_gains": 3,
+      "rotation_losses": 2,
+      "all_four_gains": 0,
+      "all_four_losses": 0
+    }
+  },
+  "scope": "Reused authored-family CPU exploration. Held accuracy improved by one rotation and all-four accuracy stayed flat. Ordinary proof behavior on unseen prompts remains unmeasured.",
+  "passed_exploratory_transfer": false,
+  "eligible_for_acceptance": false,
+  "checkpoint_written": false,
+  "gpu_used": false,
+  "official_fresh_accepted_proof_cylinder_guard_only_and_separate_transfer_inputs_excluded": true
+}
