@@ -1,4 +1,4 @@
-"""Verify or replay an exact Pilot 016 or 017 output-row patch on its pinned GGUF parent."""
+"""Verify or replay a published Pilot output-row patch on its pinned GGUF parent."""
 
 import argparse
 from contextlib import nullcontext
@@ -16,6 +16,7 @@ EVIDENCE = Path(__file__).resolve().parent.parent / "evidence"
 CAPSULE_CONTENT_SHA256 = {
     16: "ae86395f27b64fc20797003ab468c9df6cba8ebac9e29b378328fd2d74b140cd",
     17: "7c5f1942b2ca9aabbc110e80fae148e72f8cc570689c7265551c25abc664bfe0",
+    18: "e26186ca7a31672ceb62f55ad2de96dd1aa8efc1d1faaf073642d789233f250f",
 }
 CHUNK_BYTES = 8 * 1024 * 1024
 GGUF_SCALAR_BYTES = {0: 1, 1: 1, 2: 2, 3: 2, 4: 4, 5: 4, 6: 4, 7: 1, 10: 8, 11: 8, 12: 8}

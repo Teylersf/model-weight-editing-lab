@@ -427,3 +427,15 @@ The checkpoint changed **1,797 bytes in the same 2,880-byte row**. At the fixed 
 Pilot 017 reproduced the Euler proof exactly. The interval response matched up to the accepted finish decision at index 1218, then continued thinking. It reached the 3,072-token limit without a visible proof, versus a natural ending at 1,628 tokens for the parent. The exact proof gate stopped the pilot before matched MMLU or the fresh evaluation. The accepted checkpoint remained in use. [Proof receipts](../evidence/direct-closure-pilot-017.json)
 
 Run `python examples/replay_output_row_edit.py --pilot 17 --parent PATH_TO_PARENT.gguf` to verify the resulting whole-checkpoint digest from the exact accepted parent. [Patch data](../evidence/direct-closure-pilot-017-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)
+
+## Eighteenth pilot with proof-ending controls
+
+Pilot 018 added 200 fixed-prefix states from eight independently authored development proofs. The native runner replayed the teacher tokens and measured its own winner at each state. The fit constrained those native decisions and the change in the finish score around each teacher finish. It also protected 11 natural finish positions from the original development captures. The two prior proofs, MMLU questions, fresh evaluation, and eight capped model traces remained outside fitting. [Fit and input provenance](../evidence/direct-closure-pilot-018.json)
+
+The fit kept all 3,391 predicted winner constraints and reduced the maximum finish-logit change at the 11 natural development finishes from **0.257 to 0.042**. The original development set's 95th-percentile change rose from **0.271 to 0.484**. The largest change across the combined states was **0.763 logits**. The saved checkpoint changed 1,880 bytes inside the one output row.
+
+At the cylinder prefix, both hidden states and all 248,319 other logits were bit-identical. The finish token led by 0.82078 logits. Independent review again found all six ordinary answers correct and complete. Five matched exactly, and the cylinder gave 123.7 cm³ in **282 versus 486 tokens**, taking **6.43 versus 10.55 seconds** to decode.
+
+Euler replayed exactly. The interval run changed its decision at index 1218 and generated the same capped stream as Pilot 017. It reached 3,072 tokens without a visible proof. Lower score changes at the captured finish positions did not preserve this separate interval case. The pilot stopped before the matched benchmark and fresh evaluation. [Proof receipts](../evidence/direct-closure-pilot-018.json)
+
+Run `python examples/replay_output_row_edit.py --pilot 18 --parent PATH_TO_PARENT.gguf` to verify the checkpoint digest. [Patch data](../evidence/direct-closure-pilot-018-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)
