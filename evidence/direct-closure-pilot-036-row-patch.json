@@ -1,0 +1,63 @@
+{
+  "schema": "public-direct-output-multirow-xor-patch-v1",
+  "pilot": 36,
+  "checkpoint_bytes": 11674147744,
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_sha256": "46c58d165a5788b6746008e82ad8883dbd6a2d5b62c2abb5ff3ab2bee79e38ba",
+  "tensor": {
+    "name": "output.weight",
+    "quantization": "Q4_K",
+    "ggml_type": 12,
+    "dimensions": [
+      5120,
+      248320
+    ],
+    "offset": 10996640,
+    "bytes": 715161600
+  },
+  "rows": [
+    {
+      "token_id": 351,
+      "offset": 12007520,
+      "bytes": 2880,
+      "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+      "candidate_sha256": "2946771817a7bfc8b3329c34b5e85237afdb94ecb960741785377ee0cb85d4fc",
+      "sparse_xor": {
+        "changed_bytes": 2,
+        "row_relative_offsets": [
+          381,
+          387
+        ],
+        "xor_hex": "300f"
+      }
+    },
+    {
+      "token_id": 414,
+      "offset": 12188960,
+      "bytes": 2880,
+      "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+      "candidate_sha256": "35bd8afc15cc5a522533621b4f11ac9b73f6632467da64d61fdf2ebac7c69302",
+      "sparse_xor": {
+        "changed_bytes": 14,
+        "row_relative_offsets": [
+          117,
+          262,
+          282,
+          610,
+          836,
+          921,
+          1355,
+          1368,
+          1470,
+          1704,
+          1755,
+          1821,
+          2505,
+          2795
+        ],
+        "xor_hex": "0f70070f1001070301010f030f03"
+      }
+    }
+  ],
+  "changed_bytes": 16
+}

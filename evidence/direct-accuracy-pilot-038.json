@@ -1,0 +1,164 @@
+{
+  "schema": "direct-accuracy-pilot-038-exploratory-v1",
+  "pilot": 38,
+  "status": "soft_d63_input_covariance_filter_failed_matched_gate",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "fit_source_sha256": "92a3910188ec372264a2fd1ef9e2223d2d4c544a93a29a42a6fd21eaf441a673",
+  "grouped_plan_sha256": "2d9cb7594c701bfed62283608f4224d63ee8f986f6f6c4d707a2fa016e0929f6",
+  "grouped_cpu_report_sha256": "1efc0342a597d21430f6543f91bc06cd4d93637f2bce7c0355f16dc48f7b711e",
+  "authored_inputs": {
+    "choice": {
+      "source_pilot": 28,
+      "problems": 144,
+      "rotations": 576,
+      "family_folds": 3,
+      "baseline_sha256": "c12451d59c7fa134343ee88ce1e51b37a162e8c830b0eb239e143cdde63e4300",
+      "capture_sha256": "6920b54ed626630e22ff651d79d5bbec2ea9e8ec37947aeff54e5e43076e357a"
+    },
+    "ordinary": {
+      "source_pilot": 34,
+      "independently_reviewed_eligible_trajectories": 9,
+      "retained_states": 90,
+      "capture_sha256": "5a2bd762c194438513794fb22380621b306e4ba16af7f1a12a7c736f478fa81b",
+      "visible_review_sha256": "32faa63b4d834cbc3b3ea6fdc0035a82f2278f8d6a8a178524827afcda455480",
+      "independent_audit_sha256": "58c204c9015a555ea6e4f5680ed72b83372e0bfdb6d924946a8d30c2e225273a"
+    }
+  },
+  "method": "Fit a rank-three D63 update with the existing signed choice objective and output basis. Select six input directions using the ridge-regularized ratio of choice to ordinary activation energy in a twelve-dimensional training-only choice basis.",
+  "matching": "Downscale all three fits in each fold to their smallest training-only RMS centered A–D logit change, then check matching after F32 weight rounding with the CPU Q8 suffix approximation. Freeze all fitted factors before scoring held folds.",
+  "held_choice_parent": {
+    "rotations": 342,
+    "all_four": 46
+  },
+  "held_choice_matched": {
+    "pilot033": {
+      "rotations": 345,
+      "all_four": 47,
+      "gains": 9,
+      "losses": 6
+    },
+    "pilot034": {
+      "rotations": 347,
+      "all_four": 48,
+      "gains": 12,
+      "losses": 7
+    },
+    "pilot038": {
+      "rotations": 346,
+      "all_four": 48,
+      "gains": 10,
+      "losses": 6
+    }
+  },
+  "held_choice_original_unscaled_controls": {
+    "pilot033": {
+      "rotations": 348,
+      "all_four": 48,
+      "gains": 13,
+      "losses": 7
+    },
+    "pilot034": {
+      "rotations": 351,
+      "all_four": 49,
+      "gains": 18,
+      "losses": 9
+    }
+  },
+  "original_control_report_sha256": {
+    "pilot033": "22e313af8f4a4ca9f2a8712f4845138d35dee90edc531c19b8371e00b9916ce8",
+    "pilot034": "89b6d3d6b3f0324e0b04b718fd0c46e0c112410870f2c16a03fb7e938cf64e53"
+  },
+  "held_ordinary_matched": {
+    "pilot033": {
+      "states": 90,
+      "relative_r_rms": 0.0017679051231433,
+      "relative_r_p95": 0.0030220933924949927,
+      "relative_r_max": 0.004162813484206758,
+      "top7_margin_shrink_p95": 0.02244417975125543,
+      "top7_margin_shrink_max": 0.03438734521478182,
+      "archived_top64_winner_changes": 0,
+      "maximum_parent_surrogate_abs_error": 0.0007440132612828165
+    },
+    "pilot034": {
+      "states": 90,
+      "relative_r_rms": 0.0006347919302505304,
+      "relative_r_p95": 0.0012344233898350186,
+      "relative_r_max": 0.0018323940144388997,
+      "top7_margin_shrink_p95": 0.016834790985035392,
+      "top7_margin_shrink_max": 0.02552360172785484,
+      "archived_top64_winner_changes": 0,
+      "maximum_parent_surrogate_abs_error": 0.0007440132612828165
+    },
+    "pilot038": {
+      "states": 90,
+      "relative_r_rms": 0.0007206254160510247,
+      "relative_r_p95": 0.0012902786831769995,
+      "relative_r_max": 0.001557579856466854,
+      "top7_margin_shrink_p95": 0.016563437080867514,
+      "top7_margin_shrink_max": 0.02596784886372916,
+      "archived_top64_winner_changes": 0,
+      "maximum_parent_surrogate_abs_error": 0.0007440132612828165
+    }
+  },
+  "candidate_folds": [
+    {
+      "held_fold": 0,
+      "training_receipt_sha256": "a516727f52299377ff27a959fb4f16a698d1ddd35542435b59498ab36f1ebe23",
+      "training_gate_passed": false,
+      "strength_floor_passed": true,
+      "rounded_strength_spread_fraction": 0.0011178151045896367,
+      "candidate_train_losses": 1,
+      "correct_rotations_parent_candidate": [
+        109,
+        113
+      ],
+      "all_four_parent_candidate": [
+        16,
+        18
+      ]
+    },
+    {
+      "held_fold": 1,
+      "training_receipt_sha256": "989907b5362dbe97004eccdd40f6cb41a5a4062610533807d9900b42eb4d617b",
+      "training_gate_passed": true,
+      "strength_floor_passed": true,
+      "rounded_strength_spread_fraction": 0.0013559687737723092,
+      "candidate_train_losses": 0,
+      "correct_rotations_parent_candidate": [
+        113,
+        111
+      ],
+      "all_four_parent_candidate": [
+        15,
+        14
+      ]
+    },
+    {
+      "held_fold": 2,
+      "training_receipt_sha256": "8ca375ec04ea31d21defa9ec190c70aca8dea96610f854b6d1e0278491927eaa",
+      "training_gate_passed": false,
+      "strength_floor_passed": false,
+      "rounded_strength_spread_fraction": 0.0014126800730815958,
+      "candidate_train_losses": 0,
+      "correct_rotations_parent_candidate": [
+        120,
+        122
+      ],
+      "all_four_parent_candidate": [
+        15,
+        16
+      ]
+    }
+  ],
+  "gate_results": {
+    "matched_training": false,
+    "pooled_choice": false,
+    "all_held_choice_folds": false,
+    "ordinary_winner_and_calibration": true,
+    "ordinary_leakage": false
+  },
+  "eligible_for_native_development_preview": false,
+  "gpu_used": false,
+  "checkpoint_written": false,
+  "scope": "Exploratory reuse of authored family folds and nine ordinary trajectories. CPU Q8 scoring and the archived top-64 screen are proxies for native decoding. The fit and scoring used no separate transfer set, earlier guard-only set, proof or cylinder controls, or official or fresh benchmark items."
+}

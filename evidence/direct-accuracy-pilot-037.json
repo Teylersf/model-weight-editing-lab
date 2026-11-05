@@ -1,0 +1,397 @@
+{
+  "schema": "direct-accuracy-pilot-037-output-margin-d63-v1",
+  "pilot": 37,
+  "source_sha256": "05767e876bc111b1183173b2d9b85097386229f7357b7b13ddb7d4d423040b5e",
+  "plan_sha256": "0d9549dca810b5cfc7e3ebdc002cd9e34b3972ccfacb5006c4c165588fc1307f",
+  "grouped_cpu_report_sha256": "baf1a6a4af5d48cddc2ccf364890c13e6e5b5e0ad0738015f7fcd9a5477f4ef6",
+  "authored_ordinary_capture_sha256": "5a2bd762c194438513794fb22380621b306e4ba16af7f1a12a7c736f478fa81b",
+  "visible_review_sha256": "32faa63b4d834cbc3b3ea6fdc0035a82f2278f8d6a8a178524827afcda455480",
+  "ordinary_archive_rivals": 7,
+  "required_raw_margin_ratio": 0.8,
+  "required_choice_adjusted_margin_ratio": 0.9,
+  "reference_034": {
+    "archived_top64_winner_changes": 0,
+    "rms_held_ordinary_top7_margin_shift": 0.008039366283153878,
+    "rms_held_centered_choice_shift": 0.19962595178153753,
+    "pooled": {
+      "rotations": [
+        342,
+        351
+      ],
+      "all_four": [
+        46,
+        49
+      ],
+      "gains": 18,
+      "losses": 9
+    },
+    "subjects": {
+      "high_school_mathematics": {
+        "rotations": [
+          205,
+          205
+        ],
+        "all_four": [
+          32,
+          34
+        ],
+        "gains": 6,
+        "losses": 6
+      },
+      "college_mathematics": {
+        "rotations": [
+          137,
+          146
+        ],
+        "all_four": [
+          14,
+          15
+        ],
+        "gains": 12,
+        "losses": 3
+      }
+    },
+    "folds": [
+      {
+        "fold": 0,
+        "fit_receipt_sha256": "11a5b55c1a5697dd6faa6b84c6e1bbed3d09c1d6ee93b2236db4a3b13b0d0174",
+        "selected": true,
+        "held": {
+          "rotations": [
+            109,
+            116
+          ],
+          "all_four": [
+            16,
+            19
+          ],
+          "gains": 10,
+          "losses": 3
+        },
+        "held_ordinary": {
+          "states": 30,
+          "winner_changes_in_archived_top64": 0,
+          "maximum_parent_calibration_error": 2.414533810224384e-06,
+          "rms_top7_margin_shift": 0.007626993414003399,
+          "maximum_top7_margin_shrink": 0.031798336685824324
+        },
+        "rms_held_centered_choice_shift": 0.24501368904182544,
+        "relative_tensor_frobenius": 0.0008123417522361855
+      },
+      {
+        "fold": 1,
+        "fit_receipt_sha256": "61bc459c55101788b6ee6dfe08b04155b122ad17cb417316590b9c7dd2d8f2e7",
+        "selected": true,
+        "held": {
+          "rotations": [
+            113,
+            112
+          ],
+          "all_four": [
+            15,
+            14
+          ],
+          "gains": 3,
+          "losses": 4
+        },
+        "held_ordinary": {
+          "states": 30,
+          "winner_changes_in_archived_top64": 0,
+          "maximum_parent_calibration_error": 2.8890590328956023e-06,
+          "rms_top7_margin_shift": 0.009148764486807206,
+          "maximum_top7_margin_shrink": 0.0441306422562775
+        },
+        "rms_held_centered_choice_shift": 0.1716655197120913,
+        "relative_tensor_frobenius": 0.0007241509131515262
+      },
+      {
+        "fold": 2,
+        "fit_receipt_sha256": "c749d1eb5c697f9dfb4a510b7de3362d8340d415975302288d941f9865067047",
+        "selected": true,
+        "held": {
+          "rotations": [
+            120,
+            123
+          ],
+          "all_four": [
+            15,
+            16
+          ],
+          "gains": 5,
+          "losses": 2
+        },
+        "held_ordinary": {
+          "states": 30,
+          "winner_changes_in_archived_top64": 0,
+          "maximum_parent_calibration_error": 0.0007440132612828165,
+          "rms_top7_margin_shift": 0.007212718664402368,
+          "maximum_top7_margin_shrink": 0.024220113929914078
+        },
+        "rms_held_centered_choice_shift": 0.17335167549852953,
+        "relative_tensor_frobenius": 0.0007341298498357154
+      }
+    ]
+  },
+  "arms": {
+    "output_only": {
+      "archived_top64_winner_changes": 0,
+      "rms_held_ordinary_top7_margin_shift": 0.010214315642431662,
+      "rms_held_centered_choice_shift": 0.10708814544090571,
+      "held_ordinary_margin_rms_ratio_vs_034": 1.2705374133574794,
+      "held_choice_rms_ratio_vs_034": 0.5364440068298264,
+      "held_choice_adjusted_margin_rms_ratio_vs_034": 2.368443671998233,
+      "eligible": false,
+      "pooled": {
+        "rotations": [
+          342,
+          346
+        ],
+        "all_four": [
+          46,
+          47
+        ],
+        "gains": 8,
+        "losses": 4
+      },
+      "subjects": {
+        "high_school_mathematics": {
+          "rotations": [
+            205,
+            206
+          ],
+          "all_four": [
+            32,
+            33
+          ],
+          "gains": 2,
+          "losses": 1
+        },
+        "college_mathematics": {
+          "rotations": [
+            137,
+            140
+          ],
+          "all_four": [
+            14,
+            14
+          ],
+          "gains": 6,
+          "losses": 3
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "fit_receipt_sha256": "5a8dc1a9a866caae5c42be152b158470455c3d5e46b6c5b2f39a00bfb52ffad4",
+          "selected": true,
+          "held": {
+            "rotations": [
+              109,
+              111
+            ],
+            "all_four": [
+              16,
+              17
+            ],
+            "gains": 2,
+            "losses": 0
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes_in_archived_top64": 0,
+            "maximum_parent_calibration_error": 2.414533810224384e-06,
+            "rms_top7_margin_shift": 0.005351440831073694,
+            "maximum_top7_margin_shrink": 0.01780361830333277
+          },
+          "rms_held_centered_choice_shift": 0.035494469249677404,
+          "relative_tensor_frobenius": 0.00012806922172958066
+        },
+        {
+          "fold": 1,
+          "fit_receipt_sha256": "3033332de30a585fb5b5d87aa6cfb4e99b79a8f3dde7e552ec23b09b66769690",
+          "selected": true,
+          "held": {
+            "rotations": [
+              113,
+              113
+            ],
+            "all_four": [
+              15,
+              14
+            ],
+            "gains": 2,
+            "losses": 2
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes_in_archived_top64": 0,
+            "maximum_parent_calibration_error": 2.8890590328956023e-06,
+            "rms_top7_margin_shift": 0.013475350195704873,
+            "maximum_top7_margin_shrink": 0.03822501625018049
+          },
+          "rms_held_centered_choice_shift": 0.12135824951889529,
+          "relative_tensor_frobenius": 0.0005422001705835343
+        },
+        {
+          "fold": 2,
+          "fit_receipt_sha256": "059297a7d2d9f71fca8df3e29b46734352860d3dfa9d64fd440c73302ac361a3",
+          "selected": true,
+          "held": {
+            "rotations": [
+              120,
+              122
+            ],
+            "all_four": [
+              15,
+              16
+            ],
+            "gains": 4,
+            "losses": 2
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes_in_archived_top64": 0,
+            "maximum_parent_calibration_error": 0.0007440132612828165,
+            "rms_top7_margin_shift": 0.01013773891281021,
+            "maximum_top7_margin_shrink": 0.037717766842433775
+          },
+          "rms_held_centered_choice_shift": 0.13570530795923563,
+          "relative_tensor_frobenius": 0.0005884429309746189
+        }
+      ]
+    },
+    "input_and_output": {
+      "archived_top64_winner_changes": 0,
+      "rms_held_ordinary_top7_margin_shift": 0.007394662658861035,
+      "rms_held_centered_choice_shift": 0.1752258627358801,
+      "held_ordinary_margin_rms_ratio_vs_034": 0.9198066611738055,
+      "held_choice_rms_ratio_vs_034": 0.8777709569928067,
+      "held_choice_adjusted_margin_rms_ratio_vs_034": 1.0478891490383901,
+      "eligible": false,
+      "pooled": {
+        "rotations": [
+          342,
+          348
+        ],
+        "all_four": [
+          46,
+          49
+        ],
+        "gains": 15,
+        "losses": 9
+      },
+      "subjects": {
+        "high_school_mathematics": {
+          "rotations": [
+            205,
+            205
+          ],
+          "all_four": [
+            32,
+            34
+          ],
+          "gains": 5,
+          "losses": 5
+        },
+        "college_mathematics": {
+          "rotations": [
+            137,
+            143
+          ],
+          "all_four": [
+            14,
+            15
+          ],
+          "gains": 10,
+          "losses": 4
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "fit_receipt_sha256": "5a41cfed387f83beb25d49903e46a5bbf1d0c599c3eae88dbf1d38d0291bb1b0",
+          "selected": true,
+          "held": {
+            "rotations": [
+              109,
+              114
+            ],
+            "all_four": [
+              16,
+              19
+            ],
+            "gains": 7,
+            "losses": 2
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes_in_archived_top64": 0,
+            "maximum_parent_calibration_error": 2.414533810224384e-06,
+            "rms_top7_margin_shift": 0.006973884367441087,
+            "maximum_top7_margin_shrink": 0.028633685449676705
+          },
+          "rms_held_centered_choice_shift": 0.18658980663747168,
+          "relative_tensor_frobenius": 0.0006865725619316196
+        },
+        {
+          "fold": 1,
+          "fit_receipt_sha256": "aaa86632ede72b0b8dc3c911ada73d7637a38de4e5826217ea99f8e5249446e9",
+          "selected": true,
+          "held": {
+            "rotations": [
+              113,
+              112
+            ],
+            "all_four": [
+              15,
+              14
+            ],
+            "gains": 3,
+            "losses": 4
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes_in_archived_top64": 0,
+            "maximum_parent_calibration_error": 2.8890590328956023e-06,
+            "rms_top7_margin_shift": 0.008815565069890183,
+            "maximum_top7_margin_shrink": 0.046902823066830024
+          },
+          "rms_held_centered_choice_shift": 0.16242468412830974,
+          "relative_tensor_frobenius": 0.000725273783053665
+        },
+        {
+          "fold": 2,
+          "fit_receipt_sha256": "b225743bf60cc8b97b52369f354b96db217b0f8a0965359de8a35e07a5ed9d61",
+          "selected": true,
+          "held": {
+            "rotations": [
+              120,
+              122
+            ],
+            "all_four": [
+              15,
+              16
+            ],
+            "gains": 5,
+            "losses": 3
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes_in_archived_top64": 0,
+            "maximum_parent_calibration_error": 0.0007440132612828165,
+            "rms_top7_margin_shift": 0.006139532298404675,
+            "maximum_top7_margin_shrink": 0.019685762806147977
+          },
+          "rms_held_centered_choice_shift": 0.1758259791936624,
+          "relative_tensor_frobenius": 0.000776463027082181
+        }
+      ]
+    }
+  },
+  "all_fits_frozen_before_held": true,
+  "reused_authored_folds": true,
+  "protected_acceptance_data_used": false,
+  "full_vocabulary_native_checks_run": false,
+  "gpu_used": false,
+  "checkpoint_written": false
+}

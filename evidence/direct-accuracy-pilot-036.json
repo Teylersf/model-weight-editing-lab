@@ -1,0 +1,466 @@
+{
+  "schema": "direct-accuracy-pilot-036-v1",
+  "pilot": 36,
+  "status": "saved_preview_and_physical_replay_pass",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "parent_readback_receipt_sha256": "ed1da5e3427ec6fbbee895f915eaecb225ea157754ce8383e80457052ca39058",
+  "parent_head_sha256": "a88fc5a0ab6c96f69fce68d9d5a3ade7860defdefd46de152e17573d7ce75098",
+  "retained_D63_sha256": "0c98f90b2c64baa071ada49e9db216040932261a54d791c8656deb07c637d97a",
+  "retained_finish_row_sha256": "1a0b71b37341e4c72ca36dc4ea1c3f22cd90d4967c0d988a7b5b8a34013681c2",
+  "authored_math": {
+    "source_pilot": 28,
+    "problems": 144,
+    "rotations": 576,
+    "families": 18,
+    "train_rotations_per_fold": 384,
+    "held_rotations_per_fold": 192,
+    "corpus_manifest_sha256": "40c54e3c36d11ed50197d59ff446808654ac5a131683f0df2f89c9b4c620c122",
+    "independent_key_audit_sha256": "489afde665fc9ed6f2a6c95f8e0137f3fc5538b1a891cde8a8ac8ffd8ddaeb65",
+    "baseline_sha256": "c12451d59c7fa134343ee88ce1e51b37a162e8c830b0eb239e143cdde63e4300",
+    "terminal_capture_sha256": "6920b54ed626630e22ff651d79d5bbec2ea9e8ec37947aeff54e5e43076e357a",
+    "q8_boundary_corrections": 4
+  },
+  "authored_ordinary": {
+    "source_pilot": 34,
+    "reviewed_natural_trajectories": 9,
+    "states": 90,
+    "whole_trajectories_per_fold": 3,
+    "train_states_per_fold": 60,
+    "held_states_per_fold": 30,
+    "terminal_capture_sha256": "5a2bd762c194438513794fb22380621b306e4ba16af7f1a12a7c736f478fa81b",
+    "visible_review_sha256": "32faa63b4d834cbc3b3ea6fdc0035a82f2278f8d6a8a178524827afcda455480",
+    "trajectory_split_design_sha256": "c6b91a090db16d8757e2c9e5007de1885c8542bc7f0014754e10aa4e736fdc68",
+    "q8_boundary_corrections": 1,
+    "maximum_q8_anchor_error": 1.2370364856906235e-06
+  },
+  "method": "Fit one-code changes in A, C and D only to wrong training rotations from items the parent solved in at least two orders. Penalize math and ordinary logit drift. Preserve prior-correct math choices and ordinary full-vocabulary winners with signed score constraints and native top64 anchors.",
+  "grouped_cpu": {
+    "source_sha256": "c0e8d9d434a87427a0a54d7a7ee0c261692d378012f24c338c213a277be17347",
+    "plan_sha256": "94ba553fb0ecaaf023ad5f353c894c08f447a285af39fc4e98b0f9b18603c979",
+    "report_sha256": "eaddb7c9ab49b7c19ec4d8fdd1769b249be1eb8853520095c47106d92460a05a",
+    "exploratory": true,
+    "all_folds_frozen_before_held_scoring": true,
+    "passed_exploratory_transfer": true,
+    "held_math": {
+      "problems": 144,
+      "rotations": 576,
+      "correct_rotations_parent_candidate": [
+        342,
+        344
+      ],
+      "all_four_parent_candidate": [
+        46,
+        47
+      ],
+      "rotation_gains": 5,
+      "rotation_losses": 3,
+      "all_four_gains": 2,
+      "all_four_losses": 1
+    },
+    "subjects": {
+      "high_school_mathematics": {
+        "problems": 80,
+        "rotations": 320,
+        "correct_rotations_parent_candidate": [
+          205,
+          206
+        ],
+        "all_four_parent_candidate": [
+          32,
+          33
+        ],
+        "rotation_gains": 1,
+        "rotation_losses": 0,
+        "all_four_gains": 1,
+        "all_four_losses": 0
+      },
+      "college_mathematics": {
+        "problems": 64,
+        "rotations": 256,
+        "correct_rotations_parent_candidate": [
+          137,
+          138
+        ],
+        "all_four_parent_candidate": [
+          14,
+          14
+        ],
+        "rotation_gains": 4,
+        "rotation_losses": 3,
+        "all_four_gains": 1,
+        "all_four_losses": 1
+      }
+    },
+    "held_ordinary_states": 90,
+    "held_ordinary_winner_changes": 0,
+    "folds": [
+      {
+        "held_fold": 0,
+        "fit_receipt_sha256": "82a4ffcc30dd5a1e6fbdd6e8f2352d85ecbbe8b4b20f40024c3fccb3cdfb2c92",
+        "rows": [
+          {
+            "token_id": 357,
+            "packed_candidate_sha256": "7f78a61b16f032eb4e001a45d340a02b909858432c57a6d72c1882e3601bf4e0",
+            "nibbles_changed": 1
+          },
+          {
+            "token_id": 417,
+            "packed_candidate_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "nibbles_changed": 0
+          },
+          {
+            "token_id": 351,
+            "packed_candidate_sha256": "9f54422d3cb77196f99ffc5e5953df68ec2ef340e6162b9537eb2ac9af483025",
+            "nibbles_changed": 3
+          },
+          {
+            "token_id": 414,
+            "packed_candidate_sha256": "68d895e6b16f5a5df46927d2a8a591339eaff568317535b34d54f12b68efd65d",
+            "nibbles_changed": 6
+          }
+        ],
+        "training_target_problems": 43,
+        "training_target_rotations": 67,
+        "signed_constraints": 1811,
+        "prior_correct_training_winners_preserved": 233,
+        "minimum_signed_slack": 0.00014266315847635824,
+        "training_ordinary": {
+          "states": 60,
+          "winner_changes": 0,
+          "edited_logit_rms": 0.02929079428698009,
+          "maximum_edited_logit_absolute_drift": 0.11147591476037633
+        },
+        "held_ordinary": {
+          "states": 30,
+          "winner_changes": 0,
+          "edited_logit_rms": 0.023687294037111797,
+          "maximum_edited_logit_absolute_drift": 0.08544918538427737
+        },
+        "held_math": {
+          "problems": 48,
+          "rotations": 192,
+          "correct_rotations_parent_candidate": [
+            109,
+            111
+          ],
+          "all_four_parent_candidate": [
+            16,
+            17
+          ],
+          "rotation_gains": 2,
+          "rotation_losses": 0,
+          "all_four_gains": 1,
+          "all_four_losses": 0
+        }
+      },
+      {
+        "held_fold": 1,
+        "fit_receipt_sha256": "13aa078990b55faa0d57a8a938cecedbfa496ea2998b6f16293a4f0b30a3ed31",
+        "rows": [
+          {
+            "token_id": 357,
+            "packed_candidate_sha256": "d4920b9629bde8fe7fa6fe89f0297550ff8427b811dddffb9c3429351c64b633",
+            "nibbles_changed": 3
+          },
+          {
+            "token_id": 417,
+            "packed_candidate_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "nibbles_changed": 0
+          },
+          {
+            "token_id": 351,
+            "packed_candidate_sha256": "c38b6fe302676d735f94c7860f792f7522be63f11c9f8aee2780bc9a62129728",
+            "nibbles_changed": 1
+          },
+          {
+            "token_id": 414,
+            "packed_candidate_sha256": "c596b749046377a2dbec3d4509347ed0378bc4182838fd0719c9cd891e2c2b77",
+            "nibbles_changed": 5
+          }
+        ],
+        "training_target_problems": 40,
+        "training_target_rotations": 64,
+        "signed_constraints": 1783,
+        "prior_correct_training_winners_preserved": 229,
+        "minimum_signed_slack": 0.0001828489344916362,
+        "training_ordinary": {
+          "states": 60,
+          "winner_changes": 0,
+          "edited_logit_rms": 0.03272975877352787,
+          "maximum_edited_logit_absolute_drift": 0.10802523753955029
+        },
+        "held_ordinary": {
+          "states": 30,
+          "winner_changes": 0,
+          "edited_logit_rms": 0.03377655880861817,
+          "maximum_edited_logit_absolute_drift": 0.11750054452568293
+        },
+        "held_math": {
+          "problems": 48,
+          "rotations": 192,
+          "correct_rotations_parent_candidate": [
+            113,
+            111
+          ],
+          "all_four_parent_candidate": [
+            15,
+            14
+          ],
+          "rotation_gains": 0,
+          "rotation_losses": 2,
+          "all_four_gains": 0,
+          "all_four_losses": 1
+        }
+      },
+      {
+        "held_fold": 2,
+        "fit_receipt_sha256": "9c7d285af440463549148cc60bcc3f2538c9a719bc6bb23aa20f3e6bcd9aee4c",
+        "rows": [
+          {
+            "token_id": 357,
+            "packed_candidate_sha256": "e7d21608616322c93ebfac5ace08be299d949dd35f257b9eaa000fc520fcecc9",
+            "nibbles_changed": 4
+          },
+          {
+            "token_id": 417,
+            "packed_candidate_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "nibbles_changed": 0
+          },
+          {
+            "token_id": 351,
+            "packed_candidate_sha256": "38bda92ecf737b437035e36970ab4029af3a751e588692bdbd2737aef3cbff71",
+            "nibbles_changed": 8
+          },
+          {
+            "token_id": 414,
+            "packed_candidate_sha256": "e28856cde34e81e0e3e629431c0989265339a6e8835e724348c55985bbc3bcd0",
+            "nibbles_changed": 12
+          }
+        ],
+        "training_target_problems": 37,
+        "training_target_rotations": 59,
+        "signed_constraints": 1734,
+        "prior_correct_training_winners_preserved": 222,
+        "minimum_signed_slack": 0.0010518866562051685,
+        "training_ordinary": {
+          "states": 60,
+          "winner_changes": 0,
+          "edited_logit_rms": 0.059430214607182306,
+          "maximum_edited_logit_absolute_drift": 0.19171837336034514
+        },
+        "held_ordinary": {
+          "states": 30,
+          "winner_changes": 0,
+          "edited_logit_rms": 0.06213065332940857,
+          "maximum_edited_logit_absolute_drift": 0.20911236639949493
+        },
+        "held_math": {
+          "problems": 48,
+          "rotations": 192,
+          "correct_rotations_parent_candidate": [
+            120,
+            122
+          ],
+          "all_four_parent_candidate": [
+            15,
+            16
+          ],
+          "rotation_gains": 3,
+          "rotation_losses": 1,
+          "all_four_gains": 1,
+          "all_four_losses": 0
+        }
+      }
+    ]
+  },
+  "final_cpu": {
+    "source_sha256": "8da92916f017add90d65aee897a2a304c810c93b453cc55c9dff4670b221a8c1",
+    "plan_sha256": "fa4ff58b255a27cf5e5722bab084b3098be973e1527293e1a8b83ef881cf42ec",
+    "fit_receipt_sha256": "b59e0c9aafcf32ebc65b02a523491ee7dac33d2babcceb5cfdc9f997264be18b",
+    "selected_fit": "default",
+    "bounded_prefix_fallback_used": false,
+    "all_authorized_states_used_for_fitting": true,
+    "passed": true,
+    "both_authored_measures_improved": true,
+    "authored_math": {
+      "problems": 144,
+      "rotations": 576,
+      "correct_rotations_parent_candidate": [
+        342,
+        350
+      ],
+      "all_four_parent_candidate": [
+        46,
+        48
+      ],
+      "rotation_gains": 8,
+      "rotation_losses": 0,
+      "all_four_gains": 2,
+      "all_four_losses": 0
+    },
+    "subjects": {
+      "high_school_mathematics": {
+        "problems": 80,
+        "rotations": 320,
+        "correct_rotations_parent_candidate": [
+          205,
+          207
+        ],
+        "all_four_parent_candidate": [
+          32,
+          34
+        ],
+        "rotation_gains": 2,
+        "rotation_losses": 0,
+        "all_four_gains": 2,
+        "all_four_losses": 0
+      },
+      "college_mathematics": {
+        "problems": 64,
+        "rotations": 256,
+        "correct_rotations_parent_candidate": [
+          137,
+          143
+        ],
+        "all_four_parent_candidate": [
+          14,
+          14
+        ],
+        "rotation_gains": 6,
+        "rotation_losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    },
+    "authored_ordinary": {
+      "states": 90,
+      "winner_changes": 0,
+      "edited_logit_rms": 0.03930407377894085,
+      "maximum_edited_logit_absolute_drift": 0.1677749929131096
+    },
+    "signed_constraints": 2664,
+    "minimum_signed_slack": 4.056755060447004e-05,
+    "prior_correct_authored_winners_preserved": 342,
+    "prior_correct_math_full_winner_losses": 0,
+    "expected_proposed_head_sha256": "281442d191603b74ee406c9363844bf8017e12c04a015a4ea0f0d59c64192584",
+    "independent_packed_readback_passed": true,
+    "q4k_block_metadata_unchanged": true,
+    "rows": [
+      {
+        "letter": "A",
+        "token_id": 357,
+        "offset": 12024800,
+        "bytes": 2880,
+        "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+        "sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+        "nibbles_changed": 0,
+        "max_abs_code_delta": 0
+      },
+      {
+        "letter": "B",
+        "token_id": 417,
+        "offset": 12197600,
+        "bytes": 2880,
+        "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+        "sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+        "nibbles_changed": 0,
+        "max_abs_code_delta": 0
+      },
+      {
+        "letter": "C",
+        "token_id": 351,
+        "offset": 12007520,
+        "bytes": 2880,
+        "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+        "sha256": "2946771817a7bfc8b3329c34b5e85237afdb94ecb960741785377ee0cb85d4fc",
+        "nibbles_changed": 2,
+        "max_abs_code_delta": 1
+      },
+      {
+        "letter": "D",
+        "token_id": 414,
+        "offset": 12188960,
+        "bytes": 2880,
+        "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+        "sha256": "35bd8afc15cc5a522533621b4f11ac9b73f6632467da64d61fdf2ebac7c69302",
+        "nibbles_changed": 14,
+        "max_abs_code_delta": 1
+      }
+    ]
+  },
+  "native_stages": {
+    "cuda_preview": "pass",
+    "checkpoint_materialization": "pass",
+    "physical_replay": "pass",
+    "exact_proofs_and_cylinder": "pending",
+    "matched_mmlu": "pending",
+    "blinded_fresh": "pending"
+  },
+  "scope": "The held scores are exploratory CPU replay on reused authored families. Ordinary winner checks cover the sampled authored states. Final CPU scores use the full fitting cohort.",
+  "accepted_proof_cylinder_official_fresh_029_guard_only_and_transfer_inputs_excluded": true,
+  "checkpoint_written_by_cpu_fit": false,
+  "gpu_used_for_cpu_fit": false,
+  "native_preview": {
+    "receipt_sha256": "f277b76d079ecb9f6e9a370bd410c603ef8dd8deef0ccf17fbc1d880fa0dfa99",
+    "correct_rotations": [
+      342,
+      350
+    ],
+    "all_four": [
+      46,
+      48
+    ],
+    "gains": 8,
+    "losses": 0,
+    "unchanged_vocab_logits_and_r_h_bit_exact": true,
+    "ordinary_full_winners_exact": 90,
+    "changed_token_ids": [
+      351,
+      414
+    ]
+  },
+  "stored_replay": {
+    "readback_receipt_sha256": "3b87642adc38c18cbe6f22403e6857fb1bcaaa0598cafd0394c9b6400d5dcca1",
+    "physical_replay_receipt_sha256": "cdc56aad04b1bc4839c3bd66da05ab4b5e493237bb8c9727a9cd247ac7002d0f",
+    "candidate_sha256": "46c58d165a5788b6746008e82ad8883dbd6a2d5b62c2abb5ff3ab2bee79e38ba",
+    "bytes": 11674147744,
+    "changed_bytes": 16,
+    "changed_token_ids": [
+      351,
+      414
+    ],
+    "outside_rows_identical": true,
+    "protected_A_B_and_D63_and_finish_preserved": true,
+    "head_sha256": "281442d191603b74ee406c9363844bf8017e12c04a015a4ea0f0d59c64192584",
+    "exact_choice_states": 576,
+    "exact_ordinary_states": 90,
+    "exact_all_logits_and_r_h": true,
+    "public_replay_reproduced_full_sha256": true,
+    "batches": [
+      {
+        "dataset": "choice",
+        "states": 192,
+        "overlay": "9f57bf5c84ba698f26cb297bfb78a06e5603541231208853134a0b6adf4b88ee",
+        "physical": "1ddf16623498c2fda3aee58dc32a12ef0cb30822e9e1c577533ff6b9f8ae1e0c"
+      },
+      {
+        "dataset": "choice",
+        "states": 192,
+        "overlay": "ad8775c92513661fff0060ff69420637c570d94f49a41219f160857a518c1183",
+        "physical": "3f96a19c0a2bb8d6b67688f9c6fc720a8d48157131075ba261d546dbcd719f5a"
+      },
+      {
+        "dataset": "choice",
+        "states": 192,
+        "overlay": "dba5a77455a650d8f0a226a3b57db697f2e2f3911249f1338e29d2eb22c0059b",
+        "physical": "cf0f1ecc661ea3c7cabea97d6b7f5957a467613eeac527c25c6b97ccc360f0ae"
+      },
+      {
+        "dataset": "ordinary",
+        "states": 90,
+        "overlay": "1467d783c5aa94e3bfdb0c071226afd56836a43cc9dc15daad2d20d847786e7b",
+        "physical": "b854c488b2b394b773d4446d81d3d4d68056147d3d735a91117ce47b32acfa5e"
+      }
+    ]
+  }
+}
