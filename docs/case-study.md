@@ -461,3 +461,11 @@ Readback verified 1,777 changed bytes in the same output row. The native preview
 Euler replayed exactly. The interval proof diverged at index 1218 and produced the same capped stream as Pilot 019, with no visible proof. The exact proof gate stopped the experiment before MMLU and fresh evaluation. [Proof receipts](../evidence/direct-closure-pilot-020.json)
 
 Run `python examples/replay_output_row_edit.py --pilot 20 --parent PATH_TO_PARENT.gguf` to verify the checkpoint digest. [Patch data](../evidence/direct-closure-pilot-020-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)
+
+## Twenty-first pilot with a four-row output edit
+
+Pilot 021 increased the closing score and reduced three competing token scores using the same 3,563 development guard states. The saved GGUF changed 3,204 bytes across four `output.weight` rows. At the cylinder prefix, the captured hidden states and 248,316 other logits matched exactly, and the closing token led by **0.368 logits**. The correct cylinder answer took **282 versus 486 tokens** and **6.50 versus 10.55 seconds** to decode. The five other correct development outputs matched exactly. [Fit, readback, and generation evidence](../evidence/direct-closure-pilot-021.json)
+
+The interval proof replayed exactly. Euler ended naturally and gave the requested exact solution. Independent symbolic substitution verified the equation and both initial conditions. Its visible answer was shorter, and its token stream diverged at index 53. The parent chose token `6558` (` Let`), whose output row was edited. The pilot chose token `1061` (` This`), whose row was unchanged. With identical prefixes and only output rows edited, that change identifies the local source of this divergence. The exact proof gate stopped the experiment before matched MMLU and fresh evaluation. [Proof receipts](../evidence/direct-closure-pilot-021.json)
+
+Run `python examples/replay_output_row_edit.py --pilot 21 --parent PATH_TO_PARENT.gguf` to verify the checkpoint digest. [Patch data](../evidence/direct-closure-pilot-021-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)

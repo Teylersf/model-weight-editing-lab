@@ -1,0 +1,479 @@
+{
+  "schema": "windows-direct-closure-output-multirow-pilot-v1",
+  "pilot": 21,
+  "status": "SCREENED_OUT_AT_EULER_EXACT_PROOF_GATE",
+  "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+  "candidate_sha256": "7ec6ef776da3eef61c76ca668f138ff658e07222adc7cb1066b5b60bf81b3b35",
+  "saved_checkpoint_bytes": 11674147744,
+  "fit": {
+    "manifest_sha256": "e1ad1d530eab41710ae2a67ac613fb49c90c5529744961eba04ee0d168092723",
+    "fitter_sha256": "a26f78e15dd659031fcca8ca4ec58b9906dc54c646f9f213880d4dd6e0241416",
+    "algorithm": "Constrained packed Q4_K code edits increased the closing-token logit and decreased its three strongest parent rivals at one development position.",
+    "selected_position": 164,
+    "guard_constraints": 3563,
+    "capture_receipt_sha256": [
+      "c56e54d8f9270182f558391f9428c4522fefd1537cf22e7a98b34515ff4eb0dd",
+      "9be4c9a241219baf93a055e23f33f1f1d6eb517bbf595e1b573afe9b92371c72",
+      "12099e08188cc36623ef122748734b22222c41c81ba7317910fdbc42d660b3aa",
+      "cc61b8643f4c55ac2cec3d5ca97145ec56d80e05874da347235040fbaf91205f",
+      "9ac6952ef08c12a6d4204729ee322e8930a29e48c4a7a016ae17cf85f907d7ee",
+      "f9bb54742c66c94e4025181e98c488aecaa7f1917cd6544ccdd23d92113a0afa"
+    ],
+    "historical_proof_activations_used": false,
+    "benchmark_or_fresh_evaluation_used": false,
+    "desired_cpu_target_margin": 0.35,
+    "predicted_target_margin": 0.3681281418830622,
+    "maximum_allowed_nibble_delta": 4,
+    "per_row": [
+      {
+        "token_id": 248069,
+        "target_logit_change": 3.612516231929476,
+        "row_relative_l2_change": 0.24962362177383293,
+        "changed_nibbles": 2320,
+        "maximum_absolute_nibble_change": 4,
+        "minimum_independent_signed_or_box_slack": 1.3902201317250729e-05,
+        "guard_rms": 0.2434662999383204,
+        "guard_p95": 0.4913490811610245,
+        "guard_maximum": 0.7076795704051619
+      },
+      {
+        "token_id": 6558,
+        "target_logit_change": -2.2474808827319066,
+        "row_relative_l2_change": 0.14734694741054682,
+        "changed_nibbles": 594,
+        "maximum_absolute_nibble_change": 4,
+        "minimum_independent_signed_or_box_slack": 0.0003951130056520924,
+        "guard_rms": 0.14707663880388136,
+        "guard_p95": 0.29815771544381275,
+        "guard_maximum": 0.49286494979605777
+      },
+      {
+        "token_id": 22746,
+        "target_logit_change": -1.8885269006132148,
+        "row_relative_l2_change": 0.11053483989482712,
+        "changed_nibbles": 501,
+        "maximum_absolute_nibble_change": 3,
+        "minimum_independent_signed_or_box_slack": 0.0005336929170880467,
+        "guard_rms": 0.11787916581112504,
+        "guard_p95": 0.22779225080885218,
+        "guard_maximum": 0.4264674628248031
+      },
+      {
+        "token_id": 4044,
+        "target_logit_change": -1.817427203299303,
+        "row_relative_l2_change": 0.11285222660638611,
+        "changed_nibbles": 398,
+        "maximum_absolute_nibble_change": 3,
+        "minimum_independent_signed_or_box_slack": 2.3819549824111164e-05,
+        "guard_rms": 0.14627322319344213,
+        "guard_p95": 0.2937532064759578,
+        "guard_maximum": 0.46347785176476464
+      }
+    ],
+    "guard_limits": {
+      "closing_row_auxiliary_envelope": 3,
+      "closing_row_prior_general_absolute_cap": 0.74,
+      "closing_row_long_general_absolute_cap": 0.32,
+      "closing_row_short_teacher_neighbor_absolute_cap": 0.1,
+      "closing_row_long_teacher_neighbor_absolute_cap": 0.1,
+      "closing_row_designated_absolute_cap": 0.055,
+      "closing_row_long_near_tie_absolute_cap": 0.028,
+      "long_near_tie_parent_closing_token_margin_below": 0.2,
+      "closing_row_long_terminal_eog_absolute_cap_before_asymmetry": 0.06,
+      "closing_row_lower_floor_at_long_terminal_eog_native_eog_winners": -0.075,
+      "closing_row_upper_cap_at_long_terminal_eog_native_eog_winners": 0.06,
+      "closing_row_search_inner_padding": 0.004,
+      "selected_native_close_winner_state_count": 15,
+      "selected_native_close_winner_shift_bounds": [
+        0.0,
+        0.02
+      ],
+      "observed_selected_native_close_winner_shift_range": [
+        0.0008506621088599786,
+        0.01978396935010096
+      ],
+      "competitor_rows_auxiliary_envelope": 0,
+      "competitor_rows_prior_general_absolute_cap": 0.5,
+      "competitor_rows_long_general_absolute_cap": 0.31,
+      "competitor_rows_designated_absolute_cap": 0.075,
+      "competitor_rows_teacher_neighbor_absolute_cap": 0.12,
+      "competitor_rows_long_near_tie_absolute_cap": 0.05,
+      "competitor_rows_long_terminal_eog_absolute_cap": 0.065,
+      "winner_drop_budget_cap_close": 0.035,
+      "winner_drop_budget_cap_competitor": 0.05,
+      "winner_drop_budget_parent_runner_gap_fraction": 0.25,
+      "winner_margin_reserve_cap": 0.015,
+      "winner_margin_reserve_parent_runner_gap_fraction": 0.25,
+      "scope": "Role caps and the one-sided terminal exception were combined with the signed winner bounds. The long near-tie cap applies where the parent closing token trailed the winner by less than 0.2 logits or led its runner-up by less than 0.2 logits."
+    },
+    "joint_full_vocabulary_guard": {
+      "states": 3563,
+      "minimum_reserved_winner_slack": 0.0008955001831054688,
+      "minimum_full_vocab_winner_margin": 0.001194000244140625,
+      "exact_baseline_ties": 0
+    },
+    "omitted_edited_rows_bounded_by_native_top64_floor": {
+      "248069": 0,
+      "6558": 3382,
+      "22746": 3482,
+      "4044": 3530
+    }
+  },
+  "forced_proof_controls": {
+    "short": {
+      "teacher_pack_sha256": "dddb1e1730e3028ed83c848da75d3ee3179bfcaf06d5bc360488a31b3855884a",
+      "development_pack_sha256": "edfcace000aaa6dd8a09a97031e162f01873c3107c07996f6c3e3473e58b729e",
+      "capture_plan_sha256": "fc78791080ed5acdce77f1f03f78ec3a241fc62d225b11f6f97f19e96ba6305a",
+      "native_capture_sha256": "9ac6952ef08c12a6d4204729ee322e8930a29e48c4a7a016ae17cf85f907d7ee",
+      "capture_source_sha256": "e9baa4190b0e0046cabc9c3c114ad4d4824581a4f4e38201942a5445888e4921",
+      "hidden_sha256": "0a4bd1766db01b73c4eeea2799f1ee28f01d15ff900fc21a168d84ad177280c4",
+      "states_sha256": "951a57eb2ec1c92d1517e4ae33c2ae1b409222231a9150e8f8085600201c4dc5",
+      "forced_teacher_paths": true,
+      "states": 200,
+      "teacher_native_winner_mismatches": 74,
+      "designated_closes": 8,
+      "near_close_states": 128,
+      "other_native_close_winners": 3
+    },
+    "long": {
+      "teacher_pack_sha256": "0f59394eda281d92590ce9fe597396d82d118a30fcb6db910c80cab8279250f4",
+      "capture_plan_sha256": "31294e6fc7100482932ae3c209d61da98dc4aa39408b86235bd0439c0a0aa641",
+      "native_capture_sha256": "f9bb54742c66c94e4025181e98c488aecaa7f1917cd6544ccdd23d92113a0afa",
+      "h_sha256": "91e2f072617d3f3a52d119b6dea23d885c324c8e5d940e75e0d81f1c649f3b01",
+      "states_sha256": "bbe26aa6831f63a8aab44d06b946b58b306eb098df704ea64658a5ce2547fa1d",
+      "states": 172,
+      "forced_paths": true,
+      "native_vs_teacher_winner_mismatches": 52,
+      "reasoning_tokens": [
+        1118,
+        1215,
+        1170,
+        1140
+      ],
+      "role_counts": {
+        "native_designated_close": 4,
+        "near_after_close": 48,
+        "near_before_close": 48,
+        "other_native_close": 2,
+        "reasoning_context": 54,
+        "terminal_eog": 4,
+        "visible_context": 12
+      }
+    },
+    "scope": "Authored proof continuations supplied fixed development contexts. Signed constraints used the native winners on those contexts."
+  },
+  "saved_edit": {
+    "materializer_receipt_sha256": "79d7510f44a1bded6a1948be945b2c36741236a9e6a88bf037005e12c0cad439",
+    "materializer_sha256": "791d00d5b063040f414bbfc6b18f74e7755795709a51d9b97a7b0a9c2873cdd4",
+    "tensor": {
+      "offset": 10996640,
+      "bytes": 715161600,
+      "dimensions": [
+        5120,
+        248320,
+        1,
+        1
+      ],
+      "type": 12
+    },
+    "rows": [
+      {
+        "tensor": "output.weight",
+        "token_id": 4044,
+        "offset": 22643360,
+        "bytes": 2880,
+        "parent_sha256": "12dd9d112e0d57a915ae1e33917d8b642074b044cfab65b238dca2b3dbb3b490",
+        "sha256": "9d989933ef5407627acea8cb04ef423357902bc6ce353d647e3206430dda9671",
+        "changed_nibbles": 398,
+        "maximum_absolute_nibble_change": 3,
+        "changed_bytes": 383
+      },
+      {
+        "tensor": "output.weight",
+        "token_id": 6558,
+        "offset": 29883680,
+        "bytes": 2880,
+        "parent_sha256": "ffe9b54062e89f8adda6ab7336d97abd42f0948ed8f68aaccac5005ab834ff78",
+        "sha256": "b3f5ed7db80d0ba7012312892f49c1fb26b54d9f3965a76dc8066add8f7c36fb",
+        "changed_nibbles": 594,
+        "maximum_absolute_nibble_change": 4,
+        "changed_bytes": 551
+      },
+      {
+        "tensor": "output.weight",
+        "token_id": 22746,
+        "offset": 76505120,
+        "bytes": 2880,
+        "parent_sha256": "c409dbe4e9a577ac77879435e52108a171814a1622298aec6e526f509cae1b09",
+        "sha256": "bc1c735cf2efbf1fbcc7553aaf348e0005379576bf401dc6b8ad1cb3895932d7",
+        "changed_nibbles": 501,
+        "maximum_absolute_nibble_change": 3,
+        "changed_bytes": 475
+      },
+      {
+        "tensor": "output.weight",
+        "token_id": 248069,
+        "offset": 725435360,
+        "bytes": 2880,
+        "parent_sha256": "27c3ea68e059eecd56c9806ce59ab6db134f52c03d5f1ebaf8692c8cb31a4f40",
+        "sha256": "e5d0fccd02d7bb5cc2c053b4029fab780c8e9f88c03166ba7ab055b33ac8d765",
+        "changed_nibbles": 2320,
+        "maximum_absolute_nibble_change": 4,
+        "changed_bytes": 1795
+      }
+    ],
+    "complement_spans": [
+      {
+        "offset": 0,
+        "bytes": 22643360,
+        "sha256": "718c4de244e261c753aae1d4d9baf1cae7ab550adf8403856bcf0f4d7fab1e87"
+      },
+      {
+        "offset": 22646240,
+        "bytes": 7237440,
+        "sha256": "f10c3026d27025a6f92a2e09fb24218c1afb34d539cec2ebc76a2cde47d23b2b"
+      },
+      {
+        "offset": 29886560,
+        "bytes": 46618560,
+        "sha256": "778ccf471101af1386804811e2a455231f59954e4e50d0509686507b1a0c583a"
+      },
+      {
+        "offset": 76508000,
+        "bytes": 648927360,
+        "sha256": "1ec56384e04500489fa2bc6c04a1f12148b618be501848c205a5436560494af7"
+      },
+      {
+        "offset": 725438240,
+        "bytes": 10948709504,
+        "sha256": "e8ecc8a3df6db185f285a83e5630133e927dc5addbe70a54e3addba6b8c266fb"
+      }
+    ],
+    "exact_bytes_outside_rows": true,
+    "fixed_q4k_block_metadata": true,
+    "protected_choice_rows_byte_identical": true,
+    "protected_choice_token_ids": [
+      357,
+      417,
+      351,
+      414
+    ]
+  },
+  "native_fixed_prefix": {
+    "receipt_sha256": "cd7c189a6c0f067b9db656c7dac52b6e041c1ba1f5418a2b6396a5c845278543",
+    "script_sha256": "b47b9e3d01eae53b249c28174e4af3a3d1b7fb9331e2871d7ccd0ab362847279",
+    "parent_suffix_receipt_sha256": "1f25ca1967855ee23f6716a94cd43d54a339985396875908c565c5b075768662",
+    "candidate_suffix_receipt_sha256": "54c007dfebd3400b3ff40ad52c186e5aa13d0b2b8c65f380915b360abd3cd8a9",
+    "exact_hidden_states": true,
+    "exact_other_token_logits": 248316,
+    "exact_benchmark_choice_logits": 4,
+    "edited_logits": [
+      {
+        "token_id": 4044,
+        "before": 23.180431365966797,
+        "after": 21.363004684448242,
+        "exact_binary32": false
+      },
+      {
+        "token_id": 6558,
+        "before": 23.61049461364746,
+        "after": 21.363014221191406,
+        "exact_binary32": false
+      },
+      {
+        "token_id": 22746,
+        "before": 23.251209259033203,
+        "after": 21.362680435180664,
+        "exact_binary32": false
+      },
+      {
+        "token_id": 248069,
+        "before": 18.11862564086914,
+        "after": 21.73114013671875,
+        "exact_binary32": false
+      }
+    ],
+    "close_margin_before": -5.49186897277832,
+    "close_margin_after": 0.36812591552734375,
+    "native_margin_floor": 0.3
+  },
+  "development": {
+    "comparison_sha256": "4f97b419e5a572f3992638145660b6022fa511478b15cd6f6f044eeb378a5e26",
+    "parent_generation_receipt_sha256": "f68f653fedf7a9aefe78698a455a314e95706d53a51e6946727adeffaf2a4718",
+    "candidate_generation_receipt_sha256": "f96452a96e266d27787af1e55f6ab0bff93f2ba1c3c9e1aac4c2802becaccf71",
+    "matched_prompt_tokens": true,
+    "independent_math_review": "A separate reviewer checked all six visible solutions, exact prompt identity, and natural endings.",
+    "candidate_complete_correct": 6,
+    "candidate_natural_eog": 6,
+    "exact_non_target_outputs": 5,
+    "target_parent_tokens": 486,
+    "target_candidate_tokens": 282,
+    "target_token_reduction": 0.41975308641975306,
+    "target_parent_decode_seconds": 10.5525325,
+    "target_candidate_decode_seconds": 6.4984778,
+    "parent_total_tokens": 2978,
+    "candidate_total_tokens": 2774,
+    "parent_total_decode_seconds": 64.7788898,
+    "candidate_total_decode_seconds": 63.740906700000004,
+    "cases": [
+      {
+        "id": "exact-plane-distance",
+        "parent": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 9.9358455
+        },
+        "candidate": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 10.4818385
+        },
+        "common_token_prefix": 458,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-mod-four-probability",
+        "parent": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 13.806640100000001
+        },
+        "candidate": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 14.5001432
+        },
+        "common_token_prefix": 634,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-arctan-integral",
+        "parent": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 9.608276400000001
+        },
+        "candidate": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 10.1779376
+        },
+        "common_token_prefix": 443,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "round-cylinder-volume",
+        "parent": {
+          "tokens": 486,
+          "think_close_index": 355,
+          "natural_eog": true,
+          "decode_seconds": 10.5525325
+        },
+        "candidate": {
+          "tokens": 282,
+          "think_close_index": 164,
+          "natural_eog": true,
+          "decode_seconds": 6.4984778
+        },
+        "common_token_prefix": 164,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "round-geometric-count",
+        "parent": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 16.3836349
+        },
+        "candidate": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 17.3520608
+        },
+        "common_token_prefix": 751,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-terminating-decimal",
+        "parent": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.4919604
+        },
+        "candidate": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.7304488000000005
+        },
+        "common_token_prefix": 206,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      }
+    ]
+  },
+  "critical_proofs": {
+    "status": "FAILED_EXACT_REPLAY_GATE",
+    "generation_receipt_sha256": "859feab0d3e894664ebddefa8f61e43056231f8dcee4e341d73badc6e793cbc1",
+    "exact_prompt_bytes_and_token_ids": true,
+    "exact_proofs": 1,
+    "independent_mathematical_grade_status": "BOTH_ANSWERS_CORRECT_EULER_EXPOSITION_SHORTER",
+    "cases": [
+      {
+        "family": "interval",
+        "exact_complete_proof": true,
+        "exact_final_bytes": true,
+        "parent_completion_tokens": 1628,
+        "candidate_completion_tokens": 1628,
+        "natural_eog": true,
+        "complete_format": true,
+        "first_divergent_token_index": null,
+        "candidate_close_token_positions": [
+          1218
+        ]
+      },
+      {
+        "family": "Euler",
+        "exact_complete_proof": false,
+        "exact_final_bytes": false,
+        "parent_completion_tokens": 1340,
+        "candidate_completion_tokens": 1278,
+        "natural_eog": true,
+        "complete_format": true,
+        "first_divergent_token_index": 53,
+        "parent_token_at_first_divergence": 6558,
+        "candidate_token_at_first_divergence": 1061,
+        "parent_token_row_edited": true,
+        "candidate_token_row_edited": false,
+        "requested_exact_expression_correct": true,
+        "independent_math_check": "Symbolic substitution gave zero differential-equation residual, initial value one, and initial derivative zero. The visible response supplied the requested exact solution with shorter exposition than the accepted response.",
+        "candidate_close_token_positions": [
+          1218
+        ]
+      }
+    ]
+  },
+  "mmlu": {
+    "status": "SKIPPED_AFTER_PROOF_GATE",
+    "candidate_benchmark_executed": false
+  },
+  "fresh_blinded_evaluation": {
+    "status": "SEALED_PROOF_GATE_FAILED",
+    "opened_for_candidate": false
+  },
+  "accepted_checkpoint_updated": false
+}

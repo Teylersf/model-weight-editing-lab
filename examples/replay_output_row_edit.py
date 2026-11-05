@@ -19,6 +19,7 @@ CAPSULE_CONTENT_SHA256 = {
     18: "e26186ca7a31672ceb62f55ad2de96dd1aa8efc1d1faaf073642d789233f250f",
     19: "8eb077cb71119294acca75a14f5500c112382361a7c77e0d4a0a5229a56f1c7d",
     20: "abd5019a5478eb88c23db87f2307a76a58154349bc22c6d13590ad0e87b105e4",
+    21: "80b3ddc115098acdfeb4ac8c4d14714d233cb1ef7dbbdf081021f42fbae46fa6",
 }
 CHUNK_BYTES = 8 * 1024 * 1024
 GGUF_SCALAR_BYTES = {0: 1, 1: 1, 2: 2, 3: 2, 4: 4, 5: 4, 6: 4, 7: 1, 10: 8, 11: 8, 12: 8}
@@ -41,22 +42,47 @@ def load_capsule(pilot=16):
     require(digest(canonical) == CAPSULE_CONTENT_SHA256[pilot] and patch["pilot"] == pilot,
             f"Pilot {pilot:03d} patch capsule SHA-256 differs")
 
-    tensor, row, sparse = patch["tensor"], patch["row"], patch["sparse_xor"]
+    tensor = patch["tensor"]
     width, count = tensor["dimensions"]
     require(tensor["ggml_type"] == 12 and tensor["quantization"] == "Q4_K" and width % 256 == 0,
             "Patch does not describe a packed Q4_K row")
     row_bytes = width // 256 * 144
-    require(tensor["bytes"] == count * row_bytes and 0 <= row["token_id"] < count
-            and row["bytes"] == row_bytes and row["offset"] == tensor["offset"] + row["token_id"] * row_bytes
+    require(tensor["bytes"] == count * row_bytes
             and 0 <= tensor["offset"] < tensor["offset"] + tensor["bytes"] <= patch["checkpoint_bytes"],
-            "Patch tensor and row extents disagree")
+            "Patch tensor extent differs")
 
+    multirow = patch["schema"] == "public-direct-output-multirow-xor-patch-v1"
+    if multirow:
+        rows = patch["rows"]
+        tokens = [row["token_id"] for row in rows]
+        require(len(rows) > 1 and tokens == sorted(set(tokens)), "Patch rows must be unique and ordered")
+    else:
+        require(patch["schema"] == "public-direct-output-row-xor-patch-v1", "Unsupported patch schema")
+        rows = [dict(patch["row"], sparse_xor=patch["sparse_xor"])]
+    changes = []
+    for row in rows:
+        require(0 <= row["token_id"] < count and row["bytes"] == row_bytes
+                and row["offset"] == tensor["offset"] + row["token_id"] * row_bytes,
+                "Patch tensor and row extents disagree")
+        changes.append(read_sparse_xor(row["sparse_xor"], row_bytes))
+    if multirow:
+        require(sum(map(len, changes)) == patch["changed_bytes"], "Total changed-byte count differs")
+    return patch, tuple(changes) if multirow else changes[0]
+
+
+def read_sparse_xor(sparse, row_bytes):
     offsets, values = sparse["row_relative_offsets"], bytes.fromhex(sparse["xor_hex"])
     require(0 < len(offsets) == len(values) == sparse["changed_bytes"]
             and offsets == sorted(set(offsets)) and 0 <= offsets[0] <= offsets[-1] < row_bytes and all(values),
             "Patch sparse XOR data is malformed")
     require(all(offset % 144 >= 16 for offset in offsets), "Patch touches Q4_K block metadata")
-    return patch, tuple(zip(offsets, values, strict=True))
+    return tuple(zip(offsets, values, strict=True))
+
+
+def row_patches(patch, xor):
+    if "rows" in patch:
+        return list(zip(patch["rows"], xor, strict=True))
+    return [(patch["row"], xor)]
 
 
 def read_exact(stream, size):
@@ -140,24 +166,24 @@ def copy_span(source, destination, parent_hash, candidate_hash, size):
 
 
 def apply_row_patch(source, destination, patch, xor):
-    row = patch["row"]
     parent_hash = hashlib.sha256()
     candidate_hash = hashlib.sha256()
-    copy_span(source, destination, parent_hash, candidate_hash, row["offset"])
+    cursor = 0
+    for row, changes in row_patches(patch, xor):
+        copy_span(source, destination, parent_hash, candidate_hash, row["offset"] - cursor)
+        original = read_exact(source, row["bytes"])
+        require(digest(original) == row["parent_sha256"], "Parent row SHA-256 differs")
+        patched = bytearray(original)
+        for offset, mask in changes:
+            patched[offset] ^= mask
+        require(digest(patched) == row["candidate_sha256"], "Replayed row SHA-256 differs")
+        parent_hash.update(original)
+        candidate_hash.update(patched)
+        if destination is not None:
+            destination.write(patched)
+        cursor = row["offset"] + row["bytes"]
 
-    original = read_exact(source, row["bytes"])
-    require(digest(original) == row["parent_sha256"], "Parent row SHA-256 differs")
-    patched = bytearray(original)
-    for offset, mask in xor:
-        patched[offset] ^= mask
-    require(digest(patched) == row["candidate_sha256"], "Replayed row SHA-256 differs")
-    parent_hash.update(original)
-    candidate_hash.update(patched)
-    if destination is not None:
-        destination.write(patched)
-
-    remaining = patch["checkpoint_bytes"] - row["offset"] - row["bytes"]
-    copy_span(source, destination, parent_hash, candidate_hash, remaining)
+    copy_span(source, destination, parent_hash, candidate_hash, patch["checkpoint_bytes"] - cursor)
     require(source.read(1) == b"", "Parent contains trailing bytes")
     require(parent_hash.hexdigest() == patch["parent_sha256"], "Full parent SHA-256 differs")
     require(candidate_hash.hexdigest() == patch["candidate_sha256"], "Full replayed candidate SHA-256 differs")
@@ -215,11 +241,17 @@ def main():
         replay(args.parent, args.output, patch, xor)
     except (OSError, ValueError, struct.error) as error:
         parser.exit(1, f"Replay failed. {error}\n")
-    print(json.dumps(dict(status="WRITTEN_AND_VERIFIED" if args.output else "VERIFIED_ONLY",
-                          parent_sha256=patch["parent_sha256"], candidate_sha256=patch["candidate_sha256"],
-                          parent_row_sha256=patch["row"]["parent_sha256"],
-                          candidate_row_sha256=patch["row"]["candidate_sha256"],
-                          changed_bytes=len(xor)), indent=2))
+    result = dict(status="WRITTEN_AND_VERIFIED" if args.output else "VERIFIED_ONLY",
+                  parent_sha256=patch["parent_sha256"], candidate_sha256=patch["candidate_sha256"])
+    if "rows" in patch:
+        result["rows"] = [dict(token_id=row["token_id"], parent_row_sha256=row["parent_sha256"],
+                               candidate_row_sha256=row["candidate_sha256"], changed_bytes=len(changes))
+                          for row, changes in row_patches(patch, xor)]
+        result["changed_bytes"] = patch["changed_bytes"]
+    else:
+        result.update(parent_row_sha256=patch["row"]["parent_sha256"],
+                      candidate_row_sha256=patch["row"]["candidate_sha256"], changed_bytes=len(xor))
+    print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":
