@@ -439,3 +439,13 @@ At the cylinder prefix, both hidden states and all 248,319 other logits were bit
 Euler replayed exactly. The interval run changed its decision at index 1218 and generated the same capped stream as Pilot 017. It reached 3,072 tokens without a visible proof. Lower score changes at the captured finish positions did not preserve this separate interval case. The pilot stopped before the matched benchmark and fresh evaluation. [Proof receipts](../evidence/direct-closure-pilot-018.json)
 
 Run `python examples/replay_output_row_edit.py --pilot 18 --parent PATH_TO_PARENT.gguf` to verify the checkpoint digest. [Patch data](../evidence/direct-closure-pilot-018-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)
+
+## Nineteenth pilot with a smaller target margin
+
+Pilot 019 reduced the target margin floor from 0.82 to 0.30 logits and required a small positive finish-score change at all 11 observed natural closing states. The packed fit retained the 3,391 signed winner constraints and the teacher closure bounds. Four searches using a two-code limit missed the constraints. The qualifying fit used a three-code change at four of 2,499 changed nibbles. On the same 3,391 states, the 95th-percentile absolute change fell from **0.485 to 0.424 logits**, and the maximum fell from **0.763 to 0.653**. [Fit evidence](../evidence/direct-closure-pilot-019.json)
+
+Saved-file readback verified 1,876 changed bytes inside the one output row. The native preview preserved both hidden states and all other token logits, with a **0.306-logit** lead at the cylinder finish. Independent review found six correct, complete, naturally ended development answers. The cylinder still gave **123.7 cm³** in **282 versus 486 tokens** and took **6.45 versus 10.55 seconds** to decode. The other five answers matched exactly.
+
+Euler again replayed exactly. The interval output was byte-identical to the failed Pilot 018 stream. It missed the accepted finish decision at index 1218 and hit the 3,072-token cap without a visible proof. The pilot stopped before matched MMLU and fresh evaluation. [Proof receipts](../evidence/direct-closure-pilot-019.json)
+
+Run `python examples/replay_output_row_edit.py --pilot 19 --parent PATH_TO_PARENT.gguf` to verify the checkpoint digest. [Patch data](../evidence/direct-closure-pilot-019-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)
