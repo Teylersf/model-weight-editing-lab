@@ -1,0 +1,218 @@
+{
+  "schema": "windows-direct-closure-later-pilot-v1",
+  "pilot": 9,
+  "status": "SCREENED_OUT_FOR_ONE_PREVIOUSLY_CORRECT_MMLU_ANSWER",
+  "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+  "candidate_sha256": "ffe84ecbc62445ee05eaf8444c34a4b1e64a2fae01e52ae581c6b789eba4dc0c",
+  "saved_checkpoint_bytes": 11674147744,
+  "fit": {
+    "source": "Pinned development trajectories with later cylinder target and 18 added guards on the probability trajectory",
+    "plan_sha256": "c056611a06eb169c67cdf156c964dad6dcbf2fb9c76b84d89fcf9fac7968d602",
+    "capture_sha256": [
+      "93159dedd6ccfa45609b783961c82d5c4e823dbbf797907b8efc77c1a86285b2"
+    ],
+    "rank_before_storage_rounding": 1,
+    "projected_guard_count": 10902,
+    "earlier_cylinder_continuation_guarded_at": 86,
+    "probability_first_changed_decision_from_pilot_008_guarded_at": 344,
+    "target": {
+      "id": "round-cylinder-volume",
+      "index": 164,
+      "desired": 248069,
+      "winner": 248069,
+      "strongest_rival": 6558,
+      "margin": 3.1428184509277344,
+      "passed": true
+    },
+    "native_preview_receipt_sha256": "81f8159f7c55453b9ddc38a4741b549810ae0603bb724d4b3664fbde3a72d54b"
+  },
+  "saved_edit": {
+    "tensor": "blk.63.ffn_down.weight",
+    "tensor_sha256": "43d060e0c4c0b6931788bd6ea32c17a60e4e85e0e7dba55ec2c21240fd49a272",
+    "relative_frobenius_difference": 0.018796832226006695,
+    "outside_tensor_byte_identical": true,
+    "fit_receipt_sha256": "240be8480e4bd8194a9053e7d1bb76e9dc8b027f896591a8365d44720314c381",
+    "readback_receipt_sha256": "8078d0f5da53383fed3f4ef6d1867afcf0422afcb8aacb14a2182d2ae7eb7d64"
+  },
+  "development": {
+    "parent_complete_correct": 6,
+    "candidate_complete_correct": 6,
+    "probability_format_recovered_exactly": true,
+    "independent_review": "A separate agent checked the derivations, answers, both five-column probability tables, exact prompt and sampler settings, and natural endings.",
+    "comparison_sha256": "b8263309ca9b13df22043c30620eef0377dc11ff0ed8da130033f4d9b63bc9ef",
+    "parent_generation_receipt_sha256": "f68f653fedf7a9aefe78698a455a314e95706d53a51e6946727adeffaf2a4718",
+    "candidate_generation_receipt_sha256": "e1710b6829ab609278b3d2bcf2b0d2a54cea61ebf6a3b36f90b55b70018fb879",
+    "cases": [
+      {
+        "id": "exact-plane-distance",
+        "parent": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 9.9358455
+        },
+        "candidate": {
+          "tokens": 495,
+          "think_close_index": 203,
+          "natural_eog": true,
+          "decode_seconds": 11.3384172
+        },
+        "common_token_prefix": 93,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "exact-mod-four-probability",
+        "parent": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 13.806640100000001
+        },
+        "candidate": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 14.7189779
+        },
+        "common_token_prefix": 634,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-arctan-integral",
+        "parent": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 9.608276400000001
+        },
+        "candidate": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 10.3393429
+        },
+        "common_token_prefix": 443,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "round-cylinder-volume",
+        "parent": {
+          "tokens": 486,
+          "think_close_index": 355,
+          "natural_eog": true,
+          "decode_seconds": 10.5525325
+        },
+        "candidate": {
+          "tokens": 282,
+          "think_close_index": 164,
+          "natural_eog": true,
+          "decode_seconds": 6.5599876
+        },
+        "common_token_prefix": 164,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "round-geometric-count",
+        "parent": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 16.3836349
+        },
+        "candidate": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 17.438585500000002
+        },
+        "common_token_prefix": 751,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-terminating-decimal",
+        "parent": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.4919604
+        },
+        "candidate": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.739268200000001
+        },
+        "common_token_prefix": 206,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      }
+    ]
+  },
+  "matched_mmlu": {
+    "paired_receipt_sha256": "edd3a441086fe88bfce9f7e399df1183bb1b61db16b95a875a9c15f1d190444d",
+    "parent_benchmark_receipt_sha256": "493e2545d001aa716dab820707c843661e4deee97b77d5a6485795254d898c3a",
+    "candidate_benchmark_receipt_sha256": "dcb506b30f0978601dbc0247c37d09bfa3bf731ceda2923bf1ee4827d139a6c9",
+    "prompt_token_identity_verified": true,
+    "pilot_008_same_choices": 370,
+    "pilot_008_paired_receipt_sha256": "c0a83a25b815ddc26d09b7ee089416d2d86f58d8fdbbd36d0e4d7d2ce31cc8d6",
+    "scores": {
+      "high_school_mathematics": {
+        "both_correct": 161,
+        "baseline_only_correct": 1,
+        "candidate_only_correct": 0,
+        "neither_correct": 108,
+        "total": 270,
+        "baseline_correct": 162,
+        "candidate_correct": 161,
+        "correct_delta": -1,
+        "accuracy_percentage_point_delta": -0.37037037037037035,
+        "paired_scored": 270,
+        "paired_scored_answer_letter_disagreements": 1,
+        "any_outcome_disagreements": 1,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "college_mathematics": {
+        "both_correct": 64,
+        "baseline_only_correct": 0,
+        "candidate_only_correct": 0,
+        "neither_correct": 36,
+        "total": 100,
+        "baseline_correct": 64,
+        "candidate_correct": 64,
+        "correct_delta": 0,
+        "accuracy_percentage_point_delta": 0.0,
+        "paired_scored": 100,
+        "paired_scored_answer_letter_disagreements": 0,
+        "any_outcome_disagreements": 0,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "combined_micro": {
+        "both_correct": 225,
+        "baseline_only_correct": 1,
+        "candidate_only_correct": 0,
+        "neither_correct": 144,
+        "total": 370,
+        "baseline_correct": 226,
+        "candidate_correct": 225,
+        "correct_delta": -1,
+        "accuracy_percentage_point_delta": -0.2702702702702703,
+        "paired_scored": 370,
+        "paired_scored_answer_letter_disagreements": 1,
+        "any_outcome_disagreements": 1,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      }
+    }
+  },
+  "fresh_holdout_opened_for_this_candidate": false
+}

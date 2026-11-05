@@ -345,3 +345,11 @@ Pilot 008 guarded the original continuation at token 86 and targeted the next un
 The edited cylinder run matched the first 164 tokens of the parent and then ended reasoning. It gave the correct worked answer in **282 tokens versus 486**, with measured decode time of **6.63 seconds versus 10.55**. All six development answers had correct mathematics and ended naturally. The new probability answer had a visible formatting defect in its first LaTeX table. Across the six cases, tokens fell from 2,978 to 2,934 and measured decode time rose from 64.78 to 68.51 seconds. [Pilot 008 evidence](../evidence/direct-closure-pilot-008.json)
 
 On the matched MMLU questions, Pilot 008 scored **225/370 versus 226/370** for the parent. One previously correct high-school answer was lost. All college choices matched the parent. [Paired results](../evidence/direct-closure-pilot-008.json)
+
+## Ninth pilot with probability format guards
+
+Pilot 009 kept the later cylinder target and added 18 guard states from the accepted probability answer. These covered the first changed decision and the original table structure. The fit used development trajectories. The stored change measured 1.880% of the parent matrix norm, and independent readback verified exact bytes outside the matrix.
+
+The probability answer reproduced the accepted 634-token sequence with both original five-column tables. The cylinder answer again ended reasoning at token 164 and finished in **282 tokens versus 486**, taking **6.56 seconds versus 10.55** to decode. All six development answers were correct and ended naturally. Combined tokens fell from 2,978 to 2,811. Measured decode time was 65.13 seconds versus 64.78 for the parent. [Pilot 009 evidence](../evidence/direct-closure-pilot-009.json)
+
+Pilot 009 made the same choices as Pilot 008 on all 370 MMLU questions. It scored **225/370 versus 226/370** for the parent, with one previously correct high-school answer lost and all college choices preserved. [Paired results](../evidence/direct-closure-pilot-009.json)
