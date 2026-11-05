@@ -1,0 +1,184 @@
+{
+  "schema": "windows-direct-closure-calibrated-pilot-v1",
+  "pilot": 7,
+  "status": "EXPERIMENTAL",
+  "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+  "candidate_sha256": "f1cfeb8bf734840cb1d92d11fe2d1ade7bf740294446580e52531be5f5acc289",
+  "saved_checkpoint_bytes": 11674147744,
+  "fit": {
+    "source": "Previously pinned Pilot 006 development capture and plan",
+    "plan_sha256": "d7d2f1d99501e864b5a10f710036055e6ff15ae33d1a7c0e1cea007167210af5",
+    "capture_sha256": [
+      "a6fcb496592a1a9607dd3c133ef7aff7c71b9088469bfcd91db8edf32fc1d77e"
+    ],
+    "rank_before_storage_rounding": 1,
+    "native_dose_search": {
+      "target": 248069,
+      "tested": [
+        {
+          "scale": 0.65,
+          "margin": -1.686431884765625,
+          "native_receipt_sha256": "3acd0a83636669f7c33cd32c4ccbe99d666138c51d74da8b4c8d425b96d97755"
+        },
+        {
+          "scale": 0.75,
+          "margin": -0.3427715301513672,
+          "native_receipt_sha256": "3acd0a83636669f7c33cd32c4ccbe99d666138c51d74da8b4c8d425b96d97755"
+        },
+        {
+          "scale": 0.85,
+          "margin": 1.0604190826416016,
+          "native_receipt_sha256": "3acd0a83636669f7c33cd32c4ccbe99d666138c51d74da8b4c8d425b96d97755"
+        },
+        {
+          "scale": 0.95,
+          "margin": 2.4848384857177734,
+          "native_receipt_sha256": "3acd0a83636669f7c33cd32c4ccbe99d666138c51d74da8b4c8d425b96d97755"
+        },
+        {
+          "scale": 1.0,
+          "margin": 3.149721145629883,
+          "native_receipt_sha256": "3acd0a83636669f7c33cd32c4ccbe99d666138c51d74da8b4c8d425b96d97755"
+        }
+      ],
+      "selected": 0.85
+    },
+    "projected_guard_count": 10876,
+    "target": {
+      "id": "round-cylinder-volume",
+      "index": 86,
+      "desired": 248069,
+      "winner": 248069,
+      "strongest_rival": 6558,
+      "margin": 1.0604190826416016,
+      "passed": true
+    },
+    "native_preview_receipt_sha256": "0b252ca8d267c32e3517443f3d77e0459cc1fc34906aa342614bc2ec705ade4f"
+  },
+  "saved_edit": {
+    "tensor": "blk.63.ffn_down.weight",
+    "tensor_sha256": "9d9f981b252d87850d8029246b563c480145e25f24e8659c0a85adcb3d1f9f4b",
+    "relative_frobenius_difference": 0.025450347203993258,
+    "outside_tensor_byte_identical": true,
+    "fit_receipt_sha256": "20de3029a7ce0c09390abd72efb64ddb5afadc19cefa223902fc08ba768e804d",
+    "readback_receipt_sha256": "56e478cfb325a63ee41092169802afaaffb33160abfe21e4c9f1f723719b3e56"
+  },
+  "development": {
+    "parent_complete_correct": 6,
+    "candidate_complete_correct": 6,
+    "independent_review": "A separate agent checked formulas, exact answers or rounding, natural endings, and exact prompt and sampler settings.",
+    "comparison_sha256": "f3579e1bd42b776aceddeb8effaf679310f27271dd565c917aa147192e0c8818",
+    "parent_generation_receipt_sha256": "f68f653fedf7a9aefe78698a455a314e95706d53a51e6946727adeffaf2a4718",
+    "candidate_generation_receipt_sha256": "f7c53de469a093bfb8a98a72dfa0c0bc917a3185e3ab5e01c85206b2b62722c4",
+    "cases": [
+      {
+        "id": "exact-plane-distance",
+        "parent": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 9.9358455
+        },
+        "candidate": {
+          "tokens": 495,
+          "think_close_index": 203,
+          "natural_eog": true,
+          "decode_seconds": 12.2006935
+        },
+        "common_token_prefix": 93,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "exact-mod-four-probability",
+        "parent": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 13.806640100000001
+        },
+        "candidate": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 16.5556062
+        },
+        "common_token_prefix": 634,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-arctan-integral",
+        "parent": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 9.608276400000001
+        },
+        "candidate": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 11.3936954
+        },
+        "common_token_prefix": 443,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "round-cylinder-volume",
+        "parent": {
+          "tokens": 486,
+          "think_close_index": 355,
+          "natural_eog": true,
+          "decode_seconds": 10.5525325
+        },
+        "candidate": {
+          "tokens": 204,
+          "think_close_index": 86,
+          "natural_eog": true,
+          "decode_seconds": 5.040437799999999
+        },
+        "common_token_prefix": 86,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "round-geometric-count",
+        "parent": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 16.3836349
+        },
+        "candidate": {
+          "tokens": 760,
+          "think_close_index": 722,
+          "natural_eog": true,
+          "decode_seconds": 17.8175649
+        },
+        "common_token_prefix": 198,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "exact-terminating-decimal",
+        "parent": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.4919604
+        },
+        "candidate": {
+          "tokens": 220,
+          "think_close_index": 165,
+          "natural_eog": true,
+          "decode_seconds": 5.1538309
+        },
+        "common_token_prefix": 49,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      }
+    ]
+  }
+}
