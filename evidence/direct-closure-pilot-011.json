@@ -1,0 +1,156 @@
+{
+  "schema": "windows-direct-closure-later-pilot-v1",
+  "pilot": 11,
+  "status": "SCREENED_OUT_FOR_DEVELOPMENT_ACCURACY_AND_TARGET_SPEED",
+  "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+  "candidate_sha256": "7f8db68f8b39b2ba46e2b753a735935e060c7892f7c0d5ec93025aa5e3ffcc3f",
+  "saved_checkpoint_bytes": 11674147744,
+  "fit": {
+    "source": "Pinned development trajectory with closure at 178 and earlier continuations guarded at 86 and 164",
+    "plan_sha256": "17ff7b45ef880603eb829bfff4cb28051ab22692366b371141bbc1d1f6490def",
+    "capture_sha256": [
+      "a849b1a14bbc73c9b4bee4391b60ed1f72e3f4cb230ecaf206b3554ef3acfa14"
+    ],
+    "rank_before_storage_rounding": 1,
+    "projected_guard_count": 10906,
+    "target": {
+      "id": "round-cylinder-volume",
+      "index": 178,
+      "desired": 248069,
+      "winner": 248069,
+      "strongest_rival": 5272,
+      "margin": 3.24169921875,
+      "passed": true
+    },
+    "native_preview_receipt_sha256": "85762b6e47c9b0419add9df011fd6eccea85b288743af32f140576a12401bbdb"
+  },
+  "saved_edit": {
+    "tensor": "blk.63.ffn_down.weight",
+    "tensor_sha256": "e216821543964f62095ac9cdcf054fa81d42111c8d00d696972082a5fe67c9bf",
+    "relative_frobenius_difference": 0.02934339366195732,
+    "outside_tensor_byte_identical": true,
+    "fit_receipt_sha256": "725d5eacc148157c993e059ad5d09a883d1989b79949ce73ec7b29f3839b9239",
+    "readback_receipt_sha256": "55ebc0b1b0d38b6f7ce3988dc53ab80c4c420ba1c4955dadc7c4ce4c31f1eb19"
+  },
+  "development": {
+    "parent_complete_correct": 6,
+    "candidate_complete_correct": 5,
+    "regression": "Population answer closed early and gave 762 instead of 798.",
+    "independent_review": "A separate agent verified whole-checkpoint readback, derivations, answers, exact prompt and sampler settings, and natural endings.",
+    "comparison_sha256": "0657e6b8416b64597b7f7b3a49de753ab12eeec530ee13e9acff49e824938629",
+    "parent_generation_receipt_sha256": "f68f653fedf7a9aefe78698a455a314e95706d53a51e6946727adeffaf2a4718",
+    "candidate_generation_receipt_sha256": "1bedc5ecfdf06e2df52608df8c17b3d3022b89dffa4d2efd30e8fb8d80aa1676",
+    "cases": [
+      {
+        "id": "exact-plane-distance",
+        "parent": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 9.9358455
+        },
+        "candidate": {
+          "tokens": 495,
+          "think_close_index": 203,
+          "natural_eog": true,
+          "decode_seconds": 11.352889800000002
+        },
+        "common_token_prefix": 93,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "exact-mod-four-probability",
+        "parent": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 13.806640100000001
+        },
+        "candidate": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 14.589130800000001
+        },
+        "common_token_prefix": 634,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-arctan-integral",
+        "parent": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 9.608276400000001
+        },
+        "candidate": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 10.158469199999999
+        },
+        "common_token_prefix": 443,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "round-cylinder-volume",
+        "parent": {
+          "tokens": 486,
+          "think_close_index": 355,
+          "natural_eog": true,
+          "decode_seconds": 10.5525325
+        },
+        "candidate": {
+          "tokens": 371,
+          "think_close_index": 237,
+          "natural_eog": true,
+          "decode_seconds": 8.6048843
+        },
+        "common_token_prefix": 76,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "round-geometric-count",
+        "parent": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 16.3836349
+        },
+        "candidate": {
+          "tokens": 58,
+          "think_close_index": 36,
+          "natural_eog": true,
+          "decode_seconds": 1.3192075
+        },
+        "common_token_prefix": 36,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "exact-terminating-decimal",
+        "parent": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.4919604
+        },
+        "candidate": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.7818113
+        },
+        "common_token_prefix": 206,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      }
+    ]
+  },
+  "matched_mmlu_run_for_this_candidate": false,
+  "fresh_holdout_opened_for_this_candidate": false
+}

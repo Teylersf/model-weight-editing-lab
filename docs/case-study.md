@@ -361,3 +361,9 @@ Pilot 010 reused the pinned Pilot 009 capture and searched five update scales us
 All six development outputs matched Pilot 009 token for token. The cylinder still finished in **282 versus 486 tokens**, with measured decode time of **6.51 versus 10.55 seconds**. The probability tables retained the accepted format. All answers were correct and ended naturally. Across six cases, total tokens fell from 2,978 to 2,811, with measured decode time of 64.87 seconds versus 64.78 for the parent. [Pilot 010 evidence](../evidence/direct-closure-pilot-010.json)
 
 Pilot 010 scored **225/370 versus 226/370**, with the same 370 choices as Pilot 009. Pilots 006 through 010 all lost the same previously correct high-school item. An independent audit found that the accepted model's correct option had led by only 0.00217 logits on that item. The loss still counts in the paired comparison. [Paired results](../evidence/direct-closure-pilot-010.json)
+
+## Eleventh pilot after restating the exact expression
+
+Pilot 011 targeted token 178 after the parent restated \(39.366\pi\). The rounded preview put the finish token 3.242 logits ahead. The saved change measured 2.934% of the parent matrix norm. Independent readback verified exact bytes outside the edited matrix.
+
+The ordinary cylinder trajectory diverged at token 76 and reached its finish token at 237. It gave the correct worked answer in **371 tokens versus 486**, below the 25% reduction required to advance. The population response also closed reasoning at token 36 and gave **762 instead of 798**. The probability response and its table matched the accepted output exactly. Five of six development answers were correct. The candidate stopped at the development gate. [Pilot 011 evidence](../evidence/direct-closure-pilot-011.json)
