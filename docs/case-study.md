@@ -483,3 +483,13 @@ Independent review found all six ordinary development answers correct and comple
 The two accepted proofs both diverged during ordinary generation. The interval trace changed at index 219 and reached the 3,072-token cap without a visible answer. Euler changed at index 53 and ended naturally in 1,441 tokens versus 1,340. Its exact expression satisfied the equation and both initial conditions under independent symbolic substitution. The exact proof gate stopped the experiment before the matched benchmark and fresh evaluation. [Proof receipts](../evidence/direct-closure-pilot-023.json)
 
 Run `python examples/replay_d63_rank_one_edit.py --parent PATH_TO_PARENT.gguf` to independently rebuild the edited tensor in memory and verify the whole candidate SHA-256 without writing a GGUF. [Exact factors and extent](../evidence/direct-closure-pilot-023-d63-patch.json) · [Replay code](../examples/replay_d63_rank_one_edit.py)
+
+## Twenty-fourth pilot with a blended finish direction
+
+The fit blended the normalized closing-row directions from Pilots 021 and 020, projected the blend against 3,563 authorized development states, then repaired the packed Q4_K codes. Two distinct rows passed the development fit and were frozen before proof screening. The archived CPU screen predicted that the blended row would preserve both accepted proof sequences. The other row was predicted to miss the interval closing decision. [Fit and selection evidence](../evidence/direct-closure-pilot-024.json)
+
+The saved blended edit changed **1,996 bytes** in the finish-token row. CUDA gave the finish token a **0.06199-logit** lead at the cylinder decision while preserving both hidden-state captures and all 248,319 other logits. The correct cylinder answer ended naturally in **282 versus 486 tokens** and decoded in **6.46 versus 10.55 seconds**. The five other development outputs matched exactly. [Saved native and development results](../evidence/direct-closure-pilot-024.json)
+
+Ordinary generation reproduced both accepted proofs, their visible answers, and their natural end tokens exactly. The interval proof took **1,628 tokens**, and Euler took **1,340**. This confirmed the archived screen's prediction for the saved checkpoint. [Exact proof receipt](../evidence/direct-closure-pilot-024.json)
+
+Run `python examples/replay_output_row_edit.py --pilot 24 --parent PATH_TO_PARENT.gguf` to verify the whole checkpoint digest from the exact accepted parent. [Patch capsule](../evidence/direct-closure-pilot-024-row-patch.json) · [Replay code](../examples/replay_output_row_edit.py)
