@@ -247,6 +247,20 @@
     "known_complete_math_repairs": 8,
     "known_candidate_natural_endings": 8,
     "critical_proof_exact_matches": 2,
+    "supplemental_known_development": {
+      "ordinary_generation_receipt_sha256": "bd320519c38ed0a5bad6ac35f040ce34b22e8b18c7560d3dd233bcaae9530c31",
+      "root_math_review_sha256": "216d2ad0569ffd23d580cf009c0bece8ee475c178eb0fdb2258d476c1325fa2a",
+      "earlier_root_math_review_sha256": "a761bc247087e448772ef5fe53ca692860203cba7c993fff048718282d0483a6",
+      "cases": 4,
+      "complete_worked_correct": 0,
+      "natural_eog": 3,
+      "length_cap_without_visible_answer": 1,
+      "truck_variants_with_decimal_instead_of_exact_optimum": 3,
+      "truck_completion_tokens": [4391, 2694, 1864],
+      "cube_completion_tokens": 6144,
+      "combined_known_development": {"cases": 12, "complete_worked_correct": 8, "natural_eog": 11},
+      "fresh_oracle_opened": false
+    },
     "mmlu_followup": {
       "run_receipt_sha256": "e81e9c6a3f7547c653fddfa4acdd02d2eb4a5be5f54ad9a3d4bd85de2a6c386d",
       "paired_receipt_sha256": "caf79af2a2ae06b4c32a5651b2c0a5c34472bab2a4e4d8769359a20812b05949",
