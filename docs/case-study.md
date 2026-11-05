@@ -367,3 +367,11 @@ Pilot 010 scored **225/370 versus 226/370**, with the same 370 choices as Pilot 
 Pilot 011 targeted token 178 after the parent restated \(39.366\pi\). The rounded preview put the finish token 3.242 logits ahead. The saved change measured 2.934% of the parent matrix norm. Independent readback verified exact bytes outside the edited matrix.
 
 The ordinary cylinder trajectory diverged at token 76 and reached its finish token at 237. It gave the correct worked answer in **371 tokens versus 486**, below the 25% reduction required to advance. The population response also closed reasoning at token 36 and gave **762 instead of 798**. The probability response and its table matched the accepted output exactly. Five of six development answers were correct. The candidate stopped at the development gate. [Pilot 011 evidence](../evidence/direct-closure-pilot-011.json)
+
+## Twelfth pilot with a measured stopping point and finer dose
+
+A single replay of the unedited development trajectory measured the finish token at seven potential stopping points. Token 164 had the smallest deficit, 5.492 logits. The fit returned to that point and protected the development decisions that changed prematurely in Pilot 011. A finer search selected a scale of 0.755 and the rounded preview put the target 1.016 logits ahead. The saved change measured 1.423% of the parent matrix norm, with byte equality outside the matrix.
+
+All six development responses ended naturally and were correct. The cylinder matched the parent's first 164 tokens and finished in **282 versus 486 tokens**, taking **6.50 versus 10.55 seconds** to decode. Four answers matched the parent token for token, including the probability tables and the population estimate. [Pilot 012 evidence and scan](../evidence/direct-closure-pilot-012.json)
+
+Pilot 012 scored **225/370 versus 226/370** on the matched MMLU comparison. The one previously correct answer it lost was the same item Pilot 010 lost. The finer dose retained the development gains while the matched accuracy gate still failed. [Paired results](../evidence/direct-closure-pilot-012.json)

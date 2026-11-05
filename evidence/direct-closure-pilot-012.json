@@ -1,0 +1,327 @@
+{
+  "schema": "windows-direct-closure-calibrated-pilot-v1",
+  "pilot": 12,
+  "status": "SCREENED_OUT_FOR_ONE_PREVIOUSLY_CORRECT_MMLU_ANSWER",
+  "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+  "candidate_sha256": "cc5700722a6567b11f8f5f6ff435187c43004f928a645928e4c6326760f2664c",
+  "saved_checkpoint_bytes": 11674147744,
+  "accepted_development_pivot_scan": {
+    "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+    "native_receipt_sha256": "4d57dba53d4ec2e6289f02e77991d65f7872accdc30805294dd52fdae131b374",
+    "candidates": [
+      {
+        "index": 86,
+        "winner": 6558,
+        "finish_margin": -10.616178512573242
+      },
+      {
+        "index": 118,
+        "winner": 220,
+        "finish_margin": -9.719154357910156
+      },
+      {
+        "index": 163,
+        "winner": 13,
+        "finish_margin": -19.853668212890625
+      },
+      {
+        "index": 164,
+        "winner": 6558,
+        "finish_margin": -5.49186897277832
+      },
+      {
+        "index": 178,
+        "winner": 220,
+        "finish_margin": -9.253173828125
+      },
+      {
+        "index": 203,
+        "winner": 283,
+        "finish_margin": -25.711908102035522
+      },
+      {
+        "index": 213,
+        "winner": 5272,
+        "finish_margin": -7.365797996520996
+      }
+    ],
+    "summary_sha256": "2a0f793da092a8bb6d275692f0e5848b16cc9ce445c70506f410828909cf2b2d"
+  },
+  "fit": {
+    "source": "Pinned development trajectory with the selected 164 pivot and guards on Pilot 011's premature population and cylinder decisions",
+    "plan_sha256": "d1793dab69436b5b30e1aaf5e438af9c61b150fbe0384bbc1ea48c5795b53fc8",
+    "capture_sha256": [
+      "c56e54d8f9270182f558391f9428c4522fefd1537cf22e7a98b34515ff4eb0dd"
+    ],
+    "rank_before_storage_rounding": 1,
+    "projected_guard_count": 10908,
+    "target": {
+      "id": "round-cylinder-volume",
+      "index": 164,
+      "desired": 248069,
+      "winner": 248069,
+      "strongest_rival": 6558,
+      "margin": 1.0163097381591797,
+      "passed": true
+    },
+    "native_dose_search": {
+      "target": 248069,
+      "tested": [
+        {
+          "scale": 0.7,
+          "margin": 0.5400886535644531,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 0.72,
+          "margin": 0.7253608703613281,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 0.74,
+          "margin": 0.8870983123779297,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 0.75,
+          "margin": 0.9629039764404297,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 0.755,
+          "margin": 1.0158042907714844,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 0.76,
+          "margin": 1.0595016479492188,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 0.765,
+          "margin": 1.1040096282958984,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 0.775,
+          "margin": 1.2007637023925781,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 0.8,
+          "margin": 1.414520263671875,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 0.825,
+          "margin": 1.6609859466552734,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 0.85,
+          "margin": 1.877960205078125,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 0.95,
+          "margin": 2.6851959228515625,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        },
+        {
+          "scale": 1.0,
+          "margin": 3.1428184509277344,
+          "native_receipt_sha256": "00539964d7e31d58db9fd2c31fdb74c1183f96b3cc9da31c3c4b2f9503ba232a"
+        }
+      ],
+      "selected": 0.755
+    },
+    "native_preview_receipt_sha256": "c6cf7aabd8de3374f4367d4ed3fbbcbee0fad61a6dd447825a27adc1703ebcc2"
+  },
+  "saved_edit": {
+    "tensor": "blk.63.ffn_down.weight",
+    "tensor_sha256": "97e1185575e9d1571375a323c73861051a95a280b06af1bdef84c2c9e4fe841a",
+    "relative_frobenius_difference": 0.014229270486008397,
+    "outside_tensor_byte_identical": true,
+    "fit_receipt_sha256": "a81f39cefa1fc18d1f04d0897399111b45c37f643d9ac6144e7cb44afb907729",
+    "readback_receipt_sha256": "663e441a596fbd04a65f4f1e10037617b7d6eb158d5e38c8b50f2b5dc19885ed"
+  },
+  "development": {
+    "parent_complete_correct": 6,
+    "candidate_complete_correct": 6,
+    "independent_review": "A separate agent verified whole-checkpoint readback, derivations, answers, exact prompt and sampler settings, and natural endings.",
+    "comparison_sha256": "65047b158c3546cce5803da3eab8bb57ccc846d20a7f4c8dd85e163c0af0db78",
+    "parent_generation_receipt_sha256": "f68f653fedf7a9aefe78698a455a314e95706d53a51e6946727adeffaf2a4718",
+    "candidate_generation_receipt_sha256": "a4e535b12ba3cf51892e8fd469b9ad970f740ba0128c2de1391a15231de2f4ed",
+    "cases": [
+      {
+        "id": "exact-plane-distance",
+        "parent": {
+          "tokens": 458,
+          "think_close_index": 190,
+          "natural_eog": true,
+          "decode_seconds": 9.9358455
+        },
+        "candidate": {
+          "tokens": 495,
+          "think_close_index": 203,
+          "natural_eog": true,
+          "decode_seconds": 11.224642099999999
+        },
+        "common_token_prefix": 93,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "exact-mod-four-probability",
+        "parent": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 13.806640100000001
+        },
+        "candidate": {
+          "tokens": 634,
+          "think_close_index": 321,
+          "natural_eog": true,
+          "decode_seconds": 14.3910837
+        },
+        "common_token_prefix": 634,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-arctan-integral",
+        "parent": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 9.608276400000001
+        },
+        "candidate": {
+          "tokens": 443,
+          "think_close_index": 159,
+          "natural_eog": true,
+          "decode_seconds": 10.1899277
+        },
+        "common_token_prefix": 443,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "round-cylinder-volume",
+        "parent": {
+          "tokens": 486,
+          "think_close_index": 355,
+          "natural_eog": true,
+          "decode_seconds": 10.5525325
+        },
+        "candidate": {
+          "tokens": 282,
+          "think_close_index": 164,
+          "natural_eog": true,
+          "decode_seconds": 6.495213
+        },
+        "common_token_prefix": 164,
+        "exact_token_match": false,
+        "exact_visible_text_match": false
+      },
+      {
+        "id": "round-geometric-count",
+        "parent": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 16.3836349
+        },
+        "candidate": {
+          "tokens": 751,
+          "think_close_index": 691,
+          "natural_eog": true,
+          "decode_seconds": 17.2715397
+        },
+        "common_token_prefix": 751,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      },
+      {
+        "id": "exact-terminating-decimal",
+        "parent": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.4919604
+        },
+        "candidate": {
+          "tokens": 206,
+          "think_close_index": 133,
+          "natural_eog": true,
+          "decode_seconds": 4.7230635
+        },
+        "common_token_prefix": 206,
+        "exact_token_match": true,
+        "exact_visible_text_match": true
+      }
+    ]
+  },
+  "matched_mmlu": {
+    "paired_receipt_sha256": "32f56280770cf268635b22c0177bf8528e631c64d7b8392f9d84b61f76a170de",
+    "parent_benchmark_receipt_sha256": "493e2545d001aa716dab820707c843661e4deee97b77d5a6485795254d898c3a",
+    "candidate_benchmark_receipt_sha256": "4b1b3f0ec144651aeb7e898e7fcc4c0da78bb9b0b32c06195b88e494bbd2ea72",
+    "prompt_token_identity_verified": true,
+    "same_previously_correct_item_lost_as_pilot_010": true,
+    "scores": {
+      "high_school_mathematics": {
+        "both_correct": 161,
+        "baseline_only_correct": 1,
+        "candidate_only_correct": 0,
+        "neither_correct": 108,
+        "total": 270,
+        "baseline_correct": 162,
+        "candidate_correct": 161,
+        "correct_delta": -1,
+        "accuracy_percentage_point_delta": -0.37037037037037035,
+        "paired_scored": 270,
+        "paired_scored_answer_letter_disagreements": 1,
+        "any_outcome_disagreements": 1,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "college_mathematics": {
+        "both_correct": 64,
+        "baseline_only_correct": 0,
+        "candidate_only_correct": 0,
+        "neither_correct": 36,
+        "total": 100,
+        "baseline_correct": 64,
+        "candidate_correct": 64,
+        "correct_delta": 0,
+        "accuracy_percentage_point_delta": 0.0,
+        "paired_scored": 100,
+        "paired_scored_answer_letter_disagreements": 0,
+        "any_outcome_disagreements": 0,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "combined_micro": {
+        "both_correct": 225,
+        "baseline_only_correct": 1,
+        "candidate_only_correct": 0,
+        "neither_correct": 144,
+        "total": 370,
+        "baseline_correct": 226,
+        "candidate_correct": 225,
+        "correct_delta": -1,
+        "accuracy_percentage_point_delta": -0.2702702702702703,
+        "paired_scored": 370,
+        "paired_scored_answer_letter_disagreements": 1,
+        "any_outcome_disagreements": 1,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      }
+    }
+  },
+  "fresh_holdout_opened_for_this_candidate": false
+}
