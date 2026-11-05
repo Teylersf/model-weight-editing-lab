@@ -317,7 +317,29 @@
     "selected_candidate": "pilot-004",
     "selection_reason": "pilot-005 did not retain required exact statistics finals",
     "frozen_launch_sha256": "1533f44d54a40a0dff5f8adfc373f843e10788577aecdc36466e2d6ea68ca9aa",
-    "status": "candidate and launch frozen, generation queued"
+    "status": "matched generation and blind review complete"
+  },
+  "fresh_worked_results": {
+    "candidate": "pilot-004",
+    "candidate_sha256": "65f39aa46659f3104430699babe7b56565495bcb7546d947f471790214898e51",
+    "baseline_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
+    "matched_generation_sha256": "4e0087282780e960b5063dd5a5e8637c05e3adb4d24dcf5054ac800c85fb311d",
+    "blind_review_freeze_sha256": "8494ce9ae7f6cc624188e9a6aafd58a1d504716dc469ffe1d8c7be7a8c858a17",
+    "reviewer_grades_sha256": "7a368c6b278208399d9272c3ade767f05e0c1ad8748a14b88324a7c950da2843",
+    "aggregate_sha256": "187fc405741b1265a971fbf3b78bb0ea3e0fd13087117f4860ccade42141be2a",
+    "reviewer": "Codex",
+    "grades_frozen_before_unblinding": true,
+    "reviewed_visible_responses": 24,
+    "baseline": {"complete_worked_correct": 8, "final_correct": 9, "natural_eog": 10, "high_school_complete": 3, "college_complete": 5},
+    "pilot_004": {"complete_worked_correct": 10, "final_correct": 11, "natural_eog": 12, "high_school_complete": 4, "college_complete": 6},
+    "paired_complete_worked_correct": {"both": 8, "baseline_only": 0, "candidate_only": 2, "neither": 2},
+    "paired_correct_complete_natural_eog_efficiency": {
+      "n": 8,
+      "baseline": {"median_tokens": 999, "median_decode_seconds": 22.9690779},
+      "pilot_004": {"median_tokens": 1413, "median_decode_seconds": 33.31334985}
+    },
+    "cost_line_typo_sensitivity": {"baseline_complete_if_waived": 9, "pilot_004_complete": 10},
+    "fresh_data_used_for_fitting": false
   },
   "agieval_worked_results": {
     "matched_generation_sha256": "5d68c9463f36e9180f4d8dd4dd92926f486e6abde8b8486917e15e4df9509e20",

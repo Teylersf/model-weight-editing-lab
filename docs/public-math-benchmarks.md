@@ -109,3 +109,17 @@ The fresh comparison is separate from the development repairs and the repeated M
 The fourth pilot is the default candidate. The fifth would replace it for this comparison only if it retains all eight reviewed solutions, repairs at least one additional calculus or cube case, preserves both critical proofs exactly, and scores at least 226/370 on matched MMLU. Codex will freeze both models' ordinary outputs, grade complete visible working with randomized model labels, and then reveal the labels. No fresh question, answer key, or result is an input to these fits. [Frozen evaluation and selection commitments](../evidence/public-math-benchmarks.json)
 
 The fourth pilot was selected before fresh generation because the fifth did not retain the required statistics precision. [Frozen launch receipt](../evidence/public-math-benchmarks.json)
+
+All 24 responses were frozen before the answer key was opened. Codex graded the visible working with randomized model labels and froze the grades before unblinding.
+
+| Fresh measure | Accepted rank-two | Fourth pilot |
+| --- | ---: | ---: |
+| Complete correct work, high school | 3/5 | 4/5 |
+| Complete correct work, college | 5/7 | 6/7 |
+| Complete correct work, overall | 8/12 | 10/12 |
+| Correct final result | 9/12 | 11/12 |
+| Natural endings | 10/12 | 12/12 |
+
+The edit gained two complete solutions and lost none: an exact constrained optimization and a complex-residue calculation. The optimization gain applies the stated strict rubric to an inconsistent displayed cost equality; overlooking that equality as a typo would change the overall comparison to 9/12 versus 10/12. The geometry probability was correct in the edited answer, but its count lacked a proof of exhaustiveness. Both models used the correct Bayes setup and made an arithmetic error when simplifying one posterior.
+
+On the eight matched problems that both solved completely, median output increased from 999 to 1,413 tokens and median decoding time increased from 22.97 to 33.31 seconds. The exact statistics problem was faster for the edit, 64.08 seconds versus 103.14, and both answers were complete. These are results on a small fresh set; they show a gain in complete solutions and completion with a speed tradeoff. [Frozen generation, blind grades, and paired aggregate](../evidence/public-math-benchmarks.json)
