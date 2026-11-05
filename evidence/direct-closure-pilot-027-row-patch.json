@@ -1,0 +1,105 @@
+{
+  "schema": "public-direct-output-multirow-xor-patch-v1",
+  "pilot": 27,
+  "checkpoint_bytes": 11674147744,
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_sha256": "2c50b83312162dbef6e8b47026a0c10081395671a5e02c8a37fcf4fefb81efbf",
+  "tensor": {
+    "name": "output.weight",
+    "quantization": "Q4_K",
+    "ggml_type": 12,
+    "dimensions": [
+      5120,
+      248320
+    ],
+    "offset": 10996640,
+    "bytes": 715161600
+  },
+  "rows": [
+    {
+      "token_id": 357,
+      "offset": 12024800,
+      "bytes": 2880,
+      "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+      "candidate_sha256": "d1615a597d45f892e9e170ace33e6c5ba9d0e43c38ebacd1d728ec9b40d2722a",
+      "sparse_xor": {
+        "changed_bytes": 30,
+        "row_relative_offsets": [
+          65,
+          90,
+          94,
+          113,
+          214,
+          222,
+          271,
+          286,
+          355,
+          425,
+          652,
+          715,
+          986,
+          1073,
+          1334,
+          1465,
+          1470,
+          1626,
+          1636,
+          1649,
+          1651,
+          1652,
+          1756,
+          1936,
+          2245,
+          2269,
+          2651,
+          2667,
+          2770,
+          2833
+        ],
+        "xor_hex": "0f10f001010130101030030f3001707003303070010f30100101070101f0"
+      }
+    },
+    {
+      "token_id": 417,
+      "offset": 12197600,
+      "bytes": 2880,
+      "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+      "candidate_sha256": "0749d1a4b764debe3fc3f05a1a9199c15f0d3f643104b5ee354bd2bfb0030c12",
+      "sparse_xor": {
+        "changed_bytes": 28,
+        "row_relative_offsets": [
+          94,
+          113,
+          214,
+          222,
+          467,
+          639,
+          652,
+          699,
+          715,
+          921,
+          1242,
+          1254,
+          1321,
+          1334,
+          1351,
+          1383,
+          1417,
+          1465,
+          1607,
+          1615,
+          1651,
+          1652,
+          1675,
+          1682,
+          2176,
+          2273,
+          2783,
+          2833
+        ],
+        "xor_hex": "30010101070301010703301001300701101001030303010110101010"
+      }
+    }
+  ],
+  "changed_bytes": 58
+}
