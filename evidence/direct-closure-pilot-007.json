@@ -1,7 +1,7 @@
 {
   "schema": "windows-direct-closure-calibrated-pilot-v1",
   "pilot": 7,
-  "status": "EXPERIMENTAL",
+  "status": "SCREENED_OUT_FOR_ONE_PREVIOUSLY_CORRECT_MMLU_ANSWER",
   "parent_sha256": "6b9c7a5f00324859b076b0f3140d084828abedd9c2708e16da0501c5615d73dc",
   "candidate_sha256": "f1cfeb8bf734840cb1d92d11fe2d1ade7bf740294446580e52531be5f5acc289",
   "saved_checkpoint_bytes": 11674147744,
@@ -180,5 +180,65 @@
         "exact_visible_text_match": false
       }
     ]
-  }
+  },
+  "matched_mmlu": {
+    "paired_receipt_sha256": "67273e981191bad32aec74c95b104dfd85ec2c9af92e97c76b53a532bdc92ef2",
+    "parent_benchmark_receipt_sha256": "493e2545d001aa716dab820707c843661e4deee97b77d5a6485795254d898c3a",
+    "candidate_benchmark_receipt_sha256": "7e58a6d26f9e825105940c4a5ff420b371e0660542915b4f027ff0c2c34a63e9",
+    "prompt_token_identity_verified": true,
+    "scores": {
+      "high_school_mathematics": {
+        "both_correct": 161,
+        "baseline_only_correct": 1,
+        "candidate_only_correct": 1,
+        "neither_correct": 107,
+        "total": 270,
+        "baseline_correct": 162,
+        "candidate_correct": 162,
+        "correct_delta": 0,
+        "accuracy_percentage_point_delta": 0.0,
+        "paired_scored": 270,
+        "paired_scored_answer_letter_disagreements": 2,
+        "any_outcome_disagreements": 2,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "college_mathematics": {
+        "both_correct": 64,
+        "baseline_only_correct": 0,
+        "candidate_only_correct": 0,
+        "neither_correct": 36,
+        "total": 100,
+        "baseline_correct": 64,
+        "candidate_correct": 64,
+        "correct_delta": 0,
+        "accuracy_percentage_point_delta": 0.0,
+        "paired_scored": 100,
+        "paired_scored_answer_letter_disagreements": 0,
+        "any_outcome_disagreements": 0,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "combined_micro": {
+        "both_correct": 225,
+        "baseline_only_correct": 1,
+        "candidate_only_correct": 1,
+        "neither_correct": 143,
+        "total": 370,
+        "baseline_correct": 226,
+        "candidate_correct": 226,
+        "correct_delta": 0,
+        "accuracy_percentage_point_delta": 0.0,
+        "paired_scored": 370,
+        "paired_scored_answer_letter_disagreements": 2,
+        "any_outcome_disagreements": 2,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      }
+    }
+  },
+  "fresh_holdout_opened_for_this_candidate": false
 }
