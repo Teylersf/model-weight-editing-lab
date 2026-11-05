@@ -600,6 +600,8 @@ CUDA confirmed both authored scores and all 90 reviewed ordinary winners. The ov
 
 Both accepted proofs reproduced their full token streams and visible answers exactly. The product-error proof ended naturally at 1,628 tokens and Euler at 1,340. The cylinder answer was byte-identical and ended naturally at **282 tokens**. Its measured decode time was 6.43 seconds, versus 6.46 for Pilot 024 and 10.55 for the earlier reference. [Proof and cylinder receipts](../evidence/direct-accuracy-pilot-036.json)
 
+Matched MMLU fell from **226/370 to 224/370**, with two recovered misses and four previously correct answers lost. High school moved from 162/270 to 161/270 and college from 64/100 to 63/100. All 370 items were scored under identical prompt order and native settings. The failed accuracy gate left the blinded fresh set sealed. [Matched benchmark receipts](../evidence/direct-accuracy-pilot-036.json)
+
 ## Pilots 037 and 038 with additional D63 constraints
 
 Pilot 037 projected the D63 output directions away from the gradients of ordinary winner margins. The output-only fit reached **346/576** rotations and **47/144** all-four. Adding Pilot 034's input projection reached **348/576** and **49/144**. Relative to Pilot 034, the RMS movement of the seven nearest ordinary margins was 127% for the output-only fit and 92% for the combined fit. Both arms missed the preregistered reduction after adjusting for choice-logit movement. [Pilot 037 receipts](../evidence/direct-accuracy-pilot-037.json)

@@ -1,7 +1,7 @@
 {
   "schema": "direct-accuracy-pilot-036-v1",
   "pilot": 36,
-  "status": "saved_preview_and_physical_replay_pass",
+  "status": "saved_and_proofs_preserved_matched_mmlu_failed",
   "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
   "parent_readback_receipt_sha256": "ed1da5e3427ec6fbbee895f915eaecb225ea157754ce8383e80457052ca39058",
   "parent_head_sha256": "a88fc5a0ab6c96f69fce68d9d5a3ade7860defdefd46de152e17573d7ce75098",
@@ -393,8 +393,8 @@
     "checkpoint_materialization": "pass",
     "physical_replay": "pass",
     "exact_proofs_and_cylinder": "pass",
-    "matched_mmlu": "running",
-    "blinded_fresh": "pending"
+    "matched_mmlu": "failed_zero_loss_and_net_gain",
+    "blinded_fresh": "sealed"
   },
   "scope": "The held scores are exploratory CPU replay on reused authored families. Ordinary winner checks cover the sampled authored states. Final CPU scores use the full fitting cohort.",
   "accepted_proof_cylinder_official_fresh_029_guard_only_and_transfer_inputs_excluded": true,
@@ -488,6 +488,88 @@
   "matched_mmlu": {
     "launch_receipt_sha256": "5c89f2ce54a00e3623dac26426da3a623463bc3f170fe4178b57ca8bcefdf3d2",
     "exact_proof_prerequisite_sha256": "934c90682c47916c6df27f6b605b2f69d01c43646e3835a4a66e49eea0787470",
-    "status": "running"
-  }
+    "status": "failed",
+    "gate_receipt_sha256": "64809a5e7ab4a0f7880ad005748a49474237d2d421070ea98dac7b76a1f70ddc",
+    "candidate_benchmark_receipt_sha256": "3d0c587450e0f6e803f250afc21963582cc3544a746d89843387da6527973507",
+    "baseline_benchmark_receipt_sha256": "6e380e6a92faed7adf4534c7e4ee7dde9b68bd99fdd0193eb8612526da23bf14",
+    "preparation_sha256": "544b275781ba854308ac147aae255df00473d1bfc4b9cad40ea43c59a9548954",
+    "exact_prompt_order_and_runtime_settings": true,
+    "reported_failures": [
+      "previously_correct_item_lost"
+    ],
+    "met_zero_prior_correct_loss": false,
+    "met_net_accuracy_gain": false,
+    "scores": {
+      "high_school_mathematics": {
+        "both_correct": 159,
+        "baseline_only_correct": 3,
+        "candidate_only_correct": 2,
+        "neither_correct": 106,
+        "total": 270,
+        "baseline_correct": 162,
+        "candidate_correct": 161,
+        "correct_delta": -1,
+        "accuracy_percentage_point_delta": -0.37037037037037035,
+        "paired_scored": 270,
+        "paired_scored_answer_letter_disagreements": 6,
+        "any_outcome_disagreements": 6,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "college_mathematics": {
+        "both_correct": 63,
+        "baseline_only_correct": 1,
+        "candidate_only_correct": 0,
+        "neither_correct": 36,
+        "total": 100,
+        "baseline_correct": 64,
+        "candidate_correct": 63,
+        "correct_delta": -1,
+        "accuracy_percentage_point_delta": -1.0,
+        "paired_scored": 100,
+        "paired_scored_answer_letter_disagreements": 1,
+        "any_outcome_disagreements": 1,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      },
+      "combined_micro": {
+        "both_correct": 222,
+        "baseline_only_correct": 4,
+        "candidate_only_correct": 2,
+        "neither_correct": 142,
+        "total": 370,
+        "baseline_correct": 226,
+        "candidate_correct": 224,
+        "correct_delta": -2,
+        "accuracy_percentage_point_delta": -0.5405405405405406,
+        "paired_scored": 370,
+        "paired_scored_answer_letter_disagreements": 7,
+        "any_outcome_disagreements": 7,
+        "score_status_disagreements": 0,
+        "baseline_unscored": 0,
+        "candidate_unscored": 0
+      }
+    },
+    "logit_comparison": {
+      "cases": 370,
+      "expected_logits": 1480,
+      "compared_logits": 1480,
+      "exact_binary32_logits": 740,
+      "differing_binary32_logits": 740,
+      "missing_logit_pairs": 0,
+      "exact_four_logit_rows": 0,
+      "nonexact_or_incomplete_rows": 370,
+      "all_four_logits_bit_identical": false,
+      "max_absolute_logit_difference": 0.2459869384765625,
+      "answer_choice_disagreements": 7,
+      "score_status_disagreements": 0,
+      "both_correct": 222,
+      "baseline_only_correct": 4,
+      "candidate_only_correct": 2,
+      "neither_correct": 142
+    }
+  },
+  "accepted_model_pointer_changed": false
 }
