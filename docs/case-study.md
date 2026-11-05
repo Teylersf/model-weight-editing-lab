@@ -375,3 +375,13 @@ A single replay of the unedited development trajectory measured the finish token
 All six development responses ended naturally and were correct. The cylinder matched the parent's first 164 tokens and finished in **282 versus 486 tokens**, taking **6.50 versus 10.55 seconds** to decode. Four answers matched the parent token for token, including the probability tables and the population estimate. [Pilot 012 evidence and scan](../evidence/direct-closure-pilot-012.json)
 
 Pilot 012 scored **225/370 versus 226/370** on the matched MMLU comparison. The one previously correct answer it lost was the same item Pilot 010 lost. The finer dose retained the development gains while the matched accuracy gate still failed. [Paired results](../evidence/direct-closure-pilot-012.json)
+
+## Thirteenth pilot with answer-choice constraints
+
+The last-layer residual update can be constrained using only the output rows for the four literal answer letters. The solver projects the update into the null space of their three independent RMS-gain-weighted differences. In the decoded real-arithmetic model, a fixed prefix then keeps its choice order because RMS normalization multiplies the differences by a common positive factor. The native CUDA kernel and rounded stored matrix require their own checks.
+
+The constrained fit reused the pinned development capture and selected a scale of 0.755. The native preview gave the finish token a **1.007-logit** lead and preserved the four-letter order at that one fixed development state. The maximum stored pairwise contrast operator norm was \(7.88\times10^{-8}\). Readback verified exact bytes outside the edited matrix.
+
+The cylinder again ended reasoning at index 164 and finished naturally in **282 versus 486 tokens**, with the correct worked answer. Measured decode time was **6.82 versus 10.55 seconds**. All six development responses were correct and matched Pilot 012 token for token. The six-case aggregate decode time was 68.61 seconds versus 64.78 for the parent. [Pilot 013 evidence](../evidence/direct-closure-pilot-013.json)
+
+Pilot 013 made the same choices as Pilot 012 on all 370 MMLU questions and scored **225/370 versus 226/370** for the parent. The algebraic choice constraint and the one-state native check did not prevent the matched regression. In the pinned CUDA path the Q4_K head uses a Q8_1 activation quantizer, which can change differences between native logits beyond the decoded real-arithmetic model. [Paired results](../evidence/direct-closure-pilot-013.json) · [Pinned CUDA quantizer](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/ggml/src/ggml-cuda/quantize.cu#L74-L90)
