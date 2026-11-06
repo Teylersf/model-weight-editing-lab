@@ -1,0 +1,808 @@
+[
+  {
+    "id": "calculus-limit-cancellation",
+    "title": "Limits by cancelling a removable factor",
+    "domain": "calculus",
+    "level": "high-school",
+    "aliases": [
+      "factor and cancel limit",
+      "removable discontinuity",
+      "0 over 0 algebraic limit"
+    ],
+    "pattern": "A formula equal to f(x) near a, except possibly at a, has the same limit there.",
+    "applies": [
+      "Direct substitution gives 0/0 and factoring or multiplying by a conjugate can simplify the quotient."
+    ],
+    "steps": [
+      "Factor or rationalize until a common factor is visible.",
+      "Cancel on the punctured domain x≠a, then evaluate the simplified limit."
+    ],
+    "pitfalls": [
+      "The limit can exist even if the original function is undefined at a.",
+      "A zero denominator with a nonzero numerator needs a separate one-sided analysis."
+    ],
+    "checks": [
+      "Confirm the simplified expression agrees with the original on both sides sufficiently close to a."
+    ],
+    "example": {
+      "problem": "Find lim(x→2) (x³−8)/(x−2).",
+      "answer": "For x≠2 the quotient is x²+2x+4, so the limit is 12."
+    }
+  },
+  {
+    "id": "calculus-squeeze-theorem",
+    "title": "Squeeze theorem for limits",
+    "domain": "calculus",
+    "level": "high-school",
+    "aliases": [
+      "sandwich theorem",
+      "pinching theorem",
+      "bounded oscillation limit"
+    ],
+    "pattern": "If g(x)≤f(x)≤h(x) near a and both bounds tend to L, then f(x) tends to L.",
+    "applies": [
+      "The target can be bounded on a punctured neighborhood or on the requested one-sided domain."
+    ],
+    "steps": [
+      "Use a known bound on the difficult factor.",
+      "Multiply by the remaining factor with attention to its sign.",
+      "Take limits of both resulting bounds."
+    ],
+    "pitfalls": [
+      "The bounds must approach the same finite value for this form of the theorem.",
+      "Multiplication by a negative factor reverses inequalities."
+    ],
+    "checks": [
+      "Check that both inequalities hold for every sufficiently nearby input in the limit's domain."
+    ],
+    "example": {
+      "problem": "Find lim(x→0) x² cos(4/x).",
+      "answer": "Because −x²≤x² cos(4/x)≤x², the limit is 0."
+    }
+  },
+  {
+    "id": "calculus-piecewise-continuity",
+    "title": "Continuity at a piecewise join",
+    "domain": "calculus",
+    "level": "high-school",
+    "aliases": [
+      "match one-sided limits",
+      "continuity parameter",
+      "continuous piecewise function"
+    ],
+    "pattern": "Continuity at c requires lim(x→c−) f(x)=lim(x→c+) f(x)=f(c).",
+    "applies": [
+      "Two formula branches meet at a point in the domain."
+    ],
+    "steps": [
+      "Evaluate the left and right limits using the appropriate branches.",
+      "Read f(c) from the branch that includes c.",
+      "Solve all equalities and verify the resulting value."
+    ],
+    "pitfalls": [
+      "An open endpoint in one branch gives its limit, while the closed branch supplies the value.",
+      "Matching only the side limits does not verify the point value."
+    ],
+    "checks": [
+      "Substitute the parameter into both branches and verify the actual value at c."
+    ],
+    "example": {
+      "problem": "Let f(x)=x²+2 for x≤1 and f(x)=ax−1 for x>1. Find a that makes f continuous.",
+      "answer": "The left limit and f(1) are 3. The right limit a−1 must equal 3, so a=4."
+    }
+  },
+  {
+    "id": "calculus-intermediate-value-theorem",
+    "title": "Intermediate value theorem for existence",
+    "domain": "calculus",
+    "level": "high-school",
+    "aliases": [
+      "IVT",
+      "Bolzano theorem",
+      "sign-change root existence"
+    ],
+    "pattern": "If f is continuous on [a,b], it attains every value between f(a) and f(b).",
+    "applies": [
+      "The question asks whether a value or root occurs on a closed interval."
+    ],
+    "steps": [
+      "Verify continuity over the entire interval.",
+      "Evaluate f(a) and f(b).",
+      "If the target lies strictly between them, conclude some interior point attains it."
+    ],
+    "pitfalls": [
+      "A sign change across a discontinuity does not prove a root.",
+      "The theorem guarantees existence. Uniqueness requires more information."
+    ],
+    "checks": [
+      "If claiming exactly one root, establish strict monotonicity or another uniqueness argument separately."
+    ],
+    "example": {
+      "problem": "Show x³+x=7 has exactly one solution in (1,2).",
+      "answer": "For f(x)=x³+x−7, f(1)=−5 and f(2)=3, so continuity gives a root in (1,2). Since f′=3x²+1>0, that root is unique."
+    }
+  },
+  {
+    "id": "calculus-mean-value-theorem",
+    "title": "Mean value theorem and Rolle's theorem",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "Lagrange mean value theorem",
+      "Rolle theorem",
+      "secant slope equals tangent slope"
+    ],
+    "pattern": "Some c∈(a,b) satisfies f′(c)=(f(b)−f(a))/(b−a). Rolle's theorem is the equal-endpoint case.",
+    "applies": [
+      "The function is continuous on [a,b] and differentiable on (a,b), with a<b."
+    ],
+    "steps": [
+      "Check continuity and differentiability on the required sets.",
+      "Compute the secant slope.",
+      "Set f′(c) equal to it and retain solutions strictly inside the interval."
+    ],
+    "pitfalls": [
+      "A corner inside the interval invalidates the differentiability hypothesis.",
+      "The matching derivative can occur at more than one point."
+    ],
+    "checks": [
+      "Substitute each reported c into f′ and check it lies in (a,b)."
+    ],
+    "example": {
+      "problem": "Find a mean value theorem point for f(x)=x²−x on [1,4].",
+      "answer": "The secant slope is (12−0)/3=4. Solving 2c−1=4 gives c=5/2."
+    }
+  },
+  {
+    "id": "calculus-related-rates",
+    "title": "Related rates from a geometric constraint",
+    "domain": "calculus",
+    "level": "high-school",
+    "aliases": [
+      "rates of change with time",
+      "ladder sliding rate",
+      "differentiate both sides in time"
+    ],
+    "pattern": "Differentiate a constraint among time-varying quantities with respect to time before inserting instantaneous values.",
+    "applies": [
+      "Known and requested rates describe quantities linked by a differentiable equation."
+    ],
+    "steps": [
+      "Define the changing quantities and their positive directions.",
+      "Write the constraint and differentiate using the chain rule.",
+      "Substitute the measurements and known rates at the specified instant.",
+      "Solve for the signed rate and attach units."
+    ],
+    "pitfalls": [
+      "Substituting a changing length before differentiating can erase its derivative.",
+      "A negative rate means the chosen quantity is decreasing."
+    ],
+    "checks": [
+      "Confirm the output units and sign agree with the geometry."
+    ],
+    "example": {
+      "problem": "A 13 m ladder has its foot 5 m from a wall, moving away at 2 m/s. How fast is its top moving vertically?",
+      "answer": "With x²+y²=169, y=12 at that instant. Then 5·2+12y′=0, so y′=−5/6 m/s, downward."
+    }
+  },
+  {
+    "id": "calculus-directional-derivative",
+    "title": "Directional derivative from the gradient",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "rate in a given direction",
+      "unit-vector derivative",
+      "steepest ascent"
+    ],
+    "pattern": "Dᵤf(p)=∇f(p)·u for differentiable f and a unit vector u.",
+    "applies": [
+      "A rate of change at a point is measured per unit distance in a specified nonzero direction."
+    ],
+    "steps": [
+      "Compute the partial derivatives and evaluate the gradient at the point.",
+      "Normalize the given direction.",
+      "Take its dot product with the gradient."
+    ],
+    "pitfalls": [
+      "A raw velocity vector measures change per unit parameter, which can differ from change per unit distance.",
+      "The direction from p to q is q−p."
+    ],
+    "checks": [
+      "The absolute directional derivative cannot exceed the gradient norm."
+    ],
+    "example": {
+      "problem": "Find the directional derivative of f(x,y)=x²y+y² at (1,2) along (3,4).",
+      "answer": "∇f(1,2)=(4,5) and u=(3/5,4/5). The rate is 32/5."
+    }
+  },
+  {
+    "id": "calculus-hessian-second-derivative-test",
+    "title": "Classify critical points with the Hessian",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "multivariable second derivative test",
+      "Hessian discriminant",
+      "saddle point test"
+    ],
+    "pattern": "At a critical point in two variables, use D=fₓₓfᵧᵧ−fₓᵧ². Negative D gives a saddle. Positive D gives a minimum or maximum according to the sign of fₓₓ.",
+    "applies": [
+      "The function has continuous second partial derivatives near an interior critical point."
+    ],
+    "steps": [
+      "Solve ∇f=0.",
+      "Evaluate D and fₓₓ at each critical point.",
+      "If D=0, use a separate argument such as sign analysis along paths."
+    ],
+    "pitfalls": [
+      "This test classifies local behavior. Global or boundary extrema need additional checks.",
+      "A zero determinant is inconclusive."
+    ],
+    "checks": [
+      "For a quadratic, independently check the form by completing squares or inspecting Hessian eigenvalues."
+    ],
+    "example": {
+      "problem": "Classify the critical point of f=x²+4xy+5y²−2x+2y.",
+      "answer": "The critical point is (7,−3). D=2·10−4²=4 and fₓₓ=2>0, so it is a strict local minimum with value −10."
+    }
+  },
+  {
+    "id": "calculus-alternating-series-remainder",
+    "title": "Alternating series and truncation error",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "Leibniz criterion",
+      "alternating series estimation theorem",
+      "next-term error bound"
+    ],
+    "pattern": "If bₙ≥0 decreases to 0, then Σ(−1)ⁿ⁻¹bₙ converges and |S−S_N|≤b_(N+1).",
+    "applies": [
+      "Signs alternate and the positive magnitudes eventually decrease to zero."
+    ],
+    "steps": [
+      "Check the magnitudes and identify where they become nonincreasing.",
+      "Use the first omitted magnitude to bound a remainder taken after that point.",
+      "Choose enough terms to meet the requested tolerance."
+    ],
+    "pitfalls": [
+      "The bound uses the first omitted term, not the last included term.",
+      "This criterion alone does not establish absolute convergence."
+    ],
+    "checks": [
+      "Neighboring partial sums bracket the limiting value once the decreasing tail begins."
+    ],
+    "example": {
+      "problem": "How many terms first certify error less than 1/20 for Σ from n=1 of (−1)ⁿ⁻¹/(2n+1) using the alternating error bound?",
+      "answer": "Use N=9 terms. The first omitted magnitude is 1/21<1/20, whereas N=8 gives the bound 1/19."
+    }
+  },
+  {
+    "id": "calculus-integral-test-for-series",
+    "title": "Integral test for a positive series",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "integral criterion for convergence",
+      "integral remainder bound",
+      "logarithmic series convergence"
+    ],
+    "pattern": "For eventually positive, continuous, decreasing f, Σf(n) and ∫f(x) dx have the same convergence behavior.",
+    "applies": [
+      "A positive-term series has an integral that can be evaluated or bounded conveniently."
+    ],
+    "steps": [
+      "Verify positivity, continuity and monotonic decrease past some integer N.",
+      "Evaluate the corresponding improper integral.",
+      "For a convergent tail after M≥N, bound the remainder between ∫ from M+1 and ∫ from M to infinity."
+    ],
+    "pitfalls": [
+      "The integral generally differs from the series sum.",
+      "Omitting finitely many defined terms does not affect convergence."
+    ],
+    "checks": [
+      "Verify the lower and upper remainder integrals start at consecutive integers in the correct order."
+    ],
+    "example": {
+      "problem": "Does Σ from n=3 of 1/[n(ln n)²] converge?",
+      "answer": "Yes. Its positive decreasing integrand has integral from 3 to infinity equal to 1/ln 3, using u=ln x."
+    }
+  },
+  {
+    "id": "calculus-monotone-bounded-sequence",
+    "title": "Convergence of monotone bounded sequences",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "monotone convergence theorem for sequences",
+      "bounded recurrence",
+      "limit of recursive sequence"
+    ],
+    "pattern": "A nondecreasing sequence bounded above, or nonincreasing sequence bounded below, has a finite limit.",
+    "applies": [
+      "A sequence is given explicitly or recursively and its monotonicity and bound can be proved."
+    ],
+    "steps": [
+      "Prove a one-sided bound, using induction for a recurrence when appropriate.",
+      "Prove monotonicity.",
+      "For a continuous update a_(n+1)=g(aₙ), solve L=g(L) within the established bounds."
+    ],
+    "pitfalls": [
+      "A fixed point alone does not establish convergence.",
+      "If several fixed points satisfy the bounds, use more information to identify the limit."
+    ],
+    "checks": [
+      "Ensure the bound holds from the actual initial value, and check continuity at the proposed limit."
+    ],
+    "example": {
+      "problem": "Find the limit of a₁=1 and a_(n+1)=(aₙ+6)/2.",
+      "answer": "If aₙ≤6, then a_(n+1)≤6 and a_(n+1)−aₙ=(6−aₙ)/2≥0. The sequence converges, and L=(L+6)/2 gives L=6."
+    }
+  },
+  {
+    "id": "calculus-parametric-arc-length",
+    "title": "Arc length from parametric speed",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "curve length integral",
+      "parametric arc length",
+      "integrate speed"
+    ],
+    "pattern": "For r(t) on [a,b], the traversed length is ∫ₐᵇ ||r′(t)|| dt.",
+    "applies": [
+      "The path is piecewise continuously differentiable over a finite parameter interval."
+    ],
+    "steps": [
+      "Differentiate each coordinate.",
+      "Take the Euclidean norm of the velocity vector.",
+      "Integrate that nonnegative speed over the parameter interval."
+    ],
+    "pitfalls": [
+      "A retraced portion contributes each time it is traversed.",
+      "Use |g(t)| when simplifying √(g(t)²) unless the sign is known."
+    ],
+    "checks": [
+      "Length is nonnegative and at least the distance between the endpoints."
+    ],
+    "example": {
+      "problem": "Find the length of r(t)=(t²,2t³/3) from t=0 to t=√3.",
+      "answer": "Speed is 2t√(1+t²) on this interval. Integrating gives (2/3)[(1+t²)^(3/2)] from 0 to √3, or 14/3."
+    }
+  },
+  {
+    "id": "calculus-conservative-line-integral",
+    "title": "Line integrals using a potential function",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "fundamental theorem of line integrals",
+      "conservative vector field",
+      "path independent work"
+    ],
+    "pattern": "If F=∇φ on the path, then ∫_C F·dr=φ(end)−φ(start).",
+    "applies": [
+      "The path is piecewise smooth and a differentiable potential exists on a region containing it."
+    ],
+    "steps": [
+      "Integrate one field component in its own coordinate, adding a function of the other coordinates.",
+      "Match the remaining partial derivatives to identify that function.",
+      "Verify the gradient, then subtract the endpoint values in path order."
+    ],
+    "pitfalls": [
+      "Equal mixed partials alone may be insufficient on a domain with holes.",
+      "This endpoint formula is for the oriented work integral F·dr."
+    ],
+    "checks": [
+      "Check every partial derivative of the proposed potential, or use a closed path to verify zero work when appropriate."
+    ],
+    "example": {
+      "problem": "For F=(2xy+y²,x²+2xy), find the work along a path from (1,1) to (2,3).",
+      "answer": "A potential is φ=x²y+xy². Work is φ(2,3)−φ(1,1)=30−2=28."
+    }
+  },
+  {
+    "id": "linear-rank-nullity",
+    "title": "Rank-nullity dimension count",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "dimension theorem",
+      "nullity from rank",
+      "rank plus nullity"
+    ],
+    "pattern": "For a linear map T: V→W with finite-dimensional V, dim ker T + dim im T = dim V.",
+    "applies": [
+      "The domain dimension and either the rank or kernel dimension are known or can be computed."
+    ],
+    "steps": [
+      "Identify the dimension of the domain, or number of matrix columns.",
+      "Count pivots to obtain the rank when needed.",
+      "Subtract rank from the domain dimension to find nullity."
+    ],
+    "pitfalls": [
+      "The input dimension can differ from the number of rows.",
+      "Nullity counts independent free directions rather than the number of solutions."
+    ],
+    "checks": [
+      "Rank cannot exceed either dimension, and the computed nullity is nonnegative."
+    ],
+    "example": {
+      "problem": "A linear map from R⁵ to R³ has rank 2. What are the dimensions of its kernel and image?",
+      "answer": "The image has dimension 2 and the kernel has dimension 5−2=3."
+    }
+  },
+  {
+    "id": "linear-gauss-jordan-inverse",
+    "title": "Compute a matrix inverse by row reduction",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "augment with identity",
+      "Gauss Jordan inverse",
+      "row-reduction inverse"
+    ],
+    "pattern": "Reduce [A|I] to [I|A⁻¹] by applying every row operation to both blocks.",
+    "applies": [
+      "A is a square matrix over a field."
+    ],
+    "steps": [
+      "Augment A with the identity matrix.",
+      "Row-reduce the full augmented matrix while trying to make the left block I.",
+      "If the left block becomes I, read the inverse on the right. Otherwise A is singular."
+    ],
+    "pitfalls": [
+      "Keep the identity block in the same row operations.",
+      "A rectangular matrix has no ordinary two-sided inverse."
+    ],
+    "checks": [
+      "Multiply A by the proposed inverse to verify the identity."
+    ],
+    "example": {
+      "problem": "Invert A=[[2,1],[3,2]].",
+      "answer": "Reducing [A|I] gives [I|[[2,−1],[−3,2]]]. Multiplication confirms this inverse."
+    }
+  },
+  {
+    "id": "linear-fundamental-subspace-orthogonality",
+    "title": "Find an orthogonal complement with a transpose",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "left null space",
+      "column space orthogonal complement",
+      "fundamental subspace orthogonality"
+    ],
+    "pattern": "For real A, col(A)⊥=ker(Aᵀ) and row(A)⊥=ker(A).",
+    "applies": [
+      "An orthogonal complement of a real row or column space is needed under the usual dot product."
+    ],
+    "steps": [
+      "Choose Aᵀ for the column-space complement or A for the row-space complement.",
+      "Solve the corresponding homogeneous system.",
+      "Express the free directions as an independent basis."
+    ],
+    "pitfalls": [
+      "The two complements can lie in spaces of different dimensions.",
+      "For the usual complex inner product, use A* (the conjugate transpose). Then col(A)⊥=ker(A*) and col(A*)⊥=ker(A)."
+    ],
+    "checks": [
+      "Check that each output vector has zero dot product with every spanning vector of the original subspace."
+    ],
+    "example": {
+      "problem": "Find col(A)⊥ for A=[[1,0],[1,1],[0,1]].",
+      "answer": "Aᵀz=0 gives z₁+z₂=0 and z₂+z₃=0, so (1,−1,1) is a basis."
+    }
+  },
+  {
+    "id": "linear-trace-determinant-eigenvalues",
+    "title": "Use trace and determinant for 2×2 eigenvalues",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "quadratic characteristic polynomial",
+      "eigenvalue sum and product",
+      "two by two eigenvalues"
+    ],
+    "pattern": "For 2×2 A, det(λI−A)=λ²−tr(A)λ+det(A).",
+    "applies": [
+      "The matrix is 2×2 and its eigenvalues are requested over the real or complex numbers."
+    ],
+    "steps": [
+      "Compute the sum of diagonal entries and the determinant.",
+      "Solve the quadratic characteristic equation.",
+      "Specify the field and count eigenvalues with algebraic multiplicity."
+    ],
+    "pitfalls": [
+      "A negative discriminant gives no real eigenvalues but two complex eigenvalues for a real matrix.",
+      "Repeated eigenvalues do not determine the eigenspace dimension."
+    ],
+    "checks": [
+      "The reported eigenvalues sum to the trace and multiply to the determinant."
+    ],
+    "example": {
+      "problem": "Find the complex eigenvalues of [[3,1],[−2,4]].",
+      "answer": "The trace is 7 and determinant 14, so λ=(7±i√7)/2."
+    }
+  },
+  {
+    "id": "linear-cayley-hamilton-powers",
+    "title": "Reduce matrix powers by Cayley–Hamilton",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "Cayley Hamilton theorem",
+      "characteristic polynomial of a matrix power",
+      "reduce high matrix powers"
+    ],
+    "pattern": "Every square matrix satisfies its own characteristic polynomial, p_A(A)=0.",
+    "applies": [
+      "A square matrix power or polynomial can be simplified using a known characteristic polynomial."
+    ],
+    "steps": [
+      "Find the characteristic polynomial.",
+      "Replace its scalar variable with A, replacing the constant term with a multiple of I.",
+      "Reduce higher powers recursively or reduce the scalar polynomial modulo p_A before substituting A."
+    ],
+    "pitfalls": [
+      "A scalar constant in a matrix polynomial multiplies the identity.",
+      "This theorem applies to square matrices even when they lack a full eigenbasis."
+    ],
+    "checks": [
+      "Compare the simplified expression to direct multiplication for a low power."
+    ],
+    "example": {
+      "problem": "Use Cayley–Hamilton to compute A⁴ for A=[[1,1],[1,0]].",
+      "answer": "p_A(t)=t²−t−1, so A²=A+I. Then A⁴=3A+2I=[[5,3],[3,2]]."
+    }
+  },
+  {
+    "id": "ode-bernoulli-substitution",
+    "title": "Bernoulli differential equation",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "Bernoulli ODE",
+      "power substitution in ODE",
+      "reduce nonlinear ODE to linear"
+    ],
+    "pattern": "For y′+p(x)y=q(x)yⁿ with n≠0,1, use v=y^(1−n), giving v′+(1−n)pv=(1−n)q.",
+    "applies": [
+      "Work on a solution branch where the powers are real, differentiable and the division by yⁿ is valid."
+    ],
+    "steps": [
+      "Check separately whether y=0 is a solution on the given domain.",
+      "Substitute v and solve its first-order linear equation.",
+      "Convert back on the branch and interval selected by the initial data."
+    ],
+    "pitfalls": [
+      "Recovering y may require a sign or branch choice.",
+      "Singularities of the recovered expression restrict its interval of validity."
+    ],
+    "checks": [
+      "Substitute the recovered y in the original equation and verify the initial value."
+    ],
+    "example": {
+      "problem": "Solve y′+y=y² with y(0)=2.",
+      "answer": "Set v=1/y, so v′−v=−1 and v=1−eˣ/2. Thus y=2/(2−eˣ) on (−∞,ln 2)."
+    }
+  },
+  {
+    "id": "ode-variation-of-parameters",
+    "title": "Variation of parameters for second-order ODEs",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "variation of constants",
+      "Wronskian particular solution",
+      "nonhomogeneous differential equation"
+    ],
+    "pattern": "For y″+p y′+q y=g, take y_p=u₁y₁+u₂y₂ with u₁′=−y₂g/W and u₂′=y₁g/W.",
+    "applies": [
+      "The leading coefficient is nonzero and the normalized coefficients and forcing are continuous on the interval. Two independent homogeneous solutions y₁,y₂ are known, so W is nonzero there."
+    ],
+    "steps": [
+      "Divide through by the leading coefficient first.",
+      "Compute W=y₁y₂′−y₁′y₂ and integrate the formulas for u₁,u₂.",
+      "Add the homogeneous solution and use any initial conditions."
+    ],
+    "pitfalls": [
+      "The right-hand side in the formula is the normalized g.",
+      "Constants from integrating u₁,u₂ are already included in the homogeneous solution."
+    ],
+    "checks": [
+      "Differentiate y_p and verify the normalized forcing."
+    ],
+    "example": {
+      "problem": "Find a particular solution of y″+y=sec x on (−π/2,π/2).",
+      "answer": "With y₁=cos x, y₂=sin x and W=1, take u₁=ln(cos x), u₂=x. Then y_p=cos x·ln(cos x)+x sin x."
+    }
+  },
+  {
+    "id": "ode-cauchy-euler",
+    "title": "Cauchy–Euler equidimensional equation",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "Euler Cauchy equation",
+      "equidimensional ODE",
+      "power trial variable coefficients"
+    ],
+    "pattern": "For ax²y″+bxy′+cy=0 with a≠0 on x>0, try xᵐ and solve a m(m−1)+b m+c=0.",
+    "applies": [
+      "The homogeneous linear equation has the specified powers of x and the interval avoids x=0."
+    ],
+    "steps": [
+      "Derive and solve the indicial quadratic.",
+      "For distinct real roots use two powers, and for a repeated root use xᵐ and xᵐ ln x.",
+      "For conjugate roots α±iβ, use xᵅ cos(β ln x) and xᵅ sin(β ln x)."
+    ],
+    "pitfalls": [
+      "The x=0 point is singular. Handle x<0 separately using |x| powers and ln|x|.",
+      "The term from y″ contributes m(m−1), not m²."
+    ],
+    "checks": [
+      "Verify the two solution functions are independent on the stated interval."
+    ],
+    "example": {
+      "problem": "Solve x²y″−3xy′+4y=0 for x>0.",
+      "answer": "The indicial polynomial is (m−2)². Therefore y=x²(C₁+C₂ ln x)."
+    }
+  },
+  {
+    "id": "ode-dirac-impulse-response",
+    "title": "Linear ODE response to a Dirac impulse",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "delta forcing",
+      "impulsive input",
+      "Laplace transform of Dirac delta"
+    ],
+    "pattern": "An impulse cδ(t−a) in y′+py changes y by c at t=a when p and the regular terms are locally bounded.",
+    "applies": [
+      "The impulse time is within the interval and the equation is interpreted in the distributional sense."
+    ],
+    "steps": [
+      "Solve the regular equation before the impulse.",
+      "Integrate across an arbitrarily small interval around the impulse to get the jump.",
+      "Use the right-hand limit as initial data for the equation after the impulse."
+    ],
+    "pitfalls": [
+      "A Dirac delta is an impulse, while a Heaviside step stays on afterward.",
+      "A nonunit leading coefficient of y′ scales the jump after normalization."
+    ],
+    "checks": [
+      "Verify the one-sided limits differ by the impulse mass and check the ODE away from the impulse."
+    ],
+    "example": {
+      "problem": "Solve y′+2y=3δ(t−1) with y(0)=0.",
+      "answer": "The solution is zero for 0≤t<1, jumps to 3 at t=1, and is 3e^(−2(t−1)) for t>1."
+    }
+  },
+  {
+    "id": "numerical-forward-euler",
+    "title": "Forward Euler for initial value problems",
+    "domain": "numerical-methods",
+    "level": "undergraduate",
+    "aliases": [
+      "explicit Euler method",
+      "Euler step",
+      "numerical ODE approximation"
+    ],
+    "pattern": "For y′=f(x,y), update y_(n+1)=yₙ+h f(xₙ,yₙ) and x_(n+1)=xₙ+h.",
+    "applies": [
+      "An initial point, step size and right-hand-side function are given."
+    ],
+    "steps": [
+      "Evaluate the slope at the current approximate point.",
+      "Multiply that slope by h and add it to yₙ.",
+      "Advance x and repeat until the requested grid point."
+    ],
+    "pitfalls": [
+      "Using the new x or y in the current slope changes the method.",
+      "A large h can cause error or numerical instability even if the underlying solution is smooth."
+    ],
+    "checks": [
+      "Verify the number of steps and, when assessing accuracy, compare with a smaller step size."
+    ],
+    "example": {
+      "problem": "Apply two forward Euler steps with h=1/4 to y′=x+y, y(0)=1.",
+      "answer": "The first approximation is y₁=5/4. The next slope is 1/4+5/4=3/2, giving y₂=13/8 at x=1/2."
+    }
+  },
+  {
+    "id": "numerical-heun-explicit-trapezoid",
+    "title": "Heun's explicit trapezoidal method",
+    "domain": "numerical-methods",
+    "level": "undergraduate",
+    "aliases": [
+      "Heun method",
+      "improved Euler trapezoidal form",
+      "explicit predictor corrector"
+    ],
+    "pattern": "Predict y*=yₙ+h k₁ with k₁=f(xₙ,yₙ), then take y_(n+1)=yₙ+(h/2)(k₁+f(xₙ+h,y*)).",
+    "applies": [
+      "A first-order initial value problem is advanced one grid step using the explicit trapezoidal form of RK2."
+    ],
+    "steps": [
+      "Evaluate the starting slope and use forward Euler to predict the endpoint value.",
+      "Evaluate the endpoint slope at the prediction.",
+      "Use the average of both slopes to correct the original yₙ."
+    ],
+    "pitfalls": [
+      "The corrected value is based on yₙ, not on the predictor.",
+      "The phrase modified Euler can mean the midpoint method in some curricula. Verify the formula requested."
+    ],
+    "checks": [
+      "For a constant slope, both stage slopes coincide and the method gives the exact step."
+    ],
+    "example": {
+      "problem": "Take one Heun step with h=1/5 for y′=y and y(0)=1.",
+      "answer": "The starting slope is 1 and the predicted endpoint is 6/5. The corrected value is 1+(1/10)(1+6/5)=61/50."
+    }
+  },
+  {
+    "id": "numerical-composite-simpson",
+    "title": "Composite Simpson quadrature",
+    "domain": "numerical-methods",
+    "level": "undergraduate",
+    "aliases": [
+      "Simpson one-third rule",
+      "parabolic quadrature",
+      "Simpson integration weights"
+    ],
+    "pattern": "On an even number of equal subintervals of width h, use h/3 times the weighted values with weights 1,4,2,4,…,2,4,1.",
+    "applies": [
+      "Sample points are uniformly spaced and the number of subintervals is even."
+    ],
+    "steps": [
+      "Compute h=(b−a)/n with even n.",
+      "Use weight 1 for endpoints, 4 for odd interior indices and 2 for even interior indices.",
+      "Multiply the weighted sum by h/3."
+    ],
+    "pitfalls": [
+      "The number of sample points is n+1 and is therefore odd.",
+      "A fourth-order error estimate requires sufficient smoothness, commonly a bounded fourth derivative."
+    ],
+    "checks": [
+      "The standard rule integrates cubic and lower-degree polynomials exactly in exact arithmetic."
+    ],
+    "example": {
+      "problem": "Approximate ∫ from 0 to 2 of x⁴ dx using two Simpson subintervals.",
+      "answer": "With h=1, the estimate is (0+4·1+16)/3=20/3. The exact integral is 32/5, so the estimate is high by 4/15."
+    }
+  },
+  {
+    "id": "numerical-centered-difference",
+    "title": "Centered finite difference for a derivative",
+    "domain": "numerical-methods",
+    "level": "undergraduate",
+    "aliases": [
+      "central difference derivative",
+      "symmetric difference quotient",
+      "numerical differentiation"
+    ],
+    "pattern": "Approximate f′(x) by [f(x+h)−f(x−h)]/(2h). The truncation error is O(h²) for a bounded third derivative near x.",
+    "applies": [
+      "The function is available at both symmetric sample points and h is positive."
+    ],
+    "steps": [
+      "Choose h so both sample points stay inside the domain.",
+      "Evaluate the two samples using adequate precision.",
+      "Subtract and divide by 2h, then compare with a nearby h if appropriate."
+    ],
+    "pitfalls": [
+      "An excessively small h can amplify cancellation and floating-point roundoff.",
+      "Near a boundary, symmetric sample points may fall outside the domain."
+    ],
+    "checks": [
+      "For a linear function this quotient equals the slope in exact arithmetic."
+    ],
+    "example": {
+      "problem": "Estimate f′(2) for f(x)=x³ using h=0.1.",
+      "answer": "[2.1³−1.9³]/0.2=12.01, compared with the exact derivative 12."
+    }
+  }
+]

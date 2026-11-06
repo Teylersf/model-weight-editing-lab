@@ -1,0 +1,969 @@
+[
+  {
+    "id": "prime-factor-gcd-lcm",
+    "title": "Find the greatest common divisor and least common multiple",
+    "domain": "arithmetic",
+    "level": "high-school",
+    "aliases": [
+      "highest common factor",
+      "greatest common factor",
+      "least common multiple",
+      "prime factor tree"
+    ],
+    "pattern": "For positive integers, the GCD takes the smaller exponent of each prime and the LCM takes the larger.",
+    "applies": [
+      "Two or more positive integers must be compared for a common divisor or a common multiple."
+    ],
+    "steps": [
+      "Factor each integer into primes and align the powers of the same prime.",
+      "Use exponent zero when a prime is absent. Multiply the selected powers."
+    ],
+    "pitfalls": [
+      "Use a prime in the GCD only when it divides every number.",
+      "The LCM can be smaller than the product when the numbers share factors."
+    ],
+    "checks": [
+      "The GCD divides every input and every input divides the LCM. For two inputs, GCD × LCM equals their product."
+    ],
+    "example": {
+      "problem": "Find the GCD and LCM of 84 and 126.",
+      "answer": "84 = 2² × 3 × 7 and 126 = 2 × 3² × 7. Their GCD is 2 × 3 × 7 = 42. Their LCM is 2² × 3² × 7 = 252."
+    }
+  },
+  {
+    "id": "scientific-notation-operations",
+    "title": "Multiply or divide in scientific notation",
+    "domain": "arithmetic",
+    "level": "high-school",
+    "aliases": [
+      "standard form",
+      "powers of ten",
+      "scientific form",
+      "normalized coefficient"
+    ],
+    "pattern": "Write a nonzero value as a × 10ⁿ with 1 ≤ |a| < 10 and integer n.",
+    "applies": [
+      "Very large or small numbers in powers-of-ten form are multiplied or divided."
+    ],
+    "steps": [
+      "Multiply or divide the coefficients.",
+      "Add exponents when multiplying or subtract the denominator exponent when dividing.",
+      "Normalize the coefficient and compensate by changing the exponent."
+    ],
+    "pitfalls": [
+      "Addition and subtraction require matching powers of ten first.",
+      "A negative exponent indicates a scale smaller than one. It does not indicate a negative value."
+    ],
+    "checks": [
+      "Estimate the order of magnitude and verify the normalized coefficient."
+    ],
+    "example": {
+      "problem": "Calculate (6 × 10⁻⁴)(2.5 × 10⁷) in scientific notation.",
+      "answer": "6 × 2.5 = 15 and −4 + 7 = 3. Thus 15 × 10³ = 1.5 × 10⁴."
+    }
+  },
+  {
+    "id": "rounding-error-bounds",
+    "title": "Find bounds from rounded measurements",
+    "domain": "arithmetic",
+    "level": "high-school",
+    "aliases": [
+      "error interval",
+      "upper and lower bounds",
+      "limits of accuracy",
+      "least count"
+    ],
+    "pattern": "A value rounded to the nearest unit of size u is within u/2 of the reported value. The stated tie rule determines inclusion at the endpoints.",
+    "applies": [
+      "A measurement is given to a known rounding precision.",
+      "A derived formula is monotone in each measured value on its allowed interval, or its extrema can be checked separately."
+    ],
+    "steps": [
+      "Identify the rounding unit and add and subtract half of it.",
+      "Keep track of open and closed endpoints under the given tie rule.",
+      "For a product of positive values, multiply the lower endpoints and the upper endpoints to bound the product."
+    ],
+    "pitfalls": [
+      "The last displayed place determines the unit. A trailing zero can convey precision.",
+      "A formula that is not monotone over the intervals may have an interior extreme."
+    ],
+    "checks": [
+      "The result obtained from the reported measurements should fall between the derived bounds."
+    ],
+    "example": {
+      "problem": "A rectangle's sides round to 8.2 cm and 3.6 cm to the nearest tenth, with ties rounded upward. Bound its area A.",
+      "answer": "The side intervals are [8.15, 8.25) and [3.55, 3.65). Both sides are positive, so 28.9325 cm² ≤ A < 30.1125 cm²."
+    }
+  },
+  {
+    "id": "reverse-percentage-multipliers",
+    "title": "Recover an original amount from percentage changes",
+    "domain": "arithmetic",
+    "level": "high-school",
+    "aliases": [
+      "reverse percentage",
+      "original price",
+      "successive discounts",
+      "percentage multiplier"
+    ],
+    "pattern": "Final amount = original amount × product of the percentage multipliers.",
+    "applies": [
+      "One or more percentage changes are known and the original amount is sought.",
+      "Each percentage applies to the amount immediately before that change."
+    ],
+    "steps": [
+      "Convert each increase of p% to 1 + p/100 and each decrease to 1 − p/100.",
+      "Multiply the factors in the chain. Divide the final amount by this product if it is nonzero."
+    ],
+    "pitfalls": [
+      "A decrease of 20% is reversed by dividing by 0.8.",
+      "A final amount after a 100% decrease cannot determine the original amount."
+    ],
+    "checks": [
+      "Apply the stated changes in order to the recovered original."
+    ],
+    "example": {
+      "problem": "A price rises by 20%, then falls by 15% to 153. Find the original price.",
+      "answer": "The combined multiplier is 1.20 × 0.85 = 1.02. The original price was 153/1.02 = 150."
+    }
+  },
+  {
+    "id": "combined-constant-work-rates",
+    "title": "Combine constant work or filling rates",
+    "domain": "arithmetic",
+    "level": "high-school",
+    "aliases": [
+      "work rate problem",
+      "pipes and cisterns",
+      "combined work time",
+      "filling and draining"
+    ],
+    "pattern": "With one whole job as the unit, time = 1/(sum of signed rates) when the net rate is positive and the job starts at zero.",
+    "applies": [
+      "Workers or pumps operate simultaneously at constant rates.",
+      "Individual completion times use the same units and describe the same job or capacity."
+    ],
+    "steps": [
+      "Convert a solo completion time t into a rate of 1/t jobs per unit time.",
+      "Add rates that contribute and subtract rates that undo work.",
+      "Divide the remaining fraction of the job by the net rate."
+    ],
+    "pitfalls": [
+      "Adding completion times does not add rates.",
+      "A nonpositive net rate cannot complete an unfinished job from below under this model."
+    ],
+    "checks": [
+      "Multiply the result by the net rate. The product should equal the remaining work."
+    ],
+    "example": {
+      "problem": "One pump can fill a tank in 6 h and another in 10 h. How long do both take together?",
+      "answer": "The combined rate is 1/6 + 1/10 = 4/15 tank per hour. The time is 15/4 h, or 3 h 45 min."
+    }
+  },
+  {
+    "id": "weighted-mean-and-mixtures",
+    "title": "Find a weighted mean or mixture concentration",
+    "domain": "arithmetic",
+    "level": "high-school",
+    "aliases": [
+      "weighted average",
+      "combine group averages",
+      "mixture strength",
+      "combined concentration"
+    ],
+    "pattern": "Weighted mean = Σ(wᵢxᵢ)/Σwᵢ for nonnegative weights with a positive total.",
+    "applies": [
+      "Groups or portions contribute in different sizes.",
+      "In a mixture, the concentration basis is consistent and the amount used as the denominator is additive."
+    ],
+    "steps": [
+      "Multiply each value by its associated weight.",
+      "Add the weighted amounts and divide by the total weight.",
+      "Convert a decimal concentration back to a percentage if requested."
+    ],
+    "pitfalls": [
+      "A simple mean gives every group equal weight.",
+      "Do not mix mass percentages with volume weights unless the needed conversion is known."
+    ],
+    "checks": [
+      "With positive weights, the result lies between the smallest and largest contributing values."
+    ],
+    "example": {
+      "problem": "Mix 180 mL at 12% with 120 mL at 27% by volume, assuming additive volumes. Find the concentration.",
+      "answer": "The solute volumes are 21.6 mL and 32.4 mL. The concentration is 54/300 = 18%."
+    }
+  },
+  {
+    "id": "read-axis-tick-scales",
+    "title": "Read values from evenly spaced graph axes",
+    "domain": "arithmetic",
+    "level": "high-school",
+    "aliases": [
+      "graph scale",
+      "axis subdivisions",
+      "minor grid lines",
+      "read a plot"
+    ],
+    "pattern": "For evenly spaced linear ticks, value per gap = difference between labels divided by the number of gaps.",
+    "applies": [
+      "A graph or diagram shows evenly spaced ticks on a linear axis.",
+      "At least two labeled ticks or the tick step are visible."
+    ],
+    "steps": [
+      "Choose two labeled ticks on the same axis and count the gaps between them.",
+      "Find the value per gap. Count from a labeled tick to the point being read.",
+      "Check each axis independently and include its units."
+    ],
+    "pitfalls": [
+      "Count gaps, not tick marks.",
+      "An axis break or a logarithmic scale changes how values between labels are read."
+    ],
+    "checks": [
+      "Count back from the other labeled tick and compare results."
+    ],
+    "example": {
+      "problem": "An axis has six equal gaps between 14 and 26. A point is on the fourth tick above 14. What value does it show?",
+      "answer": "Each gap is (26 − 14)/6 = 2. The point shows 14 + 4 × 2 = 22."
+    }
+  },
+  {
+    "id": "index-laws-with-domain",
+    "title": "Simplify powers using index laws",
+    "domain": "algebra",
+    "level": "high-school",
+    "aliases": [
+      "index laws",
+      "law of exponents",
+      "negative powers",
+      "power of a product"
+    ],
+    "pattern": "For integer exponents, multiply like bases by adding powers and divide by subtracting powers. Raising a power to a power multiplies exponents.",
+    "applies": [
+      "Expressions contain products, quotients, or powers of powers with integer exponents."
+    ],
+    "steps": [
+      "Record any base required to be nonzero by a denominator or negative exponent.",
+      "Apply powers to each factor of a product, then combine like bases.",
+      "Rewrite negative powers as reciprocals if positive exponents are requested."
+    ],
+    "pitfalls": [
+      "A power does not distribute over a sum.",
+      "Keep restrictions from the original expression after canceling factors."
+    ],
+    "checks": [
+      "Check that each denominator is valid and substitute convenient allowed values."
+    ],
+    "example": {
+      "problem": "Simplify (2a⁻²b³)²/(4a⁻¹b) for nonzero a and b.",
+      "answer": "The numerator is 4a⁻⁴b⁶. Divide to get a⁻³b⁵ = b⁵/a³, with a and b still nonzero."
+    }
+  },
+  {
+    "id": "rationalize-surd-denominators",
+    "title": "Rationalize a square-root denominator",
+    "domain": "algebra",
+    "level": "high-school",
+    "aliases": [
+      "rationalise a denominator",
+      "surd denominator",
+      "radical conjugate",
+      "rationalize by conjugation"
+    ],
+    "pattern": "(a + b√c)(a − b√c) = a² − b²c. Multiply a fraction by a suitable nonzero factor over itself.",
+    "applies": [
+      "A real fraction has a denominator of the form b√c or a + b√c with rational a, b and c, c > 0, and a nonzero denominator.",
+      "A square-root binomial denominator has a nonzero conjugate after simplifying any perfect squares."
+    ],
+    "steps": [
+      "Simplify perfect-square factors first.",
+      "For a single radical, multiply numerator and denominator by that radical. For a binomial, use its conjugate.",
+      "Apply the difference of squares and simplify."
+    ],
+    "pitfalls": [
+      "Multiply the whole numerator and denominator by the same factor.",
+      "Check that the original denominator and the chosen multiplier are nonzero."
+    ],
+    "checks": [
+      "Multiply the new value by the original denominator to recover the original numerator."
+    ],
+    "example": {
+      "problem": "Rationalize 5/(3 + √7).",
+      "answer": "Multiply by (3 − √7)/(3 − √7). The denominator is 9 − 7 = 2, so the result is (15 − 5√7)/2."
+    }
+  },
+  {
+    "id": "polynomial-remainder-and-factor",
+    "title": "Use the polynomial remainder and factor theorems",
+    "domain": "algebra",
+    "level": "high-school",
+    "aliases": [
+      "remainder theorem",
+      "factor theorem",
+      "synthetic division",
+      "polynomial divisor"
+    ],
+    "pattern": "The remainder of P(x) divided by x − a is P(a). The divisor is a factor exactly when P(a) = 0.",
+    "applies": [
+      "A polynomial is divided by a linear divisor of the form x − a."
+    ],
+    "steps": [
+      "Read the value a using the sign in x − a.",
+      "Evaluate P(a). A zero remainder confirms divisibility.",
+      "Use synthetic or long division if the quotient is needed."
+    ],
+    "pitfalls": [
+      "For x + a, evaluate at −a.",
+      "Include zero coefficients for missing terms during synthetic division."
+    ],
+    "checks": [
+      "Recover P(x) by multiplying divisor and quotient and adding the remainder."
+    ],
+    "example": {
+      "problem": "Does x − 1 divide 2x³ − 5x² + x + 2? Find the quotient if it does.",
+      "answer": "P(1) = 2 − 5 + 1 + 2 = 0. Synthetic division gives 2x² − 3x − 2, so P(x) = (x − 1)(2x² − 3x − 2)."
+    }
+  },
+  {
+    "id": "linear-programming-corner-points",
+    "title": "Optimize a linear objective on a feasible polygon",
+    "domain": "algebra",
+    "level": "high-school",
+    "aliases": [
+      "linear programming graph",
+      "corner point method",
+      "feasible region",
+      "objective function"
+    ],
+    "pattern": "On a nonempty bounded polygon, a linear objective reaches a maximum and minimum at vertices.",
+    "applies": [
+      "Two real decision variables satisfy linear inequalities that form a bounded feasible region.",
+      "The objective is linear."
+    ],
+    "steps": [
+      "Graph the constraints and retain their common feasible region.",
+      "Find its vertices and check each against every inequality.",
+      "Evaluate the objective at each vertex and compare. If two adjacent vertices tie for the optimum, their whole connecting edge is optimal."
+    ],
+    "pitfalls": [
+      "A line intersection outside the shaded region is not a feasible vertex.",
+      "An unbounded feasible region needs a separate check for an unbounded objective."
+    ],
+    "checks": [
+      "Verify the reported vertex is feasible and compare the value at all corners."
+    ],
+    "example": {
+      "problem": "Maximize 5x + 4y subject to x,y ≥ 0, x + y ≤ 7 and 2x + y ≤ 10.",
+      "answer": "The feasible vertices (0,0), (5,0), (3,4) and (0,7) give values 0, 25, 31 and 28. The maximum is 31 at (3,4)."
+    }
+  },
+  {
+    "id": "solve-piecewise-equations",
+    "title": "Solve an equation defined in pieces",
+    "domain": "algebra",
+    "level": "high-school",
+    "aliases": [
+      "piecewise function equation",
+      "defined in intervals",
+      "open and closed graph endpoints",
+      "piecewise cases"
+    ],
+    "pattern": "Solve each expression on its own interval and combine only the candidates in that interval.",
+    "applies": [
+      "A function rule changes at one or more boundaries.",
+      "A horizontal line intersects a graph with open or closed endpoints."
+    ],
+    "steps": [
+      "Write the equation separately for each branch.",
+      "Solve and retain candidates that meet that branch's inequality.",
+      "Check endpoints using the rule that includes them."
+    ],
+    "pitfalls": [
+      "An open dot does not count as an intersection at that branch endpoint.",
+      "Using the correct formula with the wrong branch interval creates extra solutions."
+    ],
+    "checks": [
+      "Evaluate the original piecewise function at each retained input."
+    ],
+    "example": {
+      "problem": "Let f(x) = 2x + 5 for x < 1 and f(x) = x² + 1 for x ≥ 1. Solve f(x) = 6.",
+      "answer": "The first branch gives x = 1/2, which is allowed. The second gives x = ±√5, and only √5 meets x ≥ 1. The solutions are 1/2 and √5."
+    }
+  },
+  {
+    "id": "line-and-conic-intersections",
+    "title": "Find intersections of a line and a conic",
+    "domain": "algebra",
+    "level": "high-school",
+    "aliases": [
+      "nonlinear simultaneous equations",
+      "line circle intersection",
+      "line parabola intersection",
+      "secant or tangent"
+    ],
+    "pattern": "Substitute the line equation into the conic, solve the resulting equation, and recover both coordinates.",
+    "applies": [
+      "A straight line and a conic are given by equations and their real common points are sought."
+    ],
+    "steps": [
+      "Express one coordinate using the line, or substitute the constant for a vertical or horizontal line.",
+      "Substitute into the conic and solve for the remaining coordinate.",
+      "Back-substitute and test each ordered pair in both original equations."
+    ],
+    "pitfalls": [
+      "A repeated quadratic root gives one distinct intersection point.",
+      "The sign of a discriminant gives the number of real roots only when the substituted equation is genuinely quadratic."
+    ],
+    "checks": [
+      "Check the reported points satisfy both curves."
+    ],
+    "example": {
+      "problem": "Find the intersections of y = x + 1 and x² + y² = 13.",
+      "answer": "Substitute to get 2x² + 2x − 12 = 0, hence (x + 3)(x − 2) = 0. The intersections are (−3,−2) and (2,3)."
+    }
+  },
+  {
+    "id": "parallel-line-transversal-angles",
+    "title": "Find angles formed by a transversal",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "alternate interior angles",
+      "corresponding angles",
+      "co-interior angles",
+      "same-side interior angles"
+    ],
+    "pattern": "When the two lines are parallel, corresponding and alternate interior angles are equal. Same-side interior angles sum to 180°.",
+    "applies": [
+      "A straight transversal crosses two lines marked or stated to be parallel."
+    ],
+    "steps": [
+      "Mark the interior region between the parallel lines and identify the positions of the requested angles.",
+      "Use the matching equality or 180° sum and solve.",
+      "Use vertically opposite angles or a straight-line sum at a single intersection if needed."
+    ],
+    "pitfalls": [
+      "A drawing alone does not establish parallel lines.",
+      "Alternate and same-side interior angles use different relationships."
+    ],
+    "checks": [
+      "Substitute the angles back and check that each relationship agrees with the diagram markings."
+    ],
+    "example": {
+      "problem": "Two same-side interior angles are (3x + 6)° and (2x + 14)°. Find x and both angles.",
+      "answer": "3x + 6 + 2x + 14 = 180, so x = 32. The angles are 102° and 78°."
+    }
+  },
+  {
+    "id": "polygon-interior-exterior-angles",
+    "title": "Find interior and exterior polygon angles",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "polygon angle sum",
+      "regular polygon",
+      "exterior turn angle",
+      "number of sides"
+    ],
+    "pattern": "The interior angles of a simple n-sided polygon sum to (n − 2) × 180°. A regular polygon has exterior turn 360°/n.",
+    "applies": [
+      "A polygon is simple, and its number of sides or angles are needed.",
+      "Equal individual angle formulas are used only when the corresponding angles are equal."
+    ],
+    "steps": [
+      "Use the interior sum for a missing interior angle or given total.",
+      "For a regular polygon, subtract one interior angle from 180° to find one exterior angle.",
+      "Divide 360° by that exterior angle to recover the number of sides."
+    ],
+    "pitfalls": [
+      "For an irregular polygon, the exterior turns need not be equal.",
+      "A regular polygon must have a whole-number side count of at least three."
+    ],
+    "checks": [
+      "Check that all exterior turns of the resulting regular polygon add to 360°."
+    ],
+    "example": {
+      "problem": "Each interior angle of a regular polygon is 156°. How many sides does it have?",
+      "answer": "Each exterior angle is 180° − 156° = 24°. The number of sides is 360/24 = 15."
+    }
+  },
+  {
+    "id": "triangle-angle-and-exterior",
+    "title": "Use the triangle angle sum and exterior angle rule",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "triangle interior angle sum",
+      "exterior angle theorem",
+      "remote interior angles",
+      "extended triangle side"
+    ],
+    "pattern": "A triangle's interior angles sum to 180°. An exterior angle formed by extending a side equals the sum of the two remote interior angles.",
+    "applies": [
+      "A nondegenerate Euclidean triangle has marked interior angles or a side extended to form an exterior angle."
+    ],
+    "steps": [
+      "Identify the interior angle adjacent to the exterior angle.",
+      "Use a straight-line sum of 180° for the adjacent pair.",
+      "Use the remote-angle sum to solve the remaining unknowns."
+    ],
+    "pitfalls": [
+      "The exterior angle is the sum of the two nonadjacent interior angles.",
+      "Use stated angle values and markings in diagrams with no scale information."
+    ],
+    "checks": [
+      "Check that the three interior angles are positive and sum to 180°."
+    ],
+    "example": {
+      "problem": "An exterior angle is 96°. The remote interior angles are (2x + 10)° and (x + 8)°. Find x and all three interior angles.",
+      "answer": "3x + 18 = 96 gives x = 26. The remote angles are 62° and 34°. The adjacent angle is 84°."
+    }
+  },
+  {
+    "id": "triangle-congruence-evidence",
+    "title": "Prove triangles congruent from matching markings",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "SSS SAS ASA AAS",
+      "RHS congruence",
+      "hypotenuse leg",
+      "corresponding triangle sides"
+    ],
+    "pattern": "SSS, SAS, ASA and AAS establish triangle congruence. For right triangles, equal hypotenuse and one equal corresponding leg also suffice.",
+    "applies": [
+      "Two nondegenerate triangles have corresponding equal sides or angles given or marked."
+    ],
+    "steps": [
+      "Map each vertex to its corresponding vertex using the matching data.",
+      "Choose the rule that fits, checking whether an angle or side is included between the other two known parts.",
+      "Write the triangles in corresponding vertex order and infer any required matching measure."
+    ],
+    "pitfalls": [
+      "AAA establishes similarity. An ordinary SSA configuration can be ambiguous.",
+      "For RHS or HL, both triangles must be right triangles."
+    ],
+    "checks": [
+      "Read the vertex correspondence in order and verify each stated matching side or angle."
+    ],
+    "example": {
+      "problem": "In triangles ABC and DEF, AB = DE = 7, BC = EF = 5, and ∠ABC = ∠DEF = 52°. Explain why AC = DF.",
+      "answer": "The 52° angle lies between the two known sides in each triangle. By SAS, triangle ABC is congruent to triangle DEF in that order, so AC = DF."
+    }
+  },
+  {
+    "id": "circle-central-and-inscribed-angles",
+    "title": "Relate central and inscribed angles",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "angle at the centre",
+      "angle at the circumference",
+      "inscribed angle theorem",
+      "angles in the same segment"
+    ],
+    "pattern": "An inscribed angle equals half the measure of its intercepted arc, the arc between its endpoints that excludes its vertex.",
+    "applies": [
+      "The vertex of an angle lies on a circle and its two rays meet the circle at the endpoints of an arc."
+    ],
+    "steps": [
+      "Mark the endpoints of the angle on the circle.",
+      "Choose the arc between those endpoints that does not contain the angle vertex.",
+      "Use the central angle for that arc and take half its measure."
+    ],
+    "pitfalls": [
+      "The intercepted arc may be the major arc.",
+      "Angles subtending the same chord can be supplementary when their vertices are on different arcs."
+    ],
+    "checks": [
+      "An angle subtending a diameter is 90°."
+    ],
+    "example": {
+      "problem": "The minor arc AB measures 124°. P lies on the major arc AB and Q on the minor arc AB, both away from A and B. Find ∠APB and ∠AQB.",
+      "answer": "∠APB intercepts the minor arc and equals 62°. ∠AQB intercepts the major arc of 236° and equals 118°."
+    }
+  },
+  {
+    "id": "cyclic-quadrilateral-opposite-angles",
+    "title": "Find opposite angles in a cyclic quadrilateral",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "opposite angles supplementary",
+      "cyclic quadrilateral theorem",
+      "quadrilateral inscribed in a circle",
+      "circle angle proof"
+    ],
+    "pattern": "Opposite interior angles of a convex cyclic quadrilateral sum to 180°.",
+    "applies": [
+      "All four vertices of a convex quadrilateral lie on one circle."
+    ],
+    "steps": [
+      "Use the vertex order around the circle to identify an opposite pair.",
+      "Set the angle expressions to sum to 180°.",
+      "Solve and use the result in the original expressions."
+    ],
+    "pitfalls": [
+      "Adjacent angles do not generally add to 180°.",
+      "Use given evidence that all four vertices are concyclic."
+    ],
+    "checks": [
+      "Check both opposite sums if all four angles are known."
+    ],
+    "example": {
+      "problem": "Opposite angles in a cyclic quadrilateral are (2x + 18)° and (3x − 3)°. Find them.",
+      "answer": "5x + 15 = 180 gives x = 33. The angles are 84° and 96°."
+    }
+  },
+  {
+    "id": "intersecting-chords-and-secants",
+    "title": "Find circle segment lengths with power of a point",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "intersecting chords theorem",
+      "secant secant theorem",
+      "tangent secant theorem",
+      "power of a point"
+    ],
+    "pattern": "Through one point, secant products are equal. Outside a circle use external length × whole secant length. A tangent length is squared.",
+    "applies": [
+      "Two chords meet inside a circle, or two secants or a secant and tangent meet at the same point outside it."
+    ],
+    "steps": [
+      "Identify the common point and label the distances from it to each circle intersection.",
+      "Multiply the two distances for each secant or chord. Use the square of the distance to a tangent point.",
+      "Equate the products and solve for the missing length."
+    ],
+    "pitfalls": [
+      "For an external point, the whole secant includes the external and internal parts.",
+      "Keep the products anchored to the same common point."
+    ],
+    "checks": [
+      "Check that all segment lengths are positive and that the whole external secant is longer than its outside part."
+    ],
+    "example": {
+      "problem": "From an external point, one secant has external length 4 and whole length 13. Another has external length 2. Find the second secant's internal length.",
+      "answer": "4 × 13 = 2 × whole, so the second whole length is 26. Its internal length is 26 − 2 = 24."
+    }
+  },
+  {
+    "id": "coordinate-perpendicular-bisector",
+    "title": "Find the perpendicular bisector of a segment",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "midpoint and gradient",
+      "perpendicular gradient",
+      "perpendicular bisector equation",
+      "equidistant locus"
+    ],
+    "pattern": "A segment's perpendicular bisector passes through its midpoint and is perpendicular to the segment. Nonzero finite perpendicular slopes multiply to −1.",
+    "applies": [
+      "Two distinct endpoints are known and a line through the midpoint perpendicular to the segment is needed."
+    ],
+    "steps": [
+      "Average the two x-coordinates and the two y-coordinates to find the midpoint.",
+      "Take the negative reciprocal of a nonzero finite segment slope. A vertical segment has a horizontal bisector and vice versa.",
+      "Write the line through the midpoint using the perpendicular slope or the appropriate constant coordinate."
+    ],
+    "pitfalls": [
+      "The slopes are negative reciprocals, not just opposites.",
+      "Horizontal and vertical cases require a direct equation."
+    ],
+    "checks": [
+      "Test the midpoint and check that a second point on the bisector is equally distant from the two endpoints."
+    ],
+    "example": {
+      "problem": "Find the perpendicular bisector of the segment from (−2,1) to (4,5).",
+      "answer": "The midpoint is (1,3) and the segment slope is 2/3. The bisector has slope −3/2, so y − 3 = −3(x − 1)/2, or 3x + 2y = 9."
+    }
+  },
+  {
+    "id": "pyramid-and-cone-volume",
+    "title": "Find the volume of a pyramid or cone",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "pyramid volume",
+      "cone capacity",
+      "perpendicular height",
+      "one third base area"
+    ],
+    "pattern": "A pyramid or cone with base area B and perpendicular height h has volume Bh/3.",
+    "applies": [
+      "A cone or pyramid has a planar base and a known perpendicular height, or enough dimensions to find it."
+    ],
+    "steps": [
+      "Find the area of the base using the base shape.",
+      "Use the perpendicular distance from the apex to the base plane.",
+      "Multiply base area by height and divide by three. Express the result in cubic units."
+    ],
+    "pitfalls": [
+      "Convert a slant height to the perpendicular height before using the volume formula.",
+      "Use area units for the base and consistent length units throughout."
+    ],
+    "checks": [
+      "The volume equals one third of a prism or cylinder with the same base area and height."
+    ],
+    "example": {
+      "problem": "A square pyramid has base side 9 cm and perpendicular height 10 cm. Find its volume.",
+      "answer": "The base area is 9² = 81 cm². The volume is 81 × 10/3 = 270 cm³."
+    }
+  },
+  {
+    "id": "triangle-area-by-heron",
+    "title": "Find triangle area from three side lengths",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "Heron's formula",
+      "Hero's formula",
+      "semiperimeter",
+      "SSS triangle area"
+    ],
+    "pattern": "For sides a, b and c and semiperimeter s = (a + b + c)/2, the area is √[s(s − a)(s − b)(s − c)].",
+    "applies": [
+      "All three lengths of a nondegenerate Euclidean triangle are known."
+    ],
+    "steps": [
+      "Verify that the sum of the two shorter sides exceeds the longest side.",
+      "Calculate the semiperimeter and the three differences s − a, s − b and s − c.",
+      "Multiply the four factors, take the nonnegative square root, and attach square units."
+    ],
+    "pitfalls": [
+      "Use half the perimeter for s.",
+      "Equality in the triangle inequality gives a degenerate figure of area zero."
+    ],
+    "checks": [
+      "Check units and, for a right triangle, compare with half the product of its legs."
+    ],
+    "example": {
+      "problem": "Find the exact area of a triangle with sides 7, 8 and 9 units.",
+      "answer": "s = 12, so the area is √(12 × 5 × 4 × 3) = 12√5 square units."
+    }
+  },
+  {
+    "id": "coordinate-reflection-and-rotation",
+    "title": "Apply a reflection or rotation to a coordinate figure",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "transformation geometry",
+      "reflect in y equals x",
+      "quarter-turn about the origin",
+      "rotate a shape on a grid"
+    ],
+    "pattern": "Reflection in y = x maps (x,y) to (y,x). A 90° anticlockwise rotation about the origin maps (x,y) to (−y,x).",
+    "applies": [
+      "Vertices lie on a coordinate grid and a reflection or right-angle rotation is specified."
+    ],
+    "steps": [
+      "Identify the mirror line or the centre and direction of rotation.",
+      "Apply the matching coordinate rule to each vertex, one transformation at a time.",
+      "If a rotation centre is away from the origin, subtract the centre before rotating and add it back afterward."
+    ],
+    "pitfalls": [
+      "Clockwise and anticlockwise quarter-turns use different sign patterns.",
+      "Changing the order of two transformations can change the result."
+    ],
+    "checks": [
+      "Reflections and rotations preserve distances. Plot one point to verify the requested direction."
+    ],
+    "example": {
+      "problem": "Reflect A(4,−2) in y = x, then rotate it 90° anticlockwise about the origin.",
+      "answer": "The reflection gives (−2,4). The rotation gives (−4,−2)."
+    }
+  },
+  {
+    "id": "bearing-to-coordinate-components",
+    "title": "Convert a compass bearing to north and east components",
+    "domain": "trigonometry",
+    "level": "high-school",
+    "aliases": [
+      "three-figure bearings",
+      "azimuth clockwise from north",
+      "northing and easting",
+      "navigation displacement"
+    ],
+    "pattern": "For a compass bearing θ measured clockwise from north, east = d sin θ and north = d cos θ.",
+    "applies": [
+      "A length and a three-figure compass bearing are given, with an east-north coordinate frame."
+    ],
+    "steps": [
+      "Draw the north ray and rotate clockwise by the bearing.",
+      "Use the sine for the east component and the cosine for the north component.",
+      "Keep each component's sign and add components separately for multiple legs."
+    ],
+    "pitfalls": [
+      "A standard Cartesian polar angle starts at the positive x-axis.",
+      "Use degree mode for a bearing written in degrees."
+    ],
+    "checks": [
+      "Check the component signs against the bearing quadrant and confirm that east² + north² = d²."
+    ],
+    "example": {
+      "problem": "A hiker walks 14 km on a bearing of 060°. How far east and north are they from the start?",
+      "answer": "The east component is 14 sin 60° = 7√3 km. The north component is 14 cos 60° = 7 km."
+    }
+  },
+  {
+    "id": "fit-sinusoid-from-graph",
+    "title": "Fit a sinusoidal model from a graph",
+    "domain": "trigonometry",
+    "level": "high-school",
+    "aliases": [
+      "sinusoidal modelling",
+      "sine wave amplitude",
+      "midline and period",
+      "cosine phase shift"
+    ],
+    "pattern": "For a nonconstant sinusoid with period T, use B = 2π/T in radians. With positive amplitude, a cosine peak occurs at its phase shift.",
+    "applies": [
+      "A sinusoidal graph shows its maximum, minimum and one full cycle or a known period."
+    ],
+    "steps": [
+      "Average the maximum and minimum for the midline. Take half their difference for the amplitude.",
+      "Measure the horizontal gap between successive matching peaks to obtain the period.",
+      "Use cosine with a known peak as the phase reference, then verify another point."
+    ],
+    "pitfalls": [
+      "A peak-to-trough gap is half a period.",
+      "If the angle is in degrees, use 360°/T for the angular coefficient."
+    ],
+    "checks": [
+      "Check the midline, extrema and repeat distance in the resulting formula."
+    ],
+    "example": {
+      "problem": "A sinusoid has maximum 14, minimum 6, period 8 and a peak at t = 3. Give one equation.",
+      "answer": "The midline is 10 and the amplitude is 4. A cosine model is y = 10 + 4 cos[π(t − 3)/4], which repeats every 8."
+    }
+  },
+  {
+    "id": "verify-trigonometric-identity-domain",
+    "title": "Verify a trigonometric identity on its common domain",
+    "domain": "trigonometry",
+    "level": "high-school",
+    "aliases": [
+      "prove a trig identity",
+      "Pythagorean identity",
+      "sine cosine simplification",
+      "trig domain restrictions"
+    ],
+    "pattern": "An identity must hold wherever both original sides are defined. A useful substitution is sin²x + cos²x = 1.",
+    "applies": [
+      "Two trigonometric expressions are claimed equal and the original expressions have a common domain."
+    ],
+    "steps": [
+      "Record exclusions created by zero denominators or undefined functions.",
+      "Transform one side using identities and valid algebra until it matches the other.",
+      "State the result with the original domain."
+    ],
+    "pitfalls": [
+      "Cancellation does not fill holes excluded by the original expressions.",
+      "Checking a few angles can detect an error. It cannot prove an identity."
+    ],
+    "checks": [
+      "Test the domain boundaries and a convenient allowed angle."
+    ],
+    "example": {
+      "problem": "Verify (1 − cos²x)/sin x = sin x and state its domain.",
+      "answer": "The numerator is sin²x. Dividing gives sin x when sin x ≠ 0, so the identity holds for real x outside {kπ : k is an integer}."
+    }
+  },
+  {
+    "id": "ellipse-standard-form-features",
+    "title": "Read the centre, vertices and foci of an ellipse",
+    "domain": "precalculus",
+    "level": "high-school",
+    "aliases": [
+      "ellipse standard form",
+      "semi-major axis",
+      "ellipse foci",
+      "conic graph"
+    ],
+    "pattern": "For an axis-aligned ellipse with semi-major radius a and semi-minor radius b, a ≥ b > 0 and c² = a² − b². The foci lie c units from the centre along the major axis.",
+    "applies": [
+      "An axis-aligned ellipse is given in an equation with two squared coordinate terms."
+    ],
+    "steps": [
+      "Complete the squares if needed and divide to make the right-hand side 1.",
+      "Read the centre from the shifts. The larger squared denominator gives the major-axis direction.",
+      "Use a to locate the vertices and c = √(a² − b²) to locate the foci."
+    ],
+    "pitfalls": [
+      "The denominator is a squared radius. Take the square root to get the length.",
+      "Equal positive denominators give a circle, where the foci coincide at the centre."
+    ],
+    "checks": [
+      "Substitute the vertices into the equation and verify that the foci are along the longer axis."
+    ],
+    "example": {
+      "problem": "Find the centre, major vertices and foci of 9(x − 2)² + 4(y + 1)² = 36.",
+      "answer": "Divide by 36 to get (x − 2)²/4 + (y + 1)²/9 = 1. The centre is (2,−1), the major vertices are (2,2) and (2,−4), and the foci are (2,−1 ± √5)."
+    }
+  },
+  {
+    "id": "complex-roots-from-polar-form",
+    "title": "Find all complex nth roots using polar form",
+    "domain": "precalculus",
+    "level": "undergraduate",
+    "aliases": [
+      "de Moivre roots",
+      "roots in the Argand plane",
+      "complex roots polar form",
+      "roots of unity"
+    ],
+    "pattern": "If w = r eⁱᶿ with r > 0, the n distinct roots for a positive integer n have radius r^(1/n) and angles (θ + 2πk)/n for k = 0, …, n − 1.",
+    "applies": [
+      "The equation is zⁿ = w with n a positive integer and w a known complex number."
+    ],
+    "steps": [
+      "If w = 0, the only root is 0. Otherwise find its modulus and one argument.",
+      "Take the positive real nth root of the modulus and divide each of θ + 2πk by n.",
+      "Convert the results to rectangular form if requested."
+    ],
+    "pitfalls": [
+      "Using just one argument before dividing misses roots. The k values from 0 to n − 1 give each root once.",
+      "The roots have equal angular spacing and may include nonreal values even when w is real."
+    ],
+    "checks": [
+      "Raise each root to the nth power and verify the number of distinct roots."
+    ],
+    "example": {
+      "problem": "Solve z³ = −8 over the complex numbers.",
+      "answer": "The modulus of each root is 2. Using argument π for −8 gives angles π/3, π and 5π/3. The roots are 1 + i√3, −2 and 1 − i√3."
+    }
+  },
+  {
+    "id": "binomial-theorem-coefficients",
+    "title": "Extract a coefficient with the binomial theorem",
+    "domain": "precalculus",
+    "level": "high-school",
+    "aliases": [
+      "binomial expansion",
+      "Pascal triangle coefficients",
+      "n choose k",
+      "coefficient of a power"
+    ],
+    "pattern": "For an integer n ≥ 0, term k in (a + b)ⁿ is C(n,k)aⁿ⁻ᵏbᵏ, with k counted from zero.",
+    "applies": [
+      "A particular term or coefficient is sought in a finite binomial expansion."
+    ],
+    "steps": [
+      "Write the general term with the variable powers included.",
+      "Solve for the index k producing the requested power. Retain integer indices from 0 through n.",
+      "Compute the coefficient, including its sign, and add contributions if several terms share that power."
+    ],
+    "pitfalls": [
+      "If b includes a minus sign, its kth power carries that sign.",
+      "The first displayed term has index k = 0."
+    ],
+    "checks": [
+      "The exponents on the two binomial factors should sum to n before simplifying their variable powers."
+    ],
+    "example": {
+      "problem": "Find the coefficient of x³ in (2 − x)⁵.",
+      "answer": "The index is k = 3. Its coefficient is C(5,3) × 2² × (−1)³ = −40."
+    }
+  }
+]

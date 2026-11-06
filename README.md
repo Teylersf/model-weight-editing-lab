@@ -20,6 +20,8 @@ Pilot 024 cut one correct cylinder solution from **486 to 282 tokens**, reproduc
 
 To watch a local run, open the [live trace viewer](prototypes/trace-viewer/README.md). The page follows token generation and displays the measured difference between saved tensors.
 
+The [local math method library](prototypes/math-method-library/README.md) is a searchable collection of worked procedures for future tutor tool-use experiments.
+
 ## Start here: what are we changing?
 
 Think of a language model as a large calculation. It turns text into tokens, builds an internal representation of the context, and calculates a score for each possible next token. Those scores are called **logits**. A decoder chooses a token from them, adds it to the text, and repeats.

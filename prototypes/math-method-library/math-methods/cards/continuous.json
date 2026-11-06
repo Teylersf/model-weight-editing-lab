@@ -1,0 +1,980 @@
+[
+  {
+    "id": "calculus-chain-rule",
+    "title": "Chain rule",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "composite derivative",
+      "outer and inner function"
+    ],
+    "pattern": "(f(g(x)))′ = f′(g(x))g′(x).",
+    "applies": [
+      "The outer and inner functions are differentiable at the relevant inputs."
+    ],
+    "steps": [
+      "Identify the outer and inner functions.",
+      "Differentiate the outer function while leaving the inner expression in place.",
+      "Multiply by the derivative of the inner function."
+    ],
+    "pitfalls": [
+      "A power rule on a composite still needs the inner derivative."
+    ],
+    "checks": [
+      "At a point where the inner derivative is zero and the outer derivative is finite, the composite derivative should be zero."
+    ],
+    "example": {
+      "problem": "Differentiate (4−2x²)^5.",
+      "answer": "−20x(4−2x²)^4."
+    }
+  },
+  {
+    "id": "calculus-implicit-differentiation",
+    "title": "Implicit differentiation",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "dy dx on an implicit curve",
+      "tangent slope without solving for y"
+    ],
+    "pattern": "F_x + F_y y′ = 0, so y′ = −F_x/F_y when F_y ≠ 0.",
+    "applies": [
+      "F is continuously differentiable near the point, F=0 there, and F_y ≠ 0 for a locally differentiable y(x)."
+    ],
+    "steps": [
+      "Treat y as a function of x.",
+      "Differentiate the entire equation using product and chain rules.",
+      "Collect the y′ terms and solve before substituting the point."
+    ],
+    "pitfalls": [
+      "Differentiate xy as y+xy′.",
+      "A zero coefficient of y′ requires separate tangent analysis."
+    ],
+    "checks": [
+      "Verify the point satisfies the original equation."
+    ],
+    "example": {
+      "problem": "Find dy/dx at (2,1) on x²+xy+2y²=8.",
+      "answer": "−5/6."
+    }
+  },
+  {
+    "id": "calculus-lhopital-rule",
+    "title": "L’Hôpital’s rule",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "indeterminate quotient",
+      "zero over zero limit",
+      "infinity over infinity"
+    ],
+    "pattern": "For a qualifying 0/0 or ∞/∞ form, replace f/g by f′/g′ inside the limit.",
+    "applies": [
+      "The functions are differentiable on a punctured one-sided interval, g′ is nonzero there, and the derivative quotient has a limit or diverges to signed infinity."
+    ],
+    "steps": [
+      "Confirm the indeterminate form.",
+      "Differentiate numerator and denominator separately.",
+      "Recheck the form before another application. For a two-sided limit, check both sides."
+    ],
+    "pitfalls": [
+      "The rule uses separate derivatives. A quotient-rule derivative answers a different question.",
+      "Products and differences need a valid quotient rewrite first."
+    ],
+    "checks": [
+      "Check domain restrictions and any cancellation used in the derivative quotient."
+    ],
+    "example": {
+      "problem": "Find lim as x→0 of (ln(1+3x)−3x)/x².",
+      "answer": "−9/2."
+    }
+  },
+  {
+    "id": "calculus-closed-interval-extrema",
+    "title": "Absolute extrema on a closed interval",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "global maximum and minimum",
+      "closed interval method"
+    ],
+    "pattern": "For continuous f on [a,b], compare f at the endpoints and at all interior critical points.",
+    "applies": [
+      "The function is continuous on the entire closed, bounded interval."
+    ],
+    "steps": [
+      "Find interior points where f′ is zero or undefined.",
+      "Evaluate f at those points and both endpoints.",
+      "Compare values and list every point attaining either extreme."
+    ],
+    "pitfalls": [
+      "An interior critical point need not be an extremum.",
+      "Endpoint values can tie interior values."
+    ],
+    "checks": [
+      "Keep the location and the function value distinct."
+    ],
+    "example": {
+      "problem": "Find the absolute extrema of x³−3x²+1 on [−1,3].",
+      "answer": "Minimum −3 at x=−1 and x=2. Maximum 1 at x=0 and x=3."
+    }
+  },
+  {
+    "id": "calculus-integration-substitution",
+    "title": "Integration by substitution",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "u substitution",
+      "reverse chain rule",
+      "change integration variable"
+    ],
+    "pattern": "If u=g(x), then ∫ f(g(x))g′(x) dx = ∫ f(u) du.",
+    "applies": [
+      "The integrand can be rewritten in one new variable and the functions satisfy the substitution rule on the interval."
+    ],
+    "steps": [
+      "Choose an inner expression u and calculate du.",
+      "Rewrite all factors and change the bounds for a definite integral.",
+      "Integrate and evaluate using the matching variable and bounds."
+    ],
+    "pitfalls": [
+      "Use the factor needed to match du.",
+      "Avoid combining x-bounds with a u-integrand."
+    ],
+    "checks": [
+      "Differentiate the antiderivative or check the transformed endpoints."
+    ],
+    "example": {
+      "problem": "Evaluate ∫ from 0 to 1 of 6x(1+3x²)^2 dx.",
+      "answer": "21."
+    }
+  },
+  {
+    "id": "calculus-integration-by-parts",
+    "title": "Integration by parts",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "product rule for integration",
+      "tabular integration"
+    ],
+    "pattern": "∫ u dv = uv−∫ v du.",
+    "applies": [
+      "u and v are differentiable with integrable terms on the interval."
+    ],
+    "steps": [
+      "Choose u whose derivative simplifies the expression and dv you can integrate.",
+      "Compute du and v.",
+      "Apply the formula and simplify the remaining integral."
+    ],
+    "pitfalls": [
+      "The remaining integral is subtracted.",
+      "For definite integrals, evaluate the uv boundary term at both endpoints."
+    ],
+    "checks": [
+      "Differentiate the result and simplify back to the integrand."
+    ],
+    "example": {
+      "problem": "Find ∫ x ln x dx for x>0.",
+      "answer": "(x²/2) ln x−x²/4+C."
+    }
+  },
+  {
+    "id": "calculus-improper-integral",
+    "title": "Improper integral by a limit",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "infinite integral",
+      "singular endpoint",
+      "p integral"
+    ],
+    "pattern": "Replace every infinite or singular endpoint with a limit of proper integrals.",
+    "applies": [
+      "The integrand is integrable on compact subintervals away from its singularities."
+    ],
+    "steps": [
+      "Split the integral at any interior singularity.",
+      "Evaluate each proper integral with a variable bound.",
+      "Take limits separately and add only when all required integrals converge."
+    ],
+    "pitfalls": [
+      "Cancellation across a singularity can give a principal value even when the improper integral diverges."
+    ],
+    "checks": [
+      "Check each one-sided limit for a finite value."
+    ],
+    "example": {
+      "problem": "Evaluate ∫ from 2 to ∞ of (x+1)^(−3/2) dx.",
+      "answer": "2/√3."
+    }
+  },
+  {
+    "id": "calculus-power-series-interval",
+    "title": "Power series radius and endpoints",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "interval of convergence",
+      "ratio test for a power series"
+    ],
+    "pattern": "Find |x−c|<R first, then test x=c−R and x=c+R separately.",
+    "applies": [
+      "The series is a power series about a fixed center c."
+    ],
+    "steps": [
+      "Use the ratio or root test to locate the open convergence interval.",
+      "Substitute each finite endpoint into the original series.",
+      "State the radius and include only convergent endpoints."
+    ],
+    "pitfalls": [
+      "A ratio-test limit of one is inconclusive.",
+      "The two endpoints can have different behavior."
+    ],
+    "checks": [
+      "Identify the endpoint series explicitly."
+    ],
+    "example": {
+      "problem": "Find the convergence interval of Σ from n=1 to ∞ of (x−2)^n/(n·3^n).",
+      "answer": "Radius 3 and interval [−1,5)."
+    }
+  },
+  {
+    "id": "calculus-taylor-polynomial",
+    "title": "Taylor polynomial at a point",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "local polynomial approximation",
+      "Maclaurin polynomial",
+      "quadratic approximation"
+    ],
+    "pattern": "P_n(x)=Σ from k=0 to n of f^(k)(a)(x−a)^k/k!.",
+    "applies": [
+      "The derivatives through order n exist at the expansion point. An error bound needs additional hypotheses."
+    ],
+    "steps": [
+      "Compute f and its derivatives at a.",
+      "Divide the kth derivative by k! and use the centered power (x−a)^k.",
+      "Sum through the requested degree."
+    ],
+    "pitfalls": [
+      "A Taylor polynomial gives a local approximation. Exact equality needs a justified remainder or convergence argument."
+    ],
+    "checks": [
+      "The polynomial and function should agree in value and requested derivatives at a."
+    ],
+    "example": {
+      "problem": "Find the degree-2 Taylor polynomial for √(3+x) at x=1.",
+      "answer": "2+(x−1)/4−(x−1)²/64."
+    }
+  },
+  {
+    "id": "calculus-tangent-plane",
+    "title": "Gradient and tangent plane to a graph",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "linearization of two variables",
+      "tangent plane to z=f(x,y)"
+    ],
+    "pattern": "z=f(a,b)+f_x(a,b)(x−a)+f_y(a,b)(y−b).",
+    "applies": [
+      "f is differentiable at (a,b). Continuous first partials nearby are a sufficient condition."
+    ],
+    "steps": [
+      "Find the point height f(a,b).",
+      "Compute and evaluate both first partial derivatives.",
+      "Use the height and slopes in the tangent-plane equation."
+    ],
+    "pitfalls": [
+      "Evaluate the slopes at the given point.",
+      "Hold the other variable fixed when taking each partial."
+    ],
+    "checks": [
+      "Substitute x=a and y=b and recover the point height."
+    ],
+    "example": {
+      "problem": "Find the tangent plane to z=x²y+3y above (2,−1).",
+      "answer": "z=−7−4(x−2)+7(y+1)."
+    }
+  },
+  {
+    "id": "calculus-lagrange-multipliers",
+    "title": "Lagrange multipliers",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "constrained extrema",
+      "optimize with equality constraint"
+    ],
+    "pattern": "At a regular constrained extremum, ∇f=λ∇g together with g=c.",
+    "applies": [
+      "f and g are differentiable and ∇g is nonzero at the candidate point."
+    ],
+    "steps": [
+      "Write the objective and equality constraint.",
+      "Solve the gradient equations with the constraint.",
+      "Evaluate f at candidates and separately check any singular or boundary cases."
+    ],
+    "pitfalls": [
+      "A multiplier solution is a candidate. Existence of global extrema needs justification."
+    ],
+    "checks": [
+      "Verify the constraint and compare objective values."
+    ],
+    "example": {
+      "problem": "Find the extrema of 3x+4y subject to x²+y²=9.",
+      "answer": "Maximum 15 at (9/5,12/5). Minimum −15 at (−9/5,−12/5)."
+    }
+  },
+  {
+    "id": "calculus-polar-double-integral",
+    "title": "Double integration in polar coordinates",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "polar Jacobian",
+      "integrate over a disk",
+      "annular region"
+    ],
+    "pattern": "Use x=r cos θ, y=r sin θ and dA=r dr dθ.",
+    "applies": [
+      "The region has a polar description that covers it once except on sets of area zero."
+    ],
+    "steps": [
+      "Translate the region into radial and angular bounds.",
+      "Rewrite the integrand and include the Jacobian factor r.",
+      "Integrate over the transformed region."
+    ],
+    "pitfalls": [
+      "The area factor r is required even for a radial integrand.",
+      "Check for overlapping angular coverage."
+    ],
+    "checks": [
+      "Integrating 1 over the region should give its known area when available."
+    ],
+    "example": {
+      "problem": "Evaluate ∬ (x²+y²) dA over 1≤√(x²+y²)≤2.",
+      "answer": "15π/2."
+    }
+  },
+  {
+    "id": "calculus-greens-theorem",
+    "title": "Green’s theorem for circulation",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "planar line integral",
+      "circulation from curl",
+      "closed curve integral"
+    ],
+    "pattern": "For positive orientation, ∮(P dx+Q dy)=∬(Q_x−P_y)dA.",
+    "applies": [
+      "The boundary is piecewise smooth and positively oriented. P and Q have continuous first partials on a neighborhood of the region."
+    ],
+    "steps": [
+      "Identify the region and verify orientation.",
+      "Compute Q_x−P_y.",
+      "Integrate that scalar over the region."
+    ],
+    "pitfalls": [
+      "Clockwise traversal reverses the sign.",
+      "For holes, orient each inner boundary clockwise under the positive-orientation convention."
+    ],
+    "checks": [
+      "Check the derivative order and signs before integrating."
+    ],
+    "example": {
+      "problem": "Evaluate ∮(−y² dx+x² dy) counterclockwise around [0,2]×[0,3].",
+      "answer": "30."
+    }
+  },
+  {
+    "id": "ode-separation-of-variables",
+    "title": "Separation of variables",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "separable differential equation",
+      "separable initial value problem"
+    ],
+    "pattern": "For y′=g(x)h(y), integrate dy/h(y)=g(x)dx where h(y)≠0.",
+    "applies": [
+      "The right-hand side factors into a function of x and a function of y.",
+      "Work on an interval where the rearrangement is defined."
+    ],
+    "steps": [
+      "Record equilibrium solutions from h(y)=0 before dividing.",
+      "Integrate both sides and use the initial condition to find the constant.",
+      "Choose the branch and solution interval containing the initial point."
+    ],
+    "pitfalls": [
+      "Division by h(y) can omit equilibria.",
+      "An algebraic expression can have singularities that restrict its solution interval."
+    ],
+    "checks": [
+      "Differentiate the resulting solution and substitute the initial value."
+    ],
+    "example": {
+      "problem": "Solve y′=2xy² with y(0)=1/3 and find its maximal interval.",
+      "answer": "y=1/(3−x²) for −√3<x<√3."
+    }
+  },
+  {
+    "id": "ode-first-order-linear",
+    "title": "Integrating factor for a first-order linear ODE",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "linear first-order initial value problem",
+      "integrating factor"
+    ],
+    "pattern": "For y′+p(t)y=q(t), use μ(t)=exp(∫p(t)dt) so (μy)′=μq.",
+    "applies": [
+      "p and q are continuous on the chosen interval after putting the coefficient of y′ equal to one."
+    ],
+    "steps": [
+      "Write the equation in standard form and compute μ.",
+      "Multiply through by μ and recognize the derivative of μy.",
+      "Integrate, divide by μ, and apply any initial condition."
+    ],
+    "pitfalls": [
+      "Normalize the leading coefficient before finding p.",
+      "Keep the integration constant when solving for y."
+    ],
+    "checks": [
+      "Verify the original equation and initial condition directly."
+    ],
+    "example": {
+      "problem": "Solve y′+2y=6t with y(0)=1.",
+      "answer": "y(t)=3t−3/2+(5/2)e^(−2t)."
+    }
+  },
+  {
+    "id": "ode-autonomous-phase-line",
+    "title": "Autonomous phase line and stability",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "equilibrium stability",
+      "direction arrows",
+      "logistic equilibrium"
+    ],
+    "pattern": "For y′=f(y), equilibria satisfy f(y)=0. The sign of f sets the direction between equilibria.",
+    "applies": [
+      "The autonomous scalar equation has unique local solutions near the equilibria being classified, for example when f is locally Lipschitz."
+    ],
+    "steps": [
+      "Find the equilibrium values.",
+      "Test the sign of f in each interval they define.",
+      "Classify attraction and repulsion from the neighboring arrows."
+    ],
+    "pitfalls": [
+      "A zero value of f′ at an equilibrium needs sign analysis.",
+      "Attraction from one side only is distinct from two-sided asymptotic stability."
+    ],
+    "checks": [
+      "Check that the sign on each side points toward a claimed asymptotically stable equilibrium."
+    ],
+    "example": {
+      "problem": "Classify the equilibria of y′=y(3−y).",
+      "answer": "y=0 is unstable. y=3 is asymptotically stable."
+    }
+  },
+  {
+    "id": "ode-constant-coefficient-homogeneous",
+    "title": "Constant-coefficient homogeneous ODE",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "characteristic equation",
+      "repeated roots",
+      "second-order homogeneous linear ODE"
+    ],
+    "pattern": "For ay″+by′+cy=0, solve ar²+br+c=0.",
+    "applies": [
+      "The coefficients are constant and a≠0."
+    ],
+    "steps": [
+      "Find the characteristic roots and their multiplicities.",
+      "Use e^(rt) for a simple real root, e^(rt) and te^(rt) for a repeated real root, or the real sine/cosine pair for conjugate roots.",
+      "Use the two initial conditions to determine constants if given."
+    ],
+    "pitfalls": [
+      "A repeated root requires a second independent solution.",
+      "For complex roots, include the exponential from the real part."
+    ],
+    "checks": [
+      "Differentiate and verify both the ODE and the initial data."
+    ],
+    "example": {
+      "problem": "Solve y″−4y′+4y=0 with y(0)=2 and y′(0)=1.",
+      "answer": "y(t)=(2−3t)e^(2t)."
+    }
+  },
+  {
+    "id": "ode-undetermined-coefficients",
+    "title": "Undetermined coefficients with resonance",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "particular solution",
+      "resonant forcing",
+      "trial solution"
+    ],
+    "pattern": "Use y=y_h+y_p. Multiply the standard particular trial by t^s when its characteristic root has multiplicity s.",
+    "applies": [
+      "The ODE is linear with constant coefficients, and the forcing is a finite combination of polynomial, exponential, sine and cosine products."
+    ],
+    "steps": [
+      "Solve the homogeneous characteristic equation.",
+      "Choose a trial matching the forcing family and adjust for overlap with the homogeneous solution.",
+      "Substitute the trial and equate coefficients."
+    ],
+    "pitfalls": [
+      "A sine or cosine trial usually needs both phases.",
+      "Resonant trials require the power of t given by the root multiplicity."
+    ],
+    "checks": [
+      "Apply the differential operator to the particular solution and recover the forcing."
+    ],
+    "example": {
+      "problem": "Find the general solution of y″+y=2 cos t.",
+      "answer": "y(t)=C₁ cos t+C₂ sin t+t sin t."
+    }
+  },
+  {
+    "id": "ode-laplace-unit-step",
+    "title": "Laplace transform with a delayed forcing",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "Heaviside step",
+      "second shifting theorem",
+      "Laplace initial value problem"
+    ],
+    "pattern": "L{u(t−a)f(t−a)}=e^(−as)F(s), for a≥0.",
+    "applies": [
+      "The initial value problem starts at t=0 and the transformed functions are piecewise continuous and of exponential order."
+    ],
+    "steps": [
+      "Transform the equation using the initial values in each derivative term.",
+      "Solve algebraically for Y(s) and factor out any e^(−as) delay.",
+      "Invert the undelayed transform and shift its time argument."
+    ],
+    "pitfalls": [
+      "The shift applies to the entire time-domain function inside the step.",
+      "A factor e^(−as) represents a time delay."
+    ],
+    "checks": [
+      "Check the initial value and each interval on either side of the switch."
+    ],
+    "example": {
+      "problem": "Solve y′+2y=u(t−1), y(0)=0, for t≥0.",
+      "answer": "y(t)=(1/2)u(t−1)(1−e^(−2(t−1)))."
+    }
+  },
+  {
+    "id": "ode-exact-differential",
+    "title": "Exact first-order differential equation",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "potential function for an ODE",
+      "exact differential form"
+    ],
+    "pattern": "If M_y=N_x on a suitable region, seek F with F_x=M and F_y=N. Solutions lie on F=C.",
+    "applies": [
+      "M and N have continuous first partials on a simply connected open region where the equation is exact.",
+      "For a local solution y(x), the implicit equation can be solved near the initial point when F_y≠0."
+    ],
+    "steps": [
+      "Check M_y=N_x.",
+      "Integrate M with respect to x and include an unknown function of y.",
+      "Match F_y to N and use the initial value to fix C."
+    ],
+    "pitfalls": [
+      "The integration function can depend on y.",
+      "Select the implicit branch passing through the initial point."
+    ],
+    "checks": [
+      "Differentiate the potential to recover both coefficients."
+    ],
+    "example": {
+      "problem": "Solve (2xy+3)dx+(x²+4y)dy=0 through (0,1).",
+      "answer": "x²y+3x+2y²=2, on the branch with y(0)=1."
+    }
+  },
+  {
+    "id": "ode-linear-system-eigenmodes",
+    "title": "Eigenmodes for a constant linear system",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "first-order linear system",
+      "matrix exponential with eigenvectors"
+    ],
+    "pattern": "For x′=Ax and a real eigenbasis, x(t)=Σ c_i e^(λ_i t)v_i.",
+    "applies": [
+      "A is constant and has a full real eigenbasis. Other cases use generalized or complex modes."
+    ],
+    "steps": [
+      "Compute eigenvalues and a full eigenbasis.",
+      "Expand the initial vector in that basis.",
+      "Multiply each initial component by its exponential time factor."
+    ],
+    "pitfalls": [
+      "Use the eigenvalue corresponding to each eigenvector.",
+      "A defective matrix needs additional generalized modes."
+    ],
+    "checks": [
+      "At t=0 the modes should sum to the initial vector, and each mode must satisfy x′=Ax."
+    ],
+    "example": {
+      "problem": "Solve x′=[[3,1],[1,3]]x with x(0)=(2,0).",
+      "answer": "x(t)=e^(4t)(1,1)+e^(2t)(1,−1)."
+    }
+  },
+  {
+    "id": "linear-gaussian-elimination",
+    "title": "Gaussian elimination for a linear system",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "row reduction",
+      "RREF",
+      "solve simultaneous linear equations"
+    ],
+    "pattern": "Reduce the augmented matrix [A | b] using elementary row operations.",
+    "applies": [
+      "The equations are linear in the unknowns."
+    ],
+    "steps": [
+      "Write one row per equation with a consistent variable order.",
+      "Use swaps, nonzero rescaling and row addition to create pivots.",
+      "Read the solution, identifying free variables or any contradiction row."
+    ],
+    "pitfalls": [
+      "Apply each row operation to the right-hand side as well.",
+      "A row of zero coefficients with nonzero right-hand side signals inconsistency."
+    ],
+    "checks": [
+      "Substitute any proposed solution into all original equations."
+    ],
+    "example": {
+      "problem": "Solve x+y+z=4, 2x−y+z=8, and x+2y−z=−3.",
+      "answer": "(x,y,z)=(2,−1,3)."
+    }
+  },
+  {
+    "id": "linear-column-space-basis",
+    "title": "Basis from pivot columns",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "basis for the column space",
+      "column span",
+      "independent columns"
+    ],
+    "pattern": "Pivot column indices in RREF select basis columns from the original matrix.",
+    "applies": [
+      "The vectors are columns of a matrix over the same field."
+    ],
+    "steps": [
+      "Place the given vectors as columns of A.",
+      "Row-reduce A and record its pivot column indices.",
+      "Take the corresponding columns from A as a basis."
+    ],
+    "pitfalls": [
+      "The reduced columns generally span a different subspace.",
+      "A dependent vector can be omitted even if it is nonzero."
+    ],
+    "checks": [
+      "Express omitted vectors as combinations of the selected vectors when practical."
+    ],
+    "example": {
+      "problem": "Find a basis for the span of (1,0,1), (0,2,1), and (1,4,3).",
+      "answer": "{(1,0,1), (0,2,1)}."
+    }
+  },
+  {
+    "id": "linear-null-space-basis",
+    "title": "Null space and rank-nullity",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "kernel basis",
+      "homogeneous system",
+      "free variables"
+    ],
+    "pattern": "Solve Ax=0. For n columns, rank(A)+dim ker(A)=n.",
+    "applies": [
+      "The system is homogeneous and the number of columns gives the domain dimension."
+    ],
+    "steps": [
+      "Row-reduce A.",
+      "Write pivot variables in terms of the free variables.",
+      "Set each free variable to one in turn with the others zero to obtain basis vectors."
+    ],
+    "pitfalls": [
+      "The number of free variables is based on columns rather than rows.",
+      "Parameter vectors must satisfy the original homogeneous system."
+    ],
+    "checks": [
+      "Verify Av=0 for every basis vector and check the rank-nullity count."
+    ],
+    "example": {
+      "problem": "Find a null-space basis for [[1,2,−1],[2,4,−2]].",
+      "answer": "{(−2,1,0), (1,0,1)}. The nullity is 2."
+    }
+  },
+  {
+    "id": "linear-determinant-row-operations",
+    "title": "Determinant by row operations",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "determinant from triangular form",
+      "row swap sign",
+      "test invertibility"
+    ],
+    "pattern": "For triangular U, det(U) is the product of its diagonal entries.",
+    "applies": [
+      "A is square and each row operation’s determinant factor can be tracked."
+    ],
+    "steps": [
+      "Use row addition and swaps to make A triangular.",
+      "Track the determinant multiplier for each swap or rescaling.",
+      "Use the triangular determinant and undo the tracked factors."
+    ],
+    "pitfalls": [
+      "A row addition leaves the determinant unchanged.",
+      "A determinant of zero means the square matrix is singular."
+    ],
+    "checks": [
+      "Check the sign against a cofactor expansion or the recorded swap parity."
+    ],
+    "example": {
+      "problem": "Find det([[0,2,1],[1,3,0],[0,4,5]]).",
+      "answer": "−6."
+    }
+  },
+  {
+    "id": "linear-eigenvalue-diagonalization",
+    "title": "Diagonalization with eigenvectors",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "eigenvector matrix",
+      "PDP inverse",
+      "diagonalizable matrix"
+    ],
+    "pattern": "A=PDP^−1 when P has a full set of independent eigenvector columns.",
+    "applies": [
+      "A is square and has a full eigenbasis over the field in use."
+    ],
+    "steps": [
+      "Find the eigenvalues from det(A−λI)=0.",
+      "Find a basis for each eigenspace.",
+      "Place independent eigenvectors in P and their corresponding eigenvalues in D."
+    ],
+    "pitfalls": [
+      "Repeated eigenvalues can have too few independent eigenvectors.",
+      "Match each eigenvalue to its eigenvector’s column position."
+    ],
+    "checks": [
+      "Verify AP=PD and that P is invertible."
+    ],
+    "example": {
+      "problem": "Diagonalize A=[[4,1],[0,2]].",
+      "answer": "P=[[1,−1],[0,2]] and D=diag(4,2), with A=PDP^−1."
+    }
+  },
+  {
+    "id": "linear-gram-schmidt",
+    "title": "Gram–Schmidt orthonormalization",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "orthogonalize a basis",
+      "build orthonormal vectors",
+      "QR columns"
+    ],
+    "pattern": "Subtract previous orthogonal projections from each vector, then normalize the residual.",
+    "applies": [
+      "The starting vectors are independent in an inner-product space."
+    ],
+    "steps": [
+      "Normalize the first vector.",
+      "For each later vector, subtract its projection onto every previous orthonormal vector.",
+      "Normalize the remaining vector."
+    ],
+    "pitfalls": [
+      "Project onto the orthogonalized vectors, using their correct norm.",
+      "A zero residual signals dependence."
+    ],
+    "checks": [
+      "Verify pairwise inner products are zero and each output norm is one."
+    ],
+    "example": {
+      "problem": "Apply Gram–Schmidt to (1,1,0) and (1,0,1), in that order.",
+      "answer": "(1,1,0)/√2 and (1,−1,2)/√6."
+    }
+  },
+  {
+    "id": "linear-orthogonal-projection",
+    "title": "Orthogonal projection onto a subspace",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "closest vector in a subspace",
+      "projection using an orthogonal basis"
+    ],
+    "pattern": "For orthogonal basis vectors u_i, proj_W b=Σ ((b·u_i)/(u_i·u_i))u_i.",
+    "applies": [
+      "The basis is orthogonal and its vectors are nonzero."
+    ],
+    "steps": [
+      "Compute the coefficient of b along each basis vector.",
+      "Add the resulting components.",
+      "Form the residual b−proj_W b."
+    ],
+    "pitfalls": [
+      "For a non-orthogonal basis, orthonormalize or solve the normal equations first.",
+      "The denominator is the squared norm for an orthogonal basis."
+    ],
+    "checks": [
+      "Check that the residual is orthogonal to each basis vector."
+    ],
+    "example": {
+      "problem": "Project b=(3,1,−2) onto the span of (1,1,0) and (0,0,2).",
+      "answer": "(2,2,−2)."
+    }
+  },
+  {
+    "id": "linear-least-squares",
+    "title": "Least squares and normal equations",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "best-fit line",
+      "overdetermined system",
+      "linear regression"
+    ],
+    "pattern": "A least-squares solution satisfies AᵀA x=Aᵀb. QR also gives a solution and avoids forming AᵀA.",
+    "applies": [
+      "The goal is to minimize the Euclidean residual norm. Full column rank gives a unique minimizer."
+    ],
+    "steps": [
+      "Build the design matrix A and data vector b.",
+      "Solve with QR or solve the normal equations for a small exact problem.",
+      "Interpret the coefficients and evaluate the residual."
+    ],
+    "pitfalls": [
+      "Include a column of ones for a fitted intercept.",
+      "Use QR or SVD for ill-conditioned problems."
+    ],
+    "checks": [
+      "Check Aᵀ(b−Ax)=0."
+    ],
+    "example": {
+      "problem": "Fit y=a+bt by least squares to (0,1), (1,2), and (2,2).",
+      "answer": "y=7/6+t/2."
+    }
+  },
+  {
+    "id": "linear-symmetric-positive-definite",
+    "title": "Symmetric matrices and positive definiteness",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "spectral theorem",
+      "classify a quadratic form",
+      "positive eigenvalues"
+    ],
+    "pattern": "For real symmetric A, A=QΛQᵀ. The form xᵀAx is positive definite exactly when all eigenvalues are positive.",
+    "applies": [
+      "A is real and symmetric. For a quadratic form, use its symmetric coefficient matrix."
+    ],
+    "steps": [
+      "Find the eigenvalues and their signs.",
+      "Use an orthonormal eigenbasis when a diagonal form is requested.",
+      "Classify the form from the eigenvalue signs."
+    ],
+    "pitfalls": [
+      "A zero eigenvalue prevents strict positive definiteness.",
+      "Mixed signs give an indefinite form."
+    ],
+    "checks": [
+      "Check the eigenvalues using the trace and determinant when helpful."
+    ],
+    "example": {
+      "problem": "Classify xᵀ[[2,1],[1,2]]x over R².",
+      "answer": "Positive definite, with eigenvalues 3 and 1."
+    }
+  },
+  {
+    "id": "linear-singular-value-decomposition",
+    "title": "Singular values and singular vectors",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "SVD",
+      "singular spectrum",
+      "rectangular matrix rank"
+    ],
+    "pattern": "The nonnegative singular values are the square roots of eigenvalues of AᵀA.",
+    "applies": [
+      "A is real and may be rectangular. Use orthonormal eigenvectors of the symmetric matrix AᵀA."
+    ],
+    "steps": [
+      "Diagonalize AᵀA and order eigenvalues from largest to smallest.",
+      "Set σ_i=√λ_i and let v_i be the corresponding right singular vector.",
+      "For σ_i>0, compute u_i=Av_i/σ_i. Complete orthonormal bases if a full SVD is needed."
+    ],
+    "pitfalls": [
+      "Use square roots of AᵀA eigenvalues.",
+      "A zero singular value needs a separate orthonormal completion."
+    ],
+    "checks": [
+      "Verify Av_i=σ_i u_i for every positive singular value."
+    ],
+    "example": {
+      "problem": "Find the positive singular values and corresponding right singular vectors of [[3,0],[0,0],[0,4]].",
+      "answer": "σ=4 with v=(0,1), and σ=3 with v=(1,0)."
+    }
+  },
+  {
+    "id": "linear-change-of-basis",
+    "title": "Coordinates in a chosen basis",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "basis coordinate vector",
+      "change-of-basis matrix",
+      "convert coordinates"
+    ],
+    "pattern": "If B=[b₁ … b_n], then v=B[v]_B, so solve Bc=v.",
+    "applies": [
+      "The ordered columns form a basis of the space containing v."
+    ],
+    "steps": [
+      "Write the basis vectors as columns in the specified order.",
+      "Solve the linear system for the coefficient vector.",
+      "Read the coefficients in the same basis order."
+    ],
+    "pitfalls": [
+      "Reversing a basis order changes the coordinate tuple.",
+      "For standard coordinates from basis coordinates, multiply by B."
+    ],
+    "checks": [
+      "Rebuild the original vector as the stated linear combination."
+    ],
+    "example": {
+      "problem": "Find the coordinates of (5,3) in the ordered basis ((2,1),(1,1)).",
+      "answer": "(2,1)."
+    }
+  }
+]

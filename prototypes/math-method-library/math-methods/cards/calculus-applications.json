@@ -1,0 +1,312 @@
+[
+  {
+    "id": "calculus-integration-partial-fractions",
+    "title": "Integrating rational functions by partial fractions",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "rational integral",
+      "partial fraction decomposition",
+      "decompose linear factors"
+    ],
+    "pattern": "Write a proper rational function as a sum over the factors of its denominator, then integrate each term.",
+    "applies": [
+      "The integrand is rational and the domain excludes denominator zeros."
+    ],
+    "steps": [
+      "Use polynomial division if the numerator degree is at least the denominator degree.",
+      "Factor the remaining denominator and set up a term for every required factor power.",
+      "Clear denominators, solve the coefficient equations, and integrate the decomposition."
+    ],
+    "pitfalls": [
+      "Repeated factors need a term for each power. An irreducible quadratic uses a linear numerator.",
+      "Integrals of 1/(x−a) use ln|x−a| on each domain interval."
+    ],
+    "checks": [
+      "Recombine the fractions and differentiate the antiderivative."
+    ],
+    "example": {
+      "problem": "Find ∫ (5x+1)/((x−1)(x+2)) dx.",
+      "answer": "2 ln|x−1|+3 ln|x+2|+C on each interval avoiding −2 and 1."
+    }
+  },
+  {
+    "id": "calculus-trigonometric-substitution",
+    "title": "Trigonometric substitution",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "trig substitution",
+      "radical integral",
+      "sine substitution"
+    ],
+    "pattern": "Use x=a sin θ for √(a²−x²), x=a tan θ for √(a²+x²), or x=a sec θ for √(x²−a²).",
+    "applies": [
+      "A radical matches one of the standard forms with a>0. Choose a branch compatible with the integration interval."
+    ],
+    "steps": [
+      "Select the trigonometric substitution and compute dx.",
+      "Use a trigonometric identity to simplify the radical with the correct sign.",
+      "Integrate in θ and convert back to x or use transformed definite bounds."
+    ],
+    "pitfalls": [
+      "Track absolute values when taking a square root of a square.",
+      "Keep the inverse-trigonometric branch consistent with the substitution interval."
+    ],
+    "checks": [
+      "Differentiate the final expression on the stated domain."
+    ],
+    "example": {
+      "problem": "Find ∫ x²/√(9−x²) dx for |x|<3.",
+      "answer": "(9/2)arcsin(x/3)−(x/2)√(9−x²)+C."
+    }
+  },
+  {
+    "id": "calculus-volume-washers",
+    "title": "Volume of revolution by washers",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "disk method",
+      "annular cross sections",
+      "washers around an axis"
+    ],
+    "pattern": "Slices perpendicular to the axis give V=π∫(R²−r²) ds.",
+    "applies": [
+      "The solid comes from revolving a planar region about a line. Each chosen slice forms a disk or annulus."
+    ],
+    "steps": [
+      "Choose the slicing variable perpendicular to the axis.",
+      "Express the outer and inner radii as distances from the axis.",
+      "Integrate the cross-sectional area over the slice interval."
+    ],
+    "pitfalls": [
+      "Use the difference of squared radii.",
+      "If the axis crosses a slice, check whether the inner radius becomes zero."
+    ],
+    "checks": [
+      "Verify R≥r≥0 on each integration interval."
+    ],
+    "example": {
+      "problem": "Rotate 1≤y≤3−x, 0≤x≤2 about the x-axis. Find the volume.",
+      "answer": "20π/3."
+    }
+  },
+  {
+    "id": "calculus-volume-cylindrical-shells",
+    "title": "Volume of revolution by cylindrical shells",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "shell method",
+      "parallel slices",
+      "rotate around the y-axis"
+    ],
+    "pattern": "Slices parallel to the axis give V=2π∫ radius·height ds.",
+    "applies": [
+      "The region is described by shell heights at each radius, with each shell counted once."
+    ],
+    "steps": [
+      "Choose slices parallel to the axis and let the integration variable measure their positions.",
+      "Write the radius as the distance to the axis and the height as the slice length.",
+      "Integrate circumference times height over the radial range."
+    ],
+    "pitfalls": [
+      "For a shifted axis, use the distance to that axis.",
+      "Slices on both sides of the axis can sweep the same shell. Combine their contributions geometrically."
+    ],
+    "checks": [
+      "Check that the height and radius are nonnegative and use consistent bounds."
+    ],
+    "example": {
+      "problem": "Rotate the region 0≤y≤x(2−x), 0≤x≤2 about the y-axis. Find the volume.",
+      "answer": "8π/3."
+    }
+  },
+  {
+    "id": "calculus-product-quotient-derivatives",
+    "title": "Product and quotient rules",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "differentiate products",
+      "differentiate fractions",
+      "derivative of multiplied functions"
+    ],
+    "pattern": "(uv)′=u′v+uv′ and (u/v)′=(u′v−uv′)/v².",
+    "applies": [
+      "The component functions are differentiable and a quotient denominator is nonzero."
+    ],
+    "steps": [
+      "Identify the outer product or quotient.",
+      "Differentiate each component using any needed chain or product rules.",
+      "Combine the terms and evaluate at the requested point."
+    ],
+    "pitfalls": [
+      "The quotient numerator starts with u′v.",
+      "A product derivative has two terms even if one vanishes at the evaluation point."
+    ],
+    "checks": [
+      "For a quotient, keep the original denominator squared."
+    ],
+    "example": {
+      "problem": "Find f′(1) for f(x)=(x²+1)e^x/(x+2).",
+      "answer": "10e/9."
+    }
+  },
+  {
+    "id": "calculus-ratio-series-test",
+    "title": "Ratio test for series",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "absolute convergence by ratios",
+      "factorial series",
+      "ratio of successive terms"
+    ],
+    "pattern": "Let L=lim |a_(n+1)/a_n|. If L<1 the series converges absolutely, and if L>1 it diverges.",
+    "applies": [
+      "Terms are nonzero eventually and the ratio limit exists or is infinite."
+    ],
+    "steps": [
+      "Form the absolute ratio of successive terms.",
+      "Simplify it before taking the limit.",
+      "Compare with one and switch tests if the result is one."
+    ],
+    "pitfalls": [
+      "A limit of one is inconclusive.",
+      "Use the absolute ratio for signed terms."
+    ],
+    "checks": [
+      "Look for cancellation of factorials or powers before evaluating the limit."
+    ],
+    "example": {
+      "problem": "Decide whether Σ from n=1 to ∞ of n²(−3/5)^n converges absolutely.",
+      "answer": "It converges absolutely. The ratio limit is 3/5."
+    }
+  },
+  {
+    "id": "calculus-comparison-series-tests",
+    "title": "Direct and limit comparison for series",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "compare a positive series",
+      "limit comparison test",
+      "p-series benchmark"
+    ],
+    "pattern": "For nonnegative terms, use eventual inequalities or a finite positive limit of a_n/b_n.",
+    "applies": [
+      "The terms of both series are nonnegative eventually. For limit comparison, b_n must be positive eventually."
+    ],
+    "steps": [
+      "Choose a familiar benchmark series with similar term size.",
+      "Prove the needed eventual inequality or take the limit of the term ratio.",
+      "Transfer convergence or divergence using the correct comparison direction."
+    ],
+    "pitfalls": [
+      "For direct comparison, an upper convergent bound proves convergence and a lower divergent bound proves divergence.",
+      "A finite positive ratio makes the two series share convergence behavior."
+    ],
+    "checks": [
+      "Identify the benchmark and show the comparison explicitly."
+    ],
+    "example": {
+      "problem": "Decide whether Σ from n=1 to ∞ of (2n+1)/(n³+4) converges.",
+      "answer": "It converges by limit comparison with Σ 1/n². The term ratio tends to 2."
+    }
+  },
+  {
+    "id": "calculus-general-jacobian-change",
+    "title": "Change of variables with a Jacobian determinant",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "general coordinate transformation",
+      "Jacobian for double integrals",
+      "transform a parallelogram"
+    ],
+    "pattern": "For x=T(u), replace the volume element by |det DT(u)| du.",
+    "applies": [
+      "The transformation is continuously differentiable and one-to-one on the integration interior, with nonzero Jacobian there."
+    ],
+    "steps": [
+      "Choose coordinates that simplify the region or integrand.",
+      "Solve for the original variables and compute the absolute determinant of that inverse-coordinate map.",
+      "Transform the integrand and bounds and include the determinant factor."
+    ],
+    "pitfalls": [
+      "Use the determinant for the map from the new variables to the original ones.",
+      "Take the absolute value and account for any overlapping coverage."
+    ],
+    "checks": [
+      "A constant linear transformation scales area or volume by the absolute determinant."
+    ],
+    "example": {
+      "problem": "Evaluate ∬ (x−y) dA over 0≤x+y≤2 and 1≤x−y≤3.",
+      "answer": "4."
+    }
+  },
+  {
+    "id": "calculus-stokes-theorem",
+    "title": "Stokes’ theorem",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "curl flux and circulation",
+      "boundary of a surface",
+      "surface replacement"
+    ],
+    "pattern": "∮_C F·dr=∬_S (∇×F)·n dS, with matching boundary and surface orientations.",
+    "applies": [
+      "F has continuous first partials near the oriented piecewise smooth surface, and C is its oriented boundary."
+    ],
+    "steps": [
+      "Use the right-hand rule to match the boundary direction to the normal.",
+      "Compute curl F if taking the surface-integral route.",
+      "Use a simpler admissible surface with the same boundary and compatible orientation if helpful."
+    ],
+    "pitfalls": [
+      "Reversing the orientation reverses the answer.",
+      "A replacement surface must stay where the vector field is smooth."
+    ],
+    "checks": [
+      "Check the boundary orientation before swapping surfaces."
+    ],
+    "example": {
+      "problem": "Find the outward-oriented curl flux of F=(−y,x,0) through the upper hemisphere of radius 2.",
+      "answer": "8π."
+    }
+  },
+  {
+    "id": "calculus-divergence-theorem",
+    "title": "Divergence theorem",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "Gauss theorem",
+      "outward flux",
+      "closed surface integral"
+    ],
+    "pattern": "For outward orientation, ∬_(∂V) F·n dS=∭_V ∇·F dV.",
+    "applies": [
+      "The surface is the closed boundary of a solid. F has continuous first partials on a neighborhood of the solid."
+    ],
+    "steps": [
+      "Identify the enclosed solid and check the outward orientation.",
+      "Compute the scalar divergence.",
+      "Integrate the divergence over the volume."
+    ],
+    "pitfalls": [
+      "An open surface must be closed and the extra cap flux accounted for before using the theorem.",
+      "Check for singularities inside the volume."
+    ],
+    "checks": [
+      "For constant divergence, multiply it by the enclosed volume."
+    ],
+    "example": {
+      "problem": "Find the outward flux of F=(x,2y,3z) through the sphere x²+y²+z²=4.",
+      "answer": "64π."
+    }
+  }
+]

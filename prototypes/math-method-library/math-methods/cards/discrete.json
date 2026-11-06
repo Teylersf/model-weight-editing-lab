@@ -1,0 +1,834 @@
+[
+  {
+    "id": "bayes-total-probability",
+    "title": "Bayes' rule with a partition",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": [
+      "Bayes theorem",
+      "posterior probability",
+      "base rate"
+    ],
+    "pattern": "P(Hᵢ | E) = P(E | Hᵢ)P(Hᵢ) / Σⱼ P(E | Hⱼ)P(Hⱼ).",
+    "applies": [
+      "An observation updates probabilities over disjoint, exhaustive hypotheses."
+    ],
+    "steps": [
+      "Write the prior and observation likelihood for each hypothesis.",
+      "Multiply each prior by its likelihood to get a joint probability.",
+      "Divide the target joint probability by the sum of all joints."
+    ],
+    "pitfalls": [
+      "Reversing P(E | H) and P(H | E).",
+      "Omitting a hypothesis from the denominator."
+    ],
+    "checks": [
+      "The denominator equals P(E) and is positive.",
+      "The posteriors sum to one."
+    ],
+    "example": {
+      "problem": "Two labs produce 60% and 40% of a shipment. Their defect rates are 10% and 25%, respectively. Given a defect, what is the probability it came from the second lab?",
+      "answer": "The second lab contributes (2/5)(1/4) = 1/10. The total defect probability is (3/5)(1/10) + 1/10 = 4/25. The posterior is 5/8."
+    }
+  },
+  {
+    "id": "hypergeometric-sampling",
+    "title": "Hypergeometric sampling without replacement",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": [
+      "sampling without replacement",
+      "hypergeometric distribution",
+      "exactly k successes"
+    ],
+    "pattern": "P(X = k) = C(K,k)C(N−K,n−k)/C(N,n).",
+    "applies": [
+      "Draw an unordered simple random sample of size n from N objects with K marked."
+    ],
+    "steps": [
+      "Check max(0,n−N+K) ≤ k ≤ min(n,K).",
+      "Count choices of k marked and n−k unmarked objects.",
+      "Divide by the total number of size-n subsets."
+    ],
+    "pitfalls": [
+      "Using independent binomial draws without replacement.",
+      "Mixing ordered and unordered counts."
+    ],
+    "checks": [
+      "Each combination has a feasible lower argument.",
+      "The denominator is the complete uniform sample space."
+    ],
+    "example": {
+      "problem": "An urn has five red and seven blue tokens. Four tokens are drawn without replacement. Find the probability of exactly two red tokens.",
+      "answer": "C(5,2)C(7,2)/C(12,4) = 210/495 = 14/33."
+    }
+  },
+  {
+    "id": "total-variance",
+    "title": "Conditional expectation and total variance",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": [
+      "law of total variance",
+      "tower property",
+      "mixture variance"
+    ],
+    "pattern": "E[X] = E[E[X | Z]]. Var(X) = E[Var(X | Z)] + Var(E[X | Z]).",
+    "applies": [
+      "The model has distinct groups or a random parameter."
+    ],
+    "steps": [
+      "Compute each conditional mean and variance.",
+      "Average the conditional variances over the groups.",
+      "Add the variance of the conditional means around the overall mean."
+    ],
+    "pitfalls": [
+      "Averaging within-group variances alone.",
+      "Taking the variance of the conditional standard deviations."
+    ],
+    "checks": [
+      "Both variance terms are nonnegative.",
+      "Identical conditional means give zero between-group variance."
+    ],
+    "example": {
+      "problem": "Daily requests are Poisson with mean 2 on one third of days and mean 5 on the other days. Find the unconditional mean and variance.",
+      "answer": "The mean and average conditional variance are both 4. The between-group variance is (1/3)(2−4)² + (2/3)(5−4)² = 2, so the total variance is 6."
+    }
+  },
+  {
+    "id": "cdf-transform-nonmonotone",
+    "title": "Distribution of a nonmonotone transformation",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": [
+      "cdf method",
+      "transformation of random variables",
+      "distribution of a square"
+    ],
+    "pattern": "F_Y(y) = P(g(X) ≤ y). Intersect this event with the support of X.",
+    "applies": [
+      "The transformation has several inverse branches or a restricted support."
+    ],
+    "steps": [
+      "Find the range of g on the support of X.",
+      "Solve g(x) ≤ y and intersect it with the support.",
+      "Measure or integrate the resulting intervals and split at support breakpoints."
+    ],
+    "pitfalls": [
+      "Keeping only the positive inverse branch of a square.",
+      "Missing a breakpoint where a branch reaches a support endpoint."
+    ],
+    "checks": [
+      "The CDF is nondecreasing and has limits zero and one.",
+      "Adjacent formulas agree at a breakpoint with no atom."
+    ],
+    "example": {
+      "problem": "Let X be uniform on [−2,1] and let Y = X². Find the CDF of Y.",
+      "answer": "The CDF is 0 for y < 0, 2√y/3 for 0 ≤ y ≤ 1, (1 + √y)/3 for 1 ≤ y ≤ 4, and 1 for y ≥ 4."
+    }
+  },
+  {
+    "id": "markov-stationary-distribution",
+    "title": "Stationary distribution of a finite Markov chain",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": [
+      "Markov chain equilibrium",
+      "stationary probabilities",
+      "steady state"
+    ],
+    "pattern": "For row-stochastic P, solve πP = π and Σᵢ πᵢ = 1.",
+    "applies": [
+      "A finite-state process has a fixed transition matrix."
+    ],
+    "steps": [
+      "Write the balance equations using a consistent row convention.",
+      "Replace a redundant equation with normalization.",
+      "For convergence from every initial state, check irreducibility and aperiodicity."
+    ],
+    "pitfalls": [
+      "Assuming stationarity alone guarantees convergence.",
+      "Multiplying on the wrong side for the chosen convention."
+    ],
+    "checks": [
+      "Check nonnegativity, normalization, and πP = π.",
+      "A self-loop makes an irreducible finite chain aperiodic."
+    ],
+    "example": {
+      "problem": "The rows of P are (1/2,1/2,0), (1/4,1/2,1/4), and (0,1/2,1/2). Find the stationary distribution and determine whether the chain converges to it.",
+      "answer": "Balance gives π₂ = 2π₁ and π₃ = π₁, so π = (1/4,1/2,1/4). The chain is irreducible and has self-loops, so it converges from any starting state."
+    }
+  },
+  {
+    "id": "mle-exponential-censoring",
+    "title": "Exponential maximum likelihood with right censoring",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": [
+      "survival likelihood",
+      "right-censored mle",
+      "exponential rate estimate"
+    ],
+    "pattern": "With d observed events and total exposure T, L(λ) ∝ λᵈe^(−λT), so λ̂ = d/T when d > 0.",
+    "applies": [
+      "Independent exponential event times have noninformative right censoring."
+    ],
+    "steps": [
+      "Use a density contribution for each failure and a survival contribution for each censoring time.",
+      "Form the log likelihood d log λ − λT plus constants.",
+      "Differentiate and check that the critical point is a maximum."
+    ],
+    "pitfalls": [
+      "Dropping exposure from censored observations.",
+      "Counting censoring as an event."
+    ],
+    "checks": [
+      "λ̂ has units of inverse time.",
+      "If d=0 and λ>0, the likelihood supremum is approached as λ goes to zero."
+    ],
+    "example": {
+      "problem": "Two components fail at times 2 and 3. Two others are still functioning when observation stops at times 5 and 7. Find the exponential rate MLE.",
+      "answer": "There are 2 failures and 17 units of exposure, so λ̂ = 2/17."
+    }
+  },
+  {
+    "id": "student-t-mean-interval",
+    "title": "Student t interval for a population mean",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": [
+      "one-sample t confidence interval",
+      "unknown variance mean",
+      "t interval"
+    ],
+    "pattern": "A two-sided interval is x̄ ± t_(1−α/2,n−1)s/√n.",
+    "applies": [
+      "The population variance is unknown and the independent observations are normal or support a suitable large-sample approximation."
+    ],
+    "steps": [
+      "Compute the sample mean and sample standard deviation using n−1 in the variance.",
+      "Find the two-sided t critical value with n−1 degrees of freedom.",
+      "Multiply the critical value by the standard error and add and subtract the margin."
+    ],
+    "pitfalls": [
+      "Dividing s by n instead of √n.",
+      "Reading a realized frequentist interval as a posterior probability statement."
+    ],
+    "checks": [
+      "The interval is centered at x̄.",
+      "The critical value allocates α/2 to each tail."
+    ],
+    "example": {
+      "problem": "Assume 8, 10, 12, and 10 are independent normal observations. Give the two-sided 95% t interval for the mean.",
+      "answer": "The mean is 10 and the standard error is √(2/3). With 3 degrees of freedom, t* ≈ 3.182. The interval is approximately [7.40, 12.60]."
+    }
+  },
+  {
+    "id": "ordinary-least-squares-line",
+    "title": "Ordinary least-squares line",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": [
+      "linear regression slope",
+      "least-squares intercept",
+      "residual orthogonality"
+    ],
+    "pattern": "With an intercept, b = Σ(xᵢ−x̄)(yᵢ−ȳ)/Σ(xᵢ−x̄)² and a = ȳ−bx̄.",
+    "applies": [
+      "Fit a line by minimizing squared vertical residuals with predictor values that vary."
+    ],
+    "steps": [
+      "Compute x̄ and ȳ, then the centered cross-product and predictor sum of squares.",
+      "Find the slope from the ratio and use the means to find the intercept.",
+      "Compute residuals and verify the normal equations."
+    ],
+    "pitfalls": [
+      "Swapping predictor and response changes the fitted line.",
+      "A fitted line alone does not establish causation."
+    ],
+    "checks": [
+      "The line passes through (x̄,ȳ).",
+      "With an intercept, Σeᵢ = Σxᵢeᵢ = 0 up to rounding."
+    ],
+    "example": {
+      "problem": "Fit an OLS line to (0,1), (1,3), (2,2), and (3,6).",
+      "answer": "x̄ = 1.5, ȳ = 3, Sₓₓ = 5, and Sₓᵧ = 7. The line is ŷ = 0.9 + 1.4x."
+    }
+  },
+  {
+    "id": "pearson-contingency-independence",
+    "title": "Pearson chi-square test of independence",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": [
+      "contingency table",
+      "chi square independence",
+      "expected cell counts"
+    ],
+    "pattern": "Eᵢⱼ = row total × column total / grand total. χ² = Σ(Oᵢⱼ−Eᵢⱼ)²/Eᵢⱼ, with df = (r−1)(c−1).",
+    "applies": [
+      "A contingency table contains independent observations classified by two categorical variables."
+    ],
+    "steps": [
+      "Calculate all marginal totals and expected counts under independence.",
+      "Sum the squared observed-minus-expected deviations divided by expected counts.",
+      "Check the large-sample approximation before using the upper-tail probability."
+    ],
+    "pitfalls": [
+      "Using observed counts as denominators.",
+      "Using the asymptotic approximation with sparse expected counts."
+    ],
+    "checks": [
+      "Expected counts reproduce the margins.",
+      "The statistic is nonnegative."
+    ],
+    "example": {
+      "problem": "For the table with rows (18,12) and (6,24), find the Pearson statistic and degrees of freedom.",
+      "answer": "Both expected rows are (12,18). The statistic is 2(36/12 + 36/18) = 10, with 1 degree of freedom."
+    }
+  },
+  {
+    "id": "inclusion-exclusion-three-sets",
+    "title": "Inclusion–exclusion for overlapping sets",
+    "domain": "discrete-math",
+    "level": "undergraduate",
+    "aliases": [
+      "counting a union",
+      "principle of inclusion exclusion",
+      "divisible by any"
+    ],
+    "pattern": "|A ∪ B ∪ C| = Σ singles − Σ pair intersections + |A ∩ B ∩ C|.",
+    "applies": [
+      "An object can satisfy several conditions and should be counted once."
+    ],
+    "steps": [
+      "Count each individual set.",
+      "Count and subtract all pair intersections.",
+      "Add the triple intersection back."
+    ],
+    "pitfalls": [
+      "Subtracting overlaps without restoring the triple overlap.",
+      "Using products of divisors instead of least common multiples."
+    ],
+    "checks": [
+      "The union lies between the largest set and the sum of set sizes.",
+      "An element in all three sets receives coefficient 3−3+1 = 1."
+    ],
+    "example": {
+      "problem": "How many integers from 1 through 150 are divisible by 4, 6, or 10?",
+      "answer": "The individual counts are 37, 25, and 15. The pair counts are 12, 7, and 5. The triple count is 2, so the total is 55."
+    }
+  },
+  {
+    "id": "generating-function-linear-recurrence",
+    "title": "Generating function for a linear recurrence",
+    "domain": "discrete-math",
+    "level": "undergraduate",
+    "aliases": [
+      "ordinary generating function",
+      "solve recurrence by series",
+      "rational generating function"
+    ],
+    "pattern": "Multiply by tⁿ, sum from the recurrence's first valid index, and express shifted sums using A(t) = Σaₙtⁿ.",
+    "applies": [
+      "A constant-coefficient recurrence has initial values and an explicit formula is useful."
+    ],
+    "steps": [
+      "Write a formal power series for the sequence.",
+      "Shift each series while retaining its omitted initial terms.",
+      "Solve for the rational function, decompose it, and extract coefficients."
+    ],
+    "pitfalls": [
+      "Losing an initial term when shifting a sum.",
+      "Forgetting numerator factors in a partial fraction."
+    ],
+    "checks": [
+      "The formula reproduces every initial value.",
+      "Substitution verifies the recurrence."
+    ],
+    "example": {
+      "problem": "Solve aₙ = aₙ₋₁ + 2aₙ₋₂ for n ≥ 2 with a₀ = 1 and a₁ = 3.",
+      "answer": "A(t) = (1+2t)/((1−2t)(1+t)) = (4/3)/(1−2t) − (1/3)/(1+t). Therefore aₙ = (4·2ⁿ − (−1)ⁿ)/3."
+    }
+  },
+  {
+    "id": "euler-trail-parity",
+    "title": "Euler trails in undirected graphs",
+    "domain": "discrete-math",
+    "level": "undergraduate",
+    "aliases": [
+      "Euler path",
+      "use every edge once",
+      "odd degree vertices"
+    ],
+    "pattern": "The non-isolated vertices must be connected. An open Euler trail requires exactly two odd-degree vertices. A circuit requires none.",
+    "applies": [
+      "A route must traverse every edge of an undirected graph exactly once."
+    ],
+    "steps": [
+      "Check connectivity among vertices incident to edges.",
+      "Count degrees, including twice per loop.",
+      "Start at an odd vertex when there are two, then build a trail and splice any leftover cycles."
+    ],
+    "pitfalls": [
+      "Confusing Euler trails over edges with Hamilton paths over vertices.",
+      "Starting an open Euler trail at an even vertex."
+    ],
+    "checks": [
+      "Every edge appears exactly once in the route.",
+      "An open trail ends at the two odd-degree vertices."
+    ],
+    "example": {
+      "problem": "A graph has edges AB, BC, CD, DA, and AC. Find an Euler trail.",
+      "answer": "A and C have odd degree. One trail is A → B → C → D → A → C."
+    }
+  },
+  {
+    "id": "double-counting-marked-subsets",
+    "title": "Double counting marked subsets",
+    "domain": "discrete-math",
+    "level": "undergraduate",
+    "aliases": [
+      "double-counting proof",
+      "binomial identity",
+      "marked element"
+    ],
+    "pattern": "Count pairs (S,x) with x ∈ S by choosing S first or by choosing x first.",
+    "applies": [
+      "A sum over subset sizes includes a factor for a distinguished member."
+    ],
+    "steps": [
+      "Define one finite set of objects that both sides count.",
+      "Count by subset size and mark a member.",
+      "Count again by choosing the marked member first."
+    ],
+    "pitfalls": [
+      "Counting different objects on the two sides.",
+      "Allowing an empty subset to have a marked member."
+    ],
+    "checks": [
+      "The marked element has the same meaning in both counts.",
+      "Check both expressions for a small n."
+    ],
+    "example": {
+      "problem": "Evaluate Σₖ₌₀⁷ k C(7,k) by double counting.",
+      "answer": "Choose the marked element in 7 ways and any subset of the remaining 6 elements in 2⁶ ways. The total is 448."
+    }
+  },
+  {
+    "id": "induction-shifted-sum",
+    "title": "Induction for finite sum identities",
+    "domain": "proof-techniques",
+    "level": "undergraduate",
+    "aliases": [
+      "mathematical induction",
+      "prove summation formula",
+      "inductive step"
+    ],
+    "pattern": "Verify the first index, assume the formula at n, then add the next term to derive the formula at n+1.",
+    "applies": [
+      "The next case can be built from the previous integer case."
+    ],
+    "steps": [
+      "Specify the first allowed index and verify it directly.",
+      "State the hypothesis at a general allowed n.",
+      "Rewrite the next expression as the old expression plus the new term and simplify."
+    ],
+    "pitfalls": [
+      "Assuming the desired n+1 statement.",
+      "Adding the old last term a second time."
+    ],
+    "checks": [
+      "The induction step uses only the assumed case at n.",
+      "The result matches the original formula with n replaced by n+1."
+    ],
+    "example": {
+      "problem": "Prove that Σₖ₌₀ⁿ (k+1)2ᵏ = n·2ⁿ⁺¹ + 1 for every n ≥ 0.",
+      "answer": "At n = 0 both sides are 1. Adding (n+2)2ⁿ⁺¹ to the assumed sum gives (2n+2)2ⁿ⁺¹ + 1 = (n+1)2ⁿ⁺² + 1, the next case."
+    }
+  },
+  {
+    "id": "parity-invariant-operations",
+    "title": "Parity invariants for repeated operations",
+    "domain": "proof-techniques",
+    "level": "undergraduate",
+    "aliases": [
+      "invariant proof",
+      "parity obstruction",
+      "impossibility by invariant"
+    ],
+    "pattern": "Find a quantity modulo 2 that every allowed move preserves and compare its initial and target values.",
+    "applies": [
+      "A puzzle asks whether repeated local changes can reach a configuration."
+    ],
+    "steps": [
+      "List the entries affected by any single move.",
+      "Try row, column, color-class, or total parity and prove invariance.",
+      "Compare invariant values at the start and target."
+    ],
+    "pitfalls": [
+      "Checking only some possible moves.",
+      "Assuming matching invariants prove reachability."
+    ],
+    "checks": [
+      "The invariance proof covers exactly the allowed move.",
+      "The start and target differ in the chosen invariant."
+    ],
+    "example": {
+      "problem": "A 4 × 4 grid starts with every light off. A move toggles all lights in any adjacent 2 × 2 square. Can exactly one light be on?",
+      "answer": "No. Each move toggles two lights in each of two rows, so every row retains even parity. A single light would make its row odd."
+    }
+  },
+  {
+    "id": "extended-euclid-inverse",
+    "title": "Modular inverse by the extended Euclidean algorithm",
+    "domain": "number-theory",
+    "level": "undergraduate",
+    "aliases": [
+      "extended gcd",
+      "Bezout coefficients",
+      "inverse modulo n"
+    ],
+    "pattern": "If ua + vn = gcd(a,n) = 1, then u mod n is the inverse of a modulo n.",
+    "applies": [
+      "A congruence requires division by a possibly noninvertible residue."
+    ],
+    "steps": [
+      "Run the Euclidean algorithm on n and a.",
+      "Back-substitute to express the gcd as a linear combination.",
+      "If the gcd is one, reduce the coefficient of a modulo n."
+    ],
+    "pitfalls": [
+      "Using the coefficient of the modulus.",
+      "Dividing before checking coprimality."
+    ],
+    "checks": [
+      "Multiply the inverse by a and reduce modulo n.",
+      "A gcd greater than one rules out an inverse."
+    ],
+    "example": {
+      "problem": "Find the inverse of 37 modulo 101.",
+      "answer": "Back-substitution gives 1 = 11·101 − 30·37, so the inverse is −30 ≡ 71 mod 101. Indeed, 37·71 = 26·101 + 1."
+    }
+  },
+  {
+    "id": "crt-shared-factors",
+    "title": "Chinese remainder theorem with shared factors",
+    "domain": "number-theory",
+    "level": "undergraduate",
+    "aliases": [
+      "generalized CRT",
+      "noncoprime moduli",
+      "system of congruences"
+    ],
+    "pattern": "x ≡ a mod m and x ≡ b mod n is solvable exactly when gcd(m,n) divides b−a. Solutions form one class modulo lcm(m,n).",
+    "applies": [
+      "Two congruences have moduli that may share a factor."
+    ],
+    "steps": [
+      "Compute g = gcd(m,n) and check compatibility.",
+      "Set x = a + mk and divide the resulting congruence by g.",
+      "Solve for k modulo n/g and substitute back."
+    ],
+    "pitfalls": [
+      "Using mn for the solution period when the moduli share a factor.",
+      "Dividing the coefficients without dividing the modulus."
+    ],
+    "checks": [
+      "Substitute into both original congruences.",
+      "The period is lcm(m,n)."
+    ],
+    "example": {
+      "problem": "Solve x ≡ 5 mod 12 and x ≡ 11 mod 18.",
+      "answer": "The gcd and residue difference are both 6. Setting x = 5 + 12k gives 2k ≡ 1 mod 3, so k ≡ 2 mod 3. Therefore x ≡ 29 mod 36."
+    }
+  },
+  {
+    "id": "bisection-certified-error",
+    "title": "Bisection with a certified error bound",
+    "domain": "numerical-analysis",
+    "level": "undergraduate",
+    "aliases": [
+      "root bracketing",
+      "bisection method",
+      "interval error bound"
+    ],
+    "pattern": "After k interval halvings, the final midpoint is within (b−a)/2ᵏ⁺¹ of a bracketed root.",
+    "applies": [
+      "A continuous function changes sign across an interval."
+    ],
+    "steps": [
+      "Confirm opposite signs or identify an exact endpoint root.",
+      "Evaluate the midpoint and keep the half with a sign change.",
+      "Stop when half the bracket width meets the requested absolute tolerance."
+    ],
+    "pitfalls": [
+      "Treating a small residual as a guaranteed distance bound.",
+      "Confusing the midpoint before a halving with the final bracket midpoint."
+    ],
+    "checks": [
+      "The signs remain opposite until an exact root is found.",
+      "Each completed iteration halves the bracket."
+    ],
+    "example": {
+      "problem": "For f(x) = x³−4 on [1,2], how many halvings guarantee final midpoint error below 0.001?",
+      "answer": "After 9 halvings the error is at most 1/2¹⁰ = 0.0009765625. Eight halvings guarantee only 1/2⁹, so nine are required by this bound."
+    }
+  },
+  {
+    "id": "stable-rationalization",
+    "title": "Stable evaluation by rationalization",
+    "domain": "numerical-analysis",
+    "level": "undergraduate",
+    "aliases": [
+      "catastrophic cancellation",
+      "stable square-root difference",
+      "rationalize numerical expression"
+    ],
+    "pattern": "For x ≥ 0, √(x²+1)−x = 1/(√(x²+1)+x).",
+    "applies": [
+      "Subtracting nearly equal large quantities can lose the digits of a small difference."
+    ],
+    "steps": [
+      "Use the conjugate to remove the subtraction.",
+      "Evaluate the equivalent expression, scaling first if squaring might overflow.",
+      "Compare with an asymptotic estimate or high-precision result."
+    ],
+    "pitfalls": [
+      "Assuming algebraically equivalent floating-point expressions have equal accuracy.",
+      "Allowing an intermediate square to overflow."
+    ],
+    "checks": [
+      "The stable expression stays positive.",
+      "For large x it approaches 1/(2x) in relative terms."
+    ],
+    "example": {
+      "problem": "Evaluate √(10¹⁶+1) − 10⁸ without subtracting nearly equal numbers.",
+      "answer": "Use 1/(√(10¹⁶+1)+10⁸), which is approximately 5 × 10⁻⁹."
+    }
+  },
+  {
+    "id": "newton-simple-root",
+    "title": "Newton iteration for a simple root",
+    "domain": "numerical-analysis",
+    "level": "undergraduate",
+    "aliases": [
+      "Newton Raphson",
+      "Newton root finding",
+      "quadratic convergence"
+    ],
+    "pattern": "xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ). For f(x)=x²−a, this is (xₙ + a/xₙ)/2.",
+    "applies": [
+      "A differentiable function has a simple root and the initial guess is reasonably close."
+    ],
+    "steps": [
+      "Evaluate the function and derivative at the current point.",
+      "Use the tangent-line intercept as the next estimate if the derivative is usable.",
+      "Track residual and step size, and keep a bracket if a certified fallback is needed."
+    ],
+    "pitfalls": [
+      "Dividing by a tiny or zero derivative.",
+      "Expecting local quadratic convergence from an arbitrary starting point."
+    ],
+    "checks": [
+      "The update is finite and the residual shrinks near the root.",
+      "Use a separate bound when an absolute error guarantee is required."
+    ],
+    "example": {
+      "problem": "Use two Newton updates from x₀ = 3 to approximate √10.",
+      "answer": "The first update gives 19/6. The second gives (19/6 + 60/19)/2 = 721/228 ≈ 3.162281."
+    }
+  },
+  {
+    "id": "convex-kkt-inequalities",
+    "title": "KKT conditions for convex inequalities",
+    "domain": "optimization",
+    "level": "undergraduate",
+    "aliases": [
+      "Karush Kuhn Tucker",
+      "active constraints",
+      "complementary slackness"
+    ],
+    "pattern": "For convex minimization with gᵢ(x) ≤ 0, check stationarity, primal feasibility, λᵢ ≥ 0, and λᵢgᵢ(x)=0.",
+    "applies": [
+      "A differentiable convex objective has convex inequality constraints."
+    ],
+    "steps": [
+      "Write inequalities in ≤ 0 form and form the Lagrangian.",
+      "Identify likely active constraints and set inactive multipliers to zero.",
+      "Solve stationarity and verify all four KKT conditions."
+    ],
+    "pitfalls": [
+      "Using the wrong multiplier sign after reversing an inequality.",
+      "Treating stationarity alone as a certificate."
+    ],
+    "checks": [
+      "The point and multipliers satisfy every KKT condition.",
+      "Convexity makes a verified certificate sufficient for a global minimum."
+    ],
+    "example": {
+      "problem": "Minimize (x−3)²+(y−2)² with x+y ≤ 2 and x,y ≥ 0.",
+      "answer": "The minimum is 9/2 at (3/2,1/2). The active constraint x+y=2 has multiplier 3. The inactive nonnegativity constraints have multipliers zero."
+    }
+  },
+  {
+    "id": "steepest-descent-exact-line-search",
+    "title": "Exact line search for a positive-definite quadratic",
+    "domain": "optimization",
+    "level": "undergraduate",
+    "aliases": [
+      "steepest descent step",
+      "quadratic exact line search",
+      "gradient descent step size"
+    ],
+    "pattern": "For f(x)=½xᵀHx−bᵀx and g=Hx−b ≠ 0, the exact steepest-descent step is α=(gᵀg)/(gᵀHg).",
+    "applies": [
+      "The Hessian H is symmetric positive definite and the search direction is −g."
+    ],
+    "steps": [
+      "Compute the current gradient g.",
+      "Differentiate f(x−αg) in α and solve for its minimizer.",
+      "Update the point and verify orthogonality of successive gradients."
+    ],
+    "pitfalls": [
+      "Applying the formula to an indefinite Hessian or arbitrary direction.",
+      "Dividing by zero at a stationary point."
+    ],
+    "checks": [
+      "The denominator is positive when g ≠ 0.",
+      "The new gradient has zero dot product with the old gradient."
+    ],
+    "example": {
+      "problem": "For f(x,y)=(x²+4y²)/2, take one exact-line-search steepest-descent step from (2,1).",
+      "answer": "The gradient is (2,4), so α=20/68=5/17. The next point is (24/17,−3/17)."
+    }
+  },
+  {
+    "id": "finite-field-polynomial-inverse",
+    "title": "Polynomial inverses in a finite field",
+    "domain": "abstract-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "quotient field inverse",
+      "polynomial extended Euclid",
+      "GF(2) inverse"
+    ],
+    "pattern": "In F[x]/(p), the residue a has inverse u if ua+vp=1 for polynomials u,v.",
+    "applies": [
+      "Arithmetic is modulo an irreducible polynomial and a nonzero residue needs an inverse."
+    ],
+    "steps": [
+      "Verify irreducibility when claiming the quotient is a field.",
+      "Use polynomial Euclid or a short product identity to produce 1 modulo the modulus.",
+      "Reduce the inverse to degree below the modulus and check the product."
+    ],
+    "pitfalls": [
+      "Computing coefficients in ordinary integers instead of the base field.",
+      "Assuming all nonzero residues are invertible for a reducible modulus."
+    ],
+    "checks": [
+      "Multiplication by the given element reduces to 1.",
+      "The inverse representative has degree below deg p."
+    ],
+    "example": {
+      "problem": "Find the inverse of x+1 in F₂[x]/(x³+x+1).",
+      "answer": "The cubic has no root in F₂ and is irreducible. Because (x+1)(x²+x)=x³+x≡1, the inverse is x²+x."
+    }
+  },
+  {
+    "id": "kernel-image-quotient",
+    "title": "Kernel, image, and the first isomorphism theorem",
+    "domain": "abstract-algebra",
+    "level": "undergraduate",
+    "aliases": [
+      "first isomorphism theorem",
+      "homomorphism kernel",
+      "quotient by kernel"
+    ],
+    "pattern": "For a homomorphism φ:G→H, the quotient G/ker φ is isomorphic to im φ.",
+    "applies": [
+      "A group map is given and its quotient or image structure is needed."
+    ],
+    "steps": [
+      "Check that the rule is well-defined and respects the group operation.",
+      "Solve φ(g)=e_H for the kernel and characterize the image.",
+      "Use the induced map to identify the quotient with the image."
+    ],
+    "pitfalls": [
+      "Confusing the image with the whole codomain.",
+      "Skipping the representative check for a map on residue classes."
+    ],
+    "checks": [
+      "For finite G, |G|=|ker φ|·|im φ|.",
+      "The kernel is normal."
+    ],
+    "example": {
+      "problem": "For φ:ℤ/12ℤ → ℤ/8ℤ given by [x] ↦ [2x], find the kernel, image, and quotient structure.",
+      "answer": "The rule is well-defined because 2·12≡0 mod 8. The kernel is {0,4,8}, the image is {0,2,4,6}, and the quotient is isomorphic to ℤ/4ℤ."
+    }
+  },
+  {
+    "id": "uniform-convergence-supremum",
+    "title": "Uniform convergence via the supremum error",
+    "domain": "real-analysis",
+    "level": "undergraduate",
+    "aliases": [
+      "uniform vs pointwise convergence",
+      "sup norm convergence",
+      "uniform error bound"
+    ],
+    "pattern": "fₙ → f uniformly on S exactly when supₓ∈S |fₙ(x)−f(x)| → 0.",
+    "applies": [
+      "The pointwise limit is known and uniform convergence is in question."
+    ],
+    "steps": [
+      "Find the pointwise limit on the whole domain.",
+      "Maximize or bound the error over the domain, allowing a maximizing point to depend on n.",
+      "Take the limit of the bound or exhibit points whose errors stay away from zero."
+    ],
+    "pitfalls": [
+      "Treating small error at fixed x as a uniform bound.",
+      "Checking only endpoints when the largest error is interior."
+    ],
+    "checks": [
+      "The bound holds simultaneously for all x.",
+      "A counterexample may use a sequence of points xₙ."
+    ],
+    "example": {
+      "problem": "Does fₙ(x)=x/(1+nx²) converge uniformly to 0 on [0,1]?",
+      "answer": "Yes. For n ≥ 1 the maximum occurs at x=1/√n and equals 1/(2√n), which tends to zero."
+    }
+  },
+  {
+    "id": "dominated-convergence-integral",
+    "title": "Dominated convergence for limits of integrals",
+    "domain": "real-analysis",
+    "level": "undergraduate",
+    "aliases": [
+      "dominated convergence theorem",
+      "limit inside integral",
+      "integrable dominating function"
+    ],
+    "pattern": "If fₙ → f almost everywhere and |fₙ| ≤ g for one integrable g, then ∫fₙ → ∫f.",
+    "applies": [
+      "A limit appears inside an integral and an integrable n-independent envelope is available."
+    ],
+    "steps": [
+      "Find the almost-everywhere limit.",
+      "Construct an n-independent bound for the absolute value on the integration domain.",
+      "Verify integrability and integrate the pointwise limit."
+    ],
+    "pitfalls": [
+      "Using a bound that depends on n.",
+      "Assuming boundedness alone gives integrability on an infinite domain."
+    ],
+    "checks": [
+      "The same integrable bound controls every term.",
+      "The pointwise convergence and bound both apply on the stated domain."
+    ],
+    "example": {
+      "problem": "Evaluate limₙ→∞ ∫₀∞ e^(−x) n sin(x/n) dx.",
+      "answer": "For fixed x, n sin(x/n)→x. Its absolute value is at most x, so x e^(−x) is an integrable majorant. The limit is ∫₀∞ x e^(−x) dx=1."
+    }
+  }
+]

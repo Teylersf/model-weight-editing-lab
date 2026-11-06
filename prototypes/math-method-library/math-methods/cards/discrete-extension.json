@@ -1,0 +1,899 @@
+[
+  {
+    "id": "independent-at-least-one",
+    "title": "At least one independent event",
+    "domain": "probability",
+    "level": "high-school",
+    "aliases": [
+      "at least one event",
+      "probability none occur",
+      "complement for independent events"
+    ],
+    "pattern": "For mutually independent events Aᵢ, P(at least one Aᵢ) = 1 − ∏ᵢ(1 − P(Aᵢ)).",
+    "applies": [
+      "Several mutually independent events may occur, and you want the probability that one or more occurs."
+    ],
+    "steps": [
+      "Find the probability that each event fails to occur.",
+      "Multiply these probabilities to get the chance none occur.",
+      "Subtract the product from one."
+    ],
+    "pitfalls": [
+      "Pairwise independence alone may fail to justify multiplication for three or more events.",
+      "Adding individual probabilities can count joint outcomes more than once."
+    ],
+    "checks": [
+      "The result lies between the largest individual probability and one."
+    ],
+    "example": {
+      "problem": "Three sensors fail independently with probabilities 1/5, 1/4, and 1/10. What is the probability that at least one fails?",
+      "answer": "The chance all three work is (4/5)(3/4)(9/10) = 27/50, so the chance at least one fails is 23/50."
+    }
+  },
+  {
+    "id": "geometric-first-success",
+    "title": "Geometric waiting time",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": [
+      "geometric distribution",
+      "first successful trial",
+      "trials until first success"
+    ],
+    "pattern": "With independent trials of fixed success probability p > 0, P(T = k) = (1 − p)^(k−1)p for k = 1, 2, …",
+    "applies": [
+      "Trials repeat independently with constant p, and T counts trials through the first success."
+    ],
+    "steps": [
+      "Identify p and the desired number of trials.",
+      "Require k − 1 failures followed by a success.",
+      "For a tail, P(T > k) = (1 − p)^k because the first k trials all fail."
+    ],
+    "pitfalls": [
+      "Some definitions count failures before success and start at zero."
+    ],
+    "checks": [
+      "At k = 1 the probability is p. The tail decreases toward zero."
+    ],
+    "example": {
+      "problem": "A relay succeeds independently on each attempt with probability 1/5. What is the probability of the first success on attempt four?",
+      "answer": "The first three attempts must fail. The probability is (4/5)^3(1/5) = 64/625."
+    }
+  },
+  {
+    "id": "poisson-window-count",
+    "title": "Poisson counts over a fixed window",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": [
+      "Poisson distribution",
+      "event rate per interval",
+      "Poisson arrivals"
+    ],
+    "pattern": "For N ~ Poisson(λ), P(N = k) = e^(−λ)λ^k/k!. A homogeneous Poisson process of rate r has λ = rt over length t.",
+    "applies": [
+      "The count is specified as Poisson or the problem gives a homogeneous Poisson process."
+    ],
+    "steps": [
+      "Express the rate and window in compatible units.",
+      "Multiply rate by duration to obtain λ.",
+      "Sum the mass at the requested counts or use the shorter complementary tail."
+    ],
+    "pitfalls": [
+      "A stated average alone does not establish a Poisson model.",
+      "Using a per-hour mean directly for a shorter window gives the wrong parameter."
+    ],
+    "checks": [
+      "λ is the expected count for the exact window, and the requested probability lies in [0, 1]."
+    ],
+    "example": {
+      "problem": "Alerts arrive as a Poisson process at three per hour. What is the chance of at least two in 40 minutes?",
+      "answer": "The mean is 3(2/3) = 2. Subtract the probabilities of zero and one from one to obtain 1 − 3e^(−2)."
+    }
+  },
+  {
+    "id": "exponential-memoryless-tail",
+    "title": "Exponential survival and memorylessness",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": [
+      "exponential lifetime",
+      "memoryless waiting time",
+      "conditional survival"
+    ],
+    "pattern": "If T is exponential with rate λ > 0, P(T > t) = e^(−λt) and P(T > s + t | T > s) = e^(−λt) for s, t ≥ 0.",
+    "applies": [
+      "An elapsed waiting time or lifetime is explicitly modelled as exponential."
+    ],
+    "steps": [
+      "Convert the mean lifetime m to rate λ = 1/m when needed.",
+      "Measure how much additional time must elapse.",
+      "Apply the survival function at the additional time."
+    ],
+    "pitfalls": [
+      "Using the total age again double-counts time already known to have elapsed.",
+      "Other lifetime distributions need not be memoryless."
+    ],
+    "checks": [
+      "At zero additional time the conditional probability is one."
+    ],
+    "example": {
+      "problem": "A test duration is exponential with mean 20 minutes. Given it has lasted more than 10 minutes, what is the chance it lasts more than 25 minutes?",
+      "answer": "Only 15 additional minutes are required. The conditional survival probability is e^(−15/20) = e^(−3/4)."
+    }
+  },
+  {
+    "id": "indicator-linearity-expectation",
+    "title": "Count by indicator variables",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": [
+      "linearity of expectation indicators",
+      "expected number occupied",
+      "indicator random variable"
+    ],
+    "pattern": "If N = ∑ᵢ 1{Aᵢ}, then E[N] = ∑ᵢ P(Aᵢ), even when the indicators are dependent.",
+    "applies": [
+      "The desired expectation counts objects, positions, or events satisfying a condition."
+    ],
+    "steps": [
+      "Assign one indicator to each item being counted.",
+      "Compute the probability each indicator is one.",
+      "Add those probabilities, grouping equal terms where symmetry applies."
+    ],
+    "pitfalls": [
+      "Linearity of expectation does not justify adding variances.",
+      "Use the probability of an occupied box for a box indicator, rather than the chance a particular ball enters it."
+    ],
+    "checks": [
+      "An expected count lies between zero and the maximum possible count."
+    ],
+    "example": {
+      "problem": "Five balls choose one of four boxes independently and uniformly. What is the expected number of occupied boxes?",
+      "answer": "Each box is occupied with probability 1 − (3/4)^5. The expected count is 4[1 − (3/4)^5] = 781/256."
+    }
+  },
+  {
+    "id": "variance-linear-combination-covariance",
+    "title": "Variance of a linear combination",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": [
+      "variance of a difference",
+      "variance covariance cross term",
+      "variance of a weighted sum"
+    ],
+    "pattern": "Var(aX + bY) = a²Var(X) + b²Var(Y) + 2ab Cov(X,Y) when both variables have finite second moments.",
+    "applies": [
+      "The spread of a sum, difference, or weighted combination is requested."
+    ],
+    "steps": [
+      "Keep the signs of a and b when computing the cross term.",
+      "Use covariance directly or recover it as correlation times both standard deviations.",
+      "Add the three terms, then take a square root only if standard deviation is requested."
+    ],
+    "pitfalls": [
+      "A difference can have either larger or smaller variance depending on covariance.",
+      "Zero covariance suffices to remove the cross term."
+    ],
+    "checks": [
+      "The final variance is nonnegative and has squared units."
+    ],
+    "example": {
+      "problem": "Suppose Var(X) = 9, Var(Y) = 4, and Cov(X,Y) = 3. What is Var(2X − Y)?",
+      "answer": "The terms are 4(9), 4, and 2(2)(−1)(3). Their sum is 36 + 4 − 12 = 28."
+    }
+  },
+  {
+    "id": "joint-density-marginal-conditional",
+    "title": "Marginal and conditional densities",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": [
+      "marginalize joint density",
+      "conditional density from joint",
+      "joint density triangular region"
+    ],
+    "pattern": "f_X(x) = ∫ f_(X,Y)(x,y) dy and f_(Y|X=x)(y) = f_(X,Y)(x,y)/f_X(x) where f_X(x) > 0.",
+    "applies": [
+      "A continuous joint density and its support are given."
+    ],
+    "steps": [
+      "At the fixed x, determine the y values in the support.",
+      "Integrate over those values to get f_X(x).",
+      "Divide the joint density by the marginal, then integrate the conditional density over the requested y interval."
+    ],
+    "pitfalls": [
+      "Bounds can depend on x and change across regions.",
+      "A conditional density is a function of y, while a conditional interval probability is an integral."
+    ],
+    "checks": [
+      "At each eligible x, the conditional density integrates to one over its support."
+    ],
+    "example": {
+      "problem": "The joint density is 2 on 0 < y < x < 1 and zero elsewhere. Given X = 3/4, find P(Y < 1/2 | X = 3/4).",
+      "answer": "Integrating over 0 < y < x gives f_X(x) = 2x. The conditional density is 1/x on that interval, so at x = 3/4 the probability is (1/2)/(3/4) = 2/3."
+    }
+  },
+  {
+    "id": "iqr-boxplot-fences",
+    "title": "Quartiles and boxplot outlier fences",
+    "domain": "statistics",
+    "level": "high-school",
+    "aliases": [
+      "interquartile range",
+      "box plot outliers",
+      "Tukey inner fences"
+    ],
+    "pattern": "IQR = Q₃ − Q₁. Inner fences are Q₁ − 1.5 IQR and Q₃ + 1.5 IQR.",
+    "applies": [
+      "You need to describe the middle half of numerical data or flag potential outliers in a boxplot."
+    ],
+    "steps": [
+      "Sort the data and compute Q₁ and Q₃ by the convention required in the course.",
+      "Subtract to get the IQR.",
+      "Flag observations strictly outside the two fences."
+    ],
+    "pitfalls": [
+      "Different quartile conventions can give different answers on small samples.",
+      "Boxplot whiskers extend to observations within the fences."
+    ],
+    "checks": [
+      "Q₁ ≤ median ≤ Q₃ and IQR ≥ 0."
+    ],
+    "example": {
+      "problem": "Using medians of the lower and upper halves, find the IQR and flag outliers in 1, 3, 4, 4, 7, 9, 12, 25.",
+      "answer": "The quartiles are 3.5 and 10.5, giving IQR 7. The fences are −7 and 21, so 25 is the only flagged value."
+    }
+  },
+  {
+    "id": "stratified-rate-simpson-reversal",
+    "title": "Compare rates within strata",
+    "domain": "statistics",
+    "level": "high-school",
+    "aliases": [
+      "Simpson's paradox",
+      "lurking variable rate reversal",
+      "stratified proportions"
+    ],
+    "pattern": "An overall rate is a weighted mean of subgroup rates, using subgroup sample sizes as weights.",
+    "applies": [
+      "Two groups are compared on an outcome and a third variable divides observations into meaningful strata."
+    ],
+    "steps": [
+      "Calculate the outcome rate separately for each group within each stratum.",
+      "Calculate the overall rates from total counts.",
+      "Check for a reversal and explain the different subgroup weights."
+    ],
+    "pitfalls": [
+      "Averaging subgroup percentages equally can give the wrong overall rate.",
+      "Stratified differences alone do not establish a causal effect."
+    ],
+    "checks": [
+      "Each overall rate lies between that group's smallest and largest subgroup rates."
+    ],
+    "example": {
+      "problem": "Method A passes 9 of 10 introductory and 27 of 90 advanced checks. Method B passes 72 of 90 introductory and 2 of 10 advanced checks. Compare pass rates.",
+      "answer": "A leads in introductory checks (90% versus 80%) and advanced checks (30% versus 20%). B leads overall (74% versus 36%) because its checks are concentrated in the easier stratum."
+    }
+  },
+  {
+    "id": "paired-t-interval-differences",
+    "title": "Paired t interval for mean change",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": [
+      "matched pairs confidence interval",
+      "paired t interval",
+      "before and after mean change"
+    ],
+    "pattern": "Use d̄ ± t* s_d/√n for the mean of n paired differences, with n − 1 degrees of freedom.",
+    "applies": [
+      "Observations are naturally matched, the pairs are independent, and the differences are approximately normal or the sample is large enough."
+    ],
+    "steps": [
+      "Define a consistent direction for each within-pair difference.",
+      "Compute the mean and sample standard deviation of the differences.",
+      "Use a t critical value for the requested confidence level and interpret in units of change."
+    ],
+    "pitfalls": [
+      "Treating the two measurements within each pair as independent loses the pairing.",
+      "The spread needed is the spread of differences."
+    ],
+    "checks": [
+      "The interval is centered at the mean difference and uses the number of complete pairs."
+    ],
+    "example": {
+      "problem": "Nine independent paired readings have mean after-minus-before change 4 and sample standard deviation 3. Use t* = 2.306 for a 95% interval.",
+      "answer": "The standard error is 3/√9 = 1. The interval is 4 ± 2.306, or [1.694, 6.306] in the measurement's units."
+    }
+  },
+  {
+    "id": "welch-independent-means",
+    "title": "Welch t test for two independent means",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": [
+      "Welch's t-test",
+      "unequal variances two sample t",
+      "Welch-Satterthwaite degrees of freedom"
+    ],
+    "pattern": "Let vᵢ = sᵢ²/nᵢ. Then t = (x̄₁ − x̄₂ − Δ₀)/√(v₁ + v₂) and ν = (v₁ + v₂)²/[v₁²/(n₁ − 1) + v₂²/(n₂ − 1)].",
+    "applies": [
+      "Two independent samples with n₁,n₂>1 are compared on a mean difference. The sampling distributions of the means are approximately normal, and v₁+v₂>0. Equal population variances are unnecessary."
+    ],
+    "steps": [
+      "Set the null difference Δ₀ and the alternative's direction.",
+      "Compute each sample variance contribution and their sum.",
+      "Use Welch degrees of freedom and the tail specified by the alternative."
+    ],
+    "pitfalls": [
+      "Pooling variances adds an equal-variance assumption.",
+      "A two-sided p-value uses both tails."
+    ],
+    "checks": [
+      "The t statistic has the sign of the estimated difference minus the null difference."
+    ],
+    "example": {
+      "problem": "Independent samples have n₁ = 16, x̄₁ = 13, s₁ = 4 and n₂ = 25, x̄₂ = 10, s₂ = 5. For a null difference of zero, find t and ν.",
+      "answer": "Both variance contributions equal 1. Thus t = 3/√2 ≈ 2.121 and ν = 4/(1/15 + 1/24) = 480/13 ≈ 36.92."
+    }
+  },
+  {
+    "id": "wilson-proportion-confidence-interval",
+    "title": "Wilson score interval for one proportion",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": [
+      "Wilson interval",
+      "Wilson score confidence interval",
+      "binomial proportion score interval"
+    ],
+    "pattern": "For p̂ = x/n, divide p̂ + z²/(2n) ± z√[p̂(1 − p̂)/n + z²/(4n²)] by 1 + z²/n.",
+    "applies": [
+      "You want an approximate two-sided confidence interval for a binomial proportion from n independent trials with constant p."
+    ],
+    "steps": [
+      "Choose the two-sided normal critical value z for the confidence level.",
+      "Compute the common denominator and both signed numerators.",
+      "Divide each numerator by the denominator."
+    ],
+    "pitfalls": [
+      "Use the entire denominator on each endpoint.",
+      "A Wilson interval and a Wald interval generally have different centers and widths."
+    ],
+    "checks": [
+      "Endpoints lie in [0, 1], allowing tiny floating-point roundoff at the boundaries."
+    ],
+    "example": {
+      "problem": "Eight of 20 independent trials succeed. Find the 95% Wilson interval using z = 1.96.",
+      "answer": "Use p̂ = 0.4 and denominator 1.19208. The interval is approximately [0.219, 0.613]."
+    }
+  },
+  {
+    "id": "exact-binomial-upper-tail-test",
+    "title": "Exact one-sided binomial test",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": [
+      "exact test for one proportion",
+      "binomial upper tail p value",
+      "one sided binomial test"
+    ],
+    "pattern": "For an upper-tail test at the null boundary p₀, the exact p-value is P_(p₀)(X ≥ x_observed).",
+    "applies": [
+      "A fixed number of independent Bernoulli trials share a constant p, and the alternative asks whether p is greater than p₀."
+    ],
+    "steps": [
+      "Use the Binomial(n, p₀) distribution.",
+      "Include the observed count and all larger counts in the tail.",
+      "Compare the p-value to the preselected significance level."
+    ],
+    "pitfalls": [
+      "P(X = x_observed) alone leaves out more extreme outcomes.",
+      "Do not double this tail for the stated one-sided alternative."
+    ],
+    "checks": [
+      "Check that the tail uses p₀ and contains the observed count."
+    ],
+    "example": {
+      "problem": "A device succeeds seven times out of eight independent trials. For H₀: p = 1/2 against p > 1/2, find the exact p-value.",
+      "answer": "The upper tail includes seven and eight successes. Its probability is [C(8,7) + C(8,8)]/2⁸ = 9/256 ≈ 0.0352."
+    }
+  },
+  {
+    "id": "sample-mean-central-limit",
+    "title": "Normal approximation for a sample mean",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": [
+      "central limit theorem",
+      "sampling distribution of sample mean",
+      "standard error of sample mean"
+    ],
+    "pattern": "For iid observations with mean μ and 0<σ²<∞, (X̄ − μ)/(σ/√n) converges in distribution to N(0,1) as n grows.",
+    "applies": [
+      "A probability concerns a mean of independent draws from one population with positive finite variance. Normality is exact for a normal population and approximate for large samples from other populations."
+    ],
+    "steps": [
+      "Compute the standard error σ/√n.",
+      "Standardize the sample-mean threshold.",
+      "Use the correct normal tail and state when the result is approximate."
+    ],
+    "pitfalls": [
+      "A single observation has standard deviation σ.",
+      "Strong skew or heavy tails can require a larger sample for a useful approximation."
+    ],
+    "checks": [
+      "The sampling distribution stays centered at μ, and its spread falls as n grows."
+    ],
+    "example": {
+      "problem": "A random sample of 64 independent observations comes from one population with mean 20 and standard deviation 8. Using the CLT, approximate P(X̄ > 22).",
+      "answer": "The standard error is 8/√64 = 1. The threshold is two standard errors above the mean, giving 1 − Φ(2) ≈ 0.0228."
+    }
+  },
+  {
+    "id": "mean-margin-error-sample-size",
+    "title": "Sample size for a mean margin of error",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": [
+      "sample size for confidence interval",
+      "precision planning for a mean",
+      "known sigma margin of error"
+    ],
+    "pattern": "With known σ and two-sided normal critical value z, take n = ceil[(zσ/E)²] for margin of error at most E.",
+    "applies": [
+      "Plan an independent sample for a mean interval with known σ, using a justified normal sampling model or approximation."
+    ],
+    "steps": [
+      "Choose the desired confidence level and margin E.",
+      "Solve zσ/√n ≤ E for n.",
+      "Round the result upward to a whole sample size."
+    ],
+    "pitfalls": [
+      "Rounding down can miss the target precision.",
+      "When σ is only a planning estimate, the actual interval width may differ."
+    ],
+    "checks": [
+      "Plug the rounded n into zσ/√n and verify it is at most E."
+    ],
+    "example": {
+      "problem": "Plan a 95% normal interval for a mean with known σ = 6 and margin at most 1.5. Use z = 1.96.",
+      "answer": "The lower bound is (1.96·6/1.5)² = 61.4656, so use n = 62."
+    }
+  },
+  {
+    "id": "stars-bars-with-lower-bounds",
+    "title": "Stars and bars with minimum counts",
+    "domain": "discrete-math",
+    "level": "undergraduate",
+    "aliases": [
+      "stars and bars",
+      "nonnegative integer solutions",
+      "balls into labelled boxes"
+    ],
+    "pattern": "For x₁ + ⋯ + x_k = n with xᵢ ≥ aᵢ, put N = n − ∑aᵢ. If N ≥ 0, there are C(N+k−1,k−1) solutions.",
+    "applies": [
+      "Identical items are assigned to labelled groups with only individual lower bounds and a fixed total."
+    ],
+    "steps": [
+      "Subtract each lower bound to obtain nonnegative variables.",
+      "Check that the remaining total is nonnegative.",
+      "Choose the positions of k−1 separators among N+k−1 positions."
+    ],
+    "pitfalls": [
+      "Upper bounds need additional constraints.",
+      "Changing labelled groups to interchangeable groups changes the count."
+    ],
+    "checks": [
+      "If the lower bounds exactly exhaust the total, there is one solution."
+    ],
+    "example": {
+      "problem": "How many integer triples satisfy x + y + z = 12, x ≥ 4, y ≥ 2, and z ≥ 1?",
+      "answer": "The lower bounds use seven units, leaving five. Count the nonnegative triples summing to five as C(7,2) = 21."
+    }
+  },
+  {
+    "id": "generalized-pigeonhole-lower-bound",
+    "title": "Generalized pigeonhole principle",
+    "domain": "discrete-math",
+    "level": "high-school",
+    "aliases": [
+      "pigeonhole principle",
+      "Dirichlet box principle",
+      "guaranteed minimum in some group"
+    ],
+    "pattern": "Distributing n objects among k groups guarantees some group has at least ceil(n/k) objects, for k ≥ 1.",
+    "applies": [
+      "Objects are allocated among finitely many groups and a guaranteed overlap or concentration is needed."
+    ],
+    "steps": [
+      "Identify the objects and the groups.",
+      "Round the average n/k up to an integer.",
+      "For sharpness, distribute the objects as evenly as possible."
+    ],
+    "pitfalls": [
+      "The conclusion applies to at least one group.",
+      "A sharp guarantee can differ from the largest size in a particular allocation."
+    ],
+    "checks": [
+      "If every group had fewer than ceil(n/k), their total capacity would be smaller than n."
+    ],
+    "example": {
+      "problem": "Twenty-nine files are distributed among eight folders. What minimum largest-folder size is guaranteed, and is it attainable?",
+      "answer": "At least one folder has ceil(29/8) = 4 files. Five folders with four and three with three attain that largest size."
+    }
+  },
+  {
+    "id": "breadth-first-unweighted-path",
+    "title": "Breadth-first search for shortest paths",
+    "domain": "discrete-math",
+    "level": "undergraduate",
+    "aliases": [
+      "BFS shortest path",
+      "unweighted graph distance",
+      "level order graph search"
+    ],
+    "pattern": "From source s, first discovery of v by FIFO breadth-first search gives its minimum number of hops from s.",
+    "applies": [
+      "All usable graph links have equal cost and you need a shortest path or distance."
+    ],
+    "steps": [
+      "Enqueue the source at distance zero and mark it discovered.",
+      "Dequeue in order and enqueue each undiscovered neighbor with distance one greater and a predecessor.",
+      "When the target is discovered, follow predecessors back to the source."
+    ],
+    "pitfalls": [
+      "Mark vertices at enqueue time to avoid repeated work.",
+      "Unequal link costs can make the fewest-hop path more expensive."
+    ],
+    "checks": [
+      "Predecessor distances decrease by one on each step back to the source."
+    ],
+    "example": {
+      "problem": "An undirected graph has links S–A, S–B, A–C, B–D, C–T, and D–T. Find the shortest distance from S to T.",
+      "answer": "BFS reaches A and B at level one, C and D at level two, and T at level three. One shortest path is S–A–C–T."
+    }
+  },
+  {
+    "id": "topological-order-indegrees",
+    "title": "Topological sorting by indegree",
+    "domain": "discrete-math",
+    "level": "undergraduate",
+    "aliases": [
+      "Kahn's algorithm",
+      "topological sort",
+      "prerequisite DAG order"
+    ],
+    "pattern": "A topological order places u before v for every directed edge u → v and exists exactly when the finite graph is acyclic.",
+    "applies": [
+      "Directed edges encode prerequisites, and you need a valid order or a cycle check."
+    ],
+    "steps": [
+      "Count incoming edges for each vertex.",
+      "Repeatedly output a zero-indegree vertex and remove its outgoing edges.",
+      "If vertices remain and none has zero indegree, a directed cycle blocks completion."
+    ],
+    "pitfalls": [
+      "Multiple zero-indegree choices can give different valid orders.",
+      "Removing a vertex requires updating all its outgoing neighbors."
+    ],
+    "checks": [
+      "Check that every vertex appears once and every edge points forward in the result."
+    ],
+    "example": {
+      "problem": "Tasks have prerequisite edges A → C, B → C, C → D, and B → E. Give a topological order.",
+      "answer": "B and A can be output first. E and C are then available, and D follows C. One valid order is B, A, E, C, D."
+    }
+  },
+  {
+    "id": "hall-neighborhood-matching",
+    "title": "Hall's criterion for distinct assignments",
+    "domain": "discrete-math",
+    "level": "undergraduate",
+    "aliases": [
+      "Hall marriage theorem",
+      "bipartite matching obstruction",
+      "distinct representatives"
+    ],
+    "pattern": "A finite bipartite graph admits a matching covering its left side exactly when |N(S)| ≥ |S| for every left subset S.",
+    "applies": [
+      "Each member of one group needs a distinct compatible member of another group."
+    ],
+    "steps": [
+      "Represent each list of allowed assignments as neighbors.",
+      "To disprove a full assignment, find a subset with too few distinct neighbors.",
+      "To establish existence, verify the condition or construct an explicit full matching."
+    ],
+    "pitfalls": [
+      "Checking each list individually misses competition across multiple lists.",
+      "The criterion concerns every left subset, including the entire left side."
+    ],
+    "checks": [
+      "In any proposed assignment, every selected pair is allowed and no right vertex repeats."
+    ],
+    "example": {
+      "problem": "Applicants p, q, r, and s may select projects from {X,Y}, {X,Y}, {Y}, and {Z,W}, respectively. Can each get a different project?",
+      "answer": "No. The subset {p,q,r} has only two available neighbors, X and Y. Three distinct assignments for that subset are impossible."
+    }
+  },
+  {
+    "id": "connected-graph-spanning-tree-count",
+    "title": "Edge deletions to a spanning tree",
+    "domain": "discrete-math",
+    "level": "undergraduate",
+    "aliases": [
+      "spanning tree edge count",
+      "delete edges without disconnecting",
+      "cyclomatic number connected graph"
+    ],
+    "pattern": "A connected finite undirected graph on n vertices contains a spanning tree with n−1 edges. With m edges, delete m−n+1 to retain a tree.",
+    "applies": [
+      "All vertices must remain connected and the starting undirected graph is connected."
+    ],
+    "steps": [
+      "Find n and m.",
+      "Keep one spanning tree, for example by recording discovery edges in a graph search.",
+      "Delete every edge outside the tree."
+    ],
+    "pitfalls": [
+      "For a disconnected graph, a spanning forest has n−c edges for c connected components.",
+      "Deleting an arbitrary bridge would disconnect the graph."
+    ],
+    "checks": [
+      "The retained edges connect all n vertices and have no cycle."
+    ],
+    "example": {
+      "problem": "A connected undirected graph has nine vertices and 12 edges. How many edges must be removed to leave a spanning tree?",
+      "answer": "Every spanning tree has eight edges. Such a tree exists because the graph is connected, so exactly 12 − 8 = 4 edges must be removed."
+    }
+  },
+  {
+    "id": "prove-by-contrapositive",
+    "title": "Prove an implication by contrapositive",
+    "domain": "proof-techniques",
+    "level": "high-school",
+    "aliases": [
+      "contrapositive proof",
+      "prove implication indirectly",
+      "negate conclusion imply negated hypothesis"
+    ],
+    "pattern": "The implication P ⇒ Q is equivalent to ¬Q ⇒ ¬P.",
+    "applies": [
+      "The negation of the conclusion gives a useful condition to work from."
+    ],
+    "steps": [
+      "Identify the hypothesis P and conclusion Q.",
+      "Assume ¬Q with the original domain intact.",
+      "Deduce ¬P, then conclude the original implication."
+    ],
+    "pitfalls": [
+      "The converse Q ⇒ P is a different claim.",
+      "When negation passes through quantifiers, swap each ∀ and ∃ without changing their order."
+    ],
+    "checks": [
+      "The proof begins with the negation of the conclusion and ends with the negation of the hypothesis."
+    ],
+    "example": {
+      "problem": "Prove that if 3 divides n² for an integer n, then 3 divides n.",
+      "answer": "If 3 does not divide n, its residue is 1 or 2 modulo 3. Either residue squares to 1 modulo 3, so 3 does not divide n². This proves the contrapositive."
+    }
+  },
+  {
+    "id": "negate-nested-quantifiers",
+    "title": "Negate nested quantified statements",
+    "domain": "proof-techniques",
+    "level": "undergraduate",
+    "aliases": [
+      "negation of for all exists",
+      "quantifier negation",
+      "De Morgan for quantified statements"
+    ],
+    "pattern": "¬∀x P(x) becomes ∃x ¬P(x), and ¬∃x P(x) becomes ∀x ¬P(x). Retain quantifier order and domains.",
+    "applies": [
+      "A proof, counterexample, or logic exercise asks for the precise negation of a statement."
+    ],
+    "steps": [
+      "Move the negation through each quantifier from outside to inside.",
+      "Negate the remaining logical expression, using De Morgan's rules as needed.",
+      "Rewrite the result in words without changing variable domains."
+    ],
+    "pitfalls": [
+      "Switch each quantifier without reordering the variables.",
+      "Negating P ⇒ Q gives P and ¬Q."
+    ],
+    "checks": [
+      "Negating the transformed statement again recovers an equivalent original statement."
+    ],
+    "example": {
+      "problem": "Negate the claim that every real x has a real y with x + y > 0 and y < 0.",
+      "answer": "There exists a real x such that for every real y, x + y ≤ 0 or y ≥ 0. For instance x = 0 satisfies the negation."
+    }
+  },
+  {
+    "id": "strong-induction-earlier-cases",
+    "title": "Strong induction with earlier cases",
+    "domain": "proof-techniques",
+    "level": "undergraduate",
+    "aliases": [
+      "strong induction",
+      "complete induction",
+      "induction with several base cases"
+    ],
+    "pattern": "After proving the needed base cases, assume P(j) for every earlier valid j and prove the next P(n).",
+    "applies": [
+      "The step uses an earlier case that can be several indices below n."
+    ],
+    "steps": [
+      "Identify the first valid index and enough base cases to make the step legal.",
+      "Assume all earlier statements from that first index up to n−1.",
+      "Apply the hypothesis only to valid earlier indices, then prove P(n)."
+    ],
+    "pitfalls": [
+      "A gap in the base cases can leave an entire residue class unproved.",
+      "Using P(n) inside its own step is circular."
+    ],
+    "checks": [
+      "For the smallest n covered by the step, every earlier index invoked is within the proven range."
+    ],
+    "example": {
+      "problem": "Show that every integer n ≥ 18 is a sum of nonnegative multiples of 4 and 7.",
+      "answer": "The cases 18, 19, 20, and 21 are 7+7+4, 7+4+4+4, 5·4, and 3·7. For n ≥ 22, represent n−4 by the hypothesis and add a 4."
+    }
+  },
+  {
+    "id": "prove-set-equality-double-inclusion",
+    "title": "Prove set equality by double inclusion",
+    "domain": "proof-techniques",
+    "level": "undergraduate",
+    "aliases": [
+      "mutual subset proof",
+      "double inclusion",
+      "prove both set inclusions"
+    ],
+    "pattern": "A = B exactly when A ⊆ B and B ⊆ A.",
+    "applies": [
+      "An equality compares sets described by different membership conditions."
+    ],
+    "steps": [
+      "Take an arbitrary element of the first set and prove it belongs to the second.",
+      "Take an arbitrary element of the second set and prove the reverse membership.",
+      "Combine the two inclusions."
+    ],
+    "pitfalls": [
+      "An inclusion in one direction can hold without equality.",
+      "When comparing images of intersections, the reverse inclusion can require injectivity."
+    ],
+    "checks": [
+      "Every property used in a direction follows from that direction's starting membership and given assumptions."
+    ],
+    "example": {
+      "problem": "For an injective function f and two subsets A and B of its domain, prove f(A ∩ B) = f(A) ∩ f(B).",
+      "answer": "An element f(x) with x in both sets belongs to both images. Conversely, an element in both images equals f(a) and f(b) for some a in A and b in B. Injectivity gives a = b, so the element is in f(A ∩ B)."
+    }
+  },
+  {
+    "id": "modular-power-repeated-squares",
+    "title": "Modular powers by repeated squaring",
+    "domain": "number-theory",
+    "level": "undergraduate",
+    "aliases": [
+      "modular exponentiation",
+      "binary exponentiation",
+      "square and multiply modulo n"
+    ],
+    "pattern": "Build a^(2^j) modulo m by squaring and reducing, then multiply the powers corresponding to the 1 bits of the exponent.",
+    "applies": [
+      "You need a^n modulo m for a nonnegative integer n and positive integer m."
+    ],
+    "steps": [
+      "Write n as a sum of distinct powers of two.",
+      "Compute successive squared residues modulo m.",
+      "Multiply only the residues for the chosen powers, reducing after each product."
+    ],
+    "pitfalls": [
+      "A repeated square doubles the exponent.",
+      "Reducing the exponent modulo m is generally invalid."
+    ],
+    "checks": [
+      "The final canonical residue is in 0 through m−1."
+    ],
+    "example": {
+      "problem": "Compute 7²³ modulo 13 by repeated squaring.",
+      "answer": "The residues for exponents 2, 4, 8, and 16 are 10, 9, 3, and 9. Since 23 = 16 + 4 + 2 + 1, multiply 9·9·10·7 modulo 13 to obtain 2."
+    }
+  },
+  {
+    "id": "linear-congruence-all-solutions",
+    "title": "Solve a linear congruence with a nonunit coefficient",
+    "domain": "number-theory",
+    "level": "undergraduate",
+    "aliases": [
+      "linear congruence gcd condition",
+      "solve ax congruent b",
+      "multiple congruence solutions"
+    ],
+    "pattern": "For m > 0, ax ≡ b mod m is solvable exactly when d = gcd(a,m) divides b. The d solutions modulo m form one residue class modulo m/d.",
+    "applies": [
+      "A single congruence has one unknown and its coefficient may share a factor with the modulus."
+    ],
+    "steps": [
+      "Compute d and test whether d divides b.",
+      "If solvable, divide the coefficient, right side, and modulus by d.",
+      "If the reduced modulus is greater than one, invert the reduced coefficient and solve. Then list the lifts modulo m if requested."
+    ],
+    "pitfalls": [
+      "Dividing the coefficient and right side without reducing the modulus changes the equation.",
+      "If the reduced modulus is one, every integer is a solution."
+    ],
+    "checks": [
+      "Each lift satisfies the original congruence and there are d distinct residues modulo m."
+    ],
+    "example": {
+      "problem": "List the solutions to 18x ≡ 12 mod 30 between 0 and 29.",
+      "answer": "The gcd is 6. The reduced congruence is 3x ≡ 2 mod 5, giving x ≡ 4 mod 5. The six residues are 4, 9, 14, 19, 24, and 29."
+    }
+  },
+  {
+    "id": "factorial-prime-valuation",
+    "title": "Prime exponent in a factorial",
+    "domain": "number-theory",
+    "level": "undergraduate",
+    "aliases": [
+      "Legendre formula",
+      "p-adic valuation of factorial",
+      "factorial trailing zeros"
+    ],
+    "pattern": "For prime p, v_p(n!) = ∑_{j≥1} floor(n/p^j). Stop when p^j exceeds n.",
+    "applies": [
+      "You need the exponent of a prime in a factorial or the number of trailing zeros in a specified base."
+    ],
+    "steps": [
+      "Count the multiples of p, then count the extra factors from multiples of p², p³, and so on.",
+      "For base b with prime factors pᵢ^eᵢ, compute floor(v_(pᵢ)(n!)/eᵢ) for each i and take the minimum."
+    ],
+    "pitfalls": [
+      "Counting only multiples of p misses extra factors contributed by higher powers.",
+      "Trailing zeros depend on the chosen base."
+    ],
+    "checks": [
+      "The valuation is a nonnegative integer and every summand after p^j exceeds n is zero."
+    ],
+    "example": {
+      "problem": "How many trailing decimal zeros does 75! have?",
+      "answer": "The exponent of 5 is floor(75/5) + floor(75/25) = 15 + 3 = 18. There are at least 37 factors of 2, so the number of factors of 10 is 18."
+    }
+  },
+  {
+    "id": "prime-check-trial-division",
+    "title": "Test primality up to the square root",
+    "domain": "number-theory",
+    "level": "high-school",
+    "aliases": [
+      "trial division primality",
+      "test prime up to square root",
+      "prime factor check"
+    ],
+    "pattern": "An integer n ≥ 2 is prime exactly when no prime p ≤ √n divides it.",
+    "applies": [
+      "You need a hand calculation to decide whether a moderate positive integer is prime."
+    ],
+    "steps": [
+      "Reject integers below two.",
+      "List the prime candidates p with p² ≤ n.",
+      "Test divisibility. A divisor proves compositeness, while exhausting the list proves primality."
+    ],
+    "pitfalls": [
+      "Include a prime exactly equal to √n, since perfect squares are composite.",
+      "Testing only the most familiar small primes may leave possible divisors."
+    ],
+    "checks": [
+      "Any composite n has a factor no greater than √n, and that factor has a prime divisor no greater than itself."
+    ],
+    "example": {
+      "problem": "Determine whether 223 is prime.",
+      "answer": "The primes with p² ≤ 223 are 2, 3, 5, 7, 11, and 13. The respective remainders are 1, 1, 3, 6, 3, and 2, so 223 is prime."
+    }
+  }
+]
