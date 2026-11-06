@@ -1,0 +1,1183 @@
+{
+  "schema": "public-direct-output-multirow-q4k-mixed-group-patch-v1",
+  "pilot": 241,
+  "checkpoint_bytes": 11674147744,
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_sha256": "e81173d40e21bd3ed9acd4d8774f34f887fcb4fa1552851247f211e1a57ce3a7",
+  "tensor": {
+    "name": "output.weight",
+    "quantization": "Q4_K",
+    "ggml_type": 12,
+    "dimensions": [
+      5120,
+      248320
+    ],
+    "offset": 10996640,
+    "bytes": 715161600
+  },
+  "rows": [
+    {
+      "token_id": 351,
+      "offset": 12007520,
+      "bytes": 2880,
+      "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+      "candidate_sha256": "87969023149b1c4606bafb5e8cb770c88ac570b4e41c90e069d4ed65f01332b0",
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "6e05",
+          "after": "4a05"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "6a10",
+          "after": "5710"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "0d07",
+          "after": "1a07"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "0a15",
+          "after": "1515"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "6905",
+          "after": "5005"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "6b11",
+          "after": "4f11"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "de04",
+          "after": "d704"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "f810",
+          "after": "e310"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "d106",
+          "after": "c106"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "7313",
+          "after": "5613"
+        },
+        {
+          "block": 5,
+          "field": "d",
+          "before": "0905",
+          "after": "0f05"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "6911",
+          "after": "7b11"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "9303",
+          "after": "9203"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "4110",
+          "after": "3a10"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "6004",
+          "after": "5604"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "4310",
+          "after": "3e10"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "9a06",
+          "after": "9606"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "d310",
+          "after": "c810"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "1f11",
+          "after": "1811"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "5c04",
+          "after": "7004"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "2f11",
+          "after": "5d11"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "9f04",
+          "after": "b404"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "f110",
+          "after": "f310"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "ef06",
+          "after": "d706"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "7712",
+          "after": "5712"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "2905",
+          "after": "3a05"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "2712",
+          "after": "4512"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "3d04",
+          "after": "3504"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "f30f",
+          "after": "fd0f"
+        },
+        {
+          "block": 15,
+          "field": "d",
+          "before": "3d06",
+          "after": "3f06"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "4711",
+          "after": "5e11"
+        },
+        {
+          "block": 16,
+          "field": "d",
+          "before": "6606",
+          "after": "9906"
+        },
+        {
+          "block": 16,
+          "field": "dmin",
+          "before": "a911",
+          "after": "e411"
+        },
+        {
+          "block": 17,
+          "field": "d",
+          "before": "ce04",
+          "after": "af04"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "5b11",
+          "after": "2311"
+        },
+        {
+          "block": 18,
+          "field": "d",
+          "before": "bc04",
+          "after": "dc04"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "9c10",
+          "after": "b910"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "8905",
+          "after": "8a05"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "1a13",
+          "after": "1813"
+        }
+      ],
+      "changed_codes": [
+        {
+          "coordinate": 4328,
+          "signed_code_delta": 1,
+          "before": 6,
+          "after": 7
+        },
+        {
+          "coordinate": 4479,
+          "signed_code_delta": -1,
+          "before": 2,
+          "after": 1
+        }
+      ],
+      "changed_group_fields": [
+        {
+          "block": 1,
+          "group": 2,
+          "field": "minimum",
+          "before": 36,
+          "after": 35
+        },
+        {
+          "block": 14,
+          "group": 2,
+          "field": "minimum",
+          "before": 63,
+          "after": 62
+        }
+      ]
+    },
+    {
+      "token_id": 357,
+      "offset": 12024800,
+      "bytes": 2880,
+      "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+      "candidate_sha256": "540128aa878e597d58d7210a0bc84ff5ee3e6374fa276172897a0c004dbda896",
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "0606",
+          "after": "ff05"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "7911",
+          "after": "6f11"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "3807",
+          "after": "3f07"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "c815",
+          "after": "d815"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "2905",
+          "after": "0405"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "fe10",
+          "after": "c810"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "7804",
+          "after": "7104"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "5611",
+          "after": "3611"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "a706",
+          "after": "b706"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "3e13",
+          "after": "4313"
+        },
+        {
+          "block": 5,
+          "field": "d",
+          "before": "6704",
+          "after": "5e04"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "df0f",
+          "after": "b30f"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "4804",
+          "after": "5c04"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "dd10",
+          "after": "fe10"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "2e04",
+          "after": "1f04"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "6a10",
+          "after": "5410"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "c304",
+          "after": "c904"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "c510",
+          "after": "cc10"
+        },
+        {
+          "block": 9,
+          "field": "d",
+          "before": "e204",
+          "after": "d104"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "5011",
+          "after": "2c11"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "0f05",
+          "after": "1605"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "c710",
+          "after": "cc10"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "1005",
+          "after": "0e05"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "8412",
+          "after": "8012"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "7e06",
+          "after": "7d06"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "bb10",
+          "after": "ac10"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "5f04",
+          "after": "6204"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "2b10",
+          "after": "3810"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "2604",
+          "after": "2304"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "8d10",
+          "after": "7c10"
+        },
+        {
+          "block": 15,
+          "field": "d",
+          "before": "3806",
+          "after": "3706"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "eb11",
+          "after": "f711"
+        },
+        {
+          "block": 16,
+          "field": "d",
+          "before": "2d06",
+          "after": "3b06"
+        },
+        {
+          "block": 16,
+          "field": "dmin",
+          "before": "d210",
+          "after": "db10"
+        },
+        {
+          "block": 17,
+          "field": "d",
+          "before": "3605",
+          "after": "5a05"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "4312",
+          "after": "7012"
+        },
+        {
+          "block": 18,
+          "field": "d",
+          "before": "b904",
+          "after": "ae04"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "ab11",
+          "after": "a411"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "9504",
+          "after": "9a04"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "1e11",
+          "after": "2711"
+        }
+      ],
+      "changed_codes": [
+        {
+          "coordinate": 4218,
+          "signed_code_delta": 1,
+          "before": 12,
+          "after": 13
+        },
+        {
+          "coordinate": 4342,
+          "signed_code_delta": -1,
+          "before": 9,
+          "after": 8
+        },
+        {
+          "coordinate": 4776,
+          "signed_code_delta": -1,
+          "before": 5,
+          "after": 4
+        }
+      ],
+      "changed_group_fields": []
+    },
+    {
+      "token_id": 414,
+      "offset": 12188960,
+      "bytes": 2880,
+      "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+      "candidate_sha256": "581b0d8db4ce5acf5def729b657f6ba72283ba822c4f1df7d49fe24b466878d1",
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "d805",
+          "after": "e605"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "a110",
+          "after": "9a10"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "7a07",
+          "after": "7c07"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "3f15",
+          "after": "4515"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "8605",
+          "after": "9705"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "ca10",
+          "after": "e110"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "3104",
+          "after": "2404"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "5810",
+          "after": "7110"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "fa05",
+          "after": "fc05"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "4c12",
+          "after": "6a12"
+        },
+        {
+          "block": 5,
+          "field": "d",
+          "before": "9f04",
+          "after": "9c04"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "d50f",
+          "after": "c60f"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "db04",
+          "after": "1505"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "2b10",
+          "after": "6910"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "bf04",
+          "after": "d704"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "1710",
+          "after": "3610"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "c804",
+          "after": "b304"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "ca10",
+          "after": "c510"
+        },
+        {
+          "block": 9,
+          "field": "d",
+          "before": "0e05",
+          "after": "e604"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "7412",
+          "after": "4012"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "2104",
+          "after": "0404"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "2f10",
+          "after": "0610"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "7b04",
+          "after": "6404"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "d710",
+          "after": "d010"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "5206",
+          "after": "4d06"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "9212",
+          "after": "9512"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "6804",
+          "after": "7c04"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "ae10",
+          "after": "c310"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "8f04",
+          "after": "9d04"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "8010",
+          "after": "9510"
+        },
+        {
+          "block": 15,
+          "field": "d",
+          "before": "2605",
+          "after": "3e05"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "7f11",
+          "after": "9111"
+        },
+        {
+          "block": 16,
+          "field": "d",
+          "before": "dd06",
+          "after": "d906"
+        },
+        {
+          "block": 16,
+          "field": "dmin",
+          "before": "3611",
+          "after": "3e11"
+        },
+        {
+          "block": 17,
+          "field": "d",
+          "before": "be04",
+          "after": "a204"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "9d10",
+          "after": "9010"
+        },
+        {
+          "block": 18,
+          "field": "d",
+          "before": "eb04",
+          "after": "d404"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "5311",
+          "after": "3e11"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "0c06",
+          "after": "3106"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "2013",
+          "after": "5b13"
+        }
+      ],
+      "changed_codes": [
+        {
+          "coordinate": 443,
+          "signed_code_delta": 1,
+          "before": 8,
+          "after": 9
+        },
+        {
+          "coordinate": 502,
+          "signed_code_delta": -1,
+          "before": 11,
+          "after": 10
+        },
+        {
+          "coordinate": 2612,
+          "signed_code_delta": 1,
+          "before": 13,
+          "after": 14
+        },
+        {
+          "coordinate": 4030,
+          "signed_code_delta": 1,
+          "before": 8,
+          "after": 9
+        },
+        {
+          "coordinate": 4453,
+          "signed_code_delta": -1,
+          "before": 6,
+          "after": 5
+        }
+      ],
+      "changed_group_fields": [
+        {
+          "block": 15,
+          "group": 6,
+          "field": "minimum",
+          "before": 29,
+          "after": 28
+        }
+      ]
+    },
+    {
+      "token_id": 417,
+      "offset": 12197600,
+      "bytes": 2880,
+      "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+      "candidate_sha256": "92f6ee16db6c8f24ecc6a773e5fc2c4d9cebfc46c92f8b8d1fb0f8be04ad185c",
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "9106",
+          "after": "9706"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "0f11",
+          "after": "1f11"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "9d07",
+          "after": "6807"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "dd14",
+          "after": "a914"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "e705",
+          "after": "e305"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "4610",
+          "after": "4710"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "9904",
+          "after": "de04"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "e210",
+          "after": "1911"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "e405",
+          "after": "f005"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "4e12",
+          "after": "4612"
+        },
+        {
+          "block": 5,
+          "field": "d",
+          "before": "f604",
+          "after": "f504"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "8410",
+          "after": "9310"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "8c04",
+          "after": "9104"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "b710",
+          "after": "a910"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "b104",
+          "after": "7a04"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "2310",
+          "after": "0010"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "5604",
+          "after": "6704"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "b410",
+          "after": "da10"
+        },
+        {
+          "block": 9,
+          "field": "d",
+          "before": "3e05",
+          "after": "5305"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "b211",
+          "after": "c511"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "e804",
+          "after": "e904"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "ad10",
+          "after": "be10"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "9b04",
+          "after": "be04"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "7a10",
+          "after": "8910"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "1406",
+          "after": "1a06"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "f811",
+          "after": "ff11"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "c204",
+          "after": "c104"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "6311",
+          "after": "6e11"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "5404",
+          "after": "4d04"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "5910",
+          "after": "5d10"
+        },
+        {
+          "block": 15,
+          "field": "d",
+          "before": "d805",
+          "after": "da05"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "4410",
+          "after": "5610"
+        },
+        {
+          "block": 16,
+          "field": "d",
+          "before": "8305",
+          "after": "a305"
+        },
+        {
+          "block": 16,
+          "field": "dmin",
+          "before": "be10",
+          "after": "d810"
+        },
+        {
+          "block": 17,
+          "field": "d",
+          "before": "4705",
+          "after": "3605"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "0411",
+          "after": "f110"
+        },
+        {
+          "block": 18,
+          "field": "d",
+          "before": "2505",
+          "after": "3605"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "0e10",
+          "after": "2110"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "6805",
+          "after": "5905"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "a712",
+          "after": "8612"
+        }
+      ],
+      "changed_codes": [
+        {
+          "coordinate": 751,
+          "signed_code_delta": -1,
+          "before": 7,
+          "after": 6
+        },
+        {
+          "coordinate": 2429,
+          "signed_code_delta": -1,
+          "before": 11,
+          "after": 10
+        },
+        {
+          "coordinate": 2574,
+          "signed_code_delta": -1,
+          "before": 3,
+          "after": 2
+        },
+        {
+          "coordinate": 3227,
+          "signed_code_delta": 1,
+          "before": 13,
+          "after": 14
+        },
+        {
+          "coordinate": 3863,
+          "signed_code_delta": 1,
+          "before": 9,
+          "after": 10
+        },
+        {
+          "coordinate": 3991,
+          "signed_code_delta": -1,
+          "before": 8,
+          "after": 7
+        },
+        {
+          "coordinate": 4265,
+          "signed_code_delta": 1,
+          "before": 6,
+          "after": 7
+        },
+        {
+          "coordinate": 4421,
+          "signed_code_delta": 1,
+          "before": 4,
+          "after": 5
+        },
+        {
+          "coordinate": 4479,
+          "signed_code_delta": -1,
+          "before": 3,
+          "after": 2
+        },
+        {
+          "coordinate": 4601,
+          "signed_code_delta": -1,
+          "before": 10,
+          "after": 9
+        },
+        {
+          "coordinate": 5021,
+          "signed_code_delta": -1,
+          "before": 5,
+          "after": 4
+        }
+      ],
+      "changed_group_fields": []
+    }
+  ],
+  "changed_binary16_fields": 159,
+  "changed_code_nibbles": 21,
+  "changed_group_fields": 3,
+  "changed_group_metadata_bytes": 3,
+  "changed_group_metadata_bits": 5,
+  "changed_bytes": 188,
+  "changed_bits": 563,
+  "source_receipts": {
+    "pilot_241_fit_sha256": "5f3fc14c11a0954362011dac0683888ac69e94d3e71200832cb586170f4f6a64",
+    "pilot_241_recipe_sha256": "6b4722e7bdbea0ecbb2dbf464bd836cdf8c78b7a2026c2d355741d6a18fe7fa0",
+    "pilot_236_readback_sha256": "cec84c562902e8b55c5d27695d311127aa24cb3782cce3a51d78b5e58bfdd750"
+  }
+}
