@@ -1,0 +1,545 @@
+{
+  "schema": "published-pilot044-authored-parent-factorial-v1",
+  "status": "exact_parent_baseline",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "independent_key_audit_sha256": "e60303e033cf63d83be71fcb7ffb2a076cad424a39547dd899a5cf889033622a",
+  "exact_independent_key_agreements": 48,
+  "items": 48,
+  "subjects": 2,
+  "separate_families": 12,
+  "held_folds": 3,
+  "cases_per_subject": 24,
+  "trials": 768,
+  "presentations_per_stem": 16,
+  "trials_per_arm": 192,
+  "artifacts_sha256": {
+    "plan": "cd0f0a1fc79b98833e06357841e0b166b52ab5f8708996896f8a15e91e81bffc",
+    "preflight": "0f13b4b2ead799205a2e8b98c5ad141d4a36b3d9e57f29a60f84f0337ad31515",
+    "native": "a69fac5900d52f1dc7fa3d42dc929474139fd4094c46efca50fef2799ab7b236",
+    "grade": "7fcd24a366f3750c91525f8d06149f6542c9f83589414adaaee6ae44cf09953b",
+    "audit": "e03bd885c196155e275e967204cea11e690bfdde5690f6af8ab99369ec4a3c54"
+  },
+  "label_free_map_sha256": "164c773f0accec589d6e2fe8decce7755e182e74df084c9ea3b58c31c133006a",
+  "study_source_sha256": "f9df30fd8b1b6e64eef7b122dead327dda40f94185b9c518dc265bd306023982",
+  "grade_source_sha256": "e5fe68cf3a65ceac7a27e8483e83b998c58f93adbffd5225fdd27dfec68f1cfa",
+  "independent_replay_source_sha256": "a7f966d428335d7b0533f92aae96ed5d35515bfba04bd9a8f89ced9b1bd447fe",
+  "native_settings": {
+    "schema": "windows-mmlu-next-choice-logits-v1",
+    "backend": "CUDA0",
+    "llama_build": "8642541b2",
+    "choice_pieces": [
+      " A",
+      " B",
+      " C",
+      " D"
+    ],
+    "choice_token_ids": [
+      357,
+      417,
+      351,
+      414
+    ],
+    "context": 4096,
+    "batch": 64,
+    "threads": 4,
+    "generation_tokens": 0,
+    "prompt_token_cap": 2048
+  },
+  "runtime_binary_sha256": {
+    "llama.dll": "af13ed8cb1454a80689dbd390310995b6c4b23333e096152453fe6d0fef17356",
+    "ggml.dll": "d2e63157b90c0fd15f010fb2952d032d9f3296b8406b78ff0950211cc144705b",
+    "ggml-base.dll": "200cd9b6f0a7934c2e1c85e55289d5498332713321b03e83eb2ae3da5eeb6137",
+    "ggml-cuda.dll": "85f2cb5707e6dc50c30cdcdc5c23c5e438149bb48638421d0a705866b8e31f94",
+    "ggml-cpu-x64.dll": "af7233344eec5587d531b4e875ec5bf2b1aa62c2be57b657f69cca503f0db918"
+  },
+  "native_binary_sha256": "be94288eed5b3f8084a6632a595420a90fd8a9a32ef449d4f54e05bdd9eefa48",
+  "arms": {
+    "a": {
+      "demo_context": "original",
+      "option_order": "cyclic",
+      "manifest_sha256": "057dc376f52632f025ee308684c4e1201edcffad8e731733ac66e554183aaa1c",
+      "native_raw_sha256": "a5888f00713e6b85fdb47938071b8a5109a0f584d468a8d411bcb8a61047f68b",
+      "metrics": {
+        "rotations": 192,
+        "correct": 104,
+        "stems": 48,
+        "all_four": 11,
+        "choice_ties": 0,
+        "selection_counts": {
+          "A": 55,
+          "B": 52,
+          "C": 34,
+          "D": 51
+        }
+      }
+    },
+    "b": {
+      "demo_context": "alternate",
+      "option_order": "cyclic",
+      "manifest_sha256": "8f71baa2c6b0708383f89c3d0e9454a9da31652dcade036b2042d30feed04063",
+      "native_raw_sha256": "92b3c0a4a6f273439093d4a9afbd33d40931497a468dfe85817cad8604f69915",
+      "metrics": {
+        "rotations": 192,
+        "correct": 95,
+        "stems": 48,
+        "all_four": 9,
+        "choice_ties": 0,
+        "selection_counts": {
+          "A": 48,
+          "B": 54,
+          "C": 47,
+          "D": 43
+        }
+      }
+    },
+    "c": {
+      "demo_context": "alternate",
+      "option_order": "reverse_cyclic",
+      "manifest_sha256": "7809e97684e3bb697ce092736dd4476dfd15d3aa102f5f36e69714c98c4e59c6",
+      "native_raw_sha256": "03756be2c43c202d9d01f253eb6516deb9c2ec619ba26a71b9af16a0a4eecf2b",
+      "metrics": {
+        "rotations": 192,
+        "correct": 90,
+        "stems": 48,
+        "all_four": 8,
+        "choice_ties": 0,
+        "selection_counts": {
+          "A": 44,
+          "B": 65,
+          "C": 46,
+          "D": 37
+        }
+      }
+    },
+    "d": {
+      "demo_context": "original",
+      "option_order": "reverse_cyclic",
+      "manifest_sha256": "01dceeab86b698bcb6540fdf6c3aa81617e7d991fa7b6784c9ac6ee649172950",
+      "native_raw_sha256": "3c9da1059c437361fc900a0e51f79dc4bc5f645a2522eb2ea7fb1943ee4927e6",
+      "metrics": {
+        "rotations": 192,
+        "correct": 95,
+        "stems": 48,
+        "all_four": 9,
+        "choice_ties": 0,
+        "selection_counts": {
+          "A": 51,
+          "B": 57,
+          "C": 40,
+          "D": 44
+        }
+      }
+    }
+  },
+  "pooled": {
+    "stems": 48,
+    "fixed_correct_letter_groups": 192,
+    "correct": {
+      "a": 104,
+      "b": 95,
+      "c": 90,
+      "d": 95
+    },
+    "ties": {
+      "a": 0,
+      "b": 0,
+      "c": 0,
+      "d": 0
+    },
+    "all_four": {
+      "a": 11,
+      "b": 9,
+      "c": 8,
+      "d": 9
+    },
+    "all_sixteen": 8,
+    "any_correct": 44,
+    "positive_margin_correct_conditions": {
+      "0": 49,
+      "1": 30,
+      "2": 40,
+      "3": 18,
+      "4": 55
+    },
+    "misses_with_two_correct_siblings_spanning_both_factors": {
+      "a": 7,
+      "b": 3,
+      "c": 7,
+      "d": 3
+    },
+    "paired": {
+      "demo_at_cyclic": {
+        "gains": 12,
+        "losses": 21,
+        "net": -9,
+        "content_switches": 51,
+        "mean_correct_gap_shift": -0.04231789708137512
+      },
+      "demo_at_reverse": {
+        "gains": 11,
+        "losses": 16,
+        "net": -5,
+        "content_switches": 36,
+        "mean_correct_gap_shift": -0.0016381541887919109
+      },
+      "order_at_original_demo": {
+        "gains": 28,
+        "losses": 37,
+        "net": -9,
+        "content_switches": 89,
+        "mean_correct_gap_shift": -0.17039994895458221
+      },
+      "order_at_alternate_demo": {
+        "gains": 24,
+        "losses": 29,
+        "net": -5,
+        "content_switches": 79,
+        "mean_correct_gap_shift": -0.129720206061999
+      }
+    }
+  },
+  "by_subject": {
+    "college_mathematics": {
+      "stems": 24,
+      "fixed_correct_letter_groups": 96,
+      "correct": {
+        "a": 48,
+        "b": 42,
+        "c": 42,
+        "d": 45
+      },
+      "ties": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0
+      },
+      "all_four": {
+        "a": 5,
+        "b": 5,
+        "c": 4,
+        "d": 4
+      },
+      "all_sixteen": 4,
+      "any_correct": 22,
+      "positive_margin_correct_conditions": {
+        "0": 30,
+        "1": 16,
+        "2": 15,
+        "3": 9,
+        "4": 26
+      },
+      "misses_with_two_correct_siblings_spanning_both_factors": {
+        "a": 3,
+        "b": 2,
+        "c": 5,
+        "d": 1
+      },
+      "paired": {
+        "demo_at_cyclic": {
+          "gains": 6,
+          "losses": 12,
+          "net": -6,
+          "content_switches": 30,
+          "mean_correct_gap_shift": -0.04467077056566874
+        },
+        "demo_at_reverse": {
+          "gains": 7,
+          "losses": 10,
+          "net": -3,
+          "content_switches": 22,
+          "mean_correct_gap_shift": -0.04723098874092102
+        },
+        "order_at_original_demo": {
+          "gains": 11,
+          "losses": 14,
+          "net": -3,
+          "content_switches": 42,
+          "mean_correct_gap_shift": -0.046253720919291176
+        },
+        "order_at_alternate_demo": {
+          "gains": 11,
+          "losses": 11,
+          "net": 0,
+          "content_switches": 37,
+          "mean_correct_gap_shift": -0.04881393909454346
+        }
+      }
+    },
+    "high_school_mathematics": {
+      "stems": 24,
+      "fixed_correct_letter_groups": 96,
+      "correct": {
+        "a": 56,
+        "b": 53,
+        "c": 48,
+        "d": 50
+      },
+      "ties": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0
+      },
+      "all_four": {
+        "a": 6,
+        "b": 4,
+        "c": 4,
+        "d": 5
+      },
+      "all_sixteen": 4,
+      "any_correct": 22,
+      "positive_margin_correct_conditions": {
+        "0": 19,
+        "1": 14,
+        "2": 25,
+        "3": 9,
+        "4": 29
+      },
+      "misses_with_two_correct_siblings_spanning_both_factors": {
+        "a": 4,
+        "b": 1,
+        "c": 2,
+        "d": 2
+      },
+      "paired": {
+        "demo_at_cyclic": {
+          "gains": 6,
+          "losses": 9,
+          "net": -3,
+          "content_switches": 21,
+          "mean_correct_gap_shift": -0.039965023597081505
+        },
+        "demo_at_reverse": {
+          "gains": 4,
+          "losses": 6,
+          "net": -2,
+          "content_switches": 14,
+          "mean_correct_gap_shift": 0.0439546803633372
+        },
+        "order_at_original_demo": {
+          "gains": 17,
+          "losses": 23,
+          "net": -6,
+          "content_switches": 47,
+          "mean_correct_gap_shift": -0.29454617698987323
+        },
+        "order_at_alternate_demo": {
+          "gains": 13,
+          "losses": 18,
+          "net": -5,
+          "content_switches": 42,
+          "mean_correct_gap_shift": -0.21062647302945456
+        }
+      }
+    }
+  },
+  "by_held_fold": {
+    "0": {
+      "stems": 16,
+      "fixed_correct_letter_groups": 64,
+      "correct": {
+        "a": 33,
+        "b": 28,
+        "c": 23,
+        "d": 30
+      },
+      "ties": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0
+      },
+      "all_four": {
+        "a": 2,
+        "b": 2,
+        "c": 1,
+        "d": 1
+      },
+      "all_sixteen": 1,
+      "any_correct": 15,
+      "positive_margin_correct_conditions": {
+        "0": 17,
+        "1": 9,
+        "2": 19,
+        "3": 9,
+        "4": 10
+      },
+      "misses_with_two_correct_siblings_spanning_both_factors": {
+        "a": 3,
+        "b": 2,
+        "c": 5,
+        "d": 1
+      },
+      "paired": {
+        "demo_at_cyclic": {
+          "gains": 4,
+          "losses": 9,
+          "net": -5,
+          "content_switches": 24,
+          "mean_correct_gap_shift": -0.11096689105033875
+        },
+        "demo_at_reverse": {
+          "gains": 2,
+          "losses": 9,
+          "net": -7,
+          "content_switches": 16,
+          "mean_correct_gap_shift": -0.05611191689968109
+        },
+        "order_at_original_demo": {
+          "gains": 13,
+          "losses": 16,
+          "net": -3,
+          "content_switches": 39,
+          "mean_correct_gap_shift": -0.14612165093421936
+        },
+        "order_at_alternate_demo": {
+          "gains": 9,
+          "losses": 14,
+          "net": -5,
+          "content_switches": 33,
+          "mean_correct_gap_shift": -0.0912666767835617
+        }
+      }
+    },
+    "1": {
+      "stems": 16,
+      "fixed_correct_letter_groups": 64,
+      "correct": {
+        "a": 29,
+        "b": 27,
+        "c": 29,
+        "d": 27
+      },
+      "ties": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0
+      },
+      "all_four": {
+        "a": 2,
+        "b": 1,
+        "c": 1,
+        "d": 2
+      },
+      "all_sixteen": 1,
+      "any_correct": 14,
+      "positive_margin_correct_conditions": {
+        "0": 18,
+        "1": 16,
+        "2": 8,
+        "3": 8,
+        "4": 14
+      },
+      "misses_with_two_correct_siblings_spanning_both_factors": {
+        "a": 3,
+        "b": 1,
+        "c": 2,
+        "d": 2
+      },
+      "paired": {
+        "demo_at_cyclic": {
+          "gains": 6,
+          "losses": 8,
+          "net": -2,
+          "content_switches": 21,
+          "mean_correct_gap_shift": 0.06929366290569305
+        },
+        "demo_at_reverse": {
+          "gains": 8,
+          "losses": 6,
+          "net": 2,
+          "content_switches": 18,
+          "mean_correct_gap_shift": 0.12119044363498688
+        },
+        "order_at_original_demo": {
+          "gains": 9,
+          "losses": 11,
+          "net": -2,
+          "content_switches": 29,
+          "mean_correct_gap_shift": -0.24467112123966217
+        },
+        "order_at_alternate_demo": {
+          "gains": 9,
+          "losses": 7,
+          "net": 2,
+          "content_switches": 26,
+          "mean_correct_gap_shift": -0.19277434051036835
+        }
+      }
+    },
+    "2": {
+      "stems": 16,
+      "fixed_correct_letter_groups": 64,
+      "correct": {
+        "a": 42,
+        "b": 40,
+        "c": 38,
+        "d": 38
+      },
+      "ties": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0
+      },
+      "all_four": {
+        "a": 7,
+        "b": 6,
+        "c": 6,
+        "d": 6
+      },
+      "all_sixteen": 6,
+      "any_correct": 15,
+      "positive_margin_correct_conditions": {
+        "0": 14,
+        "1": 5,
+        "2": 13,
+        "3": 1,
+        "4": 31
+      },
+      "misses_with_two_correct_siblings_spanning_both_factors": {
+        "a": 1,
+        "b": 0,
+        "c": 0,
+        "d": 0
+      },
+      "paired": {
+        "demo_at_cyclic": {
+          "gains": 2,
+          "losses": 4,
+          "net": -2,
+          "content_switches": 6,
+          "mean_correct_gap_shift": -0.08528046309947968
+        },
+        "demo_at_reverse": {
+          "gains": 1,
+          "losses": 1,
+          "net": 0,
+          "content_switches": 2,
+          "mean_correct_gap_shift": -0.06999298930168152
+        },
+        "order_at_original_demo": {
+          "gains": 6,
+          "losses": 10,
+          "net": -4,
+          "content_switches": 21,
+          "mean_correct_gap_shift": -0.12040707468986511
+        },
+        "order_at_alternate_demo": {
+          "gains": 6,
+          "losses": 8,
+          "net": -2,
+          "content_switches": 20,
+          "mean_correct_gap_shift": -0.10511960089206696
+        }
+      }
+    }
+  },
+  "binary32_selected_logits_independently_verified": 3072,
+  "labels_passed_to_native": false,
+  "checkpoint_edited": false,
+  "benchmark_fresh_or_protected_inputs_used": false,
+  "scope": "New authored development stems at fixed parent weights. The alternate demonstration context changes example order and their individual answer positions while preserving the answer-letter histogram. The reversal comparisons pair the same stem and correct displayed answer letter."
+}

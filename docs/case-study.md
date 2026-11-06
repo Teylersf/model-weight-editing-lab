@@ -650,3 +650,14 @@ The comparison used 432 new CUDA scores and 144 archived scores whose prompt byt
 Pilot 043 mapped each centered logit shift back to its original answer content and penalized disagreement across the four rotations of the same problem. A separate term penalized the average shift for each displayed letter. The fit used one-step packed-code edits in rows A, C and D and kept B byte-identical. The three frozen folds changed 11, 24 and 31 codes.
 
 On the expanded held set, the edit improved from **55/144 to 57/144** with two gains and zero losses. On the earlier held set it fell from **342/576 to 340/576**, with one gain and three losses. All three losses also occurred in Pilot 040. All 90 held ordinary winners were preserved in both the float64 and binary32 CPU replays. The older losses failed the frozen gate, so the trial ended at CPU evaluation. [Held metrics and exact packed-row recipes](../evidence/direct-accuracy-pilot-043.json)
+
+## Pilot 044 on new factorial development families
+
+Pilot 044 added 48 original problems across 12 high-school and college families. Independent solvers agreed with all 48 author keys. Each problem appeared in both demonstration contexts and both option orders from Pilot 042, with four rotations per condition. All 768 native scores came from Pilot 024. An independent replay checked all 3,072 binary32 choice logits against the graded baseline.
+
+| Demonstration context | Cyclic option order | Reversed cyclic option order |
+|---|---:|---:|
+| Original | 104/192 | 95/192 |
+| Alternate | 95/192 | 90/192 |
+
+The alternate context lowered the score on this corpus, after increasing it at cyclic order in Pilot 042. Only eight of the 48 new problems were correct in all 16 presentations. When pairing the same problem and correct displayed letter, the original-context reversal changed the selected answer content on 89 of 192 trials. Twenty missed presentations had correctly answered counterparts spanning both demonstration contexts and both option orders. These give a direct edit examples of context-dependent errors with the answer letter held fixed. [Parent baseline, paired outcomes, and exact receipt hashes](../evidence/direct-accuracy-pilot-044-baseline.json)
