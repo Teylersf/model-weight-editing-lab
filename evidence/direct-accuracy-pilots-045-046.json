@@ -1,0 +1,1011 @@
+{
+  "schema": "published-pilots045-046-factorial-held-edits-v1",
+  "status": "both_failed_held_development",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "factorial_capture_sha256": "30e776abb9ac79cc7e1f93264342aacd38142d009462fc74609a59e7dcf1b952",
+  "captured_states": 768,
+  "capture_batches": 12,
+  "native_choice_logits_binary32_exact": 3072,
+  "graded_baseline_044_sha256": "7fcd24a366f3750c91525f8d06149f6542c9f83589414adaaee6ae44cf09953b",
+  "pilot_045": {
+    "plan_sha256": "151094d679b450fdcffe6d28c00c04dcccca18e70a92326d2469c4208f1fdfa7",
+    "source_sha256": "6439e97fd14a3c2f6a5aa87dc8dfa3e08a1f345599264b3f717b06b8d843c942",
+    "report_sha256": "a509e40da8e542f2175cbc761a49b6a97b8d0fa88d45ff83463353b4438e2115",
+    "input_binding_sha256": "3f9c0f9780466bccdde6878cff115708a68600cde187feb5bbc960e3b896d6ef",
+    "tensor": {
+      "name": "blk.63.ffn_down.weight",
+      "offset": 10869117856,
+      "bytes": 356515840,
+      "dtype": "F32"
+    },
+    "u_sha256": "66af838b7a10430b7655aa0cf2af502b1fdf7bb5a258b48cd8ec16cfc06a1b4e",
+    "rounding_rule": "For each packed F32 row block, promote parent weights to F64, add U[:,j]*V[:,j] in increasing j order, cast once to little-endian F32, and compare native tensor readback before qualification.",
+    "folds": [
+      {
+        "fold": 0,
+        "receipt_sha256": "1e0f01219e458253ea2d1a17f41b30667c60525c85f828387f7c39cf6ca4af1e",
+        "v_sha256": "e719ecda36225d6d2dddb451032c417004019b103779a9deff779eeee49b2708",
+        "scale": 0.125,
+        "training_targets": 8,
+        "held_arms": {
+          "a": {
+            "rotations": [
+              33,
+              33
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "rotations": [
+              28,
+              28
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "rotations": [
+              23,
+              23
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "rotations": [
+              30,
+              30
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          }
+        },
+        "held_ordinary_top64_changes": 0,
+        "status": "rounded_fit",
+        "tensor": {
+          "parent_tensor_sha256": "0c98f90b2c64baa071ada49e9db216040932261a54d791c8656deb07c637d97a",
+          "patched_tensor_sha256": "4d1530aa839269c9afd39eb54410e228354329b32853745b32bfb911d6dc951a",
+          "delta_frobenius_fraction": 3.886729441243053e-05
+        },
+        "training_gains": 1,
+        "max_ordinary_train_relative_residual": 1.2554714650039302e-08
+      },
+      {
+        "fold": 1,
+        "receipt_sha256": "a45deefde8ed13048031ce5023fb9ea21b9433ca007430a9289296925f7f09cf",
+        "v_sha256": "4443e6545392af9287d6b4bd3e6ab2ff4d76112145bb41260f05dde65a945850",
+        "scale": 0.0,
+        "training_targets": 11,
+        "held_arms": {
+          "a": {
+            "rotations": [
+              29,
+              29
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "rotations": [
+              27,
+              27
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "rotations": [
+              29,
+              29
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "rotations": [
+              27,
+              27
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          }
+        },
+        "held_ordinary_top64_changes": 0,
+        "status": "explicit_no_op"
+      },
+      {
+        "fold": 2,
+        "receipt_sha256": "d117f817155fdecfb7bd9be2fd92c73e24ef6fbccd8691eb369fbeb60e0a8b35",
+        "v_sha256": "a1509c8d96b0eba1f416ee588e344a71fcb7c54f03bcccd63ef94c153672d291",
+        "scale": 0.0,
+        "training_targets": 17,
+        "held_arms": {
+          "a": {
+            "rotations": [
+              42,
+              42
+            ],
+            "all_four": [
+              7,
+              7
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "rotations": [
+              40,
+              40
+            ],
+            "all_four": [
+              6,
+              6
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "rotations": [
+              38,
+              38
+            ],
+            "all_four": [
+              6,
+              6
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "rotations": [
+              38,
+              38
+            ],
+            "all_four": [
+              6,
+              6
+            ],
+            "gains": 0,
+            "losses": 0
+          }
+        },
+        "held_ordinary_top64_changes": 0,
+        "status": "explicit_no_op"
+      }
+    ],
+    "held_028": {
+      "rotations": 576,
+      "items": 144,
+      "baseline_correct_rotations": 342,
+      "candidate_correct_rotations": 342,
+      "baseline_all_four": 46,
+      "candidate_all_four": 46,
+      "gains": 0,
+      "losses": 0,
+      "all_four_gains": 0,
+      "all_four_losses": 0
+    },
+    "held_039": {
+      "rotations": 144,
+      "items": 36,
+      "baseline_correct_rotations": 55,
+      "candidate_correct_rotations": 55,
+      "baseline_all_four": 2,
+      "candidate_all_four": 2,
+      "gains": 0,
+      "losses": 0,
+      "all_four_gains": 0,
+      "all_four_losses": 0
+    },
+    "held_044": {
+      "a": {
+        "rotations": 192,
+        "items": 48,
+        "baseline_correct_rotations": 104,
+        "candidate_correct_rotations": 104,
+        "baseline_all_four": 11,
+        "candidate_all_four": 11,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "b": {
+        "rotations": 192,
+        "items": 48,
+        "baseline_correct_rotations": 95,
+        "candidate_correct_rotations": 95,
+        "baseline_all_four": 9,
+        "candidate_all_four": 9,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "c": {
+        "rotations": 192,
+        "items": 48,
+        "baseline_correct_rotations": 90,
+        "candidate_correct_rotations": 90,
+        "baseline_all_four": 8,
+        "candidate_all_four": 8,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "d": {
+        "rotations": 192,
+        "items": 48,
+        "baseline_correct_rotations": 95,
+        "candidate_correct_rotations": 95,
+        "baseline_all_four": 9,
+        "candidate_all_four": 9,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    },
+    "all_sixteen": [
+      8,
+      8
+    ],
+    "ordinary_held_states": 90,
+    "ordinary_archived_top64_winner_changes": 0
+  },
+  "pilot_046": {
+    "plan_sha256": "8872af8e78fd6699d84b43d24c3623ac814359c369263e879f04f436c4cf6f60",
+    "source_sha256": "7a1c06b3bf32d541f9c5e512a76bb9d3bd3f15294368099f6e498f9fc671dab2",
+    "report_sha256": "56aaf29da3f1a052db1fb5170db462127b5cbd1ea71498289295e3c1482c2c5d",
+    "input_binding_sha256": "b17f6f6ff24f0c0670ea7d66a0e36987f99ca303d1e873c7090e21a4c5b34834",
+    "fold_patches": [
+      {
+        "fold": 0,
+        "receipt_sha256": "5d58ece3a0aa617b9813a41b1d29c7c022524a9f71c68fad28d27d06f6cb3229",
+        "packed_rows": [
+          {
+            "token_id": 357,
+            "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+            "packed_sha256": "bec947d25bee7e7a4f58bfd82c132f007bdc00ccbf2fde0e18846f8da01476ef",
+            "changed_nibbles": 22,
+            "coordinates": [
+              115,
+              219,
+              393,
+              496,
+              670,
+              1577,
+              2080,
+              2214,
+              2588,
+              2877,
+              2982,
+              2985,
+              3020,
+              3067,
+              3145,
+              3292,
+              3647,
+              3721,
+              3755,
+              3979,
+              3982,
+              4668
+            ],
+            "signed_code_deltas": [
+              -1,
+              -1,
+              1,
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              1,
+              -1,
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "token_id": 417,
+            "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "changed_nibbles": 0,
+            "coordinates": [],
+            "signed_code_deltas": []
+          },
+          {
+            "token_id": 351,
+            "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+            "packed_sha256": "f75e07b24d21061782e743f8fb1be3b392ed9d16e6c20f9da9b933104280fc09",
+            "changed_nibbles": 5,
+            "coordinates": [
+              2183,
+              3156,
+              3502,
+              3648,
+              4216
+            ],
+            "signed_code_deltas": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "token_id": 414,
+            "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+            "packed_sha256": "b5edc1d39db59e652b170bb0265ff3d3bdee9214b2a494116d565c9c7cd86387",
+            "changed_nibbles": 1,
+            "coordinates": [
+              4879
+            ],
+            "signed_code_deltas": [
+              1
+            ]
+          }
+        ],
+        "changed_nibbles": [
+          22,
+          0,
+          5,
+          1
+        ],
+        "held_arms": {
+          "a": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 33,
+            "candidate_correct_rotations": 32,
+            "baseline_all_four": 2,
+            "candidate_all_four": 2,
+            "gains": 0,
+            "losses": 1,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "b": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 28,
+            "candidate_correct_rotations": 27,
+            "baseline_all_four": 2,
+            "candidate_all_four": 2,
+            "gains": 0,
+            "losses": 1,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "c": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 23,
+            "candidate_correct_rotations": 23,
+            "baseline_all_four": 1,
+            "candidate_all_four": 1,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "d": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 30,
+            "candidate_correct_rotations": 30,
+            "baseline_all_four": 1,
+            "candidate_all_four": 1,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          }
+        },
+        "held_ordinary_full_winner_changes": 0
+      },
+      {
+        "fold": 1,
+        "receipt_sha256": "d3965f888a7c1fde2d31a8bc9a2f57ebcf984589d588e28f102131e40afcf90f",
+        "packed_rows": [
+          {
+            "token_id": 357,
+            "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+            "packed_sha256": "a1a550e7b986cfb4f61f2bcedcfc8de76ec231e88ee0905483a7f62e9dbfe42f",
+            "changed_nibbles": 45,
+            "coordinates": [
+              34,
+              66,
+              470,
+              509,
+              922,
+              995,
+              1193,
+              1243,
+              1293,
+              1307,
+              1716,
+              2289,
+              2394,
+              2443,
+              2445,
+              2500,
+              2685,
+              2714,
+              2769,
+              2796,
+              2980,
+              3087,
+              3112,
+              3292,
+              3397,
+              3400,
+              3463,
+              3605,
+              3643,
+              3674,
+              3856,
+              3871,
+              3902,
+              3944,
+              4015,
+              4178,
+              4225,
+              4229,
+              4474,
+              4624,
+              4640,
+              4698,
+              4718,
+              4785,
+              5090
+            ],
+            "signed_code_deltas": [
+              1,
+              1,
+              1,
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              1,
+              -1,
+              -1,
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              -1,
+              1,
+              -1,
+              -1,
+              -1,
+              1,
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              1,
+              -1,
+              -1,
+              -1,
+              1,
+              -1,
+              -1,
+              -1,
+              1,
+              -1,
+              1,
+              -1,
+              1
+            ]
+          },
+          {
+            "token_id": 417,
+            "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "changed_nibbles": 0,
+            "coordinates": [],
+            "signed_code_deltas": []
+          },
+          {
+            "token_id": 351,
+            "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+            "packed_sha256": "26979c8f05a4fe6e0f42d57028d971806952ff1282f752328b6de4fab9a29690",
+            "changed_nibbles": 10,
+            "coordinates": [
+              66,
+              259,
+              356,
+              436,
+              1515,
+              1853,
+              2491,
+              2528,
+              3789,
+              4152
+            ],
+            "signed_code_deltas": [
+              -1,
+              -1,
+              -1,
+              1,
+              1,
+              1,
+              1,
+              -1,
+              1,
+              1
+            ]
+          },
+          {
+            "token_id": 414,
+            "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+            "packed_sha256": "32864bad2567e91a75bc92c308db8f2a2eb945d8a0f312f77621105db0241cdc",
+            "changed_nibbles": 27,
+            "coordinates": [
+              16,
+              337,
+              506,
+              507,
+              1104,
+              1822,
+              2114,
+              2228,
+              2304,
+              2308,
+              2351,
+              2365,
+              2448,
+              2706,
+              3125,
+              3268,
+              3272,
+              3613,
+              3643,
+              3666,
+              4272,
+              4468,
+              4624,
+              4628,
+              4743,
+              4768,
+              5007
+            ],
+            "signed_code_deltas": [
+              -1,
+              1,
+              -1,
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              1,
+              -1,
+              -1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "changed_nibbles": [
+          45,
+          0,
+          10,
+          27
+        ],
+        "held_arms": {
+          "a": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 29,
+            "candidate_correct_rotations": 29,
+            "baseline_all_four": 2,
+            "candidate_all_four": 2,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "b": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 27,
+            "candidate_correct_rotations": 27,
+            "baseline_all_four": 1,
+            "candidate_all_four": 1,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "c": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 29,
+            "candidate_correct_rotations": 29,
+            "baseline_all_four": 1,
+            "candidate_all_four": 1,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "d": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 27,
+            "candidate_correct_rotations": 27,
+            "baseline_all_four": 2,
+            "candidate_all_four": 2,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          }
+        },
+        "held_ordinary_full_winner_changes": 0
+      },
+      {
+        "fold": 2,
+        "receipt_sha256": "e3a0c84504b9b3c5c919be1b91fa3600593134a1fed99372702460a47ea4daf3",
+        "packed_rows": [
+          {
+            "token_id": 357,
+            "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+            "packed_sha256": "2cd8898e5f2d518e3da6fb579c643b00a60470b137ebdefb75ab5b4baf2f691e",
+            "changed_nibbles": 25,
+            "coordinates": [
+              186,
+              337,
+              433,
+              488,
+              509,
+              510,
+              922,
+              932,
+              1031,
+              1063,
+              1225,
+              2125,
+              2205,
+              2350,
+              2555,
+              2685,
+              2985,
+              3101,
+              3326,
+              3397,
+              3605,
+              3674,
+              3856,
+              4247,
+              4698
+            ],
+            "signed_code_deltas": [
+              1,
+              -1,
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              -1
+            ]
+          },
+          {
+            "token_id": 417,
+            "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "changed_nibbles": 0,
+            "coordinates": [],
+            "signed_code_deltas": []
+          },
+          {
+            "token_id": 351,
+            "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+            "packed_sha256": "e084961827e99da6be3eaf327d1e4fd0c295c2acc1a02ab01d2cfdac77295ee6",
+            "changed_nibbles": 2,
+            "coordinates": [
+              3156,
+              3502
+            ],
+            "signed_code_deltas": [
+              1,
+              1
+            ]
+          },
+          {
+            "token_id": 414,
+            "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+            "packed_sha256": "642f1207295c45fa9943e6aa785404ac98bceadb7185ab42c44f10450122add2",
+            "changed_nibbles": 2,
+            "coordinates": [
+              1075,
+              4046
+            ],
+            "signed_code_deltas": [
+              1,
+              1
+            ]
+          }
+        ],
+        "changed_nibbles": [
+          25,
+          0,
+          2,
+          2
+        ],
+        "held_arms": {
+          "a": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 42,
+            "candidate_correct_rotations": 42,
+            "baseline_all_four": 7,
+            "candidate_all_four": 7,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "b": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 40,
+            "candidate_correct_rotations": 40,
+            "baseline_all_four": 6,
+            "candidate_all_four": 6,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "c": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 38,
+            "candidate_correct_rotations": 38,
+            "baseline_all_four": 6,
+            "candidate_all_four": 6,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "d": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 38,
+            "candidate_correct_rotations": 39,
+            "baseline_all_four": 6,
+            "candidate_all_four": 6,
+            "gains": 1,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          }
+        },
+        "held_ordinary_full_winner_changes": 0
+      }
+    ],
+    "packed_row_recipe": {
+      "tensor": {
+        "name": "output.weight",
+        "quantization": "Q4_K",
+        "ggml_type": 12,
+        "dimensions": [
+          5120,
+          248320
+        ],
+        "offset": 10996640,
+        "bytes": 715161600
+      },
+      "row_bytes": 2880,
+      "coordinates_per_block": 256,
+      "block_bytes": 144,
+      "metadata_bytes_per_block": 16,
+      "steps": [
+        "Start each fold from the same pinned parent. Read each row at tensor offset plus token ID times row bytes, and verify its parent row digest.",
+        "For each zero-based coordinate c, set block = c // 256 and i = c % 256. Its row-relative byte offset is 144*block + 16 + 32*(i // 64) + i % 32. Its nibble shift is 4*((i // 32) % 2).",
+        "Add the paired signed code delta to that nibble without changing the other nibble or block metadata. Verify each reconstructed row digest."
+      ],
+      "all_fold_row_hashes_independently_reconstructed": true
+    },
+    "held_older": {
+      "028": {
+        "rotations": 576,
+        "items": 144,
+        "baseline_correct_rotations": 342,
+        "candidate_correct_rotations": 342,
+        "baseline_all_four": 46,
+        "candidate_all_four": 46,
+        "gains": 2,
+        "losses": 2,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "039": {
+        "rotations": 144,
+        "items": 36,
+        "baseline_correct_rotations": 55,
+        "candidate_correct_rotations": 55,
+        "baseline_all_four": 2,
+        "candidate_all_four": 2,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    },
+    "held_044": {
+      "a": {
+        "rotations": 192,
+        "items": 48,
+        "baseline_correct_rotations": 104,
+        "candidate_correct_rotations": 103,
+        "baseline_all_four": 11,
+        "candidate_all_four": 11,
+        "gains": 0,
+        "losses": 1,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "b": {
+        "rotations": 192,
+        "items": 48,
+        "baseline_correct_rotations": 95,
+        "candidate_correct_rotations": 94,
+        "baseline_all_four": 9,
+        "candidate_all_four": 9,
+        "gains": 0,
+        "losses": 1,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "c": {
+        "rotations": 192,
+        "items": 48,
+        "baseline_correct_rotations": 90,
+        "candidate_correct_rotations": 90,
+        "baseline_all_four": 8,
+        "candidate_all_four": 8,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "d": {
+        "rotations": 192,
+        "items": 48,
+        "baseline_correct_rotations": 95,
+        "candidate_correct_rotations": 96,
+        "baseline_all_four": 9,
+        "candidate_all_four": 9,
+        "gains": 1,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    },
+    "all_sixteen": [
+      8,
+      8
+    ],
+    "ordinary_held_states": 90,
+    "ordinary_full_winner_changes": 0,
+    "ordinary_binary32_winner_changes": 0,
+    "audit_sha256": "6ab4e2bb5fefa5087b0f19b962ef0a22d488688455a58b40890236ae014de1ee",
+    "loss_margin_summary": {
+      "occurrences": 4,
+      "candidate_winner_letter": {
+        "A": 2,
+        "B": 0,
+        "C": 0,
+        "D": 2
+      },
+      "parent_correct_letter": {
+        "A": 0,
+        "B": 2,
+        "C": 2,
+        "D": 0
+      },
+      "parent_correct_margin_min": 0.006160736083984375,
+      "parent_correct_margin_max": 0.025720596313476562,
+      "candidate_correct_margin_min": -0.008047103881835938,
+      "candidate_correct_margin_max": -0.001544952392578125
+    },
+    "expanded_net_gain": -1,
+    "reporting_detail": "The raw positive_044_gain field records any recovery. The pooled net change was minus one. The zero-loss gate also failed."
+  },
+  "all_folds_frozen_before_held_scoring": true,
+  "checkpoint_written": false,
+  "native_candidate_run": false,
+  "protected_or_benchmark_inputs_used": false
+}
