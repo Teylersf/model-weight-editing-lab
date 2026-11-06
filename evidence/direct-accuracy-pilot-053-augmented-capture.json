@@ -1,0 +1,57 @@
+{
+  "schema": "published-pilot053-augmented-capture-v1",
+  "status": "independently_verified_full_capture",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "artifacts_sha256": {
+    "capture_plan": "bcd75027986a2ab86135edbf9808fccf7f8b02575a23f4279198523560c1e032",
+    "capture_adapter": "982e9bfc6b90c2743fa92d333cbbdfd24e642b235278b42368a7c65a259c9f79",
+    "capture_binary": "a80b741c4518bb6d0db6ed45af28cc08bf0762668d7c243c45cffd4a82c3d991",
+    "sealed_capture": "722001c8ee9f1995bcf609452883798343a02dcc8dad69e2886bdeae2a1ba42e",
+    "independent_audit_source": "26847791f2552d368502dd5b0fe9bc75d796387146e5ef3072db739e9a42300c",
+    "independent_audit_receipt": "2fabfab176d3fdce1159508db83213c48379889a6f8b7777092a44eac576c9d5",
+    "native_choice_baseline": "6e90fe1477050bb0cc51b4e7fecc766becee9086955a44649f0aab6e8caebd24",
+    "graded_choice_baseline": "10bc93edbb8e50959fa61839e83c6f2d3fcf55776b6e1124a0d391759f68c661"
+  },
+  "native_backend": "CUDA0",
+  "independently_authored_condition_pairs": 24,
+  "batches": 12,
+  "states": 768,
+  "exact_binary32_choice_logits": 3072,
+  "choice_bits_sha256": "0fc3be746d24e2a5cdd3d4cd40a095d4f23e29e866811e82b1b2af6e4f1e44ff",
+  "choice_bits_by_arm_sha256": {
+    "a": "56beef17846c6f31c1677c170f0d800b146f23dfb5db5a8f2d6da5da90a69831",
+    "b": "851900c9d24c0c589e148db75794f787ff1d2a06126c690442520ac9e2ff3174",
+    "c": "4cb377c6ffd238d05ad7db4117cc91b9d3c2cef1e13b07b5b05787601bde81c1",
+    "d": "c5220bbf296c34f00c77e64236bfef1297c1dc2741a275445842360ceb390368"
+  },
+  "activation_dimensions": {
+    "a": 17408,
+    "p": 5120,
+    "r": 5120,
+    "h": 5120,
+    "ffn_input": 5120,
+    "ffn_gate": 17408,
+    "ffn_up": 17408,
+    "gamma": 5120
+  },
+  "joined_activation_sha256": {
+    "a": "528b1f37b08c1cd70458fe207ebf86cc15fb6b26e712f99cdf724404b800ea1a",
+    "p": "9f0967d08c76a91fd4be552ff1cb87b493919a0b406b6827380eabe8de5bf922",
+    "r": "5c072edd8fc13d62a9aa38cd392c5439f09ddf7a740e5bea1452dc3b3ca1d5fc",
+    "h": "23a290c4fbc7a8c6ca2a8fed46eebbe3af3c1f629ad60229b4394272f637b637",
+    "ffn_input": "0d437e218baf753bd8837fa0fa2b6bd7256f08806fb861ea088d8cc553ae23a8",
+    "ffn_gate": "a1c378f4bd79a1119406940541dcde73000ddb831c68af97b533c0b1664186d2",
+    "ffn_up": "793c9718b609002806c0c3fa9bbc7e4e1de0b4aff9ff7080a9659c1da5afea03",
+    "gamma": "b3ba4f3231a21b1559f52115d3bffc7c28dcd03e4be22df269ef97a3f5d4bfbf"
+  },
+  "gated_activation_identity": {
+    "absolute_tolerance": 8e-05,
+    "relative_tolerance": 2e-06,
+    "max_absolute_error": 6.312769897931503e-06,
+    "max_tolerance_fraction": 0.04005392965884183
+  },
+  "capture_used_benchmark_fresh_or_protected_prompts": false,
+  "labels_passed_to_native": false,
+  "weights_mutated": false,
+  "scope": "Instrumented parent replay on authored development pairs. Prompt text, labels, and raw activation arrays are excluded from the public evidence."
+}
