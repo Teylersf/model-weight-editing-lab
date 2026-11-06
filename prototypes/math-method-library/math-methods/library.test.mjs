@@ -54,9 +54,9 @@ const cases = [
 test('build, retrieve methods, and preserve the previous snapshot on invalid input', t => {
   const directory = mkdtempSync(join(tmpdir(), 'stepmargin-method-test-'));
   const database = join(directory, 'library.sqlite');
-  const brokenCards = join(directory, 'broken');
-  const invalidFile = join(brokenCards, 'invalid.json');
-  mkdirSync(brokenCards);
+  const fixtureCards = join(directory, 'cards');
+  const fixtureFile = join(fixtureCards, 'fixture.json');
+  mkdirSync(fixtureCards);
   let library;
 
   try {
@@ -68,6 +68,15 @@ test('build, retrieve methods, and preserve the previous snapshot on invalid inp
     assert.equal(library.searchRevision, built.searchRevision);
     assert.equal(library.coverage().reduce((n, row) => n + row.methods, 0), built.methods);
     assert.equal(library.get('not-a-method'), null);
+    assert.equal(library.resolve({ name: 'LAW OF COSINES' }).id, 'sine-and-cosine-rules');
+    assert.equal(library.resolve({ name: 'removable discontinuity' }), null);
+    assert.equal(library.resolve({ name: 'removable discontinuity', domain: 'precalculus' }).id,
+      'rational-function-graph');
+    assert.equal(library.resolve({ name: 'law of cosines', level: 'undergraduate' }), null);
+    assert.equal(library.resolve({ name: 'Where can I read about the law of cosines?' }), null);
+    assert.equal(library.resolve({ name: '" OR "*" --' }), null);
+    assert.throws(() => library.resolve({ name: ' ' }), /1–700/);
+    assert.throws(() => library.resolve({ name: 'law of cosines', level: 'all' }), /Invalid level/);
     assert.deepEqual(library.search({ query: 'zebra wifi firmware' }), []);
     assert.deepEqual(library.search({ query: 'How can I log out of my account in the browser?' }), []);
     assert.deepEqual(library.search({ query: "What's the way to solve the exercise on page 12?" }), []);
@@ -116,17 +125,23 @@ test('build, retrieve methods, and preserve the previous snapshot on invalid inp
     library.close();
     library = undefined;
 
-    const card = { id: 'duplicate', title: 'Duplicate', domain: 'algebra', level: 'high-school',
-      aliases: ['duplicate'], pattern: 'x', applies: ['x'], steps: ['x'], pitfalls: ['x'], checks: ['x'],
+    const card = { id: 'compatibility-label', title: 'Ｎｅｗｔｏｎ method', domain: 'algebra', level: 'high-school',
+      aliases: ['x² substitution'], pattern: 'x', applies: ['x'], steps: ['x'], pitfalls: ['x'], checks: ['x'],
       example: { problem: 'x', answer: 'x' } };
-    writeFileSync(invalidFile, JSON.stringify([card, card]));
-    assert.throws(() => buildMethodLibrary({ database, directory: brokenCards }), /Duplicate method id/);
+    writeFileSync(fixtureFile, JSON.stringify([card, card]));
+    assert.throws(() => buildMethodLibrary({ database, directory: fixtureCards }), /Duplicate method id/);
     assert.deepEqual(readFileSync(database), original);
+
+    writeFileSync(fixtureFile, JSON.stringify([card]));
+    buildMethodLibrary({ database, directory: fixtureCards });
+    library = openMethodLibrary(database);
+    assert.deepEqual(library.resolve({ name: 'Newton method' }), card);
+    assert.deepEqual(library.resolve({ name: 'x² substitution' }), card);
   } finally {
     library?.close();
     rmSync(database, { force: true });
-    rmSync(invalidFile, { force: true });
-    rmdirSync(brokenCards);
+    rmSync(fixtureFile, { force: true });
+    rmdirSync(fixtureCards);
     rmdirSync(directory);
   }
 });

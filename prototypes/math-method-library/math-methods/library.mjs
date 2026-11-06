@@ -8,6 +8,7 @@ export const defaultDatabase = fileURLToPath(new URL('../.runtime/math-methods.s
 const searchRevision = createHash('sha256').update(readFileSync(new URL(import.meta.url))).digest('hex');
 const cardsDirectory = fileURLToPath(new URL('./cards/', import.meta.url));
 const version = 1;
+const maxCardTextLength = 700;
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const levels = new Set(['high-school', 'undergraduate']);
 const listFields = ['aliases', 'applies', 'steps', 'pitfalls', 'checks'];
@@ -87,7 +88,7 @@ function exactKeys(value, keys) {
 }
 
 function validText(value) {
-  return typeof value === 'string' && value.trim().length > 0 && value.length <= 700;
+  return typeof value === 'string' && value.trim().length > 0 && value.length <= maxCardTextLength;
 }
 
 function validateCard(card, file) {
@@ -123,6 +124,17 @@ function loadCards(directory) {
 
 function normalize(text) {
   return text.normalize('NFKC').toLowerCase().replace(/[−–]/gu, '-');
+}
+
+function methodName(text) {
+  return (normalize(text).match(/[\p{L}\p{N}]+/gu) || []).join(' ');
+}
+
+function validateFilters(domain, level) {
+  if (domain !== null && (typeof domain !== 'string' || domain.length > 60 || !slug.test(domain))) {
+    throw new MethodQueryError('Invalid domain filter');
+  }
+  if (level !== null && !levels.has(level)) throw new MethodQueryError('Invalid level filter');
 }
 
 function notationTerms(query) {
@@ -290,7 +302,7 @@ export function buildMethodLibrary({ database = defaultDatabase, directory = car
       const index = db.prepare('INSERT INTO method_search VALUES (?, ?, ?, ?, ?, ?)');
       for (const card of cards) {
         method.run(card.id, card.domain, card.level, JSON.stringify(card));
-        index.run(card.id, card.title, card.aliases.join(' '), card.pattern, card.domain.replaceAll('-', ' '),
+        index.run(card.id, methodName(card.title), card.aliases.map(methodName).join(' '), card.pattern, card.domain.replaceAll('-', ' '),
           [...card.applies, ...card.steps].join(' '));
       }
       db.exec("INSERT INTO method_search(method_search) VALUES ('optimize'); COMMIT;");
@@ -314,6 +326,11 @@ export function openMethodLibrary(database = defaultDatabase) {
       'Unsupported math method library schema');
     const { revision } = db.prepare('SELECT revision FROM metadata').get();
     const byId = db.prepare('SELECT card FROM methods WHERE id = ?');
+    const named = db.prepare(`
+      SELECT methods.card FROM method_search JOIN methods ON methods.id = method_search.id
+      WHERE method_search MATCH ? AND (? IS NULL OR methods.domain = ?)
+        AND (? IS NULL OR methods.level = ?)
+    `);
     const lookup = db.prepare(`
       SELECT methods.card,
         highlight(method_search, 1, char(30), char(31)) || ' ' ||
@@ -336,14 +353,27 @@ export function openMethodLibrary(database = defaultDatabase) {
         const row = byId.get(id);
         return row ? JSON.parse(row.card) : null;
       },
+      resolve({ name, domain = null, level = null }) {
+        if (!validText(name)) {
+          throw new MethodQueryError(`Method name must be 1–${maxCardTextLength} characters`);
+        }
+        validateFilters(domain, level);
+        const label = methodName(name);
+        if (!label) return null;
+        let match = null;
+        for (const { card } of named.iterate(`{title aliases} : "${label}"`, domain, domain, level, level)) {
+          const candidate = JSON.parse(card);
+          if (![candidate.title, ...candidate.aliases].some(value => methodName(value) === label)) continue;
+          if (match) return null;
+          match = candidate;
+        }
+        return match;
+      },
       search({ query, domain = null, level = null, limit = 3 }) {
         if (typeof query !== 'string' || !query.trim() || query.length > 1600) {
           throw new MethodQueryError('Search must be 1–1,600 characters');
         }
-        if (domain !== null && (typeof domain !== 'string' || domain.length > 60 || !slug.test(domain))) {
-          throw new MethodQueryError('Invalid domain filter');
-        }
-        if (level !== null && !levels.has(level)) throw new MethodQueryError('Invalid level filter');
+        validateFilters(domain, level);
         if (!Number.isInteger(limit) || limit < 1 || limit > 8) {
           throw new MethodQueryError('Limit must be an integer from 1 to 8');
         }

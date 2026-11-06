@@ -1,0 +1,221 @@
+[
+  {
+    "id": "logarithmic-inequality-monotonicity",
+    "title": "Solve logarithmic inequalities by monotonicity",
+    "domain": "algebra",
+    "level": "high-school",
+    "aliases": [
+      "log inequality",
+      "logarithm inequality",
+      "fractional log base",
+      "compare logarithms"
+    ],
+    "pattern": "For u>0 and v>0, log_b(u) has the same order as u when b>1 and the reverse order when 0<b<1.",
+    "applies": [
+      "Both logarithms have the same fixed base b>0 with b≠1.",
+      "A comparison with a real constant c can be written using c=log_b(b^c)."
+    ],
+    "steps": [
+      "Find the common domain by requiring every original logarithm argument to be positive.",
+      "Write both sides as logarithms of the same base when possible.",
+      "Compare the arguments and reverse the inequality exactly when 0<b<1.",
+      "Intersect the result with the original domain and keep or exclude equality endpoints as the original sign requires."
+    ],
+    "pitfalls": [
+      "Combining logarithms can conceal an original domain restriction.",
+      "Multiplying by an expression of unknown sign requires a sign split or a different algebraic step."
+    ],
+    "checks": [
+      "Test a point on each relevant side of a boundary using the original inequality.",
+      "Check equality at any included endpoint and confirm that all arguments there are positive."
+    ],
+    "example": {
+      "problem": "Solve log_(1/3)(2x+1) < log_(1/3)(x+4).",
+      "answer": "The domain is x>−1/2. Base 1/3 is decreasing, so 2x+1>x+4, giving x>3 after intersecting with the domain. At x=3 the arguments are equal, so the endpoint is excluded."
+    }
+  },
+  {
+    "id": "statistics-sampling-and-experiment-design",
+    "title": "Separate sampling from treatment assignment",
+    "domain": "statistics",
+    "level": "high-school",
+    "aliases": [
+      "sampling design",
+      "random assignment",
+      "random selection",
+      "observational study",
+      "sampling bias",
+      "controlled experiment"
+    ],
+    "pattern": "Random sampling supports inference to a population. Random treatment assignment supports a causal comparison within the study's design.",
+    "applies": [
+      "You need to classify a study, identify selection bias or confounding, or state the scope of a conclusion."
+    ],
+    "steps": [
+      "Identify the target population, sampling frame, observational unit and response variable.",
+      "Inspect how units entered the study. For a probability sample, record the selection rule and account for differing selection probabilities when estimating a population quantity.",
+      "Determine whether investigators randomly assigned treatments or observed existing groups. Identify other conditions to keep comparable and use blinding when feasible.",
+      "State the population the sample can represent and whether the treatment comparison supports a causal interpretation."
+    ],
+    "pitfalls": [
+      "Convenience sampling, voluntary response and nonresponse can limit population generalization even when treatment assignment is random.",
+      "A large sample does not by itself remove selection bias or confounding.",
+      "Treating repeated measurements from one experimental unit as separate randomized units exaggerates the amount of independent information."
+    ],
+    "checks": [
+      "Name the actual experimental unit and verify it is the unit that was assigned.",
+      "Check for major attrition, differences in measurement, and treatment spillover before drawing a causal conclusion."
+    ],
+    "example": {
+      "problem": "A ceramics club recruits 24 volunteers to compare two designs of drying rack. Each participant dries one identically prepared tile at a separate station, using their own assigned rack. Twelve participants are randomly assigned to each design, room conditions are comparable, and cracking is assessed the same way after one day. What conclusions does the design support?",
+      "answer": "The random assignment supports a causal comparison of the two rack designs under these study conditions, assuming the protocol holds. The experimental unit is the participant and tile at each station. The volunteers form a convenience sample, so generalizing to all ceramicists would require additional evidence."
+    }
+  },
+  {
+    "id": "statistics-one-way-anova-f-test",
+    "title": "Compare group means with one-way ANOVA",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": [
+      "one-way ANOVA",
+      "one-factor ANOVA",
+      "analysis of variance",
+      "pooled F test",
+      "omnibus means test"
+    ],
+    "pattern": "With k groups and N total observations, F = [SS_between/(k−1)] / [SS_within/(N−k)]. The classical null reference is F with degrees of freedom k−1 and N−k.",
+    "applies": [
+      "The response is quantitative and the explanatory factor has at least two distinct levels, with N>k.",
+      "For the classical exact test, assume independent observations with normal within-group errors and a common positive error variance."
+    ],
+    "steps": [
+      "State the null that all population means are equal and the alternative that at least two differ.",
+      "Compute each group mean and the grand mean weighted by group sizes.",
+      "Sum n_j times the squared difference between group j's mean and the grand mean to obtain SS_between. Sum the squared deviations of observations from their own group means to obtain SS_within.",
+      "Divide each sum by its degrees of freedom, form the F ratio and use the upper tail of its null distribution. Interpret a rejection as evidence of a mean difference somewhere among the groups."
+    ],
+    "pitfalls": [
+      "Averaging group means equally gives the wrong grand mean for unequal sample sizes in general.",
+      "The omnibus result does not identify specific differing groups. Follow-up contrasts need appropriate multiplicity control.",
+      "When group variances are substantially different, particularly with unequal group sizes, consider a test such as Welch's ANOVA instead of using the classical pooled reference."
+    ],
+    "checks": [
+      "Verify SS_total=SS_between+SS_within and that the two degrees of freedom add to N−1.",
+      "Check model assumptions using the study design and residual diagnostics, and check that the within-group mean square is positive before dividing."
+    ],
+    "example": {
+      "problem": "Assume the classical one-way ANOVA model for groups (1,3), (4,5,6,5), and (7,9). Find F and its degrees of freedom, then test at α=0.05.",
+      "answer": "The group means are 2, 5 and 8, and the grand mean is 5. SS_between=36 and SS_within=6. Thus F=(36/2)/(6/5)=15 with (2,5) degrees of freedom. The upper-tail p-value is about 0.00771, so reject equality of all three means."
+    }
+  },
+  {
+    "id": "ode-local-existence-uniqueness",
+    "title": "Check local existence and uniqueness of an ODE initial value problem",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "Picard-Lindelöf theorem",
+      "ODE existence and uniqueness",
+      "initial value theorem",
+      "locally Lipschitz",
+      "first-order IVP uniqueness"
+    ],
+    "pattern": "For the scalar IVP y′=f(t,y), y(t₀)=y₀, continuity of f and a uniform local Lipschitz bound in y on a rectangle about (t₀,y₀) give a unique local solution.",
+    "applies": [
+      "You need to justify a unique local solution of a scalar first-order initial value problem, including when no closed-form solution is available.",
+      "Continuity of both f and ∂f/∂y near the initial point gives a convenient sufficient condition."
+    ],
+    "steps": [
+      "Write the equation in the form y′=f(t,y) and locate the initial point in the (t,y) plane.",
+      "Find a rectangle around that point where f is defined and continuous.",
+      "On a small closed rectangle, check that ∂f/∂y is continuous and bounded or establish a uniform Lipschitz bound in y directly.",
+      "Conclude existence and uniqueness on some time interval about t₀ if both hypotheses hold. In the scalar case, continuity on a neighborhood alone guarantees local existence."
+    ],
+    "pitfalls": [
+      "A failed sufficient condition does not prove nonexistence or nonuniqueness.",
+      "A local theorem does not guarantee the solution continues for all times.",
+      "A rearrangement that divides by an expression requires checking that it is nonzero near the initial point."
+    ],
+    "checks": [
+      "Verify that the initial point lies strictly inside the chosen rectangle, away from singularities.",
+      "Take the partial derivative with respect to y, the dependent variable."
+    ],
+    "example": {
+      "problem": "Does y′=t/(2−y), y(0)=−1 have a unique local solution? Justify the answer using the theorem.",
+      "answer": "Yes. On |t|≤1 and −2≤y≤0, the initial point is interior and 2−y stays at least 2. Both f=t/(2−y) and ∂f/∂y=t/(2−y)^2 are continuous there. The theorem therefore gives a unique local solution about t=0."
+    }
+  },
+  {
+    "id": "pde-heat-equation-fixed-ends",
+    "title": "Solve the heat equation with zero fixed-end temperatures",
+    "domain": "differential-equations",
+    "level": "undergraduate",
+    "aliases": [
+      "heat equation separation of variables",
+      "one-dimensional heat equation",
+      "homogeneous Dirichlet heat equation",
+      "Fourier sine heat solution",
+      "fixed-end heat diffusion"
+    ],
+    "pattern": "For u_t=κu_xx on 0<x<L with u(0,t)=u(L,t)=0, mode n is sin(nπx/L) exp(−κ(nπ/L)^2 t), n=1,2,… .",
+    "applies": [
+      "The diffusivity κ is positive and constant, and both ends have zero prescribed temperature.",
+      "The initial profile is given, for example as a finite sine sum or a piecewise smooth continuous function with zero endpoint values."
+    ],
+    "steps": [
+      "Set u=X(x)T(t). Separate into X″+λX=0 with X(0)=X(L)=0 and T′=−κλT.",
+      "Use nontrivial spatial modes X_n=sin(nπx/L) and λ_n=(nπ/L)^2 for positive integers n.",
+      "Expand the initial profile f(x) in these modes. If the coefficients are not already given, compute b_n=(2/L)∫₀ᴸ f(x)sin(nπx/L) dx.",
+      "Sum the modes multiplied by b_n and their corresponding time factors exp(−κλ_n t)."
+    ],
+    "pitfalls": [
+      "Sine modes are tied to zero fixed values at both ends. Zero-flux or nonhomogeneous boundary conditions require separate treatment.",
+      "The decay rate uses the squared spatial frequency and depends on the interval length.",
+      "A constant nonzero mode cannot satisfy both zero endpoint conditions."
+    ],
+    "checks": [
+      "Substitute each mode into the PDE and verify its endpoint values.",
+      "Set t=0 to check the initial coefficients and confirm all modes decay with time."
+    ],
+    "example": {
+      "problem": "Solve u_t=3u_xx on 0<x<2π with both endpoint temperatures fixed at zero and u(x,0)=4 sin(x/2)−sin(2x).",
+      "answer": "The spatial modes n=1 and n=4 have squared frequencies 1/4 and 4. Hence u(x,t)=4 exp(−3t/4) sin(x/2)−exp(−12t) sin(2x). Both sine terms vanish at x=0 and x=2π and reproduce the prescribed profile at t=0."
+    }
+  },
+  {
+    "id": "cauchy-integral-formula-derivatives",
+    "title": "Evaluate contour integrals with Cauchy’s integral formula",
+    "domain": "complex-analysis",
+    "level": "undergraduate",
+    "aliases": [
+      "Cauchy integral formula",
+      "Cauchy formula for derivatives",
+      "Cauchy differentiation formula",
+      "higher-order pole integral",
+      "analytic numerator contour integral"
+    ],
+    "pattern": "For a positively oriented simple closed contour containing a, ∮ f(z)/(z−a)^(n+1) dz = 2πi f^(n)(a)/n! for n=0,1,2,…, provided f is holomorphic on a neighborhood of the contour and its interior.",
+    "applies": [
+      "The contour is piecewise smooth and simple, and the denominator has the indicated power after collecting analytic factors into f.",
+      "The point a lies strictly inside the contour and the numerator f is holomorphic on a neighborhood of the closed interior."
+    ],
+    "steps": [
+      "Identify a and set n to one less than the denominator's exponent.",
+      "Check orientation, position of a, and holomorphicity of f throughout the required region.",
+      "Evaluate f^(n)(a), divide by n!, and multiply by 2πi. Change the sign for clockwise orientation."
+    ],
+    "pitfalls": [
+      "The exponent n+1 is not the differentiation order.",
+      "A point on the contour falls outside the formula's hypotheses.",
+      "If additional singularities lie inside, the numerator cannot be treated as holomorphic there. If a lies outside and the full integrand is holomorphic on the closed interior and a neighborhood, use Cauchy’s theorem to obtain zero."
+    ],
+    "checks": [
+      "Read the coefficient of (z−a)^n in the Taylor expansion of f as an independent check on f^(n)(a)/n!.",
+      "Confirm orientation and whether every potentially singular point lies inside, outside or on the contour."
+    ],
+    "example": {
+      "problem": "Evaluate ∮ (z³+e^z)/(z−1)³ dz around |z−1|=2 counterclockwise.",
+      "answer": "The numerator is entire, a=1 and n=2. Its second derivative at 1 is 6+e. The integral is 2πi(6+e)/2!=πi(6+e)."
+    }
+  }
+]
