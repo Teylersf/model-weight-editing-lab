@@ -1,0 +1,147 @@
+{
+  "schema": "published-pilots055-056-native-gated-up-row-v1",
+  "status": "passed_four_authored_state_mechanism_probe",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "artifact_sha256": {
+    "capture_smoke": "057f24040fce6d62e9f9e32b1cf3ffeb3d25a47e88bbb1a1ac8cde16d80899d2",
+    "cpu_projection_calibration": "4e09db66a2b760a962e0e363e496df01bf6f35637d838a66fba3632c94a7ba3e",
+    "native_overlay": "5b4373e262ea534976da8ae9482b180911a4ebef08c4c85383a945f3c9d38c79",
+    "native_response_audit": "8864440b3b5424a28f4c8d7c89e6baa6a75a6e6f3ba94354e04af9fd6329a888"
+  },
+  "tensor": {
+    "name": "blk.63.ffn_up.weight",
+    "type": "Q4_K",
+    "offset": 11272983456,
+    "bytes": 50135040,
+    "input_width": 5120,
+    "rows": 17408,
+    "row_bytes": 2880
+  },
+  "gated_formula": "The frozen gate contributes SiLU(g). The changed up output multiplies that same factor. The resulting change in this one activation flows through the parent down-projection column.",
+  "probe_recipe": {
+    "neuron": 1280,
+    "input_coordinate": 913,
+    "row_relative_byte_offset": 529,
+    "nibble_shift": 0,
+    "code_delta": 1,
+    "parent_row_sha256": "39ffca877b64ed7571587c70836e10a584db36789a3e73f9526dc64b9cb95594",
+    "edited_row_sha256": "6e19b73890252e02c9c9b8b24bfbbac61977d04a86456346e1f322aba65c0eac",
+    "absolute_model_byte_offset": 11276670385,
+    "execution": "Verify the exact source row digest. Increment the low nibble at row-relative byte 529 and verify the edited row digest before using it as an isolated CUDA overlay."
+  },
+  "receipts": {
+    "capture_smoke": {
+      "schema": "windows-pilot055-native-up-gate-smoke-v1",
+      "source_sha256": "020cd93e4301f6e7d69b0ae299d0ac33fdde7cbca73c708330133bc2e5f52d97",
+      "original_capture_sha256": "30e776abb9ac79cc7e1f93264342aacd38142d009462fc74609a59e7dcf1b952",
+      "native_receipt_sha256": "ccccac05f5bf735620fb4b681b4bac761a3ca4db979e03e8c123981ad03e03e4",
+      "binary_sha256": "a80b741c4518bb6d0db6ed45af28cc08bf0762668d7c243c45cffd4a82c3d991",
+      "case_count": 4,
+      "exact_selected_choice_logits": 16,
+      "exact_original_activation_states": {
+        "a": 4,
+        "p": 4,
+        "r": 4,
+        "h": 4
+      },
+      "up_gate_alignment_verified": true,
+      "passed": true,
+      "weights_mutated": false,
+      "protected_or_benchmark_inputs_used": false
+    },
+    "cpu_projection_calibration": {
+      "schema": "windows-pilot055-cpu-gated-up-row-calibration-v1",
+      "source_sha256": "dad935fd46860b602672d6420a176e58069b27312440394c4df84b1074a137dc",
+      "smoke_sha256": "057f24040fce6d62e9f9e32b1cf3ffeb3d25a47e88bbb1a1ac8cde16d80899d2",
+      "native_capture_sha256": "ccccac05f5bf735620fb4b681b4bac761a3ca4db979e03e8c123981ad03e03e4",
+      "model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+      "cases": 4,
+      "q4_rows_checked": 68,
+      "q8_effective_parent_up_max_error": 5.469996722240467e-07,
+      "q8_effective_parent_up_rms_error": 1.4374044796691137e-07,
+      "gated_feed_forward_identity_max_error": 2.5095267162100754e-06,
+      "probe": {
+        "neuron": 1280,
+        "input_coordinate": 913,
+        "signed_nibble_change": 1,
+        "parent_q4k_row_sha256": "39ffca877b64ed7571587c70836e10a584db36789a3e73f9526dc64b9cb95594",
+        "candidate_q4k_row_sha256": "6e19b73890252e02c9c9b8b24bfbbac61977d04a86456346e1f322aba65c0eac",
+        "one_changed_byte": true,
+        "estimated_up_delta": [
+          -0.0022357388029377034,
+          0.0006898029969306663
+        ],
+        "gated_activation_delta": [
+          -0.00018545412595769638,
+          0.0006145996600196861
+        ],
+        "estimated_residual_l2": [
+          0.00015738900974950466,
+          0.0003175643607273402,
+          0.0005079124275633138,
+          0.0001532614829526411
+        ]
+      },
+      "scope": "Four fixed authored states. Parent projections verified in native replay. One-code effects are a CPU estimate.",
+      "checkpoint_written": false,
+      "probe_applied_to_native": false,
+      "protected_or_benchmark_inputs_used": false
+    },
+    "native_overlay": {
+      "schema": "windows-pilot056-native-up-overlay-v1",
+      "source_sha256": "333339a13287817cb3ec0e77eb63be63ab4f2a5067c72c09509cd93d228c4036",
+      "baseline_native_receipt_sha256": "ccccac05f5bf735620fb4b681b4bac761a3ca4db979e03e8c123981ad03e03e4",
+      "native_receipt_sha256": "500c75afaac9cc974acab52989c6a875912b1c8d855809a045ce172e180cdc67",
+      "binary_sha256": "679b81dee70929b5f1d605f29cd8bd1d504a158700d3ebf4c136d41f3ee7ad50",
+      "case_count": 4,
+      "ephemeral_device_row_patch": true,
+      "parent_file_exact_pre_post": true,
+      "exact_pre_edit_activations": {
+        "ffn_input": true,
+        "ffn_gate": true,
+        "p": true
+      },
+      "up_delta_only_edited_neuron": true,
+      "gated_delta_only_edited_neuron": true,
+      "up_activation_deltas": [
+        -0.0006997585296630859,
+        -0.0014027953147888184,
+        -0.0022356510162353516,
+        0.0006898045539855957
+      ],
+      "gated_activation_deltas": [
+        0.00019045919179916382,
+        0.0003842674195766449,
+        0.0006145685911178589,
+        -0.00018545985221862793
+      ],
+      "passed": true,
+      "checkpoint_written": false,
+      "protected_or_benchmark_inputs_used": false
+    },
+    "native_response_audit": {
+      "schema": "windows-pilot056-native-gated-up-response-audit-v1",
+      "source_sha256": "f381ed9e6cc6bb987a3d80ee5d5ba8aba5af8501529106a642580ca1105ffde1",
+      "overlay_receipt_sha256": "5b4373e262ea534976da8ae9482b180911a4ebef08c4c85383a945f3c9d38c79",
+      "native_parent_receipt_sha256": "ccccac05f5bf735620fb4b681b4bac761a3ca4db979e03e8c123981ad03e03e4",
+      "native_overlay_receipt_sha256": "500c75afaac9cc974acab52989c6a875912b1c8d855809a045ce172e180cdc67",
+      "cases": 4,
+      "neuron": 1280,
+      "input_coordinate": 913,
+      "signed_q4k_code_delta": 1,
+      "absolute_error_max": {
+        "up": 8.777715265750885e-08,
+        "gated_activation": 6.936531199257245e-09,
+        "residual": 7.347287413181358e-06,
+        "choice_logits_from_observed_hidden": 1.3469252735376358e-06
+      },
+      "choice_logit_delta_max_absolute": 0.0003528594970703125,
+      "chosen_answer_changes": 0,
+      "parent_file_exact_pre_post": true,
+      "checkpoint_written": false,
+      "scope": "Native fixed-prefix mechanism validation, with an isolated CUDA tensor patch on four authored states."
+    }
+  },
+  "checkpoint_written": false,
+  "protected_or_benchmark_inputs_used": false
+}
