@@ -1,0 +1,73 @@
+{
+  "schema": "pilot141-new-ffn-row-probes-public-v1",
+  "plan_sha256": "569e0dda2342043ac709f782eff866712dc82684ed8563215b4dd5d1e8a940d5",
+  "report_sha256": "e9feeffcd8895cddcddb5622805b838c53588e7626b956c820e416a3b6f1b774",
+  "source_sha256": "6cad5bb244680994b83a26480323508de6ce5dceb12c4db7058c6f9af41a7acf",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "scope": {
+    "new_physical_rows": 8,
+    "new_legal_endpoints": 564,
+    "baseline_code_count": 361,
+    "new_rows_zero_replay_exact": true
+  },
+  "support_sha256": "2cdf675ae6bed2b897be0275b47e0946fd46b7f433909030f0c9fef3d69cdeb6",
+  "rounds": [
+    {
+      "exact_single_replays": 64,
+      "union_stages": [
+        [
+          2,
+          312,
+          48
+        ],
+        [
+          3,
+          501,
+          48
+        ],
+        [
+          4,
+          471,
+          48
+        ]
+      ],
+      "exact_p105_cap_passes": 194,
+      "critical_rows": 155,
+      "depth": 0,
+      "before_deficits": [
+        2,
+        0.03535100844238279,
+        0.018824193491210936
+      ],
+      "before_objectives": [
+        0.018209354047132493,
+        0.3043774021996392
+      ],
+      "full_replays": 18,
+      "all_objective_ordinary_safe": 18,
+      "lexicographic_improvements": 0,
+      "after_deficits": [
+        2,
+        0.03535100844238279,
+        0.018824193491210936
+      ],
+      "after_objectives": [
+        0.018209354047132493,
+        0.3043774021996392
+      ],
+      "full_passes": 0
+    }
+  ],
+  "end_deficits": [
+    2,
+    0.03535100844238279,
+    0.018824193491210936
+  ],
+  "end_objectives": [
+    0.018209354047132493,
+    0.3043774021996392
+  ],
+  "fit_passed": false,
+  "checkpoint_written": false,
+  "held_or_reserve_opened": false
+}

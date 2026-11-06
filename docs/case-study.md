@@ -1100,3 +1100,11 @@ The search tested **382** compounds and fully replayed **64**. All full replays 
 The reserve stayed sealed. An independent read-only stream rebuilt all **361** code changes, verified each edited row, and computed the whole-checkpoint digest. [Bounded search results and exact packed recipe](../evidence/direct-accuracy-pilot-134-guarded-ffn-compounds.json)
 
 Pilot 135 measured signed half-edits and paired their effects to shortlist combinations for exact replay. All **18** full checks preserved the objective caps and ordinary winners. No combination improved the full signed math result, and the search stopped at its planned stagnation rule with two violations remaining. [Measured half-edits, exact unions, and stopping evidence](../evidence/direct-accuracy-pilot-135-measured-joint-repair.json)
+
+## Pilot 137 with exact disk-loaded CUDA parity
+
+The saved query checkpoint reproduced the earlier in-memory edit on **192 math and 60 ordinary states**. The checks matched all 252 full-vocabulary logit and hidden-state digests, all **1,512** selected logits, and all **16,128** top-64 logits. Both CUDA runs verified the whole saved GGUF before and after inference. The separate proof and cylinder generation gate uses this exact checkpoint. [Disk-loaded replay and sealed parity](../evidence/direct-accuracy-pilot-137-saved-query-native-parity.json)
+
+## Pilot 141 with previously untouched feed-forward rows
+
+The search verified eight new physical FFN rows and measured **208** packed proposals. The closest full replay reduced the worst shortfall from 0.01882 to 0.01307 logits and increased the number of missed math margins from **two to three**. The previous two-deficit recipe therefore remained the branch's best under its strict count rule. [Expanded row scope and exact replay](../evidence/direct-accuracy-pilot-141-new-ffn-row-probes.json)
