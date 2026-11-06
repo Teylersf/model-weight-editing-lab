@@ -644,3 +644,9 @@ The same Pilot 024 checkpoint scored 36 independently checked authored problems 
 Changing the examples at cyclic order recovered 20 choices and lost four. At reversed order it recovered 15 and lost 15. The effect of reversing the option cycle changed from a gain of 13 with the original examples to a loss of three with the alternate examples. Paired by problem and correct answer letter, reversing the cycle changed the selected answer content on 65 of 144 trials with the original examples and 66 of 144 with the alternate examples. Only two of 36 problems were correct in every one of the 16 presentations.
 
 The comparison used 432 new CUDA scores and 144 archived scores whose prompt bytes matched exactly. It measured prompt sensitivity on reused development families at fixed weights. [Factorial results and provenance](../evidence/direct-accuracy-pilot-042.json)
+
+## Pilot 043 with a penalty for answer-position drift
+
+Pilot 043 mapped each centered logit shift back to its original answer content and penalized disagreement across the four rotations of the same problem. A separate term penalized the average shift for each displayed letter. The fit used one-step packed-code edits in rows A, C and D and kept B byte-identical. The three frozen folds changed 11, 24 and 31 codes.
+
+On the expanded held set, the edit improved from **55/144 to 57/144** with two gains and zero losses. On the earlier held set it fell from **342/576 to 340/576**, with one gain and three losses. All three losses also occurred in Pilot 040. All 90 held ordinary winners were preserved in both the float64 and binary32 CPU replays. The older losses failed the frozen gate, so the trial ended at CPU evaluation. [Held metrics and exact packed-row recipes](../evidence/direct-accuracy-pilot-043.json)

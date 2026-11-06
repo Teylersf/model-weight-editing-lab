@@ -1,0 +1,652 @@
+{
+  "schema": "published-pilot043-canonical-consistency-v1",
+  "status": "failed_held_development_gate",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "plan_sha256": "651a85491cbbbdd15822df49a2321b382cac532ffa9d8ca28debc4a6769bac17",
+  "source_sha256": "6a688d1939585155ccc0476ddb68be3d2dfe4b196f26a317d6dc4b71f0ba8283",
+  "grouped_cpu_report_sha256": "0b1eac4f35bb39b06bf6a135c7367388676c83c9ecfdd885a0dc2fe3810deecf",
+  "ordinary_held_states": 90,
+  "ordinary_float64_winner_changes": 0,
+  "ordinary_binary32_winner_changes": 0,
+  "packed_row_recipe": {
+    "tensor": {
+      "name": "output.weight",
+      "quantization": "Q4_K",
+      "ggml_type": 12,
+      "dimensions": [
+        5120,
+        248320
+      ],
+      "offset": 10996640,
+      "bytes": 715161600
+    },
+    "row_bytes": 2880,
+    "coordinates_per_block": 256,
+    "block_bytes": 144,
+    "metadata_bytes_per_block": 16,
+    "steps": [
+      "Start each fold from the same pinned parent. Read each row at tensor offset plus token ID times row bytes, and verify its parent row digest.",
+      "For each zero-based coordinate c, set block = c // 256 and i = c % 256. Its row-relative byte offset is 144*block + 16 + 32*(i // 64) + i % 32. Its nibble shift is 4*((i // 32) % 2).",
+      "Add the paired signed code delta to that nibble without changing the other nibble or block metadata. Verify each reconstructed row digest."
+    ],
+    "all_fold_row_hashes_independently_reconstructed": true
+  },
+  "fit_input_pins": {
+    "prior_authored_baseline_sha256": "c12451d59c7fa134343ee88ce1e51b37a162e8c830b0eb239e143cdde63e4300",
+    "prior_authored_capture_sha256": "6920b54ed626630e22ff651d79d5bbec2ea9e8ec37947aeff54e5e43076e357a",
+    "expansion_baseline_sha256": "0ff35e2baad006540912cdaaed89f38f2e91d79f9b5cfd50a0b6eaef6c748952",
+    "expansion_capture_sha256": "eb5200d20c6cc4883f81417c6a1d5a78bb3ff510671d9fa73df0d13978ea9d02",
+    "ordinary_capture_sha256": "5a2bd762c194438513794fb22380621b306e4ba16af7f1a12a7c736f478fa81b"
+  },
+  "penalty_weights": {
+    "canonical_consistency": 0.75,
+    "displayed_letter_mean": 0.5
+  },
+  "held_older": {
+    "rotations": 576,
+    "items": 144,
+    "baseline_correct_rotations": 342,
+    "candidate_correct_rotations": 340,
+    "baseline_all_four": 46,
+    "candidate_all_four": 45,
+    "gains": 1,
+    "losses": 3,
+    "all_four_gains": 0,
+    "all_four_losses": 1,
+    "subjects": {
+      "high_school_mathematics": {
+        "rotations": 320,
+        "items": 80,
+        "baseline_correct_rotations": 205,
+        "candidate_correct_rotations": 204,
+        "baseline_all_four": 32,
+        "candidate_all_four": 32,
+        "gains": 0,
+        "losses": 1,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "college_mathematics": {
+        "rotations": 256,
+        "items": 64,
+        "baseline_correct_rotations": 137,
+        "candidate_correct_rotations": 136,
+        "baseline_all_four": 14,
+        "candidate_all_four": 13,
+        "gains": 1,
+        "losses": 2,
+        "all_four_gains": 0,
+        "all_four_losses": 1
+      }
+    }
+  },
+  "held_expanded": {
+    "rotations": 144,
+    "items": 36,
+    "baseline_correct_rotations": 55,
+    "candidate_correct_rotations": 57,
+    "baseline_all_four": 2,
+    "candidate_all_four": 2,
+    "gains": 2,
+    "losses": 0,
+    "all_four_gains": 0,
+    "all_four_losses": 0,
+    "subjects": {
+      "high_school_mathematics": {
+        "rotations": 72,
+        "items": 18,
+        "baseline_correct_rotations": 24,
+        "candidate_correct_rotations": 25,
+        "baseline_all_four": 1,
+        "candidate_all_four": 1,
+        "gains": 1,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "college_mathematics": {
+        "rotations": 72,
+        "items": 18,
+        "baseline_correct_rotations": 31,
+        "candidate_correct_rotations": 32,
+        "baseline_all_four": 1,
+        "candidate_all_four": 1,
+        "gains": 1,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    }
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "a63c6b879b290e039cdbfc89f04f8d6f2290bce39b3be851e3d9865129bb5730",
+      "rows": [
+        {
+          "token_id": 357,
+          "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+          "packed_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+          "changed_nibbles": 0,
+          "coordinates": [],
+          "signed_code_deltas": []
+        },
+        {
+          "token_id": 417,
+          "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+          "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+          "changed_nibbles": 0,
+          "coordinates": [],
+          "signed_code_deltas": []
+        },
+        {
+          "token_id": 351,
+          "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+          "packed_sha256": "216a902189e96b0aa35c1e33e7f91f0ce2f6c22e835d6cb6b88aac457ec41e68",
+          "changed_nibbles": 5,
+          "coordinates": [
+            944,
+            2379,
+            3420,
+            3534,
+            3836
+          ],
+          "signed_code_deltas": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "token_id": 414,
+          "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+          "packed_sha256": "4b0eab90d86d9bdc14c498c0adf0c78830bf223f02e4d98b5b3336cd3e1c056b",
+          "changed_nibbles": 6,
+          "coordinates": [
+            1434,
+            2379,
+            3016,
+            4038,
+            4530,
+            4856
+          ],
+          "signed_code_deltas": [
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1
+          ]
+        }
+      ],
+      "changed_nibbles": [
+        0,
+        0,
+        5,
+        6
+      ],
+      "held_older": {
+        "rotations": 192,
+        "items": 48,
+        "baseline_correct_rotations": 109,
+        "candidate_correct_rotations": 109,
+        "baseline_all_four": 16,
+        "candidate_all_four": 16,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0,
+        "subjects": {
+          "high_school_mathematics": {
+            "rotations": 128,
+            "items": 32,
+            "baseline_correct_rotations": 81,
+            "candidate_correct_rotations": 81,
+            "baseline_all_four": 14,
+            "candidate_all_four": 14,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "college_mathematics": {
+            "rotations": 64,
+            "items": 16,
+            "baseline_correct_rotations": 28,
+            "candidate_correct_rotations": 28,
+            "baseline_all_four": 2,
+            "candidate_all_four": 2,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          }
+        }
+      },
+      "held_expanded": {
+        "rotations": 48,
+        "items": 12,
+        "baseline_correct_rotations": 18,
+        "candidate_correct_rotations": 18,
+        "baseline_all_four": 1,
+        "candidate_all_four": 1,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0,
+        "subjects": {
+          "high_school_mathematics": {
+            "rotations": 24,
+            "items": 6,
+            "baseline_correct_rotations": 7,
+            "candidate_correct_rotations": 7,
+            "baseline_all_four": 1,
+            "candidate_all_four": 1,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "college_mathematics": {
+            "rotations": 24,
+            "items": 6,
+            "baseline_correct_rotations": 11,
+            "candidate_correct_rotations": 11,
+            "baseline_all_four": 0,
+            "candidate_all_four": 0,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          }
+        }
+      },
+      "held_ordinary_winner_changes": 0,
+      "held_shift_penalties": {
+        "canonical_variance": 0.004569644820154159,
+        "displayed_letter_mean_square": 0.0043829635263984154
+      }
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "8759d6071b6fcb29a74c01cf5c235aaf2771b2bf8c4d23464be19e43c3fcea77",
+      "rows": [
+        {
+          "token_id": 357,
+          "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+          "packed_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+          "changed_nibbles": 0,
+          "coordinates": [],
+          "signed_code_deltas": []
+        },
+        {
+          "token_id": 417,
+          "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+          "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+          "changed_nibbles": 0,
+          "coordinates": [],
+          "signed_code_deltas": []
+        },
+        {
+          "token_id": 351,
+          "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+          "packed_sha256": "b3037909a2022329f30ad55d1c73436701eb31ea704018e405e0ba540c3e96a2",
+          "changed_nibbles": 6,
+          "coordinates": [
+            1116,
+            1181,
+            2379,
+            3278,
+            4470,
+            4939
+          ],
+          "signed_code_deltas": [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ]
+        },
+        {
+          "token_id": 414,
+          "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+          "packed_sha256": "70e6ca4bd8da3674a7d506471ddb3398493720e9804a8a8f59a313a94469a55b",
+          "changed_nibbles": 18,
+          "coordinates": [
+            197,
+            350,
+            424,
+            1208,
+            1316,
+            1648,
+            1718,
+            1910,
+            1915,
+            2272,
+            2392,
+            3037,
+            3304,
+            3514,
+            4198,
+            4273,
+            4376,
+            4678
+          ],
+          "signed_code_deltas": [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ]
+        }
+      ],
+      "changed_nibbles": [
+        0,
+        0,
+        6,
+        18
+      ],
+      "held_older": {
+        "rotations": 192,
+        "items": 48,
+        "baseline_correct_rotations": 113,
+        "candidate_correct_rotations": 112,
+        "baseline_all_four": 15,
+        "candidate_all_four": 14,
+        "gains": 0,
+        "losses": 1,
+        "all_four_gains": 0,
+        "all_four_losses": 1,
+        "subjects": {
+          "high_school_mathematics": {
+            "rotations": 96,
+            "items": 24,
+            "baseline_correct_rotations": 64,
+            "candidate_correct_rotations": 64,
+            "baseline_all_four": 9,
+            "candidate_all_four": 9,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "college_mathematics": {
+            "rotations": 96,
+            "items": 24,
+            "baseline_correct_rotations": 49,
+            "candidate_correct_rotations": 48,
+            "baseline_all_four": 6,
+            "candidate_all_four": 5,
+            "gains": 0,
+            "losses": 1,
+            "all_four_gains": 0,
+            "all_four_losses": 1
+          }
+        }
+      },
+      "held_expanded": {
+        "rotations": 48,
+        "items": 12,
+        "baseline_correct_rotations": 15,
+        "candidate_correct_rotations": 17,
+        "baseline_all_four": 0,
+        "candidate_all_four": 0,
+        "gains": 2,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0,
+        "subjects": {
+          "high_school_mathematics": {
+            "rotations": 24,
+            "items": 6,
+            "baseline_correct_rotations": 5,
+            "candidate_correct_rotations": 6,
+            "baseline_all_four": 0,
+            "candidate_all_four": 0,
+            "gains": 1,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "college_mathematics": {
+            "rotations": 24,
+            "items": 6,
+            "baseline_correct_rotations": 10,
+            "candidate_correct_rotations": 11,
+            "baseline_all_four": 0,
+            "candidate_all_four": 0,
+            "gains": 1,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          }
+        }
+      },
+      "held_ordinary_winner_changes": 0,
+      "held_shift_penalties": {
+        "canonical_variance": 0.011458664121406906,
+        "displayed_letter_mean_square": 0.010947090103300541
+      }
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "506b3aa23a7c14234048f1a6463ebc15a8543aa7e25ac1074d5065848762690d",
+      "rows": [
+        {
+          "token_id": 357,
+          "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+          "packed_sha256": "3882e7e49bc4ebecbc64702dbb3b4f3eb09d34ff534b90a44310bb3a4490fda0",
+          "changed_nibbles": 3,
+          "coordinates": [
+            3283,
+            3911,
+            4038
+          ],
+          "signed_code_deltas": [
+            -1,
+            -1,
+            1
+          ]
+        },
+        {
+          "token_id": 417,
+          "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+          "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+          "changed_nibbles": 0,
+          "coordinates": [],
+          "signed_code_deltas": []
+        },
+        {
+          "token_id": 351,
+          "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+          "packed_sha256": "3b93448457c1484377e97060bd339f52d4f8e4fe2e52d805281c9776b94d7855",
+          "changed_nibbles": 7,
+          "coordinates": [
+            685,
+            944,
+            1356,
+            2768,
+            2857,
+            3495,
+            4505
+          ],
+          "signed_code_deltas": [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "token_id": 414,
+          "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+          "packed_sha256": "0e61bd86937d8eb25fa40d253e48e9cc645c1769065f5fe645c5371e45d84292",
+          "changed_nibbles": 21,
+          "coordinates": [
+            32,
+            493,
+            498,
+            511,
+            680,
+            821,
+            1095,
+            1305,
+            1316,
+            1369,
+            1417,
+            1609,
+            1648,
+            1910,
+            2272,
+            2392,
+            3269,
+            3500,
+            3821,
+            4198,
+            4875
+          ],
+          "signed_code_deltas": [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1
+          ]
+        }
+      ],
+      "changed_nibbles": [
+        3,
+        0,
+        7,
+        21
+      ],
+      "held_older": {
+        "rotations": 192,
+        "items": 48,
+        "baseline_correct_rotations": 120,
+        "candidate_correct_rotations": 119,
+        "baseline_all_four": 15,
+        "candidate_all_four": 15,
+        "gains": 1,
+        "losses": 2,
+        "all_four_gains": 0,
+        "all_four_losses": 0,
+        "subjects": {
+          "high_school_mathematics": {
+            "rotations": 96,
+            "items": 24,
+            "baseline_correct_rotations": 60,
+            "candidate_correct_rotations": 59,
+            "baseline_all_four": 9,
+            "candidate_all_four": 9,
+            "gains": 0,
+            "losses": 1,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "college_mathematics": {
+            "rotations": 96,
+            "items": 24,
+            "baseline_correct_rotations": 60,
+            "candidate_correct_rotations": 60,
+            "baseline_all_four": 6,
+            "candidate_all_four": 6,
+            "gains": 1,
+            "losses": 1,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          }
+        }
+      },
+      "held_expanded": {
+        "rotations": 48,
+        "items": 12,
+        "baseline_correct_rotations": 22,
+        "candidate_correct_rotations": 22,
+        "baseline_all_four": 1,
+        "candidate_all_four": 1,
+        "gains": 0,
+        "losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0,
+        "subjects": {
+          "high_school_mathematics": {
+            "rotations": 24,
+            "items": 6,
+            "baseline_correct_rotations": 12,
+            "candidate_correct_rotations": 12,
+            "baseline_all_four": 0,
+            "candidate_all_four": 0,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "college_mathematics": {
+            "rotations": 24,
+            "items": 6,
+            "baseline_correct_rotations": 10,
+            "candidate_correct_rotations": 10,
+            "baseline_all_four": 1,
+            "candidate_all_four": 1,
+            "gains": 0,
+            "losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          }
+        }
+      },
+      "held_ordinary_winner_changes": 0,
+      "held_shift_penalties": {
+        "canonical_variance": 0.015369952313247157,
+        "displayed_letter_mean_square": 0.013119335461005664
+      }
+    }
+  ],
+  "older_losses_shared_with_pilot040": 3,
+  "expanded_gains_shared_with_pilot040": 2,
+  "pilot040_comparison_report_sha256": "65e5dcea3e146d54d9ce8ed6174dc9560e3b49a88c8f5f2f389068fe10efd205",
+  "all_folds_frozen_before_held": true,
+  "native_candidate_executed": false,
+  "checkpoint_written": false,
+  "pilot042_outcomes_used": false,
+  "protected_or_benchmark_inputs_used": false
+}
