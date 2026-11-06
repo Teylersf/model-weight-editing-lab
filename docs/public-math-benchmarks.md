@@ -145,3 +145,9 @@ The subsequent direct D63 edit corrected two authored rotations and preserved ev
 The two-row Pilot 027 edit improved one previous miss and lost two previous correct answers on the same matched suite, for **225/370 versus 226/370**. It preserved both exact proofs and the correct 282-token cylinder solution. The net accuracy gate failed. [Pilot 027 evidence and replay](case-study.md#twenty-seventh-pilot-with-two-packed-answer-rows)
 
 Pilot 028’s grouped authored tests improved both pooled measures, but matched MMLU stayed at **226/370** with ten gains and ten losses. It preserved the interval proof and the 282-token cylinder. The correct Euler answer used a different token stream and failed exact replay. [Pilot 028 evidence and replay](case-study.md#twenty-eighth-pilot-with-held-family-training)
+
+## Pilot 176 matched and blinded results
+
+The saved four-row scale edit improved from **226/370 to 228/370** on the matched MMLU suite. It recovered two high-school answers and retained all 226 previous correct answers. Both protected proof streams and the correct natural **282-token** cylinder completion matched exactly. [Matched score](../evidence/direct-accuracy-pilot-179-provisional-matched-scale.json) · [Protected generation](../evidence/direct-accuracy-pilot-178-provisional-protected-generation.json)
+
+The separate blinded run tied at **42/96** correct trials and **2/24** problems correct in all four answer orders, with no gains or losses. The candidate therefore missed the fresh skill requirement. [Blinded evaluation](../evidence/direct-accuracy-pilot-180-blinded-fresh-scale.json)

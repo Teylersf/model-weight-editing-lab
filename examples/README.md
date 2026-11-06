@@ -62,3 +62,25 @@ python examples/verify_pilot122_query_overlay.py --model /path/to/pilot-024.gguf
 
 The recipes identify the IQ4_XS code indices, signed changes, and full-row
 hashes. [Recipes and measured CUDA screen](../evidence/direct-accuracy-pilot-122-query-overlay.json)
+
+## Replay the Pilot 176 output-scale edit
+
+Use the exact Pilot 024 GGUF with SHA-256
+`674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3`.
+The verifier streams the checkpoint on CPU and checks the GGUF layout, each
+edited row, and both full checkpoint hashes. Omit `--output` for read-only
+verification.
+
+```sh
+python examples/replay_output_scale_edit.py --parent /path/to/pilot-024.gguf
+```
+
+Expect `VERIFIED_ONLY`, 157 binary16 fields across four `output.weight` rows,
+166 changed bytes, and candidate SHA-256
+`c05db6800071fa61eea09de4e8e270e6aa36126617c88449f2b227f2cfcd4ce8`.
+The capsule gives the exact little-endian before and after values for the
+`d` and `dmin` fields at offsets 0–3 within their 144-byte Q4_K blocks.
+[Pilot 176 patch capsule](../evidence/direct-closure-pilot-176-row-patch.json)
+
+Add `--output /path/to/pilot-176.gguf` to write the verified checkpoint to
+a fresh path on a hard-link-capable filesystem with room for the 11.67 GB file.

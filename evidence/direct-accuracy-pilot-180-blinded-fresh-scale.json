@@ -1,0 +1,62 @@
+{
+  "schema": "public-direct-accuracy-pilot180-blinded-fresh-scale-v1",
+  "status": "REJECTED_NO_FRESH_SKILL_GAIN",
+  "receipt_sha256": "da3bbd414872893aaae58a3cd2d9843e4f6f73d6eb1dacff860b3265fa238b94",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_sha256": "c05db6800071fa61eea09de4e8e270e6aa36126617c88449f2b227f2cfcd4ce8",
+  "prior_gates": {
+    "readback": "7a027114bcc18ce8eb50854805cbaf188ce1fe08651c620dfc03a1884ec30226",
+    "proof_plan": "631b93f45cdbed2922e35c7a2a8e3ca75bfddc1412739cf0e004af8feb043473",
+    "proof_cylinder": "e1b1d71e920b97d37f3a2ea657df15ea82d5bbccb3428f296ed6f76efbf1282c",
+    "mmlu_plan": "6d2c49c354476f72ba76b89a347f04475b39144005cafc43ec04859b97480fdb",
+    "mmlu": "21ccf70ab9cd1ea8db699e2339e6cebe79ec80ee922a9d51b285499aa85a01b8",
+    "mmlu_run_id": "mmlu-math-direct-repair-176-scale-01"
+  },
+  "frozen_plan_sha256": "9470f4839a698acc033bfd1c757135efe92aa6371a757a007bf566530d2c8d31",
+  "preparation_sha256": "d7bdec8bce1354aba10d19c0fa45edb232398a3bfd3a8ad4bf048934ff0b4a46",
+  "anonymous_native_receipt_sha256": {
+    "A": "f22524c070c27b44a45155a906c37dcb3aada43eb892adb5acdf3eafd7f4498e",
+    "B": "945241f17930ac6ceea6e2304a08856cc7c71ef0ffae6ac2eec56b8214e274e9"
+  },
+  "score_lineage_sha256": "da201be1b47c5ac68c9c391c4b96481c628d240e2f8058ff6f532a9015fee727",
+  "blind_grade_sha256": "9f4a06b1ba9dab57be61a453d6d0918f64ae17ba41e3a17a7faaf22d9a109e24",
+  "items": 24,
+  "trials": 96,
+  "independently_recomputed_answers": 24,
+  "baseline": {
+    "correct_trials": 42,
+    "items_correct_all_four": 2,
+    "items_by_correct_orders": [
+      3,
+      8,
+      7,
+      4,
+      2
+    ],
+    "items_same_content_all_four": 4,
+    "tied_trials": 0
+  },
+  "candidate": {
+    "correct_trials": 42,
+    "items_correct_all_four": 2,
+    "items_by_correct_orders": [
+      3,
+      8,
+      7,
+      4,
+      2
+    ],
+    "items_same_content_all_four": 4,
+    "tied_trials": 0
+  },
+  "correctness_delta": {
+    "correct_trials": 0,
+    "items_correct_all_four": 0
+  },
+  "trial_gains": 0,
+  "trial_losses": 0,
+  "all_four_item_gains": 0,
+  "all_four_item_losses": 0,
+  "checkpoint_promoted": false,
+  "fresh_inputs_used_for_fitting": false
+}
