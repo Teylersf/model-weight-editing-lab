@@ -1058,3 +1058,21 @@ Both candidates preserved **119/192** correct choices and **40/96** both-correct
 The search added **128** previously unused coordinates to the mixed gate and up support, giving 737 additional legal code endpoints. Both continuous solves cleared the local signed floors and objective caps. Both bounded integer solves timed out without an incumbent.
 
 Exact replay of the two rounded proposals preserved all 60 ordinary winners and 480 ordinary floors. Math-margin violations rose from **7** on the anchor to **44** and **62**, and both proposals worsened the primary objective. This result motivates measuring individual code substitutions before forming a packed combination. [Support, exact replay, and solver receipts](../evidence/direct-accuracy-pilot-127-expanded-packed-support.json)
+
+## Pilot 128 with paired signs at the same query coordinates
+
+The CUDA runner changed one IQ4_XS code at a time in both legal directions at four query coordinates. The best probe raised the near miss's margin against its strongest rival by **0.01068** logits, leaving a **0.04222**-logit deficit and preserving every stock-correct choice in that probe. Across the eight probes, one stock-correct choice was lost and no miss was repaired. The initial and restored passes exactly matched the 16 prior full-vocabulary logit digests.
+
+The CPU heuristic predicted the correct direction in **three of eight** cases. Both code directions improved the near margin at three of the four coordinates, so reversing the code change did not reliably reverse its effect. Even the optimistic sum of the best measured direction per coordinate was **0.02423** logits against the **0.05291** needed. [Exact code recipes, rival margins, and calibration controls](../evidence/direct-accuracy-pilot-128-signed-query-endpoints.json)
+
+## Pilot 129 with an exact query repair on a fitting problem
+
+Eight signed patches targeted a different fitting problem, where the parent trailed by **0.01076** logits. Four patches changed the winning answer to the independently verified correct choice. Three of those also lost a prior correct choice. The remaining patch used **24** codes in 12 query rows, reached **+0.000454** logits, and preserved all 13 prior correct choices and their half-margin floors. It increased screen accuracy from **13/16 to 14/16**.
+
+The restored full-vocabulary logit digests matched on all 16 states. An independent read-only stream also reconstructed the repaired patch and computed its predicted GGUF digest. A stdout formatting error occurred after the native and score receipts were sealed. Read-only verification reproduced the gate outcome from those artifacts. This was a fitting result with full fitting and held qualification measured separately. [Packed recipes, exact replay, and predicted digest](../evidence/direct-accuracy-pilot-129-signed-query-repair.json)
+
+## Pilot 130 with measured sparse feed-forward substitutions
+
+The search measured **320** substitutions and ran **32** full exact training replays. The best 360-code recipe moved both objectives below their parent caps and preserved all **60** ordinary winners. It reduced the number of missed math margins from **seven to six** and lowered their total shortfall from **0.17505 to 0.12903** logits. The six remaining margins kept this recipe at the training gate.
+
+An independent read-only stream rebuilt all **16** declared IQ4_XS and Q4_K rows, checked their packed digests, and computed the expected whole-checkpoint digest from the unchanged spans and rebuilt rows. [Exact recipe, full-stream check, and bounded search results](../evidence/direct-accuracy-pilot-130-sparse-novel-substitutions.json)
