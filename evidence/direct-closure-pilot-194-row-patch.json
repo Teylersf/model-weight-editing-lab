@@ -1,0 +1,1147 @@
+{
+  "schema": "public-direct-output-multirow-q4k-mixed-patch-v1",
+  "pilot": 194,
+  "checkpoint_bytes": 11674147744,
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_sha256": "e2bda6ca06e17d74cb46f36cb407fd99035323a297425feba04eb76048ec8d7b",
+  "tensor": {
+    "name": "output.weight",
+    "quantization": "Q4_K",
+    "ggml_type": 12,
+    "dimensions": [
+      5120,
+      248320
+    ],
+    "offset": 10996640,
+    "bytes": 715161600
+  },
+  "rows": [
+    {
+      "token_id": 351,
+      "offset": 12007520,
+      "bytes": 2880,
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "6e05",
+          "after": "4305"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "6a10",
+          "after": "4b10"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "0d07",
+          "after": "0607"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "0a15",
+          "after": "0515"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "6905",
+          "after": "5405"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "6b11",
+          "after": "4e11"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "de04",
+          "after": "ca04"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "f810",
+          "after": "df10"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "d106",
+          "after": "ca06"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "7313",
+          "after": "6013"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "6911",
+          "after": "7911"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "9303",
+          "after": "9a03"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "4110",
+          "after": "4d10"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "6004",
+          "after": "5604"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "4310",
+          "after": "4010"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "9a06",
+          "after": "8606"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "d310",
+          "after": "bd10"
+        },
+        {
+          "block": 9,
+          "field": "d",
+          "before": "0e05",
+          "after": "1305"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "1f11",
+          "after": "2311"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "5c04",
+          "after": "6e04"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "2f11",
+          "after": "5a11"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "9f04",
+          "after": "ba04"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "f110",
+          "after": "fc10"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "ef06",
+          "after": "e406"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "7712",
+          "after": "6412"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "2905",
+          "after": "3105"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "2712",
+          "after": "3a12"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "3d04",
+          "after": "2d04"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "f30f",
+          "after": "e00f"
+        },
+        {
+          "block": 15,
+          "field": "d",
+          "before": "3d06",
+          "after": "3a06"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "4711",
+          "after": "4b11"
+        },
+        {
+          "block": 16,
+          "field": "d",
+          "before": "6606",
+          "after": "7b06"
+        },
+        {
+          "block": 16,
+          "field": "dmin",
+          "before": "a911",
+          "after": "c411"
+        },
+        {
+          "block": 17,
+          "field": "d",
+          "before": "ce04",
+          "after": "ba04"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "5b11",
+          "after": "2f11"
+        },
+        {
+          "block": 18,
+          "field": "d",
+          "before": "bc04",
+          "after": "c804"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "9c10",
+          "after": "9f10"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "8905",
+          "after": "a705"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "1a13",
+          "after": "3813"
+        }
+      ],
+      "changed_codes": [
+        {
+          "coordinate": 4328,
+          "signed_code_delta": 1,
+          "before": 6,
+          "after": 7
+        },
+        {
+          "coordinate": 4479,
+          "signed_code_delta": -1,
+          "before": 2,
+          "after": 1
+        }
+      ],
+      "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+      "candidate_sha256": "3e483c47bd2388c53c761e51ca3e495eff181baf38bcf724b294ca742da038fa"
+    },
+    {
+      "token_id": 357,
+      "offset": 12024800,
+      "bytes": 2880,
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "0606",
+          "after": "e305"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "7911",
+          "after": "5211"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "3807",
+          "after": "3707"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "c815",
+          "after": "d815"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "2905",
+          "after": "0305"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "fe10",
+          "after": "ce10"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "7804",
+          "after": "6f04"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "5611",
+          "after": "3e11"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "a706",
+          "after": "bc06"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "3e13",
+          "after": "4513"
+        },
+        {
+          "block": 5,
+          "field": "d",
+          "before": "6704",
+          "after": "4d04"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "df0f",
+          "after": "9a0f"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "4804",
+          "after": "5e04"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "dd10",
+          "after": "0611"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "2e04",
+          "after": "2b04"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "6a10",
+          "after": "6210"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "c304",
+          "after": "bf04"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "c510",
+          "after": "c110"
+        },
+        {
+          "block": 9,
+          "field": "d",
+          "before": "e204",
+          "after": "d004"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "5011",
+          "after": "3511"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "0f05",
+          "after": "1305"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "c710",
+          "after": "c510"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "1005",
+          "after": "1705"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "8412",
+          "after": "8212"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "7e06",
+          "after": "7806"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "bb10",
+          "after": "ae10"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "5f04",
+          "after": "6004"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "2b10",
+          "after": "3210"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "2604",
+          "after": "2d04"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "8d10",
+          "after": "8e10"
+        },
+        {
+          "block": 15,
+          "field": "d",
+          "before": "3806",
+          "after": "3506"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "eb11",
+          "after": "f011"
+        },
+        {
+          "block": 16,
+          "field": "d",
+          "before": "2d06",
+          "after": "2106"
+        },
+        {
+          "block": 16,
+          "field": "dmin",
+          "before": "d210",
+          "after": "cc10"
+        },
+        {
+          "block": 17,
+          "field": "d",
+          "before": "3605",
+          "after": "5405"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "4312",
+          "after": "6512"
+        },
+        {
+          "block": 18,
+          "field": "d",
+          "before": "b904",
+          "after": "aa04"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "ab11",
+          "after": "a111"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "9504",
+          "after": "ac04"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "1e11",
+          "after": "3811"
+        }
+      ],
+      "changed_codes": [
+        {
+          "coordinate": 4218,
+          "signed_code_delta": 1,
+          "before": 12,
+          "after": 13
+        },
+        {
+          "coordinate": 4342,
+          "signed_code_delta": -1,
+          "before": 9,
+          "after": 8
+        },
+        {
+          "coordinate": 4776,
+          "signed_code_delta": -1,
+          "before": 5,
+          "after": 4
+        }
+      ],
+      "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+      "candidate_sha256": "ed3a44673131a323e5107b5d505bd0800fdb931c5539876f1e1213192fb19ae8"
+    },
+    {
+      "token_id": 414,
+      "offset": 12188960,
+      "bytes": 2880,
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "d805",
+          "after": "e005"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "a110",
+          "after": "9310"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "7a07",
+          "after": "8707"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "3f15",
+          "after": "4715"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "8605",
+          "after": "9205"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "ca10",
+          "after": "df10"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "3104",
+          "after": "2304"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "5810",
+          "after": "7110"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "fa05",
+          "after": "ee05"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "4c12",
+          "after": "6112"
+        },
+        {
+          "block": 5,
+          "field": "d",
+          "before": "9f04",
+          "after": "9504"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "d50f",
+          "after": "ca0f"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "db04",
+          "after": "0105"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "2b10",
+          "after": "5610"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "bf04",
+          "after": "e204"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "1710",
+          "after": "4010"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "c804",
+          "after": "bc04"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "ca10",
+          "after": "c910"
+        },
+        {
+          "block": 9,
+          "field": "d",
+          "before": "0e05",
+          "after": "e404"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "7412",
+          "after": "4012"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "2104",
+          "after": "0104"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "2f10",
+          "after": "0210"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "7b04",
+          "after": "7004"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "d710",
+          "after": "dc10"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "5206",
+          "after": "5606"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "9212",
+          "after": "a212"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "6804",
+          "after": "8004"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "ae10",
+          "after": "be10"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "8f04",
+          "after": "9c04"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "8010",
+          "after": "9710"
+        },
+        {
+          "block": 15,
+          "field": "d",
+          "before": "2605",
+          "after": "3805"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "7f11",
+          "after": "8711"
+        },
+        {
+          "block": 16,
+          "field": "dmin",
+          "before": "3611",
+          "after": "4611"
+        },
+        {
+          "block": 17,
+          "field": "d",
+          "before": "be04",
+          "after": "a704"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "9d10",
+          "after": "8a10"
+        },
+        {
+          "block": 18,
+          "field": "d",
+          "before": "eb04",
+          "after": "de04"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "5311",
+          "after": "4411"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "0c06",
+          "after": "3b06"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "2013",
+          "after": "6813"
+        }
+      ],
+      "changed_codes": [
+        {
+          "coordinate": 443,
+          "signed_code_delta": 1,
+          "before": 8,
+          "after": 9
+        },
+        {
+          "coordinate": 502,
+          "signed_code_delta": -1,
+          "before": 11,
+          "after": 10
+        },
+        {
+          "coordinate": 2612,
+          "signed_code_delta": 1,
+          "before": 13,
+          "after": 14
+        },
+        {
+          "coordinate": 4030,
+          "signed_code_delta": 1,
+          "before": 8,
+          "after": 9
+        },
+        {
+          "coordinate": 4453,
+          "signed_code_delta": -1,
+          "before": 6,
+          "after": 5
+        }
+      ],
+      "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+      "candidate_sha256": "cba3b7e52b31b068bbaaa1cde15fde2a29e277dc2d2b798daf0476f7febf68ec"
+    },
+    {
+      "token_id": 417,
+      "offset": 12197600,
+      "bytes": 2880,
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "9106",
+          "after": "8606"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "0f11",
+          "after": "1411"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "9d07",
+          "after": "6307"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "dd14",
+          "after": "a314"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "e705",
+          "after": "f005"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "4610",
+          "after": "5110"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "9904",
+          "after": "d704"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "e210",
+          "after": "1611"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "e405",
+          "after": "f205"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "4e12",
+          "after": "4812"
+        },
+        {
+          "block": 5,
+          "field": "d",
+          "before": "f604",
+          "after": "f504"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "8410",
+          "after": "9510"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "8c04",
+          "after": "9004"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "b710",
+          "after": "a810"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "b104",
+          "after": "7c04"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "2310",
+          "after": "0210"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "5604",
+          "after": "6804"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "b410",
+          "after": "de10"
+        },
+        {
+          "block": 9,
+          "field": "d",
+          "before": "3e05",
+          "after": "5805"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "b211",
+          "after": "cd11"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "e804",
+          "after": "eb04"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "ad10",
+          "after": "be10"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "9b04",
+          "after": "bf04"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "7a10",
+          "after": "8410"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "1406",
+          "after": "2206"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "f811",
+          "after": "0812"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "c204",
+          "after": "be04"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "6311",
+          "after": "6e11"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "5404",
+          "after": "4b04"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "5910",
+          "after": "6010"
+        },
+        {
+          "block": 15,
+          "field": "d",
+          "before": "d805",
+          "after": "da05"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "4410",
+          "after": "5510"
+        },
+        {
+          "block": 16,
+          "field": "d",
+          "before": "8305",
+          "after": "9705"
+        },
+        {
+          "block": 16,
+          "field": "dmin",
+          "before": "be10",
+          "after": "d210"
+        },
+        {
+          "block": 17,
+          "field": "d",
+          "before": "4705",
+          "after": "2305"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "0411",
+          "after": "e110"
+        },
+        {
+          "block": 18,
+          "field": "d",
+          "before": "2505",
+          "after": "4305"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "0e10",
+          "after": "2910"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "6805",
+          "after": "5d05"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "a712",
+          "after": "8a12"
+        }
+      ],
+      "changed_codes": [
+        {
+          "coordinate": 751,
+          "signed_code_delta": -1,
+          "before": 7,
+          "after": 6
+        },
+        {
+          "coordinate": 2429,
+          "signed_code_delta": -1,
+          "before": 11,
+          "after": 10
+        },
+        {
+          "coordinate": 2574,
+          "signed_code_delta": -1,
+          "before": 3,
+          "after": 2
+        },
+        {
+          "coordinate": 3227,
+          "signed_code_delta": 1,
+          "before": 13,
+          "after": 14
+        },
+        {
+          "coordinate": 3863,
+          "signed_code_delta": 1,
+          "before": 9,
+          "after": 10
+        },
+        {
+          "coordinate": 3991,
+          "signed_code_delta": -1,
+          "before": 8,
+          "after": 7
+        },
+        {
+          "coordinate": 4265,
+          "signed_code_delta": 1,
+          "before": 6,
+          "after": 7
+        },
+        {
+          "coordinate": 4421,
+          "signed_code_delta": 1,
+          "before": 4,
+          "after": 5
+        },
+        {
+          "coordinate": 4479,
+          "signed_code_delta": -1,
+          "before": 3,
+          "after": 2
+        },
+        {
+          "coordinate": 4601,
+          "signed_code_delta": -1,
+          "before": 10,
+          "after": 9
+        },
+        {
+          "coordinate": 5021,
+          "signed_code_delta": -1,
+          "before": 5,
+          "after": 4
+        }
+      ],
+      "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+      "candidate_sha256": "b529dd90199f9a2aacb9d44b7dd12f2a75c0492096b2caaa45faf573c4d73163"
+    }
+  ],
+  "changed_binary16_fields": 158,
+  "changed_code_nibbles": 21,
+  "changed_bytes": 186,
+  "source_receipts": {
+    "pilot_194_fit_sha256": "5116b552c41c47a8fd8ee8c27ae81f25286ccd80e71e6eb62b15a0ea0f510f2a",
+    "pilot_194_plan_sha256": "6bf5925b099e8fa1277b59e144a8465477abe1593369a30660bf632b23279d33",
+    "pilot_194_recipe_sha256": "d52181b012e96725f638d5b1ef4e7a3c34b7af2119c45e0581206055d362c8c0",
+    "pilot_198_readback_sha256": "2590e6d7d9ba8e1fca4ab7c7b1f44b30a72661c359af142e8f4b9912a151fcdb"
+  }
+}

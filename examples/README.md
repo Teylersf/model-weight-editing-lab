@@ -84,3 +84,20 @@ The capsule gives the exact little-endian before and after values for the
 
 Add `--output /path/to/pilot-176.gguf` to write the verified checkpoint to
 a fresh path on a hard-link-capable filesystem with room for the 11.67 GB file.
+
+## Replay the Pilot 194 mixed output edit
+
+Use the exact Pilot 024 GGUF pinned above. The command checks every modified
+row and streams both full checkpoint hashes on CPU.
+
+```sh
+python examples/replay_output_mixed_edit.py --parent /path/to/pilot-024.gguf
+```
+
+Expect `VERIFIED_ONLY`, 158 binary16 fields and 21 four-bit codes across four
+output-weight rows, and 186 changed bytes. The exact checkpoint SHA-256 is
+`e2bda6ca06e17d74cb46f36cb407fd99035323a297425feba04eb76048ec8d7b`.
+[Pilot 194 patch capsule](../evidence/direct-closure-pilot-194-row-patch.json)
+
+Add `--output /path/to/pilot-194.gguf` to write a verified copy to a fresh path
+on a hard-link-capable filesystem with room for the 11.67 GB file.
