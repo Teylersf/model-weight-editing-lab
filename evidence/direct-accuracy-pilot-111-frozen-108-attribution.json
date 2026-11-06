@@ -1,0 +1,361 @@
+{
+  "schema": "published-pilot111-frozen-108-attribution-v1",
+  "source_sha256": "0a3b21222bcd68dc9f494f4146cb4d3937401be24b6206cd89eb19558df33690",
+  "pins": {
+    "p093_source": "7d4011362d40bd9b0c08e82339b473ee232562a200d859acda085f55de0bc04e",
+    "p101_fit": "0308dc869f9c3071175f831d30729c68f9140fca6c44b8d8dd709911f779a062",
+    "p101_grouped": "5784544bfa287fab67779999c6c873ad1089e83daad4ae9b559f5b2fa0ceb8d8",
+    "p103_source": "45c22af7c7ac0c032951b5383362c7e3668bbcf270fdc5f7edc979a90235013b",
+    "p103_report": "2e66f2214942e3113fe3d4ee7ea691834f5ede2cd4504ebcf70dacc767838801",
+    "p108_qualification_source": "f0f8efe80594a26d51e630e77b5a595f0e10c515cbdb36217c50021d8a930b43",
+    "p108_qualification_plan": "5320bf518c1310bc4912a83b766db98b341e0df3b3e7a1c2005ffb6c57a052da",
+    "p108_fit": "61d4d7def335ed0e5bdeea039289df0210945425fb4829ae37bcb7086f55c362",
+    "p108_reserve": "2f4a99e3f80f0b6c91c1741d325950cd38612ddcb7202f8cf1cc7ee1937acf63",
+    "p108_held": "374a22becac34338e9f4b65eabd18605f87aff999cf62e084b9f14a8b9f69a87",
+    "p108_packed_readback": "9e5ef029ca373973ba41908e23faca4e2e56d194fddd413edb1e12bd7d10ad0a",
+    "p108_full_replay_digest": "7a449bff115cdde1286ffc9a21d34050a220f720ade444868407751f5d53bcb7"
+  },
+  "parent": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "rejected_candidate_replay_sha256": "21166a859499dd0294dc9cf43955018795ef5e8322a44246fec660c4be2f963f",
+  "held_fold": 2,
+  "held_choice_states": 752,
+  "held_ordinary": {
+    "states": 30,
+    "archived_top64_winner_changes": 0,
+    "binary32_archived_top64_winner_changes": 0,
+    "min_archived_top64_winner_margin": 0.03593647195611993
+  },
+  "held_053_pairs": {
+    "matches": 128,
+    "baseline_both_correct": 22,
+    "candidate_both_correct": 22,
+    "gains": 0,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 32,
+        "baseline_both_correct": 6,
+        "candidate_both_correct": 6,
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "matches": 32,
+        "baseline_both_correct": 6,
+        "candidate_both_correct": 6,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 32,
+        "baseline_both_correct": 5,
+        "candidate_both_correct": 5,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 32,
+        "baseline_both_correct": 5,
+        "candidate_both_correct": 5,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "exact_totals": {
+    "parent_correct": 436,
+    "candidate_correct": 436,
+    "gains": 2,
+    "losses": 2,
+    "ties": 0
+  },
+  "pooled_control_totals": {
+    "parent_point_linear": {
+      "before": 436,
+      "after": 436,
+      "gains": 2,
+      "losses": 2,
+      "ties": 0,
+      "joint_losses_reproduced": 2,
+      "joint_losses_same_wrong_winner": 2
+    },
+    "without_candidate_head_q8": {
+      "before": 436,
+      "after": 435,
+      "gains": 1,
+      "losses": 2,
+      "ties": 0,
+      "joint_losses_reproduced": 2,
+      "joint_losses_same_wrong_winner": 2
+    },
+    "gate_only": {
+      "before": 436,
+      "after": 440,
+      "gains": 12,
+      "losses": 8,
+      "ties": 0,
+      "joint_losses_reproduced": 0,
+      "joint_losses_same_wrong_winner": 0
+    },
+    "up_only": {
+      "before": 436,
+      "after": 435,
+      "gains": 7,
+      "losses": 8,
+      "ties": 0,
+      "joint_losses_reproduced": 2,
+      "joint_losses_same_wrong_winner": 2
+    }
+  },
+  "exact_p101_loss_overlap": {
+    "p108_losses": 2,
+    "p101_losses": 4,
+    "same_source_presentation_losses": 2,
+    "same_source_presentation_losses_by_cohort": {
+      "053": 1,
+      "044": 1
+    }
+  },
+  "cohorts": {
+    "053": {
+      "states": 256,
+      "exact": {
+        "parent_correct": 136,
+        "candidate_correct": 135,
+        "gains": 0,
+        "losses": 1,
+        "ties": 0
+      },
+      "controls": {
+        "parent_point_linear": {
+          "before": 136,
+          "after": 135,
+          "gains": 0,
+          "losses": 1,
+          "ties": 0,
+          "joint_losses_reproduced": 1,
+          "joint_losses_same_wrong_winner": 1
+        },
+        "without_candidate_head_q8": {
+          "before": 136,
+          "after": 135,
+          "gains": 0,
+          "losses": 1,
+          "ties": 0,
+          "joint_losses_reproduced": 1,
+          "joint_losses_same_wrong_winner": 1
+        },
+        "gate_only": {
+          "before": 136,
+          "after": 138,
+          "gains": 7,
+          "losses": 5,
+          "ties": 0,
+          "joint_losses_reproduced": 0,
+          "joint_losses_same_wrong_winner": 0
+        },
+        "up_only": {
+          "before": 136,
+          "after": 138,
+          "gains": 5,
+          "losses": 3,
+          "ties": 0,
+          "joint_losses_reproduced": 1,
+          "joint_losses_same_wrong_winner": 1
+        }
+      },
+      "lost_parent_gold_margins": {
+        "count": 1,
+        "min": 0.0494232177734375,
+        "max": 0.0494232177734375
+      },
+      "lost_candidate_gold_margins": {
+        "count": 1,
+        "min": -0.05308341979980469,
+        "max": -0.05308341979980469
+      },
+      "prior_101_losses_same_rows": 1,
+      "max_abs_exact_minus_linear_logit": 0.06882220728643418
+    },
+    "044": {
+      "states": 256,
+      "exact": {
+        "parent_correct": 158,
+        "candidate_correct": 159,
+        "gains": 2,
+        "losses": 1,
+        "ties": 0
+      },
+      "controls": {
+        "parent_point_linear": {
+          "before": 158,
+          "after": 158,
+          "gains": 1,
+          "losses": 1,
+          "ties": 0,
+          "joint_losses_reproduced": 1,
+          "joint_losses_same_wrong_winner": 1
+        },
+        "without_candidate_head_q8": {
+          "before": 158,
+          "after": 158,
+          "gains": 1,
+          "losses": 1,
+          "ties": 0,
+          "joint_losses_reproduced": 1,
+          "joint_losses_same_wrong_winner": 1
+        },
+        "gate_only": {
+          "before": 158,
+          "after": 161,
+          "gains": 4,
+          "losses": 1,
+          "ties": 0,
+          "joint_losses_reproduced": 0,
+          "joint_losses_same_wrong_winner": 0
+        },
+        "up_only": {
+          "before": 158,
+          "after": 156,
+          "gains": 1,
+          "losses": 3,
+          "ties": 0,
+          "joint_losses_reproduced": 1,
+          "joint_losses_same_wrong_winner": 1
+        }
+      },
+      "lost_parent_gold_margins": {
+        "count": 1,
+        "min": 0.08704376220703125,
+        "max": 0.08704376220703125
+      },
+      "lost_candidate_gold_margins": {
+        "count": 1,
+        "min": -0.05408477783203125,
+        "max": -0.05408477783203125
+      },
+      "prior_101_losses_same_rows": 1,
+      "max_abs_exact_minus_linear_logit": 0.06425689785245225
+    },
+    "028": {
+      "states": 192,
+      "exact": {
+        "parent_correct": 120,
+        "candidate_correct": 120,
+        "gains": 0,
+        "losses": 0,
+        "ties": 0
+      },
+      "controls": {
+        "parent_point_linear": {
+          "before": 120,
+          "after": 121,
+          "gains": 1,
+          "losses": 0,
+          "ties": 0,
+          "joint_losses_reproduced": 0,
+          "joint_losses_same_wrong_winner": 0
+        },
+        "without_candidate_head_q8": {
+          "before": 120,
+          "after": 120,
+          "gains": 0,
+          "losses": 0,
+          "ties": 0,
+          "joint_losses_reproduced": 0,
+          "joint_losses_same_wrong_winner": 0
+        },
+        "gate_only": {
+          "before": 120,
+          "after": 119,
+          "gains": 1,
+          "losses": 2,
+          "ties": 0,
+          "joint_losses_reproduced": 0,
+          "joint_losses_same_wrong_winner": 0
+        },
+        "up_only": {
+          "before": 120,
+          "after": 119,
+          "gains": 1,
+          "losses": 2,
+          "ties": 0,
+          "joint_losses_reproduced": 0,
+          "joint_losses_same_wrong_winner": 0
+        }
+      },
+      "lost_parent_gold_margins": {
+        "count": 0
+      },
+      "lost_candidate_gold_margins": {
+        "count": 0
+      },
+      "prior_101_losses_same_rows": 0,
+      "max_abs_exact_minus_linear_logit": 0.07175972190564295
+    },
+    "039": {
+      "states": 48,
+      "exact": {
+        "parent_correct": 22,
+        "candidate_correct": 22,
+        "gains": 0,
+        "losses": 0,
+        "ties": 0
+      },
+      "controls": {
+        "parent_point_linear": {
+          "before": 22,
+          "after": 22,
+          "gains": 0,
+          "losses": 0,
+          "ties": 0,
+          "joint_losses_reproduced": 0,
+          "joint_losses_same_wrong_winner": 0
+        },
+        "without_candidate_head_q8": {
+          "before": 22,
+          "after": 22,
+          "gains": 0,
+          "losses": 0,
+          "ties": 0,
+          "joint_losses_reproduced": 0,
+          "joint_losses_same_wrong_winner": 0
+        },
+        "gate_only": {
+          "before": 22,
+          "after": 22,
+          "gains": 0,
+          "losses": 0,
+          "ties": 0,
+          "joint_losses_reproduced": 0,
+          "joint_losses_same_wrong_winner": 0
+        },
+        "up_only": {
+          "before": 22,
+          "after": 22,
+          "gains": 0,
+          "losses": 0,
+          "ties": 0,
+          "joint_losses_reproduced": 0,
+          "joint_losses_same_wrong_winner": 0
+        }
+      },
+      "lost_parent_gold_margins": {
+        "count": 0
+      },
+      "lost_candidate_gold_margins": {
+        "count": 0
+      },
+      "prior_101_losses_same_rows": 0,
+      "max_abs_exact_minus_linear_logit": 0.0722082649396576
+    }
+  },
+  "protocol": "All comparisons use the same held activations. The continuous-head control anchors baseline logits, rounds the edited hidden state to binary32, and applies the unquantized head delta.",
+  "diagnostic_only": true,
+  "held_outcomes_used_for_any_fit": false,
+  "official_fresh_proof_inputs_opened": false,
+  "gpu_used": false,
+  "checkpoint_written": false,
+  "raw_case_ids_exported": false,
+  "receipt_sha256": "ba2d5ab048d5e3e104c3e4a5904346e4bcfdbefc8531063ff54f22138a8afb31"
+}

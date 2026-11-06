@@ -1,0 +1,184 @@
+{
+  "schema": "published-pilot109-cross-family-mixed-fit-v1",
+  "train_report_sha256": "67be87bcefb9ab8002c5efb048216d4b57a7b6206d7e9161ff66d4f058df5abe",
+  "independent_adapter_audit_sha256": "8dfdba6e287decf8c669a9a892011cd848a285e451b0186d6044caf31198684e",
+  "adapter_source_sha256": "8a809c2c846f6014e60d0151df823bef27953a6b286ad7497e66c9941fd2978a",
+  "plan_sha256": "ea188f54bf5a427954fa64891199f8b97d653815c794c4ae907b0ca6096027eb",
+  "parent_model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "independent_audit": {
+    "exact_state_count": 512,
+    "exact_authored_key_agreements": 32,
+    "exact_condition_pairs": 16,
+    "all_noop_choice_logits_binary32_exact": 2048,
+    "no_op_replay_binary32_argmax_parity": true
+  },
+  "fit_scope": {
+    "new_proposal_rows": 192,
+    "new_inner_rows_not_used_in_fit": 96,
+    "new_rotation_reserve_rows_not_used": 96,
+    "new_outer_rows_not_decoded_by_fit_loader": 128,
+    "legacy_rows": {
+      "053": 288,
+      "044": 448,
+      "028": 384,
+      "039": 84
+    },
+    "ordinary_rows": 60,
+    "legacy_partition": {
+      "excluded_exact_labels": 18,
+      "corpora": {
+        "053": {
+          "held": 256,
+          "train": 448,
+          "additional_shared_label_exclusions": 64
+        },
+        "044": {
+          "held": 256,
+          "train": 448,
+          "additional_shared_label_exclusions": 64
+        },
+        "028": {
+          "held": 192,
+          "train": 384,
+          "additional_shared_label_exclusions": 0
+        },
+        "039": {
+          "held": 48,
+          "train": 84,
+          "additional_shared_label_exclusions": 12
+        }
+      }
+    },
+    "new_fit_loader_evidence": {
+      "phase": "fit",
+      "selected_states": 192,
+      "decoded_native_state_rows": 192,
+      "decoded_stock_score_rows": 192,
+      "decoded_key_rows_per_source": 16,
+      "nonselected_score_key_and_state_rows_decoded": 0,
+      "all_archive_artifact_hashes_verified": true,
+      "selected_choice_logits_binary32_exact": 768,
+      "selected_choice_logits_sha256": "e54379a77b61ccac829346c81261c3363bad566592dcfcc5e3c7cd24c442c1dd",
+      "selected_top64_sha256": "b3dfc8151dbc40c2eda4382bcaa2c61818cef0201a1ec6fe06baec9cdce50140",
+      "source_index_sha256": "a26fbd4f679e99e5ab7658bed36909bd951e797ad95731c520bb892b163e87ba",
+      "max_rms_absolute_error": 5.314204251760657e-06,
+      "max_swiglu_absolute_error": 4.6978181451606815e-06,
+      "native_q8_half_code_corrections_verified": 0,
+      "raw_q8_parent_logit_error": 2.3916290956549346e-06,
+      "anchored_q8_parent_logit_error": 2.3916290956549346e-06
+    },
+    "held_family_exclusions_verified": true,
+    "shared_legacy_captures_deserialized_for_integrity": true
+  },
+  "support_trials": [
+    {
+      "target_combinations": 0,
+      "alternative_endpoints": 2193,
+      "coordinate_groups": 384,
+      "exact_hard_margins": 2043,
+      "parent_objectives": [
+        0.022389016500588554,
+        0.3276589400238461
+      ],
+      "probes": [
+        {
+          "stage": "parent_max_slack_rounding",
+          "codes": 367,
+          "exact_deficits": 29,
+          "exact_maximum_deficit": 0.15768298865722657,
+          "objective_components": [
+            0.018537020414455242,
+            0.2991468926270803
+          ],
+          "q8_parity": true,
+          "passed": false
+        },
+        {
+          "stage": "parent_max_slack_rounding",
+          "codes": 367,
+          "exact_deficits": 31,
+          "exact_maximum_deficit": 0.148533437265625,
+          "objective_components": [
+            0.018507103223914422,
+            0.29632846381929184
+          ],
+          "q8_parity": true,
+          "passed": false
+        }
+      ],
+      "fractional_bound": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "optimal": true,
+        "maximum_minimum_normalized_slack": -0.05764631352284624
+      },
+      "legal_categorical_draws": 128,
+      "local_mip": {
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "kept_linear_rows": 409,
+        "all_linear_rows": 2045,
+        "integer_incumbent": false
+      },
+      "critical_exact_replay_count": 0
+    },
+    {
+      "target_combinations": 1,
+      "alternative_endpoints": 2204,
+      "coordinate_groups": 384,
+      "exact_hard_margins": 2043,
+      "parent_objectives": [
+        0.022389016500588554,
+        0.3276589400238461
+      ],
+      "probes": [
+        {
+          "stage": "parent_max_slack_rounding",
+          "codes": 357,
+          "exact_deficits": 31,
+          "exact_maximum_deficit": 0.1324039664404297,
+          "objective_components": [
+            0.019736326773091742,
+            0.360201652182473
+          ],
+          "q8_parity": true,
+          "passed": false
+        },
+        {
+          "stage": "parent_max_slack_rounding",
+          "codes": 363,
+          "exact_deficits": 32,
+          "exact_maximum_deficit": 0.15433493567871095,
+          "objective_components": [
+            0.018502041060686356,
+            0.36805259386698397
+          ],
+          "q8_parity": true,
+          "passed": false
+        }
+      ],
+      "fractional_bound": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "optimal": true,
+        "maximum_minimum_normalized_slack": 0.16058406546973053
+      },
+      "legal_categorical_draws": 128,
+      "local_mip": {
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+        "kept_linear_rows": 365,
+        "all_linear_rows": 2045,
+        "integer_incumbent": false
+      },
+      "critical_exact_replay_count": 0
+    }
+  ],
+  "supported_training_presentations": 9,
+  "supported_training_families": 3,
+  "qualified_candidate": false,
+  "rotation_zero_scored": false,
+  "inner_transfer_scored": false,
+  "outer_scored": false,
+  "checkpoint_written": false
+}

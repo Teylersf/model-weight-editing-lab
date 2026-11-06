@@ -1,0 +1,55 @@
+{
+  "schema": "published-pilot113-mixed-gguf-verifier-v1",
+  "verify_only_receipt_sha256": "9c5c62a411bd12ab2ebe0ea3b2c753b39819392d3a1b28fd7a42ed33094984b5",
+  "synthetic_receipt_sha256": "c986997fb18d8653eb9d4c4818bf0f060f447de6852cbef1e7c58a801729e92f",
+  "verify_only": {
+    "schema": "windows-pilot113-verified-two-tensor-gguf-replay-v1",
+    "source_sha256": "0d9941328ba0350d512def1cde52ed60e170f77d8238c16ceda4c23ac3a088d9",
+    "public_stream_helper_sha256": "ee8c23279d1f10537371e58cfaa9850556530a07322314ee5813ece5820ecabd",
+    "parent_lock_source_sha256": "b04e4b62a11221d76a2ae7b2af812679715a958b9650bad04cdfb4c30210cb25",
+    "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+    "expected_candidate_sha256": "21166a859499dd0294dc9cf43955018795ef5e8322a44246fec660c4be2f963f",
+    "computed_candidate_sha256": "21166a859499dd0294dc9cf43955018795ef5e8322a44246fec660c4be2f963f",
+    "bytes": 11674147744,
+    "recipe_sha256": "61d4d7def335ed0e5bdeea039289df0210945425fb4829ae37bcb7086f55c362",
+    "rows": {
+      "gate": 8,
+      "up": 8
+    },
+    "codes": {
+      "gate": 180,
+      "up": 178
+    },
+    "changed_bytes": 357,
+    "both_gguf_tensors_verified": true,
+    "exact_row_sidecars_verified": true,
+    "full_parent_stream_verified": true,
+    "parent_unchanged": true,
+    "gguf_written": false,
+    "production_materialization_enabled": false,
+    "no_gpu": true,
+    "official_fresh_or_proof_inputs_opened": false,
+    "status": "VERIFY_ONLY_EXACT_TWO_TENSOR_REPLAY"
+  },
+  "synthetic": {
+    "schema": "windows-pilot113-verified-two-tensor-gguf-replay-v1",
+    "source_sha256": "0d9941328ba0350d512def1cde52ed60e170f77d8238c16ceda4c23ac3a088d9",
+    "public_stream_helper_sha256": "ee8c23279d1f10537371e58cfaa9850556530a07322314ee5813ece5820ecabd",
+    "parent_lock_source_sha256": "b04e4b62a11221d76a2ae7b2af812679715a958b9650bad04cdfb4c30210cb25",
+    "status": "SYNTHETIC_MATERIALIZATION_AND_CORRUPTION_CHECKS_PASS",
+    "passed_checks": [
+      "verify_only_matches_independent_expected_bytes",
+      "materialized_both_formats_exactly",
+      "existing_output_preserved",
+      "corrupt_staged_row_refused",
+      "corrupt_unchanged_span_refused",
+      "atomic_race_preserves_destination",
+      "wrong_full_candidate_hash_refused",
+      "wrong_gguf_shape_refused",
+      "parent_bytes_unchanged_and_staged_files_removed"
+    ],
+    "production_materialization_enabled": false,
+    "fixture_checkpoint_retained": false,
+    "no_gpu": true
+  }
+}
