@@ -1,0 +1,80 @@
+{
+  "schema": "published-pilot097-aligned-option-kv-transport-v1",
+  "receipt_sha256": "f9e5d9eec543474fa932281bfd0f5dc12f16268e34ea33fdd99ab0d1c2f08c57",
+  "source_sha256": "8632e5d5ed1f72649b6fb32853e5e074faec53a41b67c9e6545300fb82836ca2",
+  "scope": "CPU full-prefix recompute using same-option, same-position endpoints from the other condition. Apply its numerical difference to the archived native pre-gate output. Swap only one endpoint and one branch at a time in both directions.",
+  "plan_sha256": "bee1862002ea93fa95d4b2324f6dc88fc04d4c5aab0c825f514f47459762efad",
+  "source_091_sha256": "2aafade9851580a1f8c7d363d77c7201c0486d88afa8fc1bce005c97c9dbec4d",
+  "layer": 63,
+  "states": 384,
+  "matched_presentations": 160,
+  "eligible_endpoints": 640,
+  "eligible_families": 10,
+  "directed_branch_counterfactuals": 2560,
+  "bit_exact_native_noop_states": 384,
+  "bit_exact_native_noop_branch_replays": 768,
+  "native_pregate_max_abs_reconstruction_error": 0.03029343274683427,
+  "native_pregate_max_normalized_rms_reconstruction_error": 0.0005536703823026856,
+  "value_only_independent_closed_form_max_absolute_error": 6.947296470743991e-15,
+  "transport_statistics": {
+    "K_A": {
+      "directed_endpoints": 320,
+      "nonzero_f32_outputs": 320,
+      "median_rms_change": 0.0004502045777806091,
+      "maximum_rms_change": 0.01946949511171425,
+      "maximum_absolute_change": 0.5958437919616699
+    },
+    "K_B": {
+      "directed_endpoints": 320,
+      "nonzero_f32_outputs": 320,
+      "median_rms_change": 0.000602972067756726,
+      "maximum_rms_change": 0.07882513600780831,
+      "maximum_absolute_change": 1.624542474746704
+    },
+    "K_C": {
+      "directed_endpoints": 320,
+      "nonzero_f32_outputs": 320,
+      "median_rms_change": 0.0006286783885873197,
+      "maximum_rms_change": 0.04172066168449129,
+      "maximum_absolute_change": 1.0687923431396484
+    },
+    "K_D": {
+      "directed_endpoints": 320,
+      "nonzero_f32_outputs": 320,
+      "median_rms_change": 0.002580177996448807,
+      "maximum_rms_change": 0.155173427228386,
+      "maximum_absolute_change": 3.0100345611572266
+    },
+    "V_A": {
+      "directed_endpoints": 320,
+      "nonzero_f32_outputs": 320,
+      "median_rms_change": 0.0004981423283352234,
+      "maximum_rms_change": 0.010131624220253823,
+      "maximum_absolute_change": 0.33658409118652344
+    },
+    "V_B": {
+      "directed_endpoints": 320,
+      "nonzero_f32_outputs": 320,
+      "median_rms_change": 0.0006092423905619015,
+      "maximum_rms_change": 0.03300011326029849,
+      "maximum_absolute_change": 0.6369514465332031
+    },
+    "V_C": {
+      "directed_endpoints": 320,
+      "nonzero_f32_outputs": 320,
+      "median_rms_change": 0.0006214112034298195,
+      "maximum_rms_change": 0.035905501386532285,
+      "maximum_absolute_change": 1.1708918809890747
+    },
+    "V_D": {
+      "directed_endpoints": 320,
+      "nonzero_f32_outputs": 320,
+      "median_rms_change": 0.0023158237770873314,
+      "maximum_rms_change": 0.11365274403689786,
+      "maximum_absolute_change": 1.8046455383300781
+    }
+  },
+  "limit": "The CPU transport ends at the pre-gate activation and does not establish a native answer effect.",
+  "labels_opened": false,
+  "weights_written": false
+}
