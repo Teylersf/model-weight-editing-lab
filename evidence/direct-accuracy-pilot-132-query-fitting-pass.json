@@ -1,0 +1,153 @@
+{
+  "schema": "pilot132-native-full-fit-query-repair-public-v1",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "scope": {
+    "backend": "RTX 3090 CUDA0",
+    "authored_fitting_states": 192,
+    "aligned_pairs": 96,
+    "native_states": 576,
+    "generated_tokens": 0,
+    "training_only": true,
+    "held_or_protected_inputs_used": false,
+    "checkpoint_written": false
+  },
+  "score": {
+    "pooled": {
+      "states": 192,
+      "aligned_pairs": 96,
+      "correct_before": 119,
+      "correct_after": 120,
+      "choice_repairs": 1,
+      "choice_losses": 0,
+      "both_correct_before": 40,
+      "both_correct_after": 41,
+      "both_correct_gains": 1,
+      "both_correct_losses": 0,
+      "mean_signed_correct_margin_delta": 0.005917797485987346,
+      "max_absolute_signed_correct_margin_delta": 0.05128669738769531
+    },
+    "by_arm": {
+      "a": {
+        "states": 48,
+        "aligned_pairs": 24,
+        "correct_before": 28,
+        "correct_after": 29,
+        "choice_repairs": 1,
+        "choice_losses": 0,
+        "both_correct_before": 8,
+        "both_correct_after": 9,
+        "both_correct_gains": 1,
+        "both_correct_losses": 0,
+        "mean_signed_correct_margin_delta": 0.006073017915089925,
+        "max_absolute_signed_correct_margin_delta": 0.04723644256591797
+      },
+      "b": {
+        "states": 48,
+        "aligned_pairs": 24,
+        "correct_before": 30,
+        "correct_after": 30,
+        "choice_repairs": 0,
+        "choice_losses": 0,
+        "both_correct_before": 10,
+        "both_correct_after": 10,
+        "both_correct_gains": 0,
+        "both_correct_losses": 0,
+        "mean_signed_correct_margin_delta": 0.006944835186004639,
+        "max_absolute_signed_correct_margin_delta": 0.045798301696777344
+      },
+      "c": {
+        "states": 48,
+        "aligned_pairs": 24,
+        "correct_before": 31,
+        "correct_after": 31,
+        "choice_repairs": 0,
+        "choice_losses": 0,
+        "both_correct_before": 11,
+        "both_correct_after": 11,
+        "both_correct_gains": 0,
+        "both_correct_losses": 0,
+        "mean_signed_correct_margin_delta": 0.006139874458312988,
+        "max_absolute_signed_correct_margin_delta": 0.05128669738769531
+      },
+      "d": {
+        "states": 48,
+        "aligned_pairs": 24,
+        "correct_before": 30,
+        "correct_after": 30,
+        "choice_repairs": 0,
+        "choice_losses": 0,
+        "both_correct_before": 11,
+        "both_correct_after": 11,
+        "both_correct_gains": 0,
+        "both_correct_losses": 0,
+        "mean_signed_correct_margin_delta": 0.004513462384541829,
+        "max_absolute_signed_correct_margin_delta": 0.048132896423339844
+      }
+    },
+    "by_fit_fold": {
+      "2": {
+        "states": 96,
+        "aligned_pairs": 48,
+        "correct_before": 50,
+        "correct_after": 51,
+        "choice_repairs": 1,
+        "choice_losses": 0,
+        "both_correct_before": 17,
+        "both_correct_after": 18,
+        "both_correct_gains": 1,
+        "both_correct_losses": 0,
+        "mean_signed_correct_margin_delta": 0.006135145823160808,
+        "max_absolute_signed_correct_margin_delta": 0.048132896423339844
+      },
+      "3": {
+        "states": 96,
+        "aligned_pairs": 48,
+        "correct_before": 69,
+        "correct_after": 69,
+        "choice_repairs": 0,
+        "choice_losses": 0,
+        "both_correct_before": 23,
+        "both_correct_after": 23,
+        "both_correct_gains": 0,
+        "both_correct_losses": 0,
+        "mean_signed_correct_margin_delta": 0.005700449148813884,
+        "max_absolute_signed_correct_margin_delta": 0.05128669738769531
+      }
+    },
+    "stock_choice_ties": 0,
+    "candidate_choice_ties": 0,
+    "passed": true
+  },
+  "focus": {
+    "stock_margin": -0.010755538940429688,
+    "candidate_margin": 0.000453948974609375
+  },
+  "exact_controls": {
+    "exact_p115_stock_states": 192,
+    "exact_p115_stock_choice_logit_bits": 768,
+    "exact_restored_full_vocab_states": 192,
+    "exact_p129_candidate_replayed_states": 16
+  },
+  "query_overlay": {
+    "transitions": 3,
+    "union_rows": 12,
+    "transition_row_verifications": 36,
+    "device_row_writes": 24,
+    "parent_restored": true
+  },
+  "candidate": {
+    "p129_recipe": "candidate-03",
+    "patch_sha256": "722b72af608bccf95ec2cc1f5a3e3cbc0859d7fd74775332a3f852dd9a6286f0",
+    "predicted_gguf_sha256": "d90ded064e8c35d16552065cfbd04c19586752bae54e932ca5f9d4f110889637"
+  },
+  "seals": {
+    "driver": "362c58a43147aa09710015de5a771aba2aaf3004c16457ea1f4e330036c483ba",
+    "build": "9fecaf7c97c7ebc5d535bce252a12186364962f205fa4b1920c04561851d2069",
+    "plan": "249f40e8b0cce128073e428f504a191041997533bfc0c7187b7e20b60656315d",
+    "preflight": "4c2b15d9515b284115b2b110282f04f55a91558b1fd5817c95213f248f2c35ad",
+    "native": "ecf283dd7fd7bbd955be94acfd376c6675ac6d41b073d761b8b6916ec9a422f4",
+    "score": "4e3105620a143e7e3290447507cc9678a6e3bcf2a18abbddc30c1db8edbd17bc",
+    "p129_screen": "28918eee2c07ee5cd94e703762d3706532eb99541a017a356ee8c9c82aca98be"
+  },
+  "passed_fitting_gate": true
+}

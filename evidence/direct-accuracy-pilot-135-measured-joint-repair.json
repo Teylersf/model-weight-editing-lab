@@ -1,0 +1,62 @@
+{
+  "schema": "pilot135-measured-joint-repair-public-v1",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "receipts": {
+    "source": "28d62325b87111601ed8935874ffde547bf45ff0eaf30c2a3b0f8a4cc8877ff1",
+    "plan": "32f8100a94574f6889ea89c245534f29bc1334b7952e1e88ec69f6d92fa5de04",
+    "report": "b8a0647e2f501ca26603c03d3066956f32412ec0ee0ec3869d52224e83932753",
+    "anchor": "8022d4e690efbb64b205aa209aa174dfb6690ae28d804f5dc22dfb08645493e0",
+    "anchor_recipe": "f0b15a58fb4c02134903efa404290f02ba123241148cb6918abd36e519232e44"
+  },
+  "results": [
+    {
+      "critical_rows": 162,
+      "atoms": 114,
+      "measured_half_edits": 59,
+      "half_lanes": [
+        25,
+        25
+      ],
+      "group_disjoint_unions": 473,
+      "measured_unions": 54,
+      "exact_p105_cap_passes": 102,
+      "best_union_exact_two_margin_worst_debt": 0.017271621704101563,
+      "depth": 0,
+      "before_deficits": [
+        2,
+        0.03535100844238279,
+        0.018824193491210936
+      ],
+      "before_objectives": [
+        0.018209354047132493,
+        0.3043774021996392
+      ],
+      "full_replays": 18,
+      "all_objective_ordinary_safe": 18,
+      "lexicographic_improvements": 0,
+      "after_deficits": [
+        2,
+        0.03535100844238279,
+        0.018824193491210936
+      ],
+      "after_objectives": [
+        0.018209354047132493,
+        0.3043774021996392
+      ],
+      "full_passes": 0
+    }
+  ],
+  "end_deficits": [
+    2,
+    0.03535100844238279,
+    0.018824193491210936
+  ],
+  "end_objectives": [
+    0.018209354047132493,
+    0.3043774021996392
+  ],
+  "passed_training": false,
+  "checkpoint_written": false,
+  "rotation_zero_scored": false,
+  "outer_scored": false
+}

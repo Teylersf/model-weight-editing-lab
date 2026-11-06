@@ -1082,3 +1082,15 @@ An independent read-only stream rebuilt all **16** declared IQ4_XS and Q4_K rows
 The search measured changes with three to five coordinated substitutions and evaluated **46** shortlisted proposals against the full training checks. All 46 met both objective caps and preserved the 60 ordinary winners and 480 ordinary floors. The best proposal cut the remaining signed math violations from **six to three** and their total shortfall from **0.12903 to 0.06527** logits. The largest shortfall was **0.04821** logits.
 
 The three remaining floors prevented qualification. An independent read-only stream reconstructed **358** code changes across 16 rows and verified the predicted whole-checkpoint digest. [Packed recipe, exact checks, and objective values](../evidence/direct-accuracy-pilot-131-compound-ffn-substitutions.json)
+
+## Pilot 132 with full fitting confirmation of the query repair
+
+Pilot 129's 24-code query edit improved from **119/192 to 120/192** on the full authored fitting partition. Both-correct pairs improved from **40/96 to 41/96**. All 119 prior correct choices and all 40 prior both-correct pairs were preserved. The CUDA replay reproduced the original 16 candidate states and restored all 192 full-vocabulary logit digests exactly. The fitting pass advanced the frozen edit to the ordinary-prompt gate. [Full fitting scores and exact receipts](../evidence/direct-accuracy-pilot-132-query-fitting-pass.json)
+
+## Pilots 134 and 135 with guarded compound feed-forward changes
+
+The search tested **382** compounds and fully replayed **64**. All full replays met both objective caps and preserved the 60 ordinary winners and 480 ordinary floors. The best recipe reduced the remaining math violations from **three to two** and the largest shortfall from **0.04821 to 0.01882** logits. The last round found no better candidate within its search bounds.
+
+The reserve stayed sealed. An independent read-only stream rebuilt all **361** code changes, verified each edited row, and computed the whole-checkpoint digest. [Bounded search results and exact packed recipe](../evidence/direct-accuracy-pilot-134-guarded-ffn-compounds.json)
+
+Pilot 135 measured signed half-edits and paired their effects to shortlist combinations for exact replay. All **18** full checks preserved the objective caps and ordinary winners. No combination improved the full signed math result, and the search stopped at its planned stagnation rule with two violations remaining. [Measured half-edits, exact unions, and stopping evidence](../evidence/direct-accuracy-pilot-135-measured-joint-repair.json)
