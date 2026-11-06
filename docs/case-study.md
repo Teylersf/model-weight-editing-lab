@@ -950,3 +950,21 @@ After the native receipts were sealed, the analysis read the 40 discovery grades
 ## Pilot 103 with held mixed-branch attribution
 
 The retrospective CPU audit reconstructed all 11 packed rows and reproduced the joint score of **436/752** in the edited fold. All four lost choices also flipped under the parent-point linear approximation and under a binary32 hidden replay scored without output-head Q8 rounding. The up branch alone reproduced all four of those losses and lost six choices in total. The gate branch alone produced eight different losses. This locates the four crossings in the fitted direction within fixed-state CPU replay. The official math benchmark, fresh set, and proof checks were outside this experiment. [Branch controls and independent reproduction](../evidence/direct-accuracy-pilots-099-103-exact-mixed-repair.json)
+
+## Pilots 104 and 106 with stricter training margins
+
+The fit required the stronger of the two earlier winner-margin floors and required each training objective component to hold or improve. Under these rules, the previous packed seed crossed **31** fitting constraints. Its condition-pair deficit fell from **0.01071 to 0.00774**, while its same-letter teaching deficit rose from **0.32766 to 0.33046**. Two setup checks stopped before solving. The final run matched the two original targets by reproducing their exact rounded training margins on unique eligible fitting pairs.
+
+On the recovered support, the full linear relaxation cleared every guard and reached worst-target slack of **+0.07792** at the parent anchor and **+0.07385** at the seed anchor. A 12-bit repair was infeasible under the linearized constraints. The two wider integer searches timed out without incumbents. The follow-up tested three exact legal roundings. Its best reduced the strict violations to **four**, with a maximum deficit of **0.02195**. Its teaching deficit still rose to **0.34053**. Eight working-set searches timed out on the same 88 constraints without an incumbent to expand that set. The two pilots produced no qualifying packed edit. [Training-only bounds and exact replay outcomes](../evidence/direct-accuracy-pilots-104-106-strict-guard-search.json)
+
+## Pilot 105 with a new training-only cohort
+
+The new cohort contains **16** matched condition pairs across eight math families. Each pair keeps all four option texts fixed and changes one condition so the unique correct option changes. Independent derivations agreed with all **32** authored answers. Each problem was presented in two authored demonstration contexts and four rotations of each of two option orders.
+
+Pilot 024 scored **325/512** across those presentations and answered both variants correctly in **99/256** matched presentations. It selected the same original answer for both variants in **117/256**. Correctness across all four rotations held in **46/128** problem-and-arm groups. These repeated presentations are training evidence for testing condition sensitivity. [Authorship checks, CUDA settings, and aggregates](../evidence/direct-accuracy-pilot-105-training-corpus-baseline.json)
+
+## Pilot 107 with a restricted integer search
+
+The search rebuilt the exact Pilot 106 rounded starting point and ranked coordinates using its four training deficits and both objective derivatives. It tested nested supports of **48**, **72**, and **96** mutable coordinate groups. All three relaxed problems were feasible. The 48- and 72-group searches found integer proposals. The largest timed out.
+
+The 72-group proposal changed **357** codes from the parent. It passed all **1,763** linear constraints and improved both exact objective components to **0.00924** and **0.32612**. Exact Q8 replay still crossed **three** strict margins, the worst by **0.00746** logits. The proposal was rejected before held evaluation. [Restricted supports and exact replay](../evidence/direct-accuracy-pilot-107-restricted-code-search.json)

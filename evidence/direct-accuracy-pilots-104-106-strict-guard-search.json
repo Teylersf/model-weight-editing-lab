@@ -1,0 +1,232 @@
+{
+  "schema": "published-pilots104-106-strict-guard-search-v1",
+  "parent_model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "pilot104_receipt_sha256": "91c36e71d8be634a572d9930e95390d5ccf8dbefeed7ad2fd65775fb83713793",
+  "pilot106_receipt_sha256": "e9036d079296bbc02df18bc7c5c2ecff75c27d31ba0e824847fd9508fbc0311f",
+  "objective_components": [
+    "053 condition-pair deficit",
+    "044 same-letter teaching deficit"
+  ],
+  "parent_objective_components": [
+    0.01070918167624477,
+    0.3276589400238461
+  ],
+  "seed_objective_components": [
+    0.007743888071342512,
+    0.33046165969636704
+  ],
+  "counts": {
+    "fitting_guard_margins": 1737,
+    "opposite_order_margins": 12,
+    "target_margins": 12,
+    "alternative_endpoints": 2176,
+    "coordinate_groups": 384,
+    "seed_codes": 95,
+    "seed_strict_violations": 31,
+    "seed_coordinates_restored": 0,
+    "archived_target_order_reproduced": true,
+    "regenerated_support_kept_archived_target_order": false
+  },
+  "partition": {
+    "excluded_exact_labels": 18,
+    "corpora": {
+      "053": {
+        "held": 256,
+        "train": 448,
+        "additional_shared_label_exclusions": 64
+      },
+      "044": {
+        "held": 256,
+        "train": 448,
+        "additional_shared_label_exclusions": 64
+      },
+      "028": {
+        "held": 192,
+        "train": 384,
+        "additional_shared_label_exclusions": 0
+      },
+      "039": {
+        "held": 48,
+        "train": 84,
+        "additional_shared_label_exclusions": 12
+      }
+    }
+  },
+  "ordinary_training_states": 60,
+  "pilot104": {
+    "plan_sha256": "7c2516074070cb90a01766872f68d79500345760f1f75bae4149adce7259bf88",
+    "seed_minimum_margin_slack": -0.07734291076660157,
+    "parent_linear_bound": {
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "optimal": true,
+      "maximum_minimum_linear_target_slack": 0.077917334448878
+    },
+    "seed_anchored_linear_bound": {
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "optimal": true,
+      "maximum_minimum_linear_target_slack": 0.07385288534217818
+    },
+    "integer_attempts": [
+      {
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "budget": 12,
+        "integer_incumbent": false
+      },
+      {
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+        "budget": 36,
+        "integer_incumbent": false
+      },
+      {
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+        "budget": null,
+        "integer_incumbent": false
+      }
+    ],
+    "bounds_scope": "These bounds apply to the linearized constraints on the specified coordinate support."
+  },
+  "pilot106": {
+    "plan_sha256": "51be41c67c8884deec3cbddf9f63fed8a511babfa263851d13b33cb6355b502a",
+    "search": {
+      "robust_fractional_lp": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "normalized_max_min_slack": 0.09684166326649607,
+        "legal_draws": 96
+      },
+      "rounds": [
+        {
+          "mode": "categorical_start",
+          "index": 0,
+          "selected_codes": 370,
+          "predicted_full_hard_violations": 0,
+          "exact_hard_violations": 4,
+          "exact_deficit_sum": 0.05238664441772459,
+          "exact_maximum_deficit": 0.021948899759521474,
+          "exact_q8_f32_parity": true,
+          "exact_objective_components": [
+            0.009596758386664144,
+            0.34052897691726686
+          ],
+          "working_set_rows_added": 0
+        },
+        {
+          "mode": "categorical_start",
+          "index": 1,
+          "selected_codes": 368,
+          "predicted_full_hard_violations": 7,
+          "exact_hard_violations": 6,
+          "exact_deficit_sum": 0.0894918032507324,
+          "exact_maximum_deficit": 0.025830354227294912,
+          "exact_q8_f32_parity": true,
+          "exact_objective_components": [
+            0.009746545950415905,
+            0.3380138761467404
+          ],
+          "working_set_rows_added": 0
+        },
+        {
+          "mode": "categorical_start",
+          "index": 2,
+          "selected_codes": 369,
+          "predicted_full_hard_violations": 5,
+          "exact_hard_violations": 6,
+          "exact_deficit_sum": 0.0564112254003906,
+          "exact_maximum_deficit": 0.02451332999633788,
+          "exact_q8_f32_parity": true,
+          "exact_objective_components": [
+            0.009466159112264,
+            0.3369685928026835
+          ],
+          "working_set_rows_added": 0
+        },
+        {
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "active_hard_constraints": 88,
+          "excluded_prior_incumbents": 4,
+          "objective_proposal_constraints": false,
+          "mode": "working_set_milp",
+          "index": 0
+        },
+        {
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "active_hard_constraints": 88,
+          "excluded_prior_incumbents": 4,
+          "objective_proposal_constraints": false,
+          "mode": "working_set_milp",
+          "index": 1
+        },
+        {
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "active_hard_constraints": 88,
+          "excluded_prior_incumbents": 4,
+          "objective_proposal_constraints": false,
+          "mode": "working_set_milp",
+          "index": 2
+        },
+        {
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "active_hard_constraints": 88,
+          "excluded_prior_incumbents": 4,
+          "objective_proposal_constraints": false,
+          "mode": "working_set_milp",
+          "index": 3
+        },
+        {
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "active_hard_constraints": 88,
+          "excluded_prior_incumbents": 4,
+          "objective_proposal_constraints": false,
+          "mode": "working_set_milp",
+          "index": 4
+        },
+        {
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "active_hard_constraints": 88,
+          "excluded_prior_incumbents": 4,
+          "objective_proposal_constraints": false,
+          "mode": "working_set_milp",
+          "index": 5
+        },
+        {
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "active_hard_constraints": 88,
+          "excluded_prior_incumbents": 4,
+          "objective_proposal_constraints": false,
+          "mode": "working_set_milp",
+          "index": 6
+        },
+        {
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "active_hard_constraints": 88,
+          "excluded_prior_incumbents": 4,
+          "objective_proposal_constraints": false,
+          "mode": "working_set_milp",
+          "index": 7
+        }
+      ],
+      "final_active_hard_constraints": 88,
+      "exact_full_training_replays": 3,
+      "exact_training_candidates_passing": 0,
+      "best_remaining_violations": 4,
+      "seed_retained": false
+    }
+  },
+  "held_scored": false,
+  "reserved_scored": false,
+  "checkpoint_written": false,
+  "packed_rows_written": false
+}

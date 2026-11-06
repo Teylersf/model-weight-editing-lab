@@ -1,0 +1,235 @@
+{
+  "schema": "published-pilot107-restricted-mixed-training-v1",
+  "receipt_sha256": "7ed07b47f4d0977bb0579e20252c85d44bfdb25c738d748a62d08b6a14dd5c44",
+  "plan_sha256": "d727c89f5d4b1c72d233a317036fec27054822dba54cd54040ed1ead0a6cc9ca",
+  "source_sha256": "1acb7cee3b86c7d77e15a28c15842b1bed2a79df8af243ca97446475ca75078b",
+  "model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "parent_objective_components": [
+    0.01070918167624477,
+    0.3276589400238461
+  ],
+  "source_pilot106_receipt_sha256": "e9036d079296bbc02df18bc7c5c2ecff75c27d31ba0e824847fd9508fbc0311f",
+  "counts": {
+    "fitting_guard_margins": 1737,
+    "opposite_order_margins": 12,
+    "target_margins": 12,
+    "alternative_endpoints": 2176,
+    "coordinate_groups": 384,
+    "seed_codes": 95,
+    "seed_strict_violations": 31,
+    "seed_coordinates_restored": 0,
+    "archived_target_order_reproduced": true,
+    "regenerated_support_kept_archived_target_order": false
+  },
+  "search": {
+    "anchor_binary_vector_sha256": "b1258e2d27fd6ac180abe38f3ad3282e937c15dd46ccd4a3d410944f714f2da3",
+    "anchor_codes": 370,
+    "anchor_exact_hard_violations": 4,
+    "anchor_exact_deficit_sum": 0.05238664441772459,
+    "anchor_exact_maximum_deficit": 0.021948899759521474,
+    "anchor_objective_components": [
+      0.009596758386664144,
+      0.34052897691726686
+    ],
+    "mutable_coordinate_groups_sha256": "a5af83d76be3383829ae00a082f8598f87fd1fb74dd8f1bbe4c988f6b8b7ebbe",
+    "guard_deficit_count_used_for_ranking": 4,
+    "trials": [
+      {
+        "mutable_groups": 48,
+        "alternative_endpoints": 283,
+        "lp": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "optimal": true,
+          "maximum_minimum_normalized_slack": 0.028608702368065664
+        },
+        "exact_replays": [
+          {
+            "stage": "categorical",
+            "mutable_groups": 48,
+            "codes": 364,
+            "changed_endpoint_bits": 26,
+            "minimum_linear_slack": -0.013420571809088011,
+            "exact_hard_violations": 6,
+            "exact_deficit_sum": 0.06589969357055661,
+            "exact_maximum_deficit": 0.019433488382568358,
+            "q8_f32_parity": true,
+            "exact_objective_components": [
+              0.008291771324543135,
+              0.3256772412194146
+            ],
+            "passed": false
+          },
+          {
+            "stage": "categorical",
+            "mutable_groups": 48,
+            "codes": 364,
+            "changed_endpoint_bits": 26,
+            "minimum_linear_slack": -0.01726274333240735,
+            "exact_hard_violations": 5,
+            "exact_deficit_sum": 0.06712755925292965,
+            "exact_maximum_deficit": 0.021511258615722638,
+            "q8_f32_parity": true,
+            "exact_objective_components": [
+              0.008276123360939403,
+              0.32506776716974045
+            ],
+            "passed": false
+          },
+          {
+            "stage": "integer",
+            "mutable_groups": 48,
+            "codes": 363,
+            "changed_endpoint_bits": 31,
+            "minimum_linear_slack": 0.0001770751641471998,
+            "exact_hard_violations": 5,
+            "exact_deficit_sum": 0.036053893634033204,
+            "exact_maximum_deficit": 0.01216181708740235,
+            "q8_f32_parity": true,
+            "exact_objective_components": [
+              0.009204926809367209,
+              0.32893111175960965
+            ],
+            "passed": false
+          }
+        ],
+        "legal_categorical_draws": 128,
+        "milp": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "kept_linear_rows": 405,
+          "all_linear_rows": 1763,
+          "integer_incumbent": true,
+          "minimum_linear_constraint_slack": 0.0001770751641471998
+        }
+      },
+      {
+        "mutable_groups": 72,
+        "alternative_endpoints": 425,
+        "lp": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "optimal": true,
+          "maximum_minimum_normalized_slack": 0.046506185430473274
+        },
+        "exact_replays": [
+          {
+            "stage": "categorical",
+            "mutable_groups": 72,
+            "codes": 363,
+            "changed_endpoint_bits": 31,
+            "minimum_linear_slack": -0.01521561573330757,
+            "exact_hard_violations": 7,
+            "exact_deficit_sum": 0.06222630367248555,
+            "exact_maximum_deficit": 0.036917485727539064,
+            "q8_f32_parity": true,
+            "exact_objective_components": [
+              0.009474136682572683,
+              0.3248215271366967
+            ],
+            "passed": false
+          },
+          {
+            "stage": "categorical",
+            "mutable_groups": 72,
+            "codes": 363,
+            "changed_endpoint_bits": 31,
+            "minimum_linear_slack": -0.020488333134565717,
+            "exact_hard_violations": 8,
+            "exact_deficit_sum": 0.07803714190856934,
+            "exact_maximum_deficit": 0.03848246528076172,
+            "q8_f32_parity": true,
+            "exact_objective_components": [
+              0.009969359641736883,
+              0.327171966764662
+            ],
+            "passed": false
+          },
+          {
+            "stage": "integer",
+            "mutable_groups": 72,
+            "codes": 357,
+            "changed_endpoint_bits": 47,
+            "minimum_linear_slack": 1.2794215883432658e-05,
+            "exact_hard_violations": 3,
+            "exact_deficit_sum": 0.01968277792236328,
+            "exact_maximum_deficit": 0.007462872995605463,
+            "q8_f32_parity": true,
+            "exact_objective_components": [
+              0.009243927665161845,
+              0.32612403432528175
+            ],
+            "passed": false
+          }
+        ],
+        "legal_categorical_draws": 128,
+        "milp": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "kept_linear_rows": 456,
+          "all_linear_rows": 1763,
+          "integer_incumbent": true,
+          "minimum_linear_constraint_slack": 1.2794215883432658e-05
+        }
+      },
+      {
+        "mutable_groups": 96,
+        "alternative_endpoints": 567,
+        "lp": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "optimal": true,
+          "maximum_minimum_normalized_slack": 0.05501472379211764
+        },
+        "exact_replays": [
+          {
+            "stage": "categorical",
+            "mutable_groups": 96,
+            "codes": 364,
+            "changed_endpoint_bits": 36,
+            "minimum_linear_slack": -0.03817243393799903,
+            "exact_hard_violations": 12,
+            "exact_deficit_sum": 0.14944741837585465,
+            "exact_maximum_deficit": 0.058882512583007814,
+            "q8_f32_parity": true,
+            "exact_objective_components": [
+              0.009216243886742258,
+              0.3248687737517887
+            ],
+            "passed": false
+          },
+          {
+            "stage": "categorical",
+            "mutable_groups": 96,
+            "codes": 363,
+            "changed_endpoint_bits": 35,
+            "minimum_linear_slack": -0.025210819178821668,
+            "exact_hard_violations": 13,
+            "exact_deficit_sum": 0.15396145409118647,
+            "exact_maximum_deficit": 0.032485904230346675,
+            "q8_f32_parity": true,
+            "exact_objective_components": [
+              0.009180040857671197,
+              0.3197189622455173
+            ],
+            "passed": false
+          }
+        ],
+        "legal_categorical_draws": 128,
+        "milp": {
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "kept_linear_rows": 489,
+          "all_linear_rows": 1763,
+          "integer_incumbent": false
+        }
+      }
+    ],
+    "exact_training_candidates_passing": 0,
+    "linear_bounds_scope": "Local STE approximation with frozen outside coordinates; exact nonlinear candidates require independent replay."
+  },
+  "exact_candidate_qualified": false,
+  "held_scored": false,
+  "packed_rows_written": false,
+  "checkpoint_written": false
+}

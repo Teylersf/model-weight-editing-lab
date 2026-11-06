@@ -1,0 +1,91 @@
+{
+  "schema": "published-pilot105-train-only-baseline-v1",
+  "parent_model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "receipt_sha256": {
+    "baseline": "80ad00ecb429a0ef59d4410e6d228672f3a672624f3127fe467d3c52c0aa6954",
+    "capture_preflight": "f4afbdb66000b97a933c826e46c4872477c7028aa67e1a98c7ad1ed1e660b387",
+    "cpu_preflight": "078a84fb7c6e8e5046e03a2b43825c3cf8b1a608d49397767d600bdc43ec3c3e",
+    "independent_audit": "22e37cdd59992b7f7660ad7e24f2cc68c43d840f73b8b48a407dedcafba09001",
+    "problems": "f4c7d04125fff5737663d71ea4a03653e4d7261e78d0f053bdfdd6bfa258ea82"
+  },
+  "scope": "New independently authored training-only corpus. Counts are prompt presentations of those problems.",
+  "authored": {
+    "problems": 32,
+    "pairs": 16,
+    "families": 8,
+    "high_school_families": 4,
+    "college_families": 4,
+    "source_key_agreements": 32,
+    "condition_pairs_validated": 16,
+    "answer_indices_balanced_within_family": true,
+    "independent_solutions_frozen_before_author_key_read": true
+  },
+  "design": {
+    "two_authored_demonstration_contexts": true,
+    "cyclic_and_reverse_cyclic_orders": true,
+    "rotations_per_arm": 4,
+    "choices": {
+      "all": {
+        "rows": 512,
+        "correct": 325
+      },
+      "arm_a": {
+        "rows": 128,
+        "correct": 78
+      },
+      "arm_b": {
+        "rows": 128,
+        "correct": 85
+      },
+      "arm_c": {
+        "rows": 128,
+        "correct": 83
+      },
+      "arm_d": {
+        "rows": 128,
+        "correct": 79
+      },
+      "college_mathematics": {
+        "rows": 256,
+        "correct": 157
+      },
+      "fold_0": {
+        "rows": 128,
+        "correct": 94
+      },
+      "fold_1": {
+        "rows": 128,
+        "correct": 74
+      },
+      "fold_2": {
+        "rows": 128,
+        "correct": 65
+      },
+      "fold_3": {
+        "rows": 128,
+        "correct": 92
+      },
+      "high_school_mathematics": {
+        "rows": 256,
+        "correct": 168
+      }
+    },
+    "prompt_rows": 512,
+    "pair_presentations": 256
+  },
+  "paired_accounting": {
+    "same_original_answer_on_both_variants": 117,
+    "same_original_answer_and_neither_correct": 22,
+    "both_correct": 99,
+    "exactly_one_correct": 127,
+    "neither_correct": 30
+  },
+  "all_four_rotations_correct": {
+    "problem_arm_blocks": 128,
+    "correct": 46
+  },
+  "parents_preserved": true,
+  "weight_edit_applied": false,
+  "generated_tokens": 0,
+  "official_fresh_proof_or_held_acceptance_used": false
+}
