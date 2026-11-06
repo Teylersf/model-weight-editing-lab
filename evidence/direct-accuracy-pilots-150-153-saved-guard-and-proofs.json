@@ -1,0 +1,60 @@
+{
+  "schema": "public-direct-accuracy-pilots-150-153-v1",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_sha256": "839fbb84e3d6e75f5fefe12a3bd752ea260bc62d2aa2d139297ae4edd1533d61",
+  "saved_readback_sha256": "9115371de6755456fcd1f5232459201abb49a3deefecbcc8012e25e954794c13",
+  "authored_development_guard": {
+    "receipt_sha256": "d7b9b9c13482790689d4bbe9c08f1202e80c3348f42a035b18bfd6ba077d3587",
+    "plan_sha256": "65f456951015ddf79b9ba491754293b1484f6873a55008a6c12f191e24bf3b63",
+    "blind_packet_sha256": "6e4dd09ca17fc39fa6ea7f3cea059e2d4bb246621e9fbdf873ca20d662e2cd9c",
+    "blind_grade_sha256": "92d41cd83d24c9706ec907af4ac00fae36914e756f990c3bb02b991a9ba0a2c5",
+    "parent_run_sha256": "663c326e989a10120d9ec6b01adea8dffde9529868a96628a1f0d9da36ee8a2e",
+    "candidate_run_sha256": "914f117ba2dba8d705ee1cf999f066e3981494ec65b410c144a2840d41cda9aa",
+    "ties": {
+      "parent": 0,
+      "candidate": 0
+    },
+    "results": {
+      "presentations": {
+        "total": 128,
+        "before": 49,
+        "after": 49,
+        "gains": 0,
+        "losses": 0
+      },
+      "paired_presentations": {
+        "total": 64,
+        "before": 6,
+        "after": 6,
+        "gains": 0,
+        "losses": 0
+      },
+      "all_eight_case_presentations": {
+        "total": 16,
+        "before": 0,
+        "after": 0,
+        "gains": 0,
+        "losses": 0
+      },
+      "all_sixteen_pair_presentations": {
+        "total": 8,
+        "before": 0,
+        "after": 0,
+        "gains": 0,
+        "losses": 0
+      }
+    },
+    "passed": true,
+    "fitting_allowed": false
+  },
+  "protected_generation": {
+    "receipt_sha256": "e1c0b5d58db78c98e73d9795192881e0d7aa53314c3c609c3085d6bb49ca98bb",
+    "protected_generation_receipt_sha256": "bf79349042b5c374206d47f7571ae48850750e5c5c7f6effdda84b8659c4f657",
+    "ordinary_generation_receipt_sha256": "d24f732139b86fcd278b252a409aea3dd00234f9db269442c1899c440a106e0c",
+    "exact_proofs": 2,
+    "cylinder_tokens": 282,
+    "cylinder_natural_complete": true,
+    "cylinder_visible_exact": true,
+    "passed": true
+  }
+}
