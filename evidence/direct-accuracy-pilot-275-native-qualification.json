@@ -1,0 +1,40 @@
+{
+  "schema": "direct-accuracy-pilot275-native-qualification-v1",
+  "parent_pilot": 24,
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_pilot": 275,
+  "candidate_sha256": "31d55cf331bb41ad4fb089beda24b5511a0781b4899380283161a52a371fb0b0",
+  "candidate_bytes": 11674229776,
+  "readback_sha256": "db1f43725322538fc8da97e4cdad6efb46bfc31c6a269615e14db3e3af9563b8",
+  "qualification_plan_sha256": "10c44be76cdb661dab07eb106756051d463aafa9c1faf3194c94942c4b55bba1",
+  "qualification_source_sha256": "e8c2c1faad5b714bc5290dd8f3836a69a27bddb897bc4a3062c969c4163c00d2",
+  "precision_native_build_sha256": "40efa620b3f54aa42bcaf771de61a17690abe0d14181e4b4805cbbad0a2225b0",
+  "protected_cuda_generation": {
+    "passed": true,
+    "receipt_sha256": "67fe3dce845c282069751c08e06ed49983107684652d12fb9f1060cd0633f215",
+    "proof_generation_sha256": "0b9eda521e7c880219571fdbd6c2bc5ede69a1e781ef60588ac9ce3e476a68f7",
+    "development_generation_sha256": "94f6325520abae9c34eca1c6b3591692e9a8b0704199a96f222d603bb8ddda14",
+    "exact_proof_cases": 2,
+    "proof_cases": 2,
+    "exact_native_quantizer_proof_applications": 2968,
+    "proof_max_stock_anchor_abs_error": 2.28035e-6,
+    "cylinder_visible_solution_exact": true,
+    "cylinder_naturally_completed": true,
+    "cylinder_completion_tokens": 282,
+    "cylinder_candidate_decode_ms": 6232.2896,
+    "cylinder_parent_decode_ms": 6459.28,
+    "cylinder_earlier_reference_decode_ms": 10552.5325,
+    "timing_scope": "single matched cylinder decode"
+  },
+  "matched_mmlu_math": {
+    "status": "pending_in_this_receipt",
+    "required_net_gain_over": 226,
+    "maximum_prior_losses": 0,
+    "total": 370
+  },
+  "fresh_blinded_evaluation": {
+    "status": "pending_in_this_receipt",
+    "strict_gains_required": ["correct_trials", "items_correct_in_all_four_orders"]
+  },
+  "qualification_data_used_for_fit_or_selection": false
+}
