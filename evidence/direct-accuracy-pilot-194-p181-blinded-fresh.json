@@ -1,0 +1,69 @@
+{
+  "schema": "public-direct-accuracy-pilot-194-p181-fresh-v1",
+  "aggregate_receipt_sha256": "ad1334c822f552db7702d830e75ac68da737c4fac360ce5af5a15bfc61a44577",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_sha256": "e2bda6ca06e17d74cb46f36cb407fd99035323a297425feba04eb76048ec8d7b",
+  "fresh_gate_passed": false,
+  "checkpoint_promoted": false,
+  "fresh_inputs_used_for_fitting": false,
+  "fresh_set_reused_for_fit_or_selection": false,
+  "role_assignment_revealed_after_grade": true,
+  "strict_gain_required": [
+    "correct_trials",
+    "items_correct_all_four"
+  ],
+  "plan_sha256": "57f1189a5e7379108509cc99cf555f861a675f81b5f18d39f1783fb964a03a60",
+  "preparation_sha256": "4b2247a53a220f730de95342b9ad3ecc13e76425d63be25e93bfb14973e407d2",
+  "anonymous_native_receipt_sha256": {
+    "A": "f12ddd36780ad5c406f07586fa48e0994f6283573a5c9b26971523cd184aa7ab",
+    "B": "6770436761ef9298eb3898fac398d59f9c1fabdb1394e76750e3363806b2945e"
+  },
+  "score_lineage_sha256": "7d2794431a2baf30987d96ddf56d673e30afe1703d2b8dbae187a8032562c0bf",
+  "blind_grade_sha256": "5a8e1c9b758440144df5ef4385a52f4afe1ce2e0ff7b526079238bd37863f103",
+  "p181_pack_seal_sha256": "233220af572582ff4c2edc82b85b9b2937280c7f1ffcd4476a392ef6ea1a78f8",
+  "p181_label_free_problems_sha256": "3eb76378bbd210bd41f8cd69e592cd6f46641d283f144c5738fbea1e182183b7",
+  "independent_key_audit_sha256": "cd2116958d29c31e8fbdf678d563b421b762dd18e8bf0ace1f652e991f17bc3a",
+  "baseline": {
+    "correct_trials": 45,
+    "items_correct_all_four": 4,
+    "items_by_correct_orders": [
+      5,
+      6,
+      4,
+      5,
+      4
+    ],
+    "items_same_content_all_four": 7,
+    "tied_trials": 0
+  },
+  "candidate": {
+    "correct_trials": 47,
+    "items_correct_all_four": 4,
+    "items_by_correct_orders": [
+      4,
+      6,
+      5,
+      5,
+      4
+    ],
+    "items_same_content_all_four": 6,
+    "tied_trials": 0
+  },
+  "delta": {
+    "correct_trials": 2,
+    "items_correct_all_four": 0
+  },
+  "counts": {
+    "trial_gains": 2,
+    "trial_losses": 0,
+    "all_four_item_gains": 0,
+    "all_four_item_losses": 0
+  },
+  "prior_gates": {
+    "qualification": "8885516279a5cc677d8a9f3ea5ccd7d503261b3755e1f247d4ff8e748a58f8b1"
+  },
+  "items": 24,
+  "trials": 96,
+  "independently_recomputed_answers": 24,
+  "restricted_result_sha256": "7836bf3e719cd9094665432a8531d6ed774e690d61b82c2f4600cbbaedccb340"
+}
