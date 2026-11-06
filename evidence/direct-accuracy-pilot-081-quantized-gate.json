@@ -6,6 +6,7 @@
   "grouped_receipt_sha256": "6fe5ef7086fd62ebd1f0556b7ed7dcf4625f6af6c8dcdf49d84ba8ee8722057a",
   "first_attempt": "The gate's packed row width propagated to the Q4_K output-head reader and stopped the run before any fold or held result. The rerun passed gate-specific metadata only to the gate receipt writer.",
   "first_attempt_plan_sha256": "d9c9d39c2323adbca756092fa6fba41ae2aa488dd416f4283cd0b1d0b60fa24a",
+  "continuous_target_groups": "Includes 053 condition pairs and 044 teachers with three duplicated margins. This metric measures the surrogate threshold and does not count actual 053 pair recoveries.",
   "gate_kernel": {
     "source_sha256": "feb281fb2a87d4e2d1bca5dc598b247c955e1f74e2d40c152b2d6083e28ec930",
     "independent_audit_sha256": "fda3fccfff4c157251ab9511ee2476c48e48e4acb6b56280645c01f7ae9e6bdf",
@@ -19,7 +20,10 @@
       "fold": 0,
       "receipt_sha256": "9b5e7c8ea89b34f4e085ba7e6997dbea1388661ab3ade8ff76afdbc1eae2ee9a",
       "teacher_targets": 8,
-      "continuous_pairs_meeting_all_six_target_margins": 12,
+      "total_surrogate_target_groups": 18,
+      "continuous_groups_meeting_all_six_target_margins": 12,
+      "optimal_fixed_support_binary_solves": 2,
+      "best_binary_groups_meeting_all_six_target_margins": 0,
       "packed_probes": 5,
       "packed_probes_with_training_pair_gains": 0,
       "frozen_changed_rows": 0
@@ -28,7 +32,10 @@
       "fold": 1,
       "receipt_sha256": "ed7e37763c80c596fd87d1e38b45f2b5dadda8381093eb3703d4185c63200a57",
       "teacher_targets": 11,
-      "continuous_pairs_meeting_all_six_target_margins": 15,
+      "total_surrogate_target_groups": 24,
+      "continuous_groups_meeting_all_six_target_margins": 15,
+      "optimal_fixed_support_binary_solves": 2,
+      "best_binary_groups_meeting_all_six_target_margins": 0,
       "packed_probes": 5,
       "packed_probes_with_training_pair_gains": 0,
       "frozen_changed_rows": 0
@@ -37,7 +44,10 @@
       "fold": 2,
       "receipt_sha256": "cb70772bfab69b7d18b33815397590088bc2b99a9adbb669c8821aac432c79d3",
       "teacher_targets": 17,
-      "continuous_pairs_meeting_all_six_target_margins": 17,
+      "total_surrogate_target_groups": 30,
+      "continuous_groups_meeting_all_six_target_margins": 17,
+      "optimal_fixed_support_binary_solves": 2,
+      "best_binary_groups_meeting_all_six_target_margins": 0,
       "packed_probes": 5,
       "packed_probes_with_training_pair_gains": 0,
       "frozen_changed_rows": 0

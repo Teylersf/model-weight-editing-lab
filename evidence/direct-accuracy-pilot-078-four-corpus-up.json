@@ -23,6 +23,20 @@
   },
   "all_folds_frozen_before_held_scoring": true,
   "held_outcomes_used_for_fit": false,
+  "retrospective_linear_rounded_attribution": {
+    "scope": "Read-only diagnostic on the already rejected edit in held fold 0. An archived correct choice counts as a loss when its edited gold logit falls strictly below its best rival. No ties occurred.",
+    "audit_source_sha256": "8744f3b6514b925a6fd1045be8046a2b49077b26a53d9a3c8e92ef9fe53923cd",
+    "audit_receipt_sha256": "093460e7729b443843c8b2553a2a3c0bcf6dc24062b1b7018f4d4a890c9c7893",
+    "held_states": 752,
+    "prior_correct": 351,
+    "rounded_cpu_losses": 12,
+    "linear_losses": 11,
+    "losses_in_both": 11,
+    "rounded_only_losses": 1,
+    "linear_only_losses": 0,
+    "losses_in_both_by_source": {"053": 2, "044": 8, "028": 1, "039": 0},
+    "limitation": "The rounded-only disagreement does not isolate Q8 from nonlinear response, binary32 rounding, or replay approximation. No native replay was performed for this attribution."
+  },
   "held_053_paired": {
     "matches": 384,
     "baseline_both_correct": 42,

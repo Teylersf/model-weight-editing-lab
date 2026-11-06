@@ -1,0 +1,1487 @@
+{
+  "schema": "published-pilot082-targeted-iq4-endpoints-v1",
+  "status": "rejected_at_held_choice_and_pair_gate",
+  "parent_model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "gate_tensor": {
+    "name": "blk.63.ffn_gate.weight",
+    "offset": 11225633696,
+    "bytes": 47349760,
+    "parent_sha256": "8f725f3a5399039dc92190cc1fd0c41dee06072b7bc3f31ad65040c920d9d864"
+  },
+  "gate_type": "IQ4_XS",
+  "code_layout": {
+    "codes_per_block": 256,
+    "bytes_per_block": 136,
+    "metadata_bytes": 8,
+    "bytes_per_row": 2720,
+    "coordinates_per_row": 5120
+  },
+  "plan_sha256": "4b194f4f9882e906df02d3f977c5941b8da0c530e1bf3e74936f6596acdc21b1",
+  "input_binding_sha256": "8efb238598e1cc431853f0eba8a4ba5106a62d8ca66168f57ffa93b283c2ae66",
+  "grouped_receipt_sha256": "265dde0415c193d12fd34c6bc79160f1c02dfedf1df4017b74710b3ab523f38f",
+  "fit_source_sha256": "342f19b444ae27018dc4d8c3df708f7e871eee758d514c999a9a40a876a65f39",
+  "codec_sha256": "9981d0ef005ef0bb0689327b9c440b0c0c824edd22b837a69da28d0b53b932f6",
+  "codec_audit_sha256": "f4f9bdd51ee093f90670af9bedae500338e83a1c5aab4eeaec01af8b844783fc",
+  "solver_sha256": "8ecd82cbcb7d3dbec1bb357a5ef2bf017f246a14594d914c603c216f05c611aa",
+  "code_limit": {
+    "rows": 12,
+    "coordinates_per_row": 32,
+    "legal_endpoint_steps": [
+      -4,
+      -2,
+      -1,
+      1,
+      2,
+      4
+    ]
+  },
+  "target_margin_in_linear_solver": 0.012,
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "bd9c32620a5d57f8d2d283b8d664d18afbea88648216b0f7e08c61f6cdbb5781",
+      "fit_rule_inputs": {
+        "053": 448,
+        "044": 512,
+        "028": 384,
+        "039": 84
+      },
+      "packed_rows": 2,
+      "packed_codes": 19,
+      "train_pair": {
+        "matches": 224,
+        "baseline_both_correct": 27,
+        "candidate_both_correct": 28,
+        "gains": 1,
+        "losses": 0,
+        "by_arm": {
+          "a": {
+            "matches": 56,
+            "baseline_both_correct": 6,
+            "candidate_both_correct": 7,
+            "gains": 1,
+            "losses": 0
+          },
+          "b": {
+            "matches": 56,
+            "baseline_both_correct": 6,
+            "candidate_both_correct": 6,
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "matches": 56,
+            "baseline_both_correct": 7,
+            "candidate_both_correct": 7,
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "matches": 56,
+            "baseline_both_correct": 8,
+            "candidate_both_correct": 8,
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      },
+      "train_choices": {
+        "053": {
+          "parent_correct": 203,
+          "candidate_correct": 204,
+          "gains": 1,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 6
+        },
+        "044": {
+          "parent_correct": 270,
+          "candidate_correct": 272,
+          "gains": 2,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 1
+        },
+        "028": {
+          "parent_correct": 233,
+          "candidate_correct": 233,
+          "gains": 0,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 0
+        },
+        "039": {
+          "parent_correct": 30,
+          "candidate_correct": 30,
+          "gains": 0,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 0
+        }
+      },
+      "train_target_min_margin": 0.011709213256835938,
+      "exact_rounded_continuous_train_pair_gains": 6,
+      "exact_rounded_continuous_train_pair_losses": 4,
+      "attempted_milp_solutions": 6,
+      "passed_all_linear_targets_and_guards": 6,
+      "passed_rounded_training": 2,
+      "held_choices": {
+        "053": {
+          "gains": 0,
+          "losses": 0
+        },
+        "044": {
+          "gains": 0,
+          "losses": 1
+        },
+        "028": {
+          "gains": 1,
+          "losses": 0
+        },
+        "039": {
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "patch_rows": [
+        {
+          "neuron": 8685,
+          "offset": 11249256896,
+          "bytes": 2720,
+          "parent_row_sha256": "0081941ac2800c17427659985c82b86098fc4a36e5ecf2eb8bde7828d4193a77",
+          "patched_row_sha256": "3544469f64d27833c45cd56df26945a2ef7fdc20f46a09c84853e7b23161ac81",
+          "moves": [
+            [
+              727,
+              -4
+            ],
+            [
+              1273,
+              -4
+            ],
+            [
+              1713,
+              4
+            ],
+            [
+              2007,
+              -4
+            ],
+            [
+              2638,
+              -4
+            ],
+            [
+              2918,
+              4
+            ],
+            [
+              2955,
+              -2
+            ],
+            [
+              2958,
+              4
+            ],
+            [
+              3384,
+              -4
+            ],
+            [
+              3988,
+              -4
+            ],
+            [
+              4104,
+              -4
+            ],
+            [
+              4147,
+              -4
+            ],
+            [
+              4148,
+              -4
+            ],
+            [
+              4461,
+              4
+            ],
+            [
+              4873,
+              4
+            ]
+          ]
+        },
+        {
+          "neuron": 10097,
+          "offset": 11253097536,
+          "bytes": 2720,
+          "parent_row_sha256": "7248d9ef1ab1643f41621b4abb2ea5b84448ee647ca9a77ee29af14386907f8d",
+          "patched_row_sha256": "83461bdcd849d098f4f5a85a732b3ea2addd815299beee5a2bc3962c3c361ad2",
+          "moves": [
+            [
+              2958,
+              2
+            ],
+            [
+              3331,
+              4
+            ],
+            [
+              3988,
+              2
+            ],
+            [
+              4230,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "b86b564d1154e4f971d51df2243806ad3abaad4f245f64a21e451a301f87d5f3",
+      "fit_rule_inputs": {
+        "053": 320,
+        "044": 512,
+        "028": 384,
+        "039": 72
+      },
+      "packed_rows": 9,
+      "packed_codes": 63,
+      "train_pair": {
+        "matches": 160,
+        "baseline_both_correct": 20,
+        "candidate_both_correct": 21,
+        "gains": 1,
+        "losses": 0,
+        "by_arm": {
+          "a": {
+            "matches": 40,
+            "baseline_both_correct": 7,
+            "candidate_both_correct": 7,
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "matches": 40,
+            "baseline_both_correct": 8,
+            "candidate_both_correct": 8,
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "matches": 40,
+            "baseline_both_correct": 3,
+            "candidate_both_correct": 3,
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "matches": 40,
+            "baseline_both_correct": 2,
+            "candidate_both_correct": 3,
+            "gains": 1,
+            "losses": 0
+          }
+        }
+      },
+      "train_choices": {
+        "053": {
+          "parent_correct": 144,
+          "candidate_correct": 149,
+          "gains": 5,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 4
+        },
+        "044": {
+          "parent_correct": 272,
+          "candidate_correct": 275,
+          "gains": 3,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 10
+        },
+        "028": {
+          "parent_correct": 229,
+          "candidate_correct": 230,
+          "gains": 1,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 2
+        },
+        "039": {
+          "parent_correct": 27,
+          "candidate_correct": 27,
+          "gains": 0,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 1
+        }
+      },
+      "train_target_min_margin": 0.0034770965576171875,
+      "exact_rounded_continuous_train_pair_gains": 5,
+      "exact_rounded_continuous_train_pair_losses": 1,
+      "attempted_milp_solutions": 4,
+      "passed_all_linear_targets_and_guards": 4,
+      "passed_rounded_training": 3,
+      "held_choices": {
+        "053": {
+          "gains": 0,
+          "losses": 1
+        },
+        "044": {
+          "gains": 3,
+          "losses": 2
+        },
+        "028": {
+          "gains": 0,
+          "losses": 1
+        },
+        "039": {
+          "gains": 2,
+          "losses": 0
+        }
+      },
+      "patch_rows": [
+        {
+          "neuron": 832,
+          "offset": 11227896736,
+          "bytes": 2720,
+          "parent_row_sha256": "565eaa3cd9fa0f03773964640fd0664189a9605a07ded90cf201bd43d7f41453",
+          "patched_row_sha256": "f19d00ab0055da5c52fff90059d861e8ae4a992ab893c9d8d063e76177be8022",
+          "moves": [
+            [
+              658,
+              -4
+            ],
+            [
+              1006,
+              -2
+            ],
+            [
+              1379,
+              4
+            ],
+            [
+              3102,
+              4
+            ]
+          ]
+        },
+        {
+          "neuron": 1720,
+          "offset": 11230312096,
+          "bytes": 2720,
+          "parent_row_sha256": "5fe0efff43a86f950e0dbb388f4febd2ff7eea490cfbfb7312e53224cee88959",
+          "patched_row_sha256": "53e74cfeb26300f877cf595261d0161565bce45c58f801283c63535a6f45a805",
+          "moves": [
+            [
+              423,
+              -4
+            ],
+            [
+              3281,
+              4
+            ],
+            [
+              3415,
+              4
+            ],
+            [
+              4125,
+              4
+            ]
+          ]
+        },
+        {
+          "neuron": 5161,
+          "offset": 11239671616,
+          "bytes": 2720,
+          "parent_row_sha256": "3274d2a7189122bc338baf78e719d28c99402b8dc6cb443523c289d4ee3423db",
+          "patched_row_sha256": "27d809358b9e5b38b05b4289ee842efd84e07da514cd0109c944d434133f40f2",
+          "moves": [
+            [
+              231,
+              -4
+            ],
+            [
+              401,
+              4
+            ],
+            [
+              658,
+              4
+            ],
+            [
+              707,
+              4
+            ],
+            [
+              971,
+              4
+            ],
+            [
+              1006,
+              -4
+            ],
+            [
+              1123,
+              -4
+            ],
+            [
+              2326,
+              4
+            ],
+            [
+              2422,
+              -4
+            ],
+            [
+              2458,
+              4
+            ],
+            [
+              2555,
+              4
+            ],
+            [
+              2621,
+              4
+            ],
+            [
+              2761,
+              4
+            ],
+            [
+              2781,
+              4
+            ],
+            [
+              2793,
+              4
+            ],
+            [
+              2894,
+              -4
+            ],
+            [
+              3388,
+              4
+            ],
+            [
+              3415,
+              -4
+            ],
+            [
+              3443,
+              -4
+            ],
+            [
+              3980,
+              -4
+            ],
+            [
+              3994,
+              1
+            ],
+            [
+              4075,
+              4
+            ]
+          ]
+        },
+        {
+          "neuron": 5599,
+          "offset": 11240862976,
+          "bytes": 2720,
+          "parent_row_sha256": "c777e1503abe33867374ea141b7dd13feceddc37127b0ec0889b260fcb16f4ec",
+          "patched_row_sha256": "466f9d80078b4f7ffda63154067a31e422ee2012fa4ddc8fc5f312cf5a1a885c",
+          "moves": [
+            [
+              231,
+              4
+            ],
+            [
+              658,
+              4
+            ],
+            [
+              1006,
+              -4
+            ],
+            [
+              1038,
+              -4
+            ],
+            [
+              1869,
+              4
+            ],
+            [
+              2006,
+              -4
+            ],
+            [
+              2555,
+              -4
+            ],
+            [
+              2621,
+              4
+            ],
+            [
+              3046,
+              4
+            ],
+            [
+              3388,
+              -4
+            ],
+            [
+              3415,
+              4
+            ],
+            [
+              3980,
+              -4
+            ],
+            [
+              4075,
+              -4
+            ]
+          ]
+        },
+        {
+          "neuron": 8685,
+          "offset": 11249256896,
+          "bytes": 2720,
+          "parent_row_sha256": "0081941ac2800c17427659985c82b86098fc4a36e5ecf2eb8bde7828d4193a77",
+          "patched_row_sha256": "cf8047dff22a35cbbc2cf075bb80844587636e1bb2312e6ea1eeedb2ad1eb939",
+          "moves": [
+            [
+              634,
+              -4
+            ],
+            [
+              699,
+              -4
+            ],
+            [
+              2336,
+              -4
+            ]
+          ]
+        },
+        {
+          "neuron": 9287,
+          "offset": 11250894336,
+          "bytes": 2720,
+          "parent_row_sha256": "cc070181c267bf8669416dcbf7c87a45fb8e999c0776a5214b1df7b48bd1b3a8",
+          "patched_row_sha256": "f4133d93f022085d303b04086520477080cac84386b29125cc72af5ae60a4cda",
+          "moves": [
+            [
+              2777,
+              -4
+            ]
+          ]
+        },
+        {
+          "neuron": 10097,
+          "offset": 11253097536,
+          "bytes": 2720,
+          "parent_row_sha256": "7248d9ef1ab1643f41621b4abb2ea5b84448ee647ca9a77ee29af14386907f8d",
+          "patched_row_sha256": "9afb89d03617be10d76d45a8ed1b8244d35d7832c8df8a9dd76155bb8e9ccaa5",
+          "moves": [
+            [
+              1574,
+              4
+            ]
+          ]
+        },
+        {
+          "neuron": 15626,
+          "offset": 11268136416,
+          "bytes": 2720,
+          "parent_row_sha256": "d7665128a24806f31b4adc60fd73183c3e2ea691c319a39134ac91f02afc8336",
+          "patched_row_sha256": "f5224c2239b29b1fb6862f811e26f0c5c53dd977e90017c95f5ce51ab2846a1a",
+          "moves": [
+            [
+              658,
+              -4
+            ],
+            [
+              1038,
+              -4
+            ]
+          ]
+        },
+        {
+          "neuron": 15943,
+          "offset": 11268998656,
+          "bytes": 2720,
+          "parent_row_sha256": "225fe3dc1dee4a8ef930ac49caf641d1a20413b727b525b5265f14c8d851d826",
+          "patched_row_sha256": "47b52988ec1491c3c5d213d481fb7561625e1ea90362a5805827ec76e8153591",
+          "moves": [
+            [
+              231,
+              4
+            ],
+            [
+              658,
+              4
+            ],
+            [
+              1006,
+              4
+            ],
+            [
+              1869,
+              -4
+            ],
+            [
+              2265,
+              4
+            ],
+            [
+              2555,
+              -4
+            ],
+            [
+              2621,
+              4
+            ],
+            [
+              2733,
+              -4
+            ],
+            [
+              2793,
+              -4
+            ],
+            [
+              3292,
+              -4
+            ],
+            [
+              3388,
+              4
+            ],
+            [
+              3980,
+              4
+            ],
+            [
+              4075,
+              -4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "cfb1a26c605dd97fc2e8242b69e91e164805b641a6cd33224e6c91e629f27a48",
+      "fit_rule_inputs": {
+        "053": 448,
+        "044": 448,
+        "028": 384,
+        "039": 84
+      },
+      "packed_rows": 11,
+      "packed_codes": 125,
+      "train_pair": {
+        "matches": 224,
+        "baseline_both_correct": 15,
+        "candidate_both_correct": 17,
+        "gains": 2,
+        "losses": 0,
+        "by_arm": {
+          "a": {
+            "matches": 56,
+            "baseline_both_correct": 4,
+            "candidate_both_correct": 5,
+            "gains": 1,
+            "losses": 0
+          },
+          "b": {
+            "matches": 56,
+            "baseline_both_correct": 5,
+            "candidate_both_correct": 6,
+            "gains": 1,
+            "losses": 0
+          },
+          "c": {
+            "matches": 56,
+            "baseline_both_correct": 3,
+            "candidate_both_correct": 3,
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "matches": 56,
+            "baseline_both_correct": 3,
+            "candidate_both_correct": 3,
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      },
+      "train_choices": {
+        "053": {
+          "parent_correct": 161,
+          "candidate_correct": 165,
+          "gains": 4,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 5
+        },
+        "044": {
+          "parent_correct": 201,
+          "candidate_correct": 204,
+          "gains": 3,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 7
+        },
+        "028": {
+          "parent_correct": 222,
+          "candidate_correct": 223,
+          "gains": 1,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 2
+        },
+        "039": {
+          "parent_correct": 32,
+          "candidate_correct": 33,
+          "gains": 1,
+          "losses": 0,
+          "ties": 0,
+          "positive_reserve_violations": 0,
+          "original_signed_floor_violations": 1
+        }
+      },
+      "train_target_min_margin": 0.0071353912353515625,
+      "exact_rounded_continuous_train_pair_gains": 5,
+      "exact_rounded_continuous_train_pair_losses": 1,
+      "attempted_milp_solutions": 6,
+      "passed_all_linear_targets_and_guards": 6,
+      "passed_rounded_training": 1,
+      "held_choices": {
+        "053": {
+          "gains": 0,
+          "losses": 1
+        },
+        "044": {
+          "gains": 1,
+          "losses": 0
+        },
+        "028": {
+          "gains": 0,
+          "losses": 0
+        },
+        "039": {
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "patch_rows": [
+        {
+          "neuron": 1720,
+          "offset": 11230312096,
+          "bytes": 2720,
+          "parent_row_sha256": "5fe0efff43a86f950e0dbb388f4febd2ff7eea490cfbfb7312e53224cee88959",
+          "patched_row_sha256": "bf6f1229e82792d44e939b71fc12f95c87cef509f470e5ebb55e23b586fa3500",
+          "moves": [
+            [
+              1178,
+              4
+            ]
+          ]
+        },
+        {
+          "neuron": 2599,
+          "offset": 11232702976,
+          "bytes": 2720,
+          "parent_row_sha256": "26fdec68f96c231f87f3cc914a07f9a969a74692a2afdd9f5817c86aa840722f",
+          "patched_row_sha256": "9f85e00ebc57e5d43fa68ba23ba11fa7dffc7d04c382664a8e292d54be600dc0",
+          "moves": [
+            [
+              180,
+              -4
+            ],
+            [
+              2090,
+              -4
+            ],
+            [
+              2574,
+              4
+            ],
+            [
+              3321,
+              4
+            ],
+            [
+              3572,
+              -4
+            ]
+          ]
+        },
+        {
+          "neuron": 4183,
+          "offset": 11237011456,
+          "bytes": 2720,
+          "parent_row_sha256": "0d272c35fc5fe875f9a857d52c40dbc2b844a109544ff401cb66d97aa65e38d3",
+          "patched_row_sha256": "911ca2a5fb12cabeaacf5643a23bada306599fdd18a369af75f44f155a580e36",
+          "moves": [
+            [
+              320,
+              4
+            ],
+            [
+              372,
+              -4
+            ],
+            [
+              807,
+              -4
+            ],
+            [
+              1504,
+              4
+            ],
+            [
+              2155,
+              -4
+            ],
+            [
+              2621,
+              -4
+            ],
+            [
+              3255,
+              -4
+            ],
+            [
+              3388,
+              4
+            ],
+            [
+              3648,
+              -4
+            ],
+            [
+              3783,
+              -4
+            ],
+            [
+              4231,
+              4
+            ],
+            [
+              4237,
+              4
+            ],
+            [
+              4359,
+              4
+            ],
+            [
+              4374,
+              -4
+            ],
+            [
+              4682,
+              -4
+            ],
+            [
+              4925,
+              -4
+            ]
+          ]
+        },
+        {
+          "neuron": 5161,
+          "offset": 11239671616,
+          "bytes": 2720,
+          "parent_row_sha256": "3274d2a7189122bc338baf78e719d28c99402b8dc6cb443523c289d4ee3423db",
+          "patched_row_sha256": "166edeb19e29dbb7ae528d1c5a69f4cf656cacf53eb285c758d688fcace421d1",
+          "moves": [
+            [
+              180,
+              -4
+            ],
+            [
+              707,
+              -4
+            ],
+            [
+              934,
+              -2
+            ],
+            [
+              1257,
+              -4
+            ],
+            [
+              1714,
+              4
+            ],
+            [
+              2155,
+              -4
+            ],
+            [
+              2894,
+              4
+            ],
+            [
+              3144,
+              -4
+            ],
+            [
+              3648,
+              4
+            ],
+            [
+              3783,
+              -4
+            ],
+            [
+              3838,
+              -4
+            ],
+            [
+              4231,
+              -4
+            ],
+            [
+              4621,
+              4
+            ]
+          ]
+        },
+        {
+          "neuron": 7785,
+          "offset": 11246808896,
+          "bytes": 2720,
+          "parent_row_sha256": "47519734816ded6e15b7d0ebb8eb54e6c4370517849ec59360066065961fae56",
+          "patched_row_sha256": "fbc3587341c4ea4e645759ecfcec1b2f70008caff564cae0e84250007fb94204",
+          "moves": [
+            [
+              96,
+              4
+            ],
+            [
+              180,
+              4
+            ],
+            [
+              1257,
+              4
+            ],
+            [
+              2458,
+              -4
+            ],
+            [
+              2621,
+              -4
+            ],
+            [
+              2967,
+              -4
+            ],
+            [
+              3255,
+              -4
+            ],
+            [
+              3572,
+              -4
+            ],
+            [
+              3783,
+              4
+            ],
+            [
+              4621,
+              4
+            ],
+            [
+              4751,
+              -4
+            ]
+          ]
+        },
+        {
+          "neuron": 8085,
+          "offset": 11247624896,
+          "bytes": 2720,
+          "parent_row_sha256": "cfc314cf005f30df1294616b00ade3f148719aa68f1f72e6ea51e63fab32f444",
+          "patched_row_sha256": "87e16f98b57c7645bc99800ff6c80ae2bec8db95dc20f17b7caf3f87d1b20446",
+          "moves": [
+            [
+              96,
+              4
+            ],
+            [
+              840,
+              4
+            ],
+            [
+              1714,
+              -4
+            ],
+            [
+              2155,
+              -4
+            ],
+            [
+              3239,
+              4
+            ],
+            [
+              3255,
+              4
+            ],
+            [
+              3572,
+              -4
+            ],
+            [
+              3648,
+              4
+            ],
+            [
+              3783,
+              4
+            ],
+            [
+              4231,
+              4
+            ]
+          ]
+        },
+        {
+          "neuron": 8685,
+          "offset": 11249256896,
+          "bytes": 2720,
+          "parent_row_sha256": "0081941ac2800c17427659985c82b86098fc4a36e5ecf2eb8bde7828d4193a77",
+          "patched_row_sha256": "4512cf0e10b285508c2179a346ac09d8927d5b0becc36f37655b69160c36ebc8",
+          "moves": [
+            [
+              35,
+              4
+            ],
+            [
+              96,
+              4
+            ],
+            [
+              180,
+              -4
+            ],
+            [
+              671,
+              4
+            ],
+            [
+              840,
+              4
+            ],
+            [
+              1574,
+              4
+            ],
+            [
+              1665,
+              4
+            ],
+            [
+              1714,
+              4
+            ],
+            [
+              1805,
+              4
+            ],
+            [
+              2155,
+              -4
+            ],
+            [
+              2210,
+              -4
+            ],
+            [
+              2793,
+              4
+            ],
+            [
+              3255,
+              -4
+            ],
+            [
+              3321,
+              -4
+            ],
+            [
+              3572,
+              -4
+            ],
+            [
+              3648,
+              -4
+            ],
+            [
+              3783,
+              4
+            ],
+            [
+              4112,
+              -4
+            ],
+            [
+              4122,
+              -4
+            ],
+            [
+              4231,
+              -4
+            ],
+            [
+              4601,
+              -4
+            ],
+            [
+              4621,
+              4
+            ],
+            [
+              4751,
+              -4
+            ]
+          ]
+        },
+        {
+          "neuron": 9287,
+          "offset": 11250894336,
+          "bytes": 2720,
+          "parent_row_sha256": "cc070181c267bf8669416dcbf7c87a45fb8e999c0776a5214b1df7b48bd1b3a8",
+          "patched_row_sha256": "dceb004d29344f7c473178a07b309963cf0c0e370fdcbc00e3ee2c8dd4e61ba3",
+          "moves": [
+            [
+              661,
+              4
+            ],
+            [
+              3157,
+              4
+            ],
+            [
+              3255,
+              4
+            ]
+          ]
+        },
+        {
+          "neuron": 9360,
+          "offset": 11251092896,
+          "bytes": 2720,
+          "parent_row_sha256": "49a86a50d51d3c18955fe2eed0bc2b97489811f7144359bafea86905eaacf431",
+          "patched_row_sha256": "c830ceed3d2f771d466f0d1f16758052bf44d866d930b96aac42668c38a0e89d",
+          "moves": [
+            [
+              96,
+              4
+            ],
+            [
+              180,
+              -4
+            ],
+            [
+              464,
+              4
+            ],
+            [
+              476,
+              4
+            ],
+            [
+              840,
+              -4
+            ],
+            [
+              1257,
+              -4
+            ],
+            [
+              1714,
+              -4
+            ],
+            [
+              1787,
+              -4
+            ],
+            [
+              2155,
+              2
+            ],
+            [
+              3572,
+              -4
+            ],
+            [
+              3648,
+              -4
+            ],
+            [
+              3783,
+              4
+            ],
+            [
+              3838,
+              4
+            ]
+          ]
+        },
+        {
+          "neuron": 10097,
+          "offset": 11253097536,
+          "bytes": 2720,
+          "parent_row_sha256": "7248d9ef1ab1643f41621b4abb2ea5b84448ee647ca9a77ee29af14386907f8d",
+          "patched_row_sha256": "5e78354decbc038501cddef8223c937189760ef0a663f137a08a3ac026842963",
+          "moves": [
+            [
+              212,
+              -4
+            ],
+            [
+              1340,
+              -4
+            ],
+            [
+              1574,
+              4
+            ],
+            [
+              1714,
+              -2
+            ],
+            [
+              1787,
+              4
+            ],
+            [
+              2155,
+              -4
+            ],
+            [
+              2174,
+              4
+            ],
+            [
+              2458,
+              -4
+            ],
+            [
+              3144,
+              4
+            ],
+            [
+              3239,
+              -4
+            ],
+            [
+              3255,
+              -4
+            ],
+            [
+              3783,
+              -4
+            ],
+            [
+              3838,
+              -4
+            ],
+            [
+              4231,
+              -4
+            ],
+            [
+              4408,
+              4
+            ]
+          ]
+        },
+        {
+          "neuron": 15943,
+          "offset": 11268998656,
+          "bytes": 2720,
+          "parent_row_sha256": "225fe3dc1dee4a8ef930ac49caf641d1a20413b727b525b5265f14c8d851d826",
+          "patched_row_sha256": "9cea427955aa9ffbcc307ee95e972ed01bff8ab8ed54226e8292d26d96ef51e6",
+          "moves": [
+            [
+              96,
+              4
+            ],
+            [
+              180,
+              -4
+            ],
+            [
+              1340,
+              -4
+            ],
+            [
+              1498,
+              -4
+            ],
+            [
+              1714,
+              -4
+            ],
+            [
+              1726,
+              4
+            ],
+            [
+              2155,
+              4
+            ],
+            [
+              2166,
+              4
+            ],
+            [
+              2223,
+              -4
+            ],
+            [
+              2793,
+              4
+            ],
+            [
+              3294,
+              4
+            ],
+            [
+              3509,
+              -4
+            ],
+            [
+              3572,
+              4
+            ],
+            [
+              3648,
+              4
+            ],
+            [
+              3741,
+              -4
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "held_pair": {
+    "matches": 384,
+    "baseline_both_correct": 42,
+    "candidate_both_correct": 42,
+    "gains": 0,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "held_cohorts": {
+    "053": {
+      "rows": 768,
+      "parent_correct": 327,
+      "candidate_correct": 325,
+      "gains": 0,
+      "losses": 2,
+      "ties": 0,
+      "positive_reserve_violations": 2
+    },
+    "044": {
+      "rows": 768,
+      "parent_correct": 384,
+      "candidate_correct": 385,
+      "gains": 4,
+      "losses": 3,
+      "ties": 0,
+      "positive_reserve_violations": 3
+    },
+    "028": {
+      "rows": 576,
+      "parent_correct": 342,
+      "candidate_correct": 342,
+      "gains": 1,
+      "losses": 1,
+      "ties": 0,
+      "positive_reserve_violations": 2
+    },
+    "039": {
+      "rows": 144,
+      "parent_correct": 55,
+      "candidate_correct": 57,
+      "gains": 2,
+      "losses": 0,
+      "ties": 0,
+      "positive_reserve_violations": 0
+    }
+  },
+  "held_ordinary_states": 90,
+  "held_ordinary_winner_changes": 0,
+  "patch_reproduction": "On the exact parent, add each signed move to the nibble code. For column c, let (block,local)=divmod(c,256) and (group,lane)=divmod(local,32). The row byte is 136*block+8+16*group+lane%16, and the nibble shift is 4*(lane//16). Verify each parent and patched row SHA-256. Preserve the other nibble and all metadata.",
+  "all_folds_frozen_before_held_scoring": true,
+  "checkpoint_written": false,
+  "official_fresh_or_proof_data_used": false
+}
