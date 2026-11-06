@@ -48,3 +48,17 @@ improvement. Only the supplied guard directions receive the algebraic protection
 The receipt includes a separate scalar uniform-grid rounding demonstration. It
 shows a nonzero requested change disappearing after rounding. That grid is
 explicitly a toy; it does not implement any real LLM quantization format.
+
+## Verify the Pilot 122 packed query recipes
+
+The read-only verifier checks all eight published recipes and their TSV digests.
+Supply the exact Pilot 024 GGUF to hash the full parent and reconstruct every
+edited row in memory. It takes Python 3.11 or newer and runs without a GPU.
+
+```sh
+python examples/verify_pilot122_query_overlay.py
+python examples/verify_pilot122_query_overlay.py --model /path/to/pilot-024.gguf
+```
+
+The recipes identify the IQ4_XS code indices, signed changes, and full-row
+hashes. [Recipes and measured CUDA screen](../evidence/direct-accuracy-pilot-122-query-overlay.json)

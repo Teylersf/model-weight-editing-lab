@@ -1,0 +1,83 @@
+{
+  "schema": "published-pilot117-ordinary-query-capture-v2",
+  "scope": "Label-free stock replay of 60 ordinary fitting positions from six independently reviewed authored trajectories. Whole folds 0 and 1 are included. Fold 2 was excluded.",
+  "model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "receipt_sha256": {
+    "capture": "c5120d79bba92587fd7fa826faccb468971e040ad0a85a404714aa650ed482fe",
+    "native": "2ac973de2354409ed1c122b92fa8397f33859080b00f17391d54206fe8401aea",
+    "plan": "98c86a9d8e4a83c9c37f2d84274351e27a47c5165527505b6e3b078f706c5175",
+    "no_model_preflight": "19356360b8a7adbdc54a63995734074b271f55d93d250b66a2e0b023eb42bf2d",
+    "build": "658ca4d637a4956b128d6b836cf0b7a481d06bb77e88b3c801a4ea1274cec2f8",
+    "v1_plan": "781c1a0f70affefa903cadab5797b5ebb7301331bac324cfbb0f77e1773cc06c",
+    "source_ordinary_capture": "3b6979579e32f7d5ad7368a83b8fe21883619e8faf4fcfcdea3ce3ff16baddad",
+    "source_ordinary_partition": "c6b91a090db16d8757e2c9e5007de1885c8542bc7f0014754e10aa4e736fdc68"
+  },
+  "source_sha256": "32478f4b567b0489bd6c12b8ab933ebabbcc546511b2775499179b65586ca13e",
+  "native_binary_sha256": "599f27afab9097bc019b6d8e9441b7effaf06a48baff69b5b6ade96770087b3e",
+  "manifest_sha256": "c78ff0cb62cc5af8745ee4e68bf4cb231e9419dce8d50520c905870d5b0f7b58",
+  "no_model_preflight": {
+    "states": 60,
+    "full_parent_sha256_verified": true,
+    "native_stdout_sha256": "c4251a28e7d227c052bb7eda73d682018c306e441712a7d3aab3362a3abe3674",
+    "rejected_controls": [
+      "wrong_manifest_pin",
+      "wrong_parent_pin",
+      "patch_flag"
+    ]
+  },
+  "method": "Verify each neutralized terminal prefix against its authorized original tokens. Preserve the original 64-token prefill and single-token decode schedule. Share an already checked prefix only within the same original trajectory after comparing its exact bytes. Check native cache slots and the causal mask at each captured state.",
+  "counts": {
+    "states": 60,
+    "source_trajectories": 6,
+    "context_resets": 6,
+    "original_prefill_tokens": 478,
+    "independent_prefix_one_token_steps": 76419,
+    "cached_replay_one_token_steps": 12883,
+    "actual_replay_tokens": 13361,
+    "reused_prefix_tokens": 67838,
+    "complete_prefix_kv_tokens": 81199,
+    "activation_bytes": 361365504
+  },
+  "exact_archived_parity": {
+    "terminal_and_ffn_states": 60,
+    "winner_states": 60,
+    "binary32_choice_logits": 240,
+    "binary32_selected_logits": 360,
+    "binary32_top64_entries": 3840,
+    "terminal_and_ffn_tensor_count": 7,
+    "gamma_exact": true
+  },
+  "attention": {
+    "layers": [
+      63
+    ],
+    "heads": 24,
+    "kv_heads": 4,
+    "head_width": 256,
+    "exact_kv_slice_hashes": 120,
+    "exact_q_and_pregate_slice_hashes": 120,
+    "sigmoid_max_abs_error": 1.0935249883381459e-07,
+    "array_widths": {
+      "a": 17408,
+      "p": 5120,
+      "r": 5120,
+      "h": 5120,
+      "ffn_input": 5120,
+      "ffn_gate": 17408,
+      "ffn_up": 17408,
+      "query_input": 5120,
+      "joint_query_gate": 12288,
+      "normalized_query": 6144,
+      "sigmoid_gate": 6144,
+      "attention_output": 5120,
+      "q_63": 6144,
+      "pregate_63": 6144
+    }
+  },
+  "replay_command": "py -3.12 -I -B capture_ordinary_query_117_v2.py --run --plan-sha256 98c86a9d8e4a83c9c37f2d84274351e27a47c5165527505b6e3b078f706c5175 --preflight-sha256 19356360b8a7adbdc54a63995734074b271f55d93d250b66a2e0b023eb42bf2d",
+  "replay_inputs": "Run from the sealed local Pilot 117 v2 workspace with its pinned native build, runtime, parent, and ordinary archives.",
+  "labels_read": false,
+  "model_weights_mutated": false,
+  "checkpoint_written": false,
+  "held_or_protected_inputs_used": false
+}

@@ -1,0 +1,278 @@
+{
+  "schema": "published-pilot121-ordinary-guarded-mixed-search-v2",
+  "model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "scope": "Bounded training-only mixed IQ4_XS gate and Q4_K up search. Exact replay checked signed fitting and ordinary margins before the independent reserve or inner transfer could be scored.",
+  "method": "Insert eight closest ordinary rival comparisons for each of 60 archived top-64 winners before proposing the first packed incumbent. Floor each margin at the smaller of 0.004 logits and half its parent gap. Check all 480 floors and all archived top-64 winners after exact Q8 replay, alongside the existing signed math constraints and per-teacher all-rival epigraphs.",
+  "partition": {
+    "new_proposal_rows": 192,
+    "new_inner_rows_not_used_in_fit": 96,
+    "new_rotation_reserve_rows_not_used": 96,
+    "new_outer_rows_not_decoded_by_fit_loader": 128,
+    "legacy_rows": {
+      "053": 336,
+      "044": 448,
+      "028": 384,
+      "039": 72
+    },
+    "ordinary_rows": 60,
+    "held_family_exclusions_verified": true,
+    "shared_legacy_captures_deserialized_for_integrity": true
+  },
+  "settings": {
+    "fit_folds": [
+      0,
+      1
+    ],
+    "inner_transfer_fold": 2,
+    "outer_locked_fold": 3,
+    "legacy_held_fold_excluded": 2,
+    "ordinary_rivals_per_state": 8,
+    "ordinary_floor_cap": 0.004,
+    "ordinary_floor_fraction": 0.5,
+    "local_groups": 96,
+    "lp_seconds": 24,
+    "mip_seconds": 16,
+    "cpu_threads": 2
+  },
+  "eligible_training_presentations": 18,
+  "eligible_training_families": 3,
+  "v1": {
+    "source_sha256": "0ecd0a3e02a09862e7e11f5518efd91140b13000e6f6375fc93316dff293baf8",
+    "plan_sha256": "61beba915b8f62f4a8c9e2f876e5fa8e41f5052370a47d46314e1472b4d35c04",
+    "training_report_sha256": "a8ffe8adf8527593e788156667f7953209d586efcc02c3d32296ac18798cb61c",
+    "trials": [
+      {
+        "support_index": 0,
+        "alternative_endpoints": 2177,
+        "coordinate_groups": 384,
+        "math_constraints": 2106,
+        "ordinary_constraints": 480,
+        "total_constraints": 2586,
+        "teacher_epigraphs": 17,
+        "teacher_rival_constraints": 51,
+        "parent_objectives": [
+          0.01838426462690284,
+          0.3276589400238461
+        ],
+        "parent_bound": {
+          "status": 1,
+          "optimal": false,
+          "maximum_minimum_normalized_slack": null
+        },
+        "exact_probes": [],
+        "reanchors": []
+      },
+      {
+        "support_index": 1,
+        "alternative_endpoints": 2183,
+        "coordinate_groups": 384,
+        "math_constraints": 2106,
+        "ordinary_constraints": 480,
+        "total_constraints": 2586,
+        "teacher_epigraphs": 17,
+        "teacher_rival_constraints": 51,
+        "parent_objectives": [
+          0.01838426462690284,
+          0.3276589400238461
+        ],
+        "parent_bound": {
+          "status": 0,
+          "optimal": true,
+          "maximum_minimum_normalized_slack": -0.10852934643778941
+        },
+        "exact_probes": [
+          {
+            "stage": "parent_certainty_legal",
+            "codes": 366,
+            "exact_deficits": 28,
+            "exact_maximum_deficit": 0.3378931021826172,
+            "math_deficits": 28,
+            "ordinary_deficits": 0,
+            "objective_components": [
+              0.0151076640718783,
+              0.30997459093729657
+            ],
+            "q8_parity": true,
+            "passed": false,
+            "ordinary": {
+              "states": 60,
+              "archived_top64_winner_changes": 0,
+              "binary32_archived_top64_winner_changes": 0,
+              "min_archived_top64_winner_margin": 0.026406280902847357
+            },
+            "paired": null
+          },
+          {
+            "stage": "parent_leverage_legal",
+            "codes": 366,
+            "exact_deficits": 30,
+            "exact_maximum_deficit": 0.2008691764013672,
+            "math_deficits": 30,
+            "ordinary_deficits": 0,
+            "objective_components": [
+              0.01635104756543104,
+              0.3381752338674333
+            ],
+            "q8_parity": true,
+            "passed": false,
+            "ordinary": {
+              "states": 60,
+              "archived_top64_winner_changes": 0,
+              "binary32_archived_top64_winner_changes": 0,
+              "min_archived_top64_winner_margin": 0.013397111866652267
+            },
+            "paired": null
+          },
+          {
+            "stage": "exact_reanchor_legal",
+            "codes": 364,
+            "exact_deficits": 16,
+            "exact_maximum_deficit": 0.37087497474121095,
+            "math_deficits": 16,
+            "ordinary_deficits": 0,
+            "objective_components": [
+              0.014641208232389069,
+              0.3207715504699283
+            ],
+            "q8_parity": true,
+            "passed": false,
+            "ordinary": {
+              "states": 60,
+              "archived_top64_winner_changes": 0,
+              "binary32_archived_top64_winner_changes": 0,
+              "min_archived_top64_winner_margin": 0.03046478896339977
+            },
+            "paired": null
+          }
+        ],
+        "reanchors": [
+          {
+            "groups": 96,
+            "variables": 568,
+            "relaxed_bound": {
+              "status": 0,
+              "optimal": true,
+              "maximum_minimum_normalized_slack": -0.19714277373138
+            }
+          }
+        ]
+      }
+    ],
+    "replay_command": "py -3.12 -I -B fit_ordinary_guarded_mixed_121.py --run 61beba915b8f62f4a8c9e2f876e5fa8e41f5052370a47d46314e1472b4d35c04"
+  },
+  "v2": {
+    "source_sha256": "e1e44fa06083818f506092ace9e7ea9638c6a1d8df94e4db52b6381a8f88f5f1",
+    "plan_sha256": "ca2b01d07879a678544514146c2447bce1cd1fbb92034197308cc9ea12289a4a",
+    "training_report_sha256": "264caafb22bb7f4d926585ff3f515b1efacd4908ed4a51629c6f3b4f9036fc7f",
+    "trials": [
+      {
+        "support_index": 0,
+        "alternative_endpoints": 2177,
+        "coordinate_groups": 384,
+        "math_constraints": 2106,
+        "ordinary_constraints": 480,
+        "total_constraints": 2586,
+        "teacher_epigraphs": 17,
+        "teacher_rival_constraints": 51,
+        "parent_objectives": [
+          0.01838426462690284,
+          0.3276589400238461
+        ],
+        "parent_bound": {
+          "status": 0,
+          "optimal": true,
+          "maximum_minimum_normalized_slack": 0.03461648623331731
+        },
+        "exact_probes": [
+          {
+            "stage": "parent_certainty_legal",
+            "codes": 371,
+            "exact_deficits": 24,
+            "exact_maximum_deficit": 0.03489426566528319,
+            "math_deficits": 24,
+            "ordinary_deficits": 0,
+            "objective_components": [
+              0.01853737944284937,
+              0.3109817259841495
+            ],
+            "q8_parity": true,
+            "passed": false,
+            "ordinary": {
+              "states": 60,
+              "archived_top64_winner_changes": 0,
+              "binary32_archived_top64_winner_changes": 0,
+              "min_archived_top64_winner_margin": 0.025657507668256585
+            },
+            "paired": null
+          },
+          {
+            "stage": "parent_leverage_legal",
+            "codes": 363,
+            "exact_deficits": 21,
+            "exact_maximum_deficit": 0.05518216086791992,
+            "math_deficits": 21,
+            "ordinary_deficits": 0,
+            "objective_components": [
+              0.018976894717639185,
+              0.31400684383180405
+            ],
+            "q8_parity": true,
+            "passed": false,
+            "ordinary": {
+              "states": 60,
+              "archived_top64_winner_changes": 0,
+              "binary32_archived_top64_winner_changes": 0,
+              "min_archived_top64_winner_margin": 0.023885656098173058
+            },
+            "paired": null
+          },
+          {
+            "stage": "exact_reanchor_legal",
+            "codes": 360,
+            "exact_deficits": 15,
+            "exact_maximum_deficit": 0.05888232947753906,
+            "math_deficits": 15,
+            "ordinary_deficits": 0,
+            "objective_components": [
+              0.01859602915935529,
+              0.3060145265526242
+            ],
+            "q8_parity": true,
+            "passed": false,
+            "ordinary": {
+              "states": 60,
+              "archived_top64_winner_changes": 0,
+              "binary32_archived_top64_winner_changes": 0,
+              "min_archived_top64_winner_margin": 0.017922034341609105
+            },
+            "paired": null
+          }
+        ],
+        "reanchors": [
+          {
+            "groups": 96,
+            "variables": 566,
+            "relaxed_bound": {
+              "status": 0,
+              "optimal": true,
+              "maximum_minimum_normalized_slack": 0.0031603342759634833
+            },
+            "integer": {
+              "status": 1,
+              "incumbent": false,
+              "kept_signed_rows": 559
+            }
+          }
+        ]
+      }
+    ],
+    "replay_command": "py -3.12 -I -B fit_ordinary_guarded_mixed_121_v2.py --run ca2b01d07879a678544514146c2447bce1cd1fbb92034197308cc9ea12289a4a"
+  },
+  "replay_inputs": "Run from the corresponding sealed local Pilot 121 workspace with its authorized private training archives and parent. V2 retries the unresolved first support with a longer LP limit and preserves the resolved second support.",
+  "qualifying_proposal_candidates": 0,
+  "reserve_scored": false,
+  "inner_transfer_scored": false,
+  "outer_scored": false,
+  "gpu_used": false,
+  "checkpoint_written": false
+}

@@ -1010,3 +1010,33 @@ On the independently reserved 64 presentations, accuracy stayed at **38/64** wit
 The read-only CUDA capture kept exactly the **192** authorized fitting presentations. It recorded **63,288** causal prefix tokens, verified all **384** key and value cache slice hashes, and matched the archived terminal tensors, **768** A–D logits, and **12,288** top-64 entries bit for bit. An independent eight-state CPU check reproduced the continuous attention and suffix derivatives with finite differences. The maximum relative RMS discrepancy in reconstructing the native pre-gate outputs was **0.058%** on those eight states.
 
 The derivative computed on all 192 states failed calibration against the four fixed Pilot 110 CUDA measurements. The largest predicted A–D shift was **1.42 × 10⁻⁶** logits, compared with a measured **0.00447**. Using the actual before-and-after native states as anchors, Q8-effective inputs reproduced the FFN and output-head changes closely. The maximum choice-logit error fell from **0.00470** with the continuous hidden-state change to **1.75 × 10⁻⁶** with Q8. Rounding the query to binary16 improved the pre-gate prediction and still left substantial error. The smooth query gradient therefore did not qualify to rank packed edits. [Native capture, finite differences, and stage controls](../evidence/direct-accuracy-pilots-112-119-query-calibration.json)
+
+## Pilot 117 with cached replay of ordinary training prefixes
+
+The stock CUDA capture replayed **60** ordinary fitting positions from six independently reviewed trajectories. It kept the original 64-token prefill and single-token decode schedule. Within each trajectory, it checked the exact shared prefix and reused its verified cache. This reduced single-token decode calls from **76,419 to 12,883** while retaining complete prefix K/V for each capture.
+
+All seven archived terminal and FFN tensors, the learned RMS gain, **60** winners, **240** A–D logits, and **3,840** top-64 entries matched bit for bit. The capture also verified **240** query, key, value, and pre-gate slice hashes. These arrays support query-edit modeling on ordinary training states. A changed winner still requires verification under the native edited replay. [Scoped capture, preflight, and parity counts](../evidence/direct-accuracy-pilot-117-ordinary-query-capture.json)
+
+## Pilot 120 with mixed-precision query calibration
+
+The CPU replay reconstructed the changed rotary query from the packed-code recipe with a maximum error of **4.77 × 10⁻⁷**. It compared ten attention arithmetic variants on the same four native smoke states, then carried their anchored changes through Q8-effective projections and the remaining model layers. A separate run supplied the actual edited pre-gate activation to the suffix.
+
+The highest choice-logit cosine across the tested approximations was **0.903**, with agreement on **four of six** shifts whose magnitude reached 0.001 logits. Its maximum choice-logit error was **0.00266**. The teacher-forced suffix had the same maximum error. These measurements characterize the four calibration states. A native candidate replay is required for a weight-edit decision. [Ten arithmetic variants and suffix control](../evidence/direct-accuracy-pilot-120-query-mixed-precision-calibration.json)
+
+## Pilot 121 with ordinary margin floors before packing
+
+The mixed gate and up search added **480** ordinary winner-versus-rival constraints to **2,106** signed math constraints before proposing packed changes. Each ordinary floor was the smaller of 0.004 logits and half the parent margin. Exact replay checked those floors and each of the 60 archived top-64 winners.
+
+The first support reached the initial LP time limit. The other support had negative relaxed slack. The longer retry of the first support reached **+0.03462** normalized slack at the parent and **+0.00316** after reanchoring on the 96-group subset. The local integer solver timed out without an incumbent. The best 360-code exact probe preserved all ordinary winners and still crossed **15** math margins. The fit produced no qualifying proposal. [Both bounded searches and their exact probes](../evidence/direct-accuracy-pilot-121-ordinary-guarded-mixed-search.json)
+
+## Pilot 122 with reversible CUDA query overlays
+
+The native runner loaded Pilot 024 once and tested eight packed query edits on the RTX 3090. It checked each original GPU row against the independently reconstructed GGUF bytes, changed 12–32 IQ4_XS codes per proposal, and read the changed bytes back. The edits touched only the query half of the final attention block. The initial pass matched the archived selected logits and top-64 entries for all 16 training presentations. After restoration, all 16 full-vocabulary logit digests reproduced exactly.
+
+Seven proposals tied the parent at **14/16**. The reverse-direction control lost one correct choice, and none repaired either sampled miss. Four proposals improved the mean correct margin on both target pairs. The best balanced proposal increased those two means by **0.00479** and **0.00735** logits. These margins nominated a larger training replay. [Exact packed recipes and measured results](../evidence/direct-accuracy-pilot-122-query-overlay.json) · [Read-only recipe verification](../examples/README.md#verify-the-pilot-122-packed-query-recipes)
+
+## Pilot 123 with exact signed residual repair
+
+The follow-up reproduced all three packed probes from Pilot 121's positive support and froze its **360-code** anchor by hash. Across four rounds, it measured **256** single-endpoint effects on critical math rows and ran **32** full exact replays of bounded combined proposals. Every full replay preserved the strict ordinary gate, and eight kept both training objective components at or below the parent.
+
+The lowest count of crossed margins fell from **15 to seven**. The final anchor's total deficit fell from **0.30704 to 0.17505** logits, while its largest deficit rose from **0.05888 to 0.06701**. No proposal cleared every training gate. The independent reserve and family transfer remained sealed. [Reconstruction hashes and exact residual rounds](../evidence/direct-accuracy-pilot-123-exact-signed-residual-repair.json)

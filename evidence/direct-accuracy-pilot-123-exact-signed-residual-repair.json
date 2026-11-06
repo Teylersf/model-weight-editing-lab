@@ -1,0 +1,157 @@
+{
+  "schema": "published-pilot123-exact-signed-residual-repair-v1",
+  "model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "scope": "A separate training-only repair around the frozen Pilot 121 positive-support reconstruction.",
+  "source_sha256": "c202e4016792fd5ef50d8dae642bf0f8f49c538a78702b9b9901c37771a55dd1",
+  "receipt_sha256": {
+    "training_report": "7d3cc6434888abc0e06d908258c1fee575b94b24ec4432d0fbee9e3e9a6692ab",
+    "plan": "82af598a379734544894de4fb5f220589db35bf963be17ab19cf8bbf3f3731de",
+    "reconstructed_anchor": "1d746751bb80484b02756a223366b4e2edf16370e5cf09e7c258ea7a9f047220",
+    "p121_training_report": "264caafb22bb7f4d926585ff3f515b1efacd4908ed4a51629c6f3b4f9036fc7f",
+    "p121_plan": "ca2b01d07879a678544514146c2447bce1cd1fbb92034197308cc9ea12289a4a",
+    "p121_source": "e1e44fa06083818f506092ace9e7ea9638c6a1d8df94e4db52b6381a8f88f5f1"
+  },
+  "method": "Reproduce the prior relaxed bounds and all three legal packed probe measurements. Measure each allowed single-endpoint move on critical exact Q8 math rows. Combine these measurements with ordinary and objective sensitivities to propose bounded elastic integer repairs. Replay every finalist against the full original hard constraints and objectives before any new phase.",
+  "training_scope": {
+    "new_proposal_rows": 192,
+    "new_inner_rows_not_used_in_fit": 96,
+    "new_rotation_reserve_rows_not_used": 96,
+    "new_outer_rows_not_decoded_by_fit_loader": 128,
+    "legacy_rows": {
+      "053": 336,
+      "044": 448,
+      "028": 384,
+      "039": 72
+    },
+    "ordinary_rows": 60,
+    "held_family_exclusions_verified": true,
+    "shared_legacy_captures_deserialized_for_integrity": true
+  },
+  "settings": {
+    "max_rounds": 4,
+    "library_endpoints": 64,
+    "math_critical_rows": 128,
+    "ordinary_critical_rows": 64,
+    "full_replays_each": 8,
+    "elastic_trust_groups": [
+      4,
+      8
+    ],
+    "elastic_milp_seconds": 6
+  },
+  "support": {
+    "alternative_endpoints": 2177,
+    "coordinate_groups": 384,
+    "math_constraints": 2106,
+    "ordinary_constraints": 480,
+    "parent_objectives": [
+      0.01838426462690284,
+      0.3276589400238461
+    ]
+  },
+  "anchor": {
+    "rows": 16,
+    "packed_codes": 360,
+    "endpoint_vector_sha256": "c63bd634d2e3fd554e616b37ee1459062f98f1b5bdeab31a75690b18680b8262",
+    "exact_deficits": [
+      15,
+      0.3070435931335449,
+      0.05888232947753906
+    ],
+    "objective_components": [
+      0.01859602915935529,
+      0.3060145265526242
+    ],
+    "ordinary": {
+      "states": 60,
+      "archived_top64_winner_changes": 0,
+      "binary32_archived_top64_winner_changes": 0,
+      "min_archived_top64_winner_margin": 0.017922034341609105
+    },
+    "all_three_p121_probes_reproduced": true,
+    "p121_integer_timeout_repeated": false
+  },
+  "deficit_tuple_order": [
+    "violated_constraints",
+    "total_deficit_logits",
+    "maximum_deficit_logits"
+  ],
+  "rounds": [
+    {
+      "depth": 0,
+      "before_deficits": [
+        15,
+        0.3070435931335449,
+        0.05888232947753906
+      ],
+      "exact_single_effects": 64,
+      "full_replays": 8,
+      "strict_ordinary_full_replays": 8,
+      "improved_full_replays": 8,
+      "full_training_passes": 0,
+      "elastic_trials": 2
+    },
+    {
+      "depth": 1,
+      "before_deficits": [
+        10,
+        0.22883795465698237,
+        0.06931743384765626
+      ],
+      "exact_single_effects": 64,
+      "full_replays": 8,
+      "strict_ordinary_full_replays": 8,
+      "improved_full_replays": 7,
+      "full_training_passes": 0,
+      "elastic_trials": 2
+    },
+    {
+      "depth": 2,
+      "before_deficits": [
+        7,
+        0.18784617099731446,
+        0.07058582068847657
+      ],
+      "exact_single_effects": 64,
+      "full_replays": 8,
+      "strict_ordinary_full_replays": 8,
+      "improved_full_replays": 6,
+      "full_training_passes": 0,
+      "elastic_trials": 2
+    },
+    {
+      "depth": 3,
+      "before_deficits": [
+        7,
+        0.1785907617565918,
+        0.06560382605957032
+      ],
+      "exact_single_effects": 64,
+      "full_replays": 8,
+      "strict_ordinary_full_replays": 8,
+      "improved_full_replays": 4,
+      "full_training_passes": 0,
+      "elastic_trials": 2
+    }
+  ],
+  "exact_screening_replays": 256,
+  "full_exact_replays": 32,
+  "final_anchor_deficits": [
+    7,
+    0.175053583717041,
+    0.06700954200195314
+  ],
+  "qualifying_proposal_candidates": 0,
+  "replay_command": "py -3.12 -I -B fit_exact_signed_residual_123.py --run 82af598a379734544894de4fb5f220589db35bf963be17ab19cf8bbf3f3731de",
+  "replay_inputs": "Run from the sealed local Pilot 123 workspace with the exact Pilot 121 archive and authorized training inputs.",
+  "reserve_scored": false,
+  "inner_transfer_scored": false,
+  "outer_scored": false,
+  "packed_candidate_written": false,
+  "gpu_used": false,
+  "checkpoint_written": false,
+  "full_replay_controls": {
+    "strict_ordinary_gate_passed": 32,
+    "both_objective_components_nonworsening": 8
+  }
+}

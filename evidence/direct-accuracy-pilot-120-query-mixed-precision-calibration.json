@@ -1,0 +1,567 @@
+{
+  "schema": "published-pilot120-query-mixed-precision-calibration-v1",
+  "scope": "Fixed four-state engineering calibration against the archived Pilot 110 one-code CUDA probe. The comparison covers 16 logit shifts. Grades and an independent transfer panel stayed outside this calibration.",
+  "model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "cuda_source_commit": "8642541b255bfb5dc39cd351a178be09013a55d6",
+  "receipt_sha256": {
+    "calibration": "c37bb7287ae8624d212a8c179d15ba06dbe54bc24a43cad0d8ada29eab5c38a2",
+    "plan_v4": "397f43fa48a7d17b9555ee100bd875fa2f940302063901975105b028f7d1abca",
+    "prior_plan": "8eec4a49ccbda239a2a7364c00a5746fdd8e1c5c9715d8a1b707905529cfb1b0",
+    "prior_plan_v2": "b189210893b39f365b9ecec54bfe79349e9ed27bed7ad20da169a23e371585c0",
+    "prior_plan_v3": "4b766af5df9a3a5d705cdd7a4ce051f03618795853549745cefe6965ab8b81a4"
+  },
+  "source_sha256": "c0a7f3f20b5afbe747025391b059bafda5c904b9573e59efbb4460093472f10c",
+  "method": "Compare the packed-code reconstruction with the native edited query. Anchor each simulated attention delta to the stock pre-gate activation. Compare continuous and mixed-precision attention variants under the archived causal layout. Replay the suffix with Q8-effective projections, learned RMS, FFN, and output head.",
+  "settings": {
+    "states": 4,
+    "choice_logit_shifts": 16,
+    "significance_logit_threshold": 0.001,
+    "archived_query_microbatch_row_counts": [
+      4,
+      61
+    ],
+    "dispatch_proxy": "F16 MMA with group ratio six, ncols2=8, native query tile count; archived padded causal K/V",
+    "accumulation": "F16 Q scaled in F16, F32 QK and exp denominator, F16 unnormalized exp in numerator, fixed variants with per-MMA F16 or F32 accumulator, F32 seam fixup",
+    "synthetic_constant_v_max_abs": {
+      "continuous": 8.940696716308594e-08,
+      "q_half": 1.1920928955078125e-07,
+      "q_half_global_exp_half": 1.3008713722229004e-05,
+      "online_fp32_accum_occ2": 1.6763806343078613e-05,
+      "online_half_rne_unsplit": 0.0001789778470993042,
+      "online_half_rne_occ1": 0.0001789778470993042,
+      "online_half_rne_occ2": 0.0001789778470993042,
+      "online_half_rne_occ3": 9.02712345123291e-05,
+      "online_half_rtz_occ2": 0.0004722476005554199,
+      "online_half_rtz_occ3": 0.00029206275939941406
+    }
+  },
+  "simulated_noop_exact": true,
+  "packed_query_error": {
+    "observed_max": 0.003189563751220703,
+    "predicted_max": 0.003189563751220703,
+    "max_abs_error": 4.76837158203125e-07,
+    "relative_l2_error": 0.0005359750271035799,
+    "cosine": 0.9999998572710751
+  },
+  "teacher_forced_native_edited_pregate_suffix": {
+    "stage": {
+      "p": {
+        "observed_max": 0.0021240711212158203,
+        "predicted_max": 0.0021240711212158203,
+        "max_abs_error": 0.0001697540283203125,
+        "relative_l2_error": 0.07589305063912292,
+        "cosine": 0.9971324522395003
+      },
+      "ffn_input": {
+        "observed_max": 0.000492483377456665,
+        "predicted_max": 0.0004924535751342773,
+        "max_abs_error": 4.208087921142578e-05,
+        "relative_l2_error": 0.07986898757174794,
+        "cosine": 0.9968255580659645
+      },
+      "ffn_gate": {
+        "observed_max": 0.007616519927978516,
+        "predicted_max": 0.007616519927978516,
+        "max_abs_error": 0.002299785614013672,
+        "relative_l2_error": 0.40816524324055803,
+        "cosine": 0.9185907872882493
+      },
+      "ffn_up": {
+        "observed_max": 0.006962418556213379,
+        "predicted_max": 0.006962180137634277,
+        "max_abs_error": 0.002255856990814209,
+        "relative_l2_error": 0.40416944572216645,
+        "cosine": 0.9201407914566093
+      },
+      "a": {
+        "observed_max": 0.040933847427368164,
+        "predicted_max": 0.04093337059020996,
+        "max_abs_error": 0.012929916381835938,
+        "relative_l2_error": 0.40609573900074336,
+        "cosine": 0.918850530944456
+      },
+      "r": {
+        "observed_max": 0.013747453689575195,
+        "predicted_max": 0.013746023178100586,
+        "max_abs_error": 0.008148193359375,
+        "relative_l2_error": 0.4005104691913038,
+        "cosine": 0.9209826637270835
+      },
+      "h": {
+        "observed_max": 0.004690885543823242,
+        "predicted_max": 0.004690289497375488,
+        "max_abs_error": 0.0014254450798034668,
+        "relative_l2_error": 0.41261583795153756,
+        "cosine": 0.9162277067999085
+      }
+    },
+    "choice": {
+      "observed_max": 0.0044727325439453125,
+      "predicted_max": 0.004473311826586723,
+      "max_abs_error": 0.002658843994140625,
+      "relative_l2_error": 0.5501387864412347,
+      "cosine": 0.8442251143411104,
+      "significant": 6,
+      "signs": 4
+    }
+  },
+  "variant_comparisons": {
+    "continuous": {
+      "stock_pregate_error": {
+        "observed_max": 26.442960739135742,
+        "predicted_max": 26.44523048400879,
+        "max_abs_error": 0.02227020263671875,
+        "relative_l2_error": 0.0002323379791125914,
+        "cosine": 0.9999999761907756
+      },
+      "native_edited_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.0002155303955078125,
+          "max_abs_error": 0.00629425048828125,
+          "relative_l2_error": 0.9995172630457857,
+          "cosine": 0.03206793456706114
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.0,
+          "max_abs_error": 0.0044727325439453125,
+          "relative_l2_error": 1.0,
+          "cosine": null,
+          "significant": 6,
+          "signs": 0
+        }
+      },
+      "packed_code_reconstructed_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.00021648406982421875,
+          "max_abs_error": 0.006298065185546875,
+          "relative_l2_error": 0.9999875620327017,
+          "cosine": 0.020407384028060607
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.0,
+          "max_abs_error": 0.0044727325439453125,
+          "relative_l2_error": 1.0,
+          "cosine": null,
+          "significant": 6,
+          "signs": 0
+        }
+      }
+    },
+    "q_half": {
+      "stock_pregate_error": {
+        "observed_max": 26.442960739135742,
+        "predicted_max": 26.445337295532227,
+        "max_abs_error": 0.0223236083984375,
+        "relative_l2_error": 0.0002303741064980891,
+        "cosine": 0.9999999766596706
+      },
+      "native_edited_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.0028192996978759766,
+          "max_abs_error": 0.006000518798828125,
+          "relative_l2_error": 0.8351329105728993,
+          "cosine": 0.5580975928942925
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.006870500277727842,
+          "max_abs_error": 0.006946794223040342,
+          "relative_l2_error": 1.42263148149452,
+          "cosine": 0.4937211527276234,
+          "significant": 6,
+          "signs": 4
+        }
+      },
+      "packed_code_reconstructed_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.0028192996978759766,
+          "max_abs_error": 0.006000518798828125,
+          "relative_l2_error": 0.8351329105728993,
+          "cosine": 0.5580975928942925
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.006870500277727842,
+          "max_abs_error": 0.006946794223040342,
+          "relative_l2_error": 1.42263148149452,
+          "cosine": 0.4937211527276234,
+          "significant": 6,
+          "signs": 4
+        }
+      }
+    },
+    "q_half_global_exp_half": {
+      "stock_pregate_error": {
+        "observed_max": 26.442960739135742,
+        "predicted_max": 26.4420108795166,
+        "max_abs_error": 0.02172088623046875,
+        "relative_l2_error": 0.00021771066304777166,
+        "cosine": 0.9999999769320131
+      },
+      "native_edited_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.0019936561584472656,
+          "max_abs_error": 0.0064983367919921875,
+          "relative_l2_error": 0.8945090509542888,
+          "cosine": 0.4476283843581175
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.006870500277727842,
+          "max_abs_error": 0.006946794223040342,
+          "relative_l2_error": 1.5344544116257401,
+          "cosine": 0.21626691534895529,
+          "significant": 6,
+          "signs": 4
+        }
+      },
+      "packed_code_reconstructed_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.0019936561584472656,
+          "max_abs_error": 0.0064983367919921875,
+          "relative_l2_error": 0.8945090509542888,
+          "cosine": 0.4476283843581175
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.006870500277727842,
+          "max_abs_error": 0.006946794223040342,
+          "relative_l2_error": 1.5344544116257401,
+          "cosine": 0.21626691534895529,
+          "significant": 6,
+          "signs": 4
+        }
+      }
+    },
+    "online_fp32_accum_occ2": {
+      "stock_pregate_error": {
+        "observed_max": 26.442960739135742,
+        "predicted_max": 26.441791534423828,
+        "max_abs_error": 0.021753311157226562,
+        "relative_l2_error": 0.00021039002800343737,
+        "cosine": 0.9999999778684734
+      },
+      "native_edited_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.0029391050338745117,
+          "max_abs_error": 0.00494384765625,
+          "relative_l2_error": 0.7747305966091557,
+          "cosine": 0.6347610033653382
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.007360250223428011,
+          "max_abs_error": 0.007436544168740511,
+          "relative_l2_error": 1.3103972197318892,
+          "cosine": 0.5260145587845877,
+          "significant": 6,
+          "signs": 4
+        }
+      },
+      "packed_code_reconstructed_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.0029391050338745117,
+          "max_abs_error": 0.00494384765625,
+          "relative_l2_error": 0.7747305966091557,
+          "cosine": 0.6347610033653382
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.007360250223428011,
+          "max_abs_error": 0.007436544168740511,
+          "relative_l2_error": 1.3103972197318892,
+          "cosine": 0.5260145587845877,
+          "significant": 6,
+          "signs": 4
+        }
+      }
+    },
+    "online_half_rne_unsplit": {
+      "stock_pregate_error": {
+        "observed_max": 26.442960739135742,
+        "predicted_max": 26.447675704956055,
+        "max_abs_error": 0.0396270751953125,
+        "relative_l2_error": 0.00048403601768678864,
+        "cosine": 0.9999998830318704
+      },
+      "native_edited_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.011662483215332031,
+          "max_abs_error": 0.011217117309570312,
+          "relative_l2_error": 2.1591688937723412,
+          "cosine": 0.2533890135504192
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.0051793791353702545,
+          "max_abs_error": 0.002687217202037573,
+          "relative_l2_error": 0.6785972945317426,
+          "cosine": 0.7345621127279891,
+          "significant": 6,
+          "signs": 3
+        }
+      },
+      "packed_code_reconstructed_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.011662483215332031,
+          "max_abs_error": 0.011217117309570312,
+          "relative_l2_error": 2.1591688937723412,
+          "cosine": 0.2533890135504192
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.0051793791353702545,
+          "max_abs_error": 0.002687217202037573,
+          "relative_l2_error": 0.6785972945317426,
+          "cosine": 0.7345621127279891,
+          "significant": 6,
+          "signs": 3
+        }
+      }
+    },
+    "online_half_rne_occ1": {
+      "stock_pregate_error": {
+        "observed_max": 26.442960739135742,
+        "predicted_max": 26.438968658447266,
+        "max_abs_error": 0.028539657592773438,
+        "relative_l2_error": 0.0002813223584646586,
+        "cosine": 0.9999999604677744
+      },
+      "native_edited_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.006266593933105469,
+          "max_abs_error": 0.0067653656005859375,
+          "relative_l2_error": 1.1122804173311467,
+          "cosine": 0.34248019353459747
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.004473311826586723,
+          "max_abs_error": 0.002658843994140625,
+          "relative_l2_error": 0.42976953706109755,
+          "cosine": 0.9029386229814452,
+          "significant": 6,
+          "signs": 4
+        }
+      },
+      "packed_code_reconstructed_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.006266593933105469,
+          "max_abs_error": 0.0067653656005859375,
+          "relative_l2_error": 1.1122804173311467,
+          "cosine": 0.34248019353459747
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.004473311826586723,
+          "max_abs_error": 0.002658843994140625,
+          "relative_l2_error": 0.42976953706109755,
+          "cosine": 0.9029386229814452,
+          "significant": 6,
+          "signs": 4
+        }
+      }
+    },
+    "online_half_rne_occ2": {
+      "stock_pregate_error": {
+        "observed_max": 26.442960739135742,
+        "predicted_max": 26.442970275878906,
+        "max_abs_error": 0.03141593933105469,
+        "relative_l2_error": 0.00022634833254360755,
+        "cosine": 0.9999999743900364
+      },
+      "native_edited_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.003907203674316406,
+          "max_abs_error": 0.0067653656005859375,
+          "relative_l2_error": 1.0413078144226249,
+          "cosine": 0.367472914985289
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.007360250223428011,
+          "max_abs_error": 0.007436544168740511,
+          "relative_l2_error": 1.3103972197318892,
+          "cosine": 0.5260145587845877,
+          "significant": 6,
+          "signs": 4
+        }
+      },
+      "packed_code_reconstructed_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.003907203674316406,
+          "max_abs_error": 0.0067653656005859375,
+          "relative_l2_error": 1.0413078144226249,
+          "cosine": 0.367472914985289
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.007360250223428011,
+          "max_abs_error": 0.007436544168740511,
+          "relative_l2_error": 1.3103972197318892,
+          "cosine": 0.5260145587845877,
+          "significant": 6,
+          "signs": 4
+        }
+      }
+    },
+    "online_half_rne_occ3": {
+      "stock_pregate_error": {
+        "observed_max": 26.442960739135742,
+        "predicted_max": 26.440208435058594,
+        "max_abs_error": 0.019517898559570312,
+        "relative_l2_error": 0.0002209943229924549,
+        "cosine": 0.9999999755853078
+      },
+      "native_edited_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.003907203674316406,
+          "max_abs_error": 0.0067653656005859375,
+          "relative_l2_error": 1.043482056881064,
+          "cosine": 0.36595015463274727
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.007360250223428011,
+          "max_abs_error": 0.007436544168740511,
+          "relative_l2_error": 1.3103972197318892,
+          "cosine": 0.5260145587845877,
+          "significant": 6,
+          "signs": 4
+        }
+      },
+      "packed_code_reconstructed_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.003907203674316406,
+          "max_abs_error": 0.0067653656005859375,
+          "relative_l2_error": 1.043482056881064,
+          "cosine": 0.36595015463274727
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.007360250223428011,
+          "max_abs_error": 0.007436544168740511,
+          "relative_l2_error": 1.3103972197318892,
+          "cosine": 0.5260145587845877,
+          "significant": 6,
+          "signs": 4
+        }
+      }
+    },
+    "online_half_rtz_occ2": {
+      "stock_pregate_error": {
+        "observed_max": 26.442960739135742,
+        "predicted_max": 26.425378799438477,
+        "max_abs_error": 0.06747245788574219,
+        "relative_l2_error": 0.0008977630749387865,
+        "cosine": 0.9999998517995689
+      },
+      "native_edited_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.0070343017578125,
+          "max_abs_error": 0.00623321533203125,
+          "relative_l2_error": 1.0675045741358486,
+          "cosine": 0.48876240403678883
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.007360250223428011,
+          "max_abs_error": 0.007436544168740511,
+          "relative_l2_error": 1.5786343152773585,
+          "cosine": 0.15430334888578096,
+          "significant": 6,
+          "signs": 2
+        }
+      },
+      "packed_code_reconstructed_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.0070343017578125,
+          "max_abs_error": 0.00623321533203125,
+          "relative_l2_error": 1.0675045741358486,
+          "cosine": 0.48876240403678883
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.007360250223428011,
+          "max_abs_error": 0.007436544168740511,
+          "relative_l2_error": 1.5786343152773585,
+          "cosine": 0.15430334888578096,
+          "significant": 6,
+          "signs": 2
+        }
+      }
+    },
+    "online_half_rtz_occ3": {
+      "stock_pregate_error": {
+        "observed_max": 26.442960739135742,
+        "predicted_max": 26.43651580810547,
+        "max_abs_error": 0.03784370422363281,
+        "relative_l2_error": 0.0006495281324467957,
+        "cosine": 0.999999935752041
+      },
+      "native_edited_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.0070343017578125,
+          "max_abs_error": 0.0054759979248046875,
+          "relative_l2_error": 1.0102842932684648,
+          "cosine": 0.5181821732660706
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.007360250223428011,
+          "max_abs_error": 0.007436544168740511,
+          "relative_l2_error": 1.5786343152773585,
+          "cosine": 0.15430334888578096,
+          "significant": 6,
+          "signs": 2
+        }
+      },
+      "packed_code_reconstructed_query": {
+        "pregate": {
+          "observed_max": 0.0062923431396484375,
+          "predicted_max": 0.0070343017578125,
+          "max_abs_error": 0.0054759979248046875,
+          "relative_l2_error": 1.0102842932684648,
+          "cosine": 0.5181821732660706
+        },
+        "choice": {
+          "observed_max": 0.0044727325439453125,
+          "predicted_max": 0.007360250223428011,
+          "max_abs_error": 0.007436544168740511,
+          "relative_l2_error": 1.5786343152773585,
+          "cosine": 0.15430334888578096,
+          "significant": 6,
+          "signs": 2
+        }
+      }
+    }
+  },
+  "replay_command": "py -3.12 -I -B calibrate_query_120_v4.py --run --plan-sha256 397f43fa48a7d17b9555ee100bd875fa2f940302063901975105b028f7d1abca",
+  "replay_inputs": "Run from the sealed local Pilot 120 workspace with the pinned private native probe and calibration archives. The two previous adapter fixes affected array binding and RMS shape before the completed run.",
+  "diagnostic_only": true,
+  "labels_read": false,
+  "gpu_used_by_calibration": false,
+  "held_or_protected_inputs_used": false,
+  "checkpoint_written": false
+}
