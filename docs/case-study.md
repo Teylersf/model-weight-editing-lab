@@ -758,6 +758,12 @@ The opposite-condition up swap recovered 44 previously missed choices and lost n
 
 Pilot 064 recomputed helpful donor responses within each training fold. It fit the up projection to those responses after projecting out ordinary inputs, then reconstructed legal Q4_K code changes with the original scale metadata. Across the 48 tested candidates, 43 recovered a training pair. Three of those preserved every correct training choice. All 48 still crossed at least one signed margin floor. The three held patches contained no changes. [Per-fold packed fit and held results](../evidence/direct-accuracy-pilot-064-up-swap-target-fit.json)
 
+## Pilot 065 with native up-activation interchange
+
+The CUDA replay replaced only the transient up activation on 16 states from eight preregistered authored pairs. The recipient input, gate, attention residual, and original up activation matched the archive byte for byte. The CPU prediction and CUDA replay agreed on all 16 choice winners. The largest choice-logit error was **0.000143**. The native mean intended-answer gap increased by **0.374**, and accuracy stayed at **6/16**. The source checkpoint passed its full before-and-after hash check.
+
+The original grader assumed A–D list order. The CPU regrade verified all six expected token IDs and recovered the A–D order from those IDs in the same archived CUDA output. [Native and regrade receipts](../evidence/direct-accuracy-pilot-065-native-up-interchange.json)
+
 ## Pilot 066 with a bulk CUDA verifier
 
 A pinned trajectory manifest passed a single CPU preflight for all **768** frozen sequences. A separate four-state CUDA fixture verified that the bulk input path reproduced the previous multi-row CUDA patch's activations, top-64 and selected logits byte for byte. [Preflight and CUDA parity checksums](../evidence/direct-accuracy-pilot-066-bulk-native-parity.json)

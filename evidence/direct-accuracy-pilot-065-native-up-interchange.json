@@ -1,0 +1,71 @@
+{
+  "schema": "published-pilot065-native-up-interchange-v1",
+  "local_parity_receipt_sha256": "06a3ff3cf58957de103292e9389bd82e3216d74808becb40419c3fc314c62472",
+  "passed": true,
+  "plan_sha256": "9e0872f6fe4c5f73ecfc459df9ffd15b5ea4daad5a4ba685dfc8718c5f3963fc",
+  "build_receipt_sha256": "2cc9565e465a8bd3957a92a24373068fc643d24e7803ff18d92edef66831e1a2",
+  "native_binary_sha256": "74801f8d608b421bfd009a94ab7b83cd278dadee318e1a5c420841084e2e7d5f",
+  "native_receipt_sha256": "719c7d39310f76e7c0dd8b6ad2c7f445263cae6e5be1ea5c5f86d2789144e661",
+  "donor_up_sha256": "6ae36ae2eab4e72f084e525603a75abc9f098000e2ac81d7fb263c28ca564ad9",
+  "stderr_sha256": "b0c28687dcaba8cb0162a11fde16b0264eed08dd6fec431257fb350c56623be8",
+  "matched_pairs": 8,
+  "states": 16,
+  "exact_archived_recipient_input_gate_p_and_original_up_states": 16,
+  "exact_injected_donor_up_states": 16,
+  "exact_cpu_native_choice_winners": 16,
+  "max_absolute_error": {
+    "a": 3.814697265625e-06,
+    "r": 3.0517578125e-05,
+    "h": 3.814697265625e-06,
+    "choice_logits": 0.0001430511474609375
+  },
+  "tolerance": {
+    "a": 2e-05,
+    "r": 0.0002,
+    "h": 2e-05,
+    "choice_logits": 0.025
+  },
+  "cpu_prediction": {
+    "correct_before": 6,
+    "correct_after": 6,
+    "gains": 0,
+    "losses": 0,
+    "both_correct_before": 1,
+    "both_correct_after": 1,
+    "pair_gains": 0,
+    "pair_losses": 0,
+    "mean_intended_gap_change": 0.3738784193992615
+  },
+  "native_intervention": {
+    "correct_before": 6,
+    "correct_after": 6,
+    "gains": 0,
+    "losses": 0,
+    "both_correct_before": 1,
+    "both_correct_after": 1,
+    "pair_gains": 0,
+    "pair_losses": 0,
+    "mean_intended_gap_change": 0.3738754391670227
+  },
+  "model_weights_mutated": false,
+  "ephemeral_up_activation_injected": true,
+  "full_parent_sha256_pre_post_verified": true,
+  "independent_development_only": true,
+  "held_case_identifiers_exported": false,
+  "regrader_source_sha256": "1821e5f9cac78a8956909679c5f6f6a4f6d19538cde33707c47af96c24e33922",
+  "v2_launcher_source_sha256": "709bea630103a04cf6fb14cc81c9e83f9620a662ec71853cd1d381ba642908cc",
+  "native_stdout_sha256": "19e61abd69b3c87d96fb247d4fd6d1d73372d6d258be145cbb3f4f0c4d6cb12a",
+  "cpu_only_regrade": true,
+  "semantic_choice_token_ids": [
+    357,
+    417,
+    351,
+    414
+  ],
+  "other_native_probe_token_ids": [
+    248046,
+    248069
+  ],
+  "scope": "Eight preregistered authored pairs, both directions. Native parity applies to these 16 states. The full Pilot 063 intervention remains a CPU estimate.",
+  "grading_correction": "The initial grader assumed semantic A-D list order. The archived CPU regrade verified all six expected IDs and recovered semantic order by explicit token ID without a second GPU run."
+}
