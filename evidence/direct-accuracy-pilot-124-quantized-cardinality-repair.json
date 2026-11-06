@@ -1,0 +1,246 @@
+{
+  "schema": "pilot124-cardinality-mixed-repair-public-v1",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "input_scope": {
+    "authored_fitting_presentations": 192,
+    "ordinary_training_states": 60,
+    "ordinary_signed_floors": 480,
+    "signed_math_floors": 2106,
+    "nonselected_score_key_and_state_rows_decoded": 0,
+    "official_or_fresh_or_proofs_used": false
+  },
+  "source": {
+    "script": "fit_cardinality_quantized_124_v2.py",
+    "source_sha256": "3848fdf27f2d9e42493d26c82136232893d6ceb53f1f6e0276e6187928e8cff9",
+    "plan_sha256": "17bc1fe0b1fc0b63c8319350d9bf1641159b3ce3c290b82286eca8460df42513",
+    "training_report_sha256": "7dcc78f24dca08de3552a2b2055ce9ca90dc928e8eb44a08754f5f872670ea17",
+    "p123_reconstructed_anchor_sha256": "f4b65601b60f55b870398f9b7b7294a5378fae862681c25ecaceaffe25f11992"
+  },
+  "metrics": {
+    "parent_objectives": [
+      0.01838426462690284,
+      0.3276589400238461
+    ],
+    "initial_deficits": [
+      7,
+      0.175053583717041,
+      0.06700954200195314
+    ],
+    "initial_objectives": [
+      0.018510157181922268,
+      0.30234629445605804
+    ],
+    "best_deficits": [
+      6,
+      0.1529902430395508,
+      0.06543407203125001
+    ],
+    "best_objectives": [
+      0.01860768779922097,
+      0.30316789481374956
+    ],
+    "best_ordinary": {
+      "states": 60,
+      "archived_top64_winner_changes": 0,
+      "binary32_archived_top64_winner_changes": 0,
+      "min_archived_top64_winner_margin": 0.01765340497786383
+    },
+    "measured_exact_local_effects": 368,
+    "full_ordinary_safe_replays": 48
+  },
+  "rounds": [
+    {
+      "depth": 0,
+      "before_deficits": [
+        7,
+        0.175053583717041,
+        0.06700954200195314
+      ],
+      "before_objectives": [
+        0.018510157181922268,
+        0.30234629445605804
+      ],
+      "exact_singles": 80,
+      "exact_two_group_compounds": 12,
+      "full_replays": 12,
+      "ordinary_safe_full_replays": 12,
+      "full_training_passes": 0,
+      "after_deficits": [
+        7,
+        0.16320131931274412,
+        0.06615695716308595
+      ],
+      "after_objectives": [
+        0.01859037050501608,
+        0.30329377651214595
+      ],
+      "cardinality_calls": [
+        {
+          "trust_groups": 6,
+          "count_status": 1,
+          "count_incumbent": true,
+          "minimum_predicted_violations": 9,
+          "severity_status": 0,
+          "severity_incumbent": true,
+          "distinct_proposals": 2
+        },
+        {
+          "trust_groups": 10,
+          "count_status": 1,
+          "count_incumbent": true,
+          "minimum_predicted_violations": 8,
+          "severity_status": 0,
+          "severity_incumbent": true,
+          "distinct_proposals": 1
+        }
+      ]
+    },
+    {
+      "depth": 1,
+      "before_deficits": [
+        7,
+        0.16320131931274412,
+        0.06615695716308595
+      ],
+      "before_objectives": [
+        0.01859037050501608,
+        0.30329377651214595
+      ],
+      "exact_singles": 80,
+      "exact_two_group_compounds": 12,
+      "full_replays": 12,
+      "ordinary_safe_full_replays": 12,
+      "full_training_passes": 0,
+      "after_deficits": [
+        7,
+        0.1595210901257324,
+        0.06625804664062501
+      ],
+      "after_objectives": [
+        0.018618783328401594,
+        0.3034287611643473
+      ],
+      "cardinality_calls": [
+        {
+          "trust_groups": 6,
+          "count_status": 1,
+          "count_incumbent": true,
+          "minimum_predicted_violations": 7,
+          "severity_status": 0,
+          "severity_incumbent": true,
+          "distinct_proposals": 2
+        },
+        {
+          "trust_groups": 10,
+          "count_status": 1,
+          "count_incumbent": true,
+          "minimum_predicted_violations": 6,
+          "severity_status": 1,
+          "severity_incumbent": false,
+          "distinct_proposals": 1
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "before_deficits": [
+        7,
+        0.1595210901257324,
+        0.06625804664062501
+      ],
+      "before_objectives": [
+        0.018618783328401594,
+        0.3034287611643473
+      ],
+      "exact_singles": 80,
+      "exact_two_group_compounds": 12,
+      "full_replays": 12,
+      "ordinary_safe_full_replays": 12,
+      "full_training_passes": 0,
+      "after_deficits": [
+        6,
+        0.1529902430395508,
+        0.06543407203125001
+      ],
+      "after_objectives": [
+        0.01860768779922097,
+        0.30316789481374956
+      ],
+      "cardinality_calls": [
+        {
+          "trust_groups": 6,
+          "count_status": 1,
+          "count_incumbent": true,
+          "minimum_predicted_violations": 6,
+          "severity_status": 0,
+          "severity_incumbent": true,
+          "distinct_proposals": 2
+        },
+        {
+          "trust_groups": 10,
+          "count_status": 1,
+          "count_incumbent": true,
+          "minimum_predicted_violations": 12,
+          "severity_status": 0,
+          "severity_incumbent": true,
+          "distinct_proposals": 2
+        }
+      ]
+    },
+    {
+      "depth": 3,
+      "before_deficits": [
+        6,
+        0.1529902430395508,
+        0.06543407203125001
+      ],
+      "before_objectives": [
+        0.01860768779922097,
+        0.30316789481374956
+      ],
+      "exact_singles": 80,
+      "exact_two_group_compounds": 12,
+      "full_replays": 12,
+      "ordinary_safe_full_replays": 12,
+      "full_training_passes": 0,
+      "after_deficits": [
+        6,
+        0.1529902430395508,
+        0.06543407203125001
+      ],
+      "after_objectives": [
+        0.01860768779922097,
+        0.30316789481374956
+      ],
+      "cardinality_calls": [
+        {
+          "trust_groups": 6,
+          "count_status": 1,
+          "count_incumbent": true,
+          "minimum_predicted_violations": 6,
+          "severity_status": 0,
+          "severity_incumbent": true,
+          "distinct_proposals": 1
+        },
+        {
+          "trust_groups": 10,
+          "count_status": 1,
+          "count_incumbent": true,
+          "minimum_predicted_violations": 6,
+          "severity_status": 0,
+          "severity_incumbent": true,
+          "distinct_proposals": 0
+        }
+      ]
+    }
+  ],
+  "qualification": {
+    "passed": false,
+    "qualified_packed_candidate_count": 0,
+    "checkpoint_written": false,
+    "reserve_scored": false,
+    "outer_scored": false,
+    "gpu_used": false
+  },
+  "reproduction_note": "The exact CPU runner requires the previously sealed P123 source and fitting archives. The bounded cardinality calls returned incumbents and do not certify support infeasibility."
+}

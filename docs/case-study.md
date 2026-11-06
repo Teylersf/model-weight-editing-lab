@@ -1040,3 +1040,15 @@ Seven proposals tied the parent at **14/16**. The reverse-direction control lost
 The follow-up reproduced all three packed probes from Pilot 121's positive support and froze its **360-code** anchor by hash. Across four rounds, it measured **256** single-endpoint effects on critical math rows and ran **32** full exact replays of bounded combined proposals. Every full replay preserved the strict ordinary gate, and eight kept both training objective components at or below the parent.
 
 The lowest count of crossed margins fell from **15 to seven**. The final anchor's total deficit fell from **0.30704 to 0.17505** logits, while its largest deficit rose from **0.05888 to 0.06701**. No proposal cleared every training gate. The independent reserve and family transfer remained sealed. [Reconstruction hashes and exact residual rounds](../evidence/direct-accuracy-pilot-123-exact-signed-residual-repair.json)
+
+## Pilot 124 with a search that prioritizes the number of crossed margins
+
+The search reconstructed the seven-deficit anchor, measured **320** single changes and **48** two-group changes, and used a bounded integer model that minimized the number of predicted margin crossings before their severity. All **48** full replays preserved the 60 ordinary winners and 480 ordinary floors.
+
+The best exact probe had **six** remaining violations. Their sum fell from **0.17505 to 0.15299** logits and the largest fell from **0.06701 to 0.06543**. Its primary P105 objective worsened from 0.01851 to 0.01861. This stopped at the training gate, with the reserve and family transfer still sealed. [Exact rounds, objective values, and receipt hashes](../evidence/direct-accuracy-pilot-124-quantized-cardinality-repair.json)
+
+## Pilot 125 with a full CUDA replay of two query edits
+
+Candidates 5 and 7 from Pilot 122 each ran on all **192** independent fitting presentations. Stock and restored passes matched all **768** archived A–D logits. All 192 restored full-vocabulary logit digests matched the initial pass, and the full GGUF hash matched before and after.
+
+Both candidates preserved **119/192** correct choices and **40/96** both-correct pairs without repairing a choice. Candidate 7 improved the mean signed correct margin by **0.01088** logits and candidate 5 by **0.00115**. Both failed the required gain in both-correct pairs. The ordinary overlay and held evaluations stayed outside this run. [Full fitting results and exact readback](../evidence/direct-accuracy-pilot-125-query-full-fit.json)

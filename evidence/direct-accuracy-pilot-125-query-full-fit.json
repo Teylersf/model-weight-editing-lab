@@ -1,0 +1,269 @@
+{
+  "schema": "pilot125-native-query-full-fit-public-v1",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "scope": {
+    "backend": "RTX 3090 CUDA0",
+    "runtime_commit": "8642541b255bfb5dc39cd351a178be09013a55d6",
+    "fit_folds": [
+      2,
+      3
+    ],
+    "rotations": [
+      1,
+      2,
+      3
+    ],
+    "presentations": 192,
+    "aligned_pairs": 96,
+    "native_states": 768,
+    "model_loads": 1,
+    "selected_p122_candidates": [
+      5,
+      7
+    ],
+    "context": 4096,
+    "batch": 64,
+    "generated_tokens": 0,
+    "official_or_fresh_or_proofs_used": false,
+    "ordinary_query_overlay_run": false
+  },
+  "qualification_rule": "At least one gain in both-correct pairs, zero previously correct choice losses, zero both-correct pair losses, and exact stock/restored controls.",
+  "seals": {
+    "source_sha256": "367e1fa3252fa40ebf9ded87231425bca7dd3bc95679214d4d54230f66a2426d",
+    "build_sha256": "889ff3ff5722a4edeb0c1a4dde58db1f882025127233f4c6c896bb5199d90fb9",
+    "p122_native_screen": "0f96c48f8736b8cf12698bde9abc4fb0e69c144e13850ffaa1df048fafab5c62",
+    "plan": "1220135976da21b026beed473610570afed6fe3fee19d959269c2a101feb84cf",
+    "preflight": "910c2b9c91134479a413bb1f6bc96683b7ea4841fd5e74432d84f9d5d3b484ef",
+    "native_receipt": "07e079aede256486508b04682ca83c09f40abae1decda6b5078c8fdedcd67605",
+    "native_states": "4c551ebd9ee21d2c33aa046f97d5090c9cd1f8c62685f6c278ec5638a2db51c7",
+    "score_receipt": "923afa60cff8690e08a31c3c862e70d5aa83f6eeee64b15603a3dc9c8ea9f5a5"
+  },
+  "exact_p115_stock_states": 192,
+  "exact_p115_stock_choice_logit_bits": 768,
+  "exact_restored_full_vocab_states": 192,
+  "query_overlay": {
+    "transitions": 4,
+    "union_rows": 28,
+    "transition_row_verifications": 112,
+    "device_row_writes": 56,
+    "parent_restored": true
+  },
+  "scores": {
+    "p122-candidate-5": {
+      "pooled": {
+        "states": 192,
+        "aligned_pairs": 96,
+        "correct_before": 119,
+        "correct_after": 119,
+        "choice_repairs": 0,
+        "choice_losses": 0,
+        "both_correct_before": 40,
+        "both_correct_after": 40,
+        "both_correct_gains": 0,
+        "both_correct_losses": 0,
+        "mean_signed_correct_margin_delta": 0.0011483083168665569,
+        "max_absolute_signed_correct_margin_delta": 0.040925025939941406
+      },
+      "by_arm": {
+        "a": {
+          "states": 48,
+          "aligned_pairs": 24,
+          "correct_before": 28,
+          "correct_after": 28,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 8,
+          "both_correct_after": 8,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": 0.00019508600234985352,
+          "max_absolute_signed_correct_margin_delta": 0.040925025939941406
+        },
+        "b": {
+          "states": 48,
+          "aligned_pairs": 24,
+          "correct_before": 30,
+          "correct_after": 30,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 10,
+          "both_correct_after": 10,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": 0.0008664528528849283,
+          "max_absolute_signed_correct_margin_delta": 0.02451324462890625
+        },
+        "c": {
+          "states": 48,
+          "aligned_pairs": 24,
+          "correct_before": 31,
+          "correct_after": 31,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 11,
+          "both_correct_after": 11,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": 0.0006392995516459147,
+          "max_absolute_signed_correct_margin_delta": 0.03361701965332031
+        },
+        "d": {
+          "states": 48,
+          "aligned_pairs": 24,
+          "correct_before": 30,
+          "correct_after": 30,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 11,
+          "both_correct_after": 11,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": 0.0028923948605855307,
+          "max_absolute_signed_correct_margin_delta": 0.03909111022949219
+        }
+      },
+      "by_fit_fold": {
+        "2": {
+          "states": 96,
+          "aligned_pairs": 48,
+          "correct_before": 50,
+          "correct_after": 50,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 17,
+          "both_correct_after": 17,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": -0.0005839864412943522,
+          "max_absolute_signed_correct_margin_delta": 0.040925025939941406
+        },
+        "3": {
+          "states": 96,
+          "aligned_pairs": 48,
+          "correct_before": 69,
+          "correct_after": 69,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 23,
+          "both_correct_after": 23,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": 0.002880603075027466,
+          "max_absolute_signed_correct_margin_delta": 0.034389495849609375
+        }
+      },
+      "stock_choice_ties": 0,
+      "candidate_choice_ties": 0,
+      "passed": false
+    },
+    "p122-candidate-7": {
+      "pooled": {
+        "states": 192,
+        "aligned_pairs": 96,
+        "correct_before": 119,
+        "correct_after": 119,
+        "choice_repairs": 0,
+        "choice_losses": 0,
+        "both_correct_before": 40,
+        "both_correct_after": 40,
+        "both_correct_gains": 0,
+        "both_correct_losses": 0,
+        "mean_signed_correct_margin_delta": 0.010876908898353577,
+        "max_absolute_signed_correct_margin_delta": 0.12261676788330078
+      },
+      "by_arm": {
+        "a": {
+          "states": 48,
+          "aligned_pairs": 24,
+          "correct_before": 28,
+          "correct_after": 28,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 8,
+          "both_correct_after": 8,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": 0.007918755213419596,
+          "max_absolute_signed_correct_margin_delta": 0.056896209716796875
+        },
+        "b": {
+          "states": 48,
+          "aligned_pairs": 24,
+          "correct_before": 30,
+          "correct_after": 30,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 10,
+          "both_correct_after": 10,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": 0.010772506395975748,
+          "max_absolute_signed_correct_margin_delta": 0.0579376220703125
+        },
+        "c": {
+          "states": 48,
+          "aligned_pairs": 24,
+          "correct_before": 31,
+          "correct_after": 31,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 11,
+          "both_correct_after": 11,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": 0.012321750322977701,
+          "max_absolute_signed_correct_margin_delta": 0.06771659851074219
+        },
+        "d": {
+          "states": 48,
+          "aligned_pairs": 24,
+          "correct_before": 30,
+          "correct_after": 30,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 11,
+          "both_correct_after": 11,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": 0.01249462366104126,
+          "max_absolute_signed_correct_margin_delta": 0.12261676788330078
+        }
+      },
+      "by_fit_fold": {
+        "2": {
+          "states": 96,
+          "aligned_pairs": 48,
+          "correct_before": 50,
+          "correct_after": 50,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 17,
+          "both_correct_after": 17,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": 0.011453062295913696,
+          "max_absolute_signed_correct_margin_delta": 0.12261676788330078
+        },
+        "3": {
+          "states": 96,
+          "aligned_pairs": 48,
+          "correct_before": 69,
+          "correct_after": 69,
+          "choice_repairs": 0,
+          "choice_losses": 0,
+          "both_correct_before": 23,
+          "both_correct_after": 23,
+          "both_correct_gains": 0,
+          "both_correct_losses": 0,
+          "mean_signed_correct_margin_delta": 0.010300755500793457,
+          "max_absolute_signed_correct_margin_delta": 0.0579376220703125
+        }
+      },
+      "stock_choice_ties": 0,
+      "candidate_choice_ties": 0,
+      "passed": false
+    }
+  },
+  "qualified_candidates": [],
+  "checkpoint_written": false
+}
