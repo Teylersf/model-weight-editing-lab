@@ -844,3 +844,9 @@ Where donor content and donor letter predicted different changes, the up branch 
 The follow-up allowed the head solver to receive an intermediate proposal with one training choice loss and up to ten signed-margin deficits. Seven packed head-code changes across four output rows repaired all **1,461** protected signed training margins for one fold. The joint edit improved the fold's both-correct training pairs from **27 to 28** and preserved every correct training choice.
 
 Grouped held pairs rose from **42/384 to 43/384**. Individual choices still regressed. Pilot 053 gained three and lost one, moving from **327 to 329**. Pilot 044 gained five and lost four, moving from **384 to 385**. All **90** ordinary winners held, including coverage of **348** answer-token comparisons outside the archived top 64. The joint edit failed the held choice gate and produced no checkpoint. [Joint fit and held checks](../evidence/direct-accuracy-pilots-077-080-lower-conflict-joint.json)
+
+## Pilot 081 with quantized gate codes
+
+An independent audit matched all **89,128,960** decoded gate weights to the native decoder bit for bit. It also matched **2,304** in-memory code changes while preserving quantization metadata. The fit targeted same-letter teachers that changed option order under the same demonstrations. It kept the 053 condition-pair objective and the four-cohort guards. The first run stopped before a fold was frozen because a gate row width reached the output-head reader. The rerun isolated the gate width to its receipt writer.
+
+The continuous fit met all six target margins for **12**, **15**, and **17** training pairs across the three folds. Across **15** packed probes, none recovered a training pair. All folds retained the parent, so held pairs stayed at **42/384** and all **90** ordinary winners stayed fixed. No checkpoint was written. [Gate decoding audit and fit outcomes](../evidence/direct-accuracy-pilot-081-quantized-gate.json)

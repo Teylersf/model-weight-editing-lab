@@ -1,0 +1,57 @@
+{
+  "schema": "published-pilot081-quantized-gate-v1",
+  "scope": "CPU fit on four independently authored development cohorts, with all folds frozen before held replay",
+  "plan_sha256": "5905e19f4264ed12efd82c3d9de458ae3996802506ec1209375fc40f3d7a59a7",
+  "fit_source_sha256": "992524e4d78665c19bf5bc5055ab823380c66251e7cfd4ed17d5eb7feaaf2cab",
+  "grouped_receipt_sha256": "6fe5ef7086fd62ebd1f0556b7ed7dcf4625f6af6c8dcdf49d84ba8ee8722057a",
+  "first_attempt": "The gate's packed row width propagated to the Q4_K output-head reader and stopped the run before any fold or held result. The rerun passed gate-specific metadata only to the gate receipt writer.",
+  "first_attempt_plan_sha256": "d9c9d39c2323adbca756092fa6fba41ae2aa488dd416f4283cd0b1d0b60fa24a",
+  "gate_kernel": {
+    "source_sha256": "feb281fb2a87d4e2d1bca5dc598b247c955e1f74e2d40c152b2d6083e28ec930",
+    "independent_audit_sha256": "fda3fccfff4c157251ab9511ee2476c48e48e4acb6b56280645c01f7ae9e6bdf",
+    "native_decoder_exact_binary32_weights": 89128960,
+    "native_decoder_verified_in_memory_code_changes": 2304,
+    "sampled_native_q8_comparisons": 73728,
+    "maximum_sampled_q8_absolute_difference": 0.00142457037
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "receipt_sha256": "9b5e7c8ea89b34f4e085ba7e6997dbea1388661ab3ade8ff76afdbc1eae2ee9a",
+      "teacher_targets": 8,
+      "continuous_pairs_meeting_all_six_target_margins": 12,
+      "packed_probes": 5,
+      "packed_probes_with_training_pair_gains": 0,
+      "frozen_changed_rows": 0
+    },
+    {
+      "fold": 1,
+      "receipt_sha256": "ed7e37763c80c596fd87d1e38b45f2b5dadda8381093eb3703d4185c63200a57",
+      "teacher_targets": 11,
+      "continuous_pairs_meeting_all_six_target_margins": 15,
+      "packed_probes": 5,
+      "packed_probes_with_training_pair_gains": 0,
+      "frozen_changed_rows": 0
+    },
+    {
+      "fold": 2,
+      "receipt_sha256": "cb70772bfab69b7d18b33815397590088bc2b99a9adbb669c8821aac432c79d3",
+      "teacher_targets": 17,
+      "continuous_pairs_meeting_all_six_target_margins": 17,
+      "packed_probes": 5,
+      "packed_probes_with_training_pair_gains": 0,
+      "frozen_changed_rows": 0
+    }
+  ],
+  "held": {
+    "pairs": 384,
+    "parent_both_correct": 42,
+    "candidate_both_correct": 42,
+    "choice_changes": 0,
+    "ordinary_states": 90,
+    "ordinary_winner_changes": 0
+  },
+  "passed": false,
+  "checkpoint_written": false,
+  "official_fresh_or_proof_data_used": false
+}
