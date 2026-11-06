@@ -1,0 +1,1344 @@
+{
+  "schema": "public-direct-accuracy-pilots-164-165-half-lattice-v1",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "fitting_receipt_sha256": "0cf03556e8f46428f73e13533d213e0132b6c6135603b103fed3602795d46f3a",
+  "fitting_plan_sha256": "044c4932c259e23f3aa9609d695000b66a42726c17403aee9518620aa484eca1",
+  "fitting_source_sha256": "f7b5fed56511e94ae65389835ae72fd00a522c20fb31a481416052c731c7f313",
+  "recipe_sha256": "819863bb3729f234d4fc59b6ae6cb98b18903de62dc782fdf0484fd40e8828aa",
+  "recipe_schema": "windows-pilot164-half-lattice-recipe-v1",
+  "changed_binary16_fields": 156,
+  "changed_bytes": 167,
+  "changed_q4k_group_scale_or_nibble_bytes": 0,
+  "changed_rows": [
+    {
+      "token_id": 357,
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "0606",
+          "after": "e705"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "7911",
+          "after": "3a11"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "3807",
+          "after": "4807"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "c815",
+          "after": "dc15"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "2905",
+          "after": "e904"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "fe10",
+          "after": "b310"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "7804",
+          "after": "8904"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "5611",
+          "after": "4d11"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "a706",
+          "after": "a106"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "3e13",
+          "after": "2a13"
+        },
+        {
+          "block": 5,
+          "field": "d",
+          "before": "6704",
+          "after": "3304"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "df0f",
+          "after": "700f"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "4804",
+          "after": "5f04"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "dd10",
+          "after": "f310"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "2e04",
+          "after": "4804"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "6a10",
+          "after": "8010"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "c304",
+          "after": "ac04"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "c510",
+          "after": "b510"
+        },
+        {
+          "block": 9,
+          "field": "d",
+          "before": "e204",
+          "after": "da04"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "5011",
+          "after": "4611"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "0f05",
+          "after": "2a05"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "c710",
+          "after": "ed10"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "1005",
+          "after": "fe04"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "8412",
+          "after": "6a12"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "7e06",
+          "after": "7306"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "bb10",
+          "after": "b310"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "5f04",
+          "after": "7404"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "2b10",
+          "after": "3f10"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "2604",
+          "after": "4b04"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "8d10",
+          "after": "b710"
+        },
+        {
+          "block": 15,
+          "field": "d",
+          "before": "3806",
+          "after": "3306"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "eb11",
+          "after": "e911"
+        },
+        {
+          "block": 16,
+          "field": "d",
+          "before": "2d06",
+          "after": "3406"
+        },
+        {
+          "block": 16,
+          "field": "dmin",
+          "before": "d210",
+          "after": "ce10"
+        },
+        {
+          "block": 17,
+          "field": "d",
+          "before": "3605",
+          "after": "4b05"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "4312",
+          "after": "5312"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "ab11",
+          "after": "b711"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "9504",
+          "after": "9c04"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "1e11",
+          "after": "2b11"
+        }
+      ],
+      "packed_row": {
+        "bytes": 2880,
+        "sha256": "ae9d2e78ac0a6c7880faebff0696558790d4127e4c79465f00be129a70970400",
+        "name": "token-357.q4k"
+      }
+    },
+    {
+      "token_id": 417,
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "9106",
+          "after": "6606"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "0f11",
+          "after": "ed10"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "9d07",
+          "after": "7507"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "dd14",
+          "after": "c214"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "e705",
+          "after": "cf05"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "4610",
+          "after": "3f10"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "9904",
+          "after": "d304"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "e210",
+          "after": "2211"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "e405",
+          "after": "f805"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "4e12",
+          "after": "6e12"
+        },
+        {
+          "block": 5,
+          "field": "d",
+          "before": "f604",
+          "after": "f304"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "8410",
+          "after": "7710"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "8c04",
+          "after": "7f04"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "b710",
+          "after": "ad10"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "b104",
+          "after": "9604"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "2310",
+          "after": "2210"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "5604",
+          "after": "7c04"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "b410",
+          "after": "e910"
+        },
+        {
+          "block": 9,
+          "field": "d",
+          "before": "3e05",
+          "after": "5105"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "b211",
+          "after": "d711"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "e804",
+          "after": "ec04"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "ad10",
+          "after": "a610"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "9b04",
+          "after": "9804"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "7a10",
+          "after": "7010"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "1406",
+          "after": "0f06"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "f811",
+          "after": "0012"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "c204",
+          "after": "b904"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "6311",
+          "after": "5511"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "5404",
+          "after": "6504"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "5910",
+          "after": "6810"
+        },
+        {
+          "block": 15,
+          "field": "d",
+          "before": "d805",
+          "after": "ec05"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "4410",
+          "after": "4b10"
+        },
+        {
+          "block": 16,
+          "field": "d",
+          "before": "8305",
+          "after": "7e05"
+        },
+        {
+          "block": 16,
+          "field": "dmin",
+          "before": "be10",
+          "after": "af10"
+        },
+        {
+          "block": 17,
+          "field": "d",
+          "before": "4705",
+          "after": "0705"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "0411",
+          "after": "bf10"
+        },
+        {
+          "block": 18,
+          "field": "d",
+          "before": "2505",
+          "after": "5905"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "0e10",
+          "after": "3a10"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "6805",
+          "after": "4105"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "a712",
+          "after": "7812"
+        }
+      ],
+      "packed_row": {
+        "bytes": 2880,
+        "sha256": "5709ce69730b825271233d5ec280c98da48d239dffe805c9e1e2d5d4a39bd177",
+        "name": "token-417.q4k"
+      }
+    },
+    {
+      "token_id": 351,
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "6e05",
+          "after": "6005"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "6a10",
+          "after": "6010"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "0d07",
+          "after": "e506"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "0a15",
+          "after": "ef14"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "6905",
+          "after": "5e05"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "6b11",
+          "after": "6411"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "de04",
+          "after": "e404"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "f810",
+          "after": "f710"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "d106",
+          "after": "bc06"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "7313",
+          "after": "4c13"
+        },
+        {
+          "block": 5,
+          "field": "d",
+          "before": "0905",
+          "after": "1005"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "6911",
+          "after": "7a11"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "9303",
+          "after": "8503"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "4110",
+          "after": "2610"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "6004",
+          "after": "4304"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "4310",
+          "after": "3b10"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "9a06",
+          "after": "a306"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "d310",
+          "after": "da10"
+        },
+        {
+          "block": 9,
+          "field": "d",
+          "before": "0e05",
+          "after": "3405"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "1f11",
+          "after": "4811"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "5c04",
+          "after": "6c04"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "2f11",
+          "after": "5311"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "9f04",
+          "after": "ac04"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "f110",
+          "after": "f910"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "ef06",
+          "after": "fb06"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "7712",
+          "after": "8e12"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "2905",
+          "after": "3605"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "2712",
+          "after": "3612"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "3d04",
+          "after": "3604"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "f30f",
+          "after": "f20f"
+        },
+        {
+          "block": 15,
+          "field": "d",
+          "before": "3d06",
+          "after": "5506"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "4711",
+          "after": "6411"
+        },
+        {
+          "block": 16,
+          "field": "d",
+          "before": "6606",
+          "after": "6806"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "5b11",
+          "after": "5411"
+        },
+        {
+          "block": 18,
+          "field": "d",
+          "before": "bc04",
+          "after": "bd04"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "9c10",
+          "after": "a010"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "8905",
+          "after": "8705"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "1a13",
+          "after": "1d13"
+        }
+      ],
+      "packed_row": {
+        "bytes": 2880,
+        "sha256": "fef2811b4c6fc19a4205c3525ff9148bd77493c6c3719f12184419f74d87e7dc",
+        "name": "token-351.q4k"
+      }
+    },
+    {
+      "token_id": 414,
+      "changed_fields": [
+        {
+          "block": 0,
+          "field": "d",
+          "before": "d805",
+          "after": "f405"
+        },
+        {
+          "block": 0,
+          "field": "dmin",
+          "before": "a110",
+          "after": "a010"
+        },
+        {
+          "block": 1,
+          "field": "d",
+          "before": "7a07",
+          "after": "a807"
+        },
+        {
+          "block": 1,
+          "field": "dmin",
+          "before": "3f15",
+          "after": "5015"
+        },
+        {
+          "block": 2,
+          "field": "d",
+          "before": "8605",
+          "after": "7a05"
+        },
+        {
+          "block": 2,
+          "field": "dmin",
+          "before": "ca10",
+          "after": "be10"
+        },
+        {
+          "block": 3,
+          "field": "d",
+          "before": "3104",
+          "after": "4004"
+        },
+        {
+          "block": 3,
+          "field": "dmin",
+          "before": "5810",
+          "after": "7110"
+        },
+        {
+          "block": 4,
+          "field": "d",
+          "before": "fa05",
+          "after": "f905"
+        },
+        {
+          "block": 4,
+          "field": "dmin",
+          "before": "4c12",
+          "after": "5812"
+        },
+        {
+          "block": 5,
+          "field": "d",
+          "before": "9f04",
+          "after": "8d04"
+        },
+        {
+          "block": 5,
+          "field": "dmin",
+          "before": "d50f",
+          "after": "d60f"
+        },
+        {
+          "block": 6,
+          "field": "d",
+          "before": "db04",
+          "after": "f204"
+        },
+        {
+          "block": 6,
+          "field": "dmin",
+          "before": "2b10",
+          "after": "4010"
+        },
+        {
+          "block": 7,
+          "field": "d",
+          "before": "bf04",
+          "after": "cf04"
+        },
+        {
+          "block": 7,
+          "field": "dmin",
+          "before": "1710",
+          "after": "2210"
+        },
+        {
+          "block": 8,
+          "field": "d",
+          "before": "c804",
+          "after": "db04"
+        },
+        {
+          "block": 8,
+          "field": "dmin",
+          "before": "ca10",
+          "after": "e310"
+        },
+        {
+          "block": 9,
+          "field": "d",
+          "before": "0e05",
+          "after": "bc04"
+        },
+        {
+          "block": 9,
+          "field": "dmin",
+          "before": "7412",
+          "after": "1d12"
+        },
+        {
+          "block": 10,
+          "field": "d",
+          "before": "2104",
+          "after": "0a04"
+        },
+        {
+          "block": 10,
+          "field": "dmin",
+          "before": "2f10",
+          "after": "1710"
+        },
+        {
+          "block": 11,
+          "field": "d",
+          "before": "7b04",
+          "after": "8b04"
+        },
+        {
+          "block": 11,
+          "field": "dmin",
+          "before": "d710",
+          "after": "f410"
+        },
+        {
+          "block": 12,
+          "field": "d",
+          "before": "5206",
+          "after": "4c06"
+        },
+        {
+          "block": 12,
+          "field": "dmin",
+          "before": "9212",
+          "after": "9012"
+        },
+        {
+          "block": 13,
+          "field": "d",
+          "before": "6804",
+          "after": "9904"
+        },
+        {
+          "block": 13,
+          "field": "dmin",
+          "before": "ae10",
+          "after": "df10"
+        },
+        {
+          "block": 14,
+          "field": "d",
+          "before": "8f04",
+          "after": "a104"
+        },
+        {
+          "block": 14,
+          "field": "dmin",
+          "before": "8010",
+          "after": "8d10"
+        },
+        {
+          "block": 15,
+          "field": "dmin",
+          "before": "7f11",
+          "after": "7611"
+        },
+        {
+          "block": 16,
+          "field": "d",
+          "before": "dd06",
+          "after": "0407"
+        },
+        {
+          "block": 16,
+          "field": "dmin",
+          "before": "3611",
+          "after": "4a11"
+        },
+        {
+          "block": 17,
+          "field": "d",
+          "before": "be04",
+          "after": "9504"
+        },
+        {
+          "block": 17,
+          "field": "dmin",
+          "before": "9d10",
+          "after": "7b10"
+        },
+        {
+          "block": 18,
+          "field": "d",
+          "before": "eb04",
+          "after": "e104"
+        },
+        {
+          "block": 18,
+          "field": "dmin",
+          "before": "5311",
+          "after": "4011"
+        },
+        {
+          "block": 19,
+          "field": "d",
+          "before": "0c06",
+          "after": "3b06"
+        },
+        {
+          "block": 19,
+          "field": "dmin",
+          "before": "2013",
+          "after": "7a13"
+        }
+      ],
+      "packed_row": {
+        "bytes": 2880,
+        "sha256": "a76fddf05487543c489357f962acb78067966b025b81db500e26c774372f607e",
+        "name": "token-414.q4k"
+      }
+    }
+  ],
+  "fitting_outcomes": {
+    "train_before": 325,
+    "train_after": 330,
+    "total_previously_correct_losses": 0,
+    "math_legacy_losses": 0,
+    "paired_before": 99,
+    "paired_after": 104,
+    "paired_gains": 5,
+    "paired_losses": 0,
+    "pair_gains_by_family_count": 3,
+    "distinct_gained_pairs": 4,
+    "all_four_before": 46,
+    "all_four_after": 49,
+    "families_with_gains": 3,
+    "choice_gains_by_letter": {
+      "A": 3,
+      "B": 1,
+      "C": 1
+    },
+    "gained_choice_position_count": 3,
+    "max_abs_ordinary_shift": 0.020856087926404143,
+    "max_abs_math_shift": 0.08985328674316406,
+    "minimum_prior_margin": 0.008266448974609375,
+    "changed_halves": 156,
+    "math_floor_slack": 0.0005198860168457043,
+    "ordinary_floor_slack": 12.746560325622559,
+    "maximum_midpoint_shift": 0.07356140138222145,
+    "maximum_mean_shift": 0.00391865587460263,
+    "ordinary_winner_changes": 0,
+    "seed_pair_presentations_preserved": 5,
+    "seed_pair_families_preserved": 3,
+    "seed_pair_gained_positions_preserved": 3,
+    "passed": true,
+    "changed_anchor_fields": 150,
+    "maximum_anchor_step": 4
+  },
+  "independent_cpu_transfer": {
+    "receipt_sha256": "be609f461acf1ee0784d3174dded4fd6ccd490dd49f52dcad8f2ff800d320e17",
+    "plan_sha256": "df7c5e3d680b94da8679523a420bfb4b886cb37a60f424a9aa3a0b4583aee89a",
+    "capture_sha256": "43f78db742a8ffe1bfcaa3984a7a1aec2fbcd3ae5d990187db42bcde83a89e03",
+    "author_key_audit_sha256": "bb68a28b59681c4d9be3247bcc2108de47d2f3404257adbcc615ed631d4368de",
+    "stock_q8_replay": {
+      "independent_stock_native_choice_logits_f32": 2048,
+      "exact_parent_noop_choice_logits_f32": 2048,
+      "exact_parent_choice_logits_f32_sha256": "cae570f9123fa98d58d1e4c722981ead7cc2ce2a74ad8fe8716d05eff9b9f1a6",
+      "recovered_q8_half_rounding_states": 3,
+      "maximum_decoded_parent_residual_after_q8_boundary_recovery": 3.1178728931990918E-06,
+      "allowed_decoded_parent_residual": 5E-06,
+      "candidate_cpu_choice_logits_f32_sha256": "1f0bc784d6e2c8b39982edfac624690eeb15b21724c4c0f7dd0286d92223744e",
+      "maximum_abs_candidate_choice_logit_delta": 0.08452033996582031
+    },
+    "score": {
+      "passed": false,
+      "pooled": {
+        "states": 512,
+        "aligned_pairs": 256,
+        "all_four_groups": 128,
+        "paired_all_four_groups": 64,
+        "stock_choice_ties": 0,
+        "candidate_choice_ties": 0,
+        "choice_before": 325,
+        "choice_after": 327,
+        "choice_gains": 3,
+        "choice_losses": 1,
+        "complete_pair_before": 80,
+        "complete_pair_after": 82,
+        "complete_pair_gains": 3,
+        "complete_pair_losses": 1,
+        "all_four_before": 55,
+        "all_four_after": 57,
+        "all_four_gains": 2,
+        "all_four_losses": 0,
+        "paired_all_four_before": 10,
+        "paired_all_four_after": 10,
+        "paired_all_four_gains": 0,
+        "paired_all_four_losses": 0
+      },
+      "by_subject": {
+        "high_school_mathematics": {
+          "states": 256,
+          "aligned_pairs": 128,
+          "all_four_groups": 64,
+          "paired_all_four_groups": 32,
+          "stock_choice_ties": 0,
+          "candidate_choice_ties": 0,
+          "choice_before": 161,
+          "choice_after": 161,
+          "choice_gains": 0,
+          "choice_losses": 0,
+          "complete_pair_before": 37,
+          "complete_pair_after": 37,
+          "complete_pair_gains": 0,
+          "complete_pair_losses": 0,
+          "all_four_before": 30,
+          "all_four_after": 30,
+          "all_four_gains": 0,
+          "all_four_losses": 0,
+          "paired_all_four_before": 5,
+          "paired_all_four_after": 5,
+          "paired_all_four_gains": 0,
+          "paired_all_four_losses": 0
+        },
+        "college_mathematics": {
+          "states": 256,
+          "aligned_pairs": 128,
+          "all_four_groups": 64,
+          "paired_all_four_groups": 32,
+          "stock_choice_ties": 0,
+          "candidate_choice_ties": 0,
+          "choice_before": 164,
+          "choice_after": 166,
+          "choice_gains": 3,
+          "choice_losses": 1,
+          "complete_pair_before": 43,
+          "complete_pair_after": 45,
+          "complete_pair_gains": 3,
+          "complete_pair_losses": 1,
+          "all_four_before": 25,
+          "all_four_after": 27,
+          "all_four_gains": 2,
+          "all_four_losses": 0,
+          "paired_all_four_before": 5,
+          "paired_all_four_after": 5,
+          "paired_all_four_gains": 0,
+          "paired_all_four_losses": 0
+        }
+      },
+      "by_family": [
+        {
+          "subject": "college_mathematics",
+          "family": "college-linear-feasibility",
+          "states": 64,
+          "aligned_pairs": 32,
+          "all_four_groups": 16,
+          "paired_all_four_groups": 8,
+          "stock_choice_ties": 0,
+          "candidate_choice_ties": 0,
+          "choice_before": 41,
+          "choice_after": 42,
+          "choice_gains": 1,
+          "choice_losses": 0,
+          "complete_pair_before": 14,
+          "complete_pair_after": 15,
+          "complete_pair_gains": 1,
+          "complete_pair_losses": 0,
+          "all_four_before": 7,
+          "all_four_after": 7,
+          "all_four_gains": 0,
+          "all_four_losses": 0,
+          "paired_all_four_before": 3,
+          "paired_all_four_after": 3,
+          "paired_all_four_gains": 0,
+          "paired_all_four_losses": 0
+        },
+        {
+          "subject": "college_mathematics",
+          "family": "college-ode-existence",
+          "states": 64,
+          "aligned_pairs": 32,
+          "all_four_groups": 16,
+          "paired_all_four_groups": 8,
+          "stock_choice_ties": 0,
+          "candidate_choice_ties": 0,
+          "choice_before": 47,
+          "choice_after": 49,
+          "choice_gains": 2,
+          "choice_losses": 0,
+          "complete_pair_before": 17,
+          "complete_pair_after": 19,
+          "complete_pair_gains": 2,
+          "complete_pair_losses": 0,
+          "all_four_before": 6,
+          "all_four_after": 8,
+          "all_four_gains": 2,
+          "all_four_losses": 0,
+          "paired_all_four_before": 2,
+          "paired_all_four_after": 2,
+          "paired_all_four_gains": 0,
+          "paired_all_four_losses": 0
+        },
+        {
+          "subject": "college_mathematics",
+          "family": "college-probability-dependence",
+          "states": 64,
+          "aligned_pairs": 32,
+          "all_four_groups": 16,
+          "paired_all_four_groups": 8,
+          "stock_choice_ties": 0,
+          "candidate_choice_ties": 0,
+          "choice_before": 36,
+          "choice_after": 35,
+          "choice_gains": 0,
+          "choice_losses": 1,
+          "complete_pair_before": 4,
+          "complete_pair_after": 3,
+          "complete_pair_gains": 0,
+          "complete_pair_losses": 1,
+          "all_four_before": 5,
+          "all_four_after": 5,
+          "all_four_gains": 0,
+          "all_four_losses": 0,
+          "paired_all_four_before": 0,
+          "paired_all_four_after": 0,
+          "paired_all_four_gains": 0,
+          "paired_all_four_losses": 0
+        },
+        {
+          "subject": "college_mathematics",
+          "family": "college-quantifier-convergence",
+          "states": 64,
+          "aligned_pairs": 32,
+          "all_four_groups": 16,
+          "paired_all_four_groups": 8,
+          "stock_choice_ties": 0,
+          "candidate_choice_ties": 0,
+          "choice_before": 40,
+          "choice_after": 40,
+          "choice_gains": 0,
+          "choice_losses": 0,
+          "complete_pair_before": 8,
+          "complete_pair_after": 8,
+          "complete_pair_gains": 0,
+          "complete_pair_losses": 0,
+          "all_four_before": 7,
+          "all_four_after": 7,
+          "all_four_gains": 0,
+          "all_four_losses": 0,
+          "paired_all_four_before": 0,
+          "paired_all_four_after": 0,
+          "paired_all_four_gains": 0,
+          "paired_all_four_losses": 0
+        },
+        {
+          "subject": "high_school_mathematics",
+          "family": "hs-conditional-evidence",
+          "states": 64,
+          "aligned_pairs": 32,
+          "all_four_groups": 16,
+          "paired_all_four_groups": 8,
+          "stock_choice_ties": 0,
+          "candidate_choice_ties": 0,
+          "choice_before": 30,
+          "choice_after": 30,
+          "choice_gains": 0,
+          "choice_losses": 0,
+          "complete_pair_before": 0,
+          "complete_pair_after": 0,
+          "complete_pair_gains": 0,
+          "complete_pair_losses": 0,
+          "all_four_before": 4,
+          "all_four_after": 4,
+          "all_four_gains": 0,
+          "all_four_losses": 0,
+          "paired_all_four_before": 0,
+          "paired_all_four_after": 0,
+          "paired_all_four_gains": 0,
+          "paired_all_four_losses": 0
+        },
+        {
+          "subject": "high_school_mathematics",
+          "family": "hs-geometric-admissibility",
+          "states": 64,
+          "aligned_pairs": 32,
+          "all_four_groups": 16,
+          "paired_all_four_groups": 8,
+          "stock_choice_ties": 0,
+          "candidate_choice_ties": 0,
+          "choice_before": 31,
+          "choice_after": 31,
+          "choice_gains": 0,
+          "choice_losses": 0,
+          "complete_pair_before": 0,
+          "complete_pair_after": 0,
+          "complete_pair_gains": 0,
+          "complete_pair_losses": 0,
+          "all_four_before": 7,
+          "all_four_after": 7,
+          "all_four_gains": 0,
+          "all_four_losses": 0,
+          "paired_all_four_before": 0,
+          "paired_all_four_after": 0,
+          "paired_all_four_gains": 0,
+          "paired_all_four_losses": 0
+        },
+        {
+          "subject": "high_school_mathematics",
+          "family": "hs-quantified-integers",
+          "states": 64,
+          "aligned_pairs": 32,
+          "all_four_groups": 16,
+          "paired_all_four_groups": 8,
+          "stock_choice_ties": 0,
+          "candidate_choice_ties": 0,
+          "choice_before": 51,
+          "choice_after": 51,
+          "choice_gains": 0,
+          "choice_losses": 0,
+          "complete_pair_before": 20,
+          "complete_pair_after": 20,
+          "complete_pair_gains": 0,
+          "complete_pair_losses": 0,
+          "all_four_before": 7,
+          "all_four_after": 7,
+          "all_four_gains": 0,
+          "all_four_losses": 0,
+          "paired_all_four_before": 1,
+          "paired_all_four_after": 1,
+          "paired_all_four_gains": 0,
+          "paired_all_four_losses": 0
+        },
+        {
+          "subject": "high_school_mathematics",
+          "family": "hs-restricted-functions",
+          "states": 64,
+          "aligned_pairs": 32,
+          "all_four_groups": 16,
+          "paired_all_four_groups": 8,
+          "stock_choice_ties": 0,
+          "candidate_choice_ties": 0,
+          "choice_before": 49,
+          "choice_after": 49,
+          "choice_gains": 0,
+          "choice_losses": 0,
+          "complete_pair_before": 17,
+          "complete_pair_after": 17,
+          "complete_pair_gains": 0,
+          "complete_pair_losses": 0,
+          "all_four_before": 12,
+          "all_four_after": 12,
+          "all_four_gains": 0,
+          "all_four_losses": 0,
+          "paired_all_four_before": 4,
+          "paired_all_four_after": 4,
+          "paired_all_four_gains": 0,
+          "paired_all_four_losses": 0
+        }
+      ],
+      "families_with_complete_pair_gains": 2,
+      "complete_pair_gain_families": [
+        {
+          "subject": "college_mathematics",
+          "family": "college-linear-feasibility"
+        },
+        {
+          "subject": "college_mathematics",
+          "family": "college-ode-existence"
+        }
+      ]
+    },
+    "passed": false,
+    "native_cpu_decode_exact": true
+  },
+  "checkpoint_written": false,
+  "official_final_blind_or_protected_inputs_used": false
+}
