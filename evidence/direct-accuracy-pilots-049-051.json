@@ -1,0 +1,508 @@
+{
+  "schema": "published-pilots049-051-authored-transfer-trials-v1",
+  "status": "failed_held_development",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "authored_044_capture_sha256": "30e776abb9ac79cc7e1f93264342aacd38142d009462fc74609a59e7dcf1b952",
+  "pilots": {
+    "049": {
+      "report_sha256": "bf001eb3cd6509e891a091d7924a842f7a247236d54f7ede11a82629cfc9cee7",
+      "plan_sha256": "f90580720cc30139785b4492117ddb3dd16b91124a86c2fe14b3f23a4a6df86e",
+      "source_sha256": "b7ad82ebe960d1be92861bdcc43c81c413e58a9514ef072ea5f6ebd7b4693216",
+      "ordinary_held_states": 90,
+      "held_older": {
+        "028": {
+          "rotations": [
+            342,
+            342
+          ],
+          "all_four": [
+            46,
+            46
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "039": {
+          "rotations": [
+            55,
+            55
+          ],
+          "all_four": [
+            2,
+            2
+          ],
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "held_044_by_arm": {
+        "a": {
+          "rotations": [
+            104,
+            104
+          ],
+          "all_four": [
+            11,
+            11
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "b": {
+          "rotations": [
+            95,
+            95
+          ],
+          "all_four": [
+            9,
+            9
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "c": {
+          "rotations": [
+            90,
+            90
+          ],
+          "all_four": [
+            8,
+            8
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "d": {
+          "rotations": [
+            95,
+            95
+          ],
+          "all_four": [
+            9,
+            9
+          ],
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "all_sixteen": [
+        8,
+        8
+      ],
+      "ordinary_archived_top64_changes": 0,
+      "u_sha256": "66af838b7a10430b7655aa0cf2af502b1fdf7bb5a258b48cd8ec16cfc06a1b4e",
+      "folds": [
+        {
+          "fold": 0,
+          "receipt_sha256": "a786500292eed517b38267bc008c20c183585597ef2bd31283c6cdbde5d635da",
+          "v_sha256": "403f78315a692e00968a61dbe1039368e9a8682e5de6d1dde7cf28bcc6d81548",
+          "factorized_probes": 31,
+          "accepted_steps": 2,
+          "parent_objective": 0.06326868008790405,
+          "exact_checks": 2,
+          "selected_tensor": {
+            "parent_tensor_sha256": "0c98f90b2c64baa071ada49e9db216040932261a54d791c8656deb07c637d97a",
+            "patched_tensor_sha256": "8fe666d382ff4ec828aa8b7b0ea6d38e93da54271217406ec6f760cc1113100d",
+            "delta_frobenius_fraction": 8.667723412930645e-05
+          },
+          "selected_training_objective": 0.054944043511595216,
+          "selected_train_044_gains": 1,
+          "selected_minimum_signed_slack": 0.0004216194152832052
+        },
+        {
+          "fold": 1,
+          "receipt_sha256": "263814846eb23c585fa036111059caef1e45e4b9df627a25538af56c7ddc7dbb",
+          "v_sha256": "cde85cba5a949787ca2d74b5e45bac28b99d5f582b434e228872aec00bff181f",
+          "factorized_probes": 31,
+          "accepted_steps": 2,
+          "parent_objective": 0.024022314594413195,
+          "exact_checks": 2
+        },
+        {
+          "fold": 2,
+          "receipt_sha256": "747bddc926f6ae268b28cb679454b03b31c138f861353e055318be1165c86fb6",
+          "v_sha256": "cde85cba5a949787ca2d74b5e45bac28b99d5f582b434e228872aec00bff181f",
+          "factorized_probes": 31,
+          "accepted_steps": 1,
+          "parent_objective": 0.04479408918631998,
+          "exact_checks": 1
+        }
+      ]
+    },
+    "050": {
+      "report_sha256": "8b7d30b31d90d2d07114ada0d12f13ec7d70823f8959c0234308bb15c5f6d17e",
+      "plan_sha256": "4385025654f6a6bcb59ecb1424626928de45695072b343f00438924f46345a3b",
+      "source_sha256": "4e03a943d89930ab1e82bcba9e0d55c0b12ab93c1b9dac66299c7d9d608d06b7",
+      "ordinary_held_states": 90,
+      "held_older": {
+        "028": {
+          "rotations": [
+            342,
+            342
+          ],
+          "all_four": [
+            46,
+            46
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "039": {
+          "rotations": [
+            55,
+            55
+          ],
+          "all_four": [
+            2,
+            2
+          ],
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "held_044_by_arm": {
+        "a": {
+          "rotations": [
+            104,
+            104
+          ],
+          "all_four": [
+            11,
+            11
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "b": {
+          "rotations": [
+            95,
+            95
+          ],
+          "all_four": [
+            9,
+            9
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "c": {
+          "rotations": [
+            90,
+            90
+          ],
+          "all_four": [
+            8,
+            8
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "d": {
+          "rotations": [
+            95,
+            95
+          ],
+          "all_four": [
+            9,
+            9
+          ],
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "all_sixteen": [
+        8,
+        8
+      ],
+      "ordinary_full_winner_changes": 0,
+      "input_binding_sha256": "6ae44f64cf9c217b516b807d1de9e6b05e2f698601713c15aec6519e08450828",
+      "packed_row_recipe": {
+        "tensor": {
+          "name": "output.weight",
+          "quantization": "Q4_K",
+          "ggml_type": 12,
+          "dimensions": [
+            5120,
+            248320
+          ],
+          "offset": 10996640,
+          "bytes": 715161600
+        },
+        "row_bytes": 2880,
+        "coordinates_per_block": 256,
+        "block_bytes": 144,
+        "metadata_bytes_per_block": 16,
+        "steps": [
+          "Start each fold from the same pinned parent. Read each row at tensor offset plus token ID times row bytes, and verify its parent row digest.",
+          "For each zero-based coordinate c, set block = c // 256 and i = c % 256. Its row-relative byte offset is 144*block + 16 + 32*(i // 64) + i % 32. Its nibble shift is 4*((i // 32) % 2).",
+          "Add the paired signed code delta to that nibble without changing the other nibble or block metadata. Verify each reconstructed row digest."
+        ],
+        "all_fold_row_hashes_independently_reconstructed": true
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "receipt_sha256": "03df992ff9589852a12ece563f12e1f560de1c7fc041b7c234b2c8f42e989fa1",
+          "rows": [
+            {
+              "token_id": 357,
+              "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "packed_sha256": "edb09c0cc52c47db1b5a978119a579234b62a94010d8bc4aef366b269276605a",
+              "changed_nibbles": 1,
+              "coordinates": [
+                1095
+              ],
+              "signed_code_deltas": [
+                -1
+              ]
+            },
+            {
+              "token_id": 417,
+              "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 351,
+              "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "packed_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 414,
+              "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "packed_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            }
+          ],
+          "stable_signed_code_count": 174,
+          "train_targets": 144,
+          "robust_close_guard_pairs": 45
+        },
+        {
+          "fold": 1,
+          "receipt_sha256": "5a0701a3334d1e80218287c490916b704aed5c81a7921fcc86230b645ceb6dcd",
+          "rows": [
+            {
+              "token_id": 357,
+              "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "packed_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 417,
+              "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 351,
+              "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "packed_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 414,
+              "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "packed_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            }
+          ],
+          "stable_signed_code_count": 157,
+          "train_targets": 125,
+          "robust_close_guard_pairs": 42
+        },
+        {
+          "fold": 2,
+          "receipt_sha256": "a4b0cc8636602516a0680e3f0d55eddb5a4c527f543c0d65912eb14234c0a2a1",
+          "rows": [
+            {
+              "token_id": 357,
+              "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "packed_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 417,
+              "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 351,
+              "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "packed_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 414,
+              "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "packed_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            }
+          ],
+          "stable_signed_code_count": 221,
+          "train_targets": 147,
+          "robust_close_guard_pairs": 55
+        }
+      ]
+    },
+    "051": {
+      "report_sha256": "020bc6b75a98e0a3c4f2094bc10824d1cd9cef11cbd3c8d5d86cfdf2a0830a82",
+      "plan_sha256": "86b74d9918d98c44848a2fda61b39e7b73740fd34f4a0e955e3bc07442d54859",
+      "source_sha256": "be4dc580699d9914258809262c22638e5cb270f41acfa9f13085cb5fb975ac75",
+      "ordinary_held_states": 90,
+      "held_older": {
+        "028": {
+          "rotations": [
+            342,
+            342
+          ],
+          "all_four": [
+            46,
+            46
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "039": {
+          "rotations": [
+            55,
+            55
+          ],
+          "all_four": [
+            2,
+            2
+          ],
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "held_044_by_arm": {
+        "a": {
+          "rotations": [
+            104,
+            104
+          ],
+          "all_four": [
+            11,
+            11
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "b": {
+          "rotations": [
+            95,
+            95
+          ],
+          "all_four": [
+            9,
+            9
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "c": {
+          "rotations": [
+            90,
+            90
+          ],
+          "all_four": [
+            8,
+            8
+          ],
+          "gains": 0,
+          "losses": 0
+        },
+        "d": {
+          "rotations": [
+            95,
+            95
+          ],
+          "all_four": [
+            9,
+            9
+          ],
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "all_sixteen": [
+        8,
+        8
+      ],
+      "ordinary_archived_top64_changes": 0,
+      "u_sha256": "66af838b7a10430b7655aa0cf2af502b1fdf7bb5a258b48cd8ec16cfc06a1b4e",
+      "folds": [
+        {
+          "fold": 0,
+          "receipt_sha256": "37311588366bdbd10887286dfecfd13c94517bb5d71441885edba0a69710ea71",
+          "v_sha256": "692cf7cda3f4348a08fd32ca8efcf369026700272d81d8dd470c621522557612",
+          "targets_by_cohort": [
+            35,
+            10,
+            32
+          ],
+          "scale_trials": 10,
+          "scales_with_044_gains": 8,
+          "rounded_candidates_tested": 0,
+          "signed_floor_failures": 10
+        },
+        {
+          "fold": 1,
+          "receipt_sha256": "1f8fe5c0fe2927ee068125708dcea5627e32e0b2a188cb6779c4e5f029fd398b",
+          "v_sha256": "1379b5664b27bab61d0f745a65137c1beeb99eca163d42d0523be4308ebb9835",
+          "targets_by_cohort": [
+            36,
+            6,
+            25
+          ],
+          "scale_trials": 10,
+          "scales_with_044_gains": 6,
+          "rounded_candidates_tested": 0,
+          "signed_floor_failures": 6
+        },
+        {
+          "fold": 2,
+          "receipt_sha256": "a71448d481d0191f15dff21b9447f8616f6fd0e66d201e106409395289801d10",
+          "v_sha256": "2763dc2800f56afea36f16ef021a214a5bd853aab4f5a1a8e8df7e6324dd8ccb",
+          "targets_by_cohort": [
+            35,
+            8,
+            45
+          ],
+          "scale_trials": 10,
+          "scales_with_044_gains": 4,
+          "rounded_candidates_tested": 0,
+          "signed_floor_failures": 8
+        }
+      ]
+    }
+  },
+  "all_folds_frozen_before_held": true,
+  "checkpoint_written": false,
+  "protected_or_benchmark_inputs_used": false
+}

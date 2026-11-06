@@ -677,3 +677,11 @@ Pilot 047 used the observed difference between the linear margin prediction and 
 Pilot 048 protected the native winner on close, non-target training choices, including those the parent answered incorrectly. It bounded the edit's margin effect under componentwise variation estimated from the four same-letter contexts. The three fits checked 53, 45, and 62 added comparisons and passed their exact decoded bounds. On held data, the earlier 028 score moved from **342/576 to 340/576**, the 039 score moved from **55/144 to 56/144**, and the 044 score stayed at **384/768**. Two incorrect choices on 044 switched to a different incorrect answer. All 90 ordinary full-vocabulary winners stayed exact in the CPU replay.
 
 Both trials failed their held development gates. [Fold recipes, replay hashes, and paired results](../evidence/direct-accuracy-pilots-047-048.json)
+
+## Pilots 049 to 051 on training safety and family transfer
+
+Pilot 049 used the CPU Q8 replay as a search objective. It tested 93 factorized proposals and accepted five steps after rounded-F32 replay confirmed every signed training guard and the ordinary controls. One fold's selected D63 edit recovered one training answer. The held accuracy was unchanged in every cohort.
+
+Pilot 050 ranked exact packed code moves in two disjoint training-family blocks per outer fold, then considered only signed moves that both blocks supported. The three intersections contained 174, 157 and 221 moves. Under the frozen training guards, the fitter changed one packed code in one fold. Held accuracy and the 90 ordinary full-vocabulary winners were preserved.
+
+Pilot 051 used semantic teacher margins across all three authored sets, with 77, 67 and 88 eligible training misses in its three folds. The candidate scales were checked against CPU Q8 logits. All 30 scales failed the training gate, so all three folds replayed the parent. None of these trials reached the required held gain. [Exact fold hashes, packed recipe, and paired results](../evidence/direct-accuracy-pilots-049-051.json)
