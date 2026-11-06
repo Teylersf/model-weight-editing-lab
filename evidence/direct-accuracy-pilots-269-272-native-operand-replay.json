@@ -37,6 +37,25 @@
     "support_code_counts_sorted": [89, 98, 99, 102],
     "continuous_half_reanchor_infeasible": 4
   },
+  "pilot271_anchored_attention_support_search": {
+    "source_sha256": "cba926e92fa54ca16308b0b8f88c0ea6d46c8094723644585961215070a829d7",
+    "plan_sha256": "c70536a37023d3e30d8784ef373a0db593382958d41a01cb85df2068bf137e8e",
+    "frozen_supports_sha256": "483964db65df57a9890049ba2a0836b35a0ed28efda0c5fce504153ed9a75e47",
+    "receipt_sha256": "428cff455d2c1a86429af5348ac6d8fe1c144845f42b9dfd5fda23228f956e75",
+    "authored_development_families": 4,
+    "solver_trials": 32,
+    "distinct_supports": 28,
+    "training_aligned_pair_gain_proposals": 2,
+    "strict_training_passes": 0,
+    "ordinary_archived_top64_winner_changes": 0,
+    "ordinary_peak_logit_cap_failures": 7,
+    "omitted_family_choices_stock_candidate": [119, 118],
+    "omitted_family_complete_aligned_pairs_stock_candidate": [40, 40],
+    "omitted_family_all_three_order_items_stock_candidate": [28, 27],
+    "omitted_family_complete_pair_orbits_stock_candidate": [7, 7],
+    "native_nonzero_downstream_choice_logit_calibration": false,
+    "packed_recipe": false
+  },
   "pilot272_archived_full_vocabulary_replay": {
     "source_sha256": "e6bf878e9bbead0b42e50334ef9af038bec6f709c42e9579da7de51961461d48",
     "plan_sha256": "48b4d048e8e829c82a378d47b7262a2f3d05d4a06e9113db0e86bd2af12d4dd1",
