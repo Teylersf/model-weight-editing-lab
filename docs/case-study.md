@@ -1252,3 +1252,9 @@ This search used a wider archive movement envelope and recalibrated signed floor
 Pilot 211 saved and independently reread the full GGUF. It found **3,526 changed bytes**, verified every undeclared bit, and reproduced the native CPU decode for all four edited rows. [Whole-file readback](../evidence/direct-accuracy-pilot-211-packed-readback.json) · [Replay the exact edit](../examples/README.md#replay-the-pilot-209-mixed-output-edit)
 
 On the saved file, Pilot 213 reproduced **one of the two** protected proof streams. The second stream differed, so qualification ended before the cylinder, matched benchmark, and blinded evaluation. The edited rows passed the authored archive checks and failed the live proof-preservation check. [Protected rejection receipt](../evidence/direct-accuracy-pilot-213-protected-rejection.json)
+
+## Pilots 216 and 217 with the original ordinary-logit limit
+
+Pilot 216 screened 16 packed interpolations between Pilots 194 and 209. The integer scale repair starting at Pilot 209 passed the authored guards, retained all **335/512** choices and **11/64** complete groups, and lowered the ordinary peak from **0.02547 to 0.02091**, inside the original **0.021** limit. It lowered the edit norm from the Pilot 194 anchor by **0.45%**. The two lower-weight interpolation starts advanced to exact local refinement and still lost prior choices. The prespecified 10% norm reduction was unmet.
+
+Pilot 217 repeated the guard-feasible route under a nonincrease norm condition and froze its exact four Q4_K rows. The previous target retained a **+0.00902** margin and the new targets cleared **+0.00865**. Qualification still requires the same protected outputs, a matched gain with zero losses, and blinded improvement on both measures. [Archive checks, norm tradeoff, and packed row hashes](../evidence/direct-accuracy-pilots-216-217-ordinary-guard-restoration.json)
