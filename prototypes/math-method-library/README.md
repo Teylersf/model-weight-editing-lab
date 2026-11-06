@@ -24,6 +24,10 @@ The method is a candidate procedure. Check its assumptions against the submitted
 
 ## Measured coverage and limitations
 
-The included tests found an expected card in the top three for all 74 development queries, with 71 ranked first. All five included off-topic queries returned no cards. A replay of the previously used retrieval challenge found an expected card in the top three for all 23 math queries, with 22 ranked first, and returned no cards for its five off-topic controls. Earlier search changes used that challenge. These results cover regression tests. Before tuning tool use, freeze a new evaluation set that includes ambiguous and out-of-scope requests.
+The included tests found an expected card in the top three for all 74 development queries, with 71 ranked first. All five included off-topic queries returned no cards. A replay of the previously used retrieval challenge found an expected card in the top three for all 23 math queries, with 22 ranked first, and returned no cards for its five off-topic controls.
+
+A separate audit froze 24 fresh math requests and 10 controls before searching the 257-card snapshot. With no filters and a limit of three, it matched an expected card first on **9/24** and in the top three on **17/24**. Top-three coverage was **8/12** in high school and **9/12** in undergraduate math. It returned no candidates for **3/6** off-topic requests and **0/4** underspecified requests. The audit measures retrieval. The tutor integration remains gated on better ranking and abstention.
+
+The audited content revision was `7d637362b73b62da86d43501823fdb609525f023f0b88ead4946857a3c3a60a8` and the search revision was `9198708a52965007f1c2b584db916ac9b0e354105ede397cbb0a10c88918ae07`. The frozen audit bundle SHA-256 was `2f1d0759b1cca9ba24da8135c7df8631380de7086801cf2cabf6e90ceff54053`.
 
 The JSON files in `math-methods/cards` are the editable source. Their examples are authored for this library. Keep model benchmarks, held-out evaluation items, and student submissions separate from the library.
