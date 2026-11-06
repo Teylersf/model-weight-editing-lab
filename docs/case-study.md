@@ -768,6 +768,12 @@ The original grader assumed A–D list order. The CPU regrade verified all six e
 
 A pinned trajectory manifest passed a single CPU preflight for all **768** frozen sequences. A separate four-state CUDA fixture verified that the bulk input path reproduced the previous multi-row CUDA patch's activations, top-64 and selected logits byte for byte. [Preflight and CUDA parity checksums](../evidence/direct-accuracy-pilot-066-bulk-native-parity.json)
 
+## Pilot 067 with jointly constrained up codes
+
+Pilot 067 added all prior-correct 044 margins to the 053 training constraints. It solved a continuous margin problem and selected integer Q4_K changes on a bounded support. The first run stopped after two no-op folds when the integer solver timed out with fractional code values. A separate rerun preserved the fit settings, recorded the invalid vector and discarded it.
+
+Of **40** distinct nonzero proposals, **18** recovered a training pair. All 40 violated a signed 053 floor, and 39 also violated a signed 044 floor in exact rounded CPU replay. All three held folds kept the original weights. The paired result stayed at **42/384**, and the 90 ordinary winners stayed unchanged among the archived top 64. [Solver recovery, held results, and independent audit](../evidence/direct-accuracy-pilot-067-guarded-packed-up.json)
+
 ## Pilot 068 with read-only upstream capture on the 044 cohort
 
 The CUDA capture added the final feed-forward input, gate and up activations for all **768** existing 044 states. An independent CPU audit matched all **3,072** binary32 choice logits against both the archived terminal capture and the original scorer. It also matched the 768 top-64 ledgers and full-vocabulary winners, and verified the original A, P, R, H and gamma arrays byte for byte. The largest absolute difference between the stored gated activation and the reconstructed SwiGLU output was **7.93 × 10⁻⁶**. The source checkpoint passed its full before-and-after hash check. [Capture and independent audit checksums](../evidence/direct-accuracy-pilot-068-044-upstream-capture.json)
@@ -786,3 +792,13 @@ The fixed comparison used the same twelve neuron slots for the up-only, gate-onl
 | Joint | Positive | 3 / 2 | 8 / 7 |
 
 Every lane preserved the 90 held ordinary winners among the archived top 64. Each signed lane still crossed training floors after Q8 replay. The held families were grouped within each corpus. The independently authored complex-analysis sets share a family label and fall in different source-local folds. [Frozen method and per-fold results](../evidence/direct-accuracy-pilot-070-branch-capacity.json)
+
+## Pilot 072 with a targeted pair margin
+
+Pilot 072 selected six close training pairs and optimized the minimum of their six correct-answer margins. Across 15 bounded integer solves, it ran 11 exact packed replays. One proposal moved its target minimum margin from **−0.09344** to **+0.04265** and crossed ten signed floors. After re-anchoring to the exact replay, the next proposal preserved those floors and left the target margin at **−0.00578**. All three frozen held fits contained no changes. [Frozen target search and exact replay results](../evidence/direct-accuracy-pilot-072-target-first-up.json)
+
+## Pilot 073 with joint semantic supervision
+
+Pilot 073 used condition-pair targets from 053 and same-letter targets from 044 in the same up-projection fit. A family held in either corpus was excluded from both training corpora. The first fold passed the exact training margins and ordinary checks with **347** code changes across **20** rows. An independent audit reconstructed every changed row and verified that all quantization metadata stayed byte-identical. The other two folds kept the parent weights.
+
+In the grouped CPU replay, both-correct held pairs rose from **42/384 to 43/384**. The edit lost one previously correct 053 choice and two 044 choices, with zero ordinary winner changes among the archived top 64. The 053 loss had led its later winner by **0.12033** logits in the parent. The two 044 leads were **0.01709** and **0.01026**. The holdout gate failed and no edited checkpoint was written. [Frozen plan, packed-row audit, and held tradeoffs](../evidence/direct-accuracy-pilot-073-joint-semantic-up.json)

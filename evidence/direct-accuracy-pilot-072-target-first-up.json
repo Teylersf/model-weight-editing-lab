@@ -1,0 +1,241 @@
+{
+  "schema": "published-pilot072-target-first-packed-up-v1",
+  "status": "no_qualifying_edit",
+  "source_sha256": "a52b5179770f0586fbf0aa67b3e813c4b68c11f3ffae283f00820d07eec34e86",
+  "grouped_report_sha256": "f08005f7016a92018be1626324d013487a13eb1117e55b0a1e0ea502dc51b592",
+  "frozen_plan_sha256": "92698658b800dc7aa1cd757d3da4b7ccab2f8b8669e092e5dd0aad2314de9082",
+  "input_binding_sha256": "ad82b718521cc1b0f62899f4cfc5f285cd920d443d78e860f26ec10b54b1f64e",
+  "capture_068_sha256": "ac1844da188242446f2c6541375bd8b48144c0b97ab4c611b239c772a766d54c",
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "e9e4a11690c4c52b0195bd70dba7a7f90b14c1beefdd5a5235fe7bc6f3deaf83",
+      "training_targets": 2,
+      "integer_solves": 5,
+      "exact_packed_proposals": 3,
+      "eligible_proposals": 0,
+      "target_min_margin_examples": [
+        {
+          "baseline_minimum_margin": -0.09344100952148438,
+          "exact_probes": [
+            {
+              "refinement": 0,
+              "minimum_target_margin": 0.04265403747558594,
+              "signed_floor_violations_053": 7,
+              "signed_floor_violations_044": 3
+            },
+            {
+              "refinement": 1,
+              "minimum_target_margin": -0.00577545166015625,
+              "signed_floor_violations_053": 0,
+              "signed_floor_violations_044": 0
+            }
+          ]
+        },
+        {
+          "baseline_minimum_margin": -0.10959625244140625,
+          "exact_probes": [
+            {
+              "refinement": 0,
+              "minimum_target_margin": -0.00278472900390625,
+              "signed_floor_violations_053": 4,
+              "signed_floor_violations_044": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "c099370c75a1aff2a377c8b2d8bf458aaabbe318890be61fcab1f9cb1369ad99",
+      "training_targets": 2,
+      "integer_solves": 4,
+      "exact_packed_proposals": 3,
+      "eligible_proposals": 0,
+      "target_min_margin_examples": [
+        {
+          "baseline_minimum_margin": -0.10959625244140625,
+          "exact_probes": []
+        },
+        {
+          "baseline_minimum_margin": -0.1329479217529297,
+          "exact_probes": [
+            {
+              "refinement": 0,
+              "minimum_target_margin": -0.022268295288085938,
+              "signed_floor_violations_053": 2,
+              "signed_floor_violations_044": 3
+            },
+            {
+              "refinement": 1,
+              "minimum_target_margin": -0.01058197021484375,
+              "signed_floor_violations_053": 2,
+              "signed_floor_violations_044": 2
+            },
+            {
+              "refinement": 2,
+              "minimum_target_margin": -0.022947311401367188,
+              "signed_floor_violations_053": 1,
+              "signed_floor_violations_044": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "2716cda3040da1f1841b33727329f41bccfc170bb918d5dd429fce6a39cab0ea",
+      "training_targets": 2,
+      "integer_solves": 6,
+      "exact_packed_proposals": 5,
+      "eligible_proposals": 0,
+      "target_min_margin_examples": [
+        {
+          "baseline_minimum_margin": -0.09344100952148438,
+          "exact_probes": [
+            {
+              "refinement": 0,
+              "minimum_target_margin": -0.0051746368408203125,
+              "signed_floor_violations_053": 2,
+              "signed_floor_violations_044": 6
+            },
+            {
+              "refinement": 1,
+              "minimum_target_margin": -0.05671501159667969,
+              "signed_floor_violations_053": 1,
+              "signed_floor_violations_044": 0
+            },
+            {
+              "refinement": 2,
+              "minimum_target_margin": -0.008005142211914062,
+              "signed_floor_violations_053": 2,
+              "signed_floor_violations_044": 2
+            }
+          ]
+        },
+        {
+          "baseline_minimum_margin": -0.1329479217529297,
+          "exact_probes": [
+            {
+              "refinement": 0,
+              "minimum_target_margin": -0.0486602783203125,
+              "signed_floor_violations_053": 2,
+              "signed_floor_violations_044": 3
+            },
+            {
+              "refinement": 1,
+              "minimum_target_margin": -0.0038509368896484375,
+              "signed_floor_violations_053": 4,
+              "signed_floor_violations_044": 4
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "held_053_paired": {
+    "matches": 384,
+    "baseline_both_correct": 42,
+    "candidate_both_correct": 42,
+    "gains": 0,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "held_053_by_arm": {
+    "a": {
+      "rotations": 192,
+      "baseline_correct": 82,
+      "candidate_correct": 82,
+      "gains": 0,
+      "losses": 0
+    },
+    "b": {
+      "rotations": 192,
+      "baseline_correct": 82,
+      "candidate_correct": 82,
+      "gains": 0,
+      "losses": 0
+    },
+    "c": {
+      "rotations": 192,
+      "baseline_correct": 80,
+      "candidate_correct": 80,
+      "gains": 0,
+      "losses": 0
+    },
+    "d": {
+      "rotations": 192,
+      "baseline_correct": 83,
+      "candidate_correct": 83,
+      "gains": 0,
+      "losses": 0
+    }
+  },
+  "held_044_by_arm": {
+    "a": {
+      "rotations": 192,
+      "baseline_correct": 104,
+      "candidate_correct": 104,
+      "gains": 0,
+      "losses": 0
+    },
+    "b": {
+      "rotations": 192,
+      "baseline_correct": 95,
+      "candidate_correct": 95,
+      "gains": 0,
+      "losses": 0
+    },
+    "c": {
+      "rotations": 192,
+      "baseline_correct": 90,
+      "candidate_correct": 90,
+      "gains": 0,
+      "losses": 0
+    },
+    "d": {
+      "rotations": 192,
+      "baseline_correct": 95,
+      "candidate_correct": 95,
+      "gains": 0,
+      "losses": 0
+    }
+  },
+  "held_053_individual_losses": 0,
+  "held_044_individual_losses": 0,
+  "held_ordinary_states": 90,
+  "ordinary_archived_top64_winner_changes": 0,
+  "ordinary_binary32_archived_top64_winner_changes": 0,
+  "binary32_choice_argmax_parity": true,
+  "all_folds_frozen_before_held_scoring": true,
+  "checkpoint_written": false
+}

@@ -1,0 +1,521 @@
+{
+  "schema": "published-pilot073-joint-semantic-up-v1",
+  "status": "held_regression_gate_failed",
+  "grouped_report_sha256": "a518617fc9bcee0ef542fdd52d040971c3419b0456b77f51b182962a6286b285",
+  "independent_packed_held_audit_sha256": "9d32d1b14f10881e8af1f76c7a8788265deb58aff3feb8c449e7318598a0bc60",
+  "independent_packed_held_audit_source_sha256": "c10b5404c746c0a631f46f3369cb7792994d17664b7efb36e6a934ff271ff0d4",
+  "frozen_plan_sha256": "fade03f79ad3a04e6ea11b52b96838c685a5186100bec4aa5bcd2851ba523343",
+  "input_binding_sha256": "5b0d5278ac9e8c1ec98929ef3e54c692d45f1cc9b833e3e0b3914ebbacc989db",
+  "capture_068_sha256": "ac1844da188242446f2c6541375bd8b48144c0b97ab4c611b239c772a766d54c",
+  "frozen_plan": {
+    "schema": "windows-pilot073-joint-semantic-up-plan-v1",
+    "source_sha256": "f5da36725af0ef6e3c1fb67753bd31ba1a0d5da124d2ea65a53be9f2fb667a82",
+    "replay_and_044_source_sha256": "0128de44398f8c46ab5148ee426c638c57e0da0e0258e15184b61929b804b005",
+    "same_letter_target_rule_source_sha256": "6439e97fd14a3c2f6a5aa87dc8dfa3e08a1f345599264b3f717b06b8d843c942",
+    "capture_068_sha256": "ac1844da188242446f2c6541375bd8b48144c0b97ab4c611b239c772a766d54c",
+    "captures": {
+      "c053": "722001c8ee9f1995bcf609452883798343a02dcc8dad69e2886bdeae2a1ba42e",
+      "c058": "3b6979579e32f7d5ad7368a83b8fe21883619e8faf4fcfcdea3ce3ff16baddad",
+      "b053": "10bc93edbb8e50959fa61839e83c6f2d3fcf55776b6e1124a0d391759f68c661",
+      "b044": "7fcd24a366f3750c91525f8d06149f6542c9f83589414adaaee6ae44cf09953b"
+    },
+    "partition": "Preserve each source's frozen held folds. Exclude any subject/family label held in either source from both training corpora. Keep ordinary trajectories in their original folds.",
+    "objectives": "Equal weight for shared six-margin condition-pair deficits and same-letter 044 teacher deficits. Use both condition and same-letter normalized X contrasts in a common input basis.",
+    "ranked_rows": "Top rows from combined branch gradient with cross-corpus geometric bonus, followed by the strongest rows of each corpus. Maximum 20 unique rows.",
+    "max_rank": 10,
+    "max_rows": 20,
+    "packed_pursuit_coordinates_per_row": 20,
+    "direct_prefixes": [
+      6,
+      12,
+      20
+    ],
+    "direct_strengths": [
+      0.75,
+      0.35,
+      0.15
+    ],
+    "milp_prefixes": [
+      10,
+      18
+    ],
+    "milp_seconds": 8,
+    "max_exact_q8_reanchors": 1,
+    "reanchor": "Increase each hard guard requirement by a previous candidate's negative exact-minus-linear residual, capped at zero to leave the unchanged parent feasible. Retain the frozen exact gate.",
+    "training_gate": "Same exact signed 053 and 044 prior floors and ordinary checks as 067, with positive 053 paired gains, zero paired losses, and a lower equal-corpus exact objective.",
+    "held_gate": "Preserve 067's zero-loss 053 and 044 per-arm, 90 ordinary, and net 053 pair recovery gates.",
+    "all_folds_frozen_before_held_scoring": true,
+    "official_fresh_proof_or_transfer_inputs_used": false,
+    "gpu_used": false,
+    "checkpoint_written": false
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "46f003292fd010c0dc88f0b8917ef6355455d7efa9bcf0a87797623630ea564a",
+      "training_states_053": 512,
+      "training_states_044": 512,
+      "ordinary_training_states": 60,
+      "semantic_target_pairs_053": 10,
+      "same_letter_targets_044": 8,
+      "unique_nonzero_packed_probes": 12,
+      "exact_train_eligible_probes": 1,
+      "frozen_rows": 20,
+      "status": "CPU_TRAIN_PAIRED_GAIN",
+      "selected_training": {
+        "source": {
+          "kind": "joint_integer",
+          "prefix": 18,
+          "iteration": 0
+        },
+        "codes": 347,
+        "rows": 20,
+        "exact_training_passed": true,
+        "objective": 0.14152453984063498,
+        "authored_053": {
+          "objective": 0.023101006188160137,
+          "minimum_signed_slack": 0.017169284820556643,
+          "signed_floor_violations": 0,
+          "prior_correct_losses": 0,
+          "binary32_argmax_parity": true,
+          "paired": {
+            "matches": 256,
+            "baseline_both_correct": 27,
+            "candidate_both_correct": 28,
+            "gains": 1,
+            "losses": 0,
+            "by_arm": {
+              "a": {
+                "matches": 64,
+                "baseline_both_correct": 6,
+                "candidate_both_correct": 6,
+                "gains": 0,
+                "losses": 0
+              },
+              "b": {
+                "matches": 64,
+                "baseline_both_correct": 6,
+                "candidate_both_correct": 6,
+                "gains": 0,
+                "losses": 0
+              },
+              "c": {
+                "matches": 64,
+                "baseline_both_correct": 7,
+                "candidate_both_correct": 7,
+                "gains": 0,
+                "losses": 0
+              },
+              "d": {
+                "matches": 64,
+                "baseline_both_correct": 8,
+                "candidate_both_correct": 9,
+                "gains": 1,
+                "losses": 0
+              }
+            }
+          },
+          "math_passed": true
+        },
+        "authored_044": {
+          "signed_constraints": 810,
+          "minimum_signed_slack": 0.010075855255126956,
+          "signed_floor_violations": 0,
+          "binary32_argmax_parity": true,
+          "prior_correct_losses": 0,
+          "arms": {
+            "a": {
+              "rotations": 128,
+              "baseline_correct": 71,
+              "candidate_correct": 72,
+              "gains": 1,
+              "losses": 0
+            },
+            "b": {
+              "rotations": 128,
+              "baseline_correct": 67,
+              "candidate_correct": 67,
+              "gains": 0,
+              "losses": 0
+            },
+            "c": {
+              "rotations": 128,
+              "baseline_correct": 67,
+              "candidate_correct": 69,
+              "gains": 2,
+              "losses": 0
+            },
+            "d": {
+              "rotations": 128,
+              "baseline_correct": 65,
+              "candidate_correct": 65,
+              "gains": 0,
+              "losses": 0
+            }
+          }
+        },
+        "ordinary": {
+          "states": 60,
+          "archived_top64_winner_changes": 0,
+          "binary32_archived_top64_winner_changes": 0,
+          "min_archived_top64_winner_margin": 0.031916864053528116
+        }
+      },
+      "held_053_by_arm": {
+        "a": {
+          "rotations": 64,
+          "baseline_correct": 26,
+          "candidate_correct": 27,
+          "gains": 1,
+          "losses": 0
+        },
+        "b": {
+          "rotations": 64,
+          "baseline_correct": 29,
+          "candidate_correct": 29,
+          "gains": 0,
+          "losses": 0
+        },
+        "c": {
+          "rotations": 64,
+          "baseline_correct": 28,
+          "candidate_correct": 28,
+          "gains": 1,
+          "losses": 1
+        },
+        "d": {
+          "rotations": 64,
+          "baseline_correct": 27,
+          "candidate_correct": 28,
+          "gains": 1,
+          "losses": 0
+        }
+      },
+      "held_044_by_arm": {
+        "a": {
+          "rotations": 64,
+          "baseline_correct": 33,
+          "candidate_correct": 33,
+          "gains": 1,
+          "losses": 1
+        },
+        "b": {
+          "rotations": 64,
+          "baseline_correct": 28,
+          "candidate_correct": 29,
+          "gains": 2,
+          "losses": 1
+        },
+        "c": {
+          "rotations": 64,
+          "baseline_correct": 23,
+          "candidate_correct": 24,
+          "gains": 1,
+          "losses": 0
+        },
+        "d": {
+          "rotations": 64,
+          "baseline_correct": 30,
+          "candidate_correct": 31,
+          "gains": 1,
+          "losses": 0
+        }
+      },
+      "held_ordinary": {
+        "states": 30,
+        "archived_top64_winner_changes": 0,
+        "binary32_archived_top64_winner_changes": 0,
+        "min_archived_top64_winner_margin": 0.01679729878287617
+      }
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "b8862cae1e9e108ef07a9ae868e310de054fc8b0029886358593be658b4e8a6b",
+      "training_states_053": 448,
+      "training_states_044": 512,
+      "ordinary_training_states": 60,
+      "semantic_target_pairs_053": 17,
+      "same_letter_targets_044": 11,
+      "unique_nonzero_packed_probes": 11,
+      "exact_train_eligible_probes": 0,
+      "frozen_rows": 0,
+      "status": "NO_OP",
+      "selected_training": null,
+      "held_053_by_arm": {
+        "a": {
+          "rotations": 64,
+          "baseline_correct": 21,
+          "candidate_correct": 21,
+          "gains": 0,
+          "losses": 0
+        },
+        "b": {
+          "rotations": 64,
+          "baseline_correct": 20,
+          "candidate_correct": 20,
+          "gains": 0,
+          "losses": 0
+        },
+        "c": {
+          "rotations": 64,
+          "baseline_correct": 19,
+          "candidate_correct": 19,
+          "gains": 0,
+          "losses": 0
+        },
+        "d": {
+          "rotations": 64,
+          "baseline_correct": 21,
+          "candidate_correct": 21,
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "held_044_by_arm": {
+        "a": {
+          "rotations": 64,
+          "baseline_correct": 29,
+          "candidate_correct": 29,
+          "gains": 0,
+          "losses": 0
+        },
+        "b": {
+          "rotations": 64,
+          "baseline_correct": 27,
+          "candidate_correct": 27,
+          "gains": 0,
+          "losses": 0
+        },
+        "c": {
+          "rotations": 64,
+          "baseline_correct": 29,
+          "candidate_correct": 29,
+          "gains": 0,
+          "losses": 0
+        },
+        "d": {
+          "rotations": 64,
+          "baseline_correct": 27,
+          "candidate_correct": 27,
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "held_ordinary": {
+        "states": 30,
+        "archived_top64_winner_changes": 0,
+        "binary32_archived_top64_winner_changes": 0,
+        "min_archived_top64_winner_margin": 0.6177730560302734
+      }
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "f10b9cad6f822d780b29f0b62508b220de9ec73bc3ce8aa9a801efc8b04f2fb8",
+      "training_states_053": 512,
+      "training_states_044": 448,
+      "ordinary_training_states": 60,
+      "semantic_target_pairs_053": 13,
+      "same_letter_targets_044": 17,
+      "unique_nonzero_packed_probes": 9,
+      "exact_train_eligible_probes": 0,
+      "frozen_rows": 0,
+      "status": "NO_OP",
+      "selected_training": null,
+      "held_053_by_arm": {
+        "a": {
+          "rotations": 64,
+          "baseline_correct": 35,
+          "candidate_correct": 35,
+          "gains": 0,
+          "losses": 0
+        },
+        "b": {
+          "rotations": 64,
+          "baseline_correct": 33,
+          "candidate_correct": 33,
+          "gains": 0,
+          "losses": 0
+        },
+        "c": {
+          "rotations": 64,
+          "baseline_correct": 33,
+          "candidate_correct": 33,
+          "gains": 0,
+          "losses": 0
+        },
+        "d": {
+          "rotations": 64,
+          "baseline_correct": 35,
+          "candidate_correct": 35,
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "held_044_by_arm": {
+        "a": {
+          "rotations": 64,
+          "baseline_correct": 42,
+          "candidate_correct": 42,
+          "gains": 0,
+          "losses": 0
+        },
+        "b": {
+          "rotations": 64,
+          "baseline_correct": 40,
+          "candidate_correct": 40,
+          "gains": 0,
+          "losses": 0
+        },
+        "c": {
+          "rotations": 64,
+          "baseline_correct": 38,
+          "candidate_correct": 38,
+          "gains": 0,
+          "losses": 0
+        },
+        "d": {
+          "rotations": 64,
+          "baseline_correct": 38,
+          "candidate_correct": 38,
+          "gains": 0,
+          "losses": 0
+        }
+      },
+      "held_ordinary": {
+        "states": 30,
+        "archived_top64_winner_changes": 0,
+        "binary32_archived_top64_winner_changes": 0,
+        "min_archived_top64_winner_margin": 0.029294967651367188
+      }
+    }
+  ],
+  "held_053_paired": {
+    "matches": 384,
+    "baseline_both_correct": 42,
+    "candidate_both_correct": 43,
+    "gains": 1,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 11,
+        "gains": 1,
+        "losses": 0
+      },
+      "b": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "held_053_by_arm": {
+    "a": {
+      "rotations": 192,
+      "baseline_correct": 82,
+      "candidate_correct": 83,
+      "gains": 1,
+      "losses": 0
+    },
+    "b": {
+      "rotations": 192,
+      "baseline_correct": 82,
+      "candidate_correct": 82,
+      "gains": 0,
+      "losses": 0
+    },
+    "c": {
+      "rotations": 192,
+      "baseline_correct": 80,
+      "candidate_correct": 80,
+      "gains": 1,
+      "losses": 1
+    },
+    "d": {
+      "rotations": 192,
+      "baseline_correct": 83,
+      "candidate_correct": 84,
+      "gains": 1,
+      "losses": 0
+    }
+  },
+  "held_044_by_arm": {
+    "a": {
+      "rotations": 192,
+      "baseline_correct": 104,
+      "candidate_correct": 104,
+      "gains": 1,
+      "losses": 1
+    },
+    "b": {
+      "rotations": 192,
+      "baseline_correct": 95,
+      "candidate_correct": 96,
+      "gains": 2,
+      "losses": 1
+    },
+    "c": {
+      "rotations": 192,
+      "baseline_correct": 90,
+      "candidate_correct": 91,
+      "gains": 1,
+      "losses": 0
+    },
+    "d": {
+      "rotations": 192,
+      "baseline_correct": 95,
+      "candidate_correct": 96,
+      "gains": 1,
+      "losses": 0
+    }
+  },
+  "held_053_individual_losses": 1,
+  "held_044_individual_losses": 2,
+  "ordinary_archived_top64_winner_changes": 0,
+  "held_ordinary_states": 90,
+  "all_folds_frozen_before_held_scoring": true,
+  "exact_declared_code_moves": 347,
+  "changed_stored_bytes": 345,
+  "quantization_metadata_byte_identical": true,
+  "cross_source_topic_exclusion_verified": true,
+  "held_losses_margin_audit": {
+    "053": [
+      {
+        "arm": "c",
+        "parent_correct_minus_later_winner": 0.12032890319824219,
+        "edited_correct_minus_winner": -0.012060165405273438
+      }
+    ],
+    "044": [
+      {
+        "arm": "a",
+        "parent_correct_minus_later_winner": 0.01708698272705078,
+        "edited_correct_minus_winner": -0.07787132263183594
+      },
+      {
+        "arm": "b",
+        "parent_correct_minus_later_winner": 0.01026153564453125,
+        "edited_correct_minus_winner": -0.06015205383300781
+      }
+    ]
+  },
+  "scope": "Rounded anchored CPU replay and independent packed sidecar check on authored data. No native candidate qualification, MMLU, protected proof, fresh set, or saved edited checkpoint.",
+  "checkpoint_written": false
+}

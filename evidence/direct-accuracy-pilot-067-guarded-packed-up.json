@@ -1,0 +1,322 @@
+{
+  "schema": "published-pilot067-guarded-packed-up-v1",
+  "status": "no_qualifying_edit",
+  "original_driver_sha256": "0128de44398f8c46ab5148ee426c638c57e0da0e0258e15184b61929b804b005",
+  "original_plan_sha256": "cc86c16fe76c142d046a8d5160569dda54dd465ee41c442fde103dd31a24cb0b",
+  "recovery_source_sha256": "aef021de4911eda0b267855db0f9a027de35107e5ea5816cadd6875fbec7c7fb",
+  "recovery_plan_sha256": "f4125608c3c4e5bd8a480e3753270c8ecd7a382ba8c236d7de5a96bb11be1e70",
+  "recovery_input_binding_sha256": "5b36f6bf9246c3f354f730626da5d768943232729503f54483b54901efebbd55",
+  "capture_068_sha256": "ac1844da188242446f2c6541375bd8b48144c0b97ab4c611b239c772a766d54c",
+  "recovery_behavior": "Reject and log any returned vector more than 1e-5 from integer codes. All valid moves keep the original bounds, replay checks, and three-fold gates.",
+  "original_attempt_scope": "Folds 0 and 1 sealed no-op. A nonintegral MILP incumbent stopped fold 2. V2 reran the frozen plan in a fresh directory.",
+  "grouped_report_sha256": "87d2cbc26594febfa3dbaab8e873eb04634505d65161f8c6ef818b991e463223",
+  "independent_grouped_audit_sha256": "5b57c89279be293a37516800d62bba1092648eaec71f291daa7e1311b593a6d5",
+  "independent_audit_source_sha256": "2c5935e7f08e91c9cb68ce3ca1858d41f741e944988b7f41def0b3289f82f8fc",
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "058178429247c6d5539e2f8a8721a01d8cccf0a880bf272ec12f8f37d7436528",
+      "training": {
+        "status": "NO_EXACT_GUARDED_TRAIN_PAIRED_GAIN",
+        "surrogate_lp": {
+          "status": 0,
+          "parent_objective": 0.19308071136474608,
+          "incumbent_objective": 0.11261573795620666,
+          "incumbent_tightened_guard_violations": 0,
+          "incumbent_original_guard_violations": 0,
+          "guarded_surrogate_improvement": true,
+          "rejected_nonintegral_incumbent": false,
+          "maximum_distance_to_integer": null
+        },
+        "surrogate_milps": [
+          {
+            "prefix": 8,
+            "support": 154,
+            "status": 1,
+            "parent_objective": 0.19308071136474608,
+            "incumbent_objective": 0.11201635459200718,
+            "incumbent_tightened_guard_violations": 0,
+            "incumbent_original_guard_violations": 0,
+            "guarded_surrogate_improvement": true,
+            "rejected_nonintegral_incumbent": false,
+            "maximum_distance_to_integer": null
+          },
+          {
+            "prefix": 16,
+            "support": 256,
+            "status": 1,
+            "parent_objective": 0.19308071136474608,
+            "incumbent_objective": 0.05644267235617677,
+            "incumbent_tightened_guard_violations": 0,
+            "incumbent_original_guard_violations": 0,
+            "guarded_surrogate_improvement": true,
+            "rejected_nonintegral_incumbent": false,
+            "maximum_distance_to_integer": null
+          }
+        ],
+        "exact_parent_objective": 0.028176940019707365,
+        "best_exact_proposal_objective": 0.02717150861533766,
+        "unique_nonzero_probes": 14,
+        "objective_improving_probes": 6,
+        "paired_gain_probes": 3,
+        "probes_passing_regression_guards": 0,
+        "eligible_probes": 0,
+        "failed_gate_counts": {
+          "loss_044": 4,
+          "loss_053": 10,
+          "no_053_paired_gain": 11,
+          "no_exact_objective_decrease": 8,
+          "signed_floor_044": 14,
+          "signed_floor_053": 14
+        }
+      },
+      "packed": {
+        "rows_changed": 0,
+        "codes_changed": 0,
+        "parent_up_sha256": "58b3b02ef9f288d31bf5546f8fd6c76c7b59fc13c8816c71e8dacbd9777c0c7c",
+        "reconstructed_fold_up_sha256": "58b3b02ef9f288d31bf5546f8fd6c76c7b59fc13c8816c71e8dacbd9777c0c7c"
+      }
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "df3f5d4b32f09f960c6530bf114384db025d9b45bd5671172a001eb8e75a97bc",
+      "training": {
+        "status": "NO_EXACT_GUARDED_TRAIN_PAIRED_GAIN",
+        "surrogate_lp": {
+          "status": 0,
+          "parent_objective": 0.21904687881469728,
+          "incumbent_objective": 0.015193257748332373,
+          "incumbent_tightened_guard_violations": 0,
+          "incumbent_original_guard_violations": 0,
+          "guarded_surrogate_improvement": true,
+          "rejected_nonintegral_incumbent": false,
+          "maximum_distance_to_integer": null
+        },
+        "surrogate_milps": [
+          {
+            "prefix": 8,
+            "support": 135,
+            "status": 1,
+            "parent_objective": 0.21904687881469728,
+            "incumbent_objective": 0.10998803275171251,
+            "incumbent_tightened_guard_violations": 0,
+            "incumbent_original_guard_violations": 0,
+            "guarded_surrogate_improvement": true,
+            "rejected_nonintegral_incumbent": false,
+            "maximum_distance_to_integer": null
+          },
+          {
+            "prefix": 16,
+            "support": 223,
+            "status": 1,
+            "parent_objective": 0.21904687881469728,
+            "incumbent_objective": 0.06442695075853647,
+            "incumbent_tightened_guard_violations": 0,
+            "incumbent_original_guard_violations": 0,
+            "guarded_surrogate_improvement": true,
+            "rejected_nonintegral_incumbent": false,
+            "maximum_distance_to_integer": null
+          }
+        ],
+        "exact_parent_objective": 0.017909468003316095,
+        "best_exact_proposal_objective": 0.017142284403453518,
+        "unique_nonzero_probes": 14,
+        "objective_improving_probes": 3,
+        "paired_gain_probes": 10,
+        "probes_passing_regression_guards": 0,
+        "eligible_probes": 0,
+        "failed_gate_counts": {
+          "loss_044": 13,
+          "loss_053": 9,
+          "no_053_paired_gain": 4,
+          "no_exact_objective_decrease": 11,
+          "signed_floor_044": 13,
+          "signed_floor_053": 14
+        }
+      },
+      "packed": {
+        "rows_changed": 0,
+        "codes_changed": 0,
+        "parent_up_sha256": "58b3b02ef9f288d31bf5546f8fd6c76c7b59fc13c8816c71e8dacbd9777c0c7c",
+        "reconstructed_fold_up_sha256": "58b3b02ef9f288d31bf5546f8fd6c76c7b59fc13c8816c71e8dacbd9777c0c7c"
+      }
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "dc68099d2f1c1f27502e5d93cba48cbff3d042cbb1b8b4783174410e2fbb236d",
+      "training": {
+        "status": "NO_EXACT_GUARDED_TRAIN_PAIRED_GAIN",
+        "surrogate_lp": {
+          "status": 0,
+          "parent_objective": 0.22987513542175295,
+          "incumbent_objective": 0.061805267753285945,
+          "incumbent_tightened_guard_violations": 0,
+          "incumbent_original_guard_violations": 0,
+          "guarded_surrogate_improvement": true,
+          "rejected_nonintegral_incumbent": false,
+          "maximum_distance_to_integer": null
+        },
+        "surrogate_milps": [
+          {
+            "prefix": 8,
+            "support": 136,
+            "status": 1,
+            "parent_objective": 0.22987513542175295,
+            "incumbent_objective": null,
+            "incumbent_tightened_guard_violations": null,
+            "incumbent_original_guard_violations": null,
+            "guarded_surrogate_improvement": false,
+            "rejected_nonintegral_incumbent": false,
+            "maximum_distance_to_integer": null
+          },
+          {
+            "prefix": 16,
+            "support": 228,
+            "status": 1,
+            "parent_objective": 0.22987513542175295,
+            "incumbent_objective": null,
+            "incumbent_tightened_guard_violations": null,
+            "incumbent_original_guard_violations": null,
+            "guarded_surrogate_improvement": false,
+            "rejected_nonintegral_incumbent": true,
+            "maximum_distance_to_integer": 0.472508491103099
+          }
+        ],
+        "exact_parent_objective": 0.015104862167630934,
+        "best_exact_proposal_objective": 0.014612771227243564,
+        "unique_nonzero_probes": 12,
+        "objective_improving_probes": 2,
+        "paired_gain_probes": 5,
+        "probes_passing_regression_guards": 0,
+        "eligible_probes": 0,
+        "failed_gate_counts": {
+          "loss_044": 12,
+          "loss_053": 9,
+          "no_053_paired_gain": 7,
+          "no_exact_objective_decrease": 10,
+          "signed_floor_044": 12,
+          "signed_floor_053": 12
+        }
+      },
+      "packed": {
+        "rows_changed": 0,
+        "codes_changed": 0,
+        "parent_up_sha256": "58b3b02ef9f288d31bf5546f8fd6c76c7b59fc13c8816c71e8dacbd9777c0c7c",
+        "reconstructed_fold_up_sha256": "58b3b02ef9f288d31bf5546f8fd6c76c7b59fc13c8816c71e8dacbd9777c0c7c"
+      }
+    }
+  ],
+  "cross_source_shared_family_local_folds": [
+    {
+      "subject": "college_mathematics",
+      "family": "complex_analysis",
+      "fold_053": 2,
+      "fold_044": 1
+    }
+  ],
+  "held_053_paired": {
+    "matches": 384,
+    "baseline_both_correct": 42,
+    "candidate_both_correct": 42,
+    "gains": 0,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "held_053_by_arm": {
+    "a": {
+      "rotations": 192,
+      "baseline_correct": 82,
+      "candidate_correct": 82,
+      "gains": 0,
+      "losses": 0
+    },
+    "b": {
+      "rotations": 192,
+      "baseline_correct": 82,
+      "candidate_correct": 82,
+      "gains": 0,
+      "losses": 0
+    },
+    "c": {
+      "rotations": 192,
+      "baseline_correct": 80,
+      "candidate_correct": 80,
+      "gains": 0,
+      "losses": 0
+    },
+    "d": {
+      "rotations": 192,
+      "baseline_correct": 83,
+      "candidate_correct": 83,
+      "gains": 0,
+      "losses": 0
+    }
+  },
+  "held_044_by_arm": {
+    "a": {
+      "rotations": 192,
+      "baseline_correct": 104,
+      "candidate_correct": 104,
+      "gains": 0,
+      "losses": 0
+    },
+    "b": {
+      "rotations": 192,
+      "baseline_correct": 95,
+      "candidate_correct": 95,
+      "gains": 0,
+      "losses": 0
+    },
+    "c": {
+      "rotations": 192,
+      "baseline_correct": 90,
+      "candidate_correct": 90,
+      "gains": 0,
+      "losses": 0
+    },
+    "d": {
+      "rotations": 192,
+      "baseline_correct": 95,
+      "candidate_correct": 95,
+      "gains": 0,
+      "losses": 0
+    }
+  },
+  "held_053_individual_losses": 0,
+  "held_044_individual_losses": 0,
+  "held_ordinary_states": 90,
+  "ordinary_archived_top64_winner_changes": 0,
+  "ordinary_binary32_archived_top64_winner_changes": 0,
+  "binary32_choice_argmax_parity": true,
+  "all_folds_frozen_before_held_scoring": true,
+  "checkpoint_written": false
+}
