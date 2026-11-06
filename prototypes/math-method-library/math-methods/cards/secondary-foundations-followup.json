@@ -1,0 +1,186 @@
+[
+  {
+    "id": "function-domain-and-range",
+    "title": "Find the domain and range of a function",
+    "domain": "precalculus",
+    "level": "high-school",
+    "aliases": [
+      "allowed inputs and possible outputs",
+      "real domain of a function",
+      "range of a function",
+      "domain from a formula",
+      "undefined inputs for a square root or denominator",
+      "which inputs can I plug in without getting an undefined result",
+      "vertical line test"
+    ],
+    "pattern": "The domain is the set of allowed inputs. The range is the set of outputs actually attained by those inputs.",
+    "applies": [
+      "The question gives a real-valued function by formula, graph, or input and output pairs.",
+      "A graph or relation may also need to be checked for whether each input has a single output."
+    ],
+    "steps": [
+      "Start with the stated input set, or with all real inputs if none is stated. For a formula, require every even-root radicand to be nonnegative, every logarithm argument to be positive, and every denominator to be nonzero.",
+      "On a graph, project included points onto the horizontal axis for the domain and onto the vertical axis for the range. For a formula, bound the outputs or solve y = f(x) and determine which y admit an allowed x.",
+      "Include an endpoint only if some permitted input or output actually attains it."
+    ],
+    "pitfalls": [
+      "A canceled factor can hide a restriction in the original formula.",
+      "An open dot excludes that point. Another included point can still have the same x-coordinate or y-coordinate.",
+      "A bound on the output does not by itself show that every value up to the bound occurs."
+    ],
+    "checks": [
+      "Check every proposed domain boundary against the original expression.",
+      "For a relation to define y as a function of x, every vertical line must meet its included points at most once."
+    ],
+    "example": {
+      "problem": "Find the real domain and range of f(x) = sqrt(8 − 2x)/(x − 4).",
+      "answer": "The root requires x ≤ 4 and the denominator excludes 4, so the domain is (−∞, 4). On that domain f(x) = −2/sqrt(8 − 2x), which is negative. Every y < 0 occurs at x = 4 − 2/y², so the range is (−∞, 0)."
+    }
+  },
+  {
+    "id": "read-piecewise-function",
+    "title": "Evaluate and sketch a piecewise function",
+    "domain": "precalculus",
+    "level": "high-school",
+    "aliases": [
+      "evaluate a piecewise function",
+      "graph a piecewise function",
+      "choose the branch at a boundary",
+      "filled and open dots",
+      "piecewise function endpoints",
+      "different rules on different input intervals"
+    ],
+    "pattern": "Each formula applies only on its stated input set. A filled dot includes the point, while an open dot marks an excluded endpoint.",
+    "applies": [
+      "A function uses different formulas or graph pieces on different input sets.",
+      "The task asks for a function value, a sketch, or endpoint membership."
+    ],
+    "steps": [
+      "For a requested input, read the conditions first. Substitute into the formula whose condition includes the input.",
+      "For a sketch, plot each formula only where its condition holds and the formula is defined.",
+      "Mark finite graph endpoints with a filled or open dot according to whether that piece includes the point."
+    ],
+    "pitfalls": [
+      "If no branch contains the input, the function is undefined there.",
+      "If two branches include an input, they must agree there for the rule to define a function.",
+      "Separate pieces need not meet at a boundary."
+    ],
+    "checks": [
+      "Test a point inside each interval and inspect the equality sign at each boundary.",
+      "At an included boundary, the plotted height must match the value from the applicable formula."
+    ],
+    "example": {
+      "problem": "Let f(x) = x + 1 for x < 2 and f(x) = 6 − x for 2 ≤ x ≤ 4. Find f(2) and f(5), and mark the finite endpoints of the graph.",
+      "answer": "The second branch includes 2, so f(2) = 4. No branch includes 5. The first branch approaches the open point (2, 3). The second branch has filled endpoints (2, 4) and (4, 2)."
+    }
+  },
+  {
+    "id": "probability-addition-rule-overlap",
+    "title": "Use the addition rule for overlapping events",
+    "domain": "probability",
+    "level": "high-school",
+    "aliases": [
+      "probability addition rule",
+      "union of two events",
+      "inclusive or probability",
+      "two-set Venn diagram",
+      "at least one of two overlapping events",
+      "chance of either event when both can happen",
+      "chance of at least one occurrence when the chance of both is given"
+    ],
+    "pattern": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B). The same add-and-subtract rule holds for counts of two sets.",
+    "applies": [
+      "The question asks how many outcomes, or how much probability, belongs to at least one of two events.",
+      "The overlap is given or can be found, for example from a table or an explicit disjointness condition."
+    ],
+    "steps": [
+      "Identify the two events and their shared outcomes. A Venn diagram can separate the A-only, B-only, both, and neither regions.",
+      "Add the two totals and subtract their shared total once. For equally likely outcomes, divide the resulting count by the size of the sample space.",
+      "If asked for exactly one event, exclude the overlap entirely. If asked for neither, take the complement of the union."
+    ],
+    "pitfalls": [
+      "The two event totals already include the overlap twice.",
+      "Use P(A)P(B) for the overlap only when the events are independent.",
+      "The union includes the outcomes where both events occur."
+    ],
+    "checks": [
+      "The union is at least as large as each individual event and cannot exceed the whole sample space.",
+      "The four disjoint regions must have nonnegative counts or probabilities and add up to the total."
+    ],
+    "example": {
+      "problem": "Of 42 students, 18 chose a garden project, 15 chose a mural project, and 7 chose both. What is the probability that a student chosen uniformly at random chose at least one of the projects?",
+      "answer": "The union has 18 + 15 − 7 = 26 students, so the probability is 26/42 = 13/21. The garden-only, mural-only, both, and neither counts are 11, 8, 7, and 16, which sum to 42."
+    }
+  },
+  {
+    "id": "circle-equation-center-radius",
+    "title": "Find a circle equation, center, or radius",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "equation of a circle",
+      "circle standard form",
+      "center and radius of a circle",
+      "circle through a point from its center",
+      "complete the square for a circle"
+    ],
+    "pattern": "The circle with center (h, k) and radius r > 0 satisfies (x − h)² + (y − k)² = r².",
+    "applies": [
+      "The center and radius are given, or the center and a distinct point on the circle are given.",
+      "An expanded equation has equal nonzero coefficients of x² and y² and has no xy term."
+    ],
+    "steps": [
+      "Given the center and a point, compute r² as the squared distance from the point to the center. Insert the center coordinates and r² into the standard form.",
+      "Given an expanded equation, divide by the common squared-term coefficient. Move the constant to the other side and complete the square in x and y separately, adding the same terms to both sides.",
+      "Read the center from the two squared differences. A positive right-hand side gives its square root as the radius. A zero right-hand side gives a single point, and a negative one gives no real points."
+    ],
+    "pitfalls": [
+      "The sign inside a squared difference is opposite to the sign of the center coordinate.",
+      "The right-hand side in standard form is the squared radius."
+    ],
+    "checks": [
+      "Expand the standard form and compare it with the normalized equation.",
+      "If a point was supplied, substitute it into the finished equation."
+    ],
+    "example": {
+      "problem": "Find the center and radius of x² + y² − 10x + 4y + 13 = 0.",
+      "answer": "Move 13 to the right, then add 25 and 4 to both sides. The resulting equation is (x − 5)² + (y + 2)² = 16, so the center is (5, −2) and the radius is 4."
+    }
+  },
+  {
+    "id": "exact-mean-median-mode",
+    "title": "Find the exact mean, median, and mode",
+    "domain": "statistics",
+    "level": "high-school",
+    "aliases": [
+      "mean median mode",
+      "median of raw scores",
+      "average from a frequency table",
+      "exact median from a frequency table",
+      "measures of center"
+    ],
+    "pattern": "The mean is the total divided by the observation count. The median uses the middle rank or ranks after sorting. Modes are values with the highest frequency under the stated convention.",
+    "applies": [
+      "A nonempty list of numerical observations or a table of exact values and their frequencies is available.",
+      "A table of interval totals alone generally gives estimates of the mean or median because the exact values inside the classes are unknown."
+    ],
+    "steps": [
+      "For a frequency table, sum the frequencies to get the observation count n. Sum each exact value times its frequency, then divide the total by n for the mean.",
+      "Sort the values and use ranks counted from 1. For odd n, read rank (n + 1)/2. For even n, average the values at ranks n/2 and n/2 + 1. Use cumulative frequencies to locate ranks without expanding a table.",
+      "For the mode, compare the frequencies of distinct observed values and report ties according to the problem's convention."
+    ],
+    "pitfalls": [
+      "Keep repeated observations in the count and in the rank calculation.",
+      "An even-sized list can have a median that is absent from the data.",
+      "If every observed value has the same frequency, conventions differ on whether to report no mode or list all the tied values."
+    ],
+    "checks": [
+      "The mean and median must lie between the smallest and largest observed values.",
+      "The final cumulative frequency must equal n. Verify each proposed mode against the largest observed frequency."
+    ],
+    "example": {
+      "problem": "Scores of 2, 5, 8, and 14 occur with respective frequencies 2, 4, 4, and 2. Find the mean, median, and modes.",
+      "answer": "There are 12 scores with total 2·2 + 5·4 + 8·4 + 14·2 = 84, so the mean is 7. Ranks 6 and 7 hold 5 and 8, so the median is 13/2. Scores 5 and 8 are both modes because each occurs four times."
+    }
+  }
+]

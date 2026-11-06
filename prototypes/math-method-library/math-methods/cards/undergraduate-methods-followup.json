@@ -1,0 +1,115 @@
+[
+  {
+    "id": "one-sample-mean-t-test",
+    "title": "Test one population mean with Student's t statistic",
+    "domain": "statistics",
+    "level": "undergraduate",
+    "aliases": ["one-sample t test", "one sample Student t test", "unknown sigma hypothesis test", "test a mean with sample standard deviation", "two-sided p-value for a mean", "small sample mean hypothesis test"],
+    "applies": [
+      "The hypothesis is about one population mean, and the population standard deviation is unknown.",
+      "Observations are independent, n is at least 2, and the sample standard deviation is positive. The population is normal for exact t inference, or the sample supports a large-sample approximation."
+    ],
+    "pattern": "For H0: μ=μ0, compute t=(x̄−μ0)/(s/√n) using the sample standard deviation s. Compare with a Student t distribution with n−1 degrees of freedom.",
+    "steps": [
+      "State the null value, the lower, upper, or two-sided alternative, and the significance level.",
+      "Find x̄ and s using divisor n−1 for the sample variance. Compute the test statistic and its degrees of freedom.",
+      "For an upper or lower alternative, take the matching t tail. For a two-sided alternative, take twice the upper-tail probability beyond |t|. Reject when the p-value is at most the significance level."
+    ],
+    "pitfalls": [
+      "Using a z table with an estimated standard deviation in a small normal sample changes the reference distribution.",
+      "The usual statistic divides by zero if s=0. A large sample does not fix dependence or systematic selection bias."
+    ],
+    "checks": [
+      "Verify the sign of t matches x̄−μ0 and the tail matches the alternative.",
+      "Report the decision in terms of evidence about the mean. Failure to reject leaves the null unproven."
+    ],
+    "example": {
+      "problem": "Independent measurements 5, 7, 8, 9, 11 come from a normal population with unknown standard deviation. Test H0: μ=6 against μ>6 at level 0.05.",
+      "answer": "The sample has x̄=8, s²=5, and s/√5=1, so t=2 with 4 degrees of freedom. The upper-tail p-value is 1/2−5/(8√2)≈0.0581. Fail to reject H0 at 0.05."
+    }
+  },
+  {
+    "id": "discrete-minimum-spanning-tree",
+    "title": "Find a minimum spanning tree with Kruskal or Prim",
+    "domain": "discrete-math",
+    "level": "undergraduate",
+    "aliases": ["minimum spanning tree", "Kruskal's algorithm", "Prim's algorithm", "MST", "minimum total edge cost", "cheapest network connecting every vertex"],
+    "applies": [
+      "A finite connected undirected weighted graph must be spanned by a tree of minimum total edge weight.",
+      "Both algorithms allow negative weights and tied weights. In a disconnected graph there is no spanning tree, but the components can have a minimum spanning forest."
+    ],
+    "pattern": "Kruskal adds the cheapest edge between two current components. Prim grows one tree by adding the cheapest edge from its vertices to a vertex outside. Each choice is safe by the minimum-edge cut property.",
+    "steps": [
+      "For Kruskal, start with each vertex alone and sort all edges by weight. Accept an edge only if its endpoints are in different current components, then merge them.",
+      "For Prim, start at any vertex. At each step choose a cheapest edge crossing from the grown tree to an outside vertex and add that vertex.",
+      "Stop once all vertices are connected and n−1 edges have been added. List the selected edges and add their weights."
+    ],
+    "pitfalls": [
+      "The objective is the total weight of the tree. Shortest paths from a start vertex optimize a different quantity.",
+      "Ties can lead to more than one minimum tree. In Kruskal's algorithm, skip a cheap edge that would make a cycle."
+    ],
+    "checks": [
+      "The output must include all vertices, be connected and acyclic, and use exactly n−1 edges.",
+      "For each accepted edge, identify the relevant cut and verify no cheaper edge crosses it."
+    ],
+    "example": {
+      "problem": "Find one minimum spanning tree on vertices A, B, C, D, E with undirected weighted edges AB=1, AC=3, BC=2, BD=5, CD=4, CE=4, DE=2, and BE=7.",
+      "answer": "Kruskal accepts AB, BC, and DE, skips AC because it closes a cycle, then accepts CD to join the two components. The total is 1+2+2+4=9. Taking CE instead of CD also gives a minimum tree."
+    }
+  },
+  {
+    "id": "linear-pivoted-lu-solve",
+    "title": "Factor a matrix with pivoted LU and solve a linear system",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": ["LU factorization", "LU decomposition", "PLU factorization", "partial pivoting", "PA=LU", "forward and backward substitution"],
+    "applies": [
+      "A is a square nonsingular matrix. Row pivoting makes elimination possible when an unpivoted leading entry is zero.",
+      "The same matrix can be factored once and used to solve systems for several right-hand sides."
+    ],
+    "pattern": "Write PA=LU with P the row permutation, L unit lower triangular, and U upper triangular. Solve Lz=Pb by forward substitution, then Ux=z by backward substitution.",
+    "steps": [
+      "In each active column choose a largest-magnitude pivot among the remaining rows. Swap it into the pivot row, updating P and any previously stored multiplier columns of L.",
+      "Eliminate below the pivot. Record the elimination multipliers in L and the final triangular matrix in U.",
+      "Apply the same row permutation to b, solve the lower triangular system, then solve the upper triangular system."
+    ],
+    "pitfalls": [
+      "A zero active pivot column signals singularity for a square matrix. Do not divide by zero or claim a unique solution.",
+      "Keep the convention PA=LU consistent when permuting b. When swapping later rows, move their already recorded multipliers too."
+    ],
+    "checks": ["Multiply L and U and compare with PA.", "Check x in the original equation Ax=b."],
+    "example": {
+      "problem": "Use partial pivoting to factor A=[[1,3],[2,4]] and solve Ax=b for b=(7,10).",
+      "answer": "P swaps the rows. L=[[1,0],[1/2,1]] and U=[[2,4],[0,1]] give LU=PA=[[2,4],[1,3]]. With Pb=(10,7), forward substitution gives z=(10,2), and backward substitution gives x=(1,2)."
+    }
+  },
+  {
+    "id": "numerical-classical-rk4",
+    "title": "Advance an initial value problem with classical RK4",
+    "domain": "numerical-methods",
+    "level": "undergraduate",
+    "aliases": ["classical Runge-Kutta method", "fourth-order Runge-Kutta", "RK4", "four stage Runge Kutta", "fourth-order ODE step", "RK4 estimate at the next grid point"],
+    "applies": [
+      "A first-order initial value problem y′=f(x,y) is to be advanced by a specified step h.",
+      "The right-hand side is defined at all stage points and is sufficiently smooth for the standard fourth-order accuracy result."
+    ],
+    "pattern": "Use slopes k1=f(x,y), k2=f(x+h/2,y+hk1/2), k3=f(x+h/2,y+hk2/2), and k4=f(x+h,y+hk3). Then advance to x+h with y_new=y+h(k1+2k2+2k3+k4)/6.",
+    "steps": [
+      "Evaluate the starting slope, then two midpoint slopes. The second midpoint uses the first midpoint's slope to predict y.",
+      "Use the second midpoint slope to predict y at x+h and evaluate the fourth slope there.",
+      "Take the 1, 2, 2, 1 weighted average of the four slopes and multiply by h once for the update."
+    ],
+    "pitfalls": [
+      "The two midpoint stages share the same x coordinate but generally have different y coordinates.",
+      "A coarse step can give an unstable or inaccurate result, particularly for a stiff equation."
+    ],
+    "checks": [
+      "For constant f all four slopes coincide and the step reduces to y+h f.",
+      "Keep stage slopes separate from stage increments. For a numerical trajectory, compare with a refined step size when accuracy matters."
+    ],
+    "example": {
+      "problem": "Take one classical RK4 step with h=1/4 for y′=2x+y and y(0)=1.",
+      "answer": "The stage slopes are 1, 11/8, 91/64, and 475/256. The update is y(1/4)≈1+(1/24)(1+2(11/8)+2(91/64)+475/256)=2769/2048."
+    }
+  }
+]
