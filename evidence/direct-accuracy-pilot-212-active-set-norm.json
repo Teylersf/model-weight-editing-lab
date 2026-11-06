@@ -1,0 +1,82 @@
+{
+  "schema": "public-direct-accuracy-pilot-212-active-set-continuous-norm-v1",
+  "receipt_sha256": "82f6af999061e8a21994a29eb9961f03ec3440bfc4fc54845a3bf65979f374e3",
+  "source_sha256": "9bb305eb1a5091bfc19e014278ee45dc4da83e128d41807289caf5d451e6a8e4",
+  "plan_sha256": "71c8a6167dec6060f306d2a631b988131e64578d0dcb393c21525438d027a033",
+  "menu_sha256": "298a0ff3cab7f603505c8be10cae8cef8d473b26230d703cca63b9d1dc167681",
+  "geometry": {
+    "ordinary_states": 60,
+    "ordinary_rank": 60,
+    "math_states": 2356,
+    "distinct_math_q8_rows": 2356,
+    "projected_rank": 2356,
+    "projected_null_relationships": 0,
+    "gram_conditioning_indicator": 52.47537442701933
+  },
+  "cap": 0.23,
+  "required_margin": 0.007,
+  "teachers": [
+    {
+      "ordinal": 1,
+      "teacher_sha256": "b0797f983ce8303d5c844ff0f72a3de78968ce63838388dbb6325d7c0f4ed233",
+      "direction": {
+        "bytes": 163840,
+        "sha256": "035425328bfb9d1042d562ce71295c57ce61630f672f6d1914d1d6ab24793afd",
+        "name": "orbit-1-direction.f64"
+      },
+      "origin": "active_dual",
+      "exact_guard_pass": true,
+      "smaller_than_previous": true,
+      "l2": 0.027397572923670715,
+      "dual_l2_bound": 0.027397572923670947,
+      "l2_gap": 0.0,
+      "relative_l2_gap": 0.0,
+      "prior_l2": 1.0436748819524817,
+      "relative_to_prior_norm": 0.02625106093615667,
+      "maximum_modeled_violation": 1.5008827514151335e-14,
+      "exact_second_margin": 0.0070247650146484375,
+      "exact_p194_margin": 0.0070247650146484375,
+      "max_abs_change": 0.0011737741047901263,
+      "largest_row_relative_l2": 0.0202504658552797,
+      "ordinary_binary32_exact": true,
+      "ordinary_delta_max": 1.3617579286417936e-16,
+      "lift_replay_max_error": 1.6773041289219748e-14,
+      "prior_floor_slack_min": 2.3918151855470415e-05,
+      "p194_prior_losses": 0,
+      "p105_complete_pair_gains": 7,
+      "p158_complete_pair_gains": 3
+    },
+    {
+      "ordinal": 2,
+      "teacher_sha256": "6568419599c5f8960a3c0fc0be9461dd2a6229152013ab5811c88f92bb0e70e4",
+      "direction": {
+        "bytes": 163840,
+        "sha256": "36b97e66ea1c57595e99c7d390a2f2404a20b38320ce9620ebb684b376e6a4dd",
+        "name": "orbit-2-direction.f64"
+      },
+      "origin": "active_dual",
+      "exact_guard_pass": true,
+      "smaller_than_previous": true,
+      "l2": 0.035552664273825,
+      "dual_l2_bound": 0.035552664273825946,
+      "l2_gap": 0.0,
+      "relative_l2_gap": 0.0,
+      "prior_l2": 3.056145537979468,
+      "relative_to_prior_norm": 0.01163317120601861,
+      "maximum_modeled_violation": 2.7238628019787825e-14,
+      "exact_second_margin": 0.0070247650146484375,
+      "exact_p194_margin": 0.0070247650146484375,
+      "max_abs_change": 0.0014941387101217666,
+      "largest_row_relative_l2": 0.025838637287537054,
+      "ordinary_binary32_exact": true,
+      "ordinary_delta_max": 1.1015494072452725e-16,
+      "lift_replay_max_error": 2.696454171058349e-14,
+      "prior_floor_slack_min": 2.3925676941871643e-05,
+      "p194_prior_losses": 0,
+      "p105_complete_pair_gains": 8,
+      "p158_complete_pair_gains": 5
+    }
+  ],
+  "packing_feasibility_tested": false,
+  "checkpoint_written": false
+}

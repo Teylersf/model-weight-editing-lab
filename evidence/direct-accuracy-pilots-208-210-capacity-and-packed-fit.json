@@ -1,0 +1,168 @@
+{
+  "schema": "public-direct-accuracy-pilots-208-210-capacity-and-packed-fit-v1",
+  "capacity": {
+    "receipt_sha256": "a487ee2af37a7cda9f03645674e3222619558c046b980566919641472a9eaf27",
+    "source_sha256": "0e40cfb209588ae228ebc3de1455eaf3b72547b45cc1fdf5aacb37a3034168b7",
+    "plan_sha256": "366a85a0fc0de1d77bb15c5e06ae78cf82309ec84610d6dfa79a072841f084f6",
+    "menu_sha256": "fe6f4a54b080964eb7220bc99fe633c135bf63a6ccc8b26d075e745fd4003fd5",
+    "geometry": {
+      "ordinary_states": 60,
+      "ordinary_rank": 60,
+      "math_states": 2356,
+      "distinct_math_q8_rows": 2356,
+      "projected_rank": 2356,
+      "projected_null_relationships": 0,
+      "gram_conditioning_indicator": 52.47537442701933
+    },
+    "cap_ladder": [
+      {
+        "cap": 0.23,
+        "trials": 4,
+        "exact_guarded_continuous_passes": 2
+      },
+      {
+        "cap": 0.35,
+        "trials": 4,
+        "exact_guarded_continuous_passes": 3
+      },
+      {
+        "cap": 0.55,
+        "trials": 4,
+        "exact_guarded_continuous_passes": 4
+      },
+      {
+        "cap": 0.8,
+        "trials": 4,
+        "exact_guarded_continuous_passes": 4
+      }
+    ],
+    "all_ordinary_binary32_exact": true,
+    "strict_cap_trials": [
+      {
+        "ordinal": 1,
+        "continuous_margin": 0.02351218872070321,
+        "exact_second_margin": 0.02353668212890625,
+        "exact_p194_margin": 0.0070247650146484375,
+        "exact_guarded_continuous_pass": true,
+        "signed_floor_min": 2.392578124999975e-05,
+        "p194_prior_correct_losses": 0,
+        "delta_l2": 3.152530994409884,
+        "largest_row_delta_relative_l2": 1.6658061414056788
+      },
+      {
+        "ordinal": 2,
+        "continuous_margin": 0.010181729125976646,
+        "exact_second_margin": 0.010206222534179688,
+        "exact_p194_margin": 0.0070247650146484375,
+        "exact_guarded_continuous_pass": true,
+        "signed_floor_min": 2.4879455566406e-05,
+        "p194_prior_correct_losses": 0,
+        "delta_l2": 3.056145537979468,
+        "largest_row_delta_relative_l2": 1.6148191853622695
+      },
+      {
+        "ordinal": 3,
+        "continuous_margin": -0.15886467285156253,
+        "exact_second_margin": -0.15884017944335938,
+        "exact_p194_margin": 0.0070247650146484375,
+        "exact_guarded_continuous_pass": false,
+        "signed_floor_min": 2.392578124999975e-05,
+        "p194_prior_correct_losses": 0,
+        "delta_l2": 2.93074660720864,
+        "largest_row_delta_relative_l2": 1.5570317134280565
+      },
+      {
+        "ordinal": 4,
+        "continuous_margin": -0.5491062957763673,
+        "exact_second_margin": -0.5490818023681641,
+        "exact_p194_margin": 0.0070247650146484375,
+        "exact_guarded_continuous_pass": false,
+        "signed_floor_min": 2.392578124999975e-05,
+        "p194_prior_correct_losses": 0,
+        "delta_l2": 3.0393325978517347,
+        "largest_row_delta_relative_l2": 1.6330301259575497
+      }
+    ]
+  },
+  "smaller_continuous_direction": {
+    "receipt_sha256": "323269fdca53f87a5d0e924d79140526d57f79e1b7eeda2089b28ec9749b6ee7",
+    "source_sha256": "5835e8fa99e23f70ecbc3765d7894395eef4a8d824549b2d9135c048e6b43efe",
+    "plan_sha256": "81b27b73332aa97ff11b319f6963b2bed1f63b09a072001633f36859fd10f8ec",
+    "teacher_sha256": "f5bfc596412854efca0cd26652f705b32be20f1f3846a24fe0da4c1b9cd2a812",
+    "direction": {
+      "bytes": 163840,
+      "sha256": "1f8c6328a1df29a9789bb90916e1450ff9307a6e07013f54aa2ecf22cb6e1f42",
+      "name": "orbit-1-direction.f64"
+    },
+    "margin_maximizing_p208_l2": 3.152530994409884,
+    "l2": 1.0436748819524817,
+    "largest_row_relative_l2": 0.6320524387433555,
+    "max_abs_change": 0.03315818146195028,
+    "exact_second_margin": 0.02353668212890625,
+    "exact_p194_margin": 0.0549163818359375,
+    "ordinary_binary32_exact": true,
+    "ordinary_delta_max": 2.4251434194155763e-15,
+    "P194_prior_losses": 0,
+    "prior_floor_slack_min": 2.3925676941871643e-05,
+    "l2_optimality_gap": 1.0173804975731047,
+    "quantization_tested": false
+  },
+  "separate_packed_fit": {
+    "receipt_sha256": "7f3af1e18d17b9fff0fafae220366e55b3f24283aa0693381897796e18eb87b2",
+    "source_sha256": "e3a1c51e22fffd9b9b99c67feeb19a9c21c96cc9cd599dd1777694de112ae11c",
+    "plan_sha256": "110c77694ccb56b03a53c13af41d75da54384998ddaa1917b1166fa835962d7d",
+    "recipe_sha256": "4827670494552d04733942c113ab0496ccfbee2d12c8a8b703318cb2bacb12a2",
+    "p204_used_for_fitting_or_selection": false,
+    "scope": "Four output rows, independently authored math and ordinary guard prefixes",
+    "selected_proxy_limits": {
+      "CAP": 0.5,
+      "ORD": 0.028,
+      "MID": 0.105,
+      "MEAN": 0.01,
+      "TARGET": 0.0015
+    },
+    "outcomes": {
+      "exact_prior_choice_losses": 0,
+      "prior_signed_floor_slack": 0.0037539215087890624,
+      "preserved_p194_target_margin": 0.013574600219726562,
+      "new_worst_target_margin": 0.010051727294921875,
+      "old_p105_choices": 331,
+      "new_p105_choices": 335,
+      "p105_complete_groups_before": 9,
+      "p105_complete_groups_after": 11,
+      "p105_complete_group_losses": 0,
+      "max_ordinary_shift": 0.025474492631474277,
+      "max_math_shift": 0.37266854405788763,
+      "ordinary_winner_losses": 0,
+      "maximum_proxy_guard_residual": -0.002470507368525724,
+      "weighted_guard_loss": 0.0,
+      "passed": true
+    },
+    "rows": [
+      {
+        "token_id": 357,
+        "packed_row_sha256": "aff9c5843105bd140eeb4b7144555405acd8563866a7dfb6658c969cd5bd88d7",
+        "changed_binary16_fields": 38,
+        "changed_code_nibbles": 1189
+      },
+      {
+        "token_id": 417,
+        "packed_row_sha256": "5d6a49eed32da7758933ce4ad31bdf20422dd076600f30e0c8ef575eaf6494b0",
+        "changed_binary16_fields": 40,
+        "changed_code_nibbles": 966
+      },
+      {
+        "token_id": 351,
+        "packed_row_sha256": "56843bbe04be97902b40e492c3263da6e0c8fe039a972012fcb071aa66f8c87e",
+        "changed_binary16_fields": 40,
+        "changed_code_nibbles": 573
+      },
+      {
+        "token_id": 414,
+        "packed_row_sha256": "44fa8e1c9dfc9804956b436d72a5bbd9a77fe77a339ed461af6db6d8ef4cecbf",
+        "changed_binary16_fields": 40,
+        "changed_code_nibbles": 985
+      }
+    ]
+  }
+}
