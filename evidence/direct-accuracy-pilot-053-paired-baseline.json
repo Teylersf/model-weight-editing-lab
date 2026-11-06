@@ -1,0 +1,486 @@
+{
+  "schema": "published-pilot053-authored-counterfactual-baseline-v1",
+  "status": "exact_parent_baseline",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "artifacts_sha256": {
+    "policy": "4a0f648199fc35c820784dce82f5209e5a5e7f40f88de1fc905ac53d130b224f",
+    "plan": "31e45e7c777115bc700feda0741ec4344f567badbd833a6bcb172d21ac532ea2",
+    "preflight": "7c473c61bc2bf2bca6792321ba8375c87025e346b04f2779937059ad98525073",
+    "independent_key_audit": "9729b2e1f37dec4771eacbe317ab6ee799f8dd90716afe955470eb89ebee8282",
+    "native": "6e90fe1477050bb0cc51b4e7fecc766becee9086955a44649f0aab6e8caebd24",
+    "graded": "10bc93edbb8e50959fa61839e83c6f2d3fcf55776b6e1124a0d391759f68c661",
+    "independent_replay": "9fe4bdfca94ea492b692262e2ca7e230de971fd7a910c18a251499963e827b25"
+  },
+  "cases": 48,
+  "condition_pairs": 24,
+  "authored_families": 12,
+  "presentations_per_case": 16,
+  "choice_rows": 768,
+  "aligned_condition_pair_presentations": 384,
+  "authored_design": "Pairs have byte-identical options and exactly one marked mathematical condition change. Both author keys were validated by independent exact derivations before native scoring. Pair variants stay within the same family fold.",
+  "inference_conditions": {
+    "a": {
+      "demo_context": "original",
+      "option_order": "cyclic",
+      "manifest_sha256": "8120ca6176b550bef042cd654625cc6a0ea9734a9fc56ad348c7b26d3f1c93d2",
+      "native_raw_sha256": "eb61e8d48a071102e0f30cb9724c7294a1b160c41fa3a96d9517f75917c0fcee"
+    },
+    "b": {
+      "demo_context": "alternate",
+      "option_order": "cyclic",
+      "manifest_sha256": "545380b3d10f43a2d1d234209d5397635f8a0d9ccf5629bb4a53d2fc0f054482",
+      "native_raw_sha256": "f59b789b0f83940591aa86ced23f02b285584aae38a12ac3f024ff084ad058e0"
+    },
+    "c": {
+      "demo_context": "alternate",
+      "option_order": "reverse_cyclic",
+      "manifest_sha256": "2adb2d26a671df28cb8701d23b31404c6f44e2bcc4386f47c6b0c28997796076",
+      "native_raw_sha256": "cabb40e2bc946ae284b88c5c941dc9fc7bc0253049ccc52a082a64eca0e3f0d8"
+    },
+    "d": {
+      "demo_context": "original",
+      "option_order": "reverse_cyclic",
+      "manifest_sha256": "318d4ba9a1fa494c16b5803168fb61b6f5392255fed0bfe8ba1cf451eb410b7a",
+      "native_raw_sha256": "7a5643b3ee784347397c48de28a4f53d327ac7e3e48aa56978e0362b70bea88b"
+    }
+  },
+  "native_settings": {
+    "schema": "windows-mmlu-next-choice-logits-v1",
+    "backend": "CUDA0",
+    "llama_build": "8642541b2",
+    "choice_pieces": [
+      " A",
+      " B",
+      " C",
+      " D"
+    ],
+    "choice_token_ids": [
+      357,
+      417,
+      351,
+      414
+    ],
+    "context": 4096,
+    "batch": 64,
+    "threads": 4,
+    "generation_tokens": 0,
+    "prompt_token_cap": 2048
+  },
+  "native_binary_sha256": "be94288eed5b3f8084a6632a595420a90fd8a9a32ef449d4f54e05bdd9eefa48",
+  "runtime_binary_sha256": {
+    "llama.dll": "af13ed8cb1454a80689dbd390310995b6c4b23333e096152453fe6d0fef17356",
+    "ggml.dll": "d2e63157b90c0fd15f010fb2952d032d9f3296b8406b78ff0950211cc144705b",
+    "ggml-base.dll": "200cd9b6f0a7934c2e1c85e55289d5498332713321b03e83eb2ae3da5eeb6137",
+    "ggml-cuda.dll": "85f2cb5707e6dc50c30cdcdc5c23c5e438149bb48638421d0a705866b8e31f94",
+    "ggml-cpu-x64.dll": "af7233344eec5587d531b4e875ec5bf2b1aa62c2be57b657f69cca503f0db918"
+  },
+  "grading_source_sha256": "128311a1b2e29b2e1da93eee15183508fade0164ba13ff063a8a778e631d18bc",
+  "independent_replay_source_sha256": "7f77b73316890c218bfcfab5b48ccb94c0a63c6a3e4908679d2f39d9ea54e3b2",
+  "binary32": {
+    "logits_compared": 3072,
+    "exact_binary32_logits": 3072,
+    "all_arms_concatenated_sha256": "0fc3be746d24e2a5cdd3d4cd40a095d4f23e29e866811e82b1b2af6e4f1e44ff",
+    "by_arm_sha256": {
+      "a": "56beef17846c6f31c1677c170f0d800b146f23dfb5db5a8f2d6da5da90a69831",
+      "b": "851900c9d24c0c589e148db75794f787ff1d2a06126c690442520ac9e2ff3174",
+      "c": "4cb377c6ffd238d05ad7db4117cc91b9d3c2cef1e13b07b5b05787601bde81c1",
+      "d": "c5220bbf296c34f00c77e64236bfef1297c1dc2741a275445842360ceb390368"
+    }
+  },
+  "geometry": {
+    "cases": 48,
+    "condition_pairs": 24,
+    "presentations": 768,
+    "aligned_pair_presentations": 384,
+    "trials_per_arm": 192,
+    "paired_presentations_per_arm": 96,
+    "subjects": {
+      "high_school_mathematics": {
+        "cases": 24,
+        "condition_pairs": 12,
+        "families": 6,
+        "folds": 3,
+        "pairs_per_family": 2,
+        "pairs_per_fold": [
+          4,
+          4,
+          4
+        ],
+        "trials_per_arm": 96,
+        "trials_per_arm_per_fold": [
+          32,
+          32,
+          32
+        ]
+      },
+      "college_mathematics": {
+        "cases": 24,
+        "condition_pairs": 12,
+        "families": 6,
+        "folds": 3,
+        "pairs_per_family": 2,
+        "pairs_per_fold": [
+          4,
+          4,
+          4
+        ],
+        "trials_per_arm": 96,
+        "trials_per_arm_per_fold": [
+          32,
+          32,
+          32
+        ]
+      }
+    }
+  },
+  "metrics": {
+    "choices": {
+      "rotations": 768,
+      "correct": 327,
+      "stems": 48,
+      "all_orders": 6,
+      "choice_ties": 0,
+      "selection_counts": {
+        "A": 166,
+        "B": 305,
+        "C": 163,
+        "D": 134
+      }
+    },
+    "condition_pairs": {
+      "paired_presentations": 384,
+      "both_correct": 42,
+      "either_correct": 285,
+      "same_selected_content": 270,
+      "exactly_one_correct": 243,
+      "neither_correct": 99
+    },
+    "choices_by_arm": {
+      "a": {
+        "rotations": 192,
+        "correct": 82,
+        "stems": 48,
+        "all_orders": 10,
+        "choice_ties": 0,
+        "selection_counts": {
+          "A": 37,
+          "B": 75,
+          "C": 42,
+          "D": 38
+        }
+      },
+      "b": {
+        "rotations": 192,
+        "correct": 82,
+        "stems": 48,
+        "all_orders": 10,
+        "choice_ties": 0,
+        "selection_counts": {
+          "A": 39,
+          "B": 78,
+          "C": 46,
+          "D": 29
+        }
+      },
+      "c": {
+        "rotations": 192,
+        "correct": 80,
+        "stems": 48,
+        "all_orders": 9,
+        "choice_ties": 0,
+        "selection_counts": {
+          "A": 45,
+          "B": 77,
+          "C": 38,
+          "D": 32
+        }
+      },
+      "d": {
+        "rotations": 192,
+        "correct": 83,
+        "stems": 48,
+        "all_orders": 6,
+        "choice_ties": 0,
+        "selection_counts": {
+          "A": 45,
+          "B": 75,
+          "C": 37,
+          "D": 35
+        }
+      }
+    },
+    "pairs_by_arm": {
+      "a": {
+        "paired_presentations": 96,
+        "both_correct": 10,
+        "either_correct": 72,
+        "same_selected_content": 68,
+        "exactly_one_correct": 62,
+        "neither_correct": 24
+      },
+      "b": {
+        "paired_presentations": 96,
+        "both_correct": 11,
+        "either_correct": 71,
+        "same_selected_content": 65,
+        "exactly_one_correct": 60,
+        "neither_correct": 25
+      },
+      "c": {
+        "paired_presentations": 96,
+        "both_correct": 10,
+        "either_correct": 70,
+        "same_selected_content": 70,
+        "exactly_one_correct": 60,
+        "neither_correct": 26
+      },
+      "d": {
+        "paired_presentations": 96,
+        "both_correct": 11,
+        "either_correct": 72,
+        "same_selected_content": 67,
+        "exactly_one_correct": 61,
+        "neither_correct": 24
+      }
+    },
+    "subjects": {
+      "high_school_mathematics": {
+        "choices": {
+          "rotations": 384,
+          "correct": 169,
+          "stems": 24,
+          "all_orders": 3,
+          "choice_ties": 0,
+          "selection_counts": {
+            "A": 80,
+            "B": 161,
+            "C": 77,
+            "D": 66
+          }
+        },
+        "condition_pairs": {
+          "paired_presentations": 192,
+          "both_correct": 31,
+          "either_correct": 138,
+          "same_selected_content": 129,
+          "exactly_one_correct": 107,
+          "neither_correct": 54
+        },
+        "arms": {
+          "a": {
+            "choices": {
+              "rotations": 96,
+              "correct": 43,
+              "stems": 24,
+              "all_orders": 6,
+              "choice_ties": 0,
+              "selection_counts": {
+                "A": 18,
+                "B": 39,
+                "C": 24,
+                "D": 15
+              }
+            },
+            "condition_pairs": {
+              "paired_presentations": 48,
+              "both_correct": 9,
+              "either_correct": 34,
+              "same_selected_content": 29,
+              "exactly_one_correct": 25,
+              "neither_correct": 14
+            }
+          },
+          "b": {
+            "choices": {
+              "rotations": 96,
+              "correct": 47,
+              "stems": 24,
+              "all_orders": 6,
+              "choice_ties": 0,
+              "selection_counts": {
+                "A": 19,
+                "B": 39,
+                "C": 20,
+                "D": 18
+              }
+            },
+            "condition_pairs": {
+              "paired_presentations": 48,
+              "both_correct": 10,
+              "either_correct": 37,
+              "same_selected_content": 31,
+              "exactly_one_correct": 27,
+              "neither_correct": 11
+            }
+          },
+          "c": {
+            "choices": {
+              "rotations": 96,
+              "correct": 40,
+              "stems": 24,
+              "all_orders": 3,
+              "choice_ties": 0,
+              "selection_counts": {
+                "A": 22,
+                "B": 44,
+                "C": 14,
+                "D": 16
+              }
+            },
+            "condition_pairs": {
+              "paired_presentations": 48,
+              "both_correct": 6,
+              "either_correct": 34,
+              "same_selected_content": 36,
+              "exactly_one_correct": 28,
+              "neither_correct": 14
+            }
+          },
+          "d": {
+            "choices": {
+              "rotations": 96,
+              "correct": 39,
+              "stems": 24,
+              "all_orders": 3,
+              "choice_ties": 0,
+              "selection_counts": {
+                "A": 21,
+                "B": 39,
+                "C": 19,
+                "D": 17
+              }
+            },
+            "condition_pairs": {
+              "paired_presentations": 48,
+              "both_correct": 6,
+              "either_correct": 33,
+              "same_selected_content": 33,
+              "exactly_one_correct": 27,
+              "neither_correct": 15
+            }
+          }
+        }
+      },
+      "college_mathematics": {
+        "choices": {
+          "rotations": 384,
+          "correct": 158,
+          "stems": 24,
+          "all_orders": 3,
+          "choice_ties": 0,
+          "selection_counts": {
+            "A": 86,
+            "B": 144,
+            "C": 86,
+            "D": 68
+          }
+        },
+        "condition_pairs": {
+          "paired_presentations": 192,
+          "both_correct": 11,
+          "either_correct": 147,
+          "same_selected_content": 141,
+          "exactly_one_correct": 136,
+          "neither_correct": 45
+        },
+        "arms": {
+          "a": {
+            "choices": {
+              "rotations": 96,
+              "correct": 39,
+              "stems": 24,
+              "all_orders": 4,
+              "choice_ties": 0,
+              "selection_counts": {
+                "A": 19,
+                "B": 36,
+                "C": 18,
+                "D": 23
+              }
+            },
+            "condition_pairs": {
+              "paired_presentations": 48,
+              "both_correct": 1,
+              "either_correct": 38,
+              "same_selected_content": 39,
+              "exactly_one_correct": 37,
+              "neither_correct": 10
+            }
+          },
+          "b": {
+            "choices": {
+              "rotations": 96,
+              "correct": 35,
+              "stems": 24,
+              "all_orders": 4,
+              "choice_ties": 0,
+              "selection_counts": {
+                "A": 20,
+                "B": 39,
+                "C": 26,
+                "D": 11
+              }
+            },
+            "condition_pairs": {
+              "paired_presentations": 48,
+              "both_correct": 1,
+              "either_correct": 34,
+              "same_selected_content": 34,
+              "exactly_one_correct": 33,
+              "neither_correct": 14
+            }
+          },
+          "c": {
+            "choices": {
+              "rotations": 96,
+              "correct": 40,
+              "stems": 24,
+              "all_orders": 6,
+              "choice_ties": 0,
+              "selection_counts": {
+                "A": 23,
+                "B": 33,
+                "C": 24,
+                "D": 16
+              }
+            },
+            "condition_pairs": {
+              "paired_presentations": 48,
+              "both_correct": 4,
+              "either_correct": 36,
+              "same_selected_content": 34,
+              "exactly_one_correct": 32,
+              "neither_correct": 12
+            }
+          },
+          "d": {
+            "choices": {
+              "rotations": 96,
+              "correct": 44,
+              "stems": 24,
+              "all_orders": 3,
+              "choice_ties": 0,
+              "selection_counts": {
+                "A": 24,
+                "B": 36,
+                "C": 18,
+                "D": 18
+              }
+            },
+            "condition_pairs": {
+              "paired_presentations": 48,
+              "both_correct": 5,
+              "either_correct": 39,
+              "same_selected_content": 34,
+              "exactly_one_correct": 34,
+              "neither_correct": 9
+            }
+          }
+        }
+      }
+    }
+  },
+  "labels_passed_to_native": false,
+  "checkpoint_edited": false,
+  "protected_or_benchmark_inputs_used": false
+}

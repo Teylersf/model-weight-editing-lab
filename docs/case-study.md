@@ -691,3 +691,9 @@ Pilot 051 used semantic teacher margins across all three authored sets, with 77,
 Pilot 052 used the measured CPU Q8 loss to propose full-gradient moves. It accepted eight steps after exact rounded-F32 replay, including six projected gradient steps. Every accepted step passed the signed training floors and ordinary controls.
 
 On held data, the 039 score rose from **55/144 to 56/144**. The 044 original-demo cyclic arm fell from **104/192 to 102/192**, and the other three arms stayed at their parent scores. All 90 archived top-64 ordinary winners were preserved. An independent replay reproduced all 1,488 held comparisons and both nonzero tensor hashes. The two lost choices had parent correct-answer margins of **0.0088** and **0.0234** logits. One repeated a loss from Pilot 046. The two losses failed the held gate. [Paired results and margin audit](../evidence/direct-accuracy-pilot-052.json)
+
+## Pilot 053 with a single mathematical condition changed
+
+Pilot 053 introduced 24 original problem pairs across 12 high-school and college math families. The two variants in each pair share identical choices and differ only in one marked mathematical condition. Independent derivations agreed with all 48 exact keys, and every condition change altered the correct option. Both variants stayed in the same family fold.
+
+Under four prompt conditions and four rotations per condition, Pilot 024 scored **327/768**. It answered both variants correctly on **42/384** aligned presentations, including **31/192** at high-school level and **11/192** at college level. It selected the same original answer content for both variants on **270/384** presentations even though the correct answer changed. Six of 48 individual problems were correct in all 16 presentations. The independent replay matched all 3,072 binary32 logits and reconciled all 384 pairs. [Exact parent results and audit](../evidence/direct-accuracy-pilot-053-paired-baseline.json)
