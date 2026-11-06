@@ -147,3 +147,15 @@ corrections to the stock logits, and prints the corrected vector hash. To
 write the vector to a fresh path, add `--output corrected-logits.f32`. This
 replays a fixed-prefix calculation. It leaves the checkpoint on disk untouched.
 [Native parity evidence](../evidence/direct-accuracy-pilots-273-274-precision-calibration.json)
+
+## Verify the saved Pilot 275 precision checkpoint
+
+```sh
+python examples/verify_precision_checkpoint.py --checkpoint /path/to/pilot-275.gguf
+```
+
+The verifier streams the exact Pilot 024 prefix, checks all four binary32
+replacement rows and the footer, and prints the full checkpoint hash. Add
+`--extract-rows replacement-rows.f32` to extract the weight bytes to a fresh
+path for the fixed-prefix replay. The saved file requires the precision-aware
+runner to use the appended rows during generation.

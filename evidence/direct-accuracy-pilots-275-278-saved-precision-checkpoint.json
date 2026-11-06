@@ -1,0 +1,49 @@
+{
+  "schema": "direct-accuracy-saved-precision-checkpoint-v1",
+  "parent_pilot": 24,
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "pilot275_saved_checkpoint": {
+    "materializer_source_sha256": "525c00f3ff33fe0158f74703bb5264f07b788574c96ff99803f5fec2dab3407e",
+    "materializer_plan_sha256": "faba0469c2d0cc72fa36003855be7239a39604ca87a157f441f68c65d0ef24ad",
+    "independent_full_readback_sha256": "db1f43725322538fc8da97e4cdad6efb46bfc31c6a269615e14db3e3af9563b8",
+    "candidate_sha256": "31d55cf331bb41ad4fb089beda24b5511a0781b4899380283161a52a371fb0b0",
+    "candidate_bytes": 11674229776,
+    "byte_identical_pilot024_prefix_bytes": 11674147744,
+    "absolute_replacement_rows": 4,
+    "columns_per_row": 5120,
+    "row_token_ids": [357, 417, 351, 414],
+    "absolute_rows_sha256": "701cc8fa89afd79cbed3294357b6b56d658a2d1d690512561c7707782e6e0af5",
+    "replacement_row_bytes": 81920,
+    "footer_bytes": 112,
+    "footer_magic": "WRF32R01",
+    "footer_sha256": "97140a5c417f8d87e3a82614637be7f6da72f2ecb9e260d5a3195c971d618c64",
+    "fit_receipt_sha256": "598fc82fc53f82072d693ae7c504902444bfdfd80ae2b45cc8ce596f7d94b118",
+    "stock_GGUF_parser_accepts_prefix": true,
+    "precision_aware_runner_required_for_weight_replacement": true
+  },
+  "pilot276_authored_native_decode": {
+    "shared_header_sha256": "8f1abf27cfc3d584e2d0ddb696d279169a85b4fbabbb804aaf0138c066fd77d0",
+    "native_binary_sha256": "71866d167f18fb8b0c48abd907857410a45e5807ea96d1b4aed664d7c24b88d9",
+    "plan_sha256": "5c5cfd078a3d2bae4a06db0b8d7eec4fec4de29c1b0e41915c07dfd05e7865ec",
+    "cpu_preflight_sha256": "179c9856f3d9ff3e760d2ef9081833752aef2ea43c88ccd41fcd1882f87f85b8",
+    "native_receipt_sha256": "686a572c3cbe2e53e2b00ccddeb891f87d8b269e51df1009f3d74aad31fc3901",
+    "stock_zero_choice_and_full_vocabulary_parity": true,
+    "corrected_prefixes_aligned_to_stock": 8,
+    "corrected_declared_lanes_only": true,
+    "maximum_observed_stock_Q8_anchor_error": 1.2046739357174374e-6,
+    "correction_runs_on_host": true
+  },
+  "pilot278_normal_protocol_smoke": {
+    "builder_sha256": "6d10f9853e89caf232241ae0f85c92523811f6227e7fe9960838d5bc05585b02",
+    "protocol_build_sha256": "eca7acb18018752bacf1355f1b3cee91747e2b09f93c69e065f48aaa35a4e936",
+    "qualification_build_view_sha256": "19ebec9c8d2a7a219f754ececd3d54552c4a79dad648676266ba08f166d2cf7f",
+    "native_receipt_sha256": "0144542686161dcf4b15810d412d3ebcd2573452e6c871520906f01aa5157dcd",
+    "native_protocols_built": 3,
+    "authored_smoke_prompt_tokens": 226,
+    "authored_first_choice_correct": true,
+    "native_sampler_agreed_with_corrected_native_scorer": true,
+    "nonzero_choice_logit_change_observed": true,
+    "generated_tokens": 12
+  },
+  "qualification_status_in_this_receipt": "authored_native_smoke_only"
+}
