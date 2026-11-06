@@ -1,0 +1,50 @@
+{
+  "schema": "windows-pilot145-full-output-overlay-receipt-v1",
+  "plan_sha256": "f757f4d7e0753cfa04b9d987e46108405637b4365d156d9cb3bcb9d39a628d49",
+  "cpu_preflight_sha256": "429e0f8d43d710784df099b6c5500ec0fc823d9fa8095280f7f48b46403d3adc",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "p144_report_sha256": "b6fb552cd494d7ca6e0a226249180ff733b753d00d199d2b025e72c12f26e93d",
+  "p144_recipe_sha256": "9d23dbc1e9cea4197ee0a3ec49d5c365deaba666a7d367edcfae4df20d8a99a3",
+  "sole_candidate": 2,
+  "passed": true,
+  "cohorts": {
+    "math": {
+      "native_receipt_sha256": "0a402602e7d457e2ac20effd1ea466f86738450f6ab157bb80952c5171f886d9",
+      "exact_stock_archived_full_vocab_states": 192,
+      "exact_stock_restored_full_vocab_states": 192,
+      "exact_residual_and_hidden_states": 192,
+      "exact_untouched_logit_states": 192,
+      "maximum_touched_logit_shift": 0.028717041015625,
+      "stock_correct": 119,
+      "candidate_correct": 120,
+      "choice_gains": 1,
+      "choice_losses": 0,
+      "paired_gains": 1,
+      "paired_losses": 0,
+      "minimum_floor_slack": 0.00251617431640625,
+      "target_margins": [
+        0.007293701171875
+      ],
+      "passed": true
+    },
+    "ordinary": {
+      "native_receipt_sha256": "928eef6e298199d59fdb5c9c13d6a7cae69c65d999800ea6869a00651cbf2628",
+      "exact_stock_archived_full_vocab_states": 60,
+      "exact_stock_restored_full_vocab_states": 60,
+      "exact_residual_and_hidden_states": 60,
+      "exact_untouched_logit_states": 60,
+      "maximum_touched_logit_shift": 0.020236730575561523,
+      "winner_changes": 0,
+      "minimum_all_competitor_margin": 0.023443222045898438,
+      "minimum_floor_slack": 0.011721611022949219,
+      "passed": true
+    }
+  },
+  "standalone_candidate_route": true,
+  "calibration_only": true,
+  "full_vocab_guard_ordinary_fixed_prefix_only": true,
+  "legacy_or_held_or_protected_scored": false,
+  "checkpoint_written": false,
+  "native_score_receipt_sha256": "8f82cb8eae28c79d7b8f32ce22dd339da56ca471033fd84d6353da58b9ec880b",
+  "source_sha256": "2f93641f721ff35f9ac9a2220792a15294d2ec0ff63842c34c56b45ad6aa88a6"
+}

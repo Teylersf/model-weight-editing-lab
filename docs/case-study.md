@@ -1114,3 +1114,25 @@ The failed proof gate stopped this candidate before cylinder, matched MMLU, and 
 ## Pilot 141 with previously untouched feed-forward rows
 
 The search verified eight new physical FFN rows and measured **208** packed proposals. The closest full replay reduced the worst shortfall from 0.01882 to 0.01307 logits and increased the number of missed math margins from **two to three**. The previous two-deficit recipe therefore remained the branch's best under its strict count rule. [Expanded row scope and exact replay](../evidence/direct-accuracy-pilot-141-new-ffn-row-probes.json)
+
+## Pilots 142 through 147 with a standalone answer-row edit
+
+Pilot 142 measured **120** legal feed-forward substitutions and included 48 additional moves intended to offset displaced guard margins. None of the 16 full replays improved the two remaining math shortfalls. The bounded linearized search found no further feasible move after excluding its one measured solution. This result applies to the selected supports and measured response model. [FFN checks and source hashes](../evidence/direct-accuracy-pilots-142-147-standalone-answer-rows.json)
+
+Pilot 143 selected **132** ordinary guard prefixes across six authored trajectories. The previous 60 already included all nine sampled decisions with a winner gap below one logit. The 72 additions therefore widen token coverage. Their smallest margin was **2.344** logits. [Guard scope and margin inventory](../evidence/direct-accuracy-pilots-142-147-standalone-answer-rows.json)
+
+Pilot 144 froze five Q4_K code changes in the ` A` row of `output.weight`. This matrix follows final normalization in the pinned graph. Editing one row can isolate its fixed-prefix score, and native replay must verify that behavior across the full vocabulary. The rounded CPU screen improved from **119/192 to 120/192** and from **40/96 to 41/96** complete condition pairs, with no prior losses on the fitting and guard sets. [Pinned output-head graph](https://github.com/ggml-org/llama.cpp/blob/8642541b255bfb5dc39cd351a178be09013a55d6/src/models/qwen35.cpp#L185-L211) · [Exact five-code recipe](../evidence/direct-accuracy-pilots-142-147-standalone-answer-rows.json)
+
+Pilot 147 checked the frozen recipe across **256** historical presentations from the two excluded family folds. It lost one previously correct college answer and one complete pair, with zero gains. The recipe failed the historical guard and stayed unmaterialized. The full GGUF digest was computed in a read-only stream, and the protected and blinded evaluations stayed sealed. [Paired outcomes and predicted checkpoint checksum](../evidence/direct-accuracy-pilots-142-147-standalone-answer-rows.json)
+
+The separate Pilot 145 calibration reproduced the one fitting gain in full-width CUDA. All **252** stock and restored vocabulary digests matched, the hidden states and all untouched logits stayed bit-identical, and none of the 60 ordinary winners changed. This measures output-only transport on the frozen Pilot 144 recipe. Its separate historical rejection still applies. [Exact native calibration](../evidence/direct-accuracy-pilot-145-output-only-native-calibration.json)
+
+## Pilots 149 and 151 with expanded answer-row guards
+
+Pilot 149 used the previously scored 256 historical presentations as development guards, alongside the original fitting and guard sets. Its first exact passing proposal changed four Q4_K codes in the ` D` row, recovered the same authored choice and condition pair, and preserved all previous correct choices across the fitting and guard inputs. The repaired gold margin rose from **−0.01076 to +0.00951** logits. The historical folds now count as fit-time guards.
+
+The frozen recipe preserved all **64** rotation-zero presentations without ties or pair losses. These rotations came from the same two family folds used for targets and were excluded from this fit. They were used by earlier research branches. The read-only stream computed the exact expected full checkpoint digest. [Packed recipe and rotation-zero results](../evidence/direct-accuracy-pilots-149-151-guarded-answer-row.json)
+
+Pilot 152 replayed the packed ` D` row in CUDA on **192** fitting states and **60** ordinary states. All archived and restored stock vocabulary scores matched exactly. The edit left the residual states, normalized states, and untouched token scores bit-identical on all 252 prefixes. It recovered one choice and one complete pair with zero losses. None of the ordinary winners changed.
+
+Pilot 148 then wrote the standalone 11,674,147,744-byte GGUF and independently read both files back. Exactly four Q4_K codes differed across four bytes. Every other bit matched the parent, and the saved checkpoint matched the precomputed digest. These checks cover fixed prefixes and stored bytes. The disk-loaded qualification and protected generation tests remain separate gates. [Native replay and saved checkpoint readback](../evidence/direct-accuracy-pilots-148-152-native-and-stored-output-row.json)
