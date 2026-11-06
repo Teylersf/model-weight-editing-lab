@@ -1,0 +1,1217 @@
+{
+  "schema": "published-pilot087-training-gradient-alignment-v1",
+  "source_sha256": "0506b000b96fc498d14d0fb4da1910e13e8c360daad1c902d8616fb4d37f655c",
+  "plan_sha256": "ca5bc141c5edf3252d79a3b0844a3cc1c359d52a8e957ec577a8dab08a427dcb",
+  "receipt_sha256": "59061cc351fe14814e70dd70d024f4ab0e4e22046bfa35b620c72557f6bcde40",
+  "parent_model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "method": "Full Jacobian across all gate/up rows with effective captured Q8 input. Compare normalized Gram effects across family and answer-letter strata. Test each supported pair against the normalized mean of the other training families.",
+  "contrast": "Compare correct against the other condition's correct option, and against the strongest baseline rival. Both variants contribute. Decompose into full gradient, input midpoint, and input difference.",
+  "scope": "Descriptive first-order geometry of independently authored training states, excluding every exact held-family label across all four sources. Repeated presentations and folds are dependent.",
+  "folds": [
+    {
+      "fold": 0,
+      "training_presentations": 224,
+      "training_families": 7,
+      "supported_train_pairs": 10,
+      "supported_train_families": 3,
+      "aggregate_gradient_cosines": {
+        "gate_condition": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.37719109654426575,
+              "positive": 177
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": 0.05694151297211647,
+              "positive": 989
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.05481318011879921,
+              "positive": 888
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.05056379362940788,
+              "positive": 893
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.02270495891571045,
+              "positive": 10480
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 0.056149876308295786,
+              "positive": 8
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.40227243304252625,
+              "positive": 169
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": 0.0751316174864769,
+              "positive": 1000
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.06728930026292801,
+              "positive": 889
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.06140948459506035,
+              "positive": 900
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.029414944350719452,
+              "positive": 10515
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 0.083673310104367,
+              "positive": 8
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.2898382544517517,
+              "positive": 183
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": -0.012827836908400059,
+              "positive": 712
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.008153167553246021,
+              "positive": 816
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.009335581213235855,
+              "positive": 859
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.002188454382121563,
+              "positive": 9773
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 0.015855721243389725,
+              "positive": 8
+            }
+          }
+        },
+        "gate_hardest_rival": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.4472910165786743,
+              "positive": 188
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": 0.006275027524679899,
+              "positive": 765
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.11629310995340347,
+              "positive": 1075
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.11428695172071457,
+              "positive": 1056
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": -0.015845630317926407,
+              "positive": 8632
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 0.14176957484830305,
+              "positive": 6
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.45546430349349976,
+              "positive": 187
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": 0.01188755314797163,
+              "positive": 781
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.12111032754182816,
+              "positive": 1081
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.11931446939706802,
+              "positive": 1061
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": -0.01603439636528492,
+              "positive": 8614
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 0.12412089266394308,
+              "positive": 5
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.2673710286617279,
+              "positive": 183
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": -0.018165186047554016,
+              "positive": 672
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.007281109225004911,
+              "positive": 813
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.007936161942780018,
+              "positive": 857
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.0015394872752949595,
+              "positive": 9490
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 0.0012405932878999932,
+              "positive": 7
+            }
+          }
+        },
+        "up_condition": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.4009161591529846,
+              "positive": 178
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": 0.06681066006422043,
+              "positive": 1027
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.06980374455451965,
+              "positive": 917
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.05920758843421936,
+              "positive": 925
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.03247695416212082,
+              "positive": 11259
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 0.05351950780821072,
+              "positive": 9
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.49488383531570435,
+              "positive": 173
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": 0.13380898535251617,
+              "positive": 1077
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.12150710076093674,
+              "positive": 941
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.10641232132911682,
+              "positive": 936
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.062057871371507645,
+              "positive": 11490
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 0.1954004340893336,
+              "positive": 8
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.329346626996994,
+              "positive": 183
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": -0.0169882383197546,
+              "positive": 747
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.012140617705881596,
+              "positive": 811
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.013104553334414959,
+              "positive": 849
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.003249877830967307,
+              "positive": 9817
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 0.018509473836258762,
+              "positive": 8
+            }
+          }
+        },
+        "up_hardest_rival": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.5056391954421997,
+              "positive": 190
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": -0.02217223308980465,
+              "positive": 696
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.22143392264842987,
+              "positive": 1290
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.2227490395307541,
+              "positive": 1294
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": -0.033568400889635086,
+              "positive": 7954
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 0.3063683083913848,
+              "positive": 9
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.5370277762413025,
+              "positive": 188
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": -0.006792229134589434,
+              "positive": 725
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.2451062649488449,
+              "positive": 1292
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.24683432281017303,
+              "positive": 1301
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": -0.03842877596616745,
+              "positive": 7920
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 0.37617952723101766,
+              "positive": 9
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 208,
+              "mean": 0.3100740313529968,
+              "positive": 183
+            },
+            "same_problem_different_letter_order": {
+              "count": 1472,
+              "mean": -0.021954821422696114,
+              "positive": 671
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.010728050954639912,
+              "positive": 811
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.009980342350900173,
+              "positive": 849
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.002001705579459667,
+              "positive": 9485
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 10,
+              "mean": 4.909562540053904e-05,
+              "positive": 5
+            }
+          }
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "training_presentations": 160,
+      "training_families": 5,
+      "supported_train_pairs": 13,
+      "supported_train_families": 3,
+      "aggregate_gradient_cosines": {
+        "gate_condition": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.384662926197052,
+              "positive": 118
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": 0.06473306566476822,
+              "positive": 687
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.05342404916882515,
+              "positive": 380
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.04458300396800041,
+              "positive": 383
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": 0.022233370691537857,
+              "positive": 5042
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.07410013221818189,
+              "positive": 9
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.3993712067604065,
+              "positive": 113
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": 0.07866179943084717,
+              "positive": 690
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.06366710364818573,
+              "positive": 374
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.050412606447935104,
+              "positive": 375
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": 0.026816224679350853,
+              "positive": 5045
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.08898639997827115,
+              "positive": 9
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.32377123832702637,
+              "positive": 120
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": -0.004221959505230188,
+              "positive": 547
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.00800968986004591,
+              "positive": 358
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.005871983710676432,
+              "positive": 358
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": 0.0031968802213668823,
+              "positive": 4657
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.011406579304270718,
+              "positive": 8
+            }
+          }
+        },
+        "gate_hardest_rival": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.46027135848999023,
+              "positive": 127
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": 0.03753155842423439,
+              "positive": 547
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.12192258983850479,
+              "positive": 471
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.10550377517938614,
+              "positive": 446
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": -0.008313257247209549,
+              "positive": 4263
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.06012958414423631,
+              "positive": 10
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.46761077642440796,
+              "positive": 126
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": 0.038785774260759354,
+              "positive": 554
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.12564389407634735,
+              "positive": 465
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.1072743758559227,
+              "positive": 442
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": -0.00822058692574501,
+              "positive": 4282
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.036136644166561996,
+              "positive": 11
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.2971712350845337,
+              "positive": 120
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": -0.0034493764396756887,
+              "positive": 523
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.006209616549313068,
+              "positive": 355
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.0037924356292933226,
+              "positive": 359
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": 0.002470207866281271,
+              "positive": 4604
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.009160668088138767,
+              "positive": 7
+            }
+          }
+        },
+        "up_condition": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.4126245677471161,
+              "positive": 120
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": 0.0891050472855568,
+              "positive": 735
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.059518277645111084,
+              "positive": 394
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.06324050575494766,
+              "positive": 431
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": 0.03601649031043053,
+              "positive": 5562
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.1010157314857832,
+              "positive": 11
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.48413732647895813,
+              "positive": 117
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": 0.14163878560066223,
+              "positive": 761
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.1005062609910965,
+              "positive": 405
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.10162830352783203,
+              "positive": 440
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": 0.05903051793575287,
+              "positive": 5714
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.19898610904291136,
+              "positive": 11
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.3433155417442322,
+              "positive": 120
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": -0.005791460629552603,
+              "positive": 556
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.009060412645339966,
+              "positive": 351
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.00819820910692215,
+              "positive": 354
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": 0.004891113843768835,
+              "positive": 4670
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.026744051150513298,
+              "positive": 10
+            }
+          }
+        },
+        "up_hardest_rival": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.5312178134918213,
+              "positive": 132
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": 0.004016008228063583,
+              "positive": 514
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.22051937878131866,
+              "positive": 556
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.1911170333623886,
+              "positive": 530
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": -0.022712649777531624,
+              "positive": 3955
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.08688988100241227,
+              "positive": 10
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.5655022263526917,
+              "positive": 130
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": 0.011482645757496357,
+              "positive": 522
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.2358636111021042,
+              "positive": 551
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.20255807042121887,
+              "positive": 537
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": -0.025542106479406357,
+              "positive": 3943
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.06467305499324973,
+              "positive": 9
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 144,
+              "mean": 0.3285076320171356,
+              "positive": 120
+            },
+            "same_problem_different_letter_order": {
+              "count": 1056,
+              "mean": -0.007747009862214327,
+              "positive": 496
+            },
+            "different_family_same_letter_order": {
+              "count": 640,
+              "mean": 0.007816312834620476,
+              "positive": 351
+            },
+            "different_family_reversed_letter_order": {
+              "count": 640,
+              "mean": 0.0072899674996733665,
+              "positive": 355
+            },
+            "different_family_other_letter_order": {
+              "count": 8960,
+              "mean": 0.002767563331872225,
+              "positive": 4609
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.017839031558167837,
+              "positive": 8
+            }
+          }
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "training_presentations": 224,
+      "training_families": 7,
+      "supported_train_pairs": 13,
+      "supported_train_families": 4,
+      "aggregate_gradient_cosines": {
+        "gate_condition": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.491972416639328,
+              "positive": 159
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": 0.04913588613271713,
+              "positive": 957
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.05281206592917442,
+              "positive": 913
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.03176471218466759,
+              "positive": 847
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.021881744265556335,
+              "positive": 10234
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.28136895448013166,
+              "positive": 12
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.5066764950752258,
+              "positive": 153
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": 0.06189149618148804,
+              "positive": 957
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.06650429964065552,
+              "positive": 920
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.037406906485557556,
+              "positive": 845
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.02711176872253418,
+              "positive": 10229
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.3315581789337587,
+              "positive": 12
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.40742284059524536,
+              "positive": 164
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": -0.003939418122172356,
+              "positive": 767
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.007083013653755188,
+              "positive": 838
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.003501281375065446,
+              "positive": 789
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.0017198434798046947,
+              "positive": 9474
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.052848872780581146,
+              "positive": 11
+            }
+          }
+        },
+        "gate_hardest_rival": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.5356876850128174,
+              "positive": 166
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": -0.008375156670808792,
+              "positive": 697
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.1350952535867691,
+              "positive": 1221
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.13750171661376953,
+              "positive": 1209
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": -0.016521258279681206,
+              "positive": 8171
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.18476555587537852,
+              "positive": 12
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.5386738777160645,
+              "positive": 167
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": -0.005965918768197298,
+              "positive": 705
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.14023225009441376,
+              "positive": 1229
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.14167819917201996,
+              "positive": 1213
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": -0.017124854028224945,
+              "positive": 8167
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.18598974721401895,
+              "positive": 11
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.37245404720306396,
+              "positive": 164
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": -0.008221062831580639,
+              "positive": 731
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.006213275250047445,
+              "positive": 843
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.0033177202567458153,
+              "positive": 791
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.0006764509598724544,
+              "positive": 9203
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.04789830585781902,
+              "positive": 10
+            }
+          }
+        },
+        "up_condition": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.5267357230186462,
+              "positive": 163
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": 0.07202412933111191,
+              "positive": 1066
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.06379073858261108,
+              "positive": 895
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.049176108092069626,
+              "positive": 890
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.03312648832798004,
+              "positive": 10919
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.3016130865826427,
+              "positive": 13
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.6050732135772705,
+              "positive": 157
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": 0.12630215287208557,
+              "positive": 1107
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.10601437091827393,
+              "positive": 930
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.07905644923448563,
+              "positive": 918
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.05521305650472641,
+              "positive": 11174
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.4785475698069286,
+              "positive": 13
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.45308712124824524,
+              "positive": 164
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": -0.004546141251921654,
+              "positive": 788
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.011144239455461502,
+              "positive": 839
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.006130461115390062,
+              "positive": 789
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.0026424287352710962,
+              "positive": 9527
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.08688768818635755,
+              "positive": 10
+            }
+          }
+        },
+        "up_hardest_rival": {
+          "full": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.6353431940078735,
+              "positive": 174
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": -0.035724762827157974,
+              "positive": 671
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.23395876586437225,
+              "positive": 1356
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.23840934038162231,
+              "positive": 1380
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": -0.030732236802577972,
+              "positive": 7534
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.21196431452959813,
+              "positive": 11
+            }
+          },
+          "midpoint": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.65798020362854,
+              "positive": 174
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": -0.03454616293311119,
+              "positive": 671
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.2486499398946762,
+              "positive": 1375
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.2530696392059326,
+              "positive": 1385
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": -0.03399015590548515,
+              "positive": 7559
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.18937045696219354,
+              "positive": 11
+            }
+          },
+          "condition_difference": {
+            "same_problem_same_letter_order": {
+              "count": 176,
+              "mean": 0.43058472871780396,
+              "positive": 164
+            },
+            "same_problem_different_letter_order": {
+              "count": 1504,
+              "mean": -0.009139603935182095,
+              "positive": 703
+            },
+            "different_family_same_letter_order": {
+              "count": 1536,
+              "mean": 0.010257011279463768,
+              "positive": 841
+            },
+            "different_family_reversed_letter_order": {
+              "count": 1536,
+              "mean": 0.005574946757405996,
+              "positive": 787
+            },
+            "different_family_other_letter_order": {
+              "count": 18432,
+              "mean": 0.0009489874937571585,
+              "positive": 9278
+            },
+            "supported_pair_vs_other_family_balanced_gradient": {
+              "count": 13,
+              "mean": 0.062020345640973154,
+              "positive": 10
+            }
+          }
+        }
+      }
+    }
+  ],
+  "checkpoint_written": false,
+  "held_outcomes_used_for_geometry": false
+}

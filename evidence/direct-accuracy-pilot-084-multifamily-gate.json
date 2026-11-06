@@ -1,0 +1,161 @@
+{
+  "schema": "published-pilot084-multifamily-gate-v1",
+  "source_sha256": "f9c752f13785b00f2325c737520c2471666821af326efb7deccbc044ad1aa90e",
+  "plan_sha256": "03d678e6cf81cba7cc6eee7839d0c19fd4bdc12f11fbcf88a6b77af0a6c65fee",
+  "grouped_receipt_sha256": "bc1fe08ee371ecc4336f5f74e6645702f408f150d9a9d31a195a55bd73656ff4",
+  "first_attempt_receipt_sha256": "a065ff890485fc374a5d60bae3e3f07114271f2dc74c5ce83b2f962c9edf016c",
+  "first_attempt": "The first target split admitted only two of the four presentation arms and blocked the inherited two-factor support check. The corrected split reserves rotation zero in all four arms.",
+  "rules": {
+    "target_rule": "Use the highest predicted 053 target per distinct outer-training family. Test the strongest two distinct-family combinations from the top four families, with all twelve margins hard.",
+    "support_rule": "Interleave each anchor's Pilot082 multi-endpoint support under the same 32 coordinates per row. Allow one nonuniform endpoint per coordinate.",
+    "guard": "Exact original 078 positive all-rival winner floors, no correct-choice losses or ties in any train or held source, positive 053 pair gains and zero pair losses, ordinary no change.",
+    "fixed_target_margin": 0.012,
+    "exact_paired_minimum_each": 0.008,
+    "independent_cross_presentation_rule": "Reserve 053 rotation zero in all four arms before preparation. These rows are excluded from sibling reliability, geometry normalization, parent row screen, solver guards, response pursuit, objective and local reanchor. Each selected nonzero-rotation target checks its same-pair opposite-order same-demo reserved sibling after the edit, with zero prior winner losses and at most .05 erosion of either correct-vs-other-condition margin. The full frozen four-corpus gate also applies."
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "19c9f9a6d185dcd5679658b9101b9c0efd0974b6ae8a6e08fc6ab02a2fbe2ceb",
+      "trained_supported_pairs": 6,
+      "distinct_training_family_pool": 2,
+      "two_family_combinations": 1,
+      "linear_solver_outcomes": [
+        "ALL_GUARDS_AND_TARGETS_PASS"
+      ],
+      "exact_rounded_results": [
+        {
+          "target_minimum_margins": [
+            -0.008836746215820312,
+            0.0049381256103515625
+          ],
+          "positive_floor_violations": 5,
+          "reserve_presentation_checks": [
+            {
+              "prior_correct": 0,
+              "prior_correct_losses": 0,
+              "maximum_correct_vs_counterpart_erosion": 0.06423377990722656,
+              "passed": false
+            },
+            {
+              "prior_correct": 2,
+              "prior_correct_losses": 0,
+              "maximum_correct_vs_counterpart_erosion": 0.13414573669433594,
+              "passed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "177194fd97594a06839a280e2c5f31c4ab3004471fff668b2104833d11b00465",
+      "trained_supported_pairs": 8,
+      "distinct_training_family_pool": 3,
+      "two_family_combinations": 2,
+      "linear_solver_outcomes": [
+        "ACTIVE_SYSTEM_INFEASIBLE",
+        "ALL_GUARDS_AND_TARGETS_PASS"
+      ],
+      "exact_rounded_results": [
+        {
+          "target_minimum_margins": [
+            0.021539688110351562,
+            0.00177001953125
+          ],
+          "positive_floor_violations": 3,
+          "reserve_presentation_checks": [
+            {
+              "prior_correct": 1,
+              "prior_correct_losses": 0,
+              "maximum_correct_vs_counterpart_erosion": 0.07834148406982422,
+              "passed": false
+            },
+            {
+              "prior_correct": 0,
+              "prior_correct_losses": 0,
+              "maximum_correct_vs_counterpart_erosion": 0.03026580810546875,
+              "passed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "2e4685c656a575cbb75c57f1fce47ec96d6ded1f03f1d612302b6d4cd14015e5",
+      "trained_supported_pairs": 5,
+      "distinct_training_family_pool": 3,
+      "two_family_combinations": 2,
+      "linear_solver_outcomes": [
+        "ALL_GUARDS_AND_TARGETS_PASS",
+        "ACTIVE_SYSTEM_INFEASIBLE"
+      ],
+      "exact_rounded_results": [
+        {
+          "target_minimum_margins": [
+            -0.002613067626953125,
+            -0.0009555816650390625
+          ],
+          "positive_floor_violations": 1,
+          "reserve_presentation_checks": [
+            {
+              "prior_correct": 2,
+              "prior_correct_losses": 0,
+              "maximum_correct_vs_counterpart_erosion": 0.07817649841308594,
+              "passed": false
+            },
+            {
+              "prior_correct": 1,
+              "prior_correct_losses": 0,
+              "maximum_correct_vs_counterpart_erosion": 0.10533905029296875,
+              "passed": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "held_pair": {
+    "matches": 384,
+    "baseline_both_correct": 42,
+    "candidate_both_correct": 42,
+    "gains": 0,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "held_ordinary_states": 90,
+  "held_ordinary_winner_changes": 0,
+  "held_choice_changes": 0,
+  "checkpoint_written": false,
+  "official_fresh_or_proof_data_used": false
+}

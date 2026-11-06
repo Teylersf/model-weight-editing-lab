@@ -1,0 +1,59 @@
+{
+  "schema": "published-pilot085-gate-regression-attribution-v1",
+  "source_sha256": "3dc88f06c454c2dd398b6edc9c6f7c3a3047d3a7e01e51623efb631d06864cad",
+  "receipt_sha256": "35c5f7fe0817306afc5649c7887d6626f7005abc6f5e386c026b9cde907b2e4d",
+  "exact_pilot082_grouped_report_sha256": "265dde0415c193d12fd34c6bc79160f1c02dfedf1df4017b74710b3ab523f38f",
+  "exact_pilot082_fold_sha256": [
+    "bd9c32620a5d57f8d2d283b8d664d18afbea88648216b0f7e08c61f6cdbb5781",
+    "b86b564d1154e4f971d51df2243806ad3abaad4f245f64a21e451a301f87d5f3",
+    "cfb1a26c605dd97fc2e8242b69e91e164805b641a6cd33224e6c91e629f27a48"
+  ],
+  "classification": {
+    "threshold": 0.0,
+    "strict_less_than": true,
+    "prior_correct_only": true,
+    "no_zero_margin_prior_correct_ties": true,
+    "method": "A regression occurs when the patched gold logit minus the best rival is strictly below zero on a parent-correct choice state."
+  },
+  "stages": {
+    "linear": "Native parent logit anchor plus analytic parent-point Gate, SwiGLU, D63, RMS and head derivative with exact decoded IQ4_XS endpoint differences.",
+    "nonlinear_f32_without_q8": "Native parent logit anchor plus unchanged decoded head applied to the difference in F32 hidden activations from the rounded nonlinear replay.",
+    "exact": "Same frozen F32 nonlinear Gate and residual replay with the Q8-anchored choice head used for the sealed Pilot 082 results."
+  },
+  "exact_losses_by_source": {
+    "053": 2,
+    "044": 3,
+    "028": 1,
+    "039": 0
+  },
+  "exact_losses_also_linear_by_source": {
+    "053": 1,
+    "044": 3,
+    "028": 1,
+    "039": 0
+  },
+  "pooled": {
+    "held_states": 2256,
+    "archived_prior_correct": 1108,
+    "exact_losses": 6,
+    "linear_losses": 5,
+    "nonlinear_f32_without_q8_losses": 5,
+    "exact_losses_also_linear": 5,
+    "exact_only_vs_linear": 1,
+    "linear_only_vs_exact": 0,
+    "exact_losses_also_nonlinear_f32_without_q8": 5,
+    "crossing_pattern_counts_linear_nonlinear_f32_exact": {
+      "000": 1102,
+      "001": 1,
+      "111": 5
+    },
+    "fraction_exact_losses_also_linear": 0.8333333333333334
+  },
+  "caveats": [
+    "All values are retrospective diagnostics on previously scored authored held folds. The three frozen edits were unchanged.",
+    "Rounded CPU replay is an anchored approximation to native CUDA. Crossing agreement is evidence of geometric transfer and is not a causal allocation.",
+    "The no-Q8 contrast keeps the same rounded nonlinear F32 hidden state and changes only the CPU head response calculation. Differences across stages do not establish how an alternate packing or native replay would behave.",
+    "Reproduction requires the exact local parent, frozen rows, authored captures and pinned source dependencies. Error aggregates are rounded to six decimals."
+  ],
+  "gpu_used": false
+}

@@ -1,0 +1,102 @@
+{
+  "schema": "published-pilot083-native-gate-overlay-v1",
+  "scope": "Four independently authored terminal states, same states in gate-only and mixed diagnostics",
+  "native_source_sha256": "eba7b85d7874ad4690541a9e4c6d00f69945b79e1707c3a77251cc4c8e9ad7be",
+  "native_gate_header_sha256": "3b160499150c8ae1cfb370c18c3eeba0499b7218759eb4a024da3b2e6e576e73",
+  "build_receipt_sha256": "5b047e9b37f8b3d93465e98b5360d384c2b1b1e4398fca7045b4bed07d0de6aa",
+  "launcher_sha256": "107e04bf35224ccb06c96fa195e79e2e876f3716cf2fa85b5d6153eaccb87873",
+  "launcher_correction": "Normalize the pinned mixed plan reconstruction to its stored JSON types before equality validation.",
+  "gate_fixture_moves": [
+    {
+      "row": 0,
+      "moves": [
+        [
+          0,
+          2
+        ],
+        [
+          16,
+          -2
+        ]
+      ]
+    },
+    {
+      "row": 17407,
+      "moves": [
+        [
+          255,
+          -2
+        ],
+        [
+          256,
+          2
+        ]
+      ]
+    }
+  ],
+  "full_parent_sha256_verified_before_and_after": true,
+  "fixtures": {
+    "gate-only": {
+      "receipt_sha256": "7a7cf73cc071a491ff5f9d149e6fce49fe0d2f0c663af1dd736ecf3468e73c6c",
+      "native_capture_receipt_sha256": "649f972244937229a351194907344dfe5594092a9ea7bc3bc0494ab67ede895b",
+      "plan_sha256": "68eee2ffafe29411c5f8f141fc43d39fee7a6609046db72352a9259bed09e4a9",
+      "native_binary_sha256": "973ef4743ec8f0372807c2b684b4725ac8b5ffd08c47abd5f8e4c13d9d97040d",
+      "gate_device_rows_read_back_exactly": [
+        {
+          "neuron": 0,
+          "device_offset_bytes": 0,
+          "parent_sha256": "bfa7d28be2c0d181032d31ddfd1a6bf39219727cc73cefa644fff064d90d8f80",
+          "candidate_sha256": "4c94f9d22013e201340264ff35abd0f44f661bd9dba7dd90a794d25767183d3c"
+        },
+        {
+          "neuron": 17407,
+          "device_offset_bytes": 47347040,
+          "parent_sha256": "b1b1f56543abc9605f6a6d3e2e61d482c6ad861c8a2dd3810da58a849973eb70",
+          "candidate_sha256": "7c7cbe1de8177ca5ed1a25a2df8edf2c11550afd031397e9843407475a1e707e"
+        }
+      ],
+      "up_device_rows_read_back_exactly": [],
+      "exact_archived_x_and_p_rows": 4,
+      "gate_prediction_max_abs_error": 2.384185791015625e-07,
+      "up_prediction_max_abs_error": 0.0,
+      "swiglu_max_abs_error": 2.5095267162100754e-06,
+      "rms_max_abs_error": 1.3794769984087907e-06,
+      "a_d_logit_absolute_shift_max": 0.000762939453125
+    },
+    "mixed": {
+      "receipt_sha256": "370c93e31c79f87e189628486024595be354d4fd77d2e1a38141fa6ac913502e",
+      "native_capture_receipt_sha256": "f6cbcb63868fd080228810fc9c25d1b2fbbb7f23072085ca22afaeca531348aa",
+      "plan_sha256": "5ce70dea32538753279a309f078d81f1c4904f4cd4a2147fd1a5c6af0226686f",
+      "native_binary_sha256": "973ef4743ec8f0372807c2b684b4725ac8b5ffd08c47abd5f8e4c13d9d97040d",
+      "gate_device_rows_read_back_exactly": [
+        {
+          "neuron": 0,
+          "device_offset_bytes": 0,
+          "parent_sha256": "bfa7d28be2c0d181032d31ddfd1a6bf39219727cc73cefa644fff064d90d8f80",
+          "candidate_sha256": "4c94f9d22013e201340264ff35abd0f44f661bd9dba7dd90a794d25767183d3c"
+        },
+        {
+          "neuron": 17407,
+          "device_offset_bytes": 47347040,
+          "parent_sha256": "b1b1f56543abc9605f6a6d3e2e61d482c6ad861c8a2dd3810da58a849973eb70",
+          "candidate_sha256": "7c7cbe1de8177ca5ed1a25a2df8edf2c11550afd031397e9843407475a1e707e"
+        }
+      ],
+      "up_device_rows_read_back_exactly": [
+        {
+          "neuron": 0,
+          "device_offset_bytes": 0,
+          "parent_sha256": "db78f2670fa76872960af951a605b1ebc273281b036e617311e0325bc10c9826",
+          "candidate_sha256": "0b9a083ab63d81472f3de2a8a2777dce0a93906b984a19513b22ac289ff56479"
+        }
+      ],
+      "exact_archived_x_and_p_rows": 4,
+      "gate_prediction_max_abs_error": 2.384185791015625e-07,
+      "up_prediction_max_abs_error": 2.9802322387695312e-08,
+      "swiglu_max_abs_error": 2.5095267162100754e-06,
+      "rms_max_abs_error": 2.3300864526731857e-06,
+      "a_d_logit_absolute_shift_max": 0.0003814697265625
+    }
+  },
+  "weights_written": false
+}
