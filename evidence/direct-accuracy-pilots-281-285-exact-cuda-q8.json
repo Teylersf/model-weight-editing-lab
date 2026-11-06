@@ -1,0 +1,48 @@
+{
+  "schema": "direct-accuracy-exact-cuda-q8-v1",
+  "candidate_sha256": "31d55cf331bb41ad4fb089beda24b5511a0781b4899380283161a52a371fb0b0",
+  "initial_runtime_observations": {
+    "pilot277_stopped_on_stock_anchor_mismatch": true,
+    "pilot277_sampled_tokens_before_runtime_abort": 96,
+    "pilot277_protected_proof_outcome_established": false,
+    "pilot281_authored_run_exhausted_code_only_boundary_recovery": true,
+    "pilot281_sampled_tokens_before_runtime_abort": 194,
+    "unchanged_stock_anchor_limit": 0.000005
+  },
+  "authored_scale_diagnostic": {
+    "pilot284_build_sha256": "6101767c84cf86d62aea19aba951d53a3c3ce71a336c6b4c09e8b3efc0c550fa",
+    "pilot284_receipt_sha256": "8d3d107a3e4f427b55abe65e1df99c74b6cbfe4c618af35f57df155cde17659e",
+    "independent_audit_sha256": "7573233938a1f85ef21ccc21c37cee490d55d5e966f2ba22b5cefed90ceb50b8",
+    "block_index": 92,
+    "effective_values_changed": 32,
+    "host_binary16_scale": 0.06268310546875,
+    "native_binary16_scale": 0.0626220703125,
+    "host_maximum_stock_logit_error": 0.00038036340947655845,
+    "native_maximum_stock_logit_error": 3.6482742871157825e-7
+  },
+  "exact_installed_cuda_quantizer": {
+    "build_receipt_sha256": "02a9507f5195b92ba2b9bf1ee6a44e34a1c86e160b85cbfd8657f725cb3a9742",
+    "source_header_sha256": "5f8c463fa8ae0d4d7bbf4c49adc1f177d8ebc2c1d1941dfaf544e06944119892",
+    "source_implementation_sha256": "2be2a603fc53f6f3bb73ce0e522fca91d8eef303382031ccbdd380377af593b0",
+    "installed_cuda_dll_sha256": "85f2cb5707e6dc50c30cdcdc5c23c5e438149bb48638421d0a705866b8e31f94",
+    "cubin_sha256": "ea66ff6e8a06b80ad225b4d0942166fb36bc22e57ccd92af14c56021405b8e76",
+    "cubin_bytes": 89896,
+    "target_architecture": "sm_86",
+    "kernel_symbol": "_Z13quantize_q8_1PKfPvxxxxxj5uint3",
+    "activation_values": 5120,
+    "q8_block_bytes": 5760,
+    "pilot285_kernel_binding_sha256": "ca7278a618e94e0f91f048078804494607631806bcd2c0bbb24b03ee6c77b6ed",
+    "pilot285_kernel_fixture_sha256": "8016ba785df94fa7964e421dfe98b355da9a182fd1eb2d5f9cd4d647d5b12cf0"
+  },
+  "pilot285_authored_native_generation": {
+    "native_protocol_build_sha256": "6fa8f714565e48c1cc85e9342ece79d56b939257390831462922ec8a10066f47",
+    "qualification_build_view_sha256": "40efa620b3f54aa42bcaf771de61a17690abe0d14181e4b4805cbbad0a2225b0",
+    "native_smoke_receipt_sha256": "fbcaeb0f014ff70e4d1ac553f3ed64c2cc8473962584beb71ff7412693ea6bb0",
+    "native_smoke_prompts": 3,
+    "generated_tokens": 1200,
+    "native_quantization_applications": 1200,
+    "maximum_stock_anchor_error": 1.35355e-6,
+    "authored_only": true,
+    "checkpoint_weights_changed_for_runtime_retry": false
+  }
+}

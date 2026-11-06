@@ -159,3 +159,21 @@ replacement rows and the footer, and prints the full checkpoint hash. Add
 `--extract-rows replacement-rows.f32` to extract the weight bytes to a fresh
 path for the fixed-prefix replay. The saved file requires the precision-aware
 runner to use the appended rows during generation.
+
+## Replay the exact installed CUDA quantizer
+
+The Windows example requires the pinned CUDA backend and an sm_86 GPU. From
+an x64 Developer Command Prompt in the example directory, extract the one
+kernel image from the backend DLL and compile the diagnostic with CUDA 12.6.
+
+```bat
+"%CUDA_PATH%\bin\cuobjdump.exe" --extract-elf Qwen.99.sm_86.cubin C:\path\to\ggml-cuda.dll
+cl /nologo /W4 /WX /EHsc /O2 /std:c++20 /I"%CUDA_PATH%\include" native_effective_q8.cpp native_q8_diagnostic_283.cpp "%CUDA_PATH%\lib\x64\cuda.lib" bcrypt.lib /Fe:native_q8_diagnostic.exe
+native_q8_diagnostic.exe --fixture
+native_q8_diagnostic.exe --run Qwen.99.sm_86.cubin result-norm.f32 q8-blocks.bin effective.f32
+```
+
+The input is one normalized activation of 5,120 little-endian binary32
+values. The diagnostic checks the extracted image hash and kernel ABI, then
+writes the Q8_1 packets and their effective binary32 values to fresh paths.
+[Code](cuda-q8/) · [Backend and kernel hashes](../evidence/direct-accuracy-pilots-281-285-exact-cuda-q8.json)
