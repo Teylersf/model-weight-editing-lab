@@ -1,0 +1,168 @@
+{
+  "schema": "pilot127-expanded-packed-weight-support-public-v1",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "scope": {
+    "independent_fitting_presentations": 192,
+    "ordinary_training_states": 60,
+    "ordinary_signed_floors": 480,
+    "signed_math_floors": 2106,
+    "nonselected_score_key_and_state_rows_decoded": 0
+  },
+  "source": {
+    "name": "fit_augmented_code_support_127.py",
+    "sha256": "88cc11e00ca8b857790f661646212f79a013ce23d4c79f6384a44b28fd64224a",
+    "plan_sha256": "1f5cb75d6cb05110c8ec2d835ec0b625715d8d6517259fcfc8c8cd8415ae4202",
+    "report_sha256": "3b58148dee1191bc501f1a1800984bbb3d7feb40026c1a86c76cce72ea855567",
+    "exact_anchor_sha256": "ea563b4c65943fefb331cab0029155d7a9120c9d75c24dbae1aa3e82541bc89f",
+    "augmented_support_sha256": "ea0d793ecacb8ffe2f7c8d6d98dcf0126a161a0421ebda60eb819fd64d979e9e"
+  },
+  "support": {
+    "original_groups": 384,
+    "added_groups": 128,
+    "expanded_groups": 512,
+    "added_legal_endpoints": 737
+  },
+  "parent_objectives": [
+    0.01838426462690284,
+    0.3276589400238461
+  ],
+  "rounds": [
+    {
+      "group_budget": 80,
+      "mutable_groups": 80,
+      "variables": 472,
+      "new_mutable_groups": 40,
+      "fractional": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "optimal": true,
+        "maximum_minimum_normalized_slack": 0.0017960462145017115
+      },
+      "capacity_rounded": true,
+      "mip": {
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+        "incumbent": false,
+        "kept_signed_rows": 769
+      }
+    },
+    {
+      "group_budget": 112,
+      "mutable_groups": 112,
+      "variables": 661,
+      "new_mutable_groups": 56,
+      "fractional": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "optimal": true,
+        "maximum_minimum_normalized_slack": 0.012101121913153046
+      },
+      "capacity_rounded": true,
+      "mip": {
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+        "incumbent": false,
+        "kept_signed_rows": 812
+      }
+    }
+  ],
+  "probes": [
+    {
+      "stage": "restored_sealed_seven_debt_anchor",
+      "codes": 360,
+      "exact_deficits": 7,
+      "exact_maximum_deficit": 0.06700954200195314,
+      "objective_components": [
+        0.018510157181922268,
+        0.30234629445605804
+      ],
+      "q8_parity": true,
+      "passed": false,
+      "math_deficits": 7,
+      "ordinary_deficits": 0,
+      "ordinary": {
+        "states": 60,
+        "archived_top64_winner_changes": 0,
+        "binary32_archived_top64_winner_changes": 0,
+        "min_archived_top64_winner_margin": 0.01758878739474312
+      }
+    },
+    {
+      "stage": "augmented_support_same_exact_anchor",
+      "codes": 360,
+      "exact_deficits": 7,
+      "exact_maximum_deficit": 0.06700954200195314,
+      "objective_components": [
+        0.018510157181922268,
+        0.30234629445605804
+      ],
+      "q8_parity": true,
+      "passed": false,
+      "math_deficits": 7,
+      "ordinary_deficits": 0,
+      "ordinary": {
+        "states": 60,
+        "archived_top64_winner_changes": 0,
+        "binary32_archived_top64_winner_changes": 0,
+        "min_archived_top64_winner_margin": 0.01758878739474312
+      }
+    },
+    {
+      "stage": "augmented_80_capacity_round",
+      "codes": 373,
+      "exact_deficits": 44,
+      "exact_maximum_deficit": 0.27291182471679687,
+      "objective_components": [
+        0.020081108114183153,
+        0.28018814259105257
+      ],
+      "q8_parity": true,
+      "passed": false,
+      "math_deficits": 44,
+      "ordinary_deficits": 0,
+      "ordinary": {
+        "states": 60,
+        "archived_top64_winner_changes": 0,
+        "binary32_archived_top64_winner_changes": 0,
+        "min_archived_top64_winner_margin": 0.029176134487897798
+      }
+    },
+    {
+      "stage": "augmented_112_capacity_round",
+      "codes": 373,
+      "exact_deficits": 62,
+      "exact_maximum_deficit": 0.3200067420141602,
+      "objective_components": [
+        0.02487513091991395,
+        0.3158343195915222
+      ],
+      "q8_parity": true,
+      "passed": false,
+      "math_deficits": 62,
+      "ordinary_deficits": 0,
+      "ordinary": {
+        "states": 60,
+        "archived_top64_winner_changes": 0,
+        "binary32_archived_top64_winner_changes": 0,
+        "min_archived_top64_winner_margin": 0.026061430287882104
+      }
+    }
+  ],
+  "best_expanded_objectives": [
+    0.018510157181922268,
+    0.30234629445605804
+  ],
+  "best_expanded_deficits": [
+    7,
+    0.175053583717041,
+    0.06700954200195314
+  ],
+  "outcome": {
+    "qualified_packed_candidate_count": 0,
+    "checkpoint_written": false,
+    "gpu_used": false,
+    "reserve_scored": false,
+    "outer_scored": false,
+    "passed": false
+  }
+}

@@ -1052,3 +1052,9 @@ The best exact probe had **six** remaining violations. Their sum fell from **0.1
 Candidates 5 and 7 from Pilot 122 each ran on all **192** independent fitting presentations. Stock and restored passes matched all **768** archived A–D logits. All 192 restored full-vocabulary logit digests matched the initial pass, and the full GGUF hash matched before and after.
 
 Both candidates preserved **119/192** correct choices and **40/96** both-correct pairs without repairing a choice. Candidate 7 improved the mean signed correct margin by **0.01088** logits and candidate 5 by **0.00115**. Both failed the required gain in both-correct pairs. The ordinary overlay and held evaluations stayed outside this run. [Full fitting results and exact readback](../evidence/direct-accuracy-pilot-125-query-full-fit.json)
+
+## Pilot 127 with expanded feed-forward code support
+
+The search added **128** previously unused coordinates to the mixed gate and up support, giving 737 additional legal code endpoints. Both continuous solves cleared the local signed floors and objective caps. Both bounded integer solves timed out without an incumbent.
+
+Exact replay of the two rounded proposals preserved all 60 ordinary winners and 480 ordinary floors. Math-margin violations rose from **7** on the anchor to **44** and **62**, and both proposals worsened the primary objective. This result motivates measuring individual code substitutions before forming a packed combination. [Support, exact replay, and solver receipts](../evidence/direct-accuracy-pilot-127-expanded-packed-support.json)
