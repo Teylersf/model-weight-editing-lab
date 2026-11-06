@@ -1,0 +1,20 @@
+{
+  "schema": "public-direct-accuracy-pilot-213-protected-rejection-v1",
+  "receipt_sha256": "b240ebc85c44e4d6c7b2fc74406cfc9eba81491e8b4fb84765e9ec629f5b8f13",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_sha256": "312cb0e6998157552106fe9d0089cd3d3fd6f12429759842e1722c0096f807dc",
+  "source_sha256": "4840cf0ddfdc5ef7e98117f480b1ba300d2f13bf975c9fdb9586824a6420092a",
+  "plan_sha256": "da9e757037676b91823fee15c8f271d66204838a8ace1e9caaabbd62cdaaee55",
+  "readback_sha256": "9b43934872d9db964bcc96ac426bf715ea284c2f66a5ec713de05a24e3a37590",
+  "binding_sha256": "bc7085246dccb0f52e82a6f7524aff6e1ed4380bcce83946fc229954d91578b5",
+  "fit_sha256": "7f3af1e18d17b9fff0fafae220366e55b3f24283aa0693381897796e18eb87b2",
+  "recipe_sha256": "4827670494552d04733942c113ab0496ccfbee2d12c8a8b703318cb2bacb12a2",
+  "candidate_proof_sha256": "ddc34ac765e1150dc407044625b19a8adeaba86b352e85c73047a5f766f4fd5f",
+  "exact_proofs": 1,
+  "cylinder_evaluated": false,
+  "candidate_saved_checkpoint_verified_pre_post": true,
+  "gpu_backend": "CUDA0",
+  "official_or_fresh_opened": false,
+  "accepted_pointer_updated": false,
+  "passed": false
+}

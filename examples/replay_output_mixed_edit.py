@@ -1,4 +1,4 @@
-"""Verify or replay the Pilot 194 mixed Q4_K edit on the exact Pilot 024 GGUF."""
+"""Verify or replay a published mixed Q4_K edit on the exact Pilot 024 GGUF."""
 
 import argparse
 from hashlib import sha256
@@ -11,7 +11,10 @@ import struct
 
 SCALE_HELPER = Path(__file__).resolve().with_name("replay_output_scale_edit.py")
 SCALE_HELPER_SHA256 = "e6ae7c2d5ef81d4506351a35150c8750c63e7db1953a21589334367a66b07083"
-CAPSULE_SHA256 = "dd7699cd82329afdb638c3b32b85ca00922a65e9b5abb1b8cf951e11ca167df8"
+CAPSULES = {
+    194: ("dd7699cd82329afdb638c3b32b85ca00922a65e9b5abb1b8cf951e11ca167df8", 158, 21, 1),
+    209: ("4f746569230c4a7e7f3a7002ccfaceb1f466c2c5f70d2b3f0923d0f44a897bc2", 158, 3713, 2),
+}
 PARENT_SHA256 = "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3"
 CHECKPOINT_BYTES = 11674147744
 ROW_BYTES = 2880
@@ -42,7 +45,7 @@ def code_position(coordinate, row_bytes):
     return block * 144 + 16 + 32 * (group // 2) + lane, 4 * (group % 2)
 
 
-def code_changes(entries, row_bytes):
+def code_changes(entries, row_bytes, maximum_step):
     require(isinstance(entries, list) and entries, "Expected declared Q4_K code changes")
     moves = []
     previous = -1
@@ -53,20 +56,21 @@ def code_changes(entries, row_bytes):
         coordinate, delta, before, after = (entry[key] for key in ("coordinate", "signed_code_delta", "before", "after"))
         offset, shift = code_position(coordinate, row_bytes)
         require(coordinate > previous and all(type(x) is int for x in (delta, before, after))
-                and abs(delta) == 1 and 0 <= before <= 15 and 0 <= after <= 15 and after - before == delta,
+                and 1 <= abs(delta) <= maximum_step and 0 <= before <= 15 and 0 <= after <= 15 and after - before == delta,
                 "Expected unique, ordered, legal signed Q4_K code endpoints")
         moves.append((offset, shift, before, after))
         previous = coordinate
     return tuple(moves)
 
 
-def load_capsule(scale, replay):
-    path = replay["EVIDENCE"] / "direct-closure-pilot-194-row-patch.json"
+def load_capsule(scale, replay, pilot):
+    capsule_sha, field_count, code_count, maximum_step = CAPSULES[pilot]
+    path = replay["EVIDENCE"] / f"direct-closure-pilot-{pilot}-row-patch.json"
     patch = json.loads(path.read_bytes())
     canonical = json.dumps(patch, sort_keys=True, separators=(",", ":")).encode("ascii")
-    require(sha256(canonical).hexdigest() == CAPSULE_SHA256 and patch["pilot"] == 194
+    require(sha256(canonical).hexdigest() == capsule_sha and patch["pilot"] == pilot
             and patch["schema"] == "public-direct-output-multirow-q4k-mixed-patch-v1",
-            "Pilot 194 mixed capsule SHA-256 or schema differs")
+            f"Pilot {pilot} mixed capsule SHA-256 or schema differs")
     require(patch["tensor"] == TENSOR and patch["checkpoint_bytes"] == CHECKPOINT_BYTES
             and patch["parent_sha256"] == PARENT_SHA256, "Expected the exact Pilot 024 Q4_K output tensor")
     rows = patch["rows"]
@@ -76,9 +80,9 @@ def load_capsule(scale, replay):
         require(row["bytes"] == ROW_BYTES and row["offset"] == TENSOR["offset"] + row["token_id"] * ROW_BYTES,
                 "Patch tensor and row extents disagree")
         changes.append((scale["row_fields"](row["changed_fields"], ROW_BYTES),
-                        code_changes(row["changed_codes"], ROW_BYTES)))
-    require(sum(len(fields) for fields, _ in changes) == patch["changed_binary16_fields"] == 158
-            and sum(len(codes) for _, codes in changes) == patch["changed_code_nibbles"] == 21,
+                        code_changes(row["changed_codes"], ROW_BYTES, maximum_step)))
+    require(sum(len(fields) for fields, _ in changes) == patch["changed_binary16_fields"] == field_count
+            and sum(len(codes) for _, codes in changes) == patch["changed_code_nibbles"] == code_count,
             "Total binary16 or nibble count differs")
     return patch, tuple(changes)
 
@@ -122,12 +126,13 @@ def checked_masks(parent, patch, changes, replay):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--pilot", type=int, choices=CAPSULES, default=194, help="Published edit to replay")
     parser.add_argument("--parent", type=Path, required=True, help="Exact Pilot 024 parent GGUF")
     parser.add_argument("--output", type=Path, help="Optional fresh GGUF path on a hard-link-capable filesystem")
     args = parser.parse_args()
     try:
         scale, replay = helpers()
-        patch, changes = load_capsule(scale, replay)
+        patch, changes = load_capsule(scale, replay, args.pilot)
         masks = checked_masks(args.parent, patch, changes, replay)
         replay["replay"](args.parent, args.output, patch, masks)
     except (OSError, ValueError, struct.error) as error:

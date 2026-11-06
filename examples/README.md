@@ -101,3 +101,19 @@ output-weight rows, and 186 changed bytes. The exact checkpoint SHA-256 is
 
 Add `--output /path/to/pilot-194.gguf` to write a verified copy to a fresh path
 on a hard-link-capable filesystem with room for the 11.67 GB file.
+
+## Replay the Pilot 209 mixed output edit
+
+The same tool accepts the Pilot 209 capsule and the exact Pilot 024 parent.
+It verifies both full checkpoint hashes on CPU.
+
+```sh
+python examples/replay_output_mixed_edit.py --pilot 209 --parent /path/to/pilot-024.gguf
+```
+
+Expect `VERIFIED_ONLY`, 158 binary16 fields and 3,713 code nibbles across four
+output-weight rows, and 3,526 changed bytes. The checkpoint SHA-256 is
+`312cb0e6998157552106fe9d0089cd3d3fd6f12429759842e1722c0096f807dc`.
+[Pilot 209 patch capsule](../evidence/direct-closure-pilot-209-row-patch.json)
+
+Add `--output /path/to/pilot-209.gguf` to write a verified copy to a fresh path.

@@ -1,0 +1,109 @@
+{
+  "schema": "public-direct-accuracy-pilots-214-215-teacher-packing-v1",
+  "pilot214": {
+    "receipt_sha256": "442436e6187308d2afd954e54f1864b26cfbfb5a7737dc46b99b58cf5f25f1fe",
+    "source_sha256": "3abc1d97c4cdbaf756d59077399a006c42303cea89f3f82c7634a62d08155acc",
+    "plan_sha256": "1580875e3fa1c03c1bb49dc2e99fdc62dac4e9e2c5e58bbe7bf9eb6236f95cf2",
+    "frozen_code_menu_sha256": "2977c09509788c5bc18c80fd6cce820b9db49ef43b6ae1ac4bb499d7c7dee5dc",
+    "time_limited_fractional_tiers": 3,
+    "exact_nibble_supports_with_infeasible_continuous_half_reanchor": 3
+  },
+  "pilot215": {
+    "receipt_sha256": "e7a995d25f1dafd83e77b2bcf5edc604386e34b91a181c0751f2ccf5a71aab1c",
+    "source_sha256": "e16c5fbcb05a261d4e053031a7a0fc9cf71bfd8dafcd695e95fe349d8aa06c77",
+    "plan_sha256": "3c9e28d9416623f69deca4e9f4ff0180dfb83ad081ee51aebe341c470d028675",
+    "frozen_code_menu_sha256": "7b0273e6c9d1be023c1b1fef27909d75b41cd71f4c4dc33bd74c0a7093cd0a3c",
+    "fractional_code_pool": 192,
+    "fractional_guard_count": 22708,
+    "relaxation_summaries": [
+      {
+        "extra_codes": 24,
+        "active_rows": 22708,
+        "fractional_status": 0,
+        "fractional_margin": -0.27775951481590766,
+        "working_set_upper_bound": -0.27775951481590766,
+        "full_guard_fractional_incumbent": true,
+        "model_infeasible_proven": false,
+        "frac_solve_seconds": 1.210330999980215
+      },
+      {
+        "extra_codes": 48,
+        "active_rows": 22708,
+        "fractional_status": 0,
+        "fractional_margin": -0.24672192956540234,
+        "working_set_upper_bound": -0.24672192956540234,
+        "full_guard_fractional_incumbent": true,
+        "model_infeasible_proven": false,
+        "frac_solve_seconds": 1.483653699979186
+      },
+      {
+        "extra_codes": 72,
+        "active_rows": 22708,
+        "fractional_status": 0,
+        "fractional_margin": -0.23049659295927832,
+        "working_set_upper_bound": -0.23049659295927832,
+        "full_guard_fractional_incumbent": true,
+        "model_infeasible_proven": false,
+        "frac_solve_seconds": 1.7753434000187553
+      }
+    ],
+    "physical_code_reanchors": [
+      {
+        "code_endpoints": 24,
+        "radius": 64,
+        "lp_status": 0,
+        "continuous_margin": -0.30128091233648313
+      },
+      {
+        "code_endpoints": 24,
+        "radius": 64,
+        "lp_status": 0,
+        "continuous_margin": -0.29673478267149905
+      },
+      {
+        "code_endpoints": 24,
+        "radius": 64,
+        "lp_status": 0,
+        "continuous_margin": -0.30268323230684324
+      },
+      {
+        "code_endpoints": 48,
+        "radius": 64,
+        "lp_status": 2,
+        "continuous_margin": null
+      },
+      {
+        "code_endpoints": 48,
+        "radius": 64,
+        "lp_status": 0,
+        "continuous_margin": -0.26553485639655156
+      },
+      {
+        "code_endpoints": 48,
+        "radius": 64,
+        "lp_status": 0,
+        "continuous_margin": -0.2634334662898242
+      },
+      {
+        "code_endpoints": 72,
+        "radius": 64,
+        "lp_status": 0,
+        "continuous_margin": -0.24509262771285031
+      },
+      {
+        "code_endpoints": 72,
+        "radius": 64,
+        "lp_status": 2,
+        "continuous_margin": null
+      },
+      {
+        "code_endpoints": 72,
+        "radius": 64,
+        "lp_status": 2,
+        "continuous_margin": null
+      }
+    ]
+  },
+  "checkpoint_written": false,
+  "required_target_margin": 0.007
+}
