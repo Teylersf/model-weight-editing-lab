@@ -1,0 +1,213 @@
+{
+  "schema": "published-pilot094-mixed-support-relaxation-v1",
+  "receipt_sha256": "b14d5bd6f0b48792606be5bf3b2b77f19fd1f32d33e7df36c73ae27abe019c51",
+  "plan_sha256": "b6538ff0f43a9c20dfea878a4b2943a2731493b4e214b1ecbd205171ff47ee8c",
+  "source_sha256": "90eb2337a4357fa47fce120d7d356882bfe901325ec9a12316700711fb82aa8c",
+  "inherited_fit_source_sha256": "7d4011362d40bd9b0c08e82339b473ee232562a200d859acda085f55de0bc04e",
+  "inherited_fit_plan_sha256": "1d8b8b2e9cbda7d22d4ae62bfe888bbd33d050ef6d5728ebab6896b4c08314e3",
+  "scope": "Reconstruct exact authored training support only. Maximize worst target slack on progressively constrained legal endpoint convex relaxations. Compare feasibility bounds, never accept or freeze an edited row from an LP.",
+  "supports": [
+    {
+      "fold": 0,
+      "support": 0,
+      "columns": 2215,
+      "coordinate_groups": 384,
+      "stage_bounds": {
+        "legal_endpoints_only": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 0,
+          "optimistic_worst_target_slack": 0.15727369527200932,
+          "all_twelve_can_reach_target_in_relaxation": true,
+          "max_fractional_distance": 0.4031774710378194
+        },
+        "prior_winner_floors": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 746,
+          "optimistic_worst_target_slack": 0.12900049185955392,
+          "all_twelve_can_reach_target_in_relaxation": true,
+          "max_fractional_distance": 0.4606252388402909
+        },
+        "plus_opposite_order_margins": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 758,
+          "optimistic_worst_target_slack": -0.02130642785000106,
+          "all_twelve_can_reach_target_in_relaxation": false,
+          "max_fractional_distance": 0.4816476151491829
+        },
+        "plus_both_branches": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 760,
+          "optimistic_worst_target_slack": -0.02130642785000103,
+          "all_twelve_can_reach_target_in_relaxation": false,
+          "max_fractional_distance": 0.4728663421982029
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "support": 0,
+      "columns": 2202,
+      "coordinate_groups": 384,
+      "stage_bounds": {
+        "legal_endpoints_only": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 0,
+          "optimistic_worst_target_slack": 0.16011236780277827,
+          "all_twelve_can_reach_target_in_relaxation": true,
+          "max_fractional_distance": 0.2377210558388574
+        },
+        "prior_winner_floors": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 515,
+          "optimistic_worst_target_slack": -0.029055723480287732,
+          "all_twelve_can_reach_target_in_relaxation": false,
+          "max_fractional_distance": 0.4841585250053807
+        },
+        "plus_opposite_order_margins": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 527,
+          "optimistic_worst_target_slack": -0.09798687225438713,
+          "all_twelve_can_reach_target_in_relaxation": false,
+          "max_fractional_distance": 0.445487615537714
+        },
+        "plus_both_branches": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 529,
+          "optimistic_worst_target_slack": -0.09798687225438701,
+          "all_twelve_can_reach_target_in_relaxation": false,
+          "max_fractional_distance": 0.4946325511026432
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "support": 1,
+      "columns": 2185,
+      "coordinate_groups": 384,
+      "stage_bounds": {
+        "legal_endpoints_only": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 0,
+          "optimistic_worst_target_slack": 0.42555409736881933,
+          "all_twelve_can_reach_target_in_relaxation": true,
+          "max_fractional_distance": 0.15802738843240793
+        },
+        "prior_winner_floors": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 509,
+          "optimistic_worst_target_slack": -0.041817553465530954,
+          "all_twelve_can_reach_target_in_relaxation": false,
+          "max_fractional_distance": 0.47777631550639743
+        },
+        "plus_opposite_order_margins": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 521,
+          "optimistic_worst_target_slack": -0.04763238780062562,
+          "all_twelve_can_reach_target_in_relaxation": false,
+          "max_fractional_distance": 0.49089881770734545
+        },
+        "plus_both_branches": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 523,
+          "optimistic_worst_target_slack": -0.04763238780062562,
+          "all_twelve_can_reach_target_in_relaxation": false,
+          "max_fractional_distance": 0.4908988177073453
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "support": 0,
+      "columns": 2181,
+      "coordinate_groups": 384,
+      "stage_bounds": {
+        "legal_endpoints_only": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 0,
+          "optimistic_worst_target_slack": 0.4088632445862226,
+          "all_twelve_can_reach_target_in_relaxation": true,
+          "max_fractional_distance": 0.0705146415257771
+        },
+        "prior_winner_floors": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 578,
+          "optimistic_worst_target_slack": 0.03153068247483201,
+          "all_twelve_can_reach_target_in_relaxation": true,
+          "max_fractional_distance": 0.4888506332133675
+        },
+        "plus_opposite_order_margins": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 590,
+          "optimistic_worst_target_slack": -0.011055130140530944,
+          "all_twelve_can_reach_target_in_relaxation": false,
+          "max_fractional_distance": 0.4906132533100678
+        },
+        "plus_both_branches": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 592,
+          "optimistic_worst_target_slack": -0.011055130140530722,
+          "all_twelve_can_reach_target_in_relaxation": false,
+          "max_fractional_distance": 0.49434453951462104
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "support": 1,
+      "columns": 2176,
+      "coordinate_groups": 384,
+      "stage_bounds": {
+        "legal_endpoints_only": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 0,
+          "optimistic_worst_target_slack": 1.2376354023758127,
+          "all_twelve_can_reach_target_in_relaxation": true,
+          "max_fractional_distance": 0.37299547669395405
+        },
+        "prior_winner_floors": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 579,
+          "optimistic_worst_target_slack": 0.36270371677331903,
+          "all_twelve_can_reach_target_in_relaxation": true,
+          "max_fractional_distance": 0.48311433973595685
+        },
+        "plus_opposite_order_margins": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 591,
+          "optimistic_worst_target_slack": 0.08152536705087948,
+          "all_twelve_can_reach_target_in_relaxation": true,
+          "max_fractional_distance": 0.4332850418178995
+        },
+        "plus_both_branches": {
+          "status": 0,
+          "optimal": true,
+          "potentially_binding_guard_rows": 593,
+          "optimistic_worst_target_slack": 0.08152536705087954,
+          "all_twelve_can_reach_target_in_relaxation": true,
+          "max_fractional_distance": 0.44563438029062413
+        }
+      }
+    }
+  ],
+  "held_outcomes_used": false,
+  "weights_written": false
+}

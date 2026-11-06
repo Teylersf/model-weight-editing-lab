@@ -1,0 +1,454 @@
+{
+  "schema": "published-pilots095-096-rounded-mixed-repair-v1",
+  "trials": {
+    "095": {
+      "grouped_receipt_sha256": "37c8d263843b249b83702e46aab016d85a8dc69bc72a35e261431601c3da3f7e",
+      "source_sha256": "3dac732942d26a4c60f96e70931b4f9f9c75a4430ea889e59a984dd3cdd9bd6e",
+      "plan_sha256": "25cc3acff103795adda826cc7ab84bce0662508719d37e39ffb00e66ce518dad",
+      "input_binding_sha256": "5a233abf58758f0f9d7e5433756544c6804e21f7acf88502e048bd7dfa7158e6",
+      "retained_training_supports": {
+        "0": [],
+        "1": [],
+        "2": [
+          1
+        ]
+      },
+      "relaxed_bound_receipt_sha256": "b14d5bd6f0b48792606be5bf3b2b77f19fd1f32d33e7df36c73ae27abe019c51",
+      "settings": {
+        "milp_seconds_per_round": 30,
+        "initial_working_set_guards": 128
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "fit_receipt_sha256": "f023094cb33922d0624a9f98b1e92dc83d40cf9608f2c53be5a79fe5558e351d",
+          "attempts": []
+        },
+        {
+          "fold": 1,
+          "fit_receipt_sha256": "8eb3cd43ffeda94a942f4c6ed8aeca4db0eac02a03e4b04eba62ddda46df4562",
+          "attempts": []
+        },
+        {
+          "fold": 2,
+          "fit_receipt_sha256": "7e82b998077f1dea725d7373653d2b1305c604760b2b4d604c5503e9dbdf1ff5",
+          "attempts": [
+            {
+              "status": "ALL_GUARDS_AND_TARGETS_PASS",
+              "solver_rounds": [
+                {
+                  "round": 1,
+                  "active_guards": 128,
+                  "milp_status": 1,
+                  "milp_success": false,
+                  "incumbent": true,
+                  "added_guards": 0,
+                  "minimum_guard_slack": 5.4668722410070036e-05,
+                  "minimum_target_slack": 0.0004996404280149247,
+                  "violated_guards": 0,
+                  "violated_targets": 0,
+                  "selected": 91
+                }
+              ],
+              "minimum_linear_guard_slack": 5.4668722410070036e-05,
+              "minimum_linear_target_slack": 0.0004996404280149247,
+              "rounded": {
+                "target_min_margins": [
+                  0.004619598388671875,
+                  0.012128829956054688
+                ],
+                "fitting_positive_floor_violations": {
+                  "053": 2,
+                  "044": 1,
+                  "028": 0,
+                  "039": 0
+                },
+                "reserved_checks": [
+                  {
+                    "opposite_order_arm": "b",
+                    "rotation": 0,
+                    "prior_correct": 1,
+                    "prior_correct_losses": 0,
+                    "maximum_correct_vs_counterpart_erosion": 0.0,
+                    "passed": true
+                  },
+                  {
+                    "opposite_order_arm": "c",
+                    "rotation": 0,
+                    "prior_correct": 1,
+                    "prior_correct_losses": 0,
+                    "maximum_correct_vs_counterpart_erosion": 0.0,
+                    "passed": true
+                  }
+                ],
+                "opposite_order_training_min_margin_shift": -0.024194717407226562,
+                "gate_rows": 2,
+                "up_rows": 8,
+                "codes": 91,
+                "train_pair": {
+                  "matches": 224,
+                  "baseline_both_correct": 15,
+                  "candidate_both_correct": 17,
+                  "gains": 2,
+                  "losses": 0,
+                  "by_arm": {
+                    "a": {
+                      "matches": 56,
+                      "baseline_both_correct": 4,
+                      "candidate_both_correct": 4,
+                      "gains": 0,
+                      "losses": 0
+                    },
+                    "b": {
+                      "matches": 56,
+                      "baseline_both_correct": 5,
+                      "candidate_both_correct": 6,
+                      "gains": 1,
+                      "losses": 0
+                    },
+                    "c": {
+                      "matches": 56,
+                      "baseline_both_correct": 3,
+                      "candidate_both_correct": 4,
+                      "gains": 1,
+                      "losses": 0
+                    },
+                    "d": {
+                      "matches": 56,
+                      "baseline_both_correct": 3,
+                      "candidate_both_correct": 3,
+                      "gains": 0,
+                      "losses": 0
+                    }
+                  }
+                },
+                "train_pass": false
+              }
+            },
+            {
+              "status": "ALL_GUARDS_AND_TARGETS_PASS",
+              "solver_rounds": [
+                {
+                  "round": 1,
+                  "active_guards": 128,
+                  "milp_status": 1,
+                  "milp_success": false,
+                  "incumbent": true,
+                  "added_guards": 0,
+                  "minimum_guard_slack": 0.00016344420157266004,
+                  "minimum_target_slack": 0.0009765542133369776,
+                  "violated_guards": 0,
+                  "violated_targets": 0,
+                  "selected": 90
+                }
+              ],
+              "minimum_linear_guard_slack": 0.00016344420157266004,
+              "minimum_linear_target_slack": 0.0009765542133369776,
+              "rounded": {
+                "target_min_margins": [
+                  0.03577423095703125,
+                  0.02356719970703125
+                ],
+                "fitting_positive_floor_violations": {
+                  "053": 1,
+                  "044": 0,
+                  "028": 1,
+                  "039": 0
+                },
+                "reserved_checks": [
+                  {
+                    "opposite_order_arm": "b",
+                    "rotation": 0,
+                    "prior_correct": 1,
+                    "prior_correct_losses": 0,
+                    "maximum_correct_vs_counterpart_erosion": 0.0,
+                    "passed": true
+                  },
+                  {
+                    "opposite_order_arm": "c",
+                    "rotation": 0,
+                    "prior_correct": 1,
+                    "prior_correct_losses": 0,
+                    "maximum_correct_vs_counterpart_erosion": 0.0,
+                    "passed": true
+                  }
+                ],
+                "opposite_order_training_min_margin_shift": -0.026630401611328125,
+                "gate_rows": 2,
+                "up_rows": 8,
+                "codes": 90,
+                "train_pair": {
+                  "matches": 224,
+                  "baseline_both_correct": 15,
+                  "candidate_both_correct": 18,
+                  "gains": 3,
+                  "losses": 0,
+                  "by_arm": {
+                    "a": {
+                      "matches": 56,
+                      "baseline_both_correct": 4,
+                      "candidate_both_correct": 4,
+                      "gains": 0,
+                      "losses": 0
+                    },
+                    "b": {
+                      "matches": 56,
+                      "baseline_both_correct": 5,
+                      "candidate_both_correct": 6,
+                      "gains": 1,
+                      "losses": 0
+                    },
+                    "c": {
+                      "matches": 56,
+                      "baseline_both_correct": 3,
+                      "candidate_both_correct": 4,
+                      "gains": 1,
+                      "losses": 0
+                    },
+                    "d": {
+                      "matches": 56,
+                      "baseline_both_correct": 3,
+                      "candidate_both_correct": 4,
+                      "gains": 1,
+                      "losses": 0
+                    }
+                  }
+                },
+                "train_pass": false
+              }
+            }
+          ]
+        }
+      ],
+      "held_pair": {
+        "matches": 384,
+        "baseline_both_correct": 42,
+        "candidate_both_correct": 42,
+        "gains": 0,
+        "losses": 0,
+        "by_arm": {
+          "a": {
+            "matches": 96,
+            "baseline_both_correct": 10,
+            "candidate_both_correct": 10,
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "matches": 96,
+            "baseline_both_correct": 11,
+            "candidate_both_correct": 11,
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "matches": 96,
+            "baseline_both_correct": 10,
+            "candidate_both_correct": 10,
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "matches": 96,
+            "baseline_both_correct": 11,
+            "candidate_both_correct": 11,
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      },
+      "ordinary_states": 90,
+      "ordinary_winner_changes": 0,
+      "held_choice_changes": 0
+    },
+    "096": {
+      "grouped_receipt_sha256": "253c156a7ebd3eee0462019ca470e6baf7fc9fcf9ac15989627e2e53663daac1",
+      "source_sha256": "dd1248898c963d43be5009fe21f31f789a40e3c899b5c6faa94c685b691e4550",
+      "plan_sha256": "ba3cc54e25826e0b9587e30baef9de5408c2f59d7b85e73a10088997ea39c75e",
+      "input_binding_sha256": "43d7f0e65ee6f02c6ae857036292a36c6471ec351c337f35bb73e934f25844b9",
+      "retained_training_supports": {
+        "0": [],
+        "1": [],
+        "2": [
+          1
+        ]
+      },
+      "relaxed_bound_receipt_sha256": "b14d5bd6f0b48792606be5bf3b2b77f19fd1f32d33e7df36c73ae27abe019c51",
+      "settings": {
+        "milp_seconds_per_round": 30,
+        "initial_working_set_guards": 128,
+        "rounded_attempts": 5,
+        "trust_region_column_changes": 18
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "fit_receipt_sha256": "1d600094ac07c18e682b98a2326026821f72a5356e24ac90574aa6c47b1afd36",
+          "attempts": []
+        },
+        {
+          "fold": 1,
+          "fit_receipt_sha256": "b427e813c1fa4727efad0e3b5cf0f1d0dccf8cd9c1983c080b35dc44bd1a94e0",
+          "attempts": []
+        },
+        {
+          "fold": 2,
+          "fit_receipt_sha256": "b7d74362543d1e787df8caf635582855b9d564c4fd6386b14ec2cfee75487343",
+          "attempts": [
+            {
+              "status": "ALL_GUARDS_AND_TARGETS_PASS",
+              "solver_rounds": [
+                {
+                  "round": 1,
+                  "active_guards": 128,
+                  "milp_status": 1,
+                  "milp_success": false,
+                  "incumbent": true,
+                  "added_guards": 0,
+                  "minimum_guard_slack": 5.4668722410070036e-05,
+                  "minimum_target_slack": 0.0004996404280149247,
+                  "violated_guards": 0,
+                  "violated_targets": 0,
+                  "selected": 91
+                }
+              ],
+              "minimum_linear_guard_slack": 5.4668722410070036e-05,
+              "minimum_linear_target_slack": 0.0004996404280149247,
+              "rounded": {
+                "target_min_margins": [
+                  0.004619598388671875,
+                  0.012128829956054688
+                ],
+                "fitting_positive_floor_violations": {
+                  "053": 2,
+                  "044": 1,
+                  "028": 0,
+                  "039": 0
+                },
+                "reserved_checks": [
+                  {
+                    "opposite_order_arm": "b",
+                    "rotation": 0,
+                    "prior_correct": 1,
+                    "prior_correct_losses": 0,
+                    "maximum_correct_vs_counterpart_erosion": 0.0,
+                    "passed": true
+                  },
+                  {
+                    "opposite_order_arm": "c",
+                    "rotation": 0,
+                    "prior_correct": 1,
+                    "prior_correct_losses": 0,
+                    "maximum_correct_vs_counterpart_erosion": 0.0,
+                    "passed": true
+                  }
+                ],
+                "opposite_order_training_min_margin_shift": -0.024194717407226562,
+                "gate_rows": 2,
+                "up_rows": 8,
+                "codes": 91,
+                "train_pair": {
+                  "matches": 224,
+                  "baseline_both_correct": 15,
+                  "candidate_both_correct": 17,
+                  "gains": 2,
+                  "losses": 0,
+                  "by_arm": {
+                    "a": {
+                      "matches": 56,
+                      "baseline_both_correct": 4,
+                      "candidate_both_correct": 4,
+                      "gains": 0,
+                      "losses": 0
+                    },
+                    "b": {
+                      "matches": 56,
+                      "baseline_both_correct": 5,
+                      "candidate_both_correct": 6,
+                      "gains": 1,
+                      "losses": 0
+                    },
+                    "c": {
+                      "matches": 56,
+                      "baseline_both_correct": 3,
+                      "candidate_both_correct": 4,
+                      "gains": 1,
+                      "losses": 0
+                    },
+                    "d": {
+                      "matches": 56,
+                      "baseline_both_correct": 3,
+                      "candidate_both_correct": 3,
+                      "gains": 0,
+                      "losses": 0
+                    }
+                  }
+                },
+                "train_pass": false
+              },
+              "trust_region_column_changes": null
+            },
+            {
+              "status": "NO_MILP_INCUMBENT",
+              "solver_rounds": [
+                {
+                  "round": 1,
+                  "active_guards": 128,
+                  "milp_status": 1,
+                  "milp_success": false,
+                  "incumbent": false,
+                  "added_guards": 0
+                }
+              ],
+              "minimum_linear_guard_slack": null,
+              "minimum_linear_target_slack": null
+            }
+          ]
+        }
+      ],
+      "held_pair": {
+        "matches": 384,
+        "baseline_both_correct": 42,
+        "candidate_both_correct": 42,
+        "gains": 0,
+        "losses": 0,
+        "by_arm": {
+          "a": {
+            "matches": 96,
+            "baseline_both_correct": 10,
+            "candidate_both_correct": 10,
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "matches": 96,
+            "baseline_both_correct": 11,
+            "candidate_both_correct": 11,
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "matches": 96,
+            "baseline_both_correct": 10,
+            "candidate_both_correct": 10,
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "matches": 96,
+            "baseline_both_correct": 11,
+            "candidate_both_correct": 11,
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      },
+      "ordinary_states": 90,
+      "ordinary_winner_changes": 0,
+      "held_choice_changes": 0
+    }
+  },
+  "scope": "Retry the only support with a positive fully constrained training-only LP bound. No guard relaxation. Rounded local repair uses fitting-state errors only.",
+  "checkpoint_written": false,
+  "official_fresh_or_proof_data_used": false
+}

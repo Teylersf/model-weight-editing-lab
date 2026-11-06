@@ -1,0 +1,595 @@
+{
+  "schema": "published-pilot092-attention-routing-v1",
+  "exact_pins": {
+    "analysis_source_sha256": "c715f366c6d0f574b6e217fbd4dce38009096baeee88fdaf9d4e7b0e421a7ffd",
+    "statistics_source_sha256": "b0dc0476d1901ecddcb5641233a4f7a524df67b13e13c86cfb5eea704631950c",
+    "analysis_plan_sha256": "f8a7846cabee41fe9420064d36bce6d3939f822aa4335565f15d476ea6076316",
+    "label_free_routing_receipt_sha256": "18760372232b763745050c76adba2112430bfd1782c37f54e71d4058c327f09f",
+    "label_free_option_metrics_sha256": "97574d31eb58ced8c01fb66eeb4783e75a0f82d8ee68299a5d2370b5ad20f989",
+    "scored_receipt_sha256": "bccabd56eafe67b84eba1a098c4552f13ba04e21b2bd06227742fc0038c30019",
+    "parent_model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+    "native_capture_plan_sha256": "0bd0ba03df43dcf5a8910092414b97ce7f34432e80ffd27cb737376f5f519c7f",
+    "native_capture_receipt_sha256": "b947e0700ed753f3311def9d921b890ebd477c62dd1eca94f81acf622f4d317e",
+    "verified_capture_receipt_sha256": "2aafade9851580a1f8c7d363d77c7201c0486d88afa8fc1bce005c97c9dbec4d",
+    "archived_output_parity_receipt_sha256": "4d2f5638fb9bf3efd87c1aef1a1802b76138afd31c24b1d7375435cd53e06305",
+    "native_binary_sha256": "2b2763a2fdce44de71de4d81ff26420826eed7f4b119b96ebf1228b537e735b4",
+    "label_free_selection_sha256": "59f7a97093faf6ca65fc91a075d350679ec2a88da6a8a4b04518f03749b06e80",
+    "label_free_schedule_sha256": "628411bd4203f93295d6a8091a2438059d2fd9e1dc592cd265ec07dbb57aab69",
+    "trajectory_manifest_sha256": "48e4c4f727e8e6c7de8190510d33a7daabd640d77212dfb2d0deee3116399158",
+    "option_span_receipt_sha256": "388c9cfc4dacc92525155cce8f40a3b3a8939486dd097f09f818e4b3c1ce5160",
+    "option_span_ledger_sha256": "320ed54ad33e0eacbba2ec1b96ba4263c21e6f8d57c545d06b198bd797ce416a",
+    "authored_grade_sha256": "10bc93edbb8e50959fa61839e83c6f2d3fcf55776b6e1124a0d391759f68c661",
+    "native_attention_artifact_sha256": {
+      "q_59": "e8e9c6540a90916fc9ac637ff16d5cdb5146eaf2e5f68c8af5ea7813b4f78262",
+      "k_59": "4d73bcc6425b402ddb0882b616f82e33b87585c73ceda426a7405092d6437048",
+      "v_59": "f0a10396bfe7053b89f43789d32907a508e9e40b219e157191e20b099da629af",
+      "pregate_59": "a2018cb2a98f71efe7c81f0bedee4ef9702559ecfeb3c03b7d54b77927c491f5",
+      "q_63": "552e3edca761bb62f59c6d21856c3bbc2ce493915968b668313f75e59f462bbb",
+      "k_63": "7eda8676081b6b1c1423a995ce4a179978d868afa2e88d9bb6435ba41a495641",
+      "v_63": "b2ea1c880fbe4e073f8d5579cbfb88e418d2698e81e2a159fac885f435035f26",
+      "pregate_63": "88b92d2c1016e2f14cd6c0227b6130710a4f1d3c52a21fc1e89356b6070d26a7"
+    }
+  },
+  "scope": {
+    "terminal_prompts": 384,
+    "authored_condition_pairs": 12,
+    "families": 12,
+    "states_per_split": 192,
+    "families_per_split": 6,
+    "logical_causal_prefix_tokens_per_layer": 132032,
+    "attention_layers": [
+      59,
+      63
+    ],
+    "answer_labels_opened_after_routing_receipt_sealed": true,
+    "outputs": "The captured query is the final prompt token before the first answer. The scored stage joins already archived A–D logits.",
+    "benchmark_fresh_proof_or_transfer_data_used": false,
+    "checkpoint_written": false,
+    "cpu_analysis_only": true
+  },
+  "reconstruction": {
+    "method": "Reconstruct Float64 softmax over the complete causal prefix using native post-RoPE query and F16 cache keys. Multiply by captured values within each six-query-head group and compare against the corresponding native pre-gate vector.",
+    "option_mass": "Mean over query heads of full-prefix probability on the tokens whose byte spans overlap an option body. Endpoint mass uses the final overlapping token.",
+    "value_alignment": "Signed projection of one option's weighted value contribution onto the captured pre-gate vector, normalized by its squared norm.",
+    "by_layer": {
+      "59": {
+        "all_heads_validated": 9216,
+        "max_absolute_error": 0.05911781748657319,
+        "max_normalized_rms_error": 0.0009554321684523443
+      },
+      "63": {
+        "all_heads_validated": 9216,
+        "max_absolute_error": 0.03029343274683427,
+        "max_normalized_rms_error": 0.0005536703823026713
+      }
+    }
+  },
+  "routing_controls": {
+    "method": "Two-way fixed effects control for each prompt and the same semantic option within each condition variant. Adjust for log body token count and log-one-plus query midpoint token distance. Separately compare same-demo, same-rotation reversal on fixed A and C slots and swapped B and D slots.",
+    "pooled_mean_mass_on_four_option_bodies": {
+      "59": 0.042322215753494596,
+      "63": 0.0454979867813049
+    },
+    "confirmation_displayed_letter_adjusted_log_mass": {
+      "59": {
+        "contrast_order": [
+          "A_minus_D",
+          "B_minus_D",
+          "C_minus_D"
+        ],
+        "coefficient": [
+          -0.4490189277141805,
+          -0.13390762704634984,
+          -0.1403211983651995
+        ],
+        "family_bootstrap_95_percentile": [
+          [
+            -7.059573245353394,
+            3.7383058090772248
+          ],
+          [
+            -5.128532796881097,
+            2.9682061145907457
+          ],
+          [
+            -3.4201304995659245,
+            1.956701502459853
+          ]
+        ],
+        "effective_rank": 5,
+        "column_scaled_condition_number": 29.599512308891317
+      },
+      "63": {
+        "contrast_order": [
+          "A_minus_D",
+          "B_minus_D",
+          "C_minus_D"
+        ],
+        "coefficient": [
+          -2.8744541174719536,
+          -2.2331440725569145,
+          -1.785314485915696
+        ],
+        "family_bootstrap_95_percentile": [
+          [
+            -5.83095575020938,
+            -0.4804912640510824
+          ],
+          [
+            -4.4671920785068,
+            -0.4691990787690887
+          ],
+          [
+            -3.281542754666104,
+            -0.5557776926563881
+          ]
+        ],
+        "effective_rank": 5,
+        "column_scaled_condition_number": 29.599512308891317
+      }
+    },
+    "same_demo_same_rotation_reversal_log_mass": {
+      "confirmation": {
+        "59": {
+          "A_to_A": {
+            "observations": 96,
+            "families": 6,
+            "equal_family_mean": -0.0035247745897125093,
+            "family_bootstrap_95_percentile": [
+              -0.06535238313985786,
+              0.048848569705455334
+            ],
+            "exact_two_sided_family_signflip_p": 1.0,
+            "positive_family_means": 4,
+            "negative_family_means": 2,
+            "zero_family_means": 0
+          },
+          "C_to_C": {
+            "observations": 96,
+            "families": 6,
+            "equal_family_mean": 0.0806344687145261,
+            "family_bootstrap_95_percentile": [
+              -0.1265174878673735,
+              0.3532333352706039
+            ],
+            "exact_two_sided_family_signflip_p": 0.6875,
+            "positive_family_means": 3,
+            "negative_family_means": 3,
+            "zero_family_means": 0
+          },
+          "B_to_D": {
+            "observations": 96,
+            "families": 6,
+            "equal_family_mean": -0.12361180428650043,
+            "family_bootstrap_95_percentile": [
+              -0.7208766980956369,
+              0.2527460637011831
+            ],
+            "exact_two_sided_family_signflip_p": 1.0,
+            "positive_family_means": 5,
+            "negative_family_means": 1,
+            "zero_family_means": 0
+          },
+          "D_to_B": {
+            "observations": 96,
+            "families": 6,
+            "equal_family_mean": 0.03517541724593538,
+            "family_bootstrap_95_percentile": [
+              -0.3038590040700664,
+              0.5476726976367458
+            ],
+            "exact_two_sided_family_signflip_p": 0.96875,
+            "positive_family_means": 2,
+            "negative_family_means": 4,
+            "zero_family_means": 0
+          }
+        },
+        "63": {
+          "A_to_A": {
+            "observations": 96,
+            "families": 6,
+            "equal_family_mean": -0.002442844611021474,
+            "family_bootstrap_95_percentile": [
+              -0.05250239211727146,
+              0.03887427505033336
+            ],
+            "exact_two_sided_family_signflip_p": 0.9375,
+            "positive_family_means": 4,
+            "negative_family_means": 2,
+            "zero_family_means": 0
+          },
+          "C_to_C": {
+            "observations": 96,
+            "families": 6,
+            "equal_family_mean": 0.12077582829035427,
+            "family_bootstrap_95_percentile": [
+              -0.08321816736716421,
+              0.3296320390242153
+            ],
+            "exact_two_sided_family_signflip_p": 0.375,
+            "positive_family_means": 4,
+            "negative_family_means": 2,
+            "zero_family_means": 0
+          },
+          "B_to_D": {
+            "observations": 96,
+            "families": 6,
+            "equal_family_mean": 0.5426109655845822,
+            "family_bootstrap_95_percentile": [
+              0.024334953998427795,
+              0.9962576528459236
+            ],
+            "exact_two_sided_family_signflip_p": 0.125,
+            "positive_family_means": 5,
+            "negative_family_means": 1,
+            "zero_family_means": 0
+          },
+          "D_to_B": {
+            "observations": 96,
+            "families": 6,
+            "equal_family_mean": -0.6255809322890927,
+            "family_bootstrap_95_percentile": [
+              -1.1582486504250429,
+              -0.09385894629892376
+            ],
+            "exact_two_sided_family_signflip_p": 0.09375,
+            "positive_family_means": 1,
+            "negative_family_means": 5,
+            "zero_family_means": 0
+          }
+        }
+      },
+      "pooled": {
+        "59": {
+          "A_to_A": {
+            "observations": 192,
+            "families": 12,
+            "equal_family_mean": 0.05423267135527091,
+            "family_bootstrap_95_percentile": [
+              -0.003825449081274927,
+              0.11913781554444548
+            ],
+            "exact_two_sided_family_signflip_p": 0.1142578125,
+            "positive_family_means": 9,
+            "negative_family_means": 3,
+            "zero_family_means": 0
+          },
+          "C_to_C": {
+            "observations": 192,
+            "families": 12,
+            "equal_family_mean": 0.14221381828130156,
+            "family_bootstrap_95_percentile": [
+              0.001306361849317873,
+              0.2952867486693925
+            ],
+            "exact_two_sided_family_signflip_p": 0.099609375,
+            "positive_family_means": 8,
+            "negative_family_means": 4,
+            "zero_family_means": 0
+          },
+          "B_to_D": {
+            "observations": 192,
+            "families": 12,
+            "equal_family_mean": -0.11960808479878678,
+            "family_bootstrap_95_percentile": [
+              -0.4667488202086515,
+              0.14032490789098256
+            ],
+            "exact_two_sided_family_signflip_p": 0.5390625,
+            "positive_family_means": 7,
+            "negative_family_means": 5,
+            "zero_family_means": 0
+          },
+          "D_to_B": {
+            "observations": 192,
+            "families": 12,
+            "equal_family_mean": 0.07953384850666899,
+            "family_bootstrap_95_percentile": [
+              -0.12900936286691633,
+              0.3455185641676428
+            ],
+            "exact_two_sided_family_signflip_p": 0.62841796875,
+            "positive_family_means": 7,
+            "negative_family_means": 5,
+            "zero_family_means": 0
+          }
+        },
+        "63": {
+          "A_to_A": {
+            "observations": 192,
+            "families": 12,
+            "equal_family_mean": 0.031383364165572136,
+            "family_bootstrap_95_percentile": [
+              -0.00888188595669128,
+              0.06513579718956831
+            ],
+            "exact_two_sided_family_signflip_p": 0.140625,
+            "positive_family_means": 9,
+            "negative_family_means": 3,
+            "zero_family_means": 0
+          },
+          "C_to_C": {
+            "observations": 192,
+            "families": 12,
+            "equal_family_mean": 0.14001055101976276,
+            "family_bootstrap_95_percentile": [
+              0.008301013734605688,
+              0.2852582975023254
+            ],
+            "exact_two_sided_family_signflip_p": 0.08935546875,
+            "positive_family_means": 8,
+            "negative_family_means": 4,
+            "zero_family_means": 0
+          },
+          "B_to_D": {
+            "observations": 192,
+            "families": 12,
+            "equal_family_mean": 0.40245855023032745,
+            "family_bootstrap_95_percentile": [
+              0.1288946846167155,
+              0.6657163644548509
+            ],
+            "exact_two_sided_family_signflip_p": 0.01611328125,
+            "positive_family_means": 10,
+            "negative_family_means": 2,
+            "zero_family_means": 0
+          },
+          "D_to_B": {
+            "observations": 192,
+            "families": 12,
+            "equal_family_mean": -0.40340548173685153,
+            "family_bootstrap_95_percentile": [
+              -0.7183160654708589,
+              -0.1292881773302132
+            ],
+            "exact_two_sided_family_signflip_p": 0.0166015625,
+            "positive_family_means": 2,
+            "negative_family_means": 10,
+            "zero_family_means": 0
+          }
+        }
+      }
+    }
+  },
+  "scored_condition_crossover": {
+    "method": "Within the same displayed placement, compute half the change across variants in the gap between the two condition-correct options. Positive values point toward the option indicated by the condition. All four option body lengths and midpoint query distances matched in every aligned comparison.",
+    "primary_measure": "Confirmation log attention mass, separately for each prespecified layer.",
+    "subsets": {
+      "discovery": {
+        "aligned_pairs": 96,
+        "exact_all_option_token_geometry_pairs": 96,
+        "native_both_correct_pairs": 8,
+        "by_layer": {
+          "59": {
+            "log_mass": {
+              "observations": 96,
+              "families": 6,
+              "equal_family_mean": 0.05517711923180215,
+              "family_bootstrap_95_percentile": [
+                -0.005551945141178678,
+                0.11672013240513386
+              ],
+              "exact_two_sided_family_signflip_p": 0.1875,
+              "positive_family_means": 4,
+              "negative_family_means": 2,
+              "zero_family_means": 0
+            },
+            "value_aligned": {
+              "observations": 96,
+              "families": 6,
+              "equal_family_mean": 0.00047909268976811564,
+              "family_bootstrap_95_percentile": [
+                -6.901243721426182e-06,
+                0.0009943834395215337
+              ],
+              "exact_two_sided_family_signflip_p": 0.21875,
+              "positive_family_means": 4,
+              "negative_family_means": 2,
+              "zero_family_means": 0
+            }
+          },
+          "63": {
+            "log_mass": {
+              "observations": 96,
+              "families": 6,
+              "equal_family_mean": 0.0989955192458638,
+              "family_bootstrap_95_percentile": [
+                0.014481143118854846,
+                0.18416380273205604
+              ],
+              "exact_two_sided_family_signflip_p": 0.125,
+              "positive_family_means": 4,
+              "negative_family_means": 2,
+              "zero_family_means": 0
+            },
+            "value_aligned": {
+              "observations": 96,
+              "families": 6,
+              "equal_family_mean": 0.0013379577212684131,
+              "family_bootstrap_95_percentile": [
+                0.00026691195093109823,
+                0.0024445733990938762
+              ],
+              "exact_two_sided_family_signflip_p": 0.09375,
+              "positive_family_means": 5,
+              "negative_family_means": 1,
+              "zero_family_means": 0
+            }
+          }
+        },
+        "archived_output_choice_logit_crossover": {
+          "observations": 96,
+          "families": 6,
+          "equal_family_mean": 0.42713888982931775,
+          "family_bootstrap_95_percentile": [
+            -0.008159175515174866,
+            1.0375803808371227
+          ],
+          "exact_two_sided_family_signflip_p": 0.1875,
+          "positive_family_means": 4,
+          "negative_family_means": 2,
+          "zero_family_means": 0
+        }
+      },
+      "confirmation": {
+        "aligned_pairs": 96,
+        "exact_all_option_token_geometry_pairs": 96,
+        "native_both_correct_pairs": 11,
+        "by_layer": {
+          "59": {
+            "log_mass": {
+              "observations": 96,
+              "families": 6,
+              "equal_family_mean": 0.03713508918840317,
+              "family_bootstrap_95_percentile": [
+                -0.06846425838980387,
+                0.14454910683043398
+              ],
+              "exact_two_sided_family_signflip_p": 0.5625,
+              "positive_family_means": 4,
+              "negative_family_means": 2,
+              "zero_family_means": 0
+            },
+            "value_aligned": {
+              "observations": 96,
+              "families": 6,
+              "equal_family_mean": 2.80782021276158e-05,
+              "family_bootstrap_95_percentile": [
+                -0.0013236110425494843,
+                0.0015806235554803652
+              ],
+              "exact_two_sided_family_signflip_p": 0.90625,
+              "positive_family_means": 4,
+              "negative_family_means": 2,
+              "zero_family_means": 0
+            }
+          },
+          "63": {
+            "log_mass": {
+              "observations": 96,
+              "families": 6,
+              "equal_family_mean": 0.07207315508997304,
+              "family_bootstrap_95_percentile": [
+                -0.03924232915620409,
+                0.2111182638818941
+              ],
+              "exact_two_sided_family_signflip_p": 0.4375,
+              "positive_family_means": 4,
+              "negative_family_means": 2,
+              "zero_family_means": 0
+            },
+            "value_aligned": {
+              "observations": 96,
+              "families": 6,
+              "equal_family_mean": 0.0011126621322604623,
+              "family_bootstrap_95_percentile": [
+                -0.0006830333025187151,
+                0.003688146268118624
+              ],
+              "exact_two_sided_family_signflip_p": 0.59375,
+              "positive_family_means": 4,
+              "negative_family_means": 2,
+              "zero_family_means": 0
+            }
+          }
+        },
+        "archived_output_choice_logit_crossover": {
+          "observations": 96,
+          "families": 6,
+          "equal_family_mean": 0.7663139700889587,
+          "family_bootstrap_95_percentile": [
+            0.16521125535170236,
+            1.6452766563743353
+          ],
+          "exact_two_sided_family_signflip_p": 0.0625,
+          "positive_family_means": 5,
+          "negative_family_means": 1,
+          "zero_family_means": 0
+        }
+      },
+      "pooled": {
+        "aligned_pairs": 192,
+        "exact_all_option_token_geometry_pairs": 192,
+        "native_both_correct_pairs": 19,
+        "by_layer": {
+          "59": {
+            "log_mass": {
+              "observations": 192,
+              "families": 12,
+              "equal_family_mean": 0.04615610421010266,
+              "family_bootstrap_95_percentile": [
+                -0.014068308955976754,
+                0.11139069772443394
+              ],
+              "exact_two_sided_family_signflip_p": 0.1982421875,
+              "positive_family_means": 8,
+              "negative_family_means": 4,
+              "zero_family_means": 0
+            },
+            "value_aligned": {
+              "observations": 192,
+              "families": 12,
+              "equal_family_mean": 0.00025358544594786573,
+              "family_bootstrap_95_percentile": [
+                -0.0005341725236857985,
+                0.0010985350368056643
+              ],
+              "exact_two_sided_family_signflip_p": 0.5810546875,
+              "positive_family_means": 8,
+              "negative_family_means": 4,
+              "zero_family_means": 0
+            }
+          },
+          "63": {
+            "log_mass": {
+              "observations": 192,
+              "families": 12,
+              "equal_family_mean": 0.08553433716791842,
+              "family_bootstrap_95_percentile": [
+                0.01459935244893703,
+                0.16915347482844792
+              ],
+              "exact_two_sided_family_signflip_p": 0.0576171875,
+              "positive_family_means": 8,
+              "negative_family_means": 4,
+              "zero_family_means": 0
+            },
+            "value_aligned": {
+              "observations": 192,
+              "families": 12,
+              "equal_family_mean": 0.0012253099267644375,
+              "family_bootstrap_95_percentile": [
+                0.00010292923960612349,
+                0.0026500502208618745
+              ],
+              "exact_two_sided_family_signflip_p": 0.07958984375,
+              "positive_family_means": 9,
+              "negative_family_means": 3,
+              "zero_family_means": 0
+            }
+          }
+        },
+        "archived_output_choice_logit_crossover": {
+          "observations": 192,
+          "families": 12,
+          "equal_family_mean": 0.5967264299591383,
+          "family_bootstrap_95_percentile": [
+            0.1730529135093093,
+            1.1744824340566993
+          ],
+          "exact_two_sided_family_signflip_p": 0.0087890625,
+          "positive_family_means": 9,
+          "negative_family_means": 3,
+          "zero_family_means": 0
+        }
+      }
+    }
+  },
+  "interpretation": [
+    "Layer 63 shows a placement association after the specified adjustment. Reversing other options also changes average attention on a fixed slot, so the control does not isolate a causal effect of position.",
+    "Neither layer's primary confirmation log-mass interval excludes zero. The pooled layer 63 association is suggestive. The archived next-choice logit crossover is more consistently positive across the pooled families.",
+    "Family-cluster bootstrap intervals and exact sign flips use six families in confirmation and twelve pooled. Rotations are repeated presentations. The sign-flip calculation assumes exchangeable signs across family means and no cross-test correction was applied.",
+    "The diagnostic does not estimate post-answer attention, final projected attention contribution to a choice logit, or the effect of a weight edit.",
+    "The hashes bind the frozen inputs and local analysis artifacts. The raw prompts, token ledgers, activations and per-presentation measurements are not included with this aggregate evidence."
+  ]
+}

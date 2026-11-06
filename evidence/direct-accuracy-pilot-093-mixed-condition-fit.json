@@ -1,0 +1,233 @@
+{
+  "schema": "published-pilot093-mixed-condition-fit-v1",
+  "source_sha256": "7d4011362d40bd9b0c08e82339b473ee232562a200d859acda085f55de0bc04e",
+  "plan_sha256": "1d8b8b2e9cbda7d22d4ae62bfe888bbd33d050ef6d5728ebab6896b4c08314e3",
+  "grouped_receipt_sha256": "47ab8b90b82a726330903a4c2918657fb67c2f68099d311c6a8f35c923b95cbf",
+  "input_binding_sha256": "21c7805d3598e1df6ed50f36d5e081f1a6ce513bba78b42a36c5c29d3adb411c",
+  "fit": "Use up to two combinations of two distinct 053 training families, with 12 hard target margins, opposite-order training sibling margins and one legal endpoint per coordinate. Require both branches to move. Evaluate joint rounded SwiGLU, all four authored cohort guards and ordinary winners.",
+  "reserved_controls": "Reserve all 053 rotation-zero states before support selection, objective, solve and reanchor. Check the two same-demo opposite-order reserved siblings and score held families after all fits are frozen.",
+  "bounds": {
+    "branch_rows": 8,
+    "coordinates_per_row": 24,
+    "levels": [
+      -4,
+      -2,
+      -1,
+      1,
+      2,
+      4
+    ],
+    "linear_target": 0.016,
+    "exact_target": 0.008,
+    "allowed_training_counterpart_erosion": 0.018,
+    "allowed_reserved_counterpart_erosion": 0.05
+  },
+  "independent_mixed_fixture": {
+    "schema": "windows-pilot093-mixed-native-fixture-audit-v1",
+    "passed": true,
+    "fit_source_sha256": "7d4011362d40bd9b0c08e82339b473ee232562a200d859acda085f55de0bc04e",
+    "native_mixed_fixture_sha256": "370c93e31c79f87e189628486024595be354d4fd77d2e1a38141fa6ac913502e",
+    "source_sha256": "2fedca2d78fd36b185a955c137dbe52cb4452e13b72623ce71e20df117b61df7",
+    "states": 4,
+    "first_attempt_absolute_residual_bound": 2e-05,
+    "max_residual_spacing": 3.0517578125e-05,
+    "values_exceeding_original_residual_bound": 3,
+    "residual_tolerance": "2e-5 plus one ULP at the larger of the two binary32 spacings",
+    "exact_packed_rows": 3,
+    "max_abs_residual_difference": 3.0517578125e-05,
+    "max_abs_hidden_difference": 3.814697265625e-06,
+    "max_abs_choice_logit_difference": 1.9073486328125e-06,
+    "max_abs_joint_minus_sum_residual": 3.0517578125e-05,
+    "matching_choice_argmax": 4,
+    "gpu_used": false,
+    "weights_written": false,
+    "receipt_sha256": "283c3e0c13c255a073d39d16d444ce1d1e31def4113a733ec805e44fc82e5370"
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "10b5f9b111ef560e8a98db18d9b0f3582ad1066152bf34df89287d17afaaef54",
+      "supported_053_pairs": 6,
+      "distinct_training_families": 2,
+      "verified_gate_rows": 8,
+      "verified_up_rows": 8,
+      "searches": [
+        {
+          "coordinate_groups": 384,
+          "alternatives": 2215,
+          "opposite_order_train_constraints": 12,
+          "attempts": [
+            {
+              "status": "ACTIVE_SYSTEM_INFEASIBLE",
+              "rounds": [
+                {
+                  "round": 1,
+                  "active_guards": 64,
+                  "milp_status": 2,
+                  "milp_success": false,
+                  "incumbent": false,
+                  "added_guards": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "2937727e20537082a7843b6b890c86d61a4689bfcb60f4a594305e9e20783e03",
+      "supported_053_pairs": 8,
+      "distinct_training_families": 3,
+      "verified_gate_rows": 8,
+      "verified_up_rows": 8,
+      "searches": [
+        {
+          "coordinate_groups": 384,
+          "alternatives": 2202,
+          "opposite_order_train_constraints": 12,
+          "attempts": [
+            {
+              "status": "ACTIVE_SYSTEM_INFEASIBLE",
+              "rounds": [
+                {
+                  "round": 1,
+                  "active_guards": 64,
+                  "milp_status": 2,
+                  "milp_success": false,
+                  "incumbent": false,
+                  "added_guards": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "coordinate_groups": 384,
+          "alternatives": 2185,
+          "opposite_order_train_constraints": 12,
+          "attempts": [
+            {
+              "status": "ACTIVE_SYSTEM_INFEASIBLE",
+              "rounds": [
+                {
+                  "round": 1,
+                  "active_guards": 64,
+                  "milp_status": 2,
+                  "milp_success": false,
+                  "incumbent": false,
+                  "added_guards": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "6c86011a26fd97e27d193f00d06e44072a711a5697b81bfe3aa55eb80f1fe9b2",
+      "supported_053_pairs": 5,
+      "distinct_training_families": 3,
+      "verified_gate_rows": 8,
+      "verified_up_rows": 8,
+      "searches": [
+        {
+          "coordinate_groups": 384,
+          "alternatives": 2181,
+          "opposite_order_train_constraints": 12,
+          "attempts": [
+            {
+              "status": "ACTIVE_SYSTEM_INFEASIBLE",
+              "rounds": [
+                {
+                  "round": 1,
+                  "active_guards": 64,
+                  "milp_status": 2,
+                  "milp_success": false,
+                  "incumbent": false,
+                  "added_guards": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "coordinate_groups": 384,
+          "alternatives": 2176,
+          "opposite_order_train_constraints": 12,
+          "attempts": [
+            {
+              "status": "NO_MILP_INCUMBENT",
+              "rounds": [
+                {
+                  "round": 1,
+                  "active_guards": 64,
+                  "milp_status": 1,
+                  "milp_success": false,
+                  "incumbent": true,
+                  "added_guards": 1,
+                  "minimum_guard_slack": -0.0015976097361427993,
+                  "minimum_target_slack": 0.0003679366660133132,
+                  "violated_guards": 1,
+                  "violated_targets": 0,
+                  "selected": 99
+                },
+                {
+                  "round": 2,
+                  "active_guards": 65,
+                  "milp_status": 1,
+                  "milp_success": false,
+                  "incumbent": false,
+                  "added_guards": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "held_pair": {
+    "matches": 384,
+    "baseline_both_correct": 42,
+    "candidate_both_correct": 42,
+    "gains": 0,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "held_ordinary_states": 90,
+  "ordinary_winner_changes": 0,
+  "held_choice_changes": 0,
+  "checkpoint_written": false,
+  "official_fresh_proof_or_held_outcomes_used_for_fitting": false
+}

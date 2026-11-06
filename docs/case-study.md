@@ -892,3 +892,31 @@ The fixed linear readout used family-held folds and the same ridge rule at every
 ## Pilot 090 with label-free option token positions
 
 The pinned tokenizer reconstructed all **768** archived authored prompts byte for byte. All **3,072** test option bodies ended at token boundaries. The final query was the colon in the blank answer marker. Option D always ended **three tokens** before that query, while A ended **18–67** tokens before it. This fixed distance difference is a control for future attention comparisons. Blocks **59** and **63** use full attention and can support a probe that compares the same option content across rotations. [Option position and attention geometry audit](../evidence/direct-accuracy-pilot-090-option-token-positions.json)
+
+## Pilot 091 with read-only full-prefix attention capture
+
+The label-free schedule kept one whole condition pair from each of **12** authored families, including all variants, rotations, and prompt arms. CUDA captured the final prompt query, complete causal key and value caches, and pre-gate attention outputs at blocks **59** and **63** for all **384** prompts. The first smoke stopped at an unrecognized CUDA scheduler alias for the value-cache index. A sibling build verified the alias, device buffer, index layout, and exact slot values, then passed both the smoke and full capture.
+
+All **1,536** choice logits, **24,576** top-64 entries, and the sampled terminal and feed-forward tensors matched Pilot 088 bit for bit. An independent audit checked 96 attention slices across all 12 families. The launcher verified all **3,072** per-state attention slice hashes. [Native capture, exact parity, and independent audits](../evidence/direct-accuracy-pilot-091-native-attention-capture.json)
+
+## Pilot 092 with placement and condition attention controls
+
+CPU softmax over the complete captured prefix reproduced the pre-gate value mixtures for all **18,432** query-head outputs within the frozen tolerance. The largest normalized RMS error was **0.096%** at block 59 and **0.055%** at block 63. The label-free analysis was sealed before it read the authored grades.
+
+In pooled same-demo reversal comparisons at block 63, moving the same option content from B to D increased its log attention mass by **0.403** on average, while moving from D to B decreased it by **0.403**. The confirmation-only intervals were wider. Across **96** confirmation comparisons that changed the mathematical condition at fixed option placement, length, and distance, the correct-versus-counterpart crossover was **+0.037** at block 59 and **+0.072** at block 63. Both family-cluster intervals included zero. These pre-answer comparisons describe routing. Causal effects need a controlled intervention on the same prompts. [Frozen routing and scored contrasts](../evidence/direct-accuracy-pilot-092-attention-routing.json)
+
+## Pilot 093 with joint gate and up edits across option orders
+
+The mixed fit searched legal IQ4_XS gate codes and Q4_K up codes together. It required recovery of two training condition pairs from distinct families and bounded counterpart-margin erosion on their opposite-order training presentations. The rotation-zero presentations were reserved before fitting for independent checks. An independent four-state fixture matched all three archived CUDA row hashes and all four choice winners. Its maximum choice-logit difference was **1.91 × 10⁻⁶**. Three residual values exceeded the initial absolute bound, so the replay audit recorded a per-value allowance of one binary32 spacing and retained the original error measurements.
+
+Four of five shortlisted searches were infeasible in the integer solver, and the fifth reached its time limit without an incumbent. The grouped run therefore retained the parent in every fold. Held paired accuracy was **42/384**, and all **90** ordinary winners matched the parent. These outcomes cover the shortlisted packed coordinates. [Sealed fit and native fixture comparison](../evidence/direct-accuracy-pilot-093-mixed-condition-fit.json)
+
+## Pilot 094 with upper bounds on the mixed supports
+
+The training-only audit relaxed each one-hot integer code choice to a fractional endpoint mixture and optimized the worst of the twelve target margins. All five supports could clear the targets before adding protections. Three could clear them with the prior-winner floors. Only one could clear them with the opposite-order margin guards, and requiring both branches left that support's best minimum slack at **+0.0815** logits. A negative relaxed upper bound rules out the corresponding integer support under the same linear constraints. The positive bound left one support worth retrying. [All twenty linear optima](../evidence/direct-accuracy-pilot-094-mixed-support-bounds.json)
+
+## Pilots 095 and 096 with rounded repair on the viable mixed support
+
+The longer search retained the only support with a positive fully constrained relaxation bound. Two integer proposals passed every linear guard. The second changed **90** codes across **two gate** and **eight up** rows. In rounded training replay, both target pairs passed with minimum margins of **+0.0358** and **+0.0236** logits. The training pair count rose from **15 to 18 out of 224**. Both independently reserved opposite-order checks passed. Two protected fitting margins and one opposite-order fitting guard still failed.
+
+The next run limited each repair to 18 changes in the binary endpoint selections around its prior incumbent. Its first rounded proposal reproduced the earlier first proposal, and the first repair reached the time limit without an incumbent. Both grouped runs retained the parent in all folds and recorded **42/384** held pairs with no choice or ordinary-winner changes. [Exact training margins and solver receipts](../evidence/direct-accuracy-pilots-095-096-rounded-mixed-repair.json)

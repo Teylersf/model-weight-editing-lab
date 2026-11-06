@@ -1,0 +1,67 @@
+{
+  "schema": "published-pilot091-readonly-attention-capture-v1",
+  "capture_receipt_sha256": "2aafade9851580a1f8c7d363d77c7201c0486d88afa8fc1bce005c97c9dbec4d",
+  "model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "plan_sha256": "0bd0ba03df43dcf5a8910092414b97ce7f34432e80ffd27cb737376f5f519c7f",
+  "selection_sha256": "59f7a97093faf6ca65fc91a075d350679ec2a88da6a8a4b04518f03749b06e80",
+  "option_position_ledger_sha256": "320ed54ad33e0eacbba2ec1b96ba4263c21e6f8d57c545d06b198bd797ce416a",
+  "native_binary_sha256": "2b2763a2fdce44de71de4d81ff26420826eed7f4b119b96ebf1228b537e735b4",
+  "native_build_sha256": "0838a6e4836b5b6867f3354a3cbb5afa7b29ab74213f5188cf71665766c60e31",
+  "native_receipt_sha256": "b947e0700ed753f3311def9d921b890ebd477c62dd1eca94f81acf622f4d317e",
+  "cpu_preflight_sha256": "82b6c2c43c89532f7fe2fa64cd6f5b7ef9881f9022c3c3a87f6298d806361508",
+  "baseline_parity_sha256": "4d2f5638fb9bf3efd87c1aef1a1802b76138afd31c24b1d7375435cd53e06305",
+  "independent_scope_audit_sha256": "fd22f373c347d8d0f916f2231152b2be55c1df73d5fa0321a4ccf1d90d77ba78",
+  "first_attempt": "The first four-prompt smoke stopped at an unrecognized CUDA scheduler alias for the value-cache index. The sibling build verifies the exact alias form, device buffer, index layout and slot values before accepting it.",
+  "corrected_smoke": {
+    "schema": "windows-pilot091-smoke-pregate-audit-v1",
+    "source_sha256": "c56297604864d8a84993d9367a0433e6085a9a28ae0b92006dab4166891eaa2d",
+    "smoke_capture_receipt_sha256": "e49af3a83fcb7606c5b2dac67f9d850d2877518d52d573f319c907051a5ca5fa",
+    "states": 4,
+    "verified_layers": {
+      "59": {
+        "heads_reconstructed": 96,
+        "max_absolute_error": 0.030217148785261827,
+        "max_normalized_rms_error": 0.0005654645437441543
+      },
+      "63": {
+        "heads_reconstructed": 96,
+        "max_absolute_error": 0.02483061933057229,
+        "max_normalized_rms_error": 0.0005536703823027334
+      }
+    },
+    "labels_opened": false,
+    "gpu_used": false,
+    "receipt_sha256": "a48ce4a70b6f5c462fed4510c5e4aefda0f694169a2df3139ee7e7f3cd9f07a1"
+  },
+  "attention_layers": [
+    59,
+    63
+  ],
+  "capture_checks": {
+    "states": 384,
+    "attention_layers": [
+      59,
+      63
+    ],
+    "full_prefix_tokens_per_layer": 132032,
+    "exact_per_state_attention_hashes": 3072,
+    "query_pre_gate_bytes_per_state": 24576,
+    "kv_bytes_per_prefix_token": {
+      "k_59": 2048,
+      "v_59": 2048,
+      "k_63": 2048,
+      "v_63": 2048
+    }
+  },
+  "states": 384,
+  "families": 12,
+  "exact_binary32_choice_logits": 1536,
+  "exact_binary32_top64_entries": 24576,
+  "exact_native_full_vocabulary_winners": 384,
+  "exact_sampled_terminal_and_ffn_tensors": 8,
+  "independent_exact_finite_attention_slice_hashes": 96,
+  "sample_scope": "Complete condition variants, four option rotations and four arms, one independently authored condition pair from each of 12 families. Selection sealed without model scores.",
+  "diagnostic_only": true,
+  "labels_opened": false,
+  "weights_written": false
+}
