@@ -1076,3 +1076,9 @@ The restored full-vocabulary logit digests matched on all 16 states. An independ
 The search measured **320** substitutions and ran **32** full exact training replays. The best 360-code recipe moved both objectives below their parent caps and preserved all **60** ordinary winners. It reduced the number of missed math margins from **seven to six** and lowered their total shortfall from **0.17505 to 0.12903** logits. The six remaining margins kept this recipe at the training gate.
 
 An independent read-only stream rebuilt all **16** declared IQ4_XS and Q4_K rows, checked their packed digests, and computed the expected whole-checkpoint digest from the unchanged spans and rebuilt rows. [Exact recipe, full-stream check, and bounded search results](../evidence/direct-accuracy-pilot-130-sparse-novel-substitutions.json)
+
+## Pilot 131 with measured compound feed-forward substitutions
+
+The search measured changes with three to five coordinated substitutions and evaluated **46** shortlisted proposals against the full training checks. All 46 met both objective caps and preserved the 60 ordinary winners and 480 ordinary floors. The best proposal cut the remaining signed math violations from **six to three** and their total shortfall from **0.12903 to 0.06527** logits. The largest shortfall was **0.04821** logits.
+
+The three remaining floors prevented qualification. An independent read-only stream reconstructed **358** code changes across 16 rows and verified the predicted whole-checkpoint digest. [Packed recipe, exact checks, and objective values](../evidence/direct-accuracy-pilot-131-compound-ffn-substitutions.json)
