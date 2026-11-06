@@ -813,8 +813,34 @@ In the grouped CPU replay, both-correct held pairs rose from **42/384 to 43/384*
 
 The exact 347-code overlay replayed all **542** held states from Pilot 073's edited fold on CUDA. The CPU and CUDA agreed on every one of the **512** math choices, including all three regressions, and all **30** ordinary winners. The largest choice-logit difference was **0.000834**. CUDA reproduced the paired gain from **15 to 16 out of 128** in the edited fold. This run was diagnostic and produced no checkpoint. [Native and CPU comparison](../evidence/direct-accuracy-pilot-074-native-rejected-fold-replay.json)
 
+## Pilot 075 with upstream capture on two older authored cohorts
+
+The pinned CUDA reader captured **576** states from Pilot 028 and **144** from Pilot 039. Independent checks matched all **2,880** archived A–D logit bit patterns, every full-vocabulary winner, every top-64 ledger, and all five tensors available for byte-for-byte comparison. The audit preserved each source's original family assignments. Five exact family labels had different fold assignments across the two sources, so a later joint fit had to exclude a label from training whenever either source held it out. [Native capture and independent audit](../evidence/direct-accuracy-pilot-075-older-upstream-capture.json)
+
 ## Pilot 076 with Q8 rounding-cell guards
 
 Pilot 076 used a positive winner margin floor and required exact preservation of selected Q8 blocks on the closest training winners. Its integer solve included linear constraints for the block maximum, signed rounding boundaries and FP16 scale. A synthetic check preserved codes and scale on **200** points inside the constructed cells. Exact rounded CPU replay remained the gate for actual packed proposals.
 
 Of **29** exact packed proposals, **17** recovered a training pair. One proposal preserved every selected block and recovered no training pairs. The held evaluation kept the parent weights in all folds. [Frozen cell guards and packed replay](../evidence/direct-accuracy-pilot-076-q8-cell-up.json)
+
+## Pilot 077 with lower-conflict training targets
+
+The search evaluated **29** packed up-projection proposals. Nine recovered at least one training pair, and each lost a previously correct training choice. The closest proposal gained one pair, lost one choice, and crossed six signed margin floors. The rule for this run required every correct training choice to survive before head compensation. All three folds kept the parent weights. [Training search and held checks](../evidence/direct-accuracy-pilots-077-080-lower-conflict-joint.json)
+
+## Pilot 078 with four authored training cohorts
+
+The fit used condition pairs from 053 and same-letter pairs from 044, with additional choice guards from 028 and 039. Any exact family label held out in one source was excluded from all four training sources. One fold passed the training gates with **96** code changes across **12** up-projection rows. Its both-correct training pairs rose from **27 to 30**, with all four cohorts preserving previously correct choices and their required positive margins.
+
+In grouped held replay, both-correct pairs rose from **42/384 to 44/384** with no pair losses. Individual choices still regressed across the four sources. Pilot 053 went from **327 to 328** correct with two losses, 044 from **384 to 380** with nine losses, 028 stayed at **342** with one loss, and 039 stayed at **55** with zero losses. All **90** ordinary winners stayed fixed. The candidate failed the held choice gate. These are repeated authored development folds. No official or fresh evaluation ran. [Four-corpus fit and held outcomes](../evidence/direct-accuracy-pilot-078-four-corpus-up.json)
+
+## Pilot 079 with same-letter activation swaps
+
+This CPU diagnostic swapped feed-forward activations between matched 044 contexts that had the same correct answer letter. It varied the demonstrations or the option order while holding the other factor fixed. The zero-swap control reproduced all **3,072** A–D logits. Across **768** option-order recipient states, swapping the gate moved accuracy from **384 to 391** correct and moved both-correct pairs from **133 to 152 out of 384**. Swapping the up branch moved the counts to **333** and **97**, respectively. Swapping both branches moved them to **365** and **116**. The gate intervention gained 39 individual choices and lost 32.
+
+Where donor content and donor letter predicted different changes, the up branch followed donor content in **26/34** changed cases and donor letter in **1/34**. The gate followed donor letter in **21/38** and donor content in **9/38**. The remaining changes followed neither. Demonstration swaps yielded **382** correct for up, **371** for gate, and **375** for both. This intervention used captured native activations as anchors and changed no weights. [Swap controls and aggregate outcomes](../evidence/direct-accuracy-pilot-079-same-letter-context-swap.json)
+
+## Pilot 080 with head compensation after a temporary training loss
+
+The follow-up allowed the head solver to receive an intermediate proposal with one training choice loss and up to ten signed-margin deficits. Seven packed head-code changes across four output rows repaired all **1,461** protected signed training margins for one fold. The joint edit improved the fold's both-correct training pairs from **27 to 28** and preserved every correct training choice.
+
+Grouped held pairs rose from **42/384 to 43/384**. Individual choices still regressed. Pilot 053 gained three and lost one, moving from **327 to 329**. Pilot 044 gained five and lost four, moving from **384 to 385**. All **90** ordinary winners held, including coverage of **348** answer-token comparisons outside the archived top 64. The joint edit failed the held choice gate and produced no checkpoint. [Joint fit and held checks](../evidence/direct-accuracy-pilots-077-080-lower-conflict-joint.json)

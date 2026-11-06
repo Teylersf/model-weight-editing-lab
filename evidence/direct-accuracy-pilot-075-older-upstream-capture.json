@@ -1,0 +1,207 @@
+{
+  "schema": "published-pilot075-older-authored-upstream-v1",
+  "cohorts": {
+    "028": {
+      "independent_audit_sha256": "7c65cba914d6e68503658e65999e4175b07e2ff1208351436b209b2ce9a49f84",
+      "passed": true,
+      "pilot": "028",
+      "capture_receipt_sha256": "8423830dfe7446feb04e2a20cd11547002bc8c3acdfaf7234b929558595aee63",
+      "native_receipt_sha256": "ffcfc9eed3f95b7835de36ea57af2d13e1015f1ba6965e2f72139a206a23a1f6",
+      "source_sha256": "563072849c11cfe90e32bdaae269c93b05424da8a2f96372c7bce61698ce4b60",
+      "preflight_sha256": "f6761a722b8f4ccd7e74ded9052aa3113667d2255055c8a135a8cf28bcb1b0e9",
+      "plan_sha256": "cf8a1d9e4b3b3c7c2e90a3e7146fe7e185403def14ac1a5b9cdae1c2d4d48e69",
+      "independent_key_audit_sha256": "489afde665fc9ed6f2a6c95f8e0137f3fc5538b1a891cde8a8ac8ffd8ddaeb65",
+      "ordered_states": 576,
+      "source_local_whole_families_verified": true,
+      "original_fold_counts": {
+        "0": 192,
+        "1": 192,
+        "2": 192
+      },
+      "shared_exact_family_labels": [
+        {
+          "subject": "college_mathematics",
+          "family": "abstract_algebra",
+          "source_local_folds": {
+            "039": 0,
+            "053": 1
+          }
+        },
+        {
+          "subject": "college_mathematics",
+          "family": "complex_analysis",
+          "source_local_folds": {
+            "044": 1,
+            "053": 2
+          }
+        },
+        {
+          "subject": "college_mathematics",
+          "family": "differential_equations",
+          "source_local_folds": {
+            "039": 1,
+            "053": 0
+          }
+        },
+        {
+          "subject": "college_mathematics",
+          "family": "probability",
+          "source_local_folds": {
+            "039": 2,
+            "053": 1
+          }
+        },
+        {
+          "subject": "high_school_mathematics",
+          "family": "algebra_and_functions",
+          "source_local_folds": {
+            "039": 1,
+            "053": 2
+          }
+        }
+      ],
+      "cross_source_same_topic_holdout": false,
+      "new_partition_selected": false,
+      "full_native_parent_sha256_pre_post_verified": true,
+      "labels_passed_to_native": false,
+      "checkpoint_written": false,
+      "model_opened_by_auditor": false,
+      "native_invoked_by_auditor": false,
+      "gpu_used_by_auditor": false,
+      "held_case_identifiers_exported": false,
+      "native_capture_artifact_sha256": {
+        "a": "b8a7db1f9946b1c4bc624661ac82dbd2ac15920e4cb07dfc189df8754caaa532",
+        "p": "a7d698310f68f6456021c788de34a62b36093d71f113372a670825f0398b7fa7",
+        "r": "901392740c23b31869c2b31b58c5b2ab8549330717285aaec9d0299459396939",
+        "h": "9981321720a45cf0330a0413c2144e3f2aab3660d8b8c77113f945b64e6cab29",
+        "ffn_input": "e1a5632afc6fa537d063d60d5a71dc9d26c5b6a1ba4526d8e326477142e241ad",
+        "ffn_gate": "d2cd6b34a1256fb08848be17a028b7973bca0283bdb9b9048f5860a3f8bb3886",
+        "ffn_up": "fb8477e308d0a59d6120a7f1f5f2f5ce302dd62aec83007d6b28f48b80c67c5c",
+        "gamma": "b3ba4f3231a21b1559f52115d3bffc7c28dcd03e4be22df269ef97a3f5d4bfbf",
+        "states": "b690c5ac6862271843d3f7df66fd277b5cc591df88bd17e26872d7ebeeeb1586"
+      },
+      "original_tensors_byte_identical": [
+        "a",
+        "p",
+        "r",
+        "h",
+        "gamma"
+      ],
+      "exact_binary32_choice_logits": 2304,
+      "choice_logits_sha256": "2e76f02838e469fce839527cb42c079952c6e501c40ceecd34f68fb795c25fb9",
+      "exact_binary32_choice_logits_by_original_fold": {
+        "0": 768,
+        "1": 768,
+        "2": 768
+      },
+      "exact_full_vocabulary_winners": 576,
+      "exact_top64_binary32_ledgers": 576,
+      "independently_verified_swiglu_max_abs_error": 6.0622884632266505e-06,
+      "independently_verified_swiglu_max_tolerance_fraction": 0.038354476267602425,
+      "independently_verified_rms_max_abs_error": 6.967289905901453e-06
+    },
+    "039": {
+      "independent_audit_sha256": "4f1e2d3c375f62457da1e7ab8bc8e7554efba8a30874e9dc2ef89c6fdf2258e5",
+      "passed": true,
+      "pilot": "039",
+      "capture_receipt_sha256": "257872b567b35920b1daf1beaa4cbf8d522cc99a02a179a50b1079db2fdf7d4f",
+      "native_receipt_sha256": "4dd7f9f76dc1c21626588da1f03065d44747f65873b6e1059a7f609bf5faeea4",
+      "source_sha256": "563072849c11cfe90e32bdaae269c93b05424da8a2f96372c7bce61698ce4b60",
+      "preflight_sha256": "f6761a722b8f4ccd7e74ded9052aa3113667d2255055c8a135a8cf28bcb1b0e9",
+      "plan_sha256": "6e46e9aa4802c4d71bcc03c646220e3f5a11a91c7cc11b23eab31d3f6e138c5d",
+      "independent_key_audit_sha256": "c4d49308b051b3ba820cda78cba8ec9d5994876ab50b3bbd27094593edeb4560",
+      "ordered_states": 144,
+      "source_local_whole_families_verified": true,
+      "original_fold_counts": {
+        "0": 48,
+        "1": 48,
+        "2": 48
+      },
+      "shared_exact_family_labels": [
+        {
+          "subject": "college_mathematics",
+          "family": "abstract_algebra",
+          "source_local_folds": {
+            "039": 0,
+            "053": 1
+          }
+        },
+        {
+          "subject": "college_mathematics",
+          "family": "complex_analysis",
+          "source_local_folds": {
+            "044": 1,
+            "053": 2
+          }
+        },
+        {
+          "subject": "college_mathematics",
+          "family": "differential_equations",
+          "source_local_folds": {
+            "039": 1,
+            "053": 0
+          }
+        },
+        {
+          "subject": "college_mathematics",
+          "family": "probability",
+          "source_local_folds": {
+            "039": 2,
+            "053": 1
+          }
+        },
+        {
+          "subject": "high_school_mathematics",
+          "family": "algebra_and_functions",
+          "source_local_folds": {
+            "039": 1,
+            "053": 2
+          }
+        }
+      ],
+      "cross_source_same_topic_holdout": false,
+      "new_partition_selected": false,
+      "full_native_parent_sha256_pre_post_verified": true,
+      "labels_passed_to_native": false,
+      "checkpoint_written": false,
+      "model_opened_by_auditor": false,
+      "native_invoked_by_auditor": false,
+      "gpu_used_by_auditor": false,
+      "held_case_identifiers_exported": false,
+      "native_capture_artifact_sha256": {
+        "a": "79d216af1eb060e9757e932c12fbff22fef15ccfcdb643efde19bfdd5f9d30a2",
+        "p": "c91cbce2068048b3dd37be98020dbf0f1b344325562df1b1d723006de2d5499f",
+        "r": "7dbf9c33ee3e81b0b25a6837a3b81cd4245354886b70290165a53d34210f4421",
+        "h": "50df337ad74b9d2497b056f19ee1aabb11be8f7a2e4ce4a26f3f15aeeb7851c6",
+        "ffn_input": "4766dd6768428a0d57a4f1d6a4f9b801168953edd6d456b3162697f585434f57",
+        "ffn_gate": "00128164db7de7a59fde55fed18595b6790152274f4133c3861a0d587af4f367",
+        "ffn_up": "d346790a4041d7618ce74b4b9aba08e0caa56c49e865cd2002376a0f845d1f2a",
+        "gamma": "b3ba4f3231a21b1559f52115d3bffc7c28dcd03e4be22df269ef97a3f5d4bfbf",
+        "states": "c4b58ef8d0813315e9c699830c362f59f55b76169ac417c999e4564d87f3a490"
+      },
+      "original_tensors_byte_identical": [
+        "a",
+        "p",
+        "r",
+        "h",
+        "gamma"
+      ],
+      "exact_binary32_choice_logits": 576,
+      "choice_logits_sha256": "48456dc062d9615d734fea3263f1aa4abd2fd75946183e87bcbcfc22438f2f82",
+      "exact_binary32_choice_logits_by_original_fold": {
+        "0": 192,
+        "1": 192,
+        "2": 192
+      },
+      "exact_full_vocabulary_winners": 144,
+      "exact_top64_binary32_ledgers": 144,
+      "independently_verified_swiglu_max_abs_error": 6.413971988195044e-06,
+      "independently_verified_swiglu_max_tolerance_fraction": 0.03663118562820189,
+      "independently_verified_rms_max_abs_error": 5.415287517962497e-06
+    }
+  },
+  "binary_sha256": "8a3d985c24ed686f5edf350d843930082467d9bfb2901517eb167ba672e21eef",
+  "loader_source_sha256": "563072849c11cfe90e32bdaae269c93b05424da8a2f96372c7bce61698ce4b60",
+  "adapter_source_sha256": "688a70cb73598c806787cab501db5a62b54cb1579474b496677a49914e954a7c",
+  "scope": "Exact original independently authored 028/039 paths. Capture preserves source-local fold assignments; shared topic names do not imply joint cross-source holdout."
+}
