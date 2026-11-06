@@ -1,0 +1,84 @@
+{
+  "schema": "published-pilot062-up-block-gain-v1",
+  "status": "no_qualifying_edit",
+  "method": "An adjacent positive finite FP16 change to the Q4_K block gain d alters the dot-product term while leaving dmin, packed scales and nibbles unchanged. Exact repacking and CPU replay score the condition-sensitive up response.",
+  "fit_source_sha256": "87b771e7fde20251bf55fd4a7a35ce6411d33faef0c35e0ac62c28c34c085c76",
+  "frozen_plan_sha256": "8522872cd95302c1d22e2a66a51649be8739731e4b0a829a5d88ee31d7fb9243",
+  "fit_input_binding_sha256": "2e5e89126bf8f923e016aa4498f05184c8cd255e99ee2519a4b1e002e2f89bf2",
+  "grouped_report_sha256": "857fda3cf76483a05fbe8961dd1da4740bb229f80027a5822a0ab07b3f1f7259",
+  "folds": [
+    {
+      "held_fold": 0,
+      "fit_receipt_sha256": "cd76b46c145ba5a8e106785a5cd72e1619a6cf1dd2e3f37f1e3b238cd8ab2f60",
+      "legal_gain_moves_shortlisted": 104,
+      "maximum_up_response_fraction_of_local_unit_nibble_peak": 0.08383414014376847,
+      "cpu_q8_probes": 64,
+      "accepted_guarded_objective_steps": 6,
+      "paired_training_gain_probes": 0,
+      "maximum_half_blocks_in_accepted_step": 13,
+      "frozen_rows": 0
+    },
+    {
+      "held_fold": 1,
+      "fit_receipt_sha256": "a8095dd625b6d118e693942ef8f8a58d732e19a93692feadb0f63f1bc236d520",
+      "legal_gain_moves_shortlisted": 93,
+      "maximum_up_response_fraction_of_local_unit_nibble_peak": 0.10821805164260982,
+      "cpu_q8_probes": 54,
+      "accepted_guarded_objective_steps": 4,
+      "paired_training_gain_probes": 0,
+      "maximum_half_blocks_in_accepted_step": 5,
+      "frozen_rows": 0
+    },
+    {
+      "held_fold": 2,
+      "fit_receipt_sha256": "808e04d886b11f42140d39c8ecf620086a0bbab6803d4c1f36efee54914632b3",
+      "legal_gain_moves_shortlisted": 89,
+      "maximum_up_response_fraction_of_local_unit_nibble_peak": 0.08361980371989819,
+      "cpu_q8_probes": 42,
+      "accepted_guarded_objective_steps": 4,
+      "paired_training_gain_probes": 0,
+      "maximum_half_blocks_in_accepted_step": 24,
+      "frozen_rows": 0
+    }
+  ],
+  "held_053_paired": {
+    "matches": 384,
+    "baseline_both_correct": 42,
+    "candidate_both_correct": 42,
+    "gains": 0,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "ordinary_states": 90,
+  "ordinary_winner_changes": 0,
+  "checkpoint_written": false
+}

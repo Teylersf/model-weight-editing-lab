@@ -1,0 +1,439 @@
+{
+  "schema": "published-pilot061-compensating-packed-up-v1",
+  "status": "both_held_gates_failed",
+  "fit_source_sha256": "784d505f4dfd69ad50c5b574bc877c45382860b682c5b77fe14bb4c6b6b358b2",
+  "frozen_plan_sha256": "31b3e05fbdf61b6073346a1ef52a07d7876fa35e43947979378d37cb93b675f3",
+  "grouped_report_sha256": "02b2a66c052a5b4b9ff8f6752dc895b89f77a8b9047e9ee4995ed9d3158cff0f",
+  "run_log_sha256": "cf5a0a1fcfef3abb72205eb3f53096d3cb875ee90eba8ca3b2f32cdf8da40dfd",
+  "input_sha256": {
+    "baseline_053": "10bc93edbb8e50959fa61839e83c6f2d3fcf55776b6e1124a0d391759f68c661",
+    "capture_053": "722001c8ee9f1995bcf609452883798343a02dcc8dad69e2886bdeae2a1ba42e",
+    "ordinary_058": "3b6979579e32f7d5ad7368a83b8fe21883619e8faf4fcfcdea3ce3ff16baddad"
+  },
+  "exact_training_trials": {
+    "singles": 1269,
+    "composites": 536
+  },
+  "qualifying_training_composites_by_fold": {
+    "signed_85pct": [
+      27,
+      27,
+      0
+    ],
+    "strictly_positive": [
+      163,
+      136,
+      7
+    ]
+  },
+  "fold_1_strict_passing_composites_with_a_signed_floor_violating_component": 19,
+  "lanes": {
+    "signed_85pct": {
+      "passed": false,
+      "held_choices": {
+        "rows": 768,
+        "before": 327,
+        "after": 328,
+        "gains": 2,
+        "losses": 1
+      },
+      "held_053_paired": {
+        "matches": 384,
+        "baseline_both_correct": 42,
+        "candidate_both_correct": 42,
+        "gains": 0,
+        "losses": 0,
+        "by_arm": {
+          "a": {
+            "matches": 96,
+            "baseline_both_correct": 10,
+            "candidate_both_correct": 10,
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "matches": 96,
+            "baseline_both_correct": 11,
+            "candidate_both_correct": 11,
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "matches": 96,
+            "baseline_both_correct": 10,
+            "candidate_both_correct": 10,
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "matches": 96,
+            "baseline_both_correct": 11,
+            "candidate_both_correct": 11,
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      },
+      "held_choice_ties": 0,
+      "held_ordinary_states": 90,
+      "held_ordinary_binary32_winner_changes": 0,
+      "held_original_signed_floor_violations": 5,
+      "held_positive_floor_violations": 1,
+      "binary32_choice_argmax_parity": true,
+      "folds": [
+        {
+          "fold": 0,
+          "fit_receipt_sha256": "7d8375206a8708b7199d55489eed7124e97b2f2f7ea3053638bcc270305815d2",
+          "changed_codes": 3,
+          "held_paired": {
+            "matches": 128,
+            "baseline_both_correct": 15,
+            "candidate_both_correct": 15,
+            "gains": 0,
+            "losses": 0,
+            "by_arm": {
+              "a": {
+                "matches": 32,
+                "baseline_both_correct": 4,
+                "candidate_both_correct": 4,
+                "gains": 0,
+                "losses": 0
+              },
+              "b": {
+                "matches": 32,
+                "baseline_both_correct": 5,
+                "candidate_both_correct": 5,
+                "gains": 0,
+                "losses": 0
+              },
+              "c": {
+                "matches": 32,
+                "baseline_both_correct": 3,
+                "candidate_both_correct": 3,
+                "gains": 0,
+                "losses": 0
+              },
+              "d": {
+                "matches": 32,
+                "baseline_both_correct": 3,
+                "candidate_both_correct": 3,
+                "gains": 0,
+                "losses": 0
+              }
+            }
+          },
+          "held_individual_losses": 0,
+          "held_ordinary": {
+            "states": 30,
+            "archived_top64_winner_changes": 0,
+            "binary32_archived_top64_winner_changes": 0,
+            "min_archived_top64_winner_margin": 0.022795063496232615
+          }
+        },
+        {
+          "fold": 1,
+          "fit_receipt_sha256": "8b8ff2a47343c6b84be422c0df68563b17764f05233ba0e413c0505276859cb1",
+          "changed_codes": 3,
+          "held_paired": {
+            "matches": 128,
+            "baseline_both_correct": 5,
+            "candidate_both_correct": 5,
+            "gains": 0,
+            "losses": 0,
+            "by_arm": {
+              "a": {
+                "matches": 32,
+                "baseline_both_correct": 0,
+                "candidate_both_correct": 0,
+                "gains": 0,
+                "losses": 0
+              },
+              "b": {
+                "matches": 32,
+                "baseline_both_correct": 0,
+                "candidate_both_correct": 0,
+                "gains": 0,
+                "losses": 0
+              },
+              "c": {
+                "matches": 32,
+                "baseline_both_correct": 2,
+                "candidate_both_correct": 2,
+                "gains": 0,
+                "losses": 0
+              },
+              "d": {
+                "matches": 32,
+                "baseline_both_correct": 3,
+                "candidate_both_correct": 3,
+                "gains": 0,
+                "losses": 0
+              }
+            }
+          },
+          "held_individual_losses": 1,
+          "held_ordinary": {
+            "states": 30,
+            "archived_top64_winner_changes": 0,
+            "binary32_archived_top64_winner_changes": 0,
+            "min_archived_top64_winner_margin": 0.61990522225733
+          }
+        },
+        {
+          "fold": 2,
+          "fit_receipt_sha256": "e0dc7f179a642794519e696f335e359645f630ae6b9c2b4aeab9ddcbd03a0e3c",
+          "changed_codes": 0,
+          "held_paired": {
+            "matches": 128,
+            "baseline_both_correct": 22,
+            "candidate_both_correct": 22,
+            "gains": 0,
+            "losses": 0,
+            "by_arm": {
+              "a": {
+                "matches": 32,
+                "baseline_both_correct": 6,
+                "candidate_both_correct": 6,
+                "gains": 0,
+                "losses": 0
+              },
+              "b": {
+                "matches": 32,
+                "baseline_both_correct": 6,
+                "candidate_both_correct": 6,
+                "gains": 0,
+                "losses": 0
+              },
+              "c": {
+                "matches": 32,
+                "baseline_both_correct": 5,
+                "candidate_both_correct": 5,
+                "gains": 0,
+                "losses": 0
+              },
+              "d": {
+                "matches": 32,
+                "baseline_both_correct": 5,
+                "candidate_both_correct": 5,
+                "gains": 0,
+                "losses": 0
+              }
+            }
+          },
+          "held_individual_losses": 0,
+          "held_ordinary": {
+            "states": 30,
+            "archived_top64_winner_changes": 0,
+            "binary32_archived_top64_winner_changes": 0,
+            "min_archived_top64_winner_margin": 0.029294967651367188
+          }
+        }
+      ]
+    },
+    "strictly_positive": {
+      "passed": false,
+      "held_choices": {
+        "rows": 768,
+        "before": 327,
+        "after": 329,
+        "gains": 5,
+        "losses": 3
+      },
+      "held_053_paired": {
+        "matches": 384,
+        "baseline_both_correct": 42,
+        "candidate_both_correct": 43,
+        "gains": 3,
+        "losses": 2,
+        "by_arm": {
+          "a": {
+            "matches": 96,
+            "baseline_both_correct": 10,
+            "candidate_both_correct": 12,
+            "gains": 2,
+            "losses": 0
+          },
+          "b": {
+            "matches": 96,
+            "baseline_both_correct": 11,
+            "candidate_both_correct": 10,
+            "gains": 0,
+            "losses": 1
+          },
+          "c": {
+            "matches": 96,
+            "baseline_both_correct": 10,
+            "candidate_both_correct": 10,
+            "gains": 1,
+            "losses": 1
+          },
+          "d": {
+            "matches": 96,
+            "baseline_both_correct": 11,
+            "candidate_both_correct": 11,
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      },
+      "held_choice_ties": 0,
+      "held_ordinary_states": 90,
+      "held_ordinary_binary32_winner_changes": 0,
+      "held_original_signed_floor_violations": 11,
+      "held_positive_floor_violations": 3,
+      "binary32_choice_argmax_parity": true,
+      "folds": [
+        {
+          "fold": 0,
+          "fit_receipt_sha256": "45d2c7abc427f4ff8376ecac89b362ac68363181f7d6a99797a5f4cedb9477a5",
+          "changed_codes": 3,
+          "held_paired": {
+            "matches": 128,
+            "baseline_both_correct": 15,
+            "candidate_both_correct": 14,
+            "gains": 1,
+            "losses": 2,
+            "by_arm": {
+              "a": {
+                "matches": 32,
+                "baseline_both_correct": 4,
+                "candidate_both_correct": 5,
+                "gains": 1,
+                "losses": 0
+              },
+              "b": {
+                "matches": 32,
+                "baseline_both_correct": 5,
+                "candidate_both_correct": 4,
+                "gains": 0,
+                "losses": 1
+              },
+              "c": {
+                "matches": 32,
+                "baseline_both_correct": 3,
+                "candidate_both_correct": 2,
+                "gains": 0,
+                "losses": 1
+              },
+              "d": {
+                "matches": 32,
+                "baseline_both_correct": 3,
+                "candidate_both_correct": 3,
+                "gains": 0,
+                "losses": 0
+              }
+            }
+          },
+          "held_individual_losses": 3,
+          "held_ordinary": {
+            "states": 30,
+            "archived_top64_winner_changes": 0,
+            "binary32_archived_top64_winner_changes": 0,
+            "min_archived_top64_winner_margin": 0.022783728950344084
+          }
+        },
+        {
+          "fold": 1,
+          "fit_receipt_sha256": "1b4d6ee7a163f0a6f2ba07faf6eb9193654beb385f01adf7488cfd018f65a77b",
+          "changed_codes": 3,
+          "held_paired": {
+            "matches": 128,
+            "baseline_both_correct": 5,
+            "candidate_both_correct": 5,
+            "gains": 0,
+            "losses": 0,
+            "by_arm": {
+              "a": {
+                "matches": 32,
+                "baseline_both_correct": 0,
+                "candidate_both_correct": 0,
+                "gains": 0,
+                "losses": 0
+              },
+              "b": {
+                "matches": 32,
+                "baseline_both_correct": 0,
+                "candidate_both_correct": 0,
+                "gains": 0,
+                "losses": 0
+              },
+              "c": {
+                "matches": 32,
+                "baseline_both_correct": 2,
+                "candidate_both_correct": 2,
+                "gains": 0,
+                "losses": 0
+              },
+              "d": {
+                "matches": 32,
+                "baseline_both_correct": 3,
+                "candidate_both_correct": 3,
+                "gains": 0,
+                "losses": 0
+              }
+            }
+          },
+          "held_individual_losses": 0,
+          "held_ordinary": {
+            "states": 30,
+            "archived_top64_winner_changes": 0,
+            "binary32_archived_top64_winner_changes": 0,
+            "min_archived_top64_winner_margin": 0.6196081984726334
+          }
+        },
+        {
+          "fold": 2,
+          "fit_receipt_sha256": "1824dec9115522c3322cd2fb69babe68fc05a83c867373cf25a0a527dcf36a90",
+          "changed_codes": 3,
+          "held_paired": {
+            "matches": 128,
+            "baseline_both_correct": 22,
+            "candidate_both_correct": 24,
+            "gains": 2,
+            "losses": 0,
+            "by_arm": {
+              "a": {
+                "matches": 32,
+                "baseline_both_correct": 6,
+                "candidate_both_correct": 7,
+                "gains": 1,
+                "losses": 0
+              },
+              "b": {
+                "matches": 32,
+                "baseline_both_correct": 6,
+                "candidate_both_correct": 6,
+                "gains": 0,
+                "losses": 0
+              },
+              "c": {
+                "matches": 32,
+                "baseline_both_correct": 5,
+                "candidate_both_correct": 6,
+                "gains": 1,
+                "losses": 0
+              },
+              "d": {
+                "matches": 32,
+                "baseline_both_correct": 5,
+                "candidate_both_correct": 5,
+                "gains": 0,
+                "losses": 0
+              }
+            }
+          },
+          "held_individual_losses": 0,
+          "held_ordinary": {
+            "states": 30,
+            "archived_top64_winner_changes": 0,
+            "binary32_archived_top64_winner_changes": 0,
+            "min_archived_top64_winner_margin": 0.028768263597157784
+          }
+        }
+      ]
+    }
+  },
+  "frozen_before_held_scoring": true,
+  "held_used_to_select_or_refit": false,
+  "checkpoint_written": false
+}

@@ -731,3 +731,25 @@ The largest difference between the predicted and observed residual change was **
 On the same 384 aligned presentations, changing the mathematical condition moved the two relevant answer logits in the intended direction **291** times. It changed which of those two answers led in the intended direction **72** times. On 30 of those 72 presentations, another option still prevented both correct answers from winning. Across the five traced activation stages, the mean relative change induced by the condition was **47–49%** of the change induced by a cyclic option rotation.
 
 A local decomposition of the two-answer logit gap estimated a mean **−0.423** contribution from the up branch, **+0.252** from the gate branch, and **+1.594** from the attention residual. The up and gate terms pointed in opposite directions on **242/384** presentations. These are local contributions on the authored pairs. The audit includes family-level uncertainty and CPU reconstruction error. [Paired effects, attribution, and limitations](../evidence/direct-accuracy-pilot-060-condition-alignment.json)
+
+## Pilot 061 with compensating packed-code changes
+
+Pilot 061 evaluated 1,269 single moves and 536 combinations on the training folds. Some combinations passed the original margin floors even when a component failed by itself. On held families, the original-floor fit gained two choices and lost one, with both-correct unchanged at **42/384**. The fit that required only a small positive margin gained five choices and lost three, with both-correct at **43/384**. Both retained the 90 ordinary winners among the archived top 64. The regressions stopped both fits before native qualification. [Frozen fold results and margin tradeoffs](../evidence/direct-accuracy-pilot-061-compensating-packed-up.json)
+
+## Pilot 062 with smaller up-projection gain steps
+
+Pilot 062 changed the FP16 `d` coefficient by one representable step in selected Q4_K blocks, holding the other block fields fixed. The largest predicted up response among shortlisted moves was **10.8%** of the local unit-nibble peak. Fourteen of 160 CPU proposals improved the objective while preserving the training guards. None recovered a paired training answer. The three folds froze numerical no-ops, with **42/384** both-correct on the held pairs. [Packed gain search and held results](../evidence/direct-accuracy-pilot-062-up-block-gain.json)
+
+## Pilot 063 with feed-forward activation swaps
+
+The CPU counterfactual replaced one or both final feed-forward branch activations with the corresponding activations from a paired state. It held the recipient's attention residual fixed and compared all four answer choices after recomputing the remaining layers. The unchanged control matched all **3,072** native choice logits bit for bit. Changes to unseen quantization boundaries and CUDA accumulation remain estimates.
+
+| Donor | Replaced activation | Correct choices out of 768 | Both correct out of 384 |
+| --- | --- | ---: | ---: |
+| Unchanged control | None | 327 | 42 |
+| Opposite condition | Up | 362 | 70 |
+| Opposite condition | Gate | 324 | 44 |
+| Opposite condition | Both | 345 | 59 |
+| Next option rotation, same condition | Up | 325 | 41 |
+
+The opposite-condition up swap recovered 44 previously missed choices and lost nine previously correct choices. It recovered 32 both-correct presentations and lost four. The swap used a paired donor activation at inference time and wrote no weights. [Intervention counts, exact parent control, and limitations](../evidence/direct-accuracy-pilot-063-ffn-interchange.json)
