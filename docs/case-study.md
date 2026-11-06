@@ -1300,3 +1300,13 @@ python examples/replay_output_mixed_edit.py --pilot 241 --parent /path/to/pilot-
 ```
 
 The native CUDA run reproduced **both protected proofs** and the same visible **282-token** cylinder solution exactly. The cylinder decoded in **6.11 seconds** versus **6.46 seconds** for Pilot 024. This is a single-case timing. [Protected generation receipt](../evidence/direct-accuracy-pilot-241-grouped-output.json)
+
+## Pilot 243 under the original archived guard limits
+
+Pilot 239 narrowed the strict integer-half search to a proposal with a single remaining exact failure. Its absolute legacy ordinary shift was **0.021028** against the **0.021** cap. Pilot 243 used that packed proposal to warm-start a 48-coordinate mixed-integer fit. Exact replay reached **+0.00749** on the new aligned pair and **+0.00939** on the original Pilot 194 eight-state target. It preserved all prior archived correct choices and ordinary winners. The absolute legacy ordinary shift was **0.02096** and the math pair midpoint shift was **0.07489**, both inside the original caps. [Exact fit and physical readback](../evidence/direct-accuracy-pilot-243-strict-grouped-output.json)
+
+The saved four-row edit changes **153 binary16 fields**, **21 four-bit codes**, and **three six-bit group minima**. Readback found **181 changed bytes**. Independent fixed-prefix replay predicted the same winner in all 647 sampled ordinary states. At the position where an edited row came closest to taking the lead, the winner margin was **0.237** for Pilot 243 and **0.278** for Pilot 194. [Packed row patch](../evidence/direct-closure-pilot-243-row-patch.json)
+
+```bash
+python examples/replay_output_mixed_edit.py --pilot 243 --parent /path/to/pilot-024.gguf
+```

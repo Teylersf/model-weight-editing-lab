@@ -16,6 +16,7 @@ CAPSULES = {
     209: ("4f746569230c4a7e7f3a7002ccfaceb1f466c2c5f70d2b3f0923d0f44a897bc2", 158, 3713, 2, 0),
     217: ("579b6fb2e4e5dca322f2af62efe3830121b5eb114554997b73de02228fd5dde2", 157, 3716, 2, 0),
     241: ("149470552bb4bf2694d90f75870b4c262ae80b208bb191df9c4309f1f5eb9220", 159, 21, 1, 3),
+    243: ("78460897d006622c79a8634bc040f7ee1c9d784384dd780fab5b9f1e516a5333", 153, 21, 1, 3),
 }
 GROUP_FIELD_INDEX = {"scale": 0, "minimum": 1}
 GROUP_COUNTS = ("changed_group_fields", "changed_group_metadata_bytes", "changed_group_metadata_bits", "changed_bits")
