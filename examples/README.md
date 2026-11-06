@@ -128,3 +128,22 @@ Expect 157 binary16 fields and 3,716 code nibbles in 3,526 changed bytes.
 The checkpoint SHA-256 is
 `efb1b2a6db298cb03f46eadebfe9f52080f860ba4635ae69464523c59c2260d8`.
 [Pilot 217 patch capsule](../evidence/direct-closure-pilot-217-row-patch.json)
+
+## Replay the Pilot 273 binary32 correction
+
+Supply one captured native stock logit vector and its normalized input, with
+the four dequantized stock rows and four absolute replacement rows in token
+order 357, 417, 351, 414. The files are little-endian binary32. The logit vector
+has 248,320 values, the input has 5,120, and each row file has 20,480.
+
+```sh
+python examples/replay_output_precision.py \
+  --stock-logits stock-logits.f32 --normalized-input result-norm.f32 \
+  --stock-rows stock-rows.f32 --replacement-rows replacement-rows.f32
+```
+
+The script reconstructs the effective Q8 input, adds the four weight
+corrections to the stock logits, and prints the corrected vector hash. To
+write the vector to a fresh path, add `--output corrected-logits.f32`. This
+replays a fixed-prefix calculation. It leaves the checkpoint on disk untouched.
+[Native parity evidence](../evidence/direct-accuracy-pilots-273-274-precision-calibration.json)
