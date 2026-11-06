@@ -1,0 +1,49 @@
+{
+  "schema": "public-direct-accuracy-pilots-227-231-generated-ordinary-replay-v1",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "authored_generation": {
+    "corpus_seal_sha256": "ca770faf9c6e5e027b88c462a607d6ec7b3e0c15bf944b353cfe026864043772",
+    "prompts": {"high_school": 10, "college": 10, "nonmath": 4},
+    "scored_answers_present": false,
+    "mode": "native greedy with no token overrides",
+    "max_generated_tokens_per_prompt": 220,
+    "generated_tokens": 4894,
+    "natural_endings": 4,
+    "limit_endings": 20,
+    "edited_row_winners_all_generated_tokens": 75,
+    "edited_row_winners_outside_fixed_stride": 65
+  },
+  "native_capture": {
+    "source_sha256": "25558c34f5be0a444a70ef329c257d512de0fa74b704bd4397408d11922b9a7c",
+    "build_receipt_sha256": "44d0c7c24a5a90a10a66577c241e90507ab6fea35f14167eb094092287a872be",
+    "generation_plan_sha256": "7701c087461c7d6dbce41eb8bbd0eb9e4e736d33bc1418229ce073630cb02631",
+    "trajectory_plan_sha256": "22e1c9af73ac502fe6f6d68b0eb5cf65d76e7ac0fa190eacca897fcd2ac77e01",
+    "capture_receipt_sha256": "ae2b90b79f69cb821716b3abab7b51e74bde0468cf1f14bc833363e4c885059c",
+    "stride": 8,
+    "always_include_final_sampled_position": true,
+    "scheduled_positions": 647,
+    "exact_native_greedy_next_token_matches": 647,
+    "edited_row_winners_at_scheduled_positions": 10,
+    "stock_only_close_edited_competition_states": 1,
+    "stock_only_close_threshold": 0.35,
+    "first_shard_reused_after_metadata_expectation_correction": true
+  },
+  "fixed_prefix_cpu_replay": {
+    "source_sha256": "153a3bac8a6f7f0b5cdde0a844ebfb444fef0edb98852c98032b14e302bfb3a7",
+    "replay_plan_sha256": "8d1740824e0faa1b41e0a4094206be1e6272b84968e25607c220c34141d5d643",
+    "receipt_sha256": "1e1fac119459a68d83fecf44674c98c674bf34a9e0fc84445a8c012fdbfdd0b3",
+    "close_ordinary_scope_sha256": "84284206394d07d7fb2b2cb22c3adcc35387a98b1ad32bd304426c0bcaa83c82",
+    "exact_stock_top_two_states": 647,
+    "exact_anchored_stock_choice_logits": 2588,
+    "native_q8_half_boundary_correction_states": 2,
+    "max_stock_decoded_residual": 2.190964551118668e-06,
+    "candidate_replays": [
+      {"pilot": 194, "winner_changes": 0, "near_winner_changes": 0, "edited_logit_abs_drift_p95": 0.09495266675949098, "edited_logit_abs_drift_max": 0.21184277534484863},
+      {"pilot": 209, "winner_changes": 0, "near_winner_changes": 0, "edited_logit_abs_drift_p95": 0.4492066621780397, "edited_logit_abs_drift_max": 0.8858051300048828},
+      {"pilot": 217, "winner_changes": 0, "near_winner_changes": 0, "edited_logit_abs_drift_p95": 0.4450817584991456, "edited_logit_abs_drift_max": 0.888885498046875}
+    ],
+    "candidate_autoregressive_trajectories_evaluated": false,
+    "development_only": true,
+    "protected_official_or_P204_inputs_opened": false
+  }
+}
