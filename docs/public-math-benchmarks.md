@@ -151,3 +151,9 @@ Pilot 028’s grouped authored tests improved both pooled measures, but matched 
 The saved four-row scale edit improved from **226/370 to 228/370** on the matched MMLU suite. It recovered two high-school answers and retained all 226 previous correct answers. Both protected proof streams and the correct natural **282-token** cylinder completion matched exactly. [Matched score](../evidence/direct-accuracy-pilot-179-provisional-matched-scale.json) · [Protected generation](../evidence/direct-accuracy-pilot-178-provisional-protected-generation.json)
 
 The separate blinded run tied at **42/96** correct trials and **2/24** problems correct in all four answer orders, with no gains or losses. The candidate therefore missed the fresh skill requirement. [Blinded evaluation](../evidence/direct-accuracy-pilot-180-blinded-fresh-scale.json)
+
+## Pilot 194 mixed packed edit
+
+Pilot 194 changes 158 binary16 scale fields and 21 four-bit codes in four answer output rows. The saved GGUF reproduced both protected proof streams exactly and naturally finished the cylinder in **282 tokens**, with the same visible solution as Pilot 024. Observed CUDA decode time for the cylinder was **6.04 seconds** versus **6.46 seconds** for the reference. This timing is for one protected case. [Exact protected replay](../evidence/direct-accuracy-pilot-195-protected-mixed-output.json) · [Saved-file readback](../evidence/direct-accuracy-pilots-194-198-mixed-output.json)
+
+The same saved file scored **229/370 (61.9%)**, up from **226/370 (61.1%)**, on the exact matched MMLU suite. High school improved from 162/270 to 165/270. College remained at 64/100. All 226 previously correct items stayed correct. The comparator verified identical ordered prompts and native settings. The saved checkpoint passed both prerequisites before the separate P181 evaluation was prepared. [Matched results and qualification hashes](../evidence/direct-accuracy-pilot-195-matched-mixed-output.json)

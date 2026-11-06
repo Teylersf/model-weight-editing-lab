@@ -205,6 +205,34 @@
           "half_lp_normalized_slack": -3.786599332275638
         }
       ]
+    },
+    {
+      "pilot": 202,
+      "receipt_sha256": "7be3c2f7d0746e835b310f1fba2de7f34ee6da56918792cb9b6a93a89e2b82b9",
+      "source_sha256": "4f278edd489ef58ff98685d076d4238c569ce8c5767c003b97b0abb664bd40cd",
+      "plan_sha256": "e1c080cee73f96c669a191cb4325993486b0a95a27dadb2d8f979ffaa9dfcb1b",
+      "trials": [
+        {
+          "scenario": 4,
+          "accepted_scale_steps": 1,
+          "weighted_loss_before": 0.016798678743768457,
+          "weighted_loss_after": 0.013194530524472127,
+          "prior_correct_losses": 1,
+          "target_margin": 0.0028018951416015625,
+          "ordinary_peak": 0.028242913100257283,
+          "signed_floor_slack": -0.00571337890625
+        },
+        {
+          "scenario": 3,
+          "accepted_scale_steps": 1,
+          "weighted_loss_before": 0.02159337262938704,
+          "weighted_loss_after": 0.016579896721247565,
+          "prior_correct_losses": 0,
+          "target_margin": 0.000934600830078125,
+          "ordinary_peak": 0.027733117660318385,
+          "signed_floor_slack": -0.008242523193359375
+        }
+      ]
     }
   ]
 }

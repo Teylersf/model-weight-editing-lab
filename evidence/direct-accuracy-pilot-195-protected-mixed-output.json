@@ -1,0 +1,30 @@
+{
+  "schema": "public-direct-accuracy-pilot-195-protected-mixed-output-v1",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "candidate_sha256": "e2bda6ca06e17d74cb46f36cb407fd99035323a297425feba04eb76048ec8d7b",
+  "plan_sha256": "da6da9a49b3b7a8b826228d7d886eb82e1fd472e0295cc84911a4ffe22e0b3e3",
+  "result_sha256": "92c13c2efb45c19734ba19626923dd608c7ff8658903640b5abc23794b2ad74c",
+  "runtime_sha256": {
+    "llama.dll": "af13ed8cb1454a80689dbd390310995b6c4b23333e096152453fe6d0fef17356",
+    "ggml.dll": "d2e63157b90c0fd15f010fb2952d032d9f3296b8406b78ff0950211cc144705b",
+    "ggml-base.dll": "200cd9b6f0a7934c2e1c85e55289d5498332713321b03e83eb2ae3da5eeb6137",
+    "ggml-cuda.dll": "85f2cb5707e6dc50c30cdcdc5c23c5e438149bb48638421d0a705866b8e31f94",
+    "ggml-cpu-x64.dll": "af7233344eec5587d531b4e875ec5bf2b1aa62c2be57b657f69cca503f0db918"
+  },
+  "source_sha256": "f87ada8af8c004649db1807e850a0ab874bf0776353e3fe53973fd403f67f814",
+  "readback_sha256": "2590e6d7d9ba8e1fca4ab7c7b1f44b30a72661c359af142e8f4b9912a151fcdb",
+  "binding_sha256": "a8276a373f1cc4d36eded6fc264a0088d2b11708e2f773ce3758dbdeaeb40495",
+  "candidate_proof_sha256": "fb4ad191a914b085493cd4ee392d38f6b6771b843df110dcd7c7ab801ce9a4fe",
+  "exact_proofs": 2,
+  "development_sha256": "da287f8a937fa3508a6843a7d34d2e6d451def782cc390818719623b78370d90",
+  "cylinder_completion_tokens": 282,
+  "cylinder_token_limit": 282,
+  "cylinder_natural_complete": true,
+  "cylinder_visible_exact": true,
+  "cylinder_visible_sha256": "b8e4c260236fab3087d4d31e6a35a6950b5a4fb48b40f8665f4415ebf05e7d7a",
+  "cylinder_candidate_decode_ms": 6041.8108,
+  "cylinder_parent_decode_ms": 6459.28,
+  "candidate_saved_checkpoint_verified_pre_post": true,
+  "gpu_backend": "CUDA0",
+  "accepted_pointer_updated": false
+}
