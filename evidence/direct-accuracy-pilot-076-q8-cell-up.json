@@ -1,0 +1,149 @@
+{
+  "schema": "published-pilot076-q8-cell-up-v1",
+  "status": "no_qualifying_edit",
+  "grouped_report_sha256": "0bf62d2f6ed54e905ee7ed12baa689e45cd4627954bd0b9b2756b885c0160baa",
+  "frozen_plan_sha256": "3ba3ea10c6faf6caa441c35a3911fe6ed3255bb11a64caba1503409391c973c1",
+  "frozen_plan": {
+    "schema": "windows-pilot076-q8-cell-up-plan-v1",
+    "source_sha256": "47924ed46205ee79749df3efb4c23a6a633fce9fe57acafa43f03e54cb833df2",
+    "replay_and_044_source_sha256": "0128de44398f8c46ab5148ee426c638c57e0da0e0258e15184b61929b804b005",
+    "same_letter_target_rule_source_sha256": "6439e97fd14a3c2f6a5aa87dc8dfa3e08a1f345599264b3f717b06b8d843c942",
+    "capture_068_sha256": "ac1844da188242446f2c6541375bd8b48144c0b97ab4c611b239c772a766d54c",
+    "captures": {
+      "c053": "722001c8ee9f1995bcf609452883798343a02dcc8dad69e2886bdeae2a1ba42e",
+      "c058": "3b6979579e32f7d5ad7368a83b8fe21883619e8faf4fcfcdea3ce3ff16baddad",
+      "b053": "10bc93edbb8e50959fa61839e83c6f2d3fcf55776b6e1124a0d391759f68c661",
+      "b044": "7fcd24a366f3750c91525f8d06149f6542c9f83589414adaaee6ae44cf09953b"
+    },
+    "partition": "Preserve each source's frozen held folds. Exclude any subject/family label held in either source from both training corpora. Keep ordinary trajectories in their original folds.",
+    "objectives": "Equal weight for shared six-margin condition-pair deficits and same-letter 044 teacher deficits. Use both condition and same-letter normalized X contrasts in a common input basis.",
+    "ranked_rows": "Top rows from combined branch gradient with cross-corpus geometric bonus, followed by the strongest rows of each corpus. Maximum 20 unique rows.",
+    "max_rank": 10,
+    "max_rows": 20,
+    "packed_pursuit_coordinates_per_row": 20,
+    "direct_prefixes": [
+      6,
+      12,
+      20
+    ],
+    "direct_strengths": [
+      0.75,
+      0.35,
+      0.15
+    ],
+    "milp_prefixes": [
+      10,
+      18
+    ],
+    "milp_seconds": 10,
+    "max_exact_q8_reanchors": 1,
+    "reanchor": "Increase each hard guard requirement by a previous candidate's negative exact-minus-linear residual, capped at zero to leave the unchanged parent feasible. Retain the frozen exact gate.",
+    "training_gate": "Exact positive all-rival floor min(.002,0.4*parent margin), zero loss, 053 pair gain, zero paired loss, objective decrease, exact selected Q8 blocks and ordinary winners. Original signed floor violations are retained in the receipt as diagnostics.",
+    "held_gate": "Preserve 067's zero-loss 053 and 044 per-arm, 90 ordinary, and net 053 pair recovery gates.",
+    "all_folds_frozen_before_held_scoring": true,
+    "official_fresh_proof_or_transfer_inputs_used": false,
+    "gpu_used": false,
+    "checkpoint_written": false,
+    "base_joint_source_sha256": "f5da36725af0ef6e3c1fb67753bd31ba1a0d5da124d2ea65a53be9f2fb667a82",
+    "patched_joint_driver_sha256": "a018070e1d9f74b6c5f3dfc0d5b0a8b62cafad43f733e969cb2e368eef078c6b",
+    "q8_cell_kernel_sha256": "234f973ba0bd86609442e412fff5be9c1db9372934107a50e496f43b61321a99",
+    "q8_cell_design_sha256": "63c1fe6240d31d393b32debde8f1ebd8c4dc385b4a3c15cc9a4c0ad04167155a",
+    "winner_floor": "Bounded positive margin per prior winner, with linear reserve capped at .015.",
+    "q8_packed_solve": "Append the stable maximum coordinate, integer quantization boundaries, and half scale cell inequalities for six training states per authored corpus and two blocks per state.",
+    "strict_signed_training_floor_required": false,
+    "held_gate_relaxed": false
+  },
+  "synthetic": {
+    "interior_unchanged": 200,
+    "maximum_hidden_jacobian_error": 6.125779883348059e-10
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "7ef56c2b1aacc0b1d6a2cea12975e42e12c0a15ebc8862b66a802cddcded5703",
+      "status": "NO_OP",
+      "selected_training_cells": [
+        12,
+        12
+      ],
+      "linear_cell_inequalities": 3096,
+      "exact_packed_probes": 9,
+      "paired_gain_probes": 6,
+      "probes_preserving_every_selected_cell": 0,
+      "paired_gain_probes_preserving_every_selected_cell": 0,
+      "integer_attempts": 2
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "8fdeb05f76aa9853c203fec20586f51ec1748bacd878235fa2a6182606dafb48",
+      "status": "NO_OP",
+      "selected_training_cells": [
+        12,
+        12
+      ],
+      "linear_cell_inequalities": 3096,
+      "exact_packed_probes": 9,
+      "paired_gain_probes": 9,
+      "probes_preserving_every_selected_cell": 0,
+      "paired_gain_probes_preserving_every_selected_cell": 0,
+      "integer_attempts": 2
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "9e1f3f0ba5c25583d74f970f3826be7a40a42ace159c1a9d9eb3fade0290fa01",
+      "status": "NO_OP",
+      "selected_training_cells": [
+        12,
+        12
+      ],
+      "linear_cell_inequalities": 3096,
+      "exact_packed_probes": 11,
+      "paired_gain_probes": 2,
+      "probes_preserving_every_selected_cell": 1,
+      "paired_gain_probes_preserving_every_selected_cell": 0,
+      "integer_attempts": 3
+    }
+  ],
+  "held_053_paired": {
+    "matches": 384,
+    "baseline_both_correct": 42,
+    "candidate_both_correct": 42,
+    "gains": 0,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "held_053_individual_losses": 0,
+  "held_044_individual_losses": 0,
+  "held_ordinary_states": 90,
+  "ordinary_archived_top64_winner_changes": 0,
+  "checkpoint_written": false
+}

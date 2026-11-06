@@ -793,6 +793,12 @@ The fixed comparison used the same twelve neuron slots for the up-only, gate-onl
 
 Every lane preserved the 90 held ordinary winners among the archived top 64. Each signed lane still crossed training floors after Q8 replay. The held families were grouped within each corpus. The independently authored complex-analysis sets share a family label and fall in different source-local folds. [Frozen method and per-fold results](../evidence/direct-accuracy-pilot-070-branch-capacity.json)
 
+## Pilot 071 with output-head compensation
+
+Pilot 071 regenerated 48 training-only up-projection proposals and considered small A–D output-head edits to restore the signed margins. The exact ordinary comparison included A–D even when those tokens were outside the original top 64. The training folds excluded family labels held in either authored corpus.
+
+Nine of twelve head solves were infeasible within their selected coordinates. Three timed out without an incumbent. All three folds kept the parent weights. The held results stayed at **42/384** both-correct pairs, **327/768** correct 053 choices and **384/768** correct 044 choices. All 90 ordinary winners stayed unchanged in the comparison set. [Frozen fit and solver disposition](../evidence/direct-accuracy-pilot-071-joint-up-head.json)
+
 ## Pilot 072 with a targeted pair margin
 
 Pilot 072 selected six close training pairs and optimized the minimum of their six correct-answer margins. Across 15 bounded integer solves, it ran 11 exact packed replays. One proposal moved its target minimum margin from **−0.09344** to **+0.04265** and crossed ten signed floors. After re-anchoring to the exact replay, the next proposal preserved those floors and left the target margin at **−0.00578**. All three frozen held fits contained no changes. [Frozen target search and exact replay results](../evidence/direct-accuracy-pilot-072-target-first-up.json)
@@ -802,3 +808,13 @@ Pilot 072 selected six close training pairs and optimized the minimum of their s
 Pilot 073 used condition-pair targets from 053 and same-letter targets from 044 in the same up-projection fit. A family held in either corpus was excluded from both training corpora. The first fold passed the exact training margins and ordinary checks with **347** code changes across **20** rows. An independent audit reconstructed every changed row and verified that all quantization metadata stayed byte-identical. The other two folds kept the parent weights.
 
 In the grouped CPU replay, both-correct held pairs rose from **42/384 to 43/384**. The edit lost one previously correct 053 choice and two 044 choices, with zero ordinary winner changes among the archived top 64. The 053 loss had led its later winner by **0.12033** logits in the parent. The two 044 leads were **0.01709** and **0.01026**. The holdout gate failed and no edited checkpoint was written. [Frozen plan, packed-row audit, and held tradeoffs](../evidence/direct-accuracy-pilot-073-joint-semantic-up.json)
+
+## Pilot 074 with native replay of the rejected fold
+
+The exact 347-code overlay replayed all **542** held states from Pilot 073's edited fold on CUDA. The CPU and CUDA agreed on every one of the **512** math choices, including all three regressions, and all **30** ordinary winners. The largest choice-logit difference was **0.000834**. CUDA reproduced the paired gain from **15 to 16 out of 128** in the edited fold. This run was diagnostic and produced no checkpoint. [Native and CPU comparison](../evidence/direct-accuracy-pilot-074-native-rejected-fold-replay.json)
+
+## Pilot 076 with Q8 rounding-cell guards
+
+Pilot 076 used a positive winner margin floor and required exact preservation of selected Q8 blocks on the closest training winners. Its integer solve included linear constraints for the block maximum, signed rounding boundaries and FP16 scale. A synthetic check preserved codes and scale on **200** points inside the constructed cells. Exact rounded CPU replay remained the gate for actual packed proposals.
+
+Of **29** exact packed proposals, **17** recovered a training pair. One proposal preserved every selected block and recovered no training pairs. The held evaluation kept the parent weights in all folds. [Frozen cell guards and packed replay](../evidence/direct-accuracy-pilot-076-q8-cell-up.json)

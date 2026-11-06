@@ -1,0 +1,436 @@
+{
+  "schema": "published-pilot071-joint-up-head-fit-v1",
+  "status": "no_qualifying_edit",
+  "grouped_report_sha256": "c5a67f81e0c07cfdd7056e1ee802d629aa2eae2ea9ddef056fc5253d7dd9d750",
+  "fit_driver_sha256": "fc0f216d31bc56a4f401f7db067970775d891d56b7ab19eac2f2c6037e2a6d4d",
+  "compensator_source_sha256": "8be48fba71baf411d0d81e69ff3c2c492807469ef05601f40c19e16bde9f6eb3",
+  "plan_sha256": "a28b9c860dec0c12e4b4af54b34f800feeed4c5e15bd58ceb33bd4d26f1d9ab6",
+  "capture_068_sha256": "ac1844da188242446f2c6541375bd8b48144c0b97ab4c611b239c772a766d54c",
+  "partitions": [
+    {
+      "held_fold": 0,
+      "blocked_family_count": 8,
+      "authored_053_train": 512,
+      "authored_044_train": 512,
+      "authored_053_held": 256,
+      "authored_044_held": 256,
+      "cross_corpus_excluded_053": 0,
+      "cross_corpus_excluded_044": 0
+    },
+    {
+      "held_fold": 1,
+      "blocked_family_count": 8,
+      "authored_053_train": 448,
+      "authored_044_train": 512,
+      "authored_053_held": 256,
+      "authored_044_held": 256,
+      "cross_corpus_excluded_053": 64,
+      "cross_corpus_excluded_044": 0
+    },
+    {
+      "held_fold": 2,
+      "blocked_family_count": 8,
+      "authored_053_train": 512,
+      "authored_044_train": 448,
+      "authored_053_held": 256,
+      "authored_044_held": 256,
+      "cross_corpus_excluded_053": 0,
+      "cross_corpus_excluded_044": 64
+    }
+  ],
+  "held_053_paired": {
+    "matches": 384,
+    "baseline_both_correct": 42,
+    "candidate_both_correct": 42,
+    "gains": 0,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "held_053_by_arm": {
+    "a": {
+      "rows": 192,
+      "before": 82,
+      "after": 82,
+      "gains": 0,
+      "losses": 0
+    },
+    "b": {
+      "rows": 192,
+      "before": 82,
+      "after": 82,
+      "gains": 0,
+      "losses": 0
+    },
+    "c": {
+      "rows": 192,
+      "before": 80,
+      "after": 80,
+      "gains": 0,
+      "losses": 0
+    },
+    "d": {
+      "rows": 192,
+      "before": 83,
+      "after": 83,
+      "gains": 0,
+      "losses": 0
+    }
+  },
+  "held_044_by_arm": {
+    "a": {
+      "rows": 192,
+      "before": 104,
+      "after": 104,
+      "gains": 0,
+      "losses": 0
+    },
+    "b": {
+      "rows": 192,
+      "before": 95,
+      "after": 95,
+      "gains": 0,
+      "losses": 0
+    },
+    "c": {
+      "rows": 192,
+      "before": 90,
+      "after": 90,
+      "gains": 0,
+      "losses": 0
+    },
+    "d": {
+      "rows": 192,
+      "before": 95,
+      "after": 95,
+      "gains": 0,
+      "losses": 0
+    }
+  },
+  "held_053_individual_losses": 0,
+  "held_044_individual_losses": 0,
+  "held_ordinary": {
+    "states": 90,
+    "archived_union_winner_changes": 0,
+    "binary32_archived_union_winner_changes": 0,
+    "outside_top64_edited_choice_comparisons": 348
+  },
+  "binary32_choice_argmax_parity": true,
+  "all_fold_packed_rows_and_recipes_frozen_before_held": true,
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "40e8c7d48c7133010152f2cc6d9eb8fe89798656ab6770fd7b9f2d2070c34381",
+      "status": "NO_OP",
+      "eligible_up_seeds": 8,
+      "unique_up_proposals": 16,
+      "head_compensation_attempts": [
+        {
+          "seed": {
+            "prefix": 32,
+            "strength": 0.75,
+            "codes": 416,
+            "rows": 13,
+            "supported_train_paired_gains": 2,
+            "up_only_ordinary": {
+              "states": 60,
+              "archived_union_winner_changes": 0,
+              "binary32_archived_union_winner_changes": 0,
+              "immutable_nonchoice_winner_changes": 0,
+              "outside_top64_edited_choice_comparisons": 231,
+              "minimum_union_winner_margin": 0.03178215026855469
+            },
+            "signed_floor_violations_053": 11,
+            "signed_floor_violations_044": 14,
+            "signed_floor_shortfall_sum": 2.2402916526794434
+          },
+          "head": {
+            "status": "NO_EXACT_GUARDED_JOINT_EDIT",
+            "solver_attempts": [
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 1,
+                "coordinates": 76,
+                "signed_constraints": 5478,
+                "active_solver_constraints": 1467
+              },
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 1,
+                "coordinates": 79,
+                "signed_constraints": 5478,
+                "active_solver_constraints": 1467
+              }
+            ]
+          }
+        },
+        {
+          "seed": {
+            "prefix": 48,
+            "strength": 0.75,
+            "codes": 622,
+            "rows": 13,
+            "supported_train_paired_gains": 2,
+            "up_only_ordinary": {
+              "states": 60,
+              "archived_union_winner_changes": 0,
+              "binary32_archived_union_winner_changes": 0,
+              "immutable_nonchoice_winner_changes": 0,
+              "outside_top64_edited_choice_comparisons": 231,
+              "minimum_union_winner_margin": 0.029754638671875
+            },
+            "signed_floor_violations_053": 11,
+            "signed_floor_violations_044": 18,
+            "signed_floor_shortfall_sum": 3.5520401000976562
+          },
+          "head": {
+            "status": "NO_EXACT_GUARDED_JOINT_EDIT",
+            "solver_attempts": [
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 2,
+                "coordinates": 67,
+                "signed_constraints": 5478,
+                "active_solver_constraints": 1383
+              },
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 1,
+                "coordinates": 73,
+                "signed_constraints": 5478,
+                "active_solver_constraints": 1467
+              }
+            ]
+          }
+        }
+      ],
+      "held_ordinary": {
+        "states": 30,
+        "archived_union_winner_changes": 0,
+        "binary32_archived_union_winner_changes": 0,
+        "immutable_nonchoice_winner_changes": 0,
+        "outside_top64_edited_choice_comparisons": 117,
+        "minimum_union_winner_margin": 0.023443222045898438
+      }
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "d7607547c3d1f263eabecd1eec61e8a163c654ddf43a50539421663363911762",
+      "status": "NO_OP",
+      "eligible_up_seeds": 12,
+      "unique_up_proposals": 16,
+      "head_compensation_attempts": [
+        {
+          "seed": {
+            "prefix": 8,
+            "strength": 1.0,
+            "codes": 112,
+            "rows": 14,
+            "supported_train_paired_gains": 2,
+            "up_only_ordinary": {
+              "states": 60,
+              "archived_union_winner_changes": 0,
+              "binary32_archived_union_winner_changes": 0,
+              "immutable_nonchoice_winner_changes": 0,
+              "outside_top64_edited_choice_comparisons": 234,
+              "minimum_union_winner_margin": 0.026020050048828125
+            },
+            "signed_floor_violations_053": 18,
+            "signed_floor_violations_044": 25,
+            "signed_floor_shortfall_sum": 3.325160322189331
+          },
+          "head": {
+            "status": "NO_EXACT_GUARDED_JOINT_EDIT",
+            "solver_attempts": [
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 2,
+                "coordinates": 56,
+                "signed_constraints": 5478,
+                "active_solver_constraints": 1278
+              },
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 2,
+                "coordinates": 65,
+                "signed_constraints": 5478,
+                "active_solver_constraints": 1394
+              }
+            ]
+          }
+        },
+        {
+          "seed": {
+            "prefix": 16,
+            "strength": 1.0,
+            "codes": 224,
+            "rows": 14,
+            "supported_train_paired_gains": 2,
+            "up_only_ordinary": {
+              "states": 60,
+              "archived_union_winner_changes": 0,
+              "binary32_archived_union_winner_changes": 0,
+              "immutable_nonchoice_winner_changes": 0,
+              "outside_top64_edited_choice_comparisons": 234,
+              "minimum_union_winner_margin": 0.025091171264648438
+            },
+            "signed_floor_violations_053": 16,
+            "signed_floor_violations_044": 25,
+            "signed_floor_shortfall_sum": 4.761179628372192
+          },
+          "head": {
+            "status": "NO_EXACT_GUARDED_JOINT_EDIT",
+            "solver_attempts": [
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 2,
+                "coordinates": 50,
+                "signed_constraints": 5478,
+                "active_solver_constraints": 1329
+              },
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 2,
+                "coordinates": 57,
+                "signed_constraints": 5478,
+                "active_solver_constraints": 1450
+              }
+            ]
+          }
+        }
+      ],
+      "held_ordinary": {
+        "states": 30,
+        "archived_union_winner_changes": 0,
+        "binary32_archived_union_winner_changes": 0,
+        "immutable_nonchoice_winner_changes": 0,
+        "outside_top64_edited_choice_comparisons": 114,
+        "minimum_union_winner_margin": 0.6177730560302734
+      }
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "a015549eb55f4b95e3dfcefb28cc30838ea00bb5865e475818f9e1859ac1e8a1",
+      "status": "NO_OP",
+      "eligible_up_seeds": 12,
+      "unique_up_proposals": 16,
+      "head_compensation_attempts": [
+        {
+          "seed": {
+            "prefix": 32,
+            "strength": 0.75,
+            "codes": 384,
+            "rows": 12,
+            "supported_train_paired_gains": 2,
+            "up_only_ordinary": {
+              "states": 60,
+              "archived_union_winner_changes": 0,
+              "binary32_archived_union_winner_changes": 0,
+              "immutable_nonchoice_winner_changes": 0,
+              "outside_top64_edited_choice_comparisons": 231,
+              "minimum_union_winner_margin": 0.026391983032226562
+            },
+            "signed_floor_violations_053": 19,
+            "signed_floor_violations_044": 31,
+            "signed_floor_shortfall_sum": 5.7800852394104005
+          },
+          "head": {
+            "status": "NO_EXACT_GUARDED_JOINT_EDIT",
+            "solver_attempts": [
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 2,
+                "coordinates": 47,
+                "signed_constraints": 5193,
+                "active_solver_constraints": 1051
+              },
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 2,
+                "coordinates": 63,
+                "signed_constraints": 5193,
+                "active_solver_constraints": 1152
+              }
+            ]
+          }
+        },
+        {
+          "seed": {
+            "prefix": 16,
+            "strength": 1.0,
+            "codes": 192,
+            "rows": 12,
+            "supported_train_paired_gains": 2,
+            "up_only_ordinary": {
+              "states": 60,
+              "archived_union_winner_changes": 0,
+              "binary32_archived_union_winner_changes": 0,
+              "immutable_nonchoice_winner_changes": 0,
+              "outside_top64_edited_choice_comparisons": 231,
+              "minimum_union_winner_margin": 0.025175094604492188
+            },
+            "signed_floor_violations_053": 20,
+            "signed_floor_violations_044": 30,
+            "signed_floor_shortfall_sum": 6.538054924011231
+          },
+          "head": {
+            "status": "NO_EXACT_GUARDED_JOINT_EDIT",
+            "solver_attempts": [
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 2,
+                "coordinates": 46,
+                "signed_constraints": 5193,
+                "active_solver_constraints": 1041
+              },
+              {
+                "status": "NO_GUARDED_INTEGER_INCUMBENT",
+                "solver_status": 2,
+                "coordinates": 46,
+                "signed_constraints": 5193,
+                "active_solver_constraints": 1041
+              }
+            ]
+          }
+        }
+      ],
+      "held_ordinary": {
+        "states": 30,
+        "archived_union_winner_changes": 0,
+        "binary32_archived_union_winner_changes": 0,
+        "immutable_nonchoice_winner_changes": 0,
+        "outside_top64_edited_choice_comparisons": 117,
+        "minimum_union_winner_margin": 0.029294967651367188
+      }
+    }
+  ],
+  "checkpoint_written": false
+}
