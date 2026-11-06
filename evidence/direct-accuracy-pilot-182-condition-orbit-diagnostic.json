@@ -1,0 +1,133 @@
+{
+  "schema": "windows-pilot182-whole-condition-orbit-diagnostic-v1",
+  "plan_sha256": "9359526d60222c628b32636486a6cdd68b89e87533c40212291b70c6fb8ac584",
+  "exact_parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "p176_source_sha256": "a6bdc8426bcf32cb6ff0e64676fb6e3eb41473b52ffd05da4261e07eebc04ab1",
+  "p176_fit_sha256": "77002890f203cff25b6cbe458cf8d2bb88660916402258d4709d2a1d6710d4ed",
+  "p176_recipe_sha256": "8057dcc7de26a1c88fad6c8770d08cbe866dfcb6196d6f92e10a43c5bbec5ffd",
+  "exact_p176_train_and_guard_replay": true,
+  "changed_seed_binary16_fields": 157,
+  "P158_P150_guard_only": true,
+  "P180_P181_official_proof_or_protected_data_used": false,
+  "current_margin_cap_analysis": {
+    "P105": {
+      "presentations": 512,
+      "current_correct": 330,
+      "incorrect_but_possible_independent_logit_cap": 34,
+      "case_four_rotations": {
+        "total": 128,
+        "parent_complete": 46,
+        "p176_complete": 49,
+        "currently_failed": 79,
+        "failed_and_could_reach_all_margins_under_independent_logit_cap": 12,
+        "failed_and_infeasible_even_with_independent_logits": 67
+      },
+      "condition_pair_eight_presentations": {
+        "total": 64,
+        "parent_complete": 7,
+        "p176_complete": 8,
+        "currently_failed": 56,
+        "failed_and_could_reach_all_margins_under_independent_logit_cap": 3,
+        "failed_and_infeasible_even_with_independent_logits": 53
+      }
+    },
+    "P158_guard_only": {
+      "presentations": 512,
+      "current_correct": 328,
+      "incorrect_but_possible_independent_logit_cap": 39,
+      "case_four_rotations": {
+        "total": 128,
+        "parent_complete": 55,
+        "p176_complete": 57,
+        "currently_failed": 71,
+        "failed_and_could_reach_all_margins_under_independent_logit_cap": 13,
+        "failed_and_infeasible_even_with_independent_logits": 58
+      },
+      "condition_pair_eight_presentations": {
+        "total": 64,
+        "parent_complete": 10,
+        "p176_complete": 10,
+        "currently_failed": 54,
+        "failed_and_could_reach_all_margins_under_independent_logit_cap": 4,
+        "failed_and_infeasible_even_with_independent_logits": 50
+      }
+    },
+    "P150_guard_only": {
+      "presentations": 128,
+      "current_correct": 49,
+      "incorrect_but_possible_independent_logit_cap": 34,
+      "case_four_rotations": {
+        "total": 32,
+        "parent_complete": 0,
+        "p176_complete": 0,
+        "currently_failed": 32,
+        "failed_and_could_reach_all_margins_under_independent_logit_cap": 9,
+        "failed_and_infeasible_even_with_independent_logits": 23
+      },
+      "condition_pair_eight_presentations": {
+        "total": 16,
+        "parent_complete": 0,
+        "p176_complete": 0,
+        "currently_failed": 16,
+        "failed_and_could_reach_all_margins_under_independent_logit_cap": 0,
+        "failed_and_infeasible_even_with_independent_logits": 16
+      }
+    }
+  },
+  "scale_lattice_continuous_proof": {
+    "all_rows": 24559,
+    "active_rows": 20981,
+    "safely_pruned": 3578,
+    "interval_infeasible_rows": 0,
+    "interval_infeasible_types": {
+      "math_cap": 0,
+      "mean_cap": 0,
+      "midpoint_cap": 0,
+      "ordinary_cap": 0,
+      "ordinary_floor": 0,
+      "prior_math": 0,
+      "seed_pair": 0
+    },
+    "exact_block_decoder_combinations": 86328
+  },
+  "p105_continuous_pair_orbit_probes": [
+    {
+      "status": 0,
+      "worst_margin": -0.02900399832534388,
+      "rows": 8,
+      "target_signed_floors": 24,
+      "integer_candidate_created": false,
+      "ordinal": 1,
+      "anchor_incorrect": 1,
+      "parent_worst_margin": -0.10790252685546875,
+      "anchor_worst_margin": -0.08475112915039062
+    },
+    {
+      "status": 0,
+      "worst_margin": -0.37152186841917884,
+      "rows": 8,
+      "target_signed_floors": 24,
+      "integer_candidate_created": false,
+      "ordinal": 2,
+      "anchor_incorrect": 1,
+      "parent_worst_margin": -0.4364128112792969,
+      "anchor_worst_margin": -0.4546318054199219
+    },
+    {
+      "status": 0,
+      "worst_margin": -0.3976811576894778,
+      "rows": 8,
+      "target_signed_floors": 24,
+      "integer_candidate_created": false,
+      "ordinal": 3,
+      "anchor_incorrect": 2,
+      "parent_worst_margin": -0.44974327087402344,
+      "anchor_worst_margin": -0.49318504333496094
+    }
+  ],
+  "simultaneous_probe": null,
+  "no_candidate_selected": true,
+  "checkpoint_written": false,
+  "gpu_used": false,
+  "limitations": "Independent-logit cap counts are optimistic bounds. LP probes use all guards but omit lattice integrality, so a feasible margin is not a packed-edit pass. Only P105 proposes new goals."
+}
