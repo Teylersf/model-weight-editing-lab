@@ -1,0 +1,718 @@
+{
+  "schema": "published-pilots099-101-103-exact-mixed-repair-v1",
+  "parent_model": {
+    "sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+    "bytes": 11674147744
+  },
+  "scope": "Packed CPU replay on independently authored development folds. The mixed candidate is rejected and no full candidate checkpoint was written.",
+  "pilot_099": {
+    "objective_audit_sha256": "092d43768adca31200de5864beec9c710950c69af2375fde55cdcfa1b3f82f3e",
+    "fit_receipt_sha256": "e9989da9d34fff06d774e8048345a1e7dc1677a8e278350f39fd3050a5447b42",
+    "plan_sha256": "bd9a15010f079ecc77bc954aa669a4cb8f817d4681e138bac7b04737d0ebe113",
+    "fitting_violations_remaining": 0,
+    "critical_replays": 76,
+    "full_fitting_replays": 12,
+    "train_pairs": {
+      "matches": 224,
+      "baseline_both_correct": 15,
+      "candidate_both_correct": 18,
+      "gains": 3,
+      "losses": 0,
+      "by_arm": {
+        "a": {
+          "matches": 56,
+          "baseline_both_correct": 4,
+          "candidate_both_correct": 4,
+          "gains": 0,
+          "losses": 0
+        },
+        "b": {
+          "matches": 56,
+          "baseline_both_correct": 5,
+          "candidate_both_correct": 6,
+          "gains": 1,
+          "losses": 0
+        },
+        "c": {
+          "matches": 56,
+          "baseline_both_correct": 3,
+          "candidate_both_correct": 4,
+          "gains": 1,
+          "losses": 0
+        },
+        "d": {
+          "matches": 56,
+          "baseline_both_correct": 3,
+          "candidate_both_correct": 4,
+          "gains": 1,
+          "losses": 0
+        }
+      }
+    },
+    "parent_objective": 0.16918406085004545,
+    "repaired_objective": 0.17642645540644233,
+    "status": "REJECTED_AT_EXACT_JOINT_TRAINING_OBJECTIVE"
+  },
+  "pilot_101": {
+    "fit_receipt_sha256": "0308dc869f9c3071175f831d30729c68f9140fca6c44b8d8dd709911f779a062",
+    "grouped_receipt_sha256": "5784544bfa287fab67779999c6c873ad1089e83daad4ae9b559f5b2fa0ceb8d8",
+    "plan_sha256": "62c86ed3a255908dd517c9f292d39e213ea9664b033a752f41c101e29a675e9f",
+    "parent_objective": 0.16918406085004545,
+    "initial_objective": 0.17642645540644233,
+    "final_objective": 0.16910277388385478,
+    "accepted_objective_steps": 7,
+    "critical_replays": 336,
+    "full_fitting_replays": 40,
+    "objective_replays": 41,
+    "train_pairs": {
+      "matches": 224,
+      "baseline_both_correct": 15,
+      "candidate_both_correct": 18,
+      "gains": 3,
+      "losses": 0,
+      "by_arm": {
+        "a": {
+          "matches": 56,
+          "baseline_both_correct": 4,
+          "candidate_both_correct": 4,
+          "gains": 0,
+          "losses": 0
+        },
+        "b": {
+          "matches": 56,
+          "baseline_both_correct": 5,
+          "candidate_both_correct": 6,
+          "gains": 1,
+          "losses": 0
+        },
+        "c": {
+          "matches": 56,
+          "baseline_both_correct": 3,
+          "candidate_both_correct": 4,
+          "gains": 1,
+          "losses": 0
+        },
+        "d": {
+          "matches": 56,
+          "baseline_both_correct": 3,
+          "candidate_both_correct": 4,
+          "gains": 1,
+          "losses": 0
+        }
+      }
+    },
+    "minimum_target_margins": [
+      0.031482696533203125,
+      0.009029388427734375
+    ],
+    "reserved_opposite_order_checks": [
+      {
+        "opposite_order_arm": "b",
+        "rotation": 0,
+        "prior_correct": 1,
+        "prior_correct_losses": 0,
+        "maximum_correct_vs_counterpart_erosion": 0.0,
+        "passed": true
+      },
+      {
+        "opposite_order_arm": "c",
+        "rotation": 0,
+        "prior_correct": 1,
+        "prior_correct_losses": 0,
+        "maximum_correct_vs_counterpart_erosion": 0.0,
+        "passed": true
+      }
+    ],
+    "original_stronger_signed_floor_violations": {
+      "053": 5,
+      "044": 20,
+      "028": 6,
+      "039": 1
+    },
+    "held_pairs": {
+      "matches": 384,
+      "baseline_both_correct": 42,
+      "candidate_both_correct": 43,
+      "gains": 1,
+      "losses": 0,
+      "by_arm": {
+        "a": {
+          "matches": 96,
+          "baseline_both_correct": 10,
+          "candidate_both_correct": 11,
+          "gains": 1,
+          "losses": 0
+        },
+        "b": {
+          "matches": 96,
+          "baseline_both_correct": 11,
+          "candidate_both_correct": 11,
+          "gains": 0,
+          "losses": 0
+        },
+        "c": {
+          "matches": 96,
+          "baseline_both_correct": 10,
+          "candidate_both_correct": 10,
+          "gains": 0,
+          "losses": 0
+        },
+        "d": {
+          "matches": 96,
+          "baseline_both_correct": 11,
+          "candidate_both_correct": 11,
+          "gains": 0,
+          "losses": 0
+        }
+      }
+    },
+    "held_choices": {
+      "053": {
+        "rows": 768,
+        "parent_correct": 327,
+        "candidate_correct": 327,
+        "gains": 1,
+        "losses": 1
+      },
+      "044": {
+        "rows": 768,
+        "parent_correct": 384,
+        "candidate_correct": 385,
+        "gains": 2,
+        "losses": 1
+      },
+      "028": {
+        "rows": 576,
+        "parent_correct": 342,
+        "candidate_correct": 341,
+        "gains": 1,
+        "losses": 2
+      },
+      "039": {
+        "rows": 144,
+        "parent_correct": 55,
+        "candidate_correct": 55,
+        "gains": 0,
+        "losses": 0
+      }
+    },
+    "held_ordinary_states": 90,
+    "held_ordinary_archived_top64_winner_changes": 0,
+    "status": "REJECTED_AT_HELD_PRIOR_CORRECT_CHOICE_GATE"
+  },
+  "packed_reproduction": {
+    "coordinate_layout": "block, within = divmod(column, 256); group, lane = divmod(within, 32). Add signed delta to the indicated unsigned nibble. Only write that nibble.",
+    "coordinates_per_row": 5120,
+    "tensors": {
+      "gate": {
+        "name": "blk.63.ffn_gate.weight",
+        "offset": 11225633696,
+        "bytes": 47349760,
+        "parent_sha256": "8f725f3a5399039dc92190cc1fd0c41dee06072b7bc3f31ad65040c920d9d864"
+      },
+      "up": {
+        "name": "blk.63.ffn_up.weight",
+        "offset": 11272983456,
+        "bytes": 50135040,
+        "parent_sha256": "58b3b02ef9f288d31bf5546f8fd6c76c7b59fc13c8816c71e8dacbd9777c0c7c"
+      }
+    },
+    "codecs": {
+      "gate": {
+        "type": "IQ4_XS",
+        "block_bytes": 136,
+        "row_bytes": 2720,
+        "metadata_bytes": 8,
+        "byte_in_block": "8 + 16 * group + (lane % 16)",
+        "bit_shift": "4 * (lane // 16)"
+      },
+      "up": {
+        "type": "Q4_K",
+        "block_bytes": 144,
+        "row_bytes": 2880,
+        "metadata_bytes": 16,
+        "byte_in_block": "16 + 32 * (group // 2) + lane",
+        "bit_shift": "4 * (group % 2)"
+      }
+    },
+    "rows": [
+      {
+        "branch": "gate",
+        "tensor_row": 1720,
+        "offset": 11230312096,
+        "bytes": 2720,
+        "sha256": "ac83d115415ccc8f46e33ba8211b4c1c6779c88e45a3b52ecfb13ae13b394c6a",
+        "parent_sha256": "5fe0efff43a86f950e0dbb388f4febd2ff7eea490cfbfb7312e53224cee88959",
+        "coordinates": [
+          505,
+          980
+        ],
+        "signed_code_deltas": [
+          -4,
+          -1
+        ]
+      },
+      {
+        "branch": "gate",
+        "tensor_row": 8685,
+        "offset": 11249256896,
+        "bytes": 2720,
+        "sha256": "d6e4a4656d291ec8ab2a4a41c2ca23673a59e39ee74323d543d274f68e44c243",
+        "parent_sha256": "0081941ac2800c17427659985c82b86098fc4a36e5ecf2eb8bde7828d4193a77",
+        "coordinates": [
+          12,
+          727,
+          2955,
+          3994,
+          4104,
+          4601
+        ],
+        "signed_code_deltas": [
+          -4,
+          -4,
+          4,
+          -4,
+          -4,
+          4
+        ]
+      },
+      {
+        "branch": "gate",
+        "tensor_row": 15943,
+        "offset": 11268998656,
+        "bytes": 2720,
+        "sha256": "72e833016b5feec8ea397d8c24ccd0bac9a14265fed4d0b4c4d69a95f95ea24a",
+        "parent_sha256": "225fe3dc1dee4a8ef930ac49caf641d1a20413b727b525b5265f14c8d851d826",
+        "coordinates": [
+          248,
+          1760,
+          2227,
+          2379,
+          2593,
+          2743,
+          2767,
+          3420,
+          3994
+        ],
+        "signed_code_deltas": [
+          -4,
+          4,
+          -4,
+          4,
+          -4,
+          -4,
+          4,
+          -4,
+          4
+        ]
+      },
+      {
+        "branch": "up",
+        "tensor_row": 2599,
+        "offset": 11280468576,
+        "bytes": 2880,
+        "sha256": "752565e1cb91f0259909f85de5bc3e68f1d17f7e80f89d0cc0c30e69feec1692",
+        "parent_sha256": "0d43f8d94253b9bb0b96708125e137f0395a15132d09c7f76e99cebe8bd81055",
+        "coordinates": [
+          27,
+          505,
+          671,
+          3901
+        ],
+        "signed_code_deltas": [
+          -4,
+          4,
+          -4,
+          4
+        ]
+      },
+      {
+        "branch": "up",
+        "tensor_row": 4902,
+        "offset": 11287101216,
+        "bytes": 2880,
+        "sha256": "c31f8fbbf3bdb9c82e85f86c6ebd7517c729e6cf249376008e223dc6a760b7b9",
+        "parent_sha256": "9447db669193d2c49be4c9258a33f48c66870ea8157a0b4f3e007b1aa6d87f1a",
+        "coordinates": [
+          123,
+          671,
+          1194,
+          1574,
+          1760,
+          2007,
+          2379,
+          2519,
+          2574,
+          2743,
+          2854,
+          2955,
+          3239,
+          3254,
+          4382,
+          4412,
+          4601
+        ],
+        "signed_code_deltas": [
+          4,
+          4,
+          -4,
+          2,
+          4,
+          -4,
+          -4,
+          4,
+          -4,
+          4,
+          4,
+          -4,
+          4,
+          -4,
+          -4,
+          -4,
+          4
+        ]
+      },
+      {
+        "branch": "up",
+        "tensor_row": 5043,
+        "offset": 11287507296,
+        "bytes": 2880,
+        "sha256": "2c64667df2b34c2068151a0b8fae0a91e30607a60f2f91b2884c9a0a7c21966a",
+        "parent_sha256": "a507d3735d2b51c25c3adeac45844929545949fc19b3cb74d0c287802970056a",
+        "coordinates": [
+          505,
+          788,
+          1236,
+          1760,
+          2519,
+          2574,
+          2743,
+          2767,
+          2803,
+          2823,
+          2955,
+          4601
+        ],
+        "signed_code_deltas": [
+          4,
+          -4,
+          -4,
+          -4,
+          -4,
+          4,
+          -4,
+          2,
+          4,
+          4,
+          4,
+          -4
+        ]
+      },
+      {
+        "branch": "up",
+        "tensor_row": 5161,
+        "offset": 11287847136,
+        "bytes": 2880,
+        "sha256": "391395b343d6e446709fd59d98e57de0cb2955a906e3d30fded0a2b689e01f05",
+        "parent_sha256": "056ba984f8892e19e9830095c7b5fd4a8bb904f308703b23260485869dbdc738",
+        "coordinates": [
+          1229,
+          1721,
+          1758,
+          1760,
+          1793,
+          2007,
+          2221,
+          2227,
+          2326,
+          2379,
+          2519,
+          2743,
+          2761,
+          2767,
+          2911,
+          3518,
+          3549,
+          3772,
+          3994,
+          4136
+        ],
+        "signed_code_deltas": [
+          4,
+          2,
+          -4,
+          -4,
+          -4,
+          -2,
+          4,
+          -4,
+          4,
+          -2,
+          -1,
+          -4,
+          4,
+          2,
+          -4,
+          -4,
+          -4,
+          4,
+          4,
+          -4
+        ]
+      },
+      {
+        "branch": "up",
+        "tensor_row": 8685,
+        "offset": 11297996256,
+        "bytes": 2880,
+        "sha256": "f7613ebf79e7c395571bc51a1df53d47915be54cdc2b728c64e3aa0fd11faa80",
+        "parent_sha256": "a9b21e718fb7883ffb5691e9d67ef48051f66460f47d2d103a6b1895d556accc",
+        "coordinates": [
+          261,
+          505,
+          680,
+          4990,
+          5026
+        ],
+        "signed_code_deltas": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "branch": "up",
+        "tensor_row": 9078,
+        "offset": 11299128096,
+        "bytes": 2880,
+        "sha256": "4d9b1e72da4868db09d1a1d3bfa571598ecef69041c3a44a39d236a065d35f38",
+        "parent_sha256": "5426f0ef1cbe1cf708389f3689b00a7d4b04b93f61926e27887f306146a71c70",
+        "coordinates": [
+          3994,
+          4601
+        ],
+        "signed_code_deltas": [
+          2,
+          4
+        ]
+      },
+      {
+        "branch": "up",
+        "tensor_row": 9287,
+        "offset": 11299730016,
+        "bytes": 2880,
+        "sha256": "2dbe9d96c4bb11eab8d61a3d0ff8cb79c66941b4b68f973a00db1264364797f3",
+        "parent_sha256": "a4d94770d15ee8d52366e0ba94fd4e90f77f7fda7308e1befc0d787996697e8e",
+        "coordinates": [
+          419,
+          671,
+          1641,
+          1760,
+          1914,
+          2227,
+          2245,
+          2593,
+          2743,
+          2761,
+          2767,
+          3742,
+          4249,
+          4412,
+          4425,
+          4538
+        ],
+        "signed_code_deltas": [
+          -4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          -1,
+          -4,
+          4,
+          1,
+          -4,
+          4,
+          4,
+          -4,
+          4,
+          -4
+        ]
+      },
+      {
+        "branch": "up",
+        "tensor_row": 10982,
+        "offset": 11304611616,
+        "bytes": 2880,
+        "sha256": "f746cfae1b9c762c2d5a66272935f72078ab37f7aa6b5b886b40cd0bc324f28e",
+        "parent_sha256": "076581ec39daaa6573ba58a419bccc8f97f8b10b0d52d71de08ca1feff014c74",
+        "coordinates": [
+          3994,
+          5028
+        ],
+        "signed_code_deltas": [
+          -4,
+          -4
+        ]
+      }
+    ]
+  },
+  "pilot_103": {
+    "receipt_sha256": "2e66f2214942e3113fe3d4ee7ea691834f5ede2cd4504ebcf70dacc767838801",
+    "source_sha256": "45c22af7c7ac0c032951b5383362c7e3668bbcf270fdc5f7edc979a90235013b",
+    "held_states": 752,
+    "exact_losses": 4,
+    "losses_also_linear": 4,
+    "losses_also_without_head_q8": 4,
+    "cohorts": {
+      "053": {
+        "states": 256,
+        "prior_correct": 136,
+        "exact": {
+          "before": 136,
+          "after": 136,
+          "gains": 1,
+          "losses": 1
+        },
+        "losses_also_linear": 1,
+        "losses_also_without_head_q8": 1,
+        "linear_only_losses": 0,
+        "lost_parent_margins": {
+          "count": 1,
+          "min": 0.0494232177734375,
+          "max": 0.0494232177734375
+        },
+        "branch_controls": {
+          "gate_only": {
+            "before": 136,
+            "after": 135,
+            "gains": 3,
+            "losses": 4,
+            "also_lost_by_joint": 0
+          },
+          "up_only": {
+            "before": 136,
+            "after": 135,
+            "gains": 2,
+            "losses": 3,
+            "also_lost_by_joint": 1
+          }
+        },
+        "max_abs_exact_minus_linear_logit": 0.05777247794597429
+      },
+      "044": {
+        "states": 256,
+        "prior_correct": 158,
+        "exact": {
+          "before": 158,
+          "after": 159,
+          "gains": 2,
+          "losses": 1
+        },
+        "losses_also_linear": 1,
+        "losses_also_without_head_q8": 1,
+        "linear_only_losses": 0,
+        "lost_parent_margins": {
+          "count": 1,
+          "min": 0.08704376220703125,
+          "max": 0.08704376220703125
+        },
+        "branch_controls": {
+          "gate_only": {
+            "before": 158,
+            "after": 159,
+            "gains": 2,
+            "losses": 1,
+            "also_lost_by_joint": 0
+          },
+          "up_only": {
+            "before": 158,
+            "after": 158,
+            "gains": 1,
+            "losses": 1,
+            "also_lost_by_joint": 1
+          }
+        },
+        "max_abs_exact_minus_linear_logit": 0.048044242682536265
+      },
+      "028": {
+        "states": 192,
+        "prior_correct": 120,
+        "exact": {
+          "before": 120,
+          "after": 119,
+          "gains": 1,
+          "losses": 2
+        },
+        "losses_also_linear": 2,
+        "losses_also_without_head_q8": 2,
+        "linear_only_losses": 0,
+        "lost_parent_margins": {
+          "count": 2,
+          "min": 0.010641098022460938,
+          "max": 0.11212348937988281
+        },
+        "branch_controls": {
+          "gate_only": {
+            "before": 120,
+            "after": 118,
+            "gains": 1,
+            "losses": 3,
+            "also_lost_by_joint": 0
+          },
+          "up_only": {
+            "before": 120,
+            "after": 120,
+            "gains": 2,
+            "losses": 2,
+            "also_lost_by_joint": 2
+          }
+        },
+        "max_abs_exact_minus_linear_logit": 0.05219369310037436
+      },
+      "039": {
+        "states": 48,
+        "prior_correct": 22,
+        "exact": {
+          "before": 22,
+          "after": 22,
+          "gains": 0,
+          "losses": 0
+        },
+        "losses_also_linear": 0,
+        "losses_also_without_head_q8": 0,
+        "linear_only_losses": 0,
+        "lost_parent_margins": {
+          "count": 0
+        },
+        "branch_controls": {
+          "gate_only": {
+            "before": 22,
+            "after": 22,
+            "gains": 0,
+            "losses": 0,
+            "also_lost_by_joint": 0
+          },
+          "up_only": {
+            "before": 22,
+            "after": 22,
+            "gains": 0,
+            "losses": 0,
+            "also_lost_by_joint": 0
+          }
+        },
+        "max_abs_exact_minus_linear_logit": 0.05620801217272131
+      }
+    },
+    "ordinary": {
+      "states": 30,
+      "archived_top64_winner_changes": 0,
+      "binary32_archived_top64_winner_changes": 0,
+      "min_archived_top64_winner_margin": 0.035691088776729885
+    }
+  },
+  "official_fresh_or_proof_evaluation_ran": false
+}

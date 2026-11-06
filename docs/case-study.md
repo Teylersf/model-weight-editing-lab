@@ -924,3 +924,29 @@ The next run limited each repair to 18 changes in the binary endpoint selections
 ## Pilot 097 with aligned option key and value transport
 
 The CPU replay first reproduced the archived binary32 pre-gate output exactly in both no-op branches for all **384** prompts. It then recomputed **2,560** key-only or value-only swaps over **640** aligned option endpoints, preserving the complete causal prefix in the softmax. Eligible endpoints shared the option text and absolute token position across both condition variants. For option D, the median pre-gate RMS change was **0.00258** for key swaps and **0.00232** for value swaps. The corresponding B medians were **0.000603** and **0.000609**. The result measures the size of a pre-gate intervention. Its effect on answer choices awaits native activation replay. [Transport and no-op evidence](../evidence/direct-accuracy-pilot-097-aligned-option-transport.json)
+
+## Pilot 098 with one native terminal activation intervention
+
+The CUDA runner replaced one block-63 terminal pre-gate row with a byte-identical copy and reproduced the selected logits, top 64, winner, and captured tensors exactly. It then used four CPU-computed replacements derived from the key-only or value-only swaps at the aligned B and D endpoints. Each **24,576-byte** replacement was read back exactly. Every other row in the same native microbatch stayed unchanged.
+
+All four interventions moved the choice logits, and D stayed the winner in all five runs. The D value-derived replacement raised the D logit by **0.02388** and the D-minus-B gap by **0.04013**. This was one authored prompt. Its grade stayed sealed, and the intervention changed a pre-gate activation in memory. [No-op parity and choice-logit shifts](../evidence/direct-accuracy-pilot-098-native-terminal-transport.json)
+
+## Pilot 099 with exact packed neighbor repair
+
+One-coordinate moves repaired all three remaining rounded fitting-margin violations. The **91-code** proposal preserved the training gain from **15 to 18 out of 224** both-correct pairs and passed the reserved opposite-order checks. Its combined rounded objective, which includes the separate same-letter teaching task, rose from **0.169184** in the parent to **0.176426**. That objective is minimized. The fold retained the parent and grouped held pairs stayed at **42/384**. [Fitting and objective audit](../evidence/direct-accuracy-pilots-099-103-exact-mixed-repair.json)
+
+## Pilot 101 with exact objective polishing
+
+Seven accepted single-coordinate moves reduced the rounded objective to **0.169103**, below the parent’s **0.169184**. The fit froze **95** packed code changes across three gate rows and eight up rows. It kept the training gain at **15 to 18 out of 224** both-correct pairs, preserved every previously correct fitting choice, and passed both reserved opposite-order checks. It crossed **32** of the stronger parent-relative signed floors used in earlier experiments. Its own positive-margin floors all held.
+
+Grouped held pairs increased from **42/384 to 43/384**. The edit gained four individual choices and lost four. All **90** ordinary winners among the archived top 64 stayed fixed. The edit failed the held choice-preservation gate. The packed rows were saved for diagnosis. [Exact row recipes and held outcomes](../evidence/direct-accuracy-pilots-099-103-exact-mixed-repair.json)
+
+## Pilots 100 and 102 with paired CUDA attention interventions
+
+The label-free schedule froze **40** authored states across five families, with both directions of each condition pair. CUDA reproduced all **160** A–D logits, **2,560** top-64 entries, and 40 final hidden rows in the explicit no-op pass. It then replayed **320** key-derived or value-derived terminal pre-gate replacements. Each fresh causal prefix started with a cleared cache. Every payload read back exactly, and every non-target row in its native microbatch stayed byte-identical.
+
+After the native receipts were sealed, the analysis read the 40 discovery grades. The reciprocal mean shift of the donor-correct versus recipient-correct choice gap at condition-relevant endpoints, after subtracting the shift at distractors, was **+0.00074** logits for keys and **+0.00020** for values. Both family-bootstrap intervals spanned zero. No intervention changed the A–D winner or full-vocabulary winner. These five families give little support for fitting a weight change from a single aligned endpoint. The separate confirmation grades stayed sealed. [Frozen contrast and aggregate native results](../evidence/direct-accuracy-pilots-100-102-native-paired-transport.json)
+
+## Pilot 103 with held mixed-branch attribution
+
+The retrospective CPU audit reconstructed all 11 packed rows and reproduced the joint score of **436/752** in the edited fold. All four lost choices also flipped under the parent-point linear approximation and under a binary32 hidden replay scored without output-head Q8 rounding. The up branch alone reproduced all four of those losses and lost six choices in total. The gate branch alone produced eight different losses. This locates the four crossings in the fitted direction within fixed-state CPU replay. The official math benchmark, fresh set, and proof checks were outside this experiment. [Branch controls and independent reproduction](../evidence/direct-accuracy-pilots-099-103-exact-mixed-repair.json)

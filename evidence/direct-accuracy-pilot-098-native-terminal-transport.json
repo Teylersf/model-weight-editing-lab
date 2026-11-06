@@ -1,0 +1,96 @@
+{
+  "schema": "published-pilot098-native-terminal-transport-v1",
+  "receipt_sha256": "08362a52f0b56fdbfd029db57c8c4e5da22b78d342beeb65038c4a5c87af26ad",
+  "model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "native_binary_sha256": "1dd4d55a96192639b05cc9f6561de26c86adc0660e1cb069a30f9342886c29a7",
+  "plan_sha256": "330fc0db233cfe51531d538c50850646f3184748eacb2f23374b892fe1447d85",
+  "cpu_preflight_sha256": "eee14defcdb20a5bdae64a8edc012952ea991892e528f5bb9c0531785a552290",
+  "noop_parity_sha256": "0fa1123fbde8183fd1f60ae624f80540ea015e4c5e06ca7ed2fafde63178fc3f",
+  "cpu_transport_097_sha256": "f9e5d9eec543474fa932281bfd0f5dc12f16268e34ea33fdd99ab0d1c2f08c57",
+  "authored_prompt_count": 1,
+  "layer": 63,
+  "native_row_bytes": 24576,
+  "scope": "Replace the terminal pre-gate row using a CPU-computed counterfactual from one aligned option endpoint. The original CUDA K/V caches are unchanged.",
+  "noop_controls": "Selected logits, top64, winner, terminal and feed-forward tensors, and archived attention slices matched bit for bit.",
+  "transports": {
+    "k-B": {
+      "selected_choice_logit_shifts": {
+        "A": 0.002864837646484375,
+        "B": 0.0047435760498046875,
+        "C": 0.00788116455078125,
+        "D": 0.0054988861083984375
+      },
+      "exact_cpu_payload_readback_bytes": 24576,
+      "changed_native_pregate_row_bytes": 9893,
+      "gated_consumer_shift": {
+        "binary32_changed": 5971,
+        "max_abs_change": 0.001722097396850586,
+        "root_mean_square_change": 0.00010272850524136364
+      },
+      "exact_native_prewrite_microbatch": true,
+      "exact_untouched_microbatch_complement": true,
+      "full_vocabulary_winner_changed": false,
+      "top64_binary32_ledger_changed": true
+    },
+    "k-D": {
+      "selected_choice_logit_shifts": {
+        "A": -0.017274856567382812,
+        "B": -0.016845703125,
+        "C": 0.001995086669921875,
+        "D": 0.011583328247070312
+      },
+      "exact_cpu_payload_readback_bytes": 24576,
+      "changed_native_pregate_row_bytes": 14844,
+      "gated_consumer_shift": {
+        "binary32_changed": 6144,
+        "max_abs_change": 0.14091777801513672,
+        "root_mean_square_change": 0.006626588130601663
+      },
+      "exact_native_prewrite_microbatch": true,
+      "exact_untouched_microbatch_complement": true,
+      "full_vocabulary_winner_changed": false,
+      "top64_binary32_ledger_changed": true
+    },
+    "v-B": {
+      "selected_choice_logit_shifts": {
+        "A": 0.0011081695556640625,
+        "B": 0.001956939697265625,
+        "C": 0.008808135986328125,
+        "D": 0.0040416717529296875
+      },
+      "exact_cpu_payload_readback_bytes": 24576,
+      "changed_native_pregate_row_bytes": 10003,
+      "gated_consumer_shift": {
+        "binary32_changed": 5981,
+        "max_abs_change": 0.001539677381515503,
+        "root_mean_square_change": 6.218065921820295e-05
+      },
+      "exact_native_prewrite_microbatch": true,
+      "exact_untouched_microbatch_complement": true,
+      "full_vocabulary_winner_changed": false,
+      "top64_binary32_ledger_changed": true
+    },
+    "v-D": {
+      "selected_choice_logit_shifts": {
+        "A": -0.0042591094970703125,
+        "B": -0.016248703002929688,
+        "C": 0.0009250640869140625,
+        "D": 0.023881912231445312
+      },
+      "exact_cpu_payload_readback_bytes": 24576,
+      "changed_native_pregate_row_bytes": 15118,
+      "gated_consumer_shift": {
+        "binary32_changed": 6120,
+        "max_abs_change": 0.23946499824523926,
+        "root_mean_square_change": 0.010192177785291186
+      },
+      "exact_native_prewrite_microbatch": true,
+      "exact_untouched_microbatch_complement": true,
+      "full_vocabulary_winner_changed": false,
+      "top64_binary32_ledger_changed": true
+    }
+  },
+  "generated_tokens": 0,
+  "labels_opened": false,
+  "weights_written": false
+}

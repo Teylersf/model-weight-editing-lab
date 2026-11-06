@@ -1,0 +1,624 @@
+{
+  "schema": "published-pilots100-102-native-paired-terminal-transport-v1",
+  "scope": "Same-option, same-position CPU key-only or value-only transport payloads applied to one terminal pre-gate row in CUDA. No attention-cache or saved-weight edits.",
+  "hashes": {
+    "schedule_seal": "74590d24039640f66b151f0b751dcfa5d91a072c4dfed7415fa6a4bafd0d79e3",
+    "score_specification": "b368e9853f91a7b349b100b4a974267438188c9c87f7955ed496bfa713d9b6cc",
+    "sidecar_generation": "fee42fccbe70a6f678be2c977a05a9dfdc07d6aa00c39c01bc15529083265c78",
+    "native_noop": "915615bcf4edaee1be5c182ff1b20f82949403139b95e467147c1331b20f98d4",
+    "native_full": "e1b6c64c38e4dc1ea359212b3ca28b43ced351840a7dc9b0274cde33be92458d",
+    "scored": "6304e7685a68bd62cc5ed2f33e8c94af23ae320b3ae2c3263bb4078fa0e19829",
+    "model": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+    "schedule": "165471e929b3026fc4c57be501211e7ee6d8123c3c5f85d4eaa614bc0a0d10db",
+    "schedule_source": "8edde8b4a0af77a90e143dfefcbf08140ae91c091f5c49e71b3e3d3398c25538",
+    "native_binary": "59c5cff9db921b93f6165a147f6ad65c7ada315013fb9c7fa15cc91de204b615",
+    "native_plan": "d14006b0082465af51d5dc4b2324d7a552fb78627e576d4d2d342ce2f4702918",
+    "cpu_preflight": "698ff898d33bbdef386ee26bc8826dfa03a408d5d591aa5d6cd0539307cc392c",
+    "normalized_native_output": "a98fe42d84059146cacd0649153f7faef244bcd92734e9d082d20cda11d8d644",
+    "comparator_source": "30be314c2ea51b6ee94a5297cb6ff844212f5a72a70986a03324ea1ac14fcf4a"
+  },
+  "design": {
+    "authored_states": 40,
+    "families": 5,
+    "matched_condition_presentations": 20,
+    "directions_per_pair": 2,
+    "prompt_arms": 4,
+    "states_per_arm": 10,
+    "explicit_native_noops": 40,
+    "key_only_interventions": 160,
+    "value_only_interventions": 160,
+    "schedule_sealed_without_grades": true,
+    "terminal_replacement_bytes": 24576,
+    "scoring": {
+      "per_treatment": "Delta logit of donor variant correct letter minus delta logit of recipient variant correct letter, relative to the explicit no-op.",
+      "per_recipient": "Mean effect of the two options whose correctness changes across the variants minus the mean effect of the other two options.",
+      "aggregation": "Average the two reciprocal condition directions first, then equal-weight family means. Analyze K-only and V-only separately.",
+      "report": "Two-sided exact family sign-flip p, 4096 fixed-seed family bootstrap percentile intervals, reciprocal sign concordance and results with the prior smoke family removed."
+    },
+    "controls": [
+      "Within same-demo reversed orientation and same original option, compare its signed response at D versus B, and report reverse-minus-forward response when the option remains at A or C.",
+      "Summarize donor-blind delta D minus mean delta A/B/C and pre-gate RMS per displayed slot.",
+      "Report native A\u2013D and full-vocabulary winner changes, ties and choice gains/losses. On both variants measure the before/after joint correct result for a treatment to the same semantic endpoint."
+    ]
+  },
+  "exact_native_noop": {
+    "states": 40,
+    "model_loads": 1,
+    "fresh_cache_clears": 40,
+    "exact_source_states": 40,
+    "exact_cpu_payload_readback_bytes": 983040,
+    "exact_attention_metadata_states": 40,
+    "exact_untouched_complement_states": 40,
+    "native_changed_pregate_bytes": 0,
+    "exact_archived_h_rows": 40,
+    "exact_binary32_choice_logits": 160,
+    "exact_binary32_selected_logits": 240,
+    "exact_binary32_top64_entries": 2560,
+    "exact_archived_full_vocabulary_winners": 40
+  },
+  "exact_native_transport": {
+    "states": 320,
+    "model_loads": 1,
+    "fresh_cache_clears": 320,
+    "exact_source_states": 320,
+    "exact_cpu_payload_readback_bytes": 7864320,
+    "exact_attention_metadata_states": 320,
+    "exact_untouched_complement_states": 320,
+    "native_changed_pregate_bytes": 3583012,
+    "exact_prewrite_microbatch_vs_noop_states": 320
+  },
+  "scored_aggregate": {
+    "discovery": {
+      "K_ONLY": {
+        "primary_reciprocal_condition_relevant_minus_distractor": {
+          "observations": 20,
+          "families": 5,
+          "equal_family_mean": 0.0007431149482727051,
+          "positive_family_means": 3,
+          "negative_family_means": 2,
+          "family_bootstrap_95_percentile": [
+            -0.0007153511047363281,
+            0.0023069381713867188
+          ],
+          "two_sided_family_signflip_p": 0.4375
+        },
+        "same_sign_reciprocal_observations": {
+          "positive_both": 5,
+          "negative_both": 3,
+          "opposite_sign": 12,
+          "one_or_both_zero": 0
+        },
+        "primary_components_by_recipient_variant": {
+          "0": {
+            "observations": 20,
+            "families": 5,
+            "equal_family_mean": 0.0010701656341552735,
+            "positive_family_means": 4,
+            "negative_family_means": 1,
+            "family_bootstrap_95_percentile": [
+              -0.00031783580780029295,
+              0.002167034149169922
+            ],
+            "two_sided_family_signflip_p": 0.25
+          },
+          "1": {
+            "observations": 20,
+            "families": 5,
+            "equal_family_mean": 0.0004160642623901367,
+            "positive_family_means": 3,
+            "negative_family_means": 2,
+            "family_bootstrap_95_percentile": [
+              -0.0019177436828613282,
+              0.002414846420288086
+            ],
+            "two_sided_family_signflip_p": 0.75
+          }
+        },
+        "same_semantic_placement_controls": {
+          "same_semantic_D_minus_B": {
+            "observations": 40,
+            "families": 5,
+            "equal_family_mean": 0.0004873037338256836,
+            "positive_family_means": 2,
+            "negative_family_means": 3,
+            "family_bootstrap_95_percentile": [
+              -0.0020676374435424803,
+              0.0035704374313354492
+            ],
+            "two_sided_family_signflip_p": 0.875
+          },
+          "same_slot_reverse_minus_forward_A": {
+            "observations": 20,
+            "families": 5,
+            "equal_family_mean": 0.0015537261962890625,
+            "positive_family_means": 3,
+            "negative_family_means": 2,
+            "family_bootstrap_95_percentile": [
+              -0.0013794898986816406,
+              0.004801750183105469
+            ],
+            "two_sided_family_signflip_p": 0.5
+          },
+          "same_slot_reverse_minus_forward_C": {
+            "observations": 20,
+            "families": 5,
+            "equal_family_mean": 0.0013891220092773437,
+            "positive_family_means": 2,
+            "negative_family_means": 3,
+            "family_bootstrap_95_percentile": [
+              -0.001584339141845703,
+              0.005065822601318359
+            ],
+            "two_sided_family_signflip_p": 0.625
+          }
+        },
+        "donor_blind_delta_D_minus_mean_ABC": {
+          "observations": 160,
+          "families": 5,
+          "equal_family_mean": 5.1657358805432505e-08,
+          "positive_family_means": 2,
+          "negative_family_means": 3,
+          "family_bootstrap_95_percentile": [
+            -0.0016319751739501953,
+            0.001844942569732666
+          ],
+          "two_sided_family_signflip_p": 1.0
+        },
+        "pregate_rms_delta_by_displayed_slot": {
+          "A": {
+            "mean": 0.0027691440203370266,
+            "median": 0.0004985851441085191,
+            "count": 40
+          },
+          "B": {
+            "mean": 0.0036253242451810526,
+            "median": 0.0004886812718729624,
+            "count": 40
+          },
+          "C": {
+            "mean": 0.0015334281186599324,
+            "median": 0.00038488079081492135,
+            "count": 40
+          },
+          "D": {
+            "mean": 0.003966786758824559,
+            "median": 0.0018269937699057724,
+            "count": 40
+          }
+        },
+        "winner_and_tie_accounting": {
+          "noop_choice_ties": 0,
+          "noop_full_vocabulary_ties": 0,
+          "interventions": 160,
+          "bit_exact_choice_no_change": 0,
+          "choice_winner_changes": 0,
+          "choice_ties": 0,
+          "new_choice_ties": 0,
+          "full_vocabulary_winner_changes": 0,
+          "full_vocabulary_ties": 0,
+          "choice_gains": 0,
+          "choice_losses": 0,
+          "paired_same_endpoint_comparisons": 80,
+          "paired_both_correct_before": 4,
+          "paired_both_correct_after": 4,
+          "paired_both_correct_gains": 0,
+          "paired_both_correct_losses": 0
+        }
+      },
+      "V_ONLY": {
+        "primary_reciprocal_condition_relevant_minus_distractor": {
+          "observations": 20,
+          "families": 5,
+          "equal_family_mean": 0.00020107030868530274,
+          "positive_family_means": 3,
+          "negative_family_means": 2,
+          "family_bootstrap_95_percentile": [
+            -0.0015348315238952637,
+            0.001857161521911621
+          ],
+          "two_sided_family_signflip_p": 0.8125
+        },
+        "same_sign_reciprocal_observations": {
+          "positive_both": 3,
+          "negative_both": 5,
+          "opposite_sign": 12,
+          "one_or_both_zero": 0
+        },
+        "primary_components_by_recipient_variant": {
+          "0": {
+            "observations": 20,
+            "families": 5,
+            "equal_family_mean": 0.0009772300720214844,
+            "positive_family_means": 4,
+            "negative_family_means": 1,
+            "family_bootstrap_95_percentile": [
+              -0.000541853904724121,
+              0.00261073112487793
+            ],
+            "two_sided_family_signflip_p": 0.3125
+          },
+          "1": {
+            "observations": 20,
+            "families": 5,
+            "equal_family_mean": -0.0005750894546508789,
+            "positive_family_means": 2,
+            "negative_family_means": 3,
+            "family_bootstrap_95_percentile": [
+              -0.0036391019821166992,
+              0.0025074005126953123
+            ],
+            "two_sided_family_signflip_p": 0.75
+          }
+        },
+        "same_semantic_placement_controls": {
+          "same_semantic_D_minus_B": {
+            "observations": 40,
+            "families": 5,
+            "equal_family_mean": 0.001974654197692871,
+            "positive_family_means": 3,
+            "negative_family_means": 2,
+            "family_bootstrap_95_percentile": [
+              -0.0010720252990722655,
+              0.005015802383422851
+            ],
+            "two_sided_family_signflip_p": 0.375
+          },
+          "same_slot_reverse_minus_forward_A": {
+            "observations": 20,
+            "families": 5,
+            "equal_family_mean": 0.002642393112182617,
+            "positive_family_means": 3,
+            "negative_family_means": 2,
+            "family_bootstrap_95_percentile": [
+              -0.0008774757385253906,
+              0.007087802886962891
+            ],
+            "two_sided_family_signflip_p": 0.375
+          },
+          "same_slot_reverse_minus_forward_C": {
+            "observations": 20,
+            "families": 5,
+            "equal_family_mean": 0.0007070064544677735,
+            "positive_family_means": 3,
+            "negative_family_means": 2,
+            "family_bootstrap_95_percentile": [
+              -0.0022516250610351562,
+              0.00383758544921875
+            ],
+            "two_sided_family_signflip_p": 0.6875
+          }
+        },
+        "donor_blind_delta_D_minus_mean_ABC": {
+          "observations": 160,
+          "families": 5,
+          "equal_family_mean": 3.854632377624503e-05,
+          "positive_family_means": 3,
+          "negative_family_means": 2,
+          "family_bootstrap_95_percentile": [
+            -0.0021438817183176678,
+            0.0021977821985880532
+          ],
+          "two_sided_family_signflip_p": 1.0
+        },
+        "pregate_rms_delta_by_displayed_slot": {
+          "A": {
+            "mean": 0.0017552265217391436,
+            "median": 0.0005334237496367057,
+            "count": 40
+          },
+          "B": {
+            "mean": 0.0027989278464801686,
+            "median": 0.0004901689729930106,
+            "count": 40
+          },
+          "C": {
+            "mean": 0.0008218271464928876,
+            "median": 0.0003877415518892933,
+            "count": 40
+          },
+          "D": {
+            "mean": 0.003179412374891918,
+            "median": 0.0019293158181332881,
+            "count": 40
+          }
+        },
+        "winner_and_tie_accounting": {
+          "noop_choice_ties": 0,
+          "noop_full_vocabulary_ties": 0,
+          "interventions": 160,
+          "bit_exact_choice_no_change": 0,
+          "choice_winner_changes": 0,
+          "choice_ties": 0,
+          "new_choice_ties": 0,
+          "full_vocabulary_winner_changes": 0,
+          "full_vocabulary_ties": 0,
+          "choice_gains": 0,
+          "choice_losses": 0,
+          "paired_same_endpoint_comparisons": 80,
+          "paired_both_correct_before": 4,
+          "paired_both_correct_after": 4,
+          "paired_both_correct_gains": 0,
+          "paired_both_correct_losses": 0
+        }
+      }
+    },
+    "discovery_without_smoke_family": {
+      "K_ONLY": {
+        "primary_reciprocal_condition_relevant_minus_distractor": {
+          "observations": 16,
+          "families": 4,
+          "equal_family_mean": 0.00011642277240753174,
+          "positive_family_means": 2,
+          "negative_family_means": 2,
+          "family_bootstrap_95_percentile": [
+            -0.0011471807956695557,
+            0.0013800263404846191
+          ],
+          "two_sided_family_signflip_p": 0.875
+        },
+        "same_sign_reciprocal_observations": {
+          "positive_both": 3,
+          "negative_both": 3,
+          "opposite_sign": 10,
+          "one_or_both_zero": 0
+        },
+        "primary_components_by_recipient_variant": {
+          "0": {
+            "observations": 16,
+            "families": 4,
+            "equal_family_mean": 0.0007050037384033203,
+            "positive_family_means": 3,
+            "negative_family_means": 1,
+            "family_bootstrap_95_percentile": [
+              -0.0007819831371307373,
+              0.0018280744552612305
+            ],
+            "two_sided_family_signflip_p": 0.5
+          },
+          "1": {
+            "observations": 16,
+            "families": 4,
+            "equal_family_mean": -0.00047215819358825684,
+            "positive_family_means": 2,
+            "negative_family_means": 2,
+            "family_bootstrap_95_percentile": [
+              -0.0022859573364257812,
+              0.0013416409492492676
+            ],
+            "two_sided_family_signflip_p": 0.75
+          }
+        },
+        "same_semantic_placement_controls": {
+          "same_semantic_D_minus_B": {
+            "observations": 32,
+            "families": 4,
+            "equal_family_mean": 0.0013801753520965576,
+            "positive_family_means": 2,
+            "negative_family_means": 2,
+            "family_bootstrap_95_percentile": [
+              -0.0012061595916748047,
+              0.004712551832199097
+            ],
+            "two_sided_family_signflip_p": 0.75
+          },
+          "same_slot_reverse_minus_forward_A": {
+            "observations": 16,
+            "families": 4,
+            "equal_family_mean": 3.0994415283203125e-05,
+            "positive_family_means": 2,
+            "negative_family_means": 2,
+            "family_bootstrap_95_percentile": [
+              -0.0017352104187011719,
+              0.0017971992492675781
+            ],
+            "two_sided_family_signflip_p": 1.0
+          },
+          "same_slot_reverse_minus_forward_C": {
+            "observations": 16,
+            "families": 4,
+            "equal_family_mean": -0.00020551681518554688,
+            "positive_family_means": 1,
+            "negative_family_means": 3,
+            "family_bootstrap_95_percentile": [
+              -0.00199735164642334,
+              0.0021452903747558594
+            ],
+            "two_sided_family_signflip_p": 0.875
+          }
+        },
+        "donor_blind_delta_D_minus_mean_ABC": {
+          "observations": 128,
+          "families": 4,
+          "equal_family_mean": -0.0008025566736857095,
+          "positive_family_means": 1,
+          "negative_family_means": 3,
+          "family_bootstrap_95_percentile": [
+            -0.002007534106572469,
+            0.0004024207592010499
+          ],
+          "two_sided_family_signflip_p": 0.375
+        },
+        "pregate_rms_delta_by_displayed_slot": {
+          "A": {
+            "mean": 0.0004702195840846277,
+            "median": 0.00042112811217428635,
+            "count": 32
+          },
+          "B": {
+            "mean": 0.0006842597232735498,
+            "median": 0.0003923083049834019,
+            "count": 32
+          },
+          "C": {
+            "mean": 0.0007222988512792332,
+            "median": 0.00038488079081492135,
+            "count": 32
+          },
+          "D": {
+            "mean": 0.001541166713449972,
+            "median": 0.0013154004565860446,
+            "count": 32
+          }
+        },
+        "winner_and_tie_accounting": {
+          "noop_choice_ties": 0,
+          "noop_full_vocabulary_ties": 0,
+          "interventions": 128,
+          "bit_exact_choice_no_change": 0,
+          "choice_winner_changes": 0,
+          "choice_ties": 0,
+          "new_choice_ties": 0,
+          "full_vocabulary_winner_changes": 0,
+          "full_vocabulary_ties": 0,
+          "choice_gains": 0,
+          "choice_losses": 0,
+          "paired_same_endpoint_comparisons": 64,
+          "paired_both_correct_before": 4,
+          "paired_both_correct_after": 4,
+          "paired_both_correct_gains": 0,
+          "paired_both_correct_losses": 0
+        }
+      },
+      "V_ONLY": {
+        "primary_reciprocal_condition_relevant_minus_distractor": {
+          "observations": 16,
+          "families": 4,
+          "equal_family_mean": 0.0009190887212753296,
+          "positive_family_means": 3,
+          "negative_family_means": 1,
+          "family_bootstrap_95_percentile": [
+            -0.000560566782951355,
+            0.0021791160106658936
+          ],
+          "two_sided_family_signflip_p": 0.375
+        },
+        "same_sign_reciprocal_observations": {
+          "positive_both": 3,
+          "negative_both": 2,
+          "opposite_sign": 11,
+          "one_or_both_zero": 0
+        },
+        "primary_components_by_recipient_variant": {
+          "0": {
+            "observations": 16,
+            "families": 4,
+            "equal_family_mean": 0.0011346936225891113,
+            "positive_family_means": 3,
+            "negative_family_means": 1,
+            "family_bootstrap_95_percentile": [
+              -0.0008584558963775635,
+              0.0028411149978637695
+            ],
+            "two_sided_family_signflip_p": 0.375
+          },
+          "1": {
+            "observations": 16,
+            "families": 4,
+            "equal_family_mean": 0.0007034838199615479,
+            "positive_family_means": 2,
+            "negative_family_means": 2,
+            "family_bootstrap_95_percentile": [
+              -0.0016993694007396698,
+              0.003312528133392334
+            ],
+            "two_sided_family_signflip_p": 0.75
+          }
+        },
+        "same_semantic_placement_controls": {
+          "same_semantic_D_minus_B": {
+            "observations": 32,
+            "families": 4,
+            "equal_family_mean": 0.0032422244548797607,
+            "positive_family_means": 3,
+            "negative_family_means": 1,
+            "family_bootstrap_95_percentile": [
+              0.0007055401802062988,
+              0.005778908729553223
+            ],
+            "two_sided_family_signflip_p": 0.25
+          },
+          "same_slot_reverse_minus_forward_A": {
+            "observations": 16,
+            "families": 4,
+            "equal_family_mean": 0.0005186200141906738,
+            "positive_family_means": 2,
+            "negative_family_means": 2,
+            "family_bootstrap_95_percentile": [
+              -0.0014667510986328125,
+              0.002726435661315918
+            ],
+            "two_sided_family_signflip_p": 0.75
+          },
+          "same_slot_reverse_minus_forward_C": {
+            "observations": 16,
+            "families": 4,
+            "equal_family_mean": -0.0004922747611999512,
+            "positive_family_means": 2,
+            "negative_family_means": 2,
+            "family_bootstrap_95_percentile": [
+              -0.0030641555786132812,
+              0.002079606056213379
+            ],
+            "two_sided_family_signflip_p": 0.875
+          }
+        },
+        "donor_blind_delta_D_minus_mean_ABC": {
+          "observations": 128,
+          "families": 4,
+          "equal_family_mean": -0.000750360389550527,
+          "positive_family_means": 2,
+          "negative_family_means": 2,
+          "family_bootstrap_95_percentile": [
+            -0.0027297983566919965,
+            0.0012290775775909424
+          ],
+          "two_sided_family_signflip_p": 0.75
+        },
+        "pregate_rms_delta_by_displayed_slot": {
+          "A": {
+            "mean": 0.0007565723646446368,
+            "median": 0.00038023621561801275,
+            "count": 32
+          },
+          "B": {
+            "mean": 0.0008355343057485854,
+            "median": 0.00042040526682034804,
+            "count": 32
+          },
+          "C": {
+            "mean": 0.0005199464929796479,
+            "median": 0.0003877415518892933,
+            "count": 32
+          },
+          "D": {
+            "mean": 0.001701404806623844,
+            "median": 0.0013895554465762176,
+            "count": 32
+          }
+        },
+        "winner_and_tie_accounting": {
+          "noop_choice_ties": 0,
+          "noop_full_vocabulary_ties": 0,
+          "interventions": 128,
+          "bit_exact_choice_no_change": 0,
+          "choice_winner_changes": 0,
+          "choice_ties": 0,
+          "new_choice_ties": 0,
+          "full_vocabulary_winner_changes": 0,
+          "full_vocabulary_ties": 0,
+          "choice_gains": 0,
+          "choice_losses": 0,
+          "paired_same_endpoint_comparisons": 64,
+          "paired_both_correct_before": 4,
+          "paired_both_correct_after": 4,
+          "paired_both_correct_gains": 0,
+          "paired_both_correct_losses": 0
+        }
+      }
+    }
+  },
+  "confirmation_grades_decoded": 0,
+  "checkpoint_written": false,
+  "model_weights_mutated": false,
+  "official_fresh_proof_or_transfer_data_used": false
+}
