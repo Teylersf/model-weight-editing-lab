@@ -669,3 +669,11 @@ Pilot 044's activation capture matched all 3,072 baseline choice logits exactly.
 Pilot 046 changed 28, 82 and 29 packed codes across its three fits. It penalized disagreements in the shift of the same answer content across presentations and relative erosion of the missed presentation's margin. The new held set moved from **384/768 to 383/768**, with one gain and two losses. The earlier 028 set stayed at **342/576**, with two gains and two losses. The 039 set stayed at **55/144**. All 90 held ordinary winners were preserved in the reduced full-vocabulary CPU replay. The four lost math answers had led by **0.0062 to 0.0257 logits** before editing. Two flipped to A and two to D.
 
 Both methods stopped at the held development gate. The fold artifacts preserve the direct edits and their exact replay hashes. [Capture pins, held scores, and fold recipes](../evidence/direct-accuracy-pilots-045-046.json)
+
+## Pilots 047 and 048 on quantization and close margins
+
+Pilot 047 used the observed difference between the linear margin prediction and the CPU Q8 replay to tighten constraints locally. All 15 refinements satisfied their linear constraints, and all 15 violated at least one original margin floor in the quantized replay. Fold 0 kept the same rounded tensor edit as Pilot 045. Folds 1 and 2 kept the parent tensor. All held math scores and all 90 archived top-64 ordinary winners were preserved.
+
+Pilot 048 protected the native winner on close, non-target training choices, including those the parent answered incorrectly. It bounded the edit's margin effect under componentwise variation estimated from the four same-letter contexts. The three fits checked 53, 45, and 62 added comparisons and passed their exact decoded bounds. On held data, the earlier 028 score moved from **342/576 to 340/576**, the 039 score moved from **55/144 to 56/144**, and the 044 score stayed at **384/768**. Two incorrect choices on 044 switched to a different incorrect answer. All 90 ordinary full-vocabulary winners stayed exact in the CPU replay.
+
+Both trials failed their held development gates. [Fold recipes, replay hashes, and paired results](../evidence/direct-accuracy-pilots-047-048.json)

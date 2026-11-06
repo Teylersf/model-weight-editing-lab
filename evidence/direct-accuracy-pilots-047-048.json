@@ -1,0 +1,935 @@
+{
+  "schema": "published-pilots047-048-quantized-guard-trials-v1",
+  "status": "both_failed_held_development",
+  "factorial_capture_sha256": "30e776abb9ac79cc7e1f93264342aacd38142d009462fc74609a59e7dcf1b952",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "pilot_047": {
+    "report_sha256": "2c798f9e717174a490688f0a969c3e8d415b3668ca9f0bcbe6e33113e3e17920",
+    "plan_sha256": "8055fbe7bd1a27ec4864a2e02f037993ce63de3d1823675800e3481ecaf093b6",
+    "source_sha256": "61c43b1ea852331f29e78614285ad66900531c9490edb62506c324ec0a646c0a",
+    "u_sha256": "66af838b7a10430b7655aa0cf2af502b1fdf7bb5a258b48cd8ec16cfc06a1b4e",
+    "folds": [
+      {
+        "fold": 0,
+        "fit_receipt_sha256": "2c3041bf82ea857d7a815b26ac53265cc567b5616e16a372fb57146bc33ac7ab",
+        "v_sha256": "e719ecda36225d6d2dddb451032c417004019b103779a9deff779eeee49b2708",
+        "training_probes": 12,
+        "refined_probes": 5,
+        "chosen_patch": {
+          "label": "initial-scale-0.125",
+          "passed": true,
+          "math": {
+            "passed": true,
+            "binary32_argmax_parity": true,
+            "old_028": {
+              "rotations": [
+                233,
+                233
+              ],
+              "all_four": [
+                30,
+                30
+              ],
+              "gains": 0,
+              "losses": 0,
+              "minimum_signed_gap_slack": 0.0012693405151367188
+            },
+            "old_039": {
+              "rotations": [
+                37,
+                37
+              ],
+              "all_four": [
+                1,
+                1
+              ],
+              "gains": 0,
+              "losses": 0,
+              "minimum_signed_gap_slack": 0.012274742126464844
+            },
+            "expanded_044": {
+              "gains": 1,
+              "losses": 0,
+              "by_arm": {
+                "a": {
+                  "rotations": [
+                    71,
+                    72
+                  ],
+                  "all_four": [
+                    9,
+                    10
+                  ],
+                  "gains": 1,
+                  "losses": 0
+                },
+                "b": {
+                  "rotations": [
+                    67,
+                    67
+                  ],
+                  "all_four": [
+                    7,
+                    7
+                  ],
+                  "gains": 0,
+                  "losses": 0
+                },
+                "c": {
+                  "rotations": [
+                    67,
+                    67
+                  ],
+                  "all_four": [
+                    7,
+                    7
+                  ],
+                  "gains": 0,
+                  "losses": 0
+                },
+                "d": {
+                  "rotations": [
+                    65,
+                    65
+                  ],
+                  "all_four": [
+                    8,
+                    8
+                  ],
+                  "gains": 0,
+                  "losses": 0
+                }
+              },
+              "minimum_signed_gap_slack": 0.003161239624023437
+            }
+          },
+          "ordinary": {
+            "states": 60,
+            "archived_top64_winner_changes": 0,
+            "minimum_candidate_archived_top64_margin": 0.029294967651367188,
+            "maximum_parent_surrogate_abs_error": 0.0007440132612828165
+          },
+          "max_ordinary_relative_residual": 1.2554714650039302e-08,
+          "tensor": {
+            "parent_tensor_sha256": "0c98f90b2c64baa071ada49e9db216040932261a54d791c8656deb07c637d97a",
+            "patched_tensor_sha256": "4d1530aa839269c9afd39eb54410e228354329b32853745b32bfb911d6dc951a",
+            "delta_frobenius_fraction": 3.886729441243053e-05
+          }
+        },
+        "held_044_by_arm": {
+          "a": {
+            "rotations": [
+              33,
+              33
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "rotations": [
+              28,
+              28
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "rotations": [
+              23,
+              23
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "rotations": [
+              30,
+              30
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      },
+      {
+        "fold": 1,
+        "fit_receipt_sha256": "7329272abaa94979ae2fc551680ad06bc3eb053be18deaeb195d20e8f076de24",
+        "v_sha256": "cde85cba5a949787ca2d74b5e45bac28b99d5f582b434e228872aec00bff181f",
+        "training_probes": 12,
+        "refined_probes": 5,
+        "chosen_patch": null,
+        "held_044_by_arm": {
+          "a": {
+            "rotations": [
+              29,
+              29
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "rotations": [
+              27,
+              27
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "rotations": [
+              29,
+              29
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "rotations": [
+              27,
+              27
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      },
+      {
+        "fold": 2,
+        "fit_receipt_sha256": "d30a88ace0bda173a6cbb143cd1756be7d198112304a80b5904755dba3d80a87",
+        "v_sha256": "cde85cba5a949787ca2d74b5e45bac28b99d5f582b434e228872aec00bff181f",
+        "training_probes": 12,
+        "refined_probes": 5,
+        "chosen_patch": null,
+        "held_044_by_arm": {
+          "a": {
+            "rotations": [
+              42,
+              42
+            ],
+            "all_four": [
+              7,
+              7
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "rotations": [
+              40,
+              40
+            ],
+            "all_four": [
+              6,
+              6
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "rotations": [
+              38,
+              38
+            ],
+            "all_four": [
+              6,
+              6
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "rotations": [
+              38,
+              38
+            ],
+            "all_four": [
+              6,
+              6
+            ],
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      }
+    ],
+    "locally_feasible_linear_refinements": 15,
+    "refined_probes_passing_quantized_margin_floors": 0,
+    "held_028": {
+      "rotations": [
+        342,
+        342
+      ],
+      "all_four": [
+        46,
+        46
+      ],
+      "gains": 0,
+      "losses": 0
+    },
+    "held_039": {
+      "rotations": [
+        55,
+        55
+      ],
+      "all_four": [
+        2,
+        2
+      ],
+      "gains": 0,
+      "losses": 0
+    },
+    "held_044_by_arm": {
+      "a": {
+        "rotations": [
+          104,
+          104
+        ],
+        "all_four": [
+          11,
+          11
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "rotations": [
+          95,
+          95
+        ],
+        "all_four": [
+          9,
+          9
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "rotations": [
+          90,
+          90
+        ],
+        "all_four": [
+          8,
+          8
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "rotations": [
+          95,
+          95
+        ],
+        "all_four": [
+          9,
+          9
+        ],
+        "gains": 0,
+        "losses": 0
+      }
+    },
+    "ordinary_archived_top64_winner_changes": 0
+  },
+  "pilot_048": {
+    "report_sha256": "b89488c4b200bc0cd38af63e663c25ccf15b19519fbffdda9db7493f0dd84407",
+    "plan_sha256": "97b299804ab5c18a5c29d93892181a44297efc3544a381d6599816ad8d7cd815",
+    "source_sha256": "1a8d9d9674eecc92a05595bd5481bf875e77ed4a7a87c4890919ed73c466412d",
+    "capture_binding_sha256": "417591e52161b0eaa17420298186d56a46f9a82996896d917aaca04128a35895",
+    "folds": [
+      {
+        "fold": 0,
+        "fit_receipt_sha256": "0d19df6ee59565bddd5492ef3c552ea5db7b76c60126381d412981890d4e6467",
+        "packed_rows": [
+          {
+            "token_id": 357,
+            "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+            "packed_sha256": "67270872ca0b43e23c95d9907b2652181026b4d5ec1ff350cdd8ef7ae542ed17",
+            "changed_nibbles": 4,
+            "coordinates": [
+              1954,
+              2982,
+              3292,
+              4046
+            ],
+            "signed_code_deltas": [
+              -1,
+              -1,
+              -1,
+              -1
+            ]
+          },
+          {
+            "token_id": 417,
+            "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "changed_nibbles": 0,
+            "coordinates": [],
+            "signed_code_deltas": []
+          },
+          {
+            "token_id": 351,
+            "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+            "packed_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+            "changed_nibbles": 0,
+            "coordinates": [],
+            "signed_code_deltas": []
+          },
+          {
+            "token_id": 414,
+            "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+            "packed_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+            "changed_nibbles": 0,
+            "coordinates": [],
+            "signed_code_deltas": []
+          }
+        ],
+        "close_guard_pairs": 53,
+        "minimum_exact_decoded_robust_slack": 8.7738037109375e-05,
+        "held_044_by_arm": {
+          "a": {
+            "rotations": [
+              33,
+              33
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "rotations": [
+              28,
+              28
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "rotations": [
+              23,
+              23
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "rotations": [
+              30,
+              30
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      },
+      {
+        "fold": 1,
+        "fit_receipt_sha256": "38db1a60593094e572fb13a7a1761fa37075cacc1975b10bb6c183cdf4f5b128",
+        "packed_rows": [
+          {
+            "token_id": 357,
+            "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+            "packed_sha256": "421e7a5fb1d60ff2d22987fac3f4b5fa691f013a014462bd4b2b74216f0b9b15",
+            "changed_nibbles": 32,
+            "coordinates": [
+              34,
+              66,
+              86,
+              186,
+              509,
+              1307,
+              1691,
+              1716,
+              2394,
+              2443,
+              2445,
+              2578,
+              2685,
+              3053,
+              3087,
+              3112,
+              3292,
+              3397,
+              3400,
+              3463,
+              3605,
+              3643,
+              3674,
+              3871,
+              3902,
+              4178,
+              4474,
+              4624,
+              4640,
+              4718,
+              4787,
+              5090
+            ],
+            "signed_code_deltas": [
+              1,
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              1,
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              1,
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              -1,
+              -1,
+              1,
+              -1,
+              -1,
+              -1,
+              1,
+              1,
+              -1,
+              1
+            ]
+          },
+          {
+            "token_id": 417,
+            "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "changed_nibbles": 0,
+            "coordinates": [],
+            "signed_code_deltas": []
+          },
+          {
+            "token_id": 351,
+            "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+            "packed_sha256": "c1a3fbfcb20720ebaebe2b530a749e6c54d4fd98c53f35d9b9d2e374ec9a822a",
+            "changed_nibbles": 12,
+            "coordinates": [
+              65,
+              66,
+              67,
+              356,
+              670,
+              1515,
+              1841,
+              1853,
+              2067,
+              2357,
+              2491,
+              3343
+            ],
+            "signed_code_deltas": [
+              -1,
+              -1,
+              1,
+              -1,
+              -1,
+              1,
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              -1
+            ]
+          },
+          {
+            "token_id": 414,
+            "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+            "packed_sha256": "a03dfe308c568738f5f011767d51287531a91d9368f60838efc41ac811a67c22",
+            "changed_nibbles": 29,
+            "coordinates": [
+              185,
+              496,
+              775,
+              1107,
+              1138,
+              1312,
+              1380,
+              1464,
+              1519,
+              1755,
+              1771,
+              1822,
+              1963,
+              2114,
+              2228,
+              2267,
+              2308,
+              2339,
+              2351,
+              2470,
+              2604,
+              3439,
+              3643,
+              3666,
+              3837,
+              4468,
+              4628,
+              4768,
+              5007
+            ],
+            "signed_code_deltas": [
+              1,
+              -1,
+              1,
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              1,
+              -1,
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "close_guard_pairs": 45,
+        "minimum_exact_decoded_robust_slack": 0.0011405297944843008,
+        "held_044_by_arm": {
+          "a": {
+            "rotations": [
+              29,
+              29
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "rotations": [
+              27,
+              27
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "rotations": [
+              29,
+              29
+            ],
+            "all_four": [
+              1,
+              1
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "rotations": [
+              27,
+              27
+            ],
+            "all_four": [
+              2,
+              2
+            ],
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      },
+      {
+        "fold": 2,
+        "fit_receipt_sha256": "45e94e658a92f247e6fe7659dff2109bf1c5f1e46f57406326d990c558f68b5d",
+        "packed_rows": [
+          {
+            "token_id": 357,
+            "parent_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+            "packed_sha256": "d9f00306cb40bd7dc14a325933b8ecb145893d4891e8e34eee3aedb07f53d434",
+            "changed_nibbles": 8,
+            "coordinates": [
+              932,
+              1159,
+              2350,
+              3112,
+              3674,
+              4498,
+              4698,
+              4787
+            ],
+            "signed_code_deltas": [
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              1,
+              -1,
+              -1
+            ]
+          },
+          {
+            "token_id": 417,
+            "parent_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "packed_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+            "changed_nibbles": 0,
+            "coordinates": [],
+            "signed_code_deltas": []
+          },
+          {
+            "token_id": 351,
+            "parent_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+            "packed_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+            "changed_nibbles": 0,
+            "coordinates": [],
+            "signed_code_deltas": []
+          },
+          {
+            "token_id": 414,
+            "parent_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+            "packed_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+            "changed_nibbles": 0,
+            "coordinates": [],
+            "signed_code_deltas": []
+          }
+        ],
+        "close_guard_pairs": 62,
+        "minimum_exact_decoded_robust_slack": 3.343427509292212e-05,
+        "held_044_by_arm": {
+          "a": {
+            "rotations": [
+              42,
+              42
+            ],
+            "all_four": [
+              7,
+              7
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "b": {
+            "rotations": [
+              40,
+              40
+            ],
+            "all_four": [
+              6,
+              6
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "c": {
+            "rotations": [
+              38,
+              38
+            ],
+            "all_four": [
+              6,
+              6
+            ],
+            "gains": 0,
+            "losses": 0
+          },
+          "d": {
+            "rotations": [
+              38,
+              38
+            ],
+            "all_four": [
+              6,
+              6
+            ],
+            "gains": 0,
+            "losses": 0
+          }
+        }
+      }
+    ],
+    "packed_row_recipe": {
+      "tensor": {
+        "name": "output.weight",
+        "quantization": "Q4_K",
+        "ggml_type": 12,
+        "dimensions": [
+          5120,
+          248320
+        ],
+        "offset": 10996640,
+        "bytes": 715161600
+      },
+      "row_bytes": 2880,
+      "coordinates_per_block": 256,
+      "block_bytes": 144,
+      "metadata_bytes_per_block": 16,
+      "steps": [
+        "Start each fold from the same pinned parent. Read each row at tensor offset plus token ID times row bytes, and verify its parent row digest.",
+        "For each zero-based coordinate c, set block = c // 256 and i = c % 256. Its row-relative byte offset is 144*block + 16 + 32*(i // 64) + i % 32. Its nibble shift is 4*((i // 32) % 2).",
+        "Add the paired signed code delta to that nibble without changing the other nibble or block metadata. Verify each reconstructed row digest."
+      ],
+      "all_fold_row_hashes_independently_reconstructed": true
+    },
+    "close_guard_threshold": 0.08,
+    "uncertainty_radius_fraction": 0.075,
+    "held_older": {
+      "028": {
+        "rotations": [
+          342,
+          340
+        ],
+        "all_four": [
+          46,
+          46
+        ],
+        "gains": 0,
+        "losses": 2
+      },
+      "039": {
+        "rotations": [
+          55,
+          56
+        ],
+        "all_four": [
+          2,
+          2
+        ],
+        "gains": 1,
+        "losses": 0
+      }
+    },
+    "held_044_by_arm": {
+      "a": {
+        "rotations": [
+          104,
+          104
+        ],
+        "all_four": [
+          11,
+          11
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "rotations": [
+          95,
+          95
+        ],
+        "all_four": [
+          9,
+          9
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "rotations": [
+          90,
+          90
+        ],
+        "all_four": [
+          8,
+          8
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "rotations": [
+          95,
+          95
+        ],
+        "all_four": [
+          9,
+          9
+        ],
+        "gains": 0,
+        "losses": 0
+      }
+    },
+    "held_choice_argmax_changes": {
+      "028": 2,
+      "039": 3,
+      "044": 2
+    },
+    "independent_replay_sha256": "98cd4f821b1342a32ca36ab83f56c8cec2310fabb3b5d92d90a844b367ff091e",
+    "ordinary_full_winner_changes": 0
+  },
+  "all_folds_frozen_before_held_scoring": true,
+  "protected_or_benchmark_inputs_used": false,
+  "native_candidate_run": false,
+  "checkpoint_written": false
+}
