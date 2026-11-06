@@ -1105,6 +1105,12 @@ Pilot 135 measured signed half-edits and paired their effects to shortlist combi
 
 The saved query checkpoint reproduced the earlier in-memory edit on **192 math and 60 ordinary states**. The checks matched all 252 full-vocabulary logit and hidden-state digests, all **1,512** selected logits, and all **16,128** top-64 logits. Both CUDA runs verified the whole saved GGUF before and after inference. The separate proof and cylinder generation gate uses this exact checkpoint. [Disk-loaded replay and sealed parity](../evidence/direct-accuracy-pilot-137-saved-query-native-parity.json)
 
+## Pilot 138 with a protected proof regression
+
+On identical prompts and native settings, the saved edit reproduced **zero of the two** protected proof token streams. The interval product-bound response diverged after 286 common tokens and hit the **3,072-token** limit without a visible answer. The parent had ended naturally at 1,628 tokens. The Cauchy–Euler solution remained mathematically correct and complete on independent review, while its generation diverged after 92 common tokens and took **1,807** tokens versus 1,340 for the parent.
+
+The failed proof gate stopped this candidate before cylinder, matched MMLU, and blinded fresh evaluation. The fitting improvement and the 60 ordinary archived winner checks did not protect these full unforced trajectories. [Exact protected generation receipts and mathematical review](../evidence/direct-accuracy-pilot-138-protected-proof-regression.json)
+
 ## Pilot 141 with previously untouched feed-forward rows
 
 The search verified eight new physical FFN rows and measured **208** packed proposals. The closest full replay reduced the worst shortfall from 0.01882 to 0.01307 logits and increased the number of missed math margins from **two to three**. The previous two-deficit recipe therefore remained the branch's best under its strict count rule. [Expanded row scope and exact replay](../evidence/direct-accuracy-pilot-141-new-ffn-row-probes.json)

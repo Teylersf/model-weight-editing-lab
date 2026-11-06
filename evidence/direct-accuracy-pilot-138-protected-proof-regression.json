@@ -1,0 +1,46 @@
+{
+  "schema": "pilot138-protected-proof-gate-public-v1",
+  "candidate_sha256": "d90ded064e8c35d16552065cfbd04c19586752bae54e932ca5f9d4f110889637",
+  "full_saved_native_parity_gate_sha256": "e57e51f56d78b55ba5d793d6d3ff6a98b3b4747d148409f27a25f472444ba381",
+  "saved_readback_sha256": "a5eb0b062624b84838c9f387ffe9b7bce890dd17c8f6cb72b7e0c529a4cb9eee",
+  "proof_gate_receipt_sha256": "f0752c6aff5127af31fe2c7a7102f722623569c9393cee823c2d68dac566ed8f",
+  "candidate_generation_sha256": "bf19a45cd703d9268cdafa1a64c32729ab5c0bc5ef467f01c3f2fc2831e504e4",
+  "baseline_generation_sha256": "f80b4322a7a2371f8ca16abf3e76c14ba3a66d2b20f9b17eee09bcf2850f8244",
+  "baseline_native_raw_sha256": "a090c0807df5273403a0bf1e56224aba28fbd41b5a8ac2a476f1838a5f67dfa0",
+  "candidate_native_raw_sha256": "6ac5378d4cc96a7f7cb70442e01f8e181c4cc5387152c05d0d0d3bf311126c06",
+  "exact_proofs": 0,
+  "complete_correct_visible_proofs": 1,
+  "protected_gate_passed": false,
+  "cylinder_evaluated": false,
+  "matched_mmlu_evaluated": false,
+  "blinded_fresh_evaluated": false,
+  "proofs_used_for_fitting": false,
+  "proofs": [
+    {
+      "proof": "interval product bound",
+      "exact_prompt_and_token_ids": true,
+      "prompt_sha256": "990beecabba82a8b5a9c9c2fd1a012964216ff9478fb041fff6284ae21c23775",
+      "baseline_completion_tokens": 1628,
+      "candidate_completion_tokens": 3072,
+      "baseline_finish": "eog",
+      "candidate_finish": "length",
+      "common_generated_prefix_tokens": 286,
+      "exact_generation": false,
+      "candidate_visible_final": false,
+      "mathematical_review": "No visible solution before the token limit."
+    },
+    {
+      "proof": "Cauchy–Euler initial value problem",
+      "exact_prompt_and_token_ids": true,
+      "prompt_sha256": "55c76cd97acc6d52c69f273bb1fcdf2a549f5cbb86c9aa411a00f68d7a781c8c",
+      "baseline_completion_tokens": 1340,
+      "candidate_completion_tokens": 1807,
+      "baseline_finish": "eog",
+      "candidate_finish": "eog",
+      "common_generated_prefix_tokens": 92,
+      "exact_generation": false,
+      "candidate_visible_final": true,
+      "mathematical_review": "Correct complete exact solution. Independently checked the substitution into the differential equation and both initial conditions."
+    }
+  ]
+}
