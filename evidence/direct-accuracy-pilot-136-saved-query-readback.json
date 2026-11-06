@@ -1,0 +1,492 @@
+{
+  "schema": "windows-pilot136-iq4xs-query-readback-v1",
+  "status": "STORED_BYTES_PASS_PHYSICAL_REPLAY_PENDING",
+  "parent": {
+    "bytes": 11674147744,
+    "sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3"
+  },
+  "candidate": {
+    "bytes": 11674147744,
+    "sha256": "d90ded064e8c35d16552065cfbd04c19586752bae54e932ca5f9d4f110889637"
+  },
+  "patch_sha256": "722b72af608bccf95ec2cc1f5a3e3cbc0859d7fd74775332a3f852dd9a6286f0",
+  "recipe_sha256": "288c584f66dc6e106efda28ce87d7842458edae73325459dacffdad9c1ebedbc",
+  "p129_screen_receipt_sha256": "28918eee2c07ee5cd94e703762d3706532eb99541a017a356ee8c9c82aca98be",
+  "p132_fit_result_sha256": "4e3105620a143e7e3290447507cc9678a6e3bcf2a18abbddc30c1db8edbd17bc",
+  "p133_ordinary_result_sha256": "b711d2fd6ab24961ef6fb38916267fc142d0210ffa1a0e4c52482ebdc3eb9a3b",
+  "materializer_source_sha256": "2955b1d482c11bf4e2b03dfa2d29b97b4ff7e64a84f94d78cc9c710eb9c9ef2d",
+  "cpu_preflight_sha256": "0d4242dad3c7fb5a4625a617a6c1bf9a69ccde41e9120c0932175f7e1cf2392a",
+  "tensor": {
+    "name": "blk.63.attn_q.weight",
+    "offset": 10832088992,
+    "bytes": 33423360,
+    "rows": 12288,
+    "columns": 5120,
+    "row_bytes": 2720,
+    "ggml_type": 23,
+    "parent_sha256": "4f4a191da6ecb397265ba04729685a596e10821fdc172dc26604e6117a261a1a",
+    "candidate_sha256": "2ada5a37b36776859695ffc209f4f577e7b23a6689520b55b4088c9de3d148b8"
+  },
+  "changed_rows": [
+    {
+      "physical_row": 641,
+      "offset": 10833832512,
+      "bytes": 2720,
+      "parent_row_sha256": "7197d64b785cd3be1287cd9648d8b83587e50fb39b1e938ac44f585559ac7c36",
+      "edited_row_sha256": "ed07792111998ff2364ff417371f0acc6edb794e91097fd87e24dd9947079494",
+      "changes": [
+        {
+          "column": 2803,
+          "signed_code_delta": -1,
+          "parent_code": 8,
+          "candidate_code": 7,
+          "row_byte_offset": 1483,
+          "nibble_shift": 4,
+          "decoded_weight_delta": -0.0099029541015625,
+          "absolute_byte_offset": 10833833995
+        },
+        {
+          "column": 3994,
+          "signed_code_delta": -1,
+          "parent_code": 8,
+          "candidate_code": 7,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": 0.008434295654296875,
+          "absolute_byte_offset": 10833834634
+        }
+      ]
+    },
+    {
+      "physical_row": 654,
+      "offset": 10833867872,
+      "bytes": 2720,
+      "parent_row_sha256": "0de4fe0c19aff3e1d8c584265319d6c1c6deb8e302131bc20c51ab5ba401b12f",
+      "edited_row_sha256": "96355fd8f2470279d4510db9b07ff8e8ffe6ece98a33ea0ab137b5ea5ed36c46",
+      "changes": [
+        {
+          "column": 3994,
+          "signed_code_delta": -1,
+          "parent_code": 8,
+          "candidate_code": 7,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": 0.0069026947021484375,
+          "absolute_byte_offset": 10833869994
+        },
+        {
+          "column": 4772,
+          "signed_code_delta": 1,
+          "parent_code": 13,
+          "candidate_code": 14,
+          "row_byte_offset": 2540,
+          "nibble_shift": 0,
+          "decoded_weight_delta": -0.0138092041015625,
+          "absolute_byte_offset": 10833870412
+        }
+      ]
+    },
+    {
+      "physical_row": 744,
+      "offset": 10834112672,
+      "bytes": 2720,
+      "parent_row_sha256": "52fbd786c83beba513796e76b1400c2f026bd9faef3785604d41de45edc5c662",
+      "edited_row_sha256": "d066bf73ed8748dd8005c86bb60e9d8563eed7a38fde5c259c15eb778d102482",
+      "changes": [
+        {
+          "column": 1546,
+          "signed_code_delta": -1,
+          "parent_code": 11,
+          "candidate_code": 10,
+          "row_byte_offset": 834,
+          "nibble_shift": 0,
+          "decoded_weight_delta": -0.007488250732421875,
+          "absolute_byte_offset": 10834113506
+        },
+        {
+          "column": 3994,
+          "signed_code_delta": 1,
+          "parent_code": 8,
+          "candidate_code": 9,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": -0.005736351013183594,
+          "absolute_byte_offset": 10834114794
+        }
+      ]
+    },
+    {
+      "physical_row": 751,
+      "offset": 10834131712,
+      "bytes": 2720,
+      "parent_row_sha256": "56810189b85691e108333bb8bb788b8b91fff9230bb47f45e2c310fa1733448b",
+      "edited_row_sha256": "d7968b2e6472b6ef0d5d917d67123cf139c3aca352dff4d565ad456b2a24b7a3",
+      "changes": [
+        {
+          "column": 310,
+          "signed_code_delta": -1,
+          "parent_code": 10,
+          "candidate_code": 9,
+          "row_byte_offset": 166,
+          "nibble_shift": 4,
+          "decoded_weight_delta": -0.00725555419921875,
+          "absolute_byte_offset": 10834131878
+        },
+        {
+          "column": 3994,
+          "signed_code_delta": 1,
+          "parent_code": 8,
+          "candidate_code": 9,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": 0.0053558349609375,
+          "absolute_byte_offset": 10834133834
+        }
+      ]
+    },
+    {
+      "physical_row": 6353,
+      "offset": 10849369152,
+      "bytes": 2720,
+      "parent_row_sha256": "def8d58c2479a0672b8741c15dcb2153b5505abb5c409e4cac10fa2035e516c2",
+      "edited_row_sha256": "2866021bba353e818d22ae0e59e97ce49095521e7f4ebc168693622a8664f17d",
+      "changes": [
+        {
+          "column": 310,
+          "signed_code_delta": -1,
+          "parent_code": 1,
+          "candidate_code": 0,
+          "row_byte_offset": 166,
+          "nibble_shift": 4,
+          "decoded_weight_delta": -0.007457733154296875,
+          "absolute_byte_offset": 10849369318
+        },
+        {
+          "column": 3994,
+          "signed_code_delta": 1,
+          "parent_code": 8,
+          "candidate_code": 9,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": 0.0064544677734375,
+          "absolute_byte_offset": 10849371274
+        }
+      ]
+    },
+    {
+      "physical_row": 10344,
+      "offset": 10860224672,
+      "bytes": 2720,
+      "parent_row_sha256": "c784629dc3ea87bc0f890d4389418bea8c1ec5027b24060f08d991d687a1f8b2",
+      "edited_row_sha256": "72a5c2c24165d31bd39c6c5dde78de1b066321327124189b3bcd5def266fc01d",
+      "changes": [
+        {
+          "column": 1974,
+          "signed_code_delta": -1,
+          "parent_code": 12,
+          "candidate_code": 11,
+          "row_byte_offset": 1046,
+          "nibble_shift": 4,
+          "decoded_weight_delta": 0.0057506561279296875,
+          "absolute_byte_offset": 10860225718
+        },
+        {
+          "column": 3994,
+          "signed_code_delta": -1,
+          "parent_code": 10,
+          "candidate_code": 9,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": 0.004763603210449219,
+          "absolute_byte_offset": 10860226794
+        }
+      ]
+    },
+    {
+      "physical_row": 10957,
+      "offset": 10861892032,
+      "bytes": 2720,
+      "parent_row_sha256": "f13beb7f303861720a90efc47636c6732358221b431bfa17cf010c255b20743f",
+      "edited_row_sha256": "43d09689424fb5b495205db279aac981fe15332d7fd15ed5de7135fcb639a6b2",
+      "changes": [
+        {
+          "column": 310,
+          "signed_code_delta": 1,
+          "parent_code": 11,
+          "candidate_code": 12,
+          "row_byte_offset": 166,
+          "nibble_shift": 4,
+          "decoded_weight_delta": 0.004346966743469238,
+          "absolute_byte_offset": 10861892198
+        },
+        {
+          "column": 3994,
+          "signed_code_delta": 1,
+          "parent_code": 7,
+          "candidate_code": 8,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": -0.003707706928253174,
+          "absolute_byte_offset": 10861894154
+        }
+      ]
+    },
+    {
+      "physical_row": 10962,
+      "offset": 10861905632,
+      "bytes": 2720,
+      "parent_row_sha256": "563cb603bc5a8c43eb5140d4eae4c893445b19fa97898dcc3391b3cbbb70edd8",
+      "edited_row_sha256": "5e307f527f5dd3f67d1856f16c2ca011fbbcb4becb56a837168e99ab415b0c9e",
+      "changes": [
+        {
+          "column": 3994,
+          "signed_code_delta": 1,
+          "parent_code": 8,
+          "candidate_code": 9,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": -0.006011009216308594,
+          "absolute_byte_offset": 10861907754
+        },
+        {
+          "column": 4772,
+          "signed_code_delta": -1,
+          "parent_code": 4,
+          "candidate_code": 3,
+          "row_byte_offset": 2540,
+          "nibble_shift": 0,
+          "decoded_weight_delta": 0.008544921875,
+          "absolute_byte_offset": 10861908172
+        }
+      ]
+    },
+    {
+      "physical_row": 11287,
+      "offset": 10862789632,
+      "bytes": 2720,
+      "parent_row_sha256": "d392399ff3142da20086bb1d3f00465122afe8cacdd5298b01f585810ce994c3",
+      "edited_row_sha256": "aca2581c3dedea4b596b600b2faf55081fd00ece83017deeaa90358082c2897f",
+      "changes": [
+        {
+          "column": 310,
+          "signed_code_delta": 1,
+          "parent_code": 3,
+          "candidate_code": 4,
+          "row_byte_offset": 166,
+          "nibble_shift": 4,
+          "decoded_weight_delta": -0.00298309326171875,
+          "absolute_byte_offset": 10862789798
+        },
+        {
+          "column": 3994,
+          "signed_code_delta": 1,
+          "parent_code": 8,
+          "candidate_code": 9,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": 0.00457763671875,
+          "absolute_byte_offset": 10862791754
+        }
+      ]
+    },
+    {
+      "physical_row": 11345,
+      "offset": 10862947392,
+      "bytes": 2720,
+      "parent_row_sha256": "cc5b7a1d8ddb57c5edf039203e9574134906b7927b52d7f031bca7a28c7a89c6",
+      "edited_row_sha256": "c97ad78411e1b738d73bf956402b54a504a3e295e9c6c3a4d55b1c34af670b04",
+      "changes": [
+        {
+          "column": 3889,
+          "signed_code_delta": 1,
+          "parent_code": 6,
+          "candidate_code": 7,
+          "row_byte_offset": 2065,
+          "nibble_shift": 4,
+          "decoded_weight_delta": 0.00698089599609375,
+          "absolute_byte_offset": 10862949457
+        },
+        {
+          "column": 3994,
+          "signed_code_delta": -1,
+          "parent_code": 9,
+          "candidate_code": 8,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": 0.006326436996459961,
+          "absolute_byte_offset": 10862949514
+        }
+      ]
+    },
+    {
+      "physical_row": 11398,
+      "offset": 10863091552,
+      "bytes": 2720,
+      "parent_row_sha256": "a2d180e71d66975f9630d97da70a87f6e18b5e3c8af3eddd0926cd38858ba554",
+      "edited_row_sha256": "c3cee43eaec309f0cd8d65c920c5366d896b525d6270914f9e6c583ee3a8e11c",
+      "changes": [
+        {
+          "column": 2803,
+          "signed_code_delta": -1,
+          "parent_code": 8,
+          "candidate_code": 7,
+          "row_byte_offset": 1483,
+          "nibble_shift": 4,
+          "decoded_weight_delta": 0.01032257080078125,
+          "absolute_byte_offset": 10863093035
+        },
+        {
+          "column": 3994,
+          "signed_code_delta": -1,
+          "parent_code": 7,
+          "candidate_code": 6,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": -0.00688934326171875,
+          "absolute_byte_offset": 10863093674
+        }
+      ]
+    },
+    {
+      "physical_row": 11474,
+      "offset": 10863298272,
+      "bytes": 2720,
+      "parent_row_sha256": "03926575a011b68e8e62b0f85f95939ac3985c3c7f843faad8b8464a4ec987ef",
+      "edited_row_sha256": "0b5aa446fa59a78209af2814aa7987200d6bf94b5a5ffc599cd83ada3dfdb27a",
+      "changes": [
+        {
+          "column": 2162,
+          "signed_code_delta": 1,
+          "parent_code": 12,
+          "candidate_code": 13,
+          "row_byte_offset": 1146,
+          "nibble_shift": 4,
+          "decoded_weight_delta": -0.0133056640625,
+          "absolute_byte_offset": 10863299418
+        },
+        {
+          "column": 3994,
+          "signed_code_delta": 1,
+          "parent_code": 7,
+          "candidate_code": 8,
+          "row_byte_offset": 2122,
+          "nibble_shift": 4,
+          "decoded_weight_delta": -0.0054759979248046875,
+          "absolute_byte_offset": 10863300394
+        }
+      ]
+    }
+  ],
+  "changed_codes": 24,
+  "changed_bytes": 24,
+  "complement_spans": [
+    {
+      "offset": 0,
+      "bytes": 10833833995
+    },
+    {
+      "offset": 10833833996,
+      "bytes": 638
+    },
+    {
+      "offset": 10833834635,
+      "bytes": 35359
+    },
+    {
+      "offset": 10833869995,
+      "bytes": 417
+    },
+    {
+      "offset": 10833870413,
+      "bytes": 243093
+    },
+    {
+      "offset": 10834113507,
+      "bytes": 1287
+    },
+    {
+      "offset": 10834114795,
+      "bytes": 17083
+    },
+    {
+      "offset": 10834131879,
+      "bytes": 1955
+    },
+    {
+      "offset": 10834133835,
+      "bytes": 15235483
+    },
+    {
+      "offset": 10849369319,
+      "bytes": 1955
+    },
+    {
+      "offset": 10849371275,
+      "bytes": 10854443
+    },
+    {
+      "offset": 10860225719,
+      "bytes": 1075
+    },
+    {
+      "offset": 10860226795,
+      "bytes": 1665403
+    },
+    {
+      "offset": 10861892199,
+      "bytes": 1955
+    },
+    {
+      "offset": 10861894155,
+      "bytes": 13599
+    },
+    {
+      "offset": 10861907755,
+      "bytes": 417
+    },
+    {
+      "offset": 10861908173,
+      "bytes": 881625
+    },
+    {
+      "offset": 10862789799,
+      "bytes": 1955
+    },
+    {
+      "offset": 10862791755,
+      "bytes": 157702
+    },
+    {
+      "offset": 10862949458,
+      "bytes": 56
+    },
+    {
+      "offset": 10862949515,
+      "bytes": 143520
+    },
+    {
+      "offset": 10863093036,
+      "bytes": 638
+    },
+    {
+      "offset": 10863093675,
+      "bytes": 205743
+    },
+    {
+      "offset": 10863299419,
+      "bytes": 975
+    },
+    {
+      "offset": 10863300395,
+      "bytes": 810847349
+    }
+  ],
+  "complement_sha256": "63d71f3dccd3d033a8c983a8e52b6bbcec83b2a709a03fb60aad14dde17630d7",
+  "complement_basis": "Every byte outside the 24 changed bytes. The other nibble in each changed byte was independently checked.",
+  "outside_declared_nibbles_byte_identical": true,
+  "fixed_iq4xs_metadata": true,
+  "checkpoint_written": true,
+  "accepted_pointer_updated": false,
+  "gpu_used": false,
+  "readback_receipt_sha256": "a5eb0b062624b84838c9f387ffe9b7bce890dd17c8f6cb72b7e0c529a4cb9eee"
+}

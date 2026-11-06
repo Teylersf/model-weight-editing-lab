@@ -1087,6 +1087,12 @@ The three remaining floors prevented qualification. An independent read-only str
 
 Pilot 129's 24-code query edit improved from **119/192 to 120/192** on the full authored fitting partition. Both-correct pairs improved from **40/96 to 41/96**. All 119 prior correct choices and all 40 prior both-correct pairs were preserved. The CUDA replay reproduced the original 16 candidate states and restored all 192 full-vocabulary logit digests exactly. The fitting pass advanced the frozen edit to the ordinary-prompt gate. [Full fitting scores and exact receipts](../evidence/direct-accuracy-pilot-132-query-fitting-pass.json)
 
+## Pilots 133 and 136 with ordinary replay and the saved query edit
+
+The frozen edit preserved all **60** full-vocabulary winners on the ordinary training prompts. The restore matched all 60 archived selected-logit, top-64, hidden-state, and winner records. It also reproduced the complete vocabulary digests on all six live stock anchors. [Ordinary native gate](../evidence/direct-accuracy-pilot-133-ordinary-query-pass.json)
+
+The materializer saved the 24-code edit as a read-only GGUF. Independent readback compared every byte against the parent and verified that only the 24 declared nibbles in 12 rows changed. The complete file matched the predicted SHA-256. This saved checkpoint advances to saved-file CUDA parity and the two exact proofs and cylinder checks. [Saved-file readback and checksums](../evidence/direct-accuracy-pilot-136-saved-query-readback.json)
+
 ## Pilots 134 and 135 with guarded compound feed-forward changes
 
 The search tested **382** compounds and fully replayed **64**. All full replays met both objective caps and preserved the 60 ordinary winners and 480 ordinary floors. The best recipe reduced the remaining math violations from **three to two** and the largest shortfall from **0.04821 to 0.01882** logits. The last round found no better candidate within its search bounds.

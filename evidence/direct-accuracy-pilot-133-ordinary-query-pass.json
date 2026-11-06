@@ -1,0 +1,27 @@
+{
+  "schema": "windows-pilot133-ordinary-query-guard-receipt-v1",
+  "plan_sha256": "7953d67f5f2efbb447e45bbdc6a7bcdb39591619e132e7119827943af234ae50",
+  "preflight_sha256": "f9a1d5112e6fd1db8591b676083e27993ea0af0f80ccc0012fa89019457ab111",
+  "p132_fit_result_sha256": "4e3105620a143e7e3290447507cc9678a6e3bcf2a18abbddc30c1db8edbd17bc",
+  "patch_sha256": "722b72af608bccf95ec2cc1f5a3e3cbc0859d7fd74775332a3f852dd9a6286f0",
+  "p117_capture_sha256": "c5120d79bba92587fd7fa826faccb468971e040ad0a85a404714aa650ed482fe",
+  "native_receipt_sha256": "b38492b191dcfcd6f8ddb5ba97ca5a36c70e5e44f07cd3f5f8a52e6a0b70ae7e",
+  "states_sha256": "0e04b18990173e8d36edcec26f7339e7089aba68606446978461e1b7621c2eb3",
+  "exact_live_full_vocabulary_restored_anchors": 6,
+  "exact_p117_restored_top64_selected_hidden_winner_states": 60,
+  "candidate_unchanged_full_vocab_winners": 60,
+  "candidate_full_vocab_winner_changes": 0,
+  "passed": true,
+  "native_overlay": {
+    "transitions": 3,
+    "union_rows": 12,
+    "transition_row_verifications": 36,
+    "device_row_writes": 24,
+    "parent_restored": true
+  },
+  "ordinary_training_only": true,
+  "held_or_protected_data_used": false,
+  "checkpoint_written": false,
+  "public_source_sha256": "216a2f3e2786d3d2e70008895ce15d74459299a92cbc47c80b235bf4e3e6a66e",
+  "public_receipt_sha256": "b711d2fd6ab24961ef6fb38916267fc142d0210ffa1a0e4c52482ebdc3eb9a3b"
+}
