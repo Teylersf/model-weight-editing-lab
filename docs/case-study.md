@@ -996,3 +996,17 @@ The held replay reproduced Pilot 108's **436/752**, including two gains and two 
 ## Pilot 113 with a mixed GGUF stream verifier
 
 The verifier reconstructed Pilot 108's **358** code changes in **357** packed bytes across 16 rows. It streamed all **11,674,147,744** model bytes and reproduced the predicted full digest. Nine synthetic checks covered exact materialization, staged corruption, preserving existing output, and an output race. The rejected patch was verified read-only. Production writes remain disabled pending an exact mixed native and held qualification binder. [Full-stream and synthetic receipts](../evidence/direct-accuracy-pilot-113-mixed-gguf-verifier.json)
+
+## Pilots 114 and 116 with an ordinary-winner repair
+
+Pilot 114 used an auxiliary variable for each teacher's maximum deficit across all rival answers. Exact Q8 replay found **11** proposals that cleared all **2,043** math margins and improved both training objectives. Each raised both-correct pairs from **40/96 to 42/96** and flipped one ordinary archived top-64 winner.
+
+Pilot 116 reconstructed one of those proposals and compensated for the ordinary regression. The chosen patch froze **363** packed codes across 16 rows. It kept the paired gain, cleared every strict fitting margin, and preserved all 60 ordinary archived winners. An independent stream replay reconstructed the exact rows and verified that every other GGUF byte remained unchanged.
+
+On the independently reserved 64 presentations, accuracy stayed at **38/64** with zero choice losses or ties. One signed margin crossed its required floor by **0.01065** logits. Qualification stopped at the reserve gate, before the inner and outer family evaluations. [Exact recipes and reserve evidence](../evidence/direct-accuracy-pilots-114-116-ordinary-compensation.json)
+
+## Pilots 112, 115, 118, and 119 with query-gradient calibration
+
+The read-only CUDA capture kept exactly the **192** authorized fitting presentations. It recorded **63,288** causal prefix tokens, verified all **384** key and value cache slice hashes, and matched the archived terminal tensors, **768** A–D logits, and **12,288** top-64 entries bit for bit. An independent eight-state CPU check reproduced the continuous attention and suffix derivatives with finite differences. The maximum relative RMS discrepancy in reconstructing the native pre-gate outputs was **0.058%** on those eight states.
+
+The derivative computed on all 192 states failed calibration against the four fixed Pilot 110 CUDA measurements. The largest predicted A–D shift was **1.42 × 10⁻⁶** logits, compared with a measured **0.00447**. Using the actual before-and-after native states as anchors, Q8-effective inputs reproduced the FFN and output-head changes closely. The maximum choice-logit error fell from **0.00470** with the continuous hidden-state change to **1.75 × 10⁻⁶** with Q8. Rounding the query to binary16 improved the pre-gate prediction and still left substantial error. The smooth query gradient therefore did not qualify to rank packed edits. [Native capture, finite differences, and stage controls](../evidence/direct-accuracy-pilots-112-119-query-calibration.json)
