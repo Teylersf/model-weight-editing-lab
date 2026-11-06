@@ -1,0 +1,53 @@
+{
+  "evaluation_only": true,
+  "fitting_authorized": false,
+  "fresh_inputs_opened": false,
+  "gpu_used": false,
+  "protected_content_in_receipt": false,
+  "reference_generation_receipt_sha256": "f80b4322a7a2371f8ca16abf3e76c14ba3a66d2b20f9b17eee09bcf2850f8244",
+  "reference_pilot": 24,
+  "results": [
+    {
+      "candidate_completion_tokens": 1702,
+      "candidate_first_differing_token_from_edited_row": false,
+      "candidate_pilot": 209,
+      "divergent_proofs": 1,
+      "exact_proofs": 1,
+      "gate_sha256": "b240ebc85c44e4d6c7b2fc74406cfc9eba81491e8b4fb84765e9ec629f5b8f13",
+      "generation_receipt_sha256": "ddc34ac765e1150dc407044625b19a8adeaba86b352e85c73047a5f766f4fd5f",
+      "identical_prefix_tokens": 504,
+      "proofs_compared": 2,
+      "qualification_pilot": 213,
+      "readback_sha256": "9b43934872d9db964bcc96ac426bf715ea284c2f66a5ec713de05a24e3a37590",
+      "reference_completion_tokens": 1340,
+      "reference_first_differing_token_from_edited_row": true
+    },
+    {
+      "candidate_completion_tokens": 1702,
+      "candidate_first_differing_token_from_edited_row": false,
+      "candidate_pilot": 217,
+      "divergent_proofs": 1,
+      "exact_proofs": 1,
+      "gate_sha256": "104ba3694f680477847f0dbd6b6764e1e92dd78f7b7da5b04ca10d0e1f80dfd1",
+      "generation_receipt_sha256": "7701cac6d36b8799fd8889ee172276a70ab0c99ad1748386e55a6e3c17b2dd08",
+      "identical_prefix_tokens": 504,
+      "proofs_compared": 2,
+      "qualification_pilot": 218,
+      "readback_sha256": "6bccfa680724f15ee39c957aeb1c4c80bf1f54e5d558a95e5a24211626a61f3b",
+      "reference_completion_tokens": 1340,
+      "reference_first_differing_token_from_edited_row": true
+    }
+  ],
+  "same_four_output_rows_edited": true,
+  "schema": "windows-pilot223-protected-proof-divergence-aggregate-v1",
+  "shared": {
+    "candidates_divergent_proof_generated_bytes_exact": true,
+    "candidates_divergent_proof_streams_exact": true,
+    "same_candidate_first_differing_token": true,
+    "same_divergent_proof": true,
+    "same_first_divergence_position": true,
+    "same_reference_first_differing_token": true
+  },
+  "source_sha256": "784559fa90a9a6eae682b5e64922d642a62c0f2083a4871a2885fcd7336c29c3",
+  "verified_exact_prompt_token_and_native_settings_parity": true
+}
