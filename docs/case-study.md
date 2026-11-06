@@ -767,3 +767,22 @@ The original grader assumed A–D list order. The CPU regrade verified all six e
 ## Pilot 066 with a bulk CUDA verifier
 
 A pinned trajectory manifest passed a single CPU preflight for all **768** frozen sequences. A separate four-state CUDA fixture verified that the bulk input path reproduced the previous multi-row CUDA patch's activations, top-64 and selected logits byte for byte. [Preflight and CUDA parity checksums](../evidence/direct-accuracy-pilot-066-bulk-native-parity.json)
+
+## Pilot 068 with read-only upstream capture on the 044 cohort
+
+The CUDA capture added the final feed-forward input, gate and up activations for all **768** existing 044 states. An independent CPU audit matched all **3,072** binary32 choice logits against both the archived terminal capture and the original scorer. It also matched the 768 top-64 ledgers and full-vocabulary winners, and verified the original A, P, R, H and gamma arrays byte for byte. The largest absolute difference between the stored gated activation and the reconstructed SwiGLU output was **7.93 × 10⁻⁶**. The source checkpoint passed its full before-and-after hash check. [Capture and independent audit checksums](../evidence/direct-accuracy-pilot-068-044-upstream-capture.json)
+
+## Pilot 070 with a continuous gate and up comparison
+
+The fixed comparison used the same twelve neuron slots for the up-only, gate-only and joint lanes. It imposed both the original signed margin floors and a separate positive-margin control on the 053 and 044 training states. It replayed each frozen fit with anchored FP32 activations and CPU Q8 output. These were continuous coefficients, with no code packing or checkpoint write.
+
+| Branch | Training guard | Held 053 paired gains and losses | Held prior-correct losses, 053 and 044 |
+| --- | --- | ---: | ---: |
+| Up | Signed | 0 / 1 | 1 / 5 |
+| Gate | Signed | 0 / 1 | 1 / 2 |
+| Joint | Signed | 0 / 1 | 2 / 6 |
+| Up | Positive | 2 / 1 | 4 / 6 |
+| Gate | Positive | 2 / 2 | 6 / 5 |
+| Joint | Positive | 3 / 2 | 8 / 7 |
+
+Every lane preserved the 90 held ordinary winners among the archived top 64. Each signed lane still crossed training floors after Q8 replay. The held families were grouped within each corpus. The independently authored complex-analysis sets share a family label and fall in different source-local folds. [Frozen method and per-fold results](../evidence/direct-accuracy-pilot-070-branch-capacity.json)

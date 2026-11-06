@@ -1,0 +1,395 @@
+{
+  "schema": "published-pilot070-branch-capacity-diagnostic-v1",
+  "frozen_plan_sha256": "61583514a1d911b6d16d4165ced9844ea9a0147936810d26a7c11b28274b12a6",
+  "local_full_report_sha256": "2da284ec3d9ea283fb68e5c6213a68cafd463412f44c33102cb6b1f96822bc7c",
+  "capture_068_receipt_sha256": "ac1844da188242446f2c6541375bd8b48144c0b97ab4c611b239c772a766d54c",
+  "gate_derivative_fixture_max_error": 5.775930844720278e-09,
+  "frozen_plan": {
+    "schema": "windows-pilot070-branch-capacity-plan-v1",
+    "source_sha256": "9bd542318ec6269f7f596e1ea6b0d995003e176fdfc424a0ec72b55d8911fb8c",
+    "helper_pins": [
+      "a688683d4099689d8a9fc768cafa8f9cfa28b7ad8f898571a958387cf4d6a353",
+      "012e9d1c3c93cc9c0dc98df129c16c27038ba8ada06b104f80ba96a1a29afe68",
+      "8c5818cee9118e42eb2ca55de8f523197fd22bb14ba25c0b5112de806aca2d37"
+    ],
+    "input_pins": [
+      "10bc93edbb8e50959fa61839e83c6f2d3fcf55776b6e1124a0d391759f68c661",
+      "722001c8ee9f1995bcf609452883798343a02dcc8dad69e2886bdeae2a1ba42e",
+      "3b6979579e32f7d5ad7368a83b8fe21883619e8faf4fcfcdea3ce3ff16baddad",
+      "7fcd24a366f3750c91525f8d06149f6542c9f83589414adaaee6ae44cf09953b",
+      "f383a0d0a62f29df25058aa232e2bedeef7110c5831ff5cd9cf301293ef84f0c"
+    ],
+    "selection": "Only preregistered 057 training supports define the common input feature basis. Both branches ranked separately by the same weighted wrong-versus-correct residual margin derivative and branch RMS budget. Joint uses six neurons per branch.",
+    "branch_sizes": {
+      "up": [
+        [
+          "up",
+          12
+        ]
+      ],
+      "gate": [
+        [
+          "gate",
+          12
+        ]
+      ],
+      "joint": [
+        [
+          "up",
+          6
+        ],
+        [
+          "gate",
+          6
+        ]
+      ]
+    },
+    "branch_response_scale": 0.075,
+    "branch_budget": "Each variable is measured in training branch RMS units with 0.05 minimum RMS, divided by square root of input rank. Every variable has the same bound.",
+    "guard_lanes": [
+      "signed_reserve",
+      "positive_reserve"
+    ],
+    "positive_lane": "Floor 0.001 with half-slack reserve, capped at half the original gap. All exact prior winners still protected. Also report signed-floor violations.",
+    "signed_lane": "Original signed all-rival floor and reserve on 053 and 044, same as 067. Both lanes project features away from the training ordinary span and report exact ordinary archived-top64 parity.",
+    "replay": "Anchored FP32 SwiGLU, residual and RMS with the native parent logits and CPU Q8 output. FP64 deltas for hypothetical unquantized coefficients. No GGUF code is selected or written.",
+    "data": "Only exact independently authored 053 and 044, and 058 ordinary guards. Same existing whole-family outer partitions. All six lanes and all three folds are fixed before held scoring.",
+    "benchmark_fresh_or_proof_inputs_used": false,
+    "checkpoint_written": false
+  },
+  "folds_frozen_before_held": true,
+  "lanes": {
+    "up": {
+      "signed_reserve": {
+        "folds": [
+          {
+            "fold": 0,
+            "continuous_coefficients_nonzero": 109,
+            "training_pair_gains": 3,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 0,
+            "training_signed_floor_violations": 4,
+            "held_pair_gains": 0,
+            "held_pair_losses": 1,
+            "held_prior_correct_losses_053": 1,
+            "held_prior_correct_losses_044": 4,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 1,
+            "continuous_coefficients_nonzero": 126,
+            "training_pair_gains": 1,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 1,
+            "training_signed_floor_violations": 7,
+            "held_pair_gains": 0,
+            "held_pair_losses": 0,
+            "held_prior_correct_losses_053": 0,
+            "held_prior_correct_losses_044": 1,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 2,
+            "continuous_coefficients_nonzero": 131,
+            "training_pair_gains": 0,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 1,
+            "training_signed_floor_violations": 9,
+            "held_pair_gains": 0,
+            "held_pair_losses": 0,
+            "held_prior_correct_losses_053": 0,
+            "held_prior_correct_losses_044": 0,
+            "held_ordinary_binary32_winner_changes": 0
+          }
+        ],
+        "aggregate": {
+          "training_pair_gains": 4,
+          "training_prior_correct_losses_053": 0,
+          "training_prior_correct_losses_044": 2,
+          "training_signed_floor_violations": 20,
+          "held_pair_gains": 0,
+          "held_pair_losses": 1,
+          "held_prior_correct_losses_053": 1,
+          "held_prior_correct_losses_044": 5,
+          "held_ordinary_binary32_winner_changes": 0
+        }
+      },
+      "positive_reserve": {
+        "folds": [
+          {
+            "fold": 0,
+            "continuous_coefficients_nonzero": 112,
+            "training_pair_gains": 6,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 0,
+            "training_signed_floor_violations": 28,
+            "held_pair_gains": 1,
+            "held_pair_losses": 1,
+            "held_prior_correct_losses_053": 1,
+            "held_prior_correct_losses_044": 4,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 1,
+            "continuous_coefficients_nonzero": 133,
+            "training_pair_gains": 4,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 0,
+            "training_signed_floor_violations": 35,
+            "held_pair_gains": 0,
+            "held_pair_losses": 0,
+            "held_prior_correct_losses_053": 3,
+            "held_prior_correct_losses_044": 1,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 2,
+            "continuous_coefficients_nonzero": 134,
+            "training_pair_gains": 3,
+            "training_prior_correct_losses_053": 2,
+            "training_prior_correct_losses_044": 1,
+            "training_signed_floor_violations": 37,
+            "held_pair_gains": 1,
+            "held_pair_losses": 0,
+            "held_prior_correct_losses_053": 0,
+            "held_prior_correct_losses_044": 1,
+            "held_ordinary_binary32_winner_changes": 0
+          }
+        ],
+        "aggregate": {
+          "training_pair_gains": 13,
+          "training_prior_correct_losses_053": 2,
+          "training_prior_correct_losses_044": 1,
+          "training_signed_floor_violations": 100,
+          "held_pair_gains": 2,
+          "held_pair_losses": 1,
+          "held_prior_correct_losses_053": 4,
+          "held_prior_correct_losses_044": 6,
+          "held_ordinary_binary32_winner_changes": 0
+        }
+      }
+    },
+    "gate": {
+      "signed_reserve": {
+        "folds": [
+          {
+            "fold": 0,
+            "continuous_coefficients_nonzero": 116,
+            "training_pair_gains": 4,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 0,
+            "training_signed_floor_violations": 7,
+            "held_pair_gains": 0,
+            "held_pair_losses": 1,
+            "held_prior_correct_losses_053": 1,
+            "held_prior_correct_losses_044": 1,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 1,
+            "continuous_coefficients_nonzero": 125,
+            "training_pair_gains": 2,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 1,
+            "training_signed_floor_violations": 3,
+            "held_pair_gains": 0,
+            "held_pair_losses": 0,
+            "held_prior_correct_losses_053": 0,
+            "held_prior_correct_losses_044": 1,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 2,
+            "continuous_coefficients_nonzero": 126,
+            "training_pair_gains": 0,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 0,
+            "training_signed_floor_violations": 8,
+            "held_pair_gains": 0,
+            "held_pair_losses": 0,
+            "held_prior_correct_losses_053": 0,
+            "held_prior_correct_losses_044": 0,
+            "held_ordinary_binary32_winner_changes": 0
+          }
+        ],
+        "aggregate": {
+          "training_pair_gains": 6,
+          "training_prior_correct_losses_053": 0,
+          "training_prior_correct_losses_044": 1,
+          "training_signed_floor_violations": 18,
+          "held_pair_gains": 0,
+          "held_pair_losses": 1,
+          "held_prior_correct_losses_053": 1,
+          "held_prior_correct_losses_044": 2,
+          "held_ordinary_binary32_winner_changes": 0
+        }
+      },
+      "positive_reserve": {
+        "folds": [
+          {
+            "fold": 0,
+            "continuous_coefficients_nonzero": 117,
+            "training_pair_gains": 7,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 0,
+            "training_signed_floor_violations": 24,
+            "held_pair_gains": 1,
+            "held_pair_losses": 1,
+            "held_prior_correct_losses_053": 2,
+            "held_prior_correct_losses_044": 2,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 1,
+            "continuous_coefficients_nonzero": 127,
+            "training_pair_gains": 5,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 1,
+            "training_signed_floor_violations": 25,
+            "held_pair_gains": 0,
+            "held_pair_losses": 1,
+            "held_prior_correct_losses_053": 3,
+            "held_prior_correct_losses_044": 3,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 2,
+            "continuous_coefficients_nonzero": 128,
+            "training_pair_gains": 4,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 0,
+            "training_signed_floor_violations": 30,
+            "held_pair_gains": 1,
+            "held_pair_losses": 0,
+            "held_prior_correct_losses_053": 1,
+            "held_prior_correct_losses_044": 0,
+            "held_ordinary_binary32_winner_changes": 0
+          }
+        ],
+        "aggregate": {
+          "training_pair_gains": 16,
+          "training_prior_correct_losses_053": 0,
+          "training_prior_correct_losses_044": 1,
+          "training_signed_floor_violations": 79,
+          "held_pair_gains": 2,
+          "held_pair_losses": 2,
+          "held_prior_correct_losses_053": 6,
+          "held_prior_correct_losses_044": 5,
+          "held_ordinary_binary32_winner_changes": 0
+        }
+      }
+    },
+    "joint": {
+      "signed_reserve": {
+        "folds": [
+          {
+            "fold": 0,
+            "continuous_coefficients_nonzero": 114,
+            "training_pair_gains": 3,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 0,
+            "training_signed_floor_violations": 7,
+            "held_pair_gains": 0,
+            "held_pair_losses": 1,
+            "held_prior_correct_losses_053": 2,
+            "held_prior_correct_losses_044": 5,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 1,
+            "continuous_coefficients_nonzero": 128,
+            "training_pair_gains": 2,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 1,
+            "training_signed_floor_violations": 4,
+            "held_pair_gains": 0,
+            "held_pair_losses": 0,
+            "held_prior_correct_losses_053": 0,
+            "held_prior_correct_losses_044": 1,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 2,
+            "continuous_coefficients_nonzero": 137,
+            "training_pair_gains": 2,
+            "training_prior_correct_losses_053": 1,
+            "training_prior_correct_losses_044": 1,
+            "training_signed_floor_violations": 8,
+            "held_pair_gains": 0,
+            "held_pair_losses": 0,
+            "held_prior_correct_losses_053": 0,
+            "held_prior_correct_losses_044": 0,
+            "held_ordinary_binary32_winner_changes": 0
+          }
+        ],
+        "aggregate": {
+          "training_pair_gains": 7,
+          "training_prior_correct_losses_053": 1,
+          "training_prior_correct_losses_044": 2,
+          "training_signed_floor_violations": 19,
+          "held_pair_gains": 0,
+          "held_pair_losses": 1,
+          "held_prior_correct_losses_053": 2,
+          "held_prior_correct_losses_044": 6,
+          "held_ordinary_binary32_winner_changes": 0
+        }
+      },
+      "positive_reserve": {
+        "folds": [
+          {
+            "fold": 0,
+            "continuous_coefficients_nonzero": 113,
+            "training_pair_gains": 9,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 0,
+            "training_signed_floor_violations": 32,
+            "held_pair_gains": 2,
+            "held_pair_losses": 2,
+            "held_prior_correct_losses_053": 3,
+            "held_prior_correct_losses_044": 2,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 1,
+            "continuous_coefficients_nonzero": 131,
+            "training_pair_gains": 6,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 1,
+            "training_signed_floor_violations": 36,
+            "held_pair_gains": 0,
+            "held_pair_losses": 0,
+            "held_prior_correct_losses_053": 4,
+            "held_prior_correct_losses_044": 4,
+            "held_ordinary_binary32_winner_changes": 0
+          },
+          {
+            "fold": 2,
+            "continuous_coefficients_nonzero": 133,
+            "training_pair_gains": 5,
+            "training_prior_correct_losses_053": 0,
+            "training_prior_correct_losses_044": 2,
+            "training_signed_floor_violations": 35,
+            "held_pair_gains": 1,
+            "held_pair_losses": 0,
+            "held_prior_correct_losses_053": 1,
+            "held_prior_correct_losses_044": 1,
+            "held_ordinary_binary32_winner_changes": 0
+          }
+        ],
+        "aggregate": {
+          "training_pair_gains": 20,
+          "training_prior_correct_losses_053": 0,
+          "training_prior_correct_losses_044": 3,
+          "training_signed_floor_violations": 103,
+          "held_pair_gains": 3,
+          "held_pair_losses": 2,
+          "held_prior_correct_losses_053": 8,
+          "held_prior_correct_losses_044": 7,
+          "held_ordinary_binary32_winner_changes": 0
+        }
+      }
+    }
+  },
+  "scope": "Continuous hypothetical branch coefficients evaluated with anchored FP32 SwiGLU and CPU Q8 output on held families within each source. The cohorts contain independently authored items; one shared complex-analysis family label maps to different source-local folds. No packed code edit or checkpoint was produced.",
+  "checkpoint_written": false
+}
