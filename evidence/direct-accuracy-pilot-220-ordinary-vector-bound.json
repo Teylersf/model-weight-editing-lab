@@ -1,0 +1,111 @@
+{
+  "schema": "public-direct-accuracy-pilot-220-ordinary-vector-bound-v1",
+  "receipt_sha256": "34f52f073f9b1268d6e1df210d7ef8d4f60ec0493164e32444f40aae64e74f34",
+  "source_sha256": "8f05aaa2fe1433076b002e6d201036de2a205e747d9f8f6bf40a5e490ed61923",
+  "plan_sha256": "f366f4766c10d0cae5d08deee25ee14a9307cde54b8249bd0d50a9adcd63c681",
+  "verified_archive_anchor_sha256": "300bc1a8ee1a6d1b6edac0516f94b97a53fdfe5bae8bceb771f17e5324d98964",
+  "fit_anchor_recipe_sha256": "dc079298736dccff8e0c5dc1dd8ce5a9528704268f6eaec473c4f27d4beecfca",
+  "starting_peak_relative_to_p194": 0.040032386779785156,
+  "requested_relative_drift_caps": [
+    0.008,
+    0.004,
+    0.002
+  ],
+  "best_continuous_relative_peak": 0.02461134094835536,
+  "half_only_trials": [
+    {
+      "radius": 16,
+      "exact_decoder_combinations": 86625,
+      "active_guards": 9607,
+      "solver_status": 0,
+      "continuous_minimax_drift": 0.025154413934572788,
+      "exact": [
+        {
+          "method": "nearest_minimax",
+          "previous_choice_losses": 1,
+          "previous_complete_group_losses": 0,
+          "correct_p105": 335,
+          "complete_p105_groups": 11,
+          "p194_protected_authored_margin": 0.007503509521484375,
+          "new_worst_target_margin": 0.007183074951171875,
+          "max_ordinary_shift": 0.023729005124550895,
+          "ordinary_winner_changes": 0,
+          "max_math_shift": 0.3826754407846238,
+          "relative_l2_to_P209": 0.9941211972581128,
+          "maximum_proxy_guard_residual": 0.004555100557170302,
+          "weighted_guard_loss": 0.0007055711711953837,
+          "guard_feasible": false,
+          "passed": false,
+          "p220_full_guard_passed": false,
+          "max_guard_residual_with_P217": 0.004555100557170302,
+          "ordinary_drift_to_P194_f32": 0.028221607208251953,
+          "ordinary_drift_to_P194_unrounded": 0.028221488604685874,
+          "passed_caps": []
+        }
+      ]
+    },
+    {
+      "radius": 32,
+      "exact_decoder_combinations": 334165,
+      "active_guards": 22393,
+      "solver_status": 0,
+      "continuous_minimax_drift": 0.02462751414744103,
+      "exact": [
+        {
+          "method": "nearest_minimax",
+          "previous_choice_losses": 5,
+          "previous_complete_group_losses": 0,
+          "correct_p105": 335,
+          "complete_p105_groups": 11,
+          "p194_protected_authored_margin": 0.015529632568359375,
+          "new_worst_target_margin": 0.009380340576171875,
+          "max_ordinary_shift": 0.024878541426915035,
+          "ordinary_winner_changes": 0,
+          "max_math_shift": 0.3942325512853131,
+          "relative_l2_to_P209": 0.9933260378158781,
+          "maximum_proxy_guard_residual": 0.004374215003808496,
+          "weighted_guard_loss": 0.0006739893315238112,
+          "guard_feasible": false,
+          "passed": false,
+          "p220_full_guard_passed": false,
+          "max_guard_residual_with_P217": 0.004374215003808496,
+          "ordinary_drift_to_P194_f32": 0.027341365814208984,
+          "ordinary_drift_to_P194_unrounded": 0.027341681858160882,
+          "passed_caps": []
+        }
+      ]
+    },
+    {
+      "radius": 64,
+      "exact_decoder_combinations": 1291333,
+      "active_guards": 24316,
+      "solver_status": 0,
+      "continuous_minimax_drift": 0.02461134094835536,
+      "exact": [
+        {
+          "method": "nearest_minimax",
+          "previous_choice_losses": 2,
+          "previous_complete_group_losses": 0,
+          "correct_p105": 334,
+          "complete_p105_groups": 11,
+          "p194_protected_authored_margin": 0.012477874755859375,
+          "new_worst_target_margin": 0.009992599487304688,
+          "max_ordinary_shift": 0.02388387590781349,
+          "ordinary_winner_changes": 0,
+          "max_math_shift": 0.39461849149847694,
+          "relative_l2_to_P209": 0.9935146946514751,
+          "maximum_proxy_guard_residual": 0.0030518682127473606,
+          "weighted_guard_loss": 0.0004727705067381384,
+          "guard_feasible": false,
+          "passed": false,
+          "p220_full_guard_passed": false,
+          "max_guard_residual_with_P217": 0.0030518682127473606,
+          "ordinary_drift_to_P194_f32": 0.02758932113647461,
+          "ordinary_drift_to_P194_unrounded": 0.027589189676291426,
+          "passed_caps": []
+        }
+      ]
+    }
+  ],
+  "checkpoint_written": false
+}

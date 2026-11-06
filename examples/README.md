@@ -117,3 +117,14 @@ output-weight rows, and 3,526 changed bytes. The checkpoint SHA-256 is
 [Pilot 209 patch capsule](../evidence/direct-closure-pilot-209-row-patch.json)
 
 Add `--output /path/to/pilot-209.gguf` to write a verified copy to a fresh path.
+
+## Replay the Pilot 217 mixed output edit
+
+```sh
+python examples/replay_output_mixed_edit.py --pilot 217 --parent /path/to/pilot-024.gguf
+```
+
+Expect 157 binary16 fields and 3,716 code nibbles in 3,526 changed bytes.
+The checkpoint SHA-256 is
+`efb1b2a6db298cb03f46eadebfe9f52080f860ba4635ae69464523c59c2260d8`.
+[Pilot 217 patch capsule](../evidence/direct-closure-pilot-217-row-patch.json)
