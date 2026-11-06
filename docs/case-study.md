@@ -641,7 +641,7 @@ The same Pilot 024 checkpoint scored 36 independently checked authored problems 
 | Original | 55/144 | 68/144 |
 | Alternate | 71/144 | 68/144 |
 
-Changing the examples at cyclic order recovered 20 choices and lost four. At reversed order it recovered 15 and lost 15. The effect of reversing the option cycle changed from a gain of 13 with the original examples to a loss of three with the alternate examples. Paired by problem and correct answer letter, reversing the cycle changed the selected answer content on 65 of 144 trials with the original examples and 66 of 144 with the alternate examples. Only two of 36 problems were correct in every one of the 16 presentations.
+Changing the examples at cyclic order recovered 20 choices and lost four. At reversed order it recovered 15 and lost 15. The effect of reversing the option cycle changed from a gain of 13 with the original examples to a loss of three with the alternate examples. Paired by problem and correct answer letter, reversing the cycle changed the selected answer content on 65 of 144 trials with the original examples and 66 of 144 with the alternate examples. Only two of 36 problems were correct in every one of the 16 presentations. Keeping the correct letter fixed, the parent answered 44 of its 89 original misses correctly in at least one other condition. It lost 19 of its 55 original correct choices in at least one other condition.
 
 The comparison used 432 new CUDA scores and 144 archived scores whose prompt bytes matched exactly. It measured prompt sensitivity on reused development families at fixed weights. [Factorial results and provenance](../evidence/direct-accuracy-pilot-042.json)
 

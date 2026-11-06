@@ -554,5 +554,36 @@
   "labels_passed_to_native": false,
   "checkpoint_edited": false,
   "protected_or_benchmark_inputs_used": false,
-  "scope": "Fixed next-choice CUDA scores on reused authored development stems. The alternate demo context combines example order and per-example answer positions. The reported interaction describes these two contexts."
+  "scope": "Fixed next-choice CUDA scores on reused authored development stems. The alternate demo context combines example order and per-example answer positions. The reported interaction describes these two contexts.",
+  "fixed_letter_context_sensitivity": {
+    "audit_sha256": "7fccdc673013c19a06fda904df6ffb870757ea7701598ab4d9d5748f8f1bfdc9",
+    "source_sha256": "75c14eb085f8f9002bb5340357758d6bfb04b6037cc538080a5bb4ac3d1b27bb",
+    "pairing": "Match the same authored stem and correct displayed letter across all arms.",
+    "pooled": {
+      "original_misses": 89,
+      "parent_recovers_any_other_arm": 44,
+      "parent_recovers_every_other_arm": 6,
+      "original_correct": 55,
+      "parent_loses_any_other_arm": 19,
+      "parent_loses_every_other_arm": 1
+    },
+    "subjects": {
+      "college_mathematics": {
+        "original_misses": 41,
+        "parent_recovers_any_other_arm": 26,
+        "parent_recovers_every_other_arm": 3,
+        "original_correct": 31,
+        "parent_loses_any_other_arm": 11,
+        "parent_loses_every_other_arm": 0
+      },
+      "high_school_mathematics": {
+        "original_misses": 48,
+        "parent_recovers_any_other_arm": 18,
+        "parent_recovers_every_other_arm": 3,
+        "original_correct": 24,
+        "parent_loses_any_other_arm": 8,
+        "parent_loses_every_other_arm": 1
+      }
+    }
+  }
 }
