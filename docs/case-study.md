@@ -1289,6 +1289,10 @@ Pilot 228 generated **4,894 tokens** greedily on 24 independently authored ordin
 
 Pilot 231 used those frozen parent prefixes to replay the four saved rows from each candidate. It reproduced all 647 native parent top-two results and anchored 2,588 native choice logits. The three edits each kept every sampled winner. Maximum edited-logit movement from Pilot 024 was **0.212** for Pilot 194, **0.886** for Pilot 209, and **0.889** for Pilot 217. The fixed-prefix CPU replay leaves 65 unsampled parent A–D wins and does not replace the exact protected generation gate. [Fixed-prefix replay and measured limits](../evidence/direct-accuracy-pilots-227-231-generated-ordinary-replay.json)
 
+Pilot 238 separately captured all **65** positions omitted by the stride where one of the edited rows had won on the stock trajectory. Native replay reproduced all 65 stock top-two results and greedy winners. The packed CPU replay predicts one edited-to-untouched winner change for Pilot 194, with the original winner trailing by **0.00130 logits**. Pilots 209 and 217 kept all 65 winners. This deliberately selects stock A–D wins, so the original 647-position sample stays separate. The protected-generation gate evaluates complete native candidate responses. [Supplemental capture and replay](../evidence/direct-accuracy-pilot-238-supplemental-ordinary-replay.json)
+
+Pilot 250 reconstructed the exact stock rows from the Pilot 241 and 243 patches and replayed those same 65 states. Both newer edits retained all stock winners, including the position Pilot 194 changed. Their minimum stock-winner margins were **+0.02184** and **+0.03065**, respectively. [Supplemental packed replay](../evidence/direct-accuracy-pilot-238-supplemental-ordinary-replay.json)
+
 ## Pilot 241 with exact subgroup minimum edits
 
 Pilot 234 fixed the target margin at **+0.007** and searched for legal six-bit Q4_K group endpoints. Pilot 235 reproduced the exact rounded attempts and applied ordinary state-specific drift caps. Its closest packed attempt met both math margins and kept all archived winners, while exceeding the tested absolute ordinary and midpoint limits. Pilot 241 used a separately frozen development policy with absolute caps of **0.025** for the legacy ordinary logit displacement and **0.08** for the math pair midpoint. It required the newly archived close generation position to retain at least **90%** of the Pilot 194 winner gap. That policy retained the exact archived winners and signed math floors. The protected generation and benchmark requirements stayed fixed. [Fit and physical replay evidence](../evidence/direct-accuracy-pilot-241-grouped-output.json)
@@ -1310,3 +1314,9 @@ The saved four-row edit changes **153 binary16 fields**, **21 four-bit codes**, 
 ```bash
 python examples/replay_output_mixed_edit.py --pilot 243 --parent /path/to/pilot-024.gguf
 ```
+
+## Pilots 249 and 251 with two four-order targets
+
+Pilot 249 revisited the frozen pair of authored questions from different families, with all four orders required for each. It ranked 2,393 legal subgroup endpoints and retained 384. Under the same 68 archived ordinary guards, allowing 80 fractional subgroup moves raised the worst margin from **−0.09943** to **−0.01498**. Six legal supports failed reanchoring. [Fractional capacity and reanchor receipts](../evidence/direct-accuracy-pilots-249-251-broad-fit-capacity.json)
+
+Pilot 251 projected out directions that would move the edited logits at **133 ordinary positions**. The continuous fit also restored the stock winner at the remaining supplemental position where the seed disagreed. It reached **+0.12665** across all eight target presentations, retained the original eight-state Pilot 194 target at **+0.007004**, and kept all 65 supplemental stock winners. The maximum modeled movement at the 133 projected positions was **5.72 × 10⁻¹⁵ logits**. This gives a continuous direction to test against the legal packed endpoints. A saved checkpoint still requires exact quantized realization. [Projected continuous fit](../evidence/direct-accuracy-pilots-249-251-broad-fit-capacity.json)

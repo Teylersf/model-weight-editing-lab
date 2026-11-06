@@ -1,0 +1,47 @@
+{
+  "schema": "public-direct-accuracy-pilot-238-supplemental-ordinary-replay-v1",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "original_P228_capture_sha256": "ae2b90b79f69cb821716b3abab7b51e74bde0468cf1f14bc833363e4c885059c",
+  "capture": {
+    "source_sha256": "2e27dd2777ad6aa31925da0b9230a78cd9cb29f80c9ed04c2258f355dbdf7573",
+    "plan_sha256": "570884315e7444c7fa2202005bfca2e03e40fa474b194133cc7ba17cd03f12da",
+    "receipt_sha256": "2659f2cd682ef891d7cfbe775b0ea47201625e250d8ace00efe29655434017cb",
+    "selector": "All previously unsampled positions won by an edited row on the frozen stock greedy trajectory",
+    "positions": 65,
+    "trajectories": 16,
+    "exact_stock_native_top_two": 65,
+    "exact_archived_greedy_winner_matches": 65,
+    "additional_generated_tokens": 0,
+    "original_fixed_stride_positions": 647,
+    "original_sample_scored_separately": true
+  },
+  "fixed_prefix_cpu_replay": {
+    "receipt_sha256": "90b46cd0e4c8f986f2256fc82b9e638d91abbc3aea4b7fabcb7a19c82b21eb62",
+    "guard_scope_sha256": "c5e8300e8d3a7d9c75c1212c6eb35e3f51626719dd14950cbb3ed7299443600e",
+    "q8_effective_sha256": "c2a6ab07fdcfbe3dfdc823fd41af95848376db4ee082c1c0f394505c11aca7be",
+    "anchored_stock_logits": 260,
+    "close_stock_states": 2,
+    "minimum_stock_winner_margin": 0.05212974548339844,
+    "candidate_replays": [
+      {"pilot": 194, "winner_changes": 1, "edited_to_untouched": 1, "min_stock_winner_signed_margin": -0.001300811767578125},
+      {"pilot": 209, "winner_changes": 0, "edited_to_untouched": 0, "min_stock_winner_signed_margin": 0.2886028289794922},
+      {"pilot": 217, "winner_changes": 0, "edited_to_untouched": 0, "min_stock_winner_signed_margin": 0.2895069122314453}
+    ],
+    "development_only": true,
+    "protected_official_or_blind_inputs_used": false,
+    "candidate_generation_run": false
+  },
+  "P250_new_packed_row_replays": {
+    "source_sha256": "9c15e6a0b60e7502344700f0004fe250b5ff8446e54cc7553b200b7d0402cf76",
+    "receipt_sha256": "96213e55118a6cd923dbb631e821d2313949ae19d7919340e8f2874aabdb1d06",
+    "states": 65,
+    "native_stock_top_two_verified": 65,
+    "exact_anchored_stock_logits": 260,
+    "candidate_replays": [
+      {"pilot": 241, "stock_winner_changes": 0, "P194_winner_changes": 1, "restored_stock_winners": 1, "minimum_stock_winner_margin": 0.02184105},
+      {"pilot": 243, "stock_winner_changes": 0, "P194_winner_changes": 1, "restored_stock_winners": 1, "minimum_stock_winner_margin": 0.03064728}
+    ],
+    "checkpoint_opened": false,
+    "candidate_autoregressive_trajectories_evaluated": false
+  }
+}

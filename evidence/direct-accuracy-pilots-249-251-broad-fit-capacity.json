@@ -1,0 +1,51 @@
+{
+  "schema": "public-direct-accuracy-pilots-249-251-broad-fit-capacity-v1",
+  "target_scope": {
+    "source": "first presealed Pilot 229 target",
+    "distinct_authored_families": 2,
+    "original_questions": 2,
+    "answer_orders_per_question": 4,
+    "target_margin": 0.007,
+    "seed": "Pilot 194"
+  },
+  "P249_group_capacity": {
+    "source_sha256": "cfa2bad0b9054a1197e178ffb11450c4d873c840f018701266534257945b50c6",
+    "plan_sha256": "a9bc7921f2aa2234d961918989069226ec015f000bf2de6f4a218f00ed795804",
+    "pool_sha256": "e5e2ed88b921add2e2936390b536db0d2d7e5d7d27ccf43df5e16b9ebbb71ef9",
+    "receipt_sha256": "ec5997cd64105cb4b3acbf6f31152f4951f594905fb5cc6f330175624840aa48",
+    "archived_ordinary_states": 68,
+    "signed_guard_rows": 25195,
+    "legal_group_endpoints_scanned": 2393,
+    "dual_ranked_group_endpoints_retained": 384,
+    "half_only_margin": -0.0994303892338973,
+    "group_budgets": [20, 48, 80],
+    "full_guard_fractional_margins_rounded": [-0.04937698, -0.02333699, -0.01498459],
+    "fixed_legal_group_supports_reanchored": 6,
+    "fixed_legal_supports_feasible": 0,
+    "supplemental_P238_used": false,
+    "packed_candidate_written": false
+  },
+  "P251_continuous_ordinary_null_fit": {
+    "source_sha256": "9db2bfe81daff63cb5df2974a33888121cb4d2fa3199918eb5f1f6c9bfe1e0cc",
+    "plan_sha256": "7714c29f529f251d2ae5d0ae4a794bd55f0439e6164a453417e7b39d0013eec6",
+    "receipt_sha256": "962bf94e19ec57ed6c1441264c0585679fb6b7547d1dcd9e35f9e66bc76b1e1f",
+    "continuous_delta_sha256": "5abf364b4e8bb53072304920bff99ce3ea9b5948acdfaad766e0fd45b6b8cf5b",
+    "continuous_delta_shape": [4, 5120],
+    "ordinary_positions_projected_out": 133,
+    "supplemental_P238_stock_winners_preserved": 65,
+    "supplemental_P238_seed_disagreements_corrected": 1,
+    "projected_directions_per_output_row": 31,
+    "ordinary_maximum_effect_at_null_positions": 5.715913853343579e-15,
+    "archived_target_worst_margin_float32": 0.1266498565673828,
+    "original_P194_orbit_margin_float32": 0.0070037841796875,
+    "row_delta_l2": 0.06532502872691064,
+    "continuous_fit_passed_archived_guards": true,
+    "packed_candidate_written": false
+  },
+  "scope": {
+    "independently_authored_development_only": true,
+    "protected_official_or_blind_inputs_used": false,
+    "checkpoint_written": false,
+    "gpu_used": false
+  }
+}
