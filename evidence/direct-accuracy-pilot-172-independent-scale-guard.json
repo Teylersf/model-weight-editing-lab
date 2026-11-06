@@ -1,0 +1,58 @@
+{
+  "schema": "public-direct-accuracy-pilot172-scale-guard-v1",
+  "status": "REJECTED",
+  "receipt_sha256": "7314b4f8165daac95640b6e3069f566e5c0e1418a96a7803adf5f4785e897e53",
+  "plan_sha256": "a22007c2e3b23db8f01ec605308e057ead3a90bef6e77e6bbcbd59129cce6a1c",
+  "source_sha256": "bc295b769bda8e25cfdef987c0932ffea6ecde3f6393ae3f3c8845808398e167",
+  "fit_sha256": "6f149932a44e5a162668ce6f0b8083a04bd0fa5d405656cb2f75e358e2cb6f8e",
+  "recipe_sha256": "8a9a2f3fe7f304f0700dabac5dfb5a85dd8120581f07a76689d482f220d8e405",
+  "archive_sha256": "cadc5beda97aae84dafbc48e9e2dd93c4c995c8d2124a1ef5b47394fa342244c",
+  "exact_parent_choice_logits": 512,
+  "stock_and_q8_replay": {
+    "independent_stock_native_choice_logits_f32": 512,
+    "exact_parent_noop_choice_logits_f32": 512,
+    "exact_parent_choice_logits_f32_sha256": "d3f73191d4bbf3f05ab704352da436292038d13e582cdec7f04cd04ad3762125",
+    "recovered_q8_half_rounding_states": 1,
+    "maximum_decoded_parent_residual_after_q8_boundary_recovery": 2.63806214206852E-06,
+    "allowed_decoded_parent_residual": 5E-06,
+    "candidate_cpu_choice_logits_f32_sha256": "e6c93b042970fa7e67de798298d9bb00b7bbe31f79a7ac296a89d33c5bed4e1a",
+    "maximum_abs_candidate_choice_logit_delta": 0.05548286437988281
+  },
+  "scores": {
+    "presentations": {
+      "total": 128,
+      "before": 49,
+      "after": 48,
+      "gains": 0,
+      "losses": 1
+    },
+    "paired_presentations": {
+      "total": 64,
+      "before": 6,
+      "after": 5,
+      "gains": 0,
+      "losses": 1
+    },
+    "all_eight_case_presentations": {
+      "total": 16,
+      "before": 0,
+      "after": 0,
+      "gains": 0,
+      "losses": 0
+    },
+    "all_sixteen_pair_presentations": {
+      "total": 8,
+      "before": 0,
+      "after": 0,
+      "gains": 0,
+      "losses": 0
+    }
+  },
+  "ties": {
+    "stock": 0,
+    "candidate": 0
+  },
+  "key_opened_after_candidate_frozen": true,
+  "checkpoint_written": false,
+  "final_blinded_or_official_or_protected_inputs_used": false
+}
