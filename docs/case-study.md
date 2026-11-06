@@ -963,8 +963,16 @@ The new cohort contains **16** matched condition pairs across eight math familie
 
 Pilot 024 scored **325/512** across those presentations and answered both variants correctly in **99/256** matched presentations. It selected the same original answer for both variants in **117/256**. Correctness across all four rotations held in **46/128** problem-and-arm groups. These repeated presentations are training evidence for testing condition sensitivity. [Authorship checks, CUDA settings, and aggregates](../evidence/direct-accuracy-pilot-105-training-corpus-baseline.json)
 
+A second CUDA run captured feed-forward inputs, gate and up projections, and terminal activations for all **512** states. All **2,048** A–D logit bit patterns matched the stock scorer. Prompt hashes and token counts matched, and an independent calculation checked the gate and up alignment. The stock scorer provided A–D scores for parity. The new capture also recorded its own top-64 and hidden rows for later fitting and replay. [Capture provenance and exact checks](../evidence/direct-accuracy-pilot-105-training-corpus-baseline.json)
+
 ## Pilot 107 with a restricted integer search
 
 The search rebuilt the exact Pilot 106 rounded starting point and ranked coordinates using its four training deficits and both objective derivatives. It tested nested supports of **48**, **72**, and **96** mutable coordinate groups. All three relaxed problems were feasible. The 48- and 72-group searches found integer proposals. The largest timed out.
 
 The 72-group proposal changed **357** codes from the parent. It passed all **1,763** linear constraints and improved both exact objective components to **0.00924** and **0.32612**. Exact Q8 replay still crossed **three** strict margins, the worst by **0.00746** logits. The proposal was rejected before held evaluation. [Restricted supports and exact replay](../evidence/direct-accuracy-pilot-107-restricted-code-search.json)
+
+## Pilot 108 with exact two-coordinate repair
+
+The exact neighbor search reconstructed the 357-code integer proposal and found a two-coordinate repair that cleared all three remaining fitting violations. It froze **358** codes across eight IQ4_XS gate rows and eight Q4_K up rows. Both training objective components improved. Both-correct training pairs rose from **13 to 15 out of 168**, and all 60 ordinary archived top-64 winners stayed fixed. Independent readback reproduced every changed nibble, preserved the quantization metadata, and calculated the full replay digest by streaming the parent and substituting the 16 rows in memory.
+
+The 112 reserved rotation-zero states improved from **37 to 38** correct with zero losses, and both targeted opposite-order checks passed. The frozen edit then scored **436/752** on the held fold, equal to the parent, with two gains and two losses. Both-correct pairs stayed at **22/128**. All 30 ordinary held archived top-64 winners stayed fixed. This failed the held qualification gate. The official benchmark, fresh set, and protected proofs stayed sealed. [Exact row recipes and separate qualification receipts](../evidence/direct-accuracy-pilot-108-strict-neighbor-packed.json)

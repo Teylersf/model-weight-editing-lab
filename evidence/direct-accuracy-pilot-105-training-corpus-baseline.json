@@ -87,5 +87,53 @@
   "parents_preserved": true,
   "weight_edit_applied": false,
   "generated_tokens": 0,
-  "official_fresh_proof_or_held_acceptance_used": false
+  "official_fresh_proof_or_held_acceptance_used": false,
+  "native_ffn_capture": {
+    "receipt_sha256": "52062a6db8a4296685653ece2d3cecdaac5c2d9802328808d2b6e4ad3ae2ab3f",
+    "source_sha256": "6f74c432d2a29144a85b7951da56684ed5436024fb6cad2a07a06f03f791e892",
+    "plan_sha256": "92b95cf96a807b0d7746de21ea400ef000b75db654c23b133008abf91c99849f",
+    "cpu_preflight_sha256": "5211c3a58c07ff90c0811e85ca748cdb9ec48036bd309a2c1e04aa7d11dd9c2d",
+    "binary_sha256": "ef6b563611005f80e51a341cc7268eb51842caef822b977e1b02ac416aefe2d3",
+    "build_sha256": "e0243edbc9b9e6fd874205a1fc64aa75980742c108dae65aabec1a31008ec383",
+    "native_receipt_sha256": "3f5c5d9500b09d8e359d92250ebeb79d3f022128c4ea205d1a14211fe6426b27",
+    "states": 512,
+    "states_per_arm": 128,
+    "activation_dimensions": {
+      "a": 17408,
+      "p": 5120,
+      "r": 5120,
+      "h": 5120,
+      "ffn_input": 5120,
+      "ffn_gate": 17408,
+      "ffn_up": 17408
+    },
+    "trajectory_manifest_sha256": "fef371a63fee989819dbecb12d2bbd21ef24ea11d3c8e62c1855e0905be1a208",
+    "swiglu": {
+      "max_absolute_error": 5.239896530895294e-06,
+      "max_error_state": 78,
+      "max_error_coordinate": 9121,
+      "max_tolerance_fraction": 0.034103547571916436
+    },
+    "exact_stock_prompt_lengths": 512,
+    "exact_stock_prompt_hashes": 512,
+    "selected_choice_logits_binary32_exact": 2048,
+    "selected_choice_logits_binary32_sha256": "7073b36806f96a24213572e67931b1b4eac88db02da9000dc122b113a3acac36",
+    "native_top64_binary32_sha256": "fd0367327dc937a4a6fb72a8a008365b9afbb96821c8b6a0f0ec69b7f263ea16",
+    "stock_full_vocab_or_hidden_parity_available": false,
+    "full_model_sha256_pre_post_verified": true,
+    "up_gate_alignment_verified": true,
+    "weights_mutated": false
+  },
+  "training_pair_margin_debt": {
+    "receipt_sha256": "deed79c6070ea753a6f9d85014d7717ba25b69f99cbe7de2cb9c98b8115bda84",
+    "failed_pair_presentations": 157,
+    "families_with_a_failed_presentation": 8,
+    "required_margin_shift": {
+      "minimum": 0.010755538940429688,
+      "q1": 0.545928955078125,
+      "median": 1.2459964752197266,
+      "q3": 2.6536026000976562,
+      "maximum": 6.516796112060547
+    }
+  }
 }
