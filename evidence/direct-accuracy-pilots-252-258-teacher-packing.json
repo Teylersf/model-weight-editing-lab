@@ -1,0 +1,283 @@
+{
+  "schema": "public-direct-accuracy-pilots-252-258-teacher-packing-v1",
+  "scope": {
+    "independently_authored_development_only": true,
+    "original_questions": 2,
+    "distinct_families": 2,
+    "answer_orders_per_question": 4,
+    "common_packed_search_target_margin": 0.007,
+    "archived_ordinary_rows": 134,
+    "prior_ordinary_rows": 68,
+    "stride_capture_near_rows": 1,
+    "supplemental_stock_A_D_winner_rows": 65,
+    "relative_drift_or_null_rows": 133,
+    "supplemental_seed_winner_disagreements": 1,
+    "ordinary_supplement_is_outcome_enriched": true,
+    "protected_official_or_blind_inputs_used": false,
+    "candidate_checkpoint_written": false,
+    "gpu_used": false
+  },
+  "P252_teacher_guided_group_search": {
+    "source_sha256": "70b6022a013779288c73dfb4bb7139eeb0bbedb268929d01c4a1ba0407c3b68d",
+    "plan_sha256": "ad9bad830cf7419c03ad59c8b9cb1fc5425228718d21e7b832580bbf79af1d3d",
+    "receipt_sha256": "1756222994d3ed4f7151eb9fe266c7bac67ca52e1c852397198ec6c4ffe27ed0",
+    "pool_sha256": "6c224bb2c261407872b49c3ba910b9155fdd76fab093ea592a699d29e429d2b4",
+    "supports_sha256": "745357d248b986c69db9ab3ea6c9af3b3fe4bb7490bbb477d05723eabb093366",
+    "source_file": "fit_teacher_residual_252.py",
+    "ordinary_fit_rows_legacy_field": 68,
+    "actual_ordinary_rows": 134,
+    "expanded_scope_audit_sha256": "8dbd8de27cca0c33309845fb4ec59a9db359a6c43bb0d4cf279c545acc86290a",
+    "signed_guard_constraints": 25979,
+    "half_only_target_margin": -0.11230929164143967,
+    "legal_group_endpoints_scanned": 2393,
+    "legal_group_endpoints_retained": 768,
+    "retained_physical_group_fields": 659,
+    "ranking": "Fit the continuous teacher's signed score response in the legal half-scale box, then rank six-bit group endpoints using the residual, guard duals and compensating directions.",
+    "tiers": [
+      {
+        "endpoint_budget": 80,
+        "full_guard_relaxation": true,
+        "relaxed_target_pass": false,
+        "modeled_upper_bound": -0.02957179590227403,
+        "remaining_guard_violations_at_last_returned_point": 0,
+        "cut_solver_time_limit": false,
+        "binary_search_ran": false,
+        "binary_incumbent_returned": null
+      },
+      {
+        "endpoint_budget": 160,
+        "full_guard_relaxation": true,
+        "relaxed_target_pass": false,
+        "modeled_upper_bound": -0.014399019231906318,
+        "remaining_guard_violations_at_last_returned_point": 0,
+        "cut_solver_time_limit": false,
+        "binary_search_ran": true,
+        "binary_incumbent_returned": false
+      },
+      {
+        "endpoint_budget": 240,
+        "full_guard_relaxation": true,
+        "relaxed_target_pass": false,
+        "modeled_upper_bound": -0.014124081805724336,
+        "remaining_guard_violations_at_last_returned_point": 0,
+        "cut_solver_time_limit": false,
+        "binary_search_ran": true,
+        "binary_incumbent_returned": false
+      }
+    ],
+    "exact_reanchor": {
+      "frozen_nonempty_supports_checked": 6,
+      "infeasible_fixed_supports": 5,
+      "fixed_support_solver_errors": 1,
+      "integer_half_proposals_replayed": 0
+    }
+  },
+  "P254_teacher_guided_code_search": {
+    "source_sha256": "ac38346db92a613885724e4a4712720c813640067877b7a1455a59a375ffc277",
+    "plan_sha256": "1c6e3e45fcd9cd46e50250dc452e2782edc70a585074c7ef2a0782b656f8cd76",
+    "receipt_sha256": "445958216efbba37159fe238b0e8b4a1a7d8deb99c009c2597314d4c7366b38a",
+    "pool_sha256": "ffce50e29260ddc3e405de01d1005e9a1f116d1933ea91510a5ad40a632c4560",
+    "supports_sha256": "30acf3bca983e081369abfe53eb81c2b2e97f084d846db25c6a793ef60b067de",
+    "source_file": "fit_teacher_nibbles_254.py",
+    "ordinary_fit_rows_legacy_field": 68,
+    "actual_ordinary_rows": 134,
+    "signed_guard_constraints": 25979,
+    "legal_code_endpoints": 1536,
+    "distinct_code_coordinates": 1471,
+    "unchanged_six_bit_group_fields": true,
+    "tiers": [
+      {
+        "endpoint_budget": 128,
+        "full_guard_relaxation": true,
+        "relaxed_target_pass": true,
+        "modeled_upper_bound": 0.08210624082899873,
+        "remaining_guard_violations_at_last_returned_point": 0,
+        "cut_solver_time_limit": false,
+        "binary_search_ran": true,
+        "binary_incumbent_returned": false
+      },
+      {
+        "endpoint_budget": 320,
+        "full_guard_relaxation": false,
+        "relaxed_target_pass": false,
+        "modeled_upper_bound": 0.22333177007881327,
+        "remaining_guard_violations_at_last_returned_point": 211,
+        "cut_solver_time_limit": true,
+        "binary_search_ran": true,
+        "binary_incumbent_returned": false
+      },
+      {
+        "endpoint_budget": 640,
+        "full_guard_relaxation": false,
+        "relaxed_target_pass": false,
+        "modeled_upper_bound": 0.4069122900026098,
+        "remaining_guard_violations_at_last_returned_point": 916,
+        "cut_solver_time_limit": true,
+        "binary_search_ran": true,
+        "binary_incumbent_returned": false
+      }
+    ],
+    "exact_reanchor": {
+      "frozen_nonempty_supports_checked": 6,
+      "infeasible_fixed_supports": 6,
+      "fixed_support_solver_errors": 0,
+      "integer_half_proposals_replayed": 0
+    }
+  },
+  "P255_mixed_endpoint_union": {
+    "source_sha256": "4fe4dfa7f1a92a4b186027d3149b346318c47074dd973b9ea113b067a5dfad7e",
+    "plan_sha256": "6ce6b0287a860856b3f42475834a34f43dbb04df569b6d1c9c5205ad585fe3cd",
+    "receipt_sha256": "c94a352caf630fbbdf9ac3d6f0e072eb0eb783849fcc4358348be949c2695fce",
+    "pool_sha256": "c35cacdc56987910a3227032b39e5c077b8b2ae36762c37a1a6ec773d25ddc25",
+    "supports_sha256": "a837c203e4e04eb91b1bd173cdda1452945d5e816474e3968fb1c23882780fb4",
+    "source_file": "fit_mixed_endpoint_union_255.py",
+    "actual_ordinary_rows": 134,
+    "signed_guard_constraints": 25979,
+    "group_endpoints": 768,
+    "code_endpoints": 768,
+    "physical_subgroups": 489,
+    "one_endpoint_per_32_coordinate_subgroup": true,
+    "native_cpu_decode_corners": {
+      "corner_checks": 6144,
+      "maximum_native_weight_corner_residual": 0.0,
+      "maximum_coefficient_rounding_envelope": 2.9802322387695312e-08
+    },
+    "tiers": [
+      {
+        "endpoint_budget": 128,
+        "full_guard_relaxation": false,
+        "relaxed_target_pass": false,
+        "modeled_upper_bound": 0.06541928650436474,
+        "remaining_guard_violations_at_last_returned_point": 8,
+        "cut_solver_time_limit": true,
+        "binary_search_ran": true,
+        "binary_incumbent_returned": false
+      },
+      {
+        "endpoint_budget": 256,
+        "full_guard_relaxation": false,
+        "relaxed_target_pass": false,
+        "modeled_upper_bound": 0.11745977789805799,
+        "remaining_guard_violations_at_last_returned_point": 29,
+        "cut_solver_time_limit": true,
+        "binary_search_ran": true,
+        "binary_incumbent_returned": false
+      },
+      {
+        "endpoint_budget": 400,
+        "full_guard_relaxation": false,
+        "relaxed_target_pass": false,
+        "modeled_upper_bound": 0.12877021816144205,
+        "remaining_guard_violations_at_last_returned_point": 95,
+        "cut_solver_time_limit": true,
+        "binary_search_ran": true,
+        "binary_incumbent_returned": false
+      }
+    ],
+    "exact_reanchor": {
+      "frozen_nonempty_supports_checked": 6,
+      "infeasible_fixed_supports": 5,
+      "fixed_support_solver_errors": 1,
+      "integer_half_proposals_replayed": 0
+    }
+  },
+  "P256_fixed_target_binary_search": {
+    "source_sha256": "51a7c283e054f710cdcfcc68787cf3c8c7debd9dd0672894acad8ec9cd157a40",
+    "plan_sha256": "32f4ab8047056e0f912aef7deca64ed5fc59abad9feddd642242b208f39e2228",
+    "receipt_sha256": "da05ebfe17517af2bc3a7e5519eec5dad3bb32860db0352a1223dcf32ad2c855",
+    "supports_sha256": "f1cd83535ad8a155ecd8b2faf9a04e5f9b7f8639353308e30a8e2a5840a48db5",
+    "source_file": "solve_fixed_nibble_support_256.py",
+    "ordinary_fit_rows_legacy_field": 68,
+    "actual_ordinary_rows": 134,
+    "signed_guard_constraints": 25979,
+    "fixed_target_margin": 0.007,
+    "code_budgets": [
+      128,
+      320
+    ],
+    "warmed_binary_seconds": [
+      14.0,
+      19.0
+    ],
+    "warmed_binary_selected_new_codes": [
+      0,
+      0
+    ],
+    "warmed_binary_target_margins": [
+      -0.11230929164143963,
+      -0.11230929164143963
+    ],
+    "best_ranked_discrete_proposal_worst_guard_debt": 0.16856533491429815,
+    "exact_reanchor": {
+      "frozen_nonempty_supports_checked": 8,
+      "infeasible_fixed_supports": 8,
+      "fixed_support_solver_errors": 0,
+      "integer_half_proposals_replayed": 0
+    }
+  },
+  "P257_continuous_norm_fit": {
+    "source_sha256": "002ef71bf021218b9363ec58393cef9529518b5a3276f6554a04c2e2c397a52a",
+    "plan_sha256": "25a28bf68aedc834977a281c82fd0075ac43362393434a0c050e5a092dddd513",
+    "receipt_sha256": "40ff5641a1995240ec60625811b264474fbc1e5d71dc6a4f003d1d2c43ee515a",
+    "source_file": "minimum_norm_teacher_257.py",
+    "actual_ordinary_rows": 134,
+    "projected_basis_directions_per_row": 31,
+    "objective": "minimum normalized coefficient L2",
+    "modeled_signed_constraints": 24184,
+    "fixed_target_margin": 0.012,
+    "maximum_supplemental_restoration_margin": 0.025,
+    "exact_archived_target_margin": 0.012004852294921875,
+    "original_P194_target_margin": 0.0070037841796875,
+    "restored_edited_vs_untouched_margin": 0.013263702392578125,
+    "continuous_delta_l2": 0.009017731360725973,
+    "maximum_null_guard_movement": 3.452641818280089e-16,
+    "supplemental_stock_winner_changes": 0,
+    "continuous_delta_sha256": "4b99aee5bbbb343ef66c1040f464f190b77626b1f695ff04eb02dbcae16d96bb",
+    "packed_candidate_written": false,
+    "limitation": "The verified working-set solution minimizes the coefficient norm within the modeled projected basis. Exact archived float32 replay does not realize the direction in a GGUF."
+  },
+  "P258_adaptive_ordinary_guard_search": {
+    "source_sha256": "1f34d6ba23a11f498e712b6180b88c722a490ddee4bbe6c854264d37a05990c9",
+    "plan_sha256": "b91b76f277c6d30e9a4f5b44d142cb645865b808f782408c2519262c5301bd3d",
+    "receipt_sha256": "f934b27cf166a9130d8db13a601128101d9f06081d955c115656b30f62398c06",
+    "pool_sha256": "c80d8e529e4a1479bc57cedc5a03a7babcc7abe905dd18c3924c3146eb21b890",
+    "supports_sha256": "599131afeb3b2d49f2d3a3bbd9f6f4e93f221908269eafbbd0abad1b48c30ee4",
+    "source_file": "adaptive_nibble_archive_258.py",
+    "ordinary_fit_rows_legacy_field": 68,
+    "actual_ordinary_rows": 134,
+    "signed_guard_constraints": 25979,
+    "adaptive_ordinary_drift": "min(.025,max(.006,.12*relevant P194 winner gap))",
+    "retained_P024_absolute_ordinary_cap": 0.021,
+    "modeled_ordinary_slack_cushion": 0.0015,
+    "frozen_P254_endpoint_pool_sha256": "ffce50e29260ddc3e405de01d1005e9a1f116d1933ea91510a5ad40a632c4560",
+    "tiers": [
+      {
+        "endpoint_budget": 128,
+        "full_guard_relaxation": true,
+        "relaxed_target_pass": true,
+        "modeled_upper_bound": 0.11804891035798491,
+        "remaining_guard_violations_at_last_returned_point": 0,
+        "cut_solver_time_limit": false,
+        "binary_search_ran": true,
+        "binary_incumbent_returned": false
+      },
+      {
+        "endpoint_budget": 256,
+        "full_guard_relaxation": false,
+        "relaxed_target_pass": false,
+        "modeled_upper_bound": 0.2507858699911683,
+        "remaining_guard_violations_at_last_returned_point": 344,
+        "cut_solver_time_limit": true,
+        "binary_search_ran": true,
+        "binary_incumbent_returned": false
+      }
+    ],
+    "exact_reanchor": {
+      "frozen_nonempty_supports_checked": 4,
+      "infeasible_fixed_supports": 4,
+      "fixed_support_solver_errors": 0,
+      "integer_half_proposals_replayed": 0
+    }
+  },
+  "interpretation": "The inherited ordinary_fit_rows value of 68 in P252, P254, P256 and P258 records the original guard cohort. The pinned plans and guard receipts establish 134 positions in each expanded run. Fractional feasibility and time-limited working-set bounds are distinct from feasible fixed packed supports and native candidate qualification."
+}
