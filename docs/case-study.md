@@ -607,3 +607,27 @@ Matched MMLU fell from **226/370 to 224/370**, with two recovered misses and fou
 Pilot 037 projected the D63 output directions away from the gradients of ordinary winner margins. The output-only fit reached **346/576** rotations and **47/144** all-four. Adding Pilot 034's input projection reached **348/576** and **49/144**. Relative to Pilot 034, the RMS movement of the seven nearest ordinary margins was 127% for the output-only fit and 92% for the combined fit. Both arms missed the preregistered reduction after adjusting for choice-logit movement. [Pilot 037 receipts](../evidence/direct-accuracy-pilot-037.json)
 
 Pilot 038 selected input directions by comparing terminal choice activations with ordinary activations. At matched choice-edit strength, it scored **346/576** rotations and **48/144** all-four. Pilot 034's matched control scored **347/576** and **48/144**. Pilot 038 moved held ordinary residuals about 14% more than the control. None of the three D63 variants in these two pilots changed a winner in its held archived top-64 CPU check. The runs ended before native verification or checkpoint storage. [Pilot 038 receipts](../evidence/direct-accuracy-pilot-038.json)
+
+## Pilots 039 and 040 on two authored math sets
+
+Pilot 039 added 36 independently checked problems, split equally between high-school and college math. Each problem had four option orders. The two pilots fitted on both the earlier and expanded sets, using three splits that kept whole families and ordinary-generation trajectories together. Pilot 039 weighted the corpora equally and penalized shrinking small correct-answer margins. It moved 9, 18, and 24 packed codes across the three C and D row fits. Pilot 040 used a mixed-integer search over A, C, and D to recover near-miss training choices while retaining signed winner margins. It moved 10, 46, and 23 codes. Each code moved one step within its existing quantization block, and both pilots kept the B row byte-identical.
+
+| Held development result | Parent | Pilot 039 | Pilot 040 |
+|---|---:|---:|---:|
+| Earlier set correct rotations | 342/576 | 344/576 (+5/-3) | 339/576 (+1/-4) |
+| Earlier set correct in all four orders | 46/144 | 47/144 | 45/144 |
+| Expanded set correct rotations | 55/144 | 56/144 (+3/-2) | 58/144 (+3/-0) |
+| Expanded set correct in all four orders | 2/36 | 2/36 | 2/36 |
+| Held ordinary winner changes in CPU replay | 0/90 | 0/90 | 0/90 |
+
+Pilot 039 failed because the earlier high-school score fell from 205 to 204 and the expansion lost two previously correct rotations. Pilot 040 recovered three expansion rotations without a loss there, but lost four previously correct rotations on the earlier set. Both experiments stopped at the exploratory CPU gate. No edited checkpoint was saved or run natively. [Paired results, input hashes, and exact packed row recipes](../evidence/direct-accuracy-pilots-039-040.json)
+
+A post-fit audit of the frozen rows found that Pilot 039 had already recovered all four rotations Pilot 040 gained across the two sets. Three rotations became incorrect in both pilots. In all nine loss occurrences, the edit raised the score of the wrong option that won, C in eight and D in one. The parent’s correct option led its strongest rival by at most 0.10 logits in eight of those nine occurrences. [Aggregate margin audit and reproduction hashes](../evidence/direct-accuracy-pilots-039-040.json)
+
+## Pilot 041 with answer-position contrast directions
+
+Pilot 041 fitted a D63 edit with rank at most three using activation differences between near-miss rotations and correct sibling rotations. The input directions were projected away from the earlier-set and ordinary-generation training activations. The first run stopped before held scoring when the second fold supplied only one usable answer-position transition. The revised rule allowed a single transition and retained the training guards and scale grid.
+
+All three fits passed the rounded training checks and were frozen before held scoring. On the training states used for the projection, the largest relative residual movement was below **1.3 × 10⁻⁸**. On held families, the earlier set fell from **342/576 to 341/576** correct rotations and **46/144 to 45/144** all-four. The expanded set stayed at **55/144** correct rotations and **2/36** all-four.
+
+All **90** held ordinary states kept their winners among the 64 archived contenders in the CPU screen. The training projection and held screen cover different states. The held development gate failed, and the run stopped before native verification or checkpoint creation. [Held-fold evidence and verified factor and tensor hashes](../evidence/direct-accuracy-pilot-041.json)

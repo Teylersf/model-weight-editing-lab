@@ -1,0 +1,1179 @@
+{
+  "schema": "direct-accuracy-pilots-039-040-exploratory-v1",
+  "status": "both_packed_cpu_experiments_failed_held_development_gates",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "parent_checkpoint_bytes": 11674147744,
+  "parent_readback_receipt_sha256": "ed1da5e3427ec6fbbee895f915eaecb225ea157754ce8383e80457052ca39058",
+  "authored_inputs": {
+    "pilot028": {
+      "problems": 144,
+      "rotations": 576,
+      "families": 18,
+      "grouping_sha256": "40c54e3c36d11ed50197d59ff446808654ac5a131683f0df2f89c9b4c620c122",
+      "independent_key_audit_sha256": "489afde665fc9ed6f2a6c95f8e0137f3fc5538b1a891cde8a8ac8ffd8ddaeb65",
+      "baseline_sha256": "c12451d59c7fa134343ee88ce1e51b37a162e8c830b0eb239e143cdde63e4300",
+      "terminal_capture_sha256": "6920b54ed626630e22ff651d79d5bbec2ea9e8ec37947aeff54e5e43076e357a"
+    },
+    "pilot039": {
+      "problems": 36,
+      "rotations": 144,
+      "families": 12,
+      "corpus_sha256": "a354549f3e3974aa0aa61364b2be7ff294e95071667e016b317231cbb9b87299",
+      "grouping_sha256": "095dac8585d89630b91f230fc2ad1ecfdc0b046093ec56b3ff20d1d6c324d8a5",
+      "independent_key_audit_sha256": "c4d49308b051b3ba820cda78cba8ec9d5994876ab50b3bbd27094593edeb4560",
+      "preparation_sha256": "05cd054aa49af140a668cae6eaf92adcbd626c1b98fb982f92810b92d7cc5e16",
+      "baseline_sha256": "0ff35e2baad006540912cdaaed89f38f2e91d79f9b5cfd50a0b6eaef6c748952",
+      "terminal_capture_sha256": "eb5200d20c6cc4883f81417c6a1d5a78bb3ff510671d9fa73df0d13978ea9d02"
+    },
+    "ordinary": {
+      "source_pilot": 34,
+      "reviewed_trajectories": 9,
+      "states": 90,
+      "split_sha256": "c6b91a090db16d8757e2c9e5007de1885c8542bc7f0014754e10aa4e736fdc68",
+      "visible_review_sha256": "32faa63b4d834cbc3b3ea6fdc0035a82f2278f8d6a8a178524827afcda455480",
+      "capture_sha256": "5a2bd762c194438513794fb22380621b306e4ba16af7f1a12a7c736f478fa81b"
+    }
+  },
+  "packed_row_recipe": {
+    "tensor": {
+      "name": "output.weight",
+      "quantization": "Q4_K",
+      "ggml_type": 12,
+      "dimensions": [
+        5120,
+        248320
+      ],
+      "offset": 10996640,
+      "bytes": 715161600
+    },
+    "row_bytes": 2880,
+    "coordinates_per_block": 256,
+    "block_bytes": 144,
+    "metadata_bytes_per_block": 16,
+    "steps": [
+      "Start each fold from the same pinned parent. Read each row at tensor offset plus token ID times row bytes, and verify its parent row digest.",
+      "For each zero-based coordinate c, set block = c // 256 and i = c % 256. Its row-relative byte offset is 144*block + 16 + 32*(i // 64) + i % 32. Its nibble shift is 4*((i // 32) % 2).",
+      "Add the paired signed code delta to that nibble without changing the other nibble or block metadata. Verify each reconstructed row digest."
+    ],
+    "all_fold_row_hashes_independently_reconstructed": true
+  },
+  "pilots": [
+    {
+      "pilot": 39,
+      "fit_source_sha256": "4c74c37f300466a626972c830b9e9ca17f1bb8955999f65da617b378f6f5af27",
+      "grouped_plan_sha256": "2abe3acc43ad627adea05d100c0bf31c8b84c0f8dd38a18f47b0bb9fa1197118",
+      "grouped_cpu_report_sha256": "5908674515b1295ac63d25b3a8ca3d3673075323b68f722d4764d6d84c385031",
+      "coordinate_solver_sha256": "c0e8d9d434a87427a0a54d7a7ee0c261692d378012f24c338c213a277be17347",
+      "inherited_plan_sha256": "94ba553fb0ecaaf023ad5f353c894c08f447a285af39fc4e98b0f9b18603c979",
+      "development_design_sha256": "6741545eab4c7ae808f2ae29da834d1bde872ab9adb227aa8667bde1f87b6ecd",
+      "editable_token_ids": [
+        351,
+        414
+      ],
+      "frozen_token_ids": [
+        357,
+        417
+      ],
+      "method": {
+        "objective": "Equal weight for each corpus and equal weight for represented families within a corpus. Fit C and D with signed coordinate moves, a logit drift penalty, and a squared penalty for shrinking protected choice margins.",
+        "prior_correct_gap_floor_fraction": 0.9,
+        "prior_correct_gap_cap_logits": 0.15,
+        "prior_correct_risk_weight": 0.8,
+        "math_drift_weight": 0.12,
+        "ordinary_drift_weight": 0.65
+      },
+      "q8_boundary_corrections": {
+        "028": 4,
+        "039": 1,
+        "ordinary": 1
+      },
+      "maximum_q8_anchor_errors": {
+        "028": 2.879708517866675e-06,
+        "039": 2.2872436602483504e-06,
+        "ordinary": 1.2370364856906235e-06
+      },
+      "held_028": {
+        "rotations": 576,
+        "problems": 144,
+        "correct_rotations_parent_candidate": [
+          342,
+          344
+        ],
+        "all_four_parent_candidate": [
+          46,
+          47
+        ],
+        "rotation_gains": 5,
+        "rotation_losses": 3,
+        "all_four_gains": 1,
+        "all_four_losses": 0,
+        "subjects": {
+          "high_school_mathematics": {
+            "rotations": 320,
+            "problems": 80,
+            "correct_rotations_parent_candidate": [
+              205,
+              204
+            ],
+            "all_four_parent_candidate": [
+              32,
+              33
+            ],
+            "rotation_gains": 1,
+            "rotation_losses": 2,
+            "all_four_gains": 1,
+            "all_four_losses": 0
+          },
+          "college_mathematics": {
+            "rotations": 256,
+            "problems": 64,
+            "correct_rotations_parent_candidate": [
+              137,
+              140
+            ],
+            "all_four_parent_candidate": [
+              14,
+              14
+            ],
+            "rotation_gains": 4,
+            "rotation_losses": 1,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          }
+        }
+      },
+      "held_039": {
+        "rotations": 144,
+        "problems": 36,
+        "correct_rotations_parent_candidate": [
+          55,
+          56
+        ],
+        "all_four_parent_candidate": [
+          2,
+          2
+        ],
+        "rotation_gains": 3,
+        "rotation_losses": 2,
+        "all_four_gains": 0,
+        "all_four_losses": 0,
+        "subjects": {
+          "high_school_mathematics": {
+            "rotations": 72,
+            "problems": 18,
+            "correct_rotations_parent_candidate": [
+              24,
+              25
+            ],
+            "all_four_parent_candidate": [
+              1,
+              1
+            ],
+            "rotation_gains": 2,
+            "rotation_losses": 1,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "college_mathematics": {
+            "rotations": 72,
+            "problems": 18,
+            "correct_rotations_parent_candidate": [
+              31,
+              31
+            ],
+            "all_four_parent_candidate": [
+              1,
+              1
+            ],
+            "rotation_gains": 1,
+            "rotation_losses": 1,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          }
+        }
+      },
+      "held_ordinary": {
+        "states": 90,
+        "winner_changes": 0,
+        "max_absolute_edited_logit_shift": 0.1724547432122563
+      },
+      "gate_results": {
+        "prior_authored_subject_gate_passed": false,
+        "expansion_gate_passed": false,
+        "ordinary_gate_passed": true,
+        "expanded_exact_choice_ties": 0,
+        "binary32_choice_argmax_stable": true
+      },
+      "passed": false,
+      "folds": [
+        {
+          "held_fold": 0,
+          "fit_receipt_sha256": "fd1d357e63c57901e7fbd72ae691ee3e274fe0843b5d4362a63faf9d93036b6a",
+          "training_signed_constraints": 2070,
+          "training_prior_correct_choices_preserved": 270,
+          "minimum_training_signed_slack": 0.0005111853439302705,
+          "held_028": {
+            "rotations": 192,
+            "problems": 48,
+            "correct_rotations_parent_candidate": [
+              109,
+              111
+            ],
+            "all_four_parent_candidate": [
+              16,
+              17
+            ],
+            "rotation_gains": 2,
+            "rotation_losses": 0,
+            "all_four_gains": 1,
+            "all_four_losses": 0
+          },
+          "held_039": {
+            "rotations": 48,
+            "problems": 12,
+            "correct_rotations_parent_candidate": [
+              18,
+              18
+            ],
+            "all_four_parent_candidate": [
+              1,
+              1
+            ],
+            "rotation_gains": 0,
+            "rotation_losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes": 0,
+            "edited_logit_rms": 0.022507686072054413,
+            "max_absolute_edited_logit_shift": 0.09479920281955856
+          },
+          "rows": [
+            {
+              "token_id": 357,
+              "parent_row_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "candidate_row_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 417,
+              "parent_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "candidate_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 351,
+              "parent_row_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "candidate_row_sha256": "dab1f77121dc80de0aea28bc880e8ca4fdb986a1aa7cbba17dfead5e4a2da10f",
+              "changed_nibbles": 2,
+              "coordinates": [
+                2379,
+                3219
+              ],
+              "signed_code_deltas": [
+                -1,
+                1
+              ]
+            },
+            {
+              "token_id": 414,
+              "parent_row_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "candidate_row_sha256": "1ebefd390514dd8959a798a97d9bc59046b9e7fc1388b825cac69a43aa4839ab",
+              "changed_nibbles": 7,
+              "coordinates": [
+                474,
+                755,
+                1042,
+                1434,
+                2227,
+                4038,
+                4856
+              ],
+              "signed_code_deltas": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                -1,
+                -1
+              ]
+            }
+          ]
+        },
+        {
+          "held_fold": 1,
+          "fit_receipt_sha256": "b26fecaec73ee5422e5eb92c83b2828a375610bd08f3511a1079a7db4b354a6e",
+          "training_signed_constraints": 2063,
+          "training_prior_correct_choices_preserved": 269,
+          "minimum_training_signed_slack": 2.524331612221986e-05,
+          "held_028": {
+            "rotations": 192,
+            "problems": 48,
+            "correct_rotations_parent_candidate": [
+              113,
+              113
+            ],
+            "all_four_parent_candidate": [
+              15,
+              15
+            ],
+            "rotation_gains": 1,
+            "rotation_losses": 1,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "held_039": {
+            "rotations": 48,
+            "problems": 12,
+            "correct_rotations_parent_candidate": [
+              15,
+              17
+            ],
+            "all_four_parent_candidate": [
+              0,
+              0
+            ],
+            "rotation_gains": 3,
+            "rotation_losses": 1,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes": 0,
+            "edited_logit_rms": 0.04407487653147416,
+            "max_absolute_edited_logit_shift": 0.17038339249302226
+          },
+          "rows": [
+            {
+              "token_id": 357,
+              "parent_row_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "candidate_row_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 417,
+              "parent_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "candidate_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 351,
+              "parent_row_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "candidate_row_sha256": "58c6b298b6680d66c9e4147652e395487e10abef1da807472e5447fe62b5225e",
+              "changed_nibbles": 3,
+              "coordinates": [
+                474,
+                685,
+                3495
+              ],
+              "signed_code_deltas": [
+                1,
+                -1,
+                -1
+              ]
+            },
+            {
+              "token_id": 414,
+              "parent_row_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "candidate_row_sha256": "ccd4d51d062c523788fd3f02e7e0512dbed0257a25fd27f9e4a86f86ff026b61",
+              "changed_nibbles": 15,
+              "coordinates": [
+                197,
+                350,
+                474,
+                486,
+                1042,
+                1116,
+                1181,
+                1208,
+                2358,
+                2379,
+                2392,
+                2574,
+                3213,
+                3997,
+                4376
+              ],
+              "signed_code_deltas": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                -1,
+                -1,
+                1,
+                -1,
+                1,
+                -1,
+                -1
+              ]
+            }
+          ]
+        },
+        {
+          "held_fold": 2,
+          "fit_receipt_sha256": "9e54f67e0ee21b0319a78bb05a8f9f9b3d94f1cfbb841acfcec92f9784031941",
+          "training_signed_constraints": 1965,
+          "training_prior_correct_choices_preserved": 255,
+          "minimum_training_signed_slack": 0.00028106843419663935,
+          "held_028": {
+            "rotations": 192,
+            "problems": 48,
+            "correct_rotations_parent_candidate": [
+              120,
+              120
+            ],
+            "all_four_parent_candidate": [
+              15,
+              15
+            ],
+            "rotation_gains": 2,
+            "rotation_losses": 2,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "held_039": {
+            "rotations": 48,
+            "problems": 12,
+            "correct_rotations_parent_candidate": [
+              22,
+              21
+            ],
+            "all_four_parent_candidate": [
+              1,
+              1
+            ],
+            "rotation_gains": 0,
+            "rotation_losses": 1,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes": 0,
+            "edited_logit_rms": 0.04972507930290816,
+            "max_absolute_edited_logit_shift": 0.1724547432122563
+          },
+          "rows": [
+            {
+              "token_id": 357,
+              "parent_row_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "candidate_row_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 417,
+              "parent_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "candidate_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 351,
+              "parent_row_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "candidate_row_sha256": "078ffbaf62fc99c86a458b92c87efa9ea900f4dd68cfddd75b7a06321971a538",
+              "changed_nibbles": 7,
+              "coordinates": [
+                87,
+                383,
+                671,
+                685,
+                2857,
+                4279,
+                4505
+              ],
+              "signed_code_deltas": [
+                -1,
+                -1,
+                1,
+                -1,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "token_id": 414,
+              "parent_row_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "candidate_row_sha256": "49ad6cad086743fceecb483c6532a8addfb70e26c05def0f1ec032d04b54570c",
+              "changed_nibbles": 17,
+              "coordinates": [
+                474,
+                486,
+                498,
+                510,
+                511,
+                680,
+                700,
+                703,
+                1042,
+                1417,
+                2379,
+                3163,
+                3269,
+                4447,
+                4470,
+                4922,
+                4939
+              ],
+              "signed_code_deltas": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                -1,
+                -1,
+                -1,
+                1,
+                1,
+                -1,
+                1,
+                -1,
+                1,
+                1,
+                -1,
+                -1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pilot": 40,
+      "fit_source_sha256": "065ff2b95057c877e02adb562452388f5e4527e816a10a33c02101a686dba6ff",
+      "grouped_plan_sha256": "e4a92d0d72b989a43a395e28be23baf4f0bd60ac99722b9e0fc347467dba0a45",
+      "grouped_cpu_report_sha256": "65e5dcea3e146d54d9ce8ed6174dc9560e3b49a88c8f5f2f389068fe10efd205",
+      "ordinary_engine_sha256": "c0e8d9d434a87427a0a54d7a7ee0c261692d378012f24c338c213a277be17347",
+      "numeric_engine_sha256": "8d590d4d59d1b5df7c284c2be6455b9d56eff0eacdc0c3cf4b5f7000af0daccb",
+      "input_binding_sha256": "dfeae8a6f9295e0162fa081f8b305ff28dfebfdadf9e3dc65451f614d8cadad9",
+      "editable_token_ids": [
+        357,
+        351,
+        414
+      ],
+      "frozen_token_ids": [
+        417
+      ],
+      "method": {
+        "objective": "Use a mixed-integer search over shortlisted A, C and D code moves. Reward target recovery in each new-corpus subject and coverage in the earlier corpus while retaining signed training winner margins.",
+        "target_margin_floor_logits": 0.05,
+        "max_targets_per_source_subject": 4,
+        "solver_weights": {
+          "new_min": 5.0,
+          "new_mean": 2.0,
+          "old_mean": 0.5,
+          "code_cost": 0.001
+        },
+        "search_code_budgets": [
+          24,
+          48,
+          96
+        ]
+      },
+      "q8_boundary_corrections": {
+        "028": 4,
+        "039": 1,
+        "ordinary": 1
+      },
+      "maximum_q8_anchor_errors": {
+        "028": 2.879708517866675e-06,
+        "039": 2.2872436602483504e-06,
+        "ordinary": 1.2370364856906235e-06
+      },
+      "held_028": {
+        "rotations": 576,
+        "problems": 144,
+        "correct_rotations_parent_candidate": [
+          342,
+          339
+        ],
+        "all_four_parent_candidate": [
+          46,
+          45
+        ],
+        "rotation_gains": 1,
+        "rotation_losses": 4,
+        "all_four_gains": 0,
+        "all_four_losses": 1,
+        "subjects": {
+          "high_school_mathematics": {
+            "rotations": 320,
+            "problems": 80,
+            "correct_rotations_parent_candidate": [
+              205,
+              203
+            ],
+            "all_four_parent_candidate": [
+              32,
+              32
+            ],
+            "rotation_gains": 0,
+            "rotation_losses": 2,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "college_mathematics": {
+            "rotations": 256,
+            "problems": 64,
+            "correct_rotations_parent_candidate": [
+              137,
+              136
+            ],
+            "all_four_parent_candidate": [
+              14,
+              13
+            ],
+            "rotation_gains": 1,
+            "rotation_losses": 2,
+            "all_four_gains": 0,
+            "all_four_losses": 1
+          }
+        }
+      },
+      "held_039": {
+        "rotations": 144,
+        "problems": 36,
+        "correct_rotations_parent_candidate": [
+          55,
+          58
+        ],
+        "all_four_parent_candidate": [
+          2,
+          2
+        ],
+        "rotation_gains": 3,
+        "rotation_losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0,
+        "subjects": {
+          "high_school_mathematics": {
+            "rotations": 72,
+            "problems": 18,
+            "correct_rotations_parent_candidate": [
+              24,
+              26
+            ],
+            "all_four_parent_candidate": [
+              1,
+              1
+            ],
+            "rotation_gains": 2,
+            "rotation_losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "college_mathematics": {
+            "rotations": 72,
+            "problems": 18,
+            "correct_rotations_parent_candidate": [
+              31,
+              32
+            ],
+            "all_four_parent_candidate": [
+              1,
+              1
+            ],
+            "rotation_gains": 1,
+            "rotation_losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          }
+        }
+      },
+      "held_ordinary": {
+        "states": 90,
+        "winner_changes": 0,
+        "max_absolute_edited_logit_shift": 0.28470975023083156
+      },
+      "gate_results": {
+        "new_corpus_gain_present": true,
+        "new_corpus_zero_held_losses": true,
+        "prior_corpus_zero_held_losses": false,
+        "ordinary_gate_passed": true
+      },
+      "passed": false,
+      "folds": [
+        {
+          "held_fold": 0,
+          "fit_receipt_sha256": "080030ba2b25d1528844644546dd2350e24b3facf93237be3b7c3d6c61fab941",
+          "training_signed_constraints": 2070,
+          "training_prior_correct_choices_preserved": 270,
+          "minimum_training_signed_slack": 0.0011929277112358236,
+          "held_028": {
+            "rotations": 192,
+            "problems": 48,
+            "correct_rotations_parent_candidate": [
+              109,
+              109
+            ],
+            "all_four_parent_candidate": [
+              16,
+              16
+            ],
+            "rotation_gains": 0,
+            "rotation_losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "held_039": {
+            "rotations": 48,
+            "problems": 12,
+            "correct_rotations_parent_candidate": [
+              18,
+              18
+            ],
+            "all_four_parent_candidate": [
+              1,
+              1
+            ],
+            "rotation_gains": 0,
+            "rotation_losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes": 0,
+            "edited_logit_rms": 0.05115908048111659,
+            "max_absolute_edited_logit_shift": 0.16896112676840858
+          },
+          "rows": [
+            {
+              "token_id": 357,
+              "parent_row_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "candidate_row_sha256": "8955ab550e2c54525db79effc9db877562799803d7f33853217615f66dc379d2",
+              "changed_nibbles": 2,
+              "coordinates": [
+                474,
+                755
+              ],
+              "signed_code_deltas": [
+                -1,
+                1
+              ]
+            },
+            {
+              "token_id": 417,
+              "parent_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "candidate_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 351,
+              "parent_row_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "candidate_row_sha256": "8a6a8ee7438164e3f7d32ec382089442817e1137e3a79814be768ec1391d1e69",
+              "changed_nibbles": 2,
+              "coordinates": [
+                1089,
+                4601
+              ],
+              "signed_code_deltas": [
+                1,
+                1
+              ]
+            },
+            {
+              "token_id": 414,
+              "parent_row_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "candidate_row_sha256": "13ebf48270f53e021d6dd5f563775f8a64f342d570a4b1cc7631696aa97ae358",
+              "changed_nibbles": 6,
+              "coordinates": [
+                2574,
+                3219,
+                3281,
+                3994,
+                4530,
+                4601
+              ],
+              "signed_code_deltas": [
+                -1,
+                1,
+                -1,
+                -1,
+                -1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "held_fold": 1,
+          "fit_receipt_sha256": "c0d1b0b94e6fa476fff0c46a82a0cad865a41310cf4f9446e77b270cd755500b",
+          "training_signed_constraints": 2063,
+          "training_prior_correct_choices_preserved": 269,
+          "minimum_training_signed_slack": 0.0014352424255775972,
+          "held_028": {
+            "rotations": 192,
+            "problems": 48,
+            "correct_rotations_parent_candidate": [
+              113,
+              111
+            ],
+            "all_four_parent_candidate": [
+              15,
+              14
+            ],
+            "rotation_gains": 0,
+            "rotation_losses": 2,
+            "all_four_gains": 0,
+            "all_four_losses": 1
+          },
+          "held_039": {
+            "rotations": 48,
+            "problems": 12,
+            "correct_rotations_parent_candidate": [
+              15,
+              18
+            ],
+            "all_four_parent_candidate": [
+              0,
+              0
+            ],
+            "rotation_gains": 3,
+            "rotation_losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes": 0,
+            "edited_logit_rms": 0.11323356914899688,
+            "max_absolute_edited_logit_shift": 0.2820086854171677
+          },
+          "rows": [
+            {
+              "token_id": 357,
+              "parent_row_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "candidate_row_sha256": "1fddcc900347475f403d81e255e72fb4eca8e9824b7775ed6c8136c84a060032",
+              "changed_nibbles": 15,
+              "coordinates": [
+                170,
+                201,
+                471,
+                474,
+                671,
+                685,
+                700,
+                751,
+                2803,
+                3281,
+                3994,
+                4375,
+                4530,
+                4538,
+                4601
+              ],
+              "signed_code_deltas": [
+                1,
+                1,
+                1,
+                1,
+                -1,
+                -1,
+                -1,
+                1,
+                -1,
+                1,
+                -1,
+                -1,
+                -1,
+                1,
+                1
+              ]
+            },
+            {
+              "token_id": 417,
+              "parent_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "candidate_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 351,
+              "parent_row_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "candidate_row_sha256": "ca7a2524764f8b9172a2f298cfb608751b3bb0b86536a39241b8ca307d71b955",
+              "changed_nibbles": 13,
+              "coordinates": [
+                201,
+                685,
+                1236,
+                2574,
+                3083,
+                3266,
+                3278,
+                3281,
+                4293,
+                4375,
+                4530,
+                4601,
+                4903
+              ],
+              "signed_code_deltas": [
+                -1,
+                -1,
+                1,
+                1,
+                -1,
+                -1,
+                1,
+                1,
+                1,
+                -1,
+                -1,
+                -1,
+                1
+              ]
+            },
+            {
+              "token_id": 414,
+              "parent_row_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "candidate_row_sha256": "23ea3dea098ead1657e3b1a556ef35d4470af823ab9feb0bf83c102bc5d42536",
+              "changed_nibbles": 18,
+              "coordinates": [
+                170,
+                201,
+                474,
+                482,
+                671,
+                700,
+                751,
+                755,
+                1042,
+                1116,
+                1232,
+                2379,
+                2574,
+                3989,
+                4375,
+                4479,
+                4601,
+                4921
+              ],
+              "signed_code_deltas": [
+                -1,
+                -1,
+                1,
+                -1,
+                -1,
+                -1,
+                -1,
+                1,
+                1,
+                1,
+                -1,
+                -1,
+                -1,
+                1,
+                -1,
+                1,
+                -1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "held_fold": 2,
+          "fit_receipt_sha256": "e3d945817a120184858797e62dbf00a74882410d647464b3eb07a96d461ebf0c",
+          "training_signed_constraints": 1965,
+          "training_prior_correct_choices_preserved": 255,
+          "minimum_training_signed_slack": 0.0032388905252446407,
+          "held_028": {
+            "rotations": 192,
+            "problems": 48,
+            "correct_rotations_parent_candidate": [
+              120,
+              119
+            ],
+            "all_four_parent_candidate": [
+              15,
+              15
+            ],
+            "rotation_gains": 1,
+            "rotation_losses": 2,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "held_039": {
+            "rotations": 48,
+            "problems": 12,
+            "correct_rotations_parent_candidate": [
+              22,
+              22
+            ],
+            "all_four_parent_candidate": [
+              1,
+              1
+            ],
+            "rotation_gains": 0,
+            "rotation_losses": 0,
+            "all_four_gains": 0,
+            "all_four_losses": 0
+          },
+          "held_ordinary": {
+            "states": 30,
+            "winner_changes": 0,
+            "edited_logit_rms": 0.09278436684898213,
+            "max_absolute_edited_logit_shift": 0.28470975023083156
+          },
+          "rows": [
+            {
+              "token_id": 357,
+              "parent_row_sha256": "13b047a73196b338cbe4cdd7acdb665fcf7861f25eeab1082930a7ecf4c7c7e6",
+              "candidate_row_sha256": "9bd827b0519465657f966498ad799fe0c942744b1915bbcce0b06c6d430ab98d",
+              "changed_nibbles": 6,
+              "coordinates": [
+                474,
+                510,
+                751,
+                2823,
+                3281,
+                4530
+              ],
+              "signed_code_deltas": [
+                -1,
+                1,
+                -1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "token_id": 417,
+              "parent_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "candidate_row_sha256": "30cc002e189227c96a3e803c1f8023d3aa4b25191de6caab80e24b11b70a4918",
+              "changed_nibbles": 0,
+              "coordinates": [],
+              "signed_code_deltas": []
+            },
+            {
+              "token_id": 351,
+              "parent_row_sha256": "0aa1e51a7c5e99555fdc9594530e016a52b3c117995d2fbf1ba37204ef3d1afc",
+              "candidate_row_sha256": "c3a3ab7e880af9dd8036296145c0420524e960a750796c25aada49ae631afc05",
+              "changed_nibbles": 12,
+              "coordinates": [
+                671,
+                700,
+                1089,
+                3083,
+                3266,
+                3278,
+                3281,
+                4293,
+                4479,
+                4530,
+                4538,
+                4601
+              ],
+              "signed_code_deltas": [
+                1,
+                -1,
+                1,
+                -1,
+                -1,
+                1,
+                -1,
+                1,
+                1,
+                -1,
+                -1,
+                1
+              ]
+            },
+            {
+              "token_id": 414,
+              "parent_row_sha256": "3fb81b0e10a64ad94b5b192b78f248bd388f025e9dff642d943873efabde4cfd",
+              "candidate_row_sha256": "2cd9361399b123b80c62e77aa7c528daaf1ec6ffff3711aeec92a71863377940",
+              "changed_nibbles": 5,
+              "coordinates": [
+                471,
+                505,
+                2379,
+                2574,
+                3219
+              ],
+              "signed_code_deltas": [
+                1,
+                1,
+                1,
+                -1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "all_folds_frozen_before_held_scoring": true,
+  "gpu_used_for_candidate": false,
+  "checkpoint_written": false,
+  "scope": "Exploratory grouped evaluation on independently authored development data. Held math families and ordinary trajectories stayed outside their own fits. The runs excluded protected proofs, cylinder controls, the guard-only set, the separate transfer set, and official and fresh benchmark items. Ordinary scores use fixed-state packed CPU replay.",
+  "post_fit_margin_audit": {
+    "audit_source_sha256": "70b887575effec3b03d540f3eb07e493640ef5cd978dad0df151ac8134ab9d3f",
+    "audit_report_sha256": "0c67a0634529b08e30767abf88ff3353a503f486f7ef5a895fdd6d59f2d9f047",
+    "pinned_loader_sha256": "4c74c37f300466a626972c830b9e9ca17f1bb8955999f65da617b378f6f5af27",
+    "method": "Reconstruct the frozen packed rows and recompute held answer logits from the original authored terminal states. Compare the parent and edited scores for the correct option and the rival that wins after the edit.",
+    "parent_correct_margin_definition": "Parent logit of the correct option minus the largest parent logit among incorrect options.",
+    "shared_gain_rotations": 4,
+    "shared_loss_rotations": 3,
+    "per_pilot": {
+      "039": {
+        "gains": 8,
+        "losses": 5,
+        "loss_wrong_winner_letters": {
+          "C": 4,
+          "D": 1
+        },
+        "losses_with_raised_wrong_winner_logit": 5,
+        "losses_with_fallen_correct_logit": 0,
+        "losses_with_parent_correct_margin_at_most_0_10": 4
+      },
+      "040": {
+        "gains": 4,
+        "losses": 4,
+        "loss_wrong_winner_letters": {
+          "C": 4
+        },
+        "losses_with_raised_wrong_winner_logit": 4,
+        "losses_with_fallen_correct_logit": 1,
+        "losses_with_parent_correct_margin_at_most_0_10": 4
+      }
+    },
+    "combined": {
+      "loss_occurrences": 9,
+      "loss_wrong_winner_letters": {
+        "C": 8,
+        "D": 1
+      },
+      "losses_with_raised_wrong_winner_logit": 9,
+      "losses_with_parent_correct_margin_at_most_0_10": 8
+    },
+    "scope": "Post-fit descriptive CPU replay on both authored sets. Counts in the combined loss summary include a rotation once per pilot that lost it."
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "schema": "direct-accuracy-pilot-041-exploratory-v1",
+  "pilot": 41,
+  "status": "conditional_contrast_d63_failed_held_development_gate",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "fit_source_sha256": "b4fce50398faccffde1a2231b59544ed57aa9c46810d6fb4622e256f811ff2db",
+  "grouped_plan_sha256": "ba55ef0a2c247916b5653b5dac654d4fa86345e9bdcdd0f680d7645ef51e0ac1",
+  "grouped_cpu_report_sha256": "d61040a836e0922e1c6efc29d7b836571db7a33c644658f3f7dd46865b39f96b",
+  "earlier_protocol": {
+    "plan_sha256": "34c0d27b98f68b85fbf52aca9b7eb8e4c913d5cf63bf3f13a4b5af0c90ec06a1",
+    "source_sha256": "c3654e4fcd187f7620c06596d67da7483404dbf813de4745aff46573587c25ef",
+    "frozen_fold_0_receipt_sha256": "5653e57e860248c63f63606d36cccb249f0253bc7dc1316d2c78baf133b75cc4",
+    "outcome": "V1 stopped before any held scoring because fold 1 provided only one supported answer-position transition.",
+    "v2_adjustment": "Allow one supported transition and use a zero patch if none is available. The signed and rounded training guards and the scale grid were retained."
+  },
+  "authored_inputs": {
+    "pilot028": {
+      "problems": 144,
+      "rotations": 576,
+      "families": 18,
+      "grouping_sha256": "40c54e3c36d11ed50197d59ff446808654ac5a131683f0df2f89c9b4c620c122",
+      "independent_key_audit_sha256": "489afde665fc9ed6f2a6c95f8e0137f3fc5538b1a891cde8a8ac8ffd8ddaeb65",
+      "baseline_sha256": "c12451d59c7fa134343ee88ce1e51b37a162e8c830b0eb239e143cdde63e4300",
+      "terminal_capture_sha256": "6920b54ed626630e22ff651d79d5bbec2ea9e8ec37947aeff54e5e43076e357a"
+    },
+    "pilot039": {
+      "problems": 36,
+      "rotations": 144,
+      "families": 12,
+      "corpus_sha256": "a354549f3e3974aa0aa61364b2be7ff294e95071667e016b317231cbb9b87299",
+      "grouping_sha256": "095dac8585d89630b91f230fc2ad1ecfdc0b046093ec56b3ff20d1d6c324d8a5",
+      "independent_key_audit_sha256": "c4d49308b051b3ba820cda78cba8ec9d5994876ab50b3bbd27094593edeb4560",
+      "preparation_sha256": "05cd054aa49af140a668cae6eaf92adcbd626c1b98fb982f92810b92d7cc5e16",
+      "baseline_sha256": "0ff35e2baad006540912cdaaed89f38f2e91d79f9b5cfd50a0b6eaef6c748952",
+      "terminal_capture_sha256": "eb5200d20c6cc4883f81417c6a1d5a78bb3ff510671d9fa73df0d13978ea9d02"
+    },
+    "ordinary": {
+      "source_pilot": 34,
+      "reviewed_trajectories": 9,
+      "states": 90,
+      "split_sha256": "c6b91a090db16d8757e2c9e5007de1885c8542bc7f0014754e10aa4e736fdc68",
+      "visible_review_sha256": "32faa63b4d834cbc3b3ea6fdc0035a82f2278f8d6a8a178524827afcda455480",
+      "capture_sha256": "5a2bd762c194438513794fb22380621b306e4ba16af7f1a12a7c736f478fa81b"
+    }
+  },
+  "related_input_pins": {
+    "039_source": "4c74c37f300466a626972c830b9e9ca17f1bb8955999f65da617b378f6f5af27",
+    "039_plan": "2abe3acc43ad627adea05d100c0bf31c8b84c0f8dd38a18f47b0bb9fa1197118",
+    "039_capture": "eb5200d20c6cc4883f81417c6a1d5a78bb3ff510671d9fa73df0d13978ea9d02",
+    "033_source": "fbc26705117b92167130aaa0dbc705c014431adfb3ba3ebc154fb6bf8cbf71d1",
+    "034_source": "b2bc4faad366dbb6e63d11fd3c4e7b55bc43e021ca813e2df7c5772ac1ca57e3",
+    "039_prior_report": "5908674515b1295ac63d25b3a8ca3d3673075323b68f722d4764d6d84c385031",
+    "040_prior_report": "65e5dcea3e146d54d9ce8ed6174dc9560e3b49a88c8f5f2f389068fe10efd205"
+  },
+  "method": {
+    "target": "Expanded authored misses with at least two correct sibling rotations and gap within .25 logits.",
+    "key_basis": "Mean normalized activation contrast per ordered correct/wrong displayed-option pair. Average by family, subtract the average correct sibling activation within each item.",
+    "training_input_null": "Project keys away from every older authored and reviewed ordinary training activation. No held activations enter key construction.",
+    "solve": "Three fixed residual contrast directions, exact RMS Jacobian at parent, squared pairwise deficits, centered drift and ridge. Prior-correct signed constraints preserve up to .10 logits of the parent margin.",
+    "objective_constants": {
+      "target_margin": 0.04,
+      "max_original_deficit": 0.25,
+      "drift": 0.2,
+      "ridge": 0.01
+    },
+    "permitted_train_scales": [
+      1.0,
+      0.75,
+      0.5,
+      0.35,
+      0.25,
+      0.125,
+      0.0625
+    ],
+    "max_training_relative_residual_shift_for_null_states": 2e-07
+  },
+  "tensor": {
+    "name": "blk.63.ffn_down.weight",
+    "storage": "F32",
+    "rank": 3,
+    "ggml_dimensions": [
+      17408,
+      5120
+    ],
+    "mathematical_dimensions": [
+      5120,
+      17408
+    ],
+    "parent_offset": 10869117856,
+    "bytes": 356515840,
+    "parent_tensor_sha256": "0c98f90b2c64baa071ada49e9db216040932261a54d791c8656deb07c637d97a"
+  },
+  "frozen_factors": {
+    "output_factor_sha256": "66af838b7a10430b7655aa0cf2af502b1fdf7bb5a258b48cd8ec16cfc06a1b4e",
+    "output_factor_shape": [
+      5120,
+      3
+    ],
+    "output_factor_bytes": 122880,
+    "input_factor_shape": [
+      17408,
+      3
+    ],
+    "encoding": "Little-endian row-major binary64",
+    "rounding": "Sum the three binary64 outer products in column order, add to the parent tensor in binary64 and round to binary32. The input factors already include the selected scale.",
+    "all_three_fold_tensor_hashes_independently_reconstructed": true,
+    "factors_bundled": false
+  },
+  "all_folds_frozen_before_held_scoring": true,
+  "folds": [
+    {
+      "held_fold": 0,
+      "fit_receipt_sha256": "daddbbf5e083e3cdcc44b7cf9ad09c2465e66eae60d9eed49967af3362c437a9",
+      "stored_input_factor_sha256": "4d7319a10e38703a4712c5151221500d45b3f1d772224342d1b0189e7a5d7e21",
+      "stored_input_factor_bytes": 417792,
+      "rounded_candidate_tensor_sha256": "fffe470e5f5c8e9693f62113c46ff4cc9a5d4886b1f6e7c8a51e0460b9de7381",
+      "relative_frobenius_change": 0.00021419961323099762,
+      "selected_scale": 1.0,
+      "training_transition_keys": 3,
+      "training_projected_null_states": 444,
+      "training_projected_null_rank": 444,
+      "training_input_feature_rank": 3,
+      "maximum_normalized_training_null_key_response": 2.1141942363467336e-17,
+      "maximum_training_relative_residual_shift": {
+        "older": 9.160787892169717e-09,
+        "ordinary": 1.286819884055988e-08
+      },
+      "rounded_training_028": {
+        "rotations": [
+          233,
+          233
+        ],
+        "all_four": [
+          30,
+          30
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "rounded_training_039": {
+        "rotations": [
+          37,
+          40
+        ],
+        "all_four": [
+          1,
+          2
+        ],
+        "gains": 3,
+        "losses": 0
+      },
+      "rounded_training_ordinary": {
+        "states": 60,
+        "archived_top64_winner_changes": 0,
+        "minimum_candidate_archived_top64_margin": 0.029294967651367188,
+        "maximum_parent_surrogate_abs_error": 0.0007440132612828165
+      },
+      "held_028": {
+        "rotations": [
+          109,
+          109
+        ],
+        "all_four": [
+          16,
+          16
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "held_039": {
+        "rotations": [
+          18,
+          18
+        ],
+        "all_four": [
+          1,
+          1
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "held_ordinary_archived_top64": {
+        "states": 30,
+        "archived_top64_winner_changes": 0,
+        "minimum_candidate_archived_top64_margin": 0.02311870410812844,
+        "maximum_parent_surrogate_abs_error": 2.414533810224384e-06
+      }
+    },
+    {
+      "held_fold": 1,
+      "fit_receipt_sha256": "dcec3f5752f8348158246d9adb9a752a4e6e33a7262d00c3efcc8194d5a847c4",
+      "stored_input_factor_sha256": "9b7e0b7079a30d84f8bd284f17e378df52b60d778cd3df812dd447fbdbdf0bfa",
+      "stored_input_factor_bytes": 417792,
+      "rounded_candidate_tensor_sha256": "fdcb36522f23bedcca1d46eab45f706119a002165ba764b5b6cb67faf7b6b9d4",
+      "relative_frobenius_change": 0.0004867650171701118,
+      "selected_scale": 1.0,
+      "training_transition_keys": 1,
+      "training_projected_null_states": 444,
+      "training_projected_null_rank": 444,
+      "training_input_feature_rank": 1,
+      "maximum_normalized_training_null_key_response": 4.559070135301546e-17,
+      "maximum_training_relative_residual_shift": {
+        "older": 8.49907801080657e-09,
+        "ordinary": 1.2431437398284587e-08
+      },
+      "rounded_training_028": {
+        "rotations": [
+          229,
+          229
+        ],
+        "all_four": [
+          31,
+          31
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "rounded_training_039": {
+        "rotations": [
+          40,
+          41
+        ],
+        "all_four": [
+          2,
+          2
+        ],
+        "gains": 1,
+        "losses": 0
+      },
+      "rounded_training_ordinary": {
+        "states": 60,
+        "archived_top64_winner_changes": 0,
+        "minimum_candidate_archived_top64_margin": 0.023443222045898438,
+        "maximum_parent_surrogate_abs_error": 0.0007440132612828165
+      },
+      "held_028": {
+        "rotations": [
+          113,
+          113
+        ],
+        "all_four": [
+          15,
+          15
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "held_039": {
+        "rotations": [
+          15,
+          15
+        ],
+        "all_four": [
+          0,
+          0
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "held_ordinary_archived_top64": {
+        "states": 30,
+        "archived_top64_winner_changes": 0,
+        "minimum_candidate_archived_top64_margin": 0.6194518687862001,
+        "maximum_parent_surrogate_abs_error": 2.8890590328956023e-06
+      }
+    },
+    {
+      "held_fold": 2,
+      "fit_receipt_sha256": "2b2c9cd0df353a6facb46e9ba94729c2d6b97de9c0248daae00d9d6085159375",
+      "stored_input_factor_sha256": "1a93bfae79e3b235ed7cb8f68c67e98ebb0de97b3bd72ccd6863cafa0115a917",
+      "stored_input_factor_bytes": 417792,
+      "rounded_candidate_tensor_sha256": "c7780b8fcb1c0c568c3166ccd6462c441f16af4ef65081e77ef71032ce2ccecf",
+      "relative_frobenius_change": 0.00045638286007438137,
+      "selected_scale": 1.0,
+      "training_transition_keys": 4,
+      "training_projected_null_states": 444,
+      "training_projected_null_rank": 444,
+      "training_input_feature_rank": 4,
+      "maximum_normalized_training_null_key_response": 1.8810907692623502e-17,
+      "maximum_training_relative_residual_shift": {
+        "older": 9.593088289741907e-09,
+        "ordinary": 1.2951857740690847e-08
+      },
+      "rounded_training_028": {
+        "rotations": [
+          222,
+          222
+        ],
+        "all_four": [
+          31,
+          31
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "rounded_training_039": {
+        "rotations": [
+          33,
+          37
+        ],
+        "all_four": [
+          1,
+          2
+        ],
+        "gains": 4,
+        "losses": 0
+      },
+      "rounded_training_ordinary": {
+        "states": 60,
+        "archived_top64_winner_changes": 0,
+        "minimum_candidate_archived_top64_margin": 0.023443222045898438,
+        "maximum_parent_surrogate_abs_error": 2.8890590328956023e-06
+      },
+      "held_028": {
+        "rotations": [
+          120,
+          119
+        ],
+        "all_four": [
+          15,
+          14
+        ],
+        "gains": 0,
+        "losses": 1
+      },
+      "held_039": {
+        "rotations": [
+          22,
+          22
+        ],
+        "all_four": [
+          1,
+          1
+        ],
+        "gains": 0,
+        "losses": 0
+      },
+      "held_ordinary_archived_top64": {
+        "states": 30,
+        "archived_top64_winner_changes": 0,
+        "minimum_candidate_archived_top64_margin": 0.028787588968043565,
+        "maximum_parent_surrogate_abs_error": 0.0007440132612828165
+      }
+    }
+  ],
+  "held_028": {
+    "rotations": 576,
+    "problems": 144,
+    "correct_rotations_parent_candidate": [
+      342,
+      341
+    ],
+    "all_four_parent_candidate": [
+      46,
+      45
+    ],
+    "rotation_gains": 0,
+    "rotation_losses": 1,
+    "all_four_gains": 0,
+    "all_four_losses": 1,
+    "subjects": {
+      "high_school_mathematics": {
+        "rotations": 320,
+        "problems": 80,
+        "correct_rotations_parent_candidate": [
+          205,
+          204
+        ],
+        "all_four_parent_candidate": [
+          32,
+          31
+        ],
+        "rotation_gains": 0,
+        "rotation_losses": 1,
+        "all_four_gains": 0,
+        "all_four_losses": 1
+      },
+      "college_mathematics": {
+        "rotations": 256,
+        "problems": 64,
+        "correct_rotations_parent_candidate": [
+          137,
+          137
+        ],
+        "all_four_parent_candidate": [
+          14,
+          14
+        ],
+        "rotation_gains": 0,
+        "rotation_losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    }
+  },
+  "held_039": {
+    "rotations": 144,
+    "problems": 36,
+    "correct_rotations_parent_candidate": [
+      55,
+      55
+    ],
+    "all_four_parent_candidate": [
+      2,
+      2
+    ],
+    "rotation_gains": 0,
+    "rotation_losses": 0,
+    "all_four_gains": 0,
+    "all_four_losses": 0,
+    "subjects": {
+      "high_school_mathematics": {
+        "rotations": 72,
+        "problems": 18,
+        "correct_rotations_parent_candidate": [
+          24,
+          24
+        ],
+        "all_four_parent_candidate": [
+          1,
+          1
+        ],
+        "rotation_gains": 0,
+        "rotation_losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      },
+      "college_mathematics": {
+        "rotations": 72,
+        "problems": 18,
+        "correct_rotations_parent_candidate": [
+          31,
+          31
+        ],
+        "all_four_parent_candidate": [
+          1,
+          1
+        ],
+        "rotation_gains": 0,
+        "rotation_losses": 0,
+        "all_four_gains": 0,
+        "all_four_losses": 0
+      }
+    }
+  },
+  "held_ordinary_archived_top64": {
+    "states": 90,
+    "winner_changes": 0
+  },
+  "gate_results": {
+    "expanded_gain_present": false,
+    "expanded_zero_losses": true,
+    "earlier_zero_losses": false,
+    "ordinary_archived_top64_zero_winner_changes": true,
+    "passed": false
+  },
+  "native_candidate_executed": false,
+  "checkpoint_written": false,
+  "scope": "Exploratory CPU replay on authored data only. The input null constrains earlier-corpus and ordinary training activations. Held ordinary results screen the 64 archived contenders at each state. This edit can move other vocabulary logits, so complete native generation requires a separate check."
+}
