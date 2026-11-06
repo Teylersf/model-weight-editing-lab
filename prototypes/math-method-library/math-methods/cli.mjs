@@ -11,7 +11,9 @@ try {
     try {
       if (command === 'search') result = library.search({ query: args.join(' ') });
       if (command === 'show' && args.length === 1) result = library.get(args[0]);
-      if (command === 'coverage' && !args.length) result = { revision: library.revision, coverage: library.coverage() };
+      if (command === 'coverage' && !args.length) {
+        result = { revision: library.revision, searchRevision: library.searchRevision, coverage: library.coverage() };
+      }
     } finally {
       library.close();
     }

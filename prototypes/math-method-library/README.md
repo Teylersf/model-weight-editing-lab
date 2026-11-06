@@ -1,6 +1,6 @@
 # Local math method library
 
-This is a self-hosted math reference for a tutor. Search an equation or a short description of the task. Each result gives the method, its assumptions, steps, common mistakes, checks, and an original worked example. The library contains 207 English-language cards across 21 subjects, from school algebra and geometry through undergraduate calculus, linear algebra, probability, statistics, and proof.
+This is a self-hosted math reference for a tutor. Search an equation or a short description of the task. Each result gives the method, its assumptions, steps, common mistakes, checks, and an original worked example. The library contains 257 English-language cards across 21 subjects, with 95 high-school and 162 undergraduate methods.
 
 ## Run the library
 
@@ -18,12 +18,12 @@ The build validates card fields and unique IDs before replacing the local SQLite
 
 ## Use it as a tool
 
-Import `openMethodLibrary()` from `math-methods/library.mjs` and call `search({ query, domain, level, limit })`. The optional `domain` is a subject slug from the coverage command. The optional `level` is `high-school` or `undergraduate`. The default result limit is three, with a maximum of eight. `get(id)` loads one card by its stable ID. Call `close()` after using the library. Record the content revision and the search code version when comparing runs.
+Import `openMethodLibrary()` from `math-methods/library.mjs` and call `search({ query, domain, level, limit })`. The optional `domain` is a subject slug from the coverage command. The optional `level` is `high-school` or `undergraduate`. The default result limit is three, with a maximum of eight. `get(id)` loads one card by its stable ID. Call `close()` after using the library. Record `revision` and `searchRevision` when comparing runs.
 
 The method is a candidate procedure. Check its assumptions against the submitted problem before applying it. Calculator or symbolic verification of the student's particular inputs is a separate operation. For a drawing or screenshot, a future tool caller supplies the relevant text or notation it read from the picture.
 
 ## Measured coverage and limitations
 
-The included tests found an expected card in the top three for all 67 development queries. In a separately authored challenge, the earlier search version returned the expected card in the top three for 8 of 16 math queries. After adjusting the search against the observed failures, the same 16 all reached the top three. Six of eight off-topic queries with overlapping terms still returned a card. These measure retrieval on small sets. Before tuning tool use, freeze a new evaluation set that includes ambiguous and out-of-scope requests.
+The included tests found an expected card in the top three for all 74 development queries, with 71 ranked first. All five included off-topic queries returned no cards. A replay of the previously used retrieval challenge found an expected card in the top three for all 23 math queries, with 22 ranked first, and returned no cards for its five off-topic controls. Earlier search changes used that challenge. These results cover regression tests. Before tuning tool use, freeze a new evaluation set that includes ambiguous and out-of-scope requests.
 
 The JSON files in `math-methods/cards` are the editable source. Their examples are authored for this library. Keep model benchmarks, held-out evaluation items, and student submissions separate from the library.

@@ -1,0 +1,342 @@
+[
+  {
+    "id": "precalculus-fit-exponential-two-points",
+    "title": "Fit an exponential model from two points",
+    "domain": "precalculus",
+    "level": "high-school",
+    "aliases": [
+      "two-point exponential growth",
+      "find the exponential multiplier",
+      "exponential model from two data points",
+      "constant growth factor"
+    ],
+    "pattern": "For y=A·b^x with A>0 and b>0, the ratio of two positive outputs determines the per-unit multiplier b.",
+    "applies": [
+      "Two positive measurements are modeled by exponential growth or decay without an additive offset.",
+      "The inputs are distinct and use the same units."
+    ],
+    "steps": [
+      "Divide y₂ by y₁ to get b^(x₂−x₁).",
+      "Solve for the positive base using b=exp(ln(y₂/y₁)/(x₂−x₁)).",
+      "Use either point to obtain A=y₁/b^x₁. If requested, report the per-unit percent change as 100(b−1)%."
+    ],
+    "pitfalls": [
+      "A ratio over several input units is a multiplier for the entire interval. Convert it to one input unit before reporting growth.",
+      "An added offset y=C+A·b^x introduces a third parameter. Two points generally leave it undetermined."
+    ],
+    "checks": [
+      "Substitute both data points.",
+      "For x₂>x₁, increasing outputs require b>1 and decreasing outputs require 0<b<1."
+    ],
+    "example": {
+      "problem": "Find A and b in y=A·b^x given y=6 at x=1 and y=48 at x=4.",
+      "answer": "The ratio gives b³=48/6=8, so b=2. From 6=A·2, A=3. Thus y=3·2^x, which gives 48 at x=4."
+    }
+  },
+  {
+    "id": "calculus-riemann-sum-to-integral",
+    "title": "Recognize a Riemann sum as a definite integral",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "limit of a Riemann sum",
+      "right endpoint rectangles",
+      "sigma sum to definite integral",
+      "partition width delta x"
+    ],
+    "pattern": "With xₖ=a+kΔx and Δx=(b−a)/n, the limit of Σ f(xₖ)Δx equals ∫ₐᵇ f(x) dx for continuous f.",
+    "applies": [
+      "A limit has an increasing number of terms, sample points filling an interval, and a factor proportional to 1/n.",
+      "The sampled function is continuous or otherwise Riemann integrable."
+    ],
+    "steps": [
+      "Identify the interval from the sample points and find the width Δx.",
+      "Rewrite the summand as f(xₖ). Move the constant ratio of the prefactor to Δx outside the sum.",
+      "Replace the Riemann sum by the definite integral and evaluate if possible."
+    ],
+    "pitfalls": [
+      "The prefactor 1/n equals the partition width only when the interval length is one.",
+      "The integral gives signed accumulation. Split at sign changes when the question asks for geometric area."
+    ],
+    "checks": [
+      "Check that the total of n partition widths is b−a.",
+      "Check the sample points and any constant outside the integral."
+    ],
+    "example": {
+      "problem": "Evaluate lim(n→∞) (1/n) Σ[k=1 to n] (1+(3k/n)²).",
+      "answer": "Use xₖ=3k/n and Δx=3/n on [0,3]. The prefactor is Δx/3. The limit is (1/3)∫₀³(1+x²) dx=(1/3)(3+9)=4."
+    }
+  },
+  {
+    "id": "calculus-concavity-inflection-sign",
+    "title": "Determine concavity and inflection points",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "concave up or concave down",
+      "points of inflexion",
+      "second derivative sign chart",
+      "where does concavity change"
+    ],
+    "pattern": "On an interval where f″ has constant positive or negative sign, f is concave up or down, respectively. An inflection point occurs where a continuous graph changes concavity.",
+    "applies": [
+      "A function is twice differentiable between a finite set of suspected transition points.",
+      "The question asks about bending or inflection, including points with a nonzero first derivative."
+    ],
+    "steps": [
+      "Split the domain at points where f″ is zero or undefined.",
+      "Determine the sign of f″ on each interval.",
+      "At a candidate point, check continuity and whether concavity switches. Evaluate f to get the coordinates."
+    ],
+    "pitfalls": [
+      "A zero of f″ with the same sign on both sides need not give an inflection point.",
+      "A gap in the domain provides no point on the graph."
+    ],
+    "checks": [
+      "Use factored f″ or a test point in each interval.",
+      "Confirm opposite concavities on both sides of each reported inflection point."
+    ],
+    "example": {
+      "problem": "Find the concavity intervals and inflection points of f(x)=x⁴−6x².",
+      "answer": "Since f″(x)=12(x−1)(x+1), the graph is concave up on (−∞,−1) and (1,∞) and down on (−1,1). The polynomial is continuous and the sign flips at both roots. The points are (−1,−5) and (1,−5)."
+    }
+  },
+  {
+    "id": "calculus-root-test-for-series",
+    "title": "Use the root test on a series",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "Cauchy root test",
+      "nth-root convergence test",
+      "series with the nth power",
+      "limsup of nth roots"
+    ],
+    "pattern": "For L=limsup |aₙ|^(1/n), Σaₙ converges absolutely if L<1 and diverges if L>1. L=1 is inconclusive.",
+    "applies": [
+      "The summand contains an nth power or its nth root is simpler than its successive-term ratio.",
+      "The question concerns convergence of terms that may change sign."
+    ],
+    "steps": [
+      "Take the nth root of |aₙ| and simplify.",
+      "Find its limit if it exists. Use the limit superior when the roots oscillate.",
+      "Compare L with 1. If L=1, choose a different test."
+    ],
+    "pitfalls": [
+      "The nth root applies to the whole absolute value, including factors outside the nth power.",
+      "A root limit of 1 occurs for both convergent and divergent series."
+    ],
+    "checks": [
+      "When L<1, take L<r<1. Eventually |aₙ|≤rⁿ, so a geometric series bounds the tail."
+    ],
+    "example": {
+      "problem": "Does Σ[n=1 to ∞] ((2n+5)/(5n−1))ⁿ converge?",
+      "answer": "The nth root is (2n+5)/(5n−1), which tends to 2/5. The series converges absolutely by the root test."
+    }
+  },
+  {
+    "id": "calculus-telescoping-series",
+    "title": "Sum a telescoping series using finite partial sums",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "telescoping sum",
+      "terms cancel in a series",
+      "partial sums with shifted terms",
+      "sum of a difference sequence"
+    ],
+    "pattern": "Differences of shifted copies of one sequence cancel inside a finite partial sum and leave boundary terms.",
+    "applies": [
+      "The series has a difference form or algebra produces a difference of shifted terms.",
+      "An exact infinite sum or finite partial-sum formula is requested."
+    ],
+    "steps": [
+      "Express aₙ as bₙ−bₙ₊ₖ with a fixed shift k, including any constant factor.",
+      "Write the sum through index N and align the shifted terms.",
+      "Retain the uncancelled terms at both ends. For an infinite series, then take the limit as N→∞."
+    ],
+    "pitfalls": [
+      "Take the limit after finite cancellation. Separating the series into two divergent infinite sums is invalid.",
+      "A shift by k leaves k leading and k trailing terms once the partial sum is long enough."
+    ],
+    "checks": [
+      "Substitute a small N into the partial-sum formula.",
+      "Check whether the trailing terms approach finite limits."
+    ],
+    "example": {
+      "problem": "Find Σ[n=1 to ∞] 1/((n+1)(n+3)).",
+      "answer": "Write each term as ½[1/(n+1)−1/(n+3)]. The N-term sum is ½[1/2+1/3−1/(N+2)−1/(N+3)]. The trailing terms vanish, giving 5/12."
+    }
+  },
+  {
+    "id": "calculus-power-series-termwise-integration",
+    "title": "Integrate a power series term by term",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "integrate the series termwise",
+      "integrate a geometric expansion",
+      "power series for an accumulation function",
+      "integrating a series and checking endpoints"
+    ],
+    "pattern": "Inside its radius of convergence, a power series can be integrated term by term. The radius stays the same and endpoints are checked separately.",
+    "applies": [
+      "The integrand has a power series and the integration interval stays inside its radius.",
+      "A series for an antiderivative or accumulation function is requested."
+    ],
+    "steps": [
+      "Expand the integrand at the intended center and state the open interval of convergence.",
+      "Integrate each monomial. Use the integration constant or lower limit to match the accumulation value.",
+      "Test the integrated series separately at each finite endpoint. Justify equality with the original function there if needed."
+    ],
+    "pitfalls": [
+      "Endpoint convergence can change when integrating a series.",
+      "An integration constant matters when the lower limit differs from the expansion center."
+    ],
+    "checks": [
+      "Differentiate the new series inside its interval to recover the integrand.",
+      "Check that the accumulation is zero at the lower limit."
+    ],
+    "example": {
+      "problem": "Find a power series for ∫₀ˣ t/(1+t²) dt and determine where the series converges.",
+      "answer": "For |t|<1, expand t/(1+t²)=Σ[n≥0](−1)ⁿt^(2n+1). The integral is Σ[n≥0](−1)ⁿx^(2n+2)/(2n+2) for |x|<1. At x=±1 the same alternating series converges, giving the convergence interval [−1,1]. For |x|>1 the terms do not tend to zero. At |x|=1, integrating the finite geometric remainder gives an absolute error at most 1/(2N+4) after summing n=0 through N, so the endpoint sums equal the integral too."
+    }
+  },
+  {
+    "id": "calculus-reverse-double-integral-order",
+    "title": "Reverse the order of a double integral",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "switch order of integration",
+      "reverse dx dy limits",
+      "change the order of a double integral",
+      "describe region with horizontal slices"
+    ],
+    "pattern": "Keep the region and integrand fixed while describing the same points with the other coordinate on the outside.",
+    "applies": [
+      "A double integral has variable inner bounds and the other order may simplify it.",
+      "The integrand is continuous on a bounded region, or another valid hypothesis permits changing order."
+    ],
+    "steps": [
+      "Write the bounds as inequalities and sketch the region if needed.",
+      "Project onto the axis for the new outer variable.",
+      "At each fixed outer coordinate, find the new inner endpoints. Split into pieces if the bounding curves change.",
+      "Check the region in the new order and evaluate."
+    ],
+    "pitfalls": [
+      "Swapping dx and dy while leaving the bounds in place usually changes the region.",
+      "A new slice can have multiple components or change its bounding curves."
+    ],
+    "checks": [
+      "Check a corner and an interior point in both descriptions.",
+      "If unsure, integrate the constant 1 in both orders and compare areas."
+    ],
+    "example": {
+      "problem": "Reverse the order and evaluate ∫₀¹ ∫ₓ¹ e^(y²) dy dx.",
+      "answer": "The region is 0≤x≤y≤1, so the reversed form is ∫₀¹ ∫₀ʸ e^(y²) dx dy. The inner integral is y·e^(y²). Integrating in y gives (e−1)/2."
+    }
+  },
+  {
+    "id": "calculus-vector-line-integral-parametric",
+    "title": "Compute a vector line integral by parametrizing the path",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "work along a parametrized curve",
+      "direct circulation integral",
+      "F dot dr along a path",
+      "nonconservative line integral"
+    ],
+    "pattern": "For an oriented curve r(t), work is ∫ F(r(t))·r′(t) dt over its parameter interval.",
+    "applies": [
+      "A vector field is integrated along a piecewise smooth oriented path.",
+      "The field can be path dependent or the path can be open."
+    ],
+    "steps": [
+      "Parametrize the path in the requested direction and identify the parameter limits.",
+      "Substitute r(t) into the field and compute r′(t).",
+      "Integrate their dot product. Sum the contributions for a piecewise path."
+    ],
+    "pitfalls": [
+      "The speed factor ||r′(t)|| belongs to a scalar arc-length integral. Work uses the velocity vector inside the dot product.",
+      "Reversing the direction reverses the sign of the work."
+    ],
+    "checks": [
+      "Verify the parameter endpoints match the stated start and finish.",
+      "Check that the dot product is a scalar function of the parameter."
+    ],
+    "example": {
+      "problem": "Find the work of F(x,y)=(−y,x) along r(t)=(t,t²) for t from 0 to 2.",
+      "answer": "F(r(t))=(−t²,t) and r′(t)=(1,2t). Their dot product is t², so the work is ∫₀² t² dt=8/3."
+    }
+  },
+  {
+    "id": "calculus-surface-flux-graph-normal",
+    "title": "Compute flux through a graph using its oriented normal",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": [
+      "flux through an open surface",
+      "upward flux through z equals f of x y",
+      "graph surface normal area element",
+      "vector surface integral with orientation"
+    ],
+    "pattern": "For z=g(x,y), the upward area element is (−gₓ,−gᵧ,1) dx dy. Reverse its sign for downward orientation.",
+    "applies": [
+      "The surface is a smooth graph over a known planar region.",
+      "An oriented flux integral of a continuous vector field is requested, including through an open surface."
+    ],
+    "steps": [
+      "Project onto the xy-plane and identify the region.",
+      "Compute gₓ and gᵧ and choose the sign of the oriented area vector.",
+      "Evaluate the field at (x,y,g(x,y)), take its dot product with the area vector, and integrate over the projection."
+    ],
+    "pitfalls": [
+      "The area vector already includes area scaling. Adding another surface-area factor double-counts it.",
+      "The divergence theorem requires a closed surface. An open graph can be integrated directly."
+    ],
+    "checks": [
+      "For upward orientation, the area vector has a positive third component.",
+      "For a constant vertical field, upward flux equals its vertical component times the projected area."
+    ],
+    "example": {
+      "problem": "Find upward flux of F(x,y,z)=(x,2y,z) through z=2+x−y over 0≤x≤1 and 0≤y≤2.",
+      "answer": "The upward area vector is (−1,1,1) dx dy. The dot product on the graph is −x+2y+2+x−y=2+y. The rectangle has width one in x, so the flux is ∫₀²(2+y) dy=6."
+    }
+  },
+  {
+    "id": "analysis-uniform-continuity-lipschitz",
+    "title": "Prove uniform continuity with a Lipschitz bound",
+    "domain": "real-analysis",
+    "level": "undergraduate",
+    "aliases": [
+      "uniform continuity with one delta",
+      "global Lipschitz bound",
+      "bounded derivative implies uniform continuity",
+      "uniform epsilon delta proof"
+    ],
+    "pattern": "If |f(x)−f(y)|≤L|x−y| for all domain points and finite L>0, the choice δ=ε/L proves uniform continuity.",
+    "applies": [
+      "The same distance bound is needed for all pairs of points in a domain.",
+      "Algebra or a bounded derivative on an interval can give a global Lipschitz constant."
+    ],
+    "steps": [
+      "Bound |f(x)−f(y)| for arbitrary domain points by a constant times |x−y|.",
+      "If using the mean value theorem, ensure the segment joining the points lies in the interval and the derivative bound applies there.",
+      "For any ε>0 choose δ=ε/L and verify the implication. If L=0, the function is constant on the domain and any δ>0 works."
+    ],
+    "pitfalls": [
+      "A δ that depends on x or y establishes only a local continuity statement.",
+      "A failed Lipschitz estimate alone leaves uniform continuity undecided."
+    ],
+    "checks": [
+      "Check that the bound is finite across the whole domain, including any unbounded part.",
+      "Check that δ depends only on ε and the fixed bound."
+    ],
+    "example": {
+      "problem": "Prove f(x)=√(x+4) is uniformly continuous on [0,∞).",
+      "answer": "For x,y≥0, rationalization gives |f(x)−f(y)|=|x−y|/(√(x+4)+√(y+4))≤|x−y|/4. For ε>0 choose δ=4ε. Then |x−y|<δ implies |f(x)−f(y)|<ε."
+    }
+  }
+]

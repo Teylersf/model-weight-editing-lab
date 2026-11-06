@@ -5,6 +5,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { fileURLToPath } from 'node:url';
 
 export const defaultDatabase = fileURLToPath(new URL('../.runtime/math-methods.sqlite', import.meta.url));
+const searchRevision = createHash('sha256').update(readFileSync(new URL(import.meta.url))).digest('hex');
 const cardsDirectory = fileURLToPath(new URL('./cards/', import.meta.url));
 const version = 1;
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -20,6 +21,7 @@ const languageCues = [
   ['percent change', [/\b(?:percent|percentage)\b|%/u, /\b(?:change[ds]?|fell|fall|rose|increas\w*|decreas\w*|drop\w*|reduc\w*)\b/u]],
   ['reverse percentage', [/\b(?:percent|percentage)\b|%/u, /\b(?:discount|markdown|markup|increase|decrease|tax)\b/u, /\b(?:original|before|start\w*|initial)\b/u]],
   ['cylinder volume', [/\b(?:tank|canister|pipe)\b/u, /\b(?:radius|diameter)\b/u, /\b(?:height|deep|depth|tall)\b/u]],
+  ['cone volume', [/\bcone\b/u, /\b(?:fits?|capacity|inside|volume|contains?|holds?)\b/u]],
   ['arc length', [/\b(?:wedge|disk|circle|sector)\b/u, /\b(?:curved edge|curved length|arc)\b/u]],
   ['coordinate distance', [/\([^()]{1,32},[^()]{1,32}\)[^()]{0,80}\([^()]{1,32},[^()]{1,32}\)/u, /\b(?:distance|how (?:far|long)|length)\b/u]],
   ['similar triangles', [/\bshadows?\b/u, /\b(?:height|posts?|poles?|taller|tall)\b/u]],
@@ -38,14 +40,22 @@ const languageCues = [
   ['hypergeometric sampling', [/\b(?:draw|pull|pick|sample)\w*\b/u, /\b(?:without replac\w*|stay out|kept out|not returned)\b/u, /\b(?:exactly|chance|probability)\w*\b/u]],
   ['combinations versus permutations', [/\b(?:ways|arrange|line up|order matters|ordered)\b/u, /\b(?:line up|arrange|order matters|choose|select|swap)\b/u, /\b\d+\b/u]],
   ['posterior probability', [/\b(?:given that|after|if)\b/u, /\b(?:flagged|screened|tested positive|positive test|diagnos\w*)\b/u, /\b(?:chance|probability|truly|actually|really)\b/u]],
+  ['posterior probability', [/\b(?:given|after|following)\s+(?:(?:a|an|the)\s+)?(?:positive|negative)\s+(?:test|screen(?:ing)?|diagnostic)\b/u, /\b(?:chance|probability|likely|odds)\b/u]],
+  ['posterior probability', [/\b(?:positive|negative)\s+screen(?:ing)?\b/u, /\b(?:tell us|tell me|means? for)\b/u, /\b(?:chance|probability|likely|odds)\b/u]],
   ['posterior probability', [/\b(?:given|if)\b/u, /\b(?:likel\w*|chance|probability)\b/u, /\brates?\b/u, /\d[^%\n]{0,8}%[^%\n]{0,80}%/u]],
   ['stars and bars', [/\b(?:identical|indistinguishable)\b/u, /\b(?:distribut\w*|hand|give|share|allocat\w*)\b/u, /\b(?:each|everyone|per|groups?|bins?|people)\b/u]],
   ['factorial trailing zeros', [/\b(?:factorial|\d+!)/u, /\b(?:zeros?|zeroes)\b/u, /\b(?:trailing|end|ends)\b/u]],
   ['test for independence', [/\b(?:table|counts|categor\w*)\b/u, /\b(?:associated|association|independent|independence)\b/u, /\b(?:test|check|assess|determine)\b/u]],
   ['uniform convergence', [/\b(?:sequence|converge\w*)\b/u, /\b(?:for (?:every|all)|independent of)\b/u, /\b(?:one|same|single)\s+n\b/u]],
   ['directional derivative', [/\b(?:fastest|steepest|maximal|maximum)\b/u, /\b(?:increase\w*|decrease\w*|ascent|descent|direction)\b/u, /\b(?:around|point|at|function|gradient)\b/u]],
+  ['directional derivative', [/\b(?:slope|rate|derivative)\b/u, /\b(?:direction|towards?|moving|along)\b/u, /\b(?:grad(?:ient)?|vectors?|point)\b|∇/u]],
   ['composite simpson', [/\b1\s*,\s*4\s*,\s*2\s*,\s*4\s*,\s*1\b/u, /\b(?:interval|area|integral|estimate|weights?)\b/u]],
+  ['breadth first search', [/\b(?:fewest|minimum|shortest)\b/u, /\b(?:hops?|links?|edges?|steps?)\b/u, /\b(?:network|graph|nodes?|vertices|links?)\b/u]],
+  ['matching hall', [/\b(?:each|assign\w*|match\w*|every)\b/u, /\b(?:different|distinct|unique|separate)\b/u, /\b(?:can use|can only|eligible|available|allowed|choices?|one each)\b/u]],
+  ['exact binomial test', [/\b(?:successes|binomial|success rate)\b/u, /\b(?:p[ -]value|null hypothesis|one[ -]sided|significan\w*)\b/u]],
 ];
+const softwareTask = /\b(?:log\s+(?:in|out)|sign\s+(?:in|out)|toolbar|bookmarks?|browser password|display settings?|line spacing|export(?:ed|ing)?\s+to\s+svg)\b/u;
+const softwareContext = /\b(?:account|browser|chrome|cad|svg|word|pages|toolbar|bookmarks?|app|file|document|editor)\b/u;
 
 export class MethodQueryError extends Error {}
 
@@ -100,19 +110,60 @@ function normalize(text) {
 function notationTerms(query) {
   const raw = query.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/gu, digits =>
     '^' + [...digits].map(digit => superscript.indexOf(digit)).join('')).replace(/⁄/gu, '/');
-  const text = normalize(raw);
+  const text = normalize(raw)
+    .replace(/\\(?:left|right|displaystyle)\b|\\[,;!]/gu, '')
+    .replace(/\\(?:d?frac)\s*\{([^{}]+)\}\s*\{([^{}]+)\}/gu, '($1)/($2)')
+    .replace(/\\(?:cdot|times)\b/gu, '*')
+    .replace(/\\(sin|cos|tan|log|ln|exp|sqrt)\b/gu, '$1')
+    .replace(/\\oint\b/gu, '∮')
+    .replace(/\\(?:int|iint)\b/gu, '∫')
+    .replace(/\{([^{}]+)\}/gu, '($1)');
   const cues = languageCues.filter(([, patterns]) => patterns.every(pattern => pattern.test(text))).map(([cue]) => cue);
   if (cues.includes('posterior probability')) cues.push('bayes theorem', 'base rate');
   if (cues.includes('test for independence')) cues.push('contingency table', 'chi square');
   const isEquation = /(?<![<>=!])=(?!=)/u.test(text);
-  const quadratic = /[a-z]\s*\^\s*(?:\{2\}|2)(?![0-9])/u.test(text);
+  const quadratic = /[a-z]\s*\^\s*(?:\(2\)|2)(?![0-9])/u.test(text);
   const differentiation = /\b(?:differentiate|derivative|differentiat(?:ion|ing))\b/u.test(text);
   const integration = /∫|\\int\b|\b(?:integral|integrate|integration)\b/u.test(text);
-  const derivativeOperator = /\bd\s*\/\s*d[a-z]\b/u.test(text);
+  const derivativeOperator = /\bd\s*\)?\s*\/\s*\(?\s*d[a-z]\b/u.test(text);
   const differentiationRequest = differentiation || derivativeOperator;
-  if (/√|\b(?:sqrt|radical)\b/u.test(text)) cues.push('radical square root');
+  const trig = /\b(?:sin|cos|tan)(?=[\s^{(0-9])/u.test(text);
+  const variableExponent = /\b(?:\d+(?:\.\d+)?|e)\s*\^\s*(?:[a-z]|\([^()]{0,48}[a-z][^()]{0,48}\))/u.test(text);
+  if (/√|\b(?:sqrt|radical)\b/u.test(text) && !(isEquation && trig)) cues.push('radical square root');
+  if (differentiationRequest && /\b[a-z]\s*\^\s*(?:[a-z]|\([^()]{0,48}[a-z][^()]{0,48}\))/u.test(text)) {
+    cues.push('logarithmic differentiation', 'variable exponent');
+  }
+  if (isEquation && variableExponent && !integration && !differentiationRequest) cues.push('exponential equation');
+  if (isEquation && trig && !integration && !differentiationRequest && !/['′″]/u.test(text)) {
+    cues.push('trig equation', 'periodic solutions');
+  }
+  if (/∮/u.test(text)) {
+    if (/\bz\b/u.test(text) && /\bdz\b/u.test(text)) {
+      cues.push('residue theorem', 'closed contour');
+    } else if (/\bdx\b[^\n]{0,160}\bdy\b|\bdy\b[^\n]{0,160}\bdx\b|\b[\p{L}]\s*[⋅·*]\s*dr\b/u.test(text)) {
+      cues.push('planar line integral', 'circulation from curl');
+    }
+  }
+  if (/\b[a-z]\s*['′]\s*=/u.test(text) &&
+      new Set([...text.matchAll(/\b([a-z])\s*['′]\s*=/gu)].map(match => match[1])).size >= 2) {
+    cues.push('first order linear system', 'matrix exponential with eigenvectors');
+  }
+  const forcedSecondOrder = /\b[a-z]\s*(?:″|′′|'')\s*[^=\n]{0,90}=\s*([^\n]{1,90})/u.exec(text);
+  if (forcedSecondOrder && /\b(?:sin|cos|exp)\b|\be\s*\^|\bt\b/u.test(forcedSecondOrder[1])) {
+    cues.push('undetermined coefficients', 'particular solution');
+  }
+  if (/\b(?:rank[ -]?(?:one|\d+|k)|low[ -]rank)\b/u.test(text) && /\bapproximat\w*\b/u.test(text)) {
+    cues.push('low rank matrix approximation', 'truncate singular value decomposition');
+  }
+  if (/\bfoc(?:i|us|al)\b/u.test(text) &&
+      /\b[xy]\s*\^\s*(?:2|\(2\))[^\n=]{0,32}\+[^\n=]{0,16}\b[xy]\s*\^\s*(?:2|\(2\))/u.test(text)) {
+    cues.push('ellipse standard form');
+  }
   if (quadratic && /\b(?:how many|number of|real roots|real zeros|discriminant)\b/u.test(text)) {
     cues.push('quadratic discriminant');
+  }
+  if (quadratic && isEquation && /\b(?:find|determine|what are)\s+(?:(?:all|both|the|real)\s+){0,3}(?:roots|zeros|solutions)\b/u.test(text)) {
+    cues.push('quadratic formula');
   }
   if (integration) {
     cues.push('integral integration');
@@ -121,7 +172,7 @@ function notationTerms(query) {
     if (/\b[a-z](?:\s*\^\s*\d+)?\s*[⋅·×*]?\s*(?:sin\b|cos\b|ln\b|log\b|exp\b|e\s*\^)/u.test(text)) {
       cues.push('integration by parts');
     }
-    if (/\b[a-z]\s*\([^()]{1,100}\^\s*(?:\{2\}|2)[^()]{0,100}\)\s*\^/u.test(text)) {
+    if (/\b[a-z]\s*\([^()]{1,100}\^\s*(?:\(2\)|2)[^()]{0,100}\)\s*\^/u.test(text)) {
       cues.push('integration substitution');
     }
   }
@@ -151,8 +202,10 @@ function notationTerms(query) {
   }
   if (/≡[^;\n]{0,25}\b1\b[^;\n]{0,15}\bmod\b/u.test(text) && /\d\s*[a-z]\s*≡/u.test(text)) {
     cues.push('modular inverse');
+  } else if (/\d\s*[a-z]\s*≡\s*[-+]?\d+[^\n]{0,20}\bmod\b/u.test(text)) {
+    cues.push('linear congruence');
   }
-  if (/\b(?:sin|cos|tan)(?=[\s^{(0-9])/u.test(text)) cues.push('trigonometric');
+  if (trig && !cues.length) cues.push('trigonometric');
   if (/\|[^|]+\|/u.test(text)) cues.push('absolute value');
   if (/[≤≥]|[<>]=?|\\(?:leq?|geq?)\b/u.test(text)) {
     cues.push(...(quadratic ? ['quadratic inequality', 'sign chart'] : ['inequality']));
@@ -168,8 +221,7 @@ function notationTerms(query) {
     const formula = text.replace(/^\s*(?:solve|find|evaluate|simplify)\s*:?\s+/u, '').replace(/[\s?]/gu, '');
     if (/\/(?:\([^)]*[a-z]|[a-z])/u.test(formula)) cues.push('rational denominator');
     else if (quadratic) cues.push('quadratic');
-    else if (/[a-z]\^(?:\{[3-9]\}|[3-9])/u.test(formula)) cues.push('polynomial');
-    else if (/\d\s*\^\s*[{(]?[a-z]/u.test(formula)) cues.push('exponential');
+    else if (/[a-z]\^(?:\([3-9]\)|[3-9])/u.test(formula)) cues.push('polynomial');
     else if (/^[+\-()\d.]*[a-z][+\-()*\d./a-z]*=[+\-()*\d./a-z]+$/u.test(formula)) {
       cues.push(...(new Set(formula.match(/[a-z]/gu)).size === 1
         ? ['linear equation', 'one variable', 'balance method'] : ['literal equation', 'rearrange formula']));
@@ -222,7 +274,7 @@ export function buildMethodLibrary({ database = defaultDatabase, directory = car
   } finally {
     rmSync(temporary, { force: true });
   }
-  return { database, methods: cards.length, revision };
+  return { database, methods: cards.length, revision, searchRevision };
 }
 
 export function openMethodLibrary(database = defaultDatabase) {
@@ -248,6 +300,7 @@ export function openMethodLibrary(database = defaultDatabase) {
 
     return {
       revision,
+      searchRevision,
       get(id) {
         requireValid(typeof id === 'string' && slug.test(id), 'Invalid method id');
         const row = byId.get(id);
@@ -265,6 +318,9 @@ export function openMethodLibrary(database = defaultDatabase) {
           throw new MethodQueryError('Limit must be an integer from 1 to 8');
         }
         const cues = notationTerms(query);
+        const normalized = normalize(query);
+        if (cues.every(cue => cue === 'logarithm logarithmic') && softwareTask.test(normalized) &&
+            softwareContext.test(normalized)) return [];
         const words = [...new Set([...terms(cues.join(' ')), ...terms(query)])].slice(0, 32);
         if (!words.length) return [];
         const phrases = cues.filter(cue => cue.includes(' '));

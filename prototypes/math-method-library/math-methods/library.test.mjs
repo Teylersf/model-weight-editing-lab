@@ -31,6 +31,9 @@ const cases = [
   ['Find the least squares fit through three points using normal equations', ['linear-least-squares', 'ordinary-least-squares-line']],
   ['Given a two-way table, find the chance of honor roll given that the student plays a sport', 'conditional-probability-from-counts'],
   ['What is the posterior probability of disease after a positive test with known sensitivity and false positive rate?', 'bayes-total-probability'],
+  ['What is the chance of having the condition given a positive screening test?', 'bayes-total-probability'],
+  ['How likely is the patient to have the disease given a positive screening result?', 'bayes-total-probability'],
+  ['What does a positive screen tell us about the chance someone has the illness?', 'bayes-total-probability'],
   ['Draw 5 cards without replacement and find the probability of exactly two hearts', 'hypergeometric-sampling'],
   ['Build a Student t confidence interval for a population mean with unknown variance', 'student-t-mean-interval'],
   ['Find the modular inverse of 17 modulo 101 using the Euclidean algorithm', 'extended-euclid-inverse'],
@@ -39,6 +42,10 @@ const cases = [
   ['Use the supremum error to show uniform convergence of a function sequence', 'uniform-convergence-supremum'],
   ['How do I tell whether f of complex z is holomorphic?', 'cauchy-riemann-equations'],
   ['Find the maximum flow and certify a minimum cut from this residual graph', 'max-flow-min-cut'],
+  [String.raw`7^{4-3x}=26`, 'exponential-equations'],
+  [String.raw`\cos(4t)=\frac{\sqrt{2}}{2},\quad 0\le t<\pi`, 'trigonometric-equations'],
+  ['Find the best rank-one approximation of diag(4,2,1) in Frobenius norm', 'linear-truncated-svd-low-rank'],
+  ['Which cosets form the quotient group if the subgroup is normal?', 'abstract-algebra-normal-subgroup-quotient'],
 ];
 
 test('build, retrieve methods, and preserve the previous snapshot on invalid input', t => {
@@ -55,10 +62,17 @@ test('build, retrieve methods, and preserve the previous snapshot on invalid inp
     const original = readFileSync(database);
     library = openMethodLibrary(database);
     assert.equal(library.revision, built.revision);
+    assert.equal(library.searchRevision, built.searchRevision);
     assert.equal(library.coverage().reduce((n, row) => n + row.methods, 0), built.methods);
     assert.equal(library.get('not-a-method'), null);
     assert.deepEqual(library.search({ query: 'zebra wifi firmware' }), []);
+    assert.deepEqual(library.search({ query: 'How can I log out of my account in the browser?' }), []);
     assert.deepEqual(library.search({ query: '" OR "*" --' }), []);
+    assert.ok(!library.search({ query: 'What is the probability the screening test comes back positive if the patient has the disease?' })
+      .some(card => card.id === 'bayes-total-probability'));
+    assert.equal(library.search({ query: 'What are the roots of z²+z−12=0?' })[0].id, 'quadratic-formula');
+    assert.equal(library.search({ query: 'Use Vieta formulas for the sum and product of quadratic roots' })[0].id,
+      'vieta-quadratic-root-sum-product');
     assert.throws(() => library.search({ query: 'x'.repeat(1601) }), /1,600/);
     assert.throws(() => library.search({ query: 'calculus', limit: 9 }), /1 to 8/);
     const filtered = library.search({ query: 'integration', domain: 'calculus', level: 'undergraduate', limit: 2 });
