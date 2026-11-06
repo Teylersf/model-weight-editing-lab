@@ -76,5 +76,31 @@
     "high_school": {"total": 270, "baseline_correct": 162, "candidate_correct": 166},
     "college": {"total": 100, "baseline_correct": 64, "candidate_correct": 64},
     "final_blind_gate_required_for_full_qualification": true
+  },
+  "final_blind_P204": {
+    "passed": false,
+    "source_sha256": "ee9e4f2d1a2fae9b8357f7da81435f8d367dfac35590e3c24ac132138e3911ed",
+    "synthetic_preflight_sha256": "4d83882ba706d1124a74acad8fa4b67c7a546589e651684cf58c0403b37999ae",
+    "pack_seal_sha256": "19ecf150bfc4bc01f8362c723a48326035f91d0ef9d611eccc385f060cadc041",
+    "independent_key_audit_sha256": "1f31175b94adb404c721de0b7b08d68037c6615a091aafca6153975df0cf8228",
+    "frozen_plan_sha256": "0ddfb3e1bc1e58e585fb1e8496b237bfd14f9d8f3e018bffe6c1778c947e59a4",
+    "preparation_sha256": "d1ece4127a3028ce6d4292dbb5d89228fe4e3dddd0ec0c947f75ad9b485d163c",
+    "anonymous_native_receipts_sha256": ["349c4dd553d92444c5df94a92bd74ad6953f09380d5464670b297e0387524e68", "11a89c110ef329e33e9cafb04d65a3651fb674f0daeebb744260677bfee92c83"],
+    "scores_frozen_before_key_sha256": "f479f0ec766b791e8de1c0e10c23515802b9306c692bfd7e537a0ae871724ebf",
+    "score_lineage_sha256": "f09e67787a9b82e79cfbb1c55b9ec410debe7b93d177b58dc6af15190e59f8d1",
+    "blind_grade_sha256": "e4eeff65292e84d8738c919ede0da106fa1254809404002e09a13260f6ef0068",
+    "aggregate_receipt_sha256": "6483a46a199dfeeabbf1d22a7e698ee7396c440a57fbbdc7e1e8cd3fa1d8f8bc",
+    "items": 32,
+    "independently_verified_answers": 32,
+    "counterfactual_pairs": 16,
+    "trials_per_model": 128,
+    "strict_gain_required": ["correct_trials", "items_correct_all_four"],
+    "baseline": {"correct_trials": 65, "items_correct_all_four": 8},
+    "candidate": {"correct_trials": 65, "items_correct_all_four": 8},
+    "trial_gains": 0,
+    "trial_losses": 0,
+    "all_four_item_gains": 0,
+    "all_four_item_losses": 0,
+    "retire_pack_from_future_model_selection": true
   }
 }
