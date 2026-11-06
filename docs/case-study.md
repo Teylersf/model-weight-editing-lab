@@ -1186,3 +1186,27 @@ The public replay reconstructs the exact saved SHA-256 from the pinned parent an
 ## Pilot 182 with complete condition pairs across answer orders
 
 The diagnostic reproduced the saved recipe on **2,356** authored math states and **60** ordinary states. For each original condition pair, it asked whether both problems could win against all three distractors in all four answer orders. Even allowing the four scores to move independently within the **0.23-logit** cap, only **three of 56** incomplete fitting groups could reach the required margin in every presentation. The guarded continuous scale search tried all three. Its closest group moved from a worst margin of **−0.08475 to −0.02900** logits. This result limits the scale search within its measured guard and movement bounds. The fit stayed separate from both blinded sets. [Exact replay, reachability counts, and solver bounds](../evidence/direct-accuracy-pilot-182-condition-orbit-diagnostic.json)
+
+## Pilots 183&ndash;193 on complete condition pairs and packed output weights
+
+A complete condition pair here means that both variants are correct in all four answer orders within one prompt arm. The positive targets came from the P105 authored fitting set. P150 and P158 were preservation guards. All scores below come from CPU analysis of authored presentations and ordinary prefixes. The runs ended without a qualifying packed checkpoint.
+
+### Fixed code changes with continuous scales
+
+Pilots 183, 187, and 191 worked on the same eight-presentation target with the original 0.23-logit math cap and a required worst margin of +0.007. Pilot 183 tested 32 legal code supports. The best solved support reached **&minus;0.02037**. Pilot 187 tested 25 guard-compensated supports and reached **&minus;0.01452** with three total code changes. Its fractional code relaxation came closer at **&minus;0.00011**.
+
+Pilot 191 widened the search to 25 frozen supports with up to 21 total code changes. The fractional relaxation reached **+0.00953**, while the best tested legal code support reached **+0.00458** with continuous scale controls. The bounded binary search reached its time limit in 12 of 18 working-set rounds. Every returned working-set result still omitted at least one violated guard. The best fixed-code result fell short before binary16 rounding, so this experiment leaves open whether another support could work.
+
+### Continuous output-row capacity
+
+Pilots 188 and 189 used a rank-96 output-weight subspace built from condition contrasts. They analyzed **2,356** authored math presentations and **60** ordinary prefixes, with **1,266** signed prior-correct floors. The independent-logit screen admitted **3, 9, 15, and 31** incomplete fitting groups at math movement caps of **0.23, 0.35, 0.55, and 0.80**. These counts bound which groups could qualify before enforcing shared weight controls.
+
+Pilot 188 found a continuous witness for each of four individually tested groups. One witness stayed within the original 0.23-logit cap. The joint four-group solve was infeasible in the tested subspace under the measured constraints. Pilot 189 found a continuous witness for three groups from three families. It raised P105 from **330/512 to 335/512** and complete groups from **8/64 to 11/64** with zero prior-correct losses. Its lowest target margin was **+0.01003**. Peak parent-relative math movement was **0.38285** under the relaxed **0.55** cap, with peak ordinary movement of **0.02077**. The active-set lower bound on required peak math movement was **0.31441**. This witness was retained as a continuous reference for the packing tests.
+
+### Attempts to pack the joint continuous witness
+
+Pilot 190 verified **1,280** Q4_K group-scale and minimum endpoints with the native CPU decoder. It then tested bounded continuous combinations of **128** or **208** group controls and local binary16 changes. The best normalized constraint slack stayed below zero in both cases, so neither advanced to integer fitting and packed replay.
+
+Pilot 193 decoded five sets of actual packed code changes. Activation-weighted error compensation brought teacher-logit RMS from **0.08994** with uniform rounding to **0.01960** in its closest projection. That projection still lost **14** prior-correct choices, moved ordinary logits by up to **0.04223** against a **0.021** cap, and reached a worst target margin of **&minus;0.02324**. The lowest-loss packed projection still lost **seven** prior-correct choices. All five retained the ordinary winners, but every projection exceeded the ordinary movement cap. Both continuous binary16 repair attempts stayed below zero normalized slack, so neither reached combined packed replay.
+
+[Aggregate receipts and source pins](../evidence/direct-accuracy-pilots-183-193-orbit-packing.json)
