@@ -46,6 +46,9 @@ const cases = [
   [String.raw`\cos(4t)=\frac{\sqrt{2}}{2},\quad 0\le t<\pi`, 'trigonometric-equations'],
   ['Find the best rank-one approximation of diag(4,2,1) in Frobenius norm', 'linear-truncated-svd-low-rank'],
   ['Which cosets form the quotient group if the subgroup is normal?', 'abstract-algebra-normal-subgroup-quotient'],
+  ['x+3y=7; 2x-y=1', 'linear-systems-elimination'],
+  ['Integrate 5/(x^2-4) dx', 'calculus-integration-partial-fractions'],
+  ['A kayak travels 6 km N 38° W. How far north and west does it go?', 'bearing-to-coordinate-components'],
 ];
 
 test('build, retrieve methods, and preserve the previous snapshot on invalid input', t => {
@@ -67,6 +70,8 @@ test('build, retrieve methods, and preserve the previous snapshot on invalid inp
     assert.equal(library.get('not-a-method'), null);
     assert.deepEqual(library.search({ query: 'zebra wifi firmware' }), []);
     assert.deepEqual(library.search({ query: 'How can I log out of my account in the browser?' }), []);
+    assert.deepEqual(library.search({ query: "What's the way to solve the exercise on page 12?" }), []);
+    assert.deepEqual(library.search({ query: "Can you find the angle here? I can't attach the diagram." }), []);
     assert.deepEqual(library.search({ query: '" OR "*" --' }), []);
     assert.ok(!library.search({ query: 'What is the probability the screening test comes back positive if the patient has the disease?' })
       .some(card => card.id === 'bayes-total-probability'));

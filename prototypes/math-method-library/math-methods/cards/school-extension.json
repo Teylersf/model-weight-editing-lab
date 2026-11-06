@@ -787,10 +787,10 @@
     ],
     "pattern": "For a compass bearing θ measured clockwise from north, east = d sin θ and north = d cos θ.",
     "applies": [
-      "A length and a three-figure compass bearing are given, with an east-north coordinate frame."
+      "A length and a compass bearing are given, with an east-north coordinate frame."
     ],
     "steps": [
-      "Draw the north ray and rotate clockwise by the bearing.",
+      "Express the bearing clockwise from north. For an angle α written as N α E, S α E, S α W, or N α W, use α, 180° − α, 180° + α, or 360° − α, respectively.",
       "Use the sine for the east component and the cosine for the north component.",
       "Keep each component's sign and add components separately for multiple legs."
     ],

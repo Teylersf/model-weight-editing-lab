@@ -232,12 +232,12 @@
     ],
     "steps": [
       "Choose coordinates that simplify the region or integrand.",
-      "Solve for the original variables and compute the absolute determinant of that inverse-coordinate map.",
+      "Compute the absolute determinant of the derivatives of the original variables with respect to the new variables. If you know the reverse determinant, take its reciprocal at the corresponding point.",
       "Transform the integrand and bounds and include the determinant factor."
     ],
     "pitfalls": [
       "Use the determinant for the map from the new variables to the original ones.",
-      "Take the absolute value and account for any overlapping coverage."
+      "Choose a one-to-one parameter region or split the original region into pieces counted once each."
     ],
     "checks": [
       "A constant linear transformation scales area or volume by the absolute determinant."

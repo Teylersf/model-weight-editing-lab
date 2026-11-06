@@ -250,8 +250,8 @@
     ],
     "pattern": "For an oriented curve r(t), work is ∫ F(r(t))·r′(t) dt over its parameter interval.",
     "applies": [
-      "A vector field is integrated along a piecewise smooth oriented path.",
-      "The field can be path dependent or the path can be open."
+      "The vector field is continuous along the piecewise smooth oriented path, or the resulting dot product is otherwise integrable.",
+      "The integral can depend on the choice of path. The path can be open or closed."
     ],
     "steps": [
       "Parametrize the path in the requested direction and identify the parameter limits.",

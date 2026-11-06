@@ -24,10 +24,21 @@ The method is a candidate procedure. Check its assumptions against the submitted
 
 ## Measured coverage and limitations
 
-The included tests found an expected card in the top three for all 74 development queries, with 71 ranked first. All five included off-topic queries returned no cards. A replay of the previously used retrieval challenge found an expected card in the top three for all 23 math queries, with 22 ranked first, and returned no cards for its five off-topic controls.
+The included tests find an expected card in the top three for all 77 development queries, with 75 ranked first. The included off-topic controls return no cards. The search recognizes selected notation and intent cues, including bare equation systems, rational inequalities, and compass bearings. It uses the same SQLite index for fallback search.
 
-A separate audit froze 24 fresh math requests and 10 controls before searching the 257-card snapshot. With no filters and a limit of three, it matched an expected card first on **9/24** and in the top three on **17/24**. Top-three coverage was **8/12** in high school and **9/12** in undergraduate math. It returned no candidates for **3/6** off-topic requests and **0/4** underspecified requests. The audit measures retrieval. The tutor integration remains gated on better ranking and abstention.
+A prior audit froze 24 math requests and 10 controls before searching. The old ranking matched an expected card first on 9/24 and in the top three on 17/24. It returned no cards for 3/10 controls. The audit was used as development input for the updated ranking.
 
-The audited content revision was `7d637362b73b62da86d43501823fdb609525f023f0b88ead4946857a3c3a60a8` and the search revision was `9198708a52965007f1c2b584db916ac9b0e354105ede397cbb0a10c88918ae07`. The frozen audit bundle SHA-256 was `2f1d0759b1cca9ba24da8135c7df8631380de7086801cf2cabf6e90ceff54053`.
+A separately authored audit froze 32 new math requests and 12 controls before running either implementation. Both runs received identical text without filters and returned up to three cards per query.
+
+| Measure | Prior snapshot | Current snapshot |
+| --- | ---: | ---: |
+| Expected method first | 17/32 | 18/32 |
+| Expected method in top three | 23/32 | 22/32 |
+| No cards for off-topic controls | 1/8 | 1/8 |
+| No cards for underspecified controls | 0/4 | 1/4 |
+
+Five card clarifications cover quadrant bearings, paired t intervals, change-of-variables Jacobians, vector line integrals, and KKT assumptions. A controlled run using the original database for both rankings produced the same aggregate scores. The library is available for manual reference. Automatic tutor lookup is gated on ranking and abstention.
+
+The current card revision is `4c94348ec614a1e205f252afa8811c5b8c93ad7025f97e2609501d8461d3d551` and the search revision is `a26fa4b7154a9122478c003799779c10ebbc38f21a257870b0519005fadd36f1`. The original audit bundle SHA-256 was `2f1d0759b1cca9ba24da8135c7df8631380de7086801cf2cabf6e90ceff54053`. The fresh audit manifest SHA-256 is `4852a4c3e2196e832ae4bd16543272600b5e19f8c9e5accf74ea8e8b3198091c` and the aggregate comparison receipt SHA-256 is `fe50b8e6a88b1334b10fbd8d3b01a44df6689dfc4846b2c97769faed21f11804`.
 
 The JSON files in `math-methods/cards` are the editable source. Their examples are authored for this library. Keep model benchmarks, held-out evaluation items, and student submissions separate from the library.

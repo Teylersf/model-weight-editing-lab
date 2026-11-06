@@ -651,7 +651,7 @@
     ],
     "pattern": "For convex minimization with gᵢ(x) ≤ 0, check stationarity, primal feasibility, λᵢ ≥ 0, and λᵢgᵢ(x)=0.",
     "applies": [
-      "A differentiable convex objective has convex inequality constraints."
+      "The objective and inequality functions are differentiable and convex."
     ],
     "steps": [
       "Write inequalities in ≤ 0 form and form the Lagrangian.",
@@ -660,7 +660,8 @@
     ],
     "pitfalls": [
       "Using the wrong multiplier sign after reversing an inequality.",
-      "Treating stationarity alone as a certificate."
+      "Treating stationarity alone as a certificate.",
+      "Ruling out an optimum because no multipliers exist without checking a constraint qualification, such as strict feasibility."
     ],
     "checks": [
       "The point and multipliers satisfy every KKT condition.",

@@ -289,7 +289,7 @@
     ],
     "pattern": "Use d̄ ± t* s_d/√n for the mean of n paired differences, with n − 1 degrees of freedom.",
     "applies": [
-      "Observations are naturally matched, the pairs are independent, and the differences are approximately normal or the sample is large enough."
+      "There are at least two complete, independent matched pairs. The differences have positive sample standard deviation and are approximately normal, or the sample is large enough for the mean difference to be approximately normal."
     ],
     "steps": [
       "Define a consistent direction for each within-pair difference.",

@@ -15,7 +15,7 @@ const cardFields = ['id', 'title', 'domain', 'level', ...listFields, 'pattern', 
 const stop = new Set(('about after also an and are as at be been before by can could do does equation equations find first for from ' +
   'have help how if in into is it just make many math maths me more my need next no of on only or pair paired pairing pairs please problem should some solve ' +
   'step steps than that the their them then these they this those through to using want was were what when where which will with work ' +
-  'would your value values').split(' '));
+  'would you your value values attach compare exercise explain here know need now page question really result results start tell use way').split(' '));
 const superscript = '⁰¹²³⁴⁵⁶⁷⁸⁹';
 const languageCues = [
   ['percent change', [/\b(?:percent|percentage)\b|%/u, /\b(?:change[ds]?|fell|fall|rose|increas\w*|decreas\w*|drop\w*|reduc\w*)\b/u]],
@@ -56,6 +56,24 @@ const languageCues = [
 ];
 const softwareTask = /\b(?:log\s+(?:in|out)|sign\s+(?:in|out)|toolbar|bookmarks?|browser password|display settings?|line spacing|export(?:ed|ing)?\s+to\s+svg)\b/u;
 const softwareContext = /\b(?:account|browser|chrome|cad|svg|word|pages|toolbar|bookmarks?|app|file|document|editor)\b/u;
+const nonMathTask = /\b(?:rewrite\s+(?:that|the|this)\s+(?:sentence|paragraph|copy)|(?:write|draft)\s+(?:its|a|my|the)\s+(?:\w+\s+){0,2}(?:bio|email|caption)|packing\s+(?:list|checklist))\b/u;
+const broadTerms = new Set('angle area best calculus change curve data diagram distance graph length line model number point rate right second shape slope sum test time two volume'.split(' '));
+const priorityCues = [
+  ['recover an original amount', [/(?:%|\bpercent\b)/u, /\b(?:discount|markdown|markup|tax|reduc\w*|increas\w*)\b/u, /\b(?:original|before|initial|starting|prior)\b/u]],
+  ['conversion factor', [/\b(?:per|every)\s+(?:second|minute|hour|day)s?\b/u, /\b(?:second|minute|hour|day)s?\b[^\n]{0,70}\b(?:second|minute|hour|day)s?\b/u, /\b(?:lit(?:er|re)s?|gallons?|feet|miles?|kilomet(?:er|re)s?|cubic|millilit(?:er|re)s?)\b/u]],
+  ['unit rates', [/\d\s*\/\s*\d/u, /\b(?:servings?|portions?|batches?|cups?)\b/u, /\b(?:each|per|one|how many)\b/u]],
+  ['complete the square', [/\b(?:square|squared)\b/u, /\b(?:vertex|constant (?:plus|minus)|maximum|minimum)\b/u]],
+  ['tangent secant theorem', [/\bcircle\b/u, /\btangent\b/u, /\b(?:secant|outside|external)\b/u]],
+  ['perpendicular bisector', [/\b(?:equally far|same distance|equidistan\w*)\b/u, /\b(?:points?|coordinates?|locus)\b/u, /\b(?:line|locus|equation)\b/u]],
+  ['inverse function', [/\b(?:inverse|invert)\b/u, /\b(?:function|domain|range)\b/u]],
+  ['northing and easting', [/\b[ns]\s*\d+(?:\.\d+)?\s*(?:°|degrees?)\s*[ew]\b/u, /\b(?:distance|south|west|north|east|component\w*)\b/u]],
+  ['jacobian determinant', [/\b(?:double|triple)\s+integral\b/u, /\b(?:substitut\w*|transform\w*|chang\w*)\b/u, /\b(?:multiplier|factor|area element|volume element|du\s+dv)\b/u]],
+  ['order statistic', [/\b(?:largest|smallest|highest|lowest)\b/u, /\b(?:independent|observations|measurements|sample)\b/u, /\b(?:chance|probability|cdf|distribution)\b/u]],
+  ['bayes theorem', [/\b(?:given that|conditional on|knowing that)\b/u, /\b(?:came from|originat\w*|source|which group|from which)\b/u, /\b(?:chance|probability|likely|likeliest|odds)\b/u]],
+  ['dijkstra shortest path', [/\b(?:minimum|least|shortest|quickest|fastest)\b/u, /\b(?:network|graph|edges?|links?)\b/u, /\b(?:nonnegative|positive|weighted|travel times?|edge costs?|edge weights?)\b/u]],
+  ['implicit differentiation', [/\b(?:tangent|slope|dy\s*\/\s*dx)\b/u, /\bxy\b|[xy]\s*\^\s*(?:\(\d+\)|\d+)/u, /\bx\b|\bx\^/u, /\by\b|\by\^/u]],
+  ['paired t', [/\b(?:same (?:people|patients|students|subjects|participants|individuals)|matched pairs?|before and after)\b/u, /\b(?:confidence interval|mean difference|average change)\b/u]],
+];
 
 export class MethodQueryError extends Error {}
 
@@ -119,6 +137,7 @@ function notationTerms(query) {
     .replace(/\\(?:int|iint)\b/gu, '∫')
     .replace(/\{([^{}]+)\}/gu, '($1)');
   const cues = languageCues.filter(([, patterns]) => patterns.every(pattern => pattern.test(text))).map(([cue]) => cue);
+  const priority = priorityCues.filter(([, patterns]) => patterns.every(pattern => pattern.test(text))).map(([cue]) => cue);
   if (cues.includes('posterior probability')) cues.push('bayes theorem', 'base rate');
   if (cues.includes('test for independence')) cues.push('contingency table', 'chi square');
   const isEquation = /(?<![<>=!])=(?!=)/u.test(text);
@@ -126,15 +145,16 @@ function notationTerms(query) {
   const differentiation = /\b(?:differentiate|derivative|differentiat(?:ion|ing))\b/u.test(text);
   const integration = /∫|\\int\b|\b(?:integral|integrate|integration)\b/u.test(text);
   const derivativeOperator = /\bd\s*\)?\s*\/\s*\(?\s*d[a-z]\b/u.test(text);
+  const primeDerivative = /\b[a-z]['′″]{1,2}(?![\p{L}'′″])/u.test(text);
   const differentiationRequest = differentiation || derivativeOperator;
   const trig = /\b(?:sin|cos|tan)(?=[\s^{(0-9])/u.test(text);
   const variableExponent = /\b(?:\d+(?:\.\d+)?|e)\s*\^\s*(?:[a-z]|\([^()]{0,48}[a-z][^()]{0,48}\))/u.test(text);
-  if (/√|\b(?:sqrt|radical)\b/u.test(text) && !(isEquation && trig)) cues.push('radical square root');
+  if (/√|\b(?:sqrt|radical)\b/u.test(text) && !integration && !(isEquation && trig)) cues.push('radical square root');
   if (differentiationRequest && /\b[a-z]\s*\^\s*(?:[a-z]|\([^()]{0,48}[a-z][^()]{0,48}\))/u.test(text)) {
     cues.push('logarithmic differentiation', 'variable exponent');
   }
   if (isEquation && variableExponent && !integration && !differentiationRequest) cues.push('exponential equation');
-  if (isEquation && trig && !integration && !differentiationRequest && !/['′″]/u.test(text)) {
+  if (isEquation && trig && !integration && !differentiationRequest && !primeDerivative) {
     cues.push('trig equation', 'periodic solutions');
   }
   if (/∮/u.test(text)) {
@@ -167,7 +187,7 @@ function notationTerms(query) {
   }
   if (integration) {
     cues.push('integral integration');
-    if (/∞|\\infty\b|\b(?:infinite|infinity|unbounded)\b/u.test(text)) cues.push('improper integral');
+    if (/∞|\\infty\b|\b(?:infinite|infinity|unbounded|blows? up|singular endpoint)\b/u.test(text)) priority.push('improper integral');
     if (differentiation || derivativeOperator) cues.push('accumulation integral', 'variable limit');
     if (/\b[a-z](?:\s*\^\s*\d+)?\s*[⋅·×*]?\s*(?:sin\b|cos\b|ln\b|log\b|exp\b|e\s*\^)/u.test(text)) {
       cues.push('integration by parts');
@@ -192,7 +212,7 @@ function notationTerms(query) {
     const linearTerm = new RegExp(`^[^${dependent}]*${dependent}\\s*(?:/[^${dependent}^]+)?$`, 'u');
     if (linearTerm.test(left.trim())) {
       const powered = new RegExp(`${dependent}\\s*\\^\\s*\\{?(?:[-+]|[02-9]|1\\d)`, 'u');
-      if (powered.test(right)) cues.push('bernoulli equation', 'bernoulli substitution');
+      if (powered.test(right)) priority.push('bernoulli differential equation');
       else if (!right.includes(dependent)) cues.push('first order linear', 'integrating factor');
     }
   }
@@ -208,15 +228,25 @@ function notationTerms(query) {
   if (trig && !cues.length) cues.push('trigonometric');
   if (/\|[^|]+\|/u.test(text)) cues.push('absolute value');
   if (/[≤≥]|[<>]=?|\\(?:leq?|geq?)\b/u.test(text)) {
+    if (/\/\s*\(?[^=\n]{0,30}[a-z][^=\n]{0,30}(?:[≤≥<>]|\\(?:leq?|geq?)\b)/u.test(text)) priority.push('rational inequality');
     cues.push(...(quadratic ? ['quadratic inequality', 'sign chart'] : ['inequality']));
   }
   if (/\bp\s*\([^)]*\|[^)]*\)/u.test(text)) cues.push('conditional probability');
-  if (derivativeOperator || /(?:\bdy\s*\/\s*dx\b|[a-z]['′″])/u.test(text)) {
+  if (derivativeOperator || primeDerivative) {
     cues.push(isEquation ? 'differential equation' : 'derivative differentiation');
   }
   if (!isEquation && quadratic && /\b(?:zeros|roots|factor)\b/u.test(text)) cues.push('quadratic polynomial');
   if (!isEquation && !cues.length && /\d\s*\/\s*\d\s*[+*/-]/u.test(text)) cues.push('fraction arithmetic');
   if (/\d\s*%\s*of\b/u.test(text)) cues.push('percent of amount');
+  if (integration && /(?<![\p{L}\p{N}])\d+\s*\/\s*\([^()]*\b[a-z]\s*\^\s*\(?[2-9][^()]*[+-][^()]+\)/u.test(text)) {
+    priority.push('partial fraction decomposition');
+  }
+  const numericEquation = /(?:^|[;,\n])\s*([a-z0-9+.\-\s]+)=\s*[-+]?\d+(?:\.\d+)?\s*(?=[;,\n]|$)/gu;
+  const linearRows = [...text.replace(/^\s*solve\s*:?\s+/u, '').matchAll(numericEquation)]
+    .map(([, left]) => left.match(/[a-z]/gu) || []);
+  if (linearRows.filter(row => row.length >= 2).length >= 2 && new Set(linearRows.flat()).size >= 2) {
+    priority.push('simultaneous equations');
+  }
   if (isEquation && !cues.length) {
     const formula = text.replace(/^\s*(?:solve|find|evaluate|simplify)\s*:?\s+/u, '').replace(/[\s?]/gu, '');
     if (/\/(?:\([^)]*[a-z]|[a-z])/u.test(formula)) cues.push('rational denominator');
@@ -227,7 +257,7 @@ function notationTerms(query) {
         ? ['linear equation', 'one variable', 'balance method'] : ['literal equation', 'rearrange formula']));
     }
   }
-  return cues;
+  return { cues, priority };
 }
 
 function terms(text) {
@@ -317,23 +347,30 @@ export function openMethodLibrary(database = defaultDatabase) {
         if (!Number.isInteger(limit) || limit < 1 || limit > 8) {
           throw new MethodQueryError('Limit must be an integer from 1 to 8');
         }
-        const cues = notationTerms(query);
+        const { cues, priority } = notationTerms(query);
         const normalized = normalize(query);
-        if (cues.every(cue => cue === 'logarithm logarithmic') && softwareTask.test(normalized) &&
-            softwareContext.test(normalized)) return [];
-        const words = [...new Set([...terms(cues.join(' ')), ...terms(query)])].slice(0, 32);
+        if (nonMathTask.test(normalized) || (cues.every(cue => cue === 'logarithm logarithmic') &&
+            softwareTask.test(normalized) && softwareContext.test(normalized))) return [];
+        const queryWords = terms(query);
+        if (!cues.length && !priority.length && queryWords.every(word =>
+          broadTerms.has(word) || (word.endsWith('s') && broadTerms.has(word.slice(0, -1))))) return [];
+        const words = [...new Set([...terms([...priority, ...cues].join(' ')), ...queryWords])].slice(0, 32);
         if (!words.length) return [];
-        const phrases = cues.filter(cue => cue.includes(' '));
+        const phrases = [...priority, ...cues].filter(cue => cue.includes(' '));
         const quoted = items => [...new Set(items)].map(term => `"${term}"`).join(' OR ');
         const lexical = `{title aliases pattern topic} : (${quoted([...phrases, ...words])})`;
         const match = phrases.length ? `${lexical} OR explanation : (${quoted(phrases)})` : lexical;
-        const needsCorroboration = cues.length === 0 && words.length >= 3;
+        const needsCorroboration = !phrases.length && queryWords.length >= 3;
         const rows = lookup.all(match, domain, domain, level, level, needsCorroboration ? 24 : limit);
-        return rows.filter(row => {
+        const lexicalResults = rows.filter(row => {
           if (!needsCorroboration) return true;
           const highlighted = [...row.hits.matchAll(/\u001e([^\u001f]+)\u001f/gu)].map(hit => hit[1]).join(' ');
           return terms(highlighted).length >= 2;
-        }).slice(0, limit).map(row => JSON.parse(row.card));
+        });
+        const priorityResults = priority.length ?
+          lookup.all(`{title aliases} : (${quoted(priority)})`, domain, domain, level, level, limit) : [];
+        return [...new Set([...priorityResults, ...lexicalResults].map(row => row.card))]
+          .slice(0, limit).map(card => JSON.parse(card));
       },
       coverage() {
         return counts.all().map(row => ({ ...row }));

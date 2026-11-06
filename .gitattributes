@@ -1,3 +1,5 @@
 * text=auto
 # Frozen numerical copies and receipts retain the exact audited bytes.
 numerical/* -text
+# The library reports its source hash as the search revision.
+prototypes/math-method-library/math-methods/library.mjs text eol=lf
