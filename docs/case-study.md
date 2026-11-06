@@ -685,3 +685,9 @@ Pilot 049 used the CPU Q8 replay as a search objective. It tested 93 factorized 
 Pilot 050 ranked exact packed code moves in two disjoint training-family blocks per outer fold, then considered only signed moves that both blocks supported. The three intersections contained 174, 157 and 221 moves. Under the frozen training guards, the fitter changed one packed code in one fold. Held accuracy and the 90 ordinary full-vocabulary winners were preserved.
 
 Pilot 051 used semantic teacher margins across all three authored sets, with 77, 67 and 88 eligible training misses in its three folds. The candidate scales were checked against CPU Q8 logits. All 30 scales failed the training gate, so all three folds replayed the parent. None of these trials reached the required held gain. [Exact fold hashes, packed recipe, and paired results](../evidence/direct-accuracy-pilots-049-051.json)
+
+## Pilot 052 with quantized-gradient descent
+
+Pilot 052 used the measured CPU Q8 loss to propose full-gradient moves. It accepted eight steps after exact rounded-F32 replay, including six projected gradient steps. Every accepted step passed the signed training floors and ordinary controls.
+
+On held data, the 039 score rose from **55/144 to 56/144**. The 044 original-demo cyclic arm fell from **104/192 to 102/192**, and the other three arms stayed at their parent scores. All 90 archived top-64 ordinary winners were preserved. An independent replay reproduced all 1,488 held comparisons and both nonzero tensor hashes. The two lost choices had parent correct-answer margins of **0.0088** and **0.0234** logits. One repeated a loss from Pilot 046. The two losses failed the held gate. [Paired results and margin audit](../evidence/direct-accuracy-pilot-052.json)
