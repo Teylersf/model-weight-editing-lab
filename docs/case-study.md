@@ -700,6 +700,12 @@ Under four prompt conditions and four rotations per condition, Pilot 024 scored 
 
 The instrumented CUDA run captured the final feed-forward input, gate, up projection, and gated activation for all **768 states**. A separate audit mapped every state to its frozen input and reproduced all **3,072** choice logits bit for bit against the original scorer. Across the captured activations, the maximum absolute difference between the native gated activation and the independently calculated `SiLU(gate) × up` was **6.31 × 10⁻⁶**. [Full capture counts, checksums, and tolerance](../evidence/direct-accuracy-pilot-053-augmented-capture.json)
 
+## Pilot 054 with a condition-contrast down-projection edit
+
+Pilot 054 fit a rank-three edit to the activation differences between variants of the same authored problem. It projected out ordinary trajectory states and differences attributable to demonstration and answer order. Across three family-held folds, seven of 78 proposals passed exact rounded-tensor replay and preserved the signed training margins. The three proposals that recovered a training pair each crossed two to nine signed margins. The largest weight change that passed exact training replay was **0.00350%** of the parent tensor's Frobenius norm.
+
+All three frozen held patches contained only zero coefficients, so the held result of **42/384** both-correct pairs is the unchanged parent result. The run stopped before native checkpoint qualification. [Fold checksums, margin violations, and held results](../evidence/direct-accuracy-pilot-054-condition-contrast.json)
+
 ## Pilots 055 and 056 with a gated up-projection edit
 
 Pilot 055 captured the final feed-forward input, gate and up projections on four authored states. Adding those readbacks reproduced all 16 choice logits and all four original A/P/R/H activation arrays byte for byte. The CPU Q8 estimate of 68 sampled parent up-projection rows differed from native CUDA by at most **5.47 × 10⁻⁷**.

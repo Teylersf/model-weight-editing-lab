@@ -1,0 +1,117 @@
+{
+  "schema": "published-pilot054-condition-contrast-d63-v1",
+  "status": "no_qualifying_edit",
+  "method": "Rank-three final down-projection edit on condition-induced activation contrasts, with ordinary-state and prompt-factor directions projected out. Exact rounded F32 reconstruction and CPU Q8 replay enforced signed margins before any held scoring.",
+  "artifacts_sha256": {
+    "fit_source": "df808a3a697b44076be0e2275b8cc46005cd1fe135b94b1c7e83136ce134fb66",
+    "frozen_plan": "c744c9bf92ec9379ab3cc9b728dfb58af60fe6ac8852668feec1cfd6ac1fb188",
+    "fit_input_binding": "e7e4599af50959e97dbd80ecb8e2a24f70f76ae69482849a42a8f6cf483ab359",
+    "paired_053_capture": "722001c8ee9f1995bcf609452883798343a02dcc8dad69e2886bdeae2a1ba42e",
+    "grouped_cpu_report": "bc3f5d656afe674f0cbcf91f4625d5cbeb5923b825b54b1474827e81df6314b4"
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "6a157a2e53f1d1dfb0a786059e07b651fe28c5cc64912e15de4b9d9a83604582",
+      "frozen_input_factor_sha256": "cde85cba5a949787ca2d74b5e45bac28b99d5f582b434e228872aec00bff181f",
+      "frozen_input_factor_nonzero_count": 0,
+      "eligible_training_pairs": 10,
+      "signed_training_constraints": 2271,
+      "factorized_q8_proposals": 22,
+      "accepted_exact_rounded_f32_steps": 1,
+      "paired_training_gain_proposals": [
+        {
+          "label": "seed-1.0",
+          "paired_gains": 1,
+          "prior_correct_losses": 0,
+          "signed_margin_violations": 9
+        },
+        {
+          "label": "seed-0.75",
+          "paired_gains": 1,
+          "prior_correct_losses": 0,
+          "signed_margin_violations": 4
+        },
+        {
+          "label": "seed-0.5",
+          "paired_gains": 1,
+          "prior_correct_losses": 0,
+          "signed_margin_violations": 2
+        }
+      ],
+      "maximum_accepted_weight_delta_fraction_of_parent_frobenius_norm": 2.791376395059752e-06,
+      "selected_edit": null
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "e558db3a1444e8ec51bc1d6e46f832ca45ba1d52cfa50e755756efb9b59d3dd3",
+      "frozen_input_factor_sha256": "cde85cba5a949787ca2d74b5e45bac28b99d5f582b434e228872aec00bff181f",
+      "frozen_input_factor_nonzero_count": 0,
+      "eligible_training_pairs": 17,
+      "signed_training_constraints": 2361,
+      "factorized_q8_proposals": 34,
+      "accepted_exact_rounded_f32_steps": 4,
+      "paired_training_gain_proposals": [],
+      "maximum_accepted_weight_delta_fraction_of_parent_frobenius_norm": 3.5008086319077965e-05,
+      "selected_edit": null
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "887c10e67e45cc836e68ca813dc7d88c20f58c12a0b70f8b484c62e9b7cc3a5a",
+      "frozen_input_factor_sha256": "cde85cba5a949787ca2d74b5e45bac28b99d5f582b434e228872aec00bff181f",
+      "frozen_input_factor_nonzero_count": 0,
+      "eligible_training_pairs": 13,
+      "signed_training_constraints": 2016,
+      "factorized_q8_proposals": 22,
+      "accepted_exact_rounded_f32_steps": 2,
+      "paired_training_gain_proposals": [],
+      "maximum_accepted_weight_delta_fraction_of_parent_frobenius_norm": 3.862851846740367e-06,
+      "selected_edit": null
+    }
+  ],
+  "held": {
+    "paired_053_both_correct": {
+      "matches": 384,
+      "baseline_both_correct": 42,
+      "candidate_both_correct": 42,
+      "gains": 0,
+      "losses": 0,
+      "by_arm": {
+        "a": {
+          "matches": 96,
+          "baseline_both_correct": 10,
+          "candidate_both_correct": 10,
+          "gains": 0,
+          "losses": 0
+        },
+        "b": {
+          "matches": 96,
+          "baseline_both_correct": 11,
+          "candidate_both_correct": 11,
+          "gains": 0,
+          "losses": 0
+        },
+        "c": {
+          "matches": 96,
+          "baseline_both_correct": 10,
+          "candidate_both_correct": 10,
+          "gains": 0,
+          "losses": 0
+        },
+        "d": {
+          "matches": 96,
+          "baseline_both_correct": 11,
+          "candidate_both_correct": 11,
+          "gains": 0,
+          "losses": 0
+        }
+      }
+    },
+    "all_cohort_prior_correct_losses": 0,
+    "ordinary_states": 90,
+    "ordinary_archived_top64_winner_changes": 0
+  },
+  "official_fresh_proof_diagnostic_and_transfer_inputs_used": false,
+  "checkpoint_written": false,
+  "scope": "All three held patches were numerical no-ops after the training selection gate. The unchanged held scores do not measure transfer of a selected nonzero edit."
+}
