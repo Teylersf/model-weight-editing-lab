@@ -1,0 +1,1077 @@
+{
+  "schema": "published-pilots088-089-authored-residual-sweep-v1",
+  "parent_model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "capture": {
+    "plan_sha256": "5885edbc7dad14352dd18a7e90638c818eab6033b10afc1c17a2c34a2774b255",
+    "receipt_sha256": "e2cc98969a17aa9fbaa75123ced97570b40725befd95e8e4e178b68081128d48",
+    "source_sha256": "018029f92c18f4abf0a856b0702a3fc9ecd585bf119c1c3055ee075263106f64",
+    "binary_sha256": "4f32cfc689f773d1a911f7704d3f2ddab68b9134e67dfef516267537e448800b",
+    "build_receipt_sha256": "6b5e8788a3525f438a535ef92ca76d9eadc522856ac51feba8523e76aa78c5bf",
+    "cpu_preflight_sha256": "204424d91c8e362be2f1ed985ff5ff5c8ad01be53ae09e06e0a771d95f6dd04f",
+    "states": 768,
+    "families": 12,
+    "condition_pairs": 24,
+    "exact_choice_logits": 3072,
+    "exact_stock_terminal_states": {
+      "a": 768,
+      "p": 768,
+      "r": 768,
+      "h": 768,
+      "gamma": 1
+    },
+    "residual_shapes": {
+      "rows": 768,
+      "dimensions": 5120,
+      "dtype": "float32"
+    },
+    "residual_sha256": {
+      "31": "d1be087e844dc95a5bc2a34a2d607af6a876cf68b139d70f382bed8cc3e64e60",
+      "47": "1e79762b4cfdca6f53fb7b876e8511b5ab54ef02ec46470dfc81d473ca1e41d7",
+      "55": "177c3ac12be7d61bdf7d3e766918c06a3b1be99c75eed18496e59ac077a9fbea",
+      "59": "0e17055b53510f4859e23d5b995197852eb437f819589ce8cc75af65660c7e93",
+      "61": "f22011f9401518849cf9e16ce16fb409087a3db7c4ded3c1a2f0dcf32742835f",
+      "62": "a68b59a834136222bec78bf2422932b003a3281e7aa22809e14c54de21b6e3bf",
+      "63": "5c072edd8fc13d62a9aa38cd392c5439f09ddf7a740e5bea1452dc3b3ca1d5fc"
+    },
+    "weights_mutated": false
+  },
+  "probe": {
+    "plan_sha256": "ff8427979a2456c87086f49d0599e426f8d53ee9cd3d60c7129cde2dd0c8ae60",
+    "receipt_sha256": "6592841019b4b59d7e671d09a96f1a01d8a0a4b00b5b6c6f764a6e6b3d5253b6",
+    "source_sha256": "1e90f9d8f734a8a615b5fa6931b0f492791cddad04de426fe88fd6d4d57d37ee",
+    "method": "One fixed four-class ridge probe per layer and fold on row-L2-normalized residuals, centered on training data. Set the ridge penalty from the training kernel diagonal and report one own-source held pass.",
+    "ridge_scale": 0.05,
+    "held_scope": "Independent authored development families with the four-corpus exact family label union excluded from training. Every comparison is diagnostic. The official, fresh and proof inputs remain sealed.",
+    "outcomes": [
+      {
+        "layer": 31,
+        "folds": [
+          {
+            "fold": 0,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 64,
+            "parent_correct": 110,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 208,
+                "mean_cosine": 0.5953269789601179,
+                "median_cosine": 0.6000342427926735,
+                "positive": 208
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1472,
+                "mean_cosine": 0.5288441286460915,
+                "median_cosine": 0.5431712341341363,
+                "positive": 1453
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 48,
+                "mean_cosine": 0.5338353247522015,
+                "median_cosine": 0.5319537279374297,
+                "positive": 48
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 400,
+                "mean_cosine": 0.5819722340867669,
+                "median_cosine": 0.59233968454524,
+                "positive": 395
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "train": 320,
+            "held": 256,
+            "probe_correct": 64,
+            "parent_correct": 81,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 144,
+                "mean_cosine": 0.5696258559542624,
+                "median_cosine": 0.5764111371254228,
+                "positive": 144
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1056,
+                "mean_cosine": 0.548993256316477,
+                "median_cosine": 0.5467543206968117,
+                "positive": 1056
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.573154226394615,
+                "median_cosine": 0.5897020832978985,
+                "positive": 32
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 288,
+                "mean_cosine": 0.6098629886108754,
+                "median_cosine": 0.6088179956110802,
+                "positive": 288
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 66,
+            "parent_correct": 136,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 176,
+                "mean_cosine": 0.616596282694998,
+                "median_cosine": 0.6355359495797641,
+                "positive": 175
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1504,
+                "mean_cosine": 0.5307397269030014,
+                "median_cosine": 0.5629970554855834,
+                "positive": 1460
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.611148879494524,
+                "median_cosine": 0.632710476723523,
+                "positive": 32
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 416,
+                "mean_cosine": 0.5814725733686644,
+                "median_cosine": 0.6229836439829264,
+                "positive": 406
+              }
+            }
+          }
+        ],
+        "probe_correct": 194,
+        "parent_correct": 327,
+        "probe_pair": {
+          "matches": 384,
+          "baseline_both_correct": 42,
+          "candidate_both_correct": 5,
+          "gains": 5,
+          "losses": 42,
+          "by_arm": {
+            "a": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 1,
+              "gains": 1,
+              "losses": 10
+            },
+            "b": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 2,
+              "gains": 2,
+              "losses": 11
+            },
+            "c": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 1,
+              "gains": 1,
+              "losses": 10
+            },
+            "d": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 1,
+              "gains": 1,
+              "losses": 11
+            }
+          }
+        }
+      },
+      {
+        "layer": 47,
+        "folds": [
+          {
+            "fold": 0,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 60,
+            "parent_correct": 110,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 208,
+                "mean_cosine": 0.47914046240204244,
+                "median_cosine": 0.5034652555296626,
+                "positive": 202
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1472,
+                "mean_cosine": 0.3226150134546763,
+                "median_cosine": 0.2991540829799024,
+                "positive": 1331
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 48,
+                "mean_cosine": 0.37229507448835014,
+                "median_cosine": 0.3513347364837903,
+                "positive": 45
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 400,
+                "mean_cosine": 0.37119149852410305,
+                "median_cosine": 0.37066874583708964,
+                "positive": 372
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "train": 320,
+            "held": 256,
+            "probe_correct": 72,
+            "parent_correct": 81,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 144,
+                "mean_cosine": 0.4164621186038028,
+                "median_cosine": 0.43680216677631567,
+                "positive": 136
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1056,
+                "mean_cosine": 0.3383962042728861,
+                "median_cosine": 0.34493976881631117,
+                "positive": 954
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.2651772639639204,
+                "median_cosine": 0.2857067109651098,
+                "positive": 29
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 288,
+                "mean_cosine": 0.39223702564623564,
+                "median_cosine": 0.39245089238670994,
+                "positive": 272
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 64,
+            "parent_correct": 136,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 176,
+                "mean_cosine": 0.5026308497847186,
+                "median_cosine": 0.5551005090734397,
+                "positive": 170
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1504,
+                "mean_cosine": 0.2908899123923348,
+                "median_cosine": 0.28529509784284746,
+                "positive": 1318
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.3562600381402825,
+                "median_cosine": 0.30992251708068874,
+                "positive": 32
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 416,
+                "mean_cosine": 0.330914537280373,
+                "median_cosine": 0.3423033682625023,
+                "positive": 376
+              }
+            }
+          }
+        ],
+        "probe_correct": 196,
+        "parent_correct": 327,
+        "probe_pair": {
+          "matches": 384,
+          "baseline_both_correct": 42,
+          "candidate_both_correct": 6,
+          "gains": 6,
+          "losses": 42,
+          "by_arm": {
+            "a": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 1,
+              "gains": 1,
+              "losses": 10
+            },
+            "b": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 1,
+              "gains": 1,
+              "losses": 11
+            },
+            "c": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 2,
+              "gains": 2,
+              "losses": 10
+            },
+            "d": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 2,
+              "gains": 2,
+              "losses": 11
+            }
+          }
+        }
+      },
+      {
+        "layer": 55,
+        "folds": [
+          {
+            "fold": 0,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 68,
+            "parent_correct": 110,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 208,
+                "mean_cosine": 0.32993589283643876,
+                "median_cosine": 0.33140138070209607,
+                "positive": 173
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1472,
+                "mean_cosine": 0.20679408006216882,
+                "median_cosine": 0.15686465111341807,
+                "positive": 1114
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 48,
+                "mean_cosine": 0.25016688789280206,
+                "median_cosine": 0.22413259682042264,
+                "positive": 37
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 400,
+                "mean_cosine": 0.2585345008246792,
+                "median_cosine": 0.22771539762933204,
+                "positive": 317
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "train": 320,
+            "held": 256,
+            "probe_correct": 80,
+            "parent_correct": 81,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 144,
+                "mean_cosine": 0.33224818981370924,
+                "median_cosine": 0.3268097654105174,
+                "positive": 117
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1056,
+                "mean_cosine": 0.2161290572499489,
+                "median_cosine": 0.17445046707722656,
+                "positive": 796
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.22802951546246686,
+                "median_cosine": 0.15611188773913454,
+                "positive": 24
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 288,
+                "mean_cosine": 0.25329566617604876,
+                "median_cosine": 0.22664334296028102,
+                "positive": 223
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 69,
+            "parent_correct": 136,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 176,
+                "mean_cosine": 0.43159804324203077,
+                "median_cosine": 0.44243867827982675,
+                "positive": 162
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1504,
+                "mean_cosine": 0.19264636480668437,
+                "median_cosine": 0.15827474583342513,
+                "positive": 1145
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.30360138436576034,
+                "median_cosine": 0.30260997681413915,
+                "positive": 28
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 416,
+                "mean_cosine": 0.2218796090716154,
+                "median_cosine": 0.18754918919832586,
+                "positive": 318
+              }
+            }
+          }
+        ],
+        "probe_correct": 217,
+        "parent_correct": 327,
+        "probe_pair": {
+          "matches": 384,
+          "baseline_both_correct": 42,
+          "candidate_both_correct": 16,
+          "gains": 9,
+          "losses": 35,
+          "by_arm": {
+            "a": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 4,
+              "gains": 3,
+              "losses": 9
+            },
+            "b": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 4,
+              "gains": 3,
+              "losses": 10
+            },
+            "c": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 4,
+              "gains": 1,
+              "losses": 7
+            },
+            "d": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 4,
+              "gains": 2,
+              "losses": 9
+            }
+          }
+        }
+      },
+      {
+        "layer": 59,
+        "folds": [
+          {
+            "fold": 0,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 68,
+            "parent_correct": 110,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 208,
+                "mean_cosine": 0.3192753559683345,
+                "median_cosine": 0.315297728963106,
+                "positive": 172
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1472,
+                "mean_cosine": 0.2006472710800937,
+                "median_cosine": 0.14474889248672868,
+                "positive": 1081
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 48,
+                "mean_cosine": 0.24472985863773078,
+                "median_cosine": 0.23314525459272056,
+                "positive": 38
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 400,
+                "mean_cosine": 0.25006287079156003,
+                "median_cosine": 0.21338938915511885,
+                "positive": 311
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "train": 320,
+            "held": 256,
+            "probe_correct": 74,
+            "parent_correct": 81,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 144,
+                "mean_cosine": 0.33012249017605616,
+                "median_cosine": 0.29903931330363687,
+                "positive": 114
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1056,
+                "mean_cosine": 0.20435878298786114,
+                "median_cosine": 0.14945235088761577,
+                "positive": 760
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.2281188323527023,
+                "median_cosine": 0.10318054532649054,
+                "positive": 24
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 288,
+                "mean_cosine": 0.23612249798484353,
+                "median_cosine": 0.1790103949044683,
+                "positive": 214
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 80,
+            "parent_correct": 136,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 176,
+                "mean_cosine": 0.4277797390286302,
+                "median_cosine": 0.47038727378482753,
+                "positive": 158
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1504,
+                "mean_cosine": 0.1716397604717056,
+                "median_cosine": 0.13601008573254797,
+                "positive": 1095
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.299425704704871,
+                "median_cosine": 0.27621746010490245,
+                "positive": 27
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 416,
+                "mean_cosine": 0.20047326938776847,
+                "median_cosine": 0.16306249494113217,
+                "positive": 304
+              }
+            }
+          }
+        ],
+        "probe_correct": 222,
+        "parent_correct": 327,
+        "probe_pair": {
+          "matches": 384,
+          "baseline_both_correct": 42,
+          "candidate_both_correct": 19,
+          "gains": 11,
+          "losses": 34,
+          "by_arm": {
+            "a": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 6,
+              "gains": 4,
+              "losses": 8
+            },
+            "b": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 4,
+              "gains": 2,
+              "losses": 9
+            },
+            "c": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 4,
+              "gains": 3,
+              "losses": 9
+            },
+            "d": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 5,
+              "gains": 2,
+              "losses": 8
+            }
+          }
+        }
+      },
+      {
+        "layer": 61,
+        "folds": [
+          {
+            "fold": 0,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 78,
+            "parent_correct": 110,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 208,
+                "mean_cosine": 0.3287162026435658,
+                "median_cosine": 0.31096896894933723,
+                "positive": 180
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1472,
+                "mean_cosine": 0.18254019750065414,
+                "median_cosine": 0.13520117044541147,
+                "positive": 1109
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 48,
+                "mean_cosine": 0.24757603430592887,
+                "median_cosine": 0.24973581116267918,
+                "positive": 41
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 400,
+                "mean_cosine": 0.2342964070362684,
+                "median_cosine": 0.2019760306863867,
+                "positive": 320
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "train": 320,
+            "held": 256,
+            "probe_correct": 76,
+            "parent_correct": 81,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 144,
+                "mean_cosine": 0.3386776872015602,
+                "median_cosine": 0.3041093500288398,
+                "positive": 116
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1056,
+                "mean_cosine": 0.18484641636724136,
+                "median_cosine": 0.1346801582106757,
+                "positive": 770
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.23458352654300738,
+                "median_cosine": 0.11960569225586379,
+                "positive": 23
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 288,
+                "mean_cosine": 0.21690036040237973,
+                "median_cosine": 0.15897878929632825,
+                "positive": 216
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 98,
+            "parent_correct": 136,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 176,
+                "mean_cosine": 0.4453565073324532,
+                "median_cosine": 0.48093289728314226,
+                "positive": 159
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1504,
+                "mean_cosine": 0.1606770888695206,
+                "median_cosine": 0.13237185530584722,
+                "positive": 1124
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.3272895016337911,
+                "median_cosine": 0.3368561582627856,
+                "positive": 27
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 416,
+                "mean_cosine": 0.1923089388755071,
+                "median_cosine": 0.15270414934862167,
+                "positive": 313
+              }
+            }
+          }
+        ],
+        "probe_correct": 252,
+        "parent_correct": 327,
+        "probe_pair": {
+          "matches": 384,
+          "baseline_both_correct": 42,
+          "candidate_both_correct": 26,
+          "gains": 13,
+          "losses": 29,
+          "by_arm": {
+            "a": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 8,
+              "gains": 5,
+              "losses": 7
+            },
+            "b": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 5,
+              "gains": 1,
+              "losses": 7
+            },
+            "c": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 5,
+              "gains": 2,
+              "losses": 7
+            },
+            "d": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 8,
+              "gains": 5,
+              "losses": 8
+            }
+          }
+        }
+      },
+      {
+        "layer": 62,
+        "folds": [
+          {
+            "fold": 0,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 88,
+            "parent_correct": 110,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 208,
+                "mean_cosine": 0.3388792609701627,
+                "median_cosine": 0.324023530240719,
+                "positive": 184
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1472,
+                "mean_cosine": 0.1679703280938348,
+                "median_cosine": 0.13532788662796552,
+                "positive": 1079
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 48,
+                "mean_cosine": 0.24836515815778493,
+                "median_cosine": 0.24941279933977728,
+                "positive": 42
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 400,
+                "mean_cosine": 0.22201450859991856,
+                "median_cosine": 0.1928605913581978,
+                "positive": 313
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "train": 320,
+            "held": 256,
+            "probe_correct": 73,
+            "parent_correct": 81,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 144,
+                "mean_cosine": 0.34414680365988837,
+                "median_cosine": 0.30512022376855,
+                "positive": 118
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1056,
+                "mean_cosine": 0.17009538094190413,
+                "median_cosine": 0.13296968099898648,
+                "positive": 775
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.2356764079772114,
+                "median_cosine": 0.139551896144827,
+                "positive": 23
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 288,
+                "mean_cosine": 0.2024015199573154,
+                "median_cosine": 0.16390822757573992,
+                "positive": 218
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 84,
+            "parent_correct": 136,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 176,
+                "mean_cosine": 0.46072118617739277,
+                "median_cosine": 0.4952792695047058,
+                "positive": 163
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1504,
+                "mean_cosine": 0.15788284639870367,
+                "median_cosine": 0.1308285369720938,
+                "positive": 1127
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.3465092916853298,
+                "median_cosine": 0.3735471208407142,
+                "positive": 28
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 416,
+                "mean_cosine": 0.18998943235644775,
+                "median_cosine": 0.15231664000441852,
+                "positive": 320
+              }
+            }
+          }
+        ],
+        "probe_correct": 245,
+        "parent_correct": 327,
+        "probe_pair": {
+          "matches": 384,
+          "baseline_both_correct": 42,
+          "candidate_both_correct": 15,
+          "gains": 6,
+          "losses": 33,
+          "by_arm": {
+            "a": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 4,
+              "gains": 2,
+              "losses": 8
+            },
+            "b": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 3,
+              "gains": 1,
+              "losses": 9
+            },
+            "c": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 3,
+              "gains": 0,
+              "losses": 7
+            },
+            "d": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 5,
+              "gains": 3,
+              "losses": 9
+            }
+          }
+        }
+      },
+      {
+        "layer": 63,
+        "folds": [
+          {
+            "fold": 0,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 86,
+            "parent_correct": 110,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 208,
+                "mean_cosine": 0.33982402375172927,
+                "median_cosine": 0.3333867779004498,
+                "positive": 177
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1472,
+                "mean_cosine": 0.16450033378751203,
+                "median_cosine": 0.14882058041935375,
+                "positive": 1042
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 48,
+                "mean_cosine": 0.24410456236336633,
+                "median_cosine": 0.24434530012400063,
+                "positive": 39
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 400,
+                "mean_cosine": 0.2176091411108127,
+                "median_cosine": 0.20581824171391666,
+                "positive": 289
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "train": 320,
+            "held": 256,
+            "probe_correct": 75,
+            "parent_correct": 81,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 144,
+                "mean_cosine": 0.34573958338403926,
+                "median_cosine": 0.31538569438621167,
+                "positive": 117
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1056,
+                "mean_cosine": 0.1536684512250184,
+                "median_cosine": 0.13614783090896157,
+                "positive": 745
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.2332170905578287,
+                "median_cosine": 0.1575720260720529,
+                "positive": 23
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 288,
+                "mean_cosine": 0.18666890955026938,
+                "median_cosine": 0.1596104761826866,
+                "positive": 212
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "train": 448,
+            "held": 256,
+            "probe_correct": 89,
+            "parent_correct": 136,
+            "probe_ties": 0,
+            "training_geometry": {
+              "same_problem_same_displayed_pair": {
+                "comparisons": 176,
+                "mean_cosine": 0.4618971552849905,
+                "median_cosine": 0.501446973366726,
+                "positive": 161
+              },
+              "same_problem_different_displayed_pair": {
+                "comparisons": 1504,
+                "mean_cosine": 0.15195446919094213,
+                "median_cosine": 0.13581499563318566,
+                "positive": 1095
+              },
+              "same_demo_opposite_order_same_displayed_pair": {
+                "comparisons": 32,
+                "mean_cosine": 0.34371822299111116,
+                "median_cosine": 0.3846579208676951,
+                "positive": 26
+              },
+              "same_demo_opposite_order_different_displayed_pair": {
+                "comparisons": 416,
+                "mean_cosine": 0.1855224558694544,
+                "median_cosine": 0.1552570541257221,
+                "positive": 310
+              }
+            }
+          }
+        ],
+        "probe_correct": 250,
+        "parent_correct": 327,
+        "probe_pair": {
+          "matches": 384,
+          "baseline_both_correct": 42,
+          "candidate_both_correct": 17,
+          "gains": 11,
+          "losses": 36,
+          "by_arm": {
+            "a": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 4,
+              "gains": 3,
+              "losses": 9
+            },
+            "b": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 4,
+              "gains": 3,
+              "losses": 10
+            },
+            "c": {
+              "matches": 96,
+              "baseline_both_correct": 10,
+              "candidate_both_correct": 5,
+              "gains": 3,
+              "losses": 8
+            },
+            "d": {
+              "matches": 96,
+              "baseline_both_correct": 11,
+              "candidate_both_correct": 4,
+              "gains": 2,
+              "losses": 9
+            }
+          }
+        }
+      }
+    ],
+    "interpretation_limits": [
+      "A fitted diagnostic readout measures recoverable information. It does not alter model weights or reproduce ordinary generation.",
+      "Within opposite-order arms, the same ordered displayed gold letters are possible only for condition pairs whose original gold choices are opposite on the four-option cycle. Same/different subgroup means mix this eligibility with order effects.",
+      "These authored development families and presentations recur across diagnostics. Comparison between layers is descriptive and cannot replace an independent blind test."
+    ]
+  },
+  "checkpoint_written": false,
+  "official_fresh_or_proof_data_used": false
+}

@@ -1,0 +1,96 @@
+{
+  "schema": "published-pilot090-authored-option-token-position-v1",
+  "audit_receipt_sha256": "388c9cfc4dacc92525155cce8f40a3b3a8939486dd097f09f818e4b3c1ce5160",
+  "label_free_ledger_sha256": "320ed54ad33e0eacbba2ec1b96ba4263c21e6f8d57c545d06b198bd797ce416a",
+  "source_sha256": "91da2281fe263ff097236d44f09bfe02ac469a3e2d3e82a9d5180aaa946d8f8d",
+  "native_piece_source_sha256": "1354156e3b5d002f903f5c896ce105ac8f6c1bbc197cf807f430e6b85ddfcece",
+  "native_piece_binary_sha256": "03ed9bb18bb01c0e0f95cdfffdbf6f91f3b2976fe966b698ed351793ac23f635",
+  "model_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "rows": 768,
+  "condition_pairs": 24,
+  "matched_option_presentations": 384,
+  "option_bodies": 3072,
+  "exact_complete_prompt_byte_roundtrips": 768,
+  "query_token_id_counts": {
+    "25": 768
+  },
+  "per_display_letter": {
+    "A": {
+      "rows": 768,
+      "body_token_boundary_starts": 392,
+      "body_token_boundary_ends": 768,
+      "last_body_token_crosses_delimiter": 0,
+      "min_query_token_distance": 18,
+      "max_query_token_distance": 67
+    },
+    "B": {
+      "rows": 768,
+      "body_token_boundary_starts": 392,
+      "body_token_boundary_ends": 768,
+      "last_body_token_crosses_delimiter": 0,
+      "min_query_token_distance": 13,
+      "max_query_token_distance": 47
+    },
+    "C": {
+      "rows": 768,
+      "body_token_boundary_starts": 392,
+      "body_token_boundary_ends": 768,
+      "last_body_token_crosses_delimiter": 0,
+      "min_query_token_distance": 8,
+      "max_query_token_distance": 26
+    },
+    "D": {
+      "rows": 768,
+      "body_token_boundary_starts": 392,
+      "body_token_boundary_ends": 768,
+      "last_body_token_crosses_delimiter": 0,
+      "min_query_token_distance": 3,
+      "max_query_token_distance": 3
+    }
+  },
+  "attention_geometry": {
+    "total_gguf_blocks": 65,
+    "ordinary_decoder_blocks": 64,
+    "excluded_mtp_blocks": [
+      64
+    ],
+    "full_attention_interval": 4,
+    "full_attention_trunk_blocks": [
+      3,
+      7,
+      11,
+      15,
+      19,
+      23,
+      27,
+      31,
+      35,
+      39,
+      43,
+      47,
+      51,
+      55,
+      59,
+      63
+    ],
+    "closest_full_attention_blocks": [
+      51,
+      55,
+      59,
+      63
+    ],
+    "query_heads": 24,
+    "key_value_heads": 4,
+    "group_size": 6,
+    "key_head_width": 256,
+    "value_head_width": 256,
+    "default_qk_scale": 0.0625,
+    "explicit_recurrent_metadata_present": false,
+    "verified_against_weight_descriptor_names": true,
+    "gguf_metadata_only": true
+  },
+  "eligible_readonly_probe": "For blocks 59 and 63, bind terminal post-MRoPE query, complete causal K and optional V, actual cache F16 and prompt positions, grouped-query head mapping, mask and scale. Reconstruct per-head endpoint scores, whole-option mass and full-prefix normalization, then compare output to attn_pregate and verify unchanged stock logits. Start with a paired no-label parity smoke.",
+  "inference_limits": "The stock Flash path does not materialize attention probabilities. Reconstructed attention is descriptive and cannot by itself establish causal effect or demonstrate a transferable weight edit.",
+  "attention_readback_or_intervention_performed": false,
+  "weights_written": false
+}
