@@ -233,6 +233,79 @@
           "signed_floor_slack": -0.008242523193359375
         }
       ]
+    },
+    {
+      "pilot": 207,
+      "receipt_sha256": "f7f573c2e963b22b5ad11c0f284290acf9a56e6a636c4d2dd84c6d5b1b16afdb",
+      "plan_sha256": "9345b30368ac61cb553fedfcb6b4b2ed104a5e40d9561694d33d480512406115",
+      "source_sha256": "2b4c22c5613993763c6844d55a99cdf3f40592b2ccf6f1d4fcb3eb412eef3952",
+      "trials": [
+        {
+          "scenario": 4,
+          "legal_endpoint_menu": 96,
+          "guarded_rows": 24622,
+          "baseline_weighted_loss": 0.016798678743768457,
+          "fractional_maximum_weighted_residual": 0.02368713080782016,
+          "integer_proposals": [
+            {
+              "iteration": 1,
+              "active_rows": 192,
+              "status": 1,
+              "selected_codes": 20,
+              "weighted_loss": 0.02614164509084372,
+              "maximum_weighted_residual": 0.03475417294928793,
+              "omitted_violations": 2
+            },
+            {
+              "iteration": 2,
+              "active_rows": 194,
+              "status": 1,
+              "selected_codes": 24,
+              "weighted_loss": 0.03062473430846825,
+              "maximum_weighted_residual": 0.040694869107707164,
+              "omitted_violations": 1
+            },
+            {
+              "iteration": 3,
+              "active_rows": 195,
+              "status": 1,
+              "selected_codes": 23,
+              "weighted_loss": 0.027943890544816385,
+              "maximum_weighted_residual": 0.031118084372733973,
+              "omitted_violations": 1
+            },
+            {
+              "iteration": 4,
+              "active_rows": 196,
+              "status": 1,
+              "selected_codes": 23,
+              "weighted_loss": 0.028378470835600682,
+              "maximum_weighted_residual": 0.03246823236040711,
+              "omitted_violations": 1
+            }
+          ],
+          "accepted": false
+        },
+        {
+          "scenario": 3,
+          "legal_endpoint_menu": 96,
+          "guarded_rows": 24622,
+          "baseline_weighted_loss": 0.02159337262938704,
+          "fractional_maximum_weighted_residual": 0.0448347146422495,
+          "integer_proposals": [
+            {
+              "iteration": 1,
+              "active_rows": 192,
+              "status": 0,
+              "selected_codes": 21,
+              "weighted_loss": 0.04578571165195536,
+              "maximum_weighted_residual": 0.044960715182777944,
+              "omitted_violations": 0
+            }
+          ],
+          "accepted": false
+        }
+      ]
     }
   ]
 }
