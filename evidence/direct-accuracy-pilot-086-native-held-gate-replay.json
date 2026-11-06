@@ -1,0 +1,146 @@
+{
+  "schema": "published-pilot086-native-gate-held-fold-v1",
+  "scope": "Diagnostic native replay of Pilot 082 rejected fold 0 across four independently authored held cohorts and ordinary controls",
+  "diagnostic_receipt_sha256": "77993ccdce58962f5fa1d33f7649238c9b0321d517f501e5936e8c392d1f2c4e",
+  "source_sha256": "9975b41685c45a8f6682cce66f37d2dc614a60bf6870ee677078dd9be7bac27b",
+  "plan_sha256": "35094461d0c8768bff140a564843a08f372a7208290137fc10c9a5c2dabd7259",
+  "cpu_prediction_sha256": "20d44e746156d62c9cffa32a8db692e8361d7705b0e940b8d21ce5b5d1037431",
+  "native_capture_seal_sha256": "3d5c2d74a406a5c6d757b2def15360779bb66dcae9b0f5659c617b260051d9fd",
+  "native_receipt_sha256": "25f53067148e63a1de7130386fda044d9ad9ef48f841ab54f588764fbcb4ab7b",
+  "edited_gate_rows": 2,
+  "edited_gate_codes": 19,
+  "states": 782,
+  "gate_device_row_readbacks": [
+    {
+      "neuron": 8685,
+      "device_offset_bytes": 23623200,
+      "parent_sha256": "0081941ac2800c17427659985c82b86098fc4a36e5ecf2eb8bde7828d4193a77",
+      "candidate_sha256": "3544469f64d27833c45cd56df26945a2ef7fdc20f46a09c84853e7b23161ac81"
+    },
+    {
+      "neuron": 10097,
+      "device_offset_bytes": 27463840,
+      "parent_sha256": "7248d9ef1ab1643f41621b4abb2ea5b84448ee647ca9a77ee29af14386907f8d",
+      "candidate_sha256": "83461bdcd849d098f4f5a85a732b3ea2addd815299beee5a2bc3962c3c361ad2"
+    }
+  ],
+  "unchanged_archived_tensors_exact": true,
+  "total_choice_states": 752,
+  "matching_cpu_cuda_winners": 752,
+  "total_choice_logits": 3008,
+  "binary32_identical_choice_logits": 1467,
+  "maximum_choice_logit_absolute_difference": 0.0022125244140625,
+  "max_edited_gate_absolute_difference": 9.5367431640625e-07,
+  "authored_cohorts": {
+    "053": {
+      "rows": 256,
+      "cpu_native_winner_agreements": 256,
+      "native": {
+        "before": 110,
+        "after": 110,
+        "gains": 0,
+        "losses": 0
+      },
+      "logits": {
+        "values": 1024,
+        "binary32_exact": 494,
+        "mean_absolute": 5.221925675868988e-06,
+        "p95_absolute": 1.9073486328125e-06,
+        "max_absolute": 0.00086212158203125
+      }
+    },
+    "044": {
+      "rows": 256,
+      "cpu_native_winner_agreements": 256,
+      "native": {
+        "before": 114,
+        "after": 113,
+        "gains": 0,
+        "losses": 1
+      },
+      "logits": {
+        "values": 1024,
+        "binary32_exact": 482,
+        "mean_absolute": 1.6099773347377777e-05,
+        "p95_absolute": 1.0299682617186806e-05,
+        "max_absolute": 0.0022125244140625
+      }
+    },
+    "028": {
+      "rows": 192,
+      "cpu_native_winner_agreements": 192,
+      "native": {
+        "before": 109,
+        "after": 110,
+        "gains": 1,
+        "losses": 0
+      },
+      "logits": {
+        "values": 768,
+        "binary32_exact": 396,
+        "mean_absolute": 6.309400002161662e-06,
+        "p95_absolute": 1.9073486328125e-06,
+        "max_absolute": 0.0006256103515625
+      }
+    },
+    "039": {
+      "rows": 48,
+      "cpu_native_winner_agreements": 48,
+      "native": {
+        "before": 18,
+        "after": 18,
+        "gains": 0,
+        "losses": 0
+      },
+      "logits": {
+        "values": 192,
+        "binary32_exact": 95,
+        "mean_absolute": 1.3113021850585938e-06,
+        "p95_absolute": 1.9073486328125e-06,
+        "max_absolute": 7.43865966796875e-05
+      }
+    }
+  },
+  "paired_053": {
+    "matches": 128,
+    "cpu": {
+      "before": 15,
+      "after": 15,
+      "gains": 0,
+      "losses": 0
+    },
+    "native": {
+      "before": 15,
+      "after": 15,
+      "gains": 0,
+      "losses": 0
+    },
+    "cpu_native_both_correct_agreement": 128
+  },
+  "ordinary": {
+    "states": 30,
+    "cpu_scope": "Archived parent top 64 only",
+    "native_scope": "Full vocabulary",
+    "overlapping_top64_logits": {
+      "values": 1917,
+      "binary32_exact": 1026,
+      "mean_absolute": 4.887767427590718e-07,
+      "p95_absolute": 1.9073486328125e-06,
+      "max_absolute": 3.814697265625e-06
+    },
+    "maximum_possible_overlap": 1920,
+    "cpu_native_winner_agreements": 30,
+    "cpu_archived_top64_winner_changes": 0,
+    "native_full_vocabulary_winner_changes": 0,
+    "cpu_winner_missing_from_native_top64": 0,
+    "edited_gate_activations": {
+      "values": 60,
+      "binary32_exact": 18,
+      "mean_absolute": 5.5211906631787616e-08,
+      "p95_absolute": 2.384185791015625e-07,
+      "max_absolute": 2.384185791015625e-07
+    }
+  },
+  "checkpoint_written": false,
+  "candidate_promotion_eligible": false
+}
