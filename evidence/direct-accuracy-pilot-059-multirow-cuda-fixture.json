@@ -1,0 +1,67 @@
+{
+  "schema": "published-pilot059-multirow-cuda-fixture-v1",
+  "independent_audit_receipt_sha256": "e1fdc239f568461987ad1eb1d6a2ac69954f7e344442ea3df4d2de375e7f098f",
+  "native_binary_sha256": "e3cd861ba40f3fb392a65a25abb3703f2cb12bef24d493a5568ba3f0645ff213",
+  "native_capture_source_sha256": "25e80b85b3e2012a711a2370f5844ce8c621c732a423a1f6c6031073b8cc45a7",
+  "native_no_model_preflight_sha256": "0931199136850d9aa39f436a821b430ac8ece34335c17b340ab2b058b73c0ee3",
+  "rows": [
+    {
+      "neuron": 1280,
+      "parent_row_sha256": "39ffca877b64ed7571587c70836e10a584db36789a3e73f9526dc64b9cb95594",
+      "edited_row_sha256": "575e9b6ddfef4954b354d23c08864620dd7d10533805ed86b0dd6449c5f85f2a",
+      "coordinate_signed_code_deltas": [
+        [
+          913,
+          1
+        ],
+        [
+          945,
+          1
+        ]
+      ]
+    },
+    {
+      "neuron": 17407,
+      "parent_row_sha256": "9ea541119a072e36067fee737968c9231d5a976365539e55dd4f1c72e058c584",
+      "edited_row_sha256": "9acf52f18fb9dd9e01c6b8b278bed2d8bcc40fc496831554acab3b8d055bed19",
+      "coordinate_signed_code_deltas": [
+        [
+          5119,
+          1
+        ]
+      ]
+    }
+  ],
+  "audit": {
+    "schema": "windows-pilot059-multirow-cuda-fixture-audit-v1",
+    "audit_source_sha256": "a6e418fdae0a12510cc63f3f63cab63f76152c3e89c254cd077c33372bb56cbf",
+    "native_parent_receipt_sha256": "ccccac05f5bf735620fb4b681b4bac761a3ca4db979e03e8c123981ad03e03e4",
+    "native_fixture_receipt_sha256": "3608acdc89e035cff17c1aa39327d24d407a4b140e64fbeefd2cba8f67805c87",
+    "manifest_sha256": "0249e7fa84122d63796c4b62720bd8ab05892def6a64ad6be2d89248d45e9be9",
+    "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+    "parent_checkpoint_verified_pre_post": true,
+    "states": 4,
+    "packed_cuda_rows_verified": 2,
+    "changed_nibbles": 3,
+    "changed_up_and_gated_neurons": [
+      1280,
+      17407
+    ],
+    "unchanged_ffn_input_gate_and_pre_ffn_residual": true,
+    "absolute_error_max": {
+      "up": 9.372388376505114e-08,
+      "gated_activation": 3.7398936581617935e-09,
+      "residual": 2.2305041919255906e-05,
+      "choice_logits_from_observed_hidden": 1.3472163118422031e-06
+    },
+    "residual_rounding_envelope": {
+      "base_tolerance": 2e-05,
+      "outside_base_tolerance": 2,
+      "max_fraction_of_base_plus_half_ulp_per_endpoint": 0.4415303097877063
+    },
+    "max_choice_logit_delta": 0.0011310577392578125,
+    "choice_changes": 0,
+    "scope": "Exact packed row edits applied in CUDA to four authored fixed prefixes for mechanism validation.",
+    "checkpoint_written": false
+  }
+}

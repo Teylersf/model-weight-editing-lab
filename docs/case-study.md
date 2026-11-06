@@ -720,6 +720,12 @@ Pilot 058 replayed **90 positions across nine independently reviewed ordinary so
 
 Pilot 057 used those controls and searched **33** direct edits to Q4_K codes in the final up projection across three training folds. Seven proposals improved paired answers while preserving every previously correct training choice. Each still crossed a signed margin floor, with three to seven violations per proposal. All frozen held patches were numerical no-ops. The both-correct score stayed at **42/384**, and no checkpoint was written. [Search tradeoffs and ordinary replay](../evidence/direct-accuracy-pilots-057-058-packed-up.json)
 
+## Pilot 059 with a multi-row CUDA edit
+
+The generalized CUDA patcher applied three signed Q4_K code changes across two rows on four authored states. Readback verified both edited rows exactly. Only the two targeted neurons changed in the up and gated activation arrays. The input, gate, pre-feed-forward residual, and source file matched their original bytes. The largest choice-logit change was **0.001131**, and all four choices stayed the same.
+
+The largest difference between the predicted and observed residual change was **2.23 × 10⁻⁵**. Two coordinates exceeded the initial absolute tolerance. The audit reports an additional allowance of half a binary32 spacing at each endpoint, since the comparison subtracts two separately rounded native residuals. [Exact code changes and CUDA audit](../evidence/direct-accuracy-pilot-059-multirow-cuda-fixture.json)
+
 ## Pilot 060 with paired answer-margin attribution
 
 On the same 384 aligned presentations, changing the mathematical condition moved the two relevant answer logits in the intended direction **291** times. It changed which of those two answers led in the intended direction **72** times. On 30 of those 72 presentations, another option still prevented both correct answers from winning. Across the five traced activation stages, the mean relative change induced by the condition was **47–49%** of the change induced by a cyclic option rotation.
