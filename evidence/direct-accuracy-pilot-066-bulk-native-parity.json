@@ -1,0 +1,33 @@
+{
+  "schema": "published-pilot066-bulk-native-parity-v1",
+  "local_parity_receipt_sha256": "058be3a9c8d62e1f9f050bd66c17faf5e7813af201b2fb06c8fd80bf3fab16e7",
+  "bulk_builder_source_sha256": "80c22942029e58fe01bc4f4ebc0a688ef09f0669b6294fed9d44bd9f1bf5b05c",
+  "bulk_native_binary_sha256": "92c6af3c6c6fc6a94c17bee4d881f27f6d400de0ce881adbe87095a8d59cdcee",
+  "no_model_preflight": {
+    "verified_frozen_sequences": 768,
+    "command_utf16_code_units": 801
+  },
+  "cuda_fixture": {
+    "status": "EXACT_FOUR_STATE_CUDA_PARITY",
+    "old_native_receipt_sha256": "3608acdc89e035cff17c1aa39327d24d407a4b140e64fbeefd2cba8f67805c87",
+    "new_native_receipt_sha256": "47647a427ce2cede3e6ae9290945d3ead77434e4e448ce04841d1f90391d5488",
+    "new_trajectory_manifest_sha256": "d2674c5ba226db9bf4b80683dd6a82f0a037d3c0ad6b48d85d3b4a935bb7cd74",
+    "no_model_768_sequence_preflight_sha256": "10944d1cb4205e5cb4f95e1a2853ee3be9b079b4fe9dac437ef0289fc7de81a5",
+    "choice_and_ordinary_top64_ledger_byte_identical_for_fixture": true,
+    "joined_activation_artifact_sha256": {
+      "a": "ad4c73df1c6cc299abda329600d306145fce04e98242f4ddd61384703cf41934",
+      "p": "1055602a683fafe0fb1ccbca488de0a8898fe21e156e9e13e36913833d773b3a",
+      "r": "7573bde9791659dddee552ff19070a7fd7c0f9a9a2dc3a18c902770cfee474a1",
+      "h": "124c57764e535ef32736cb8210265ac179aa34ce81e4507aadfd4d32fc8b4da0",
+      "states": "322aea96131111213ab65db489b5c6142ffd1a9b62869b0376c75d6a54a7b64d",
+      "ffn_input": "028a9f7e47f0e7e68d8b8670f60fa24004acf54e5a693bd4c87c2a9cd5fe0c8f",
+      "ffn_gate": "5c12e9faea9dd94d875f6c149aa628551ec82a0b567cad5ff7f904f3bec63f6d",
+      "ffn_up": "996619d060f169119084b5f88716eb25569514d4e27b66f12e05ad4987c7b015",
+      "gamma": "b3ba4f3231a21b1559f52115d3bffc7c28dcd03e4be22df269ef97a3f5d4bfbf"
+    },
+    "states": 4,
+    "edited_rows": 2,
+    "checkpoint_written": false
+  },
+  "scope": "The 768-input check was a CPU-only preflight. Actual CUDA parity replay covered the four fixed authored fixture states."
+}

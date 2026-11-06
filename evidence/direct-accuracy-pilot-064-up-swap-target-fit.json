@@ -1,0 +1,129 @@
+{
+  "schema": "published-pilot064-low-rank-up-swap-fit-v1",
+  "status": "no_qualifying_edit",
+  "source_sha256": "012e9d1c3c93cc9c0dc98df129c16c27038ba8ada06b104f80ba96a1a29afe68",
+  "plan_sha256": "a807d336d0816b9cfddcaec65cbc556dd4262c75c471acdb18832f51c87a2fc1",
+  "fit_input_binding_sha256": "fab630cdc6de13d1f62a347deab38b95f2d268886abe793c581325b584a1eab2",
+  "grouped_cpu_report_sha256": "0a633a301afaf4116ce3bfeb68a954f6cfd05c0114319c8878a96febb7b69a17",
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "207339308a63daff2be60b7573fdcfac9cfdc191dcd2727056b08e2944395c8a",
+      "training_donors": {
+        "eligible_candidates": 10,
+        "donors": 2,
+        "donor_families": 2,
+        "binary32_argmax_parity": true
+      },
+      "continuous_donor_response_fit": {
+        "weighted_donor_rms_before": 0.5186270388450194,
+        "weighted_donor_rms_after": 0.1839299810046419,
+        "maximum_ordinary_continuous_up_change": 6.088879400678593e-16,
+        "continuous_row_rank": 2
+      },
+      "exact_q8_probes": 16,
+      "probes_with_paired_training_gain": 15,
+      "paired_training_gain_probes_with_zero_prior_correct_choice_losses": 2,
+      "signed_training_floor_passes": 0,
+      "code_count_range": [
+        97,
+        622
+      ],
+      "max_absolute_code_step": 15,
+      "frozen_rows": 0
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "e822c768ff1150f5a251b2d19966d0e9900e8b2abf4becf2d37453a9181f510b",
+      "training_donors": {
+        "eligible_candidates": 17,
+        "donors": 8,
+        "donor_families": 5,
+        "binary32_argmax_parity": true
+      },
+      "continuous_donor_response_fit": {
+        "weighted_donor_rms_before": 0.2671497924280468,
+        "weighted_donor_rms_after": 0.19714784684293438,
+        "maximum_ordinary_continuous_up_change": 7.233796894823286e-16,
+        "continuous_row_rank": 8
+      },
+      "exact_q8_probes": 16,
+      "probes_with_paired_training_gain": 16,
+      "paired_training_gain_probes_with_zero_prior_correct_choice_losses": 1,
+      "signed_training_floor_passes": 0,
+      "code_count_range": [
+        112,
+        672
+      ],
+      "max_absolute_code_step": 15,
+      "frozen_rows": 0
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "3fdc621681bba67b93237bac0ce02c01ad0d6622c0171f16777276750a819a6e",
+      "training_donors": {
+        "eligible_candidates": 13,
+        "donors": 6,
+        "donor_families": 3,
+        "binary32_argmax_parity": true
+      },
+      "continuous_donor_response_fit": {
+        "weighted_donor_rms_before": 0.3012033911034589,
+        "weighted_donor_rms_after": 0.21481884360646578,
+        "maximum_ordinary_continuous_up_change": 1.2784912017949068e-15,
+        "continuous_row_rank": 6
+      },
+      "exact_q8_probes": 16,
+      "probes_with_paired_training_gain": 12,
+      "paired_training_gain_probes_with_zero_prior_correct_choice_losses": 0,
+      "signed_training_floor_passes": 0,
+      "code_count_range": [
+        96,
+        576
+      ],
+      "max_absolute_code_step": 15,
+      "frozen_rows": 0
+    }
+  ],
+  "held_053_paired": {
+    "matches": 384,
+    "baseline_both_correct": 42,
+    "candidate_both_correct": 42,
+    "gains": 0,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "ordinary_held_states": 90,
+  "ordinary_winner_changes": 0,
+  "checkpoint_written": false,
+  "scope": "Counterfactual donors were recomputed and selected within each training fold. The continuous fit projected away ordinary inputs. After integer reconstruction every tested nonzero proposal violated training signed margins. The held fits contained no changes."
+}

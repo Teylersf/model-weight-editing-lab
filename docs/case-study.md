@@ -753,3 +753,11 @@ The CPU counterfactual replaced one or both final feed-forward branch activation
 | Next option rotation, same condition | Up | 325 | 41 |
 
 The opposite-condition up swap recovered 44 previously missed choices and lost nine previously correct choices. It recovered 32 both-correct presentations and lost four. The swap used a paired donor activation at inference time and wrote no weights. [Intervention counts, exact parent control, and limitations](../evidence/direct-accuracy-pilot-063-ffn-interchange.json)
+
+## Pilot 064 with a packed fit to helpful up-swap responses
+
+Pilot 064 recomputed helpful donor responses within each training fold. It fit the up projection to those responses after projecting out ordinary inputs, then reconstructed legal Q4_K code changes with the original scale metadata. Across the 48 tested candidates, 43 recovered a training pair. Three of those preserved every correct training choice. All 48 still crossed at least one signed margin floor. The three held patches contained no changes. [Per-fold packed fit and held results](../evidence/direct-accuracy-pilot-064-up-swap-target-fit.json)
+
+## Pilot 066 with a bulk CUDA verifier
+
+A pinned trajectory manifest passed a single CPU preflight for all **768** frozen sequences. A separate four-state CUDA fixture verified that the bulk input path reproduced the previous multi-row CUDA patch's activations, top-64 and selected logits byte for byte. [Preflight and CUDA parity checksums](../evidence/direct-accuracy-pilot-066-bulk-native-parity.json)
