@@ -27,13 +27,33 @@
     "timing_scope": "single matched cylinder decode"
   },
   "matched_mmlu_math": {
-    "status": "pending_in_this_receipt",
+    "passed": false,
+    "failures": ["previously_correct_item_lost"],
+    "receipt_sha256": "569f555539cdd652cb208806b1eace8e5e6cda6e7ef5452829b6b574d41123b5",
+    "baseline_benchmark_receipt_sha256": "6e380e6a92faed7adf4534c7e4ee7dde9b68bd99fdd0193eb8612526da23bf14",
+    "candidate_benchmark_receipt_sha256": "3c4d7ccc9921c451983f1651886221300cf0fa8ad5dbd907af3b9b0964e79bcf",
     "required_net_gain_over": 226,
     "maximum_prior_losses": 0,
-    "total": 370
+    "total": 370,
+    "baseline_correct": 226,
+    "candidate_correct": 227,
+    "candidate_only_correct": 3,
+    "baseline_only_correct": 2,
+    "high_school": { "total": 270, "baseline_correct": 162, "candidate_correct": 163 },
+    "college": { "total": 100, "baseline_correct": 64, "candidate_correct": 64 },
+    "answer_letter_disagreements": 7,
+    "unscored_items": 0,
+    "exact_ordered_prompt_and_choice_token_parity": true,
+    "native_protocol_equal_after_separate_executable_provenance": true,
+    "native_quantized_states": 370,
+    "max_stock_anchor_abs_error": 2.6907e-6
   },
   "fresh_blinded_evaluation": {
-    "status": "pending_in_this_receipt",
+    "status": "sealed_unopened_by_model_or_fit",
+    "items": 48,
+    "counterfactual_pairs": 24,
+    "independently_verified_answers": 48,
+    "scoring_authorized": false,
     "strict_gains_required": ["correct_trials", "items_correct_in_all_four_orders"]
   },
   "qualification_data_used_for_fit_or_selection": false
