@@ -631,3 +631,16 @@ Pilot 041 fitted a D63 edit with rank at most three using activation differences
 All three fits passed the rounded training checks and were frozen before held scoring. On the training states used for the projection, the largest relative residual movement was below **1.3 × 10⁻⁸**. On held families, the earlier set fell from **342/576 to 341/576** correct rotations and **46/144 to 45/144** all-four. The expanded set stayed at **55/144** correct rotations and **2/36** all-four.
 
 All **90** held ordinary states kept their winners among the 64 archived contenders in the CPU screen. The training projection and held screen cover different states. The held development gate failed, and the run stopped before native verification or checkpoint creation. [Held-fold evidence and verified factor and tensor hashes](../evidence/direct-accuracy-pilot-041.json)
+
+## Pilot 042 with two demonstration contexts and two option orders
+
+The same Pilot 024 checkpoint scored 36 independently checked authored problems under four conditions. Each condition used four rotations so the correct answer appeared once at every letter. The alternate demonstration context reordered the same five examples and changed their individual answer positions while preserving each subject’s answer-letter histogram. Reversing the option cycle preserved the first and third displayed options at each rotation.
+
+| Demonstration context | Cyclic option order | Reversed cyclic option order |
+|---|---:|---:|
+| Original | 55/144 | 68/144 |
+| Alternate | 71/144 | 68/144 |
+
+Changing the examples at cyclic order recovered 20 choices and lost four. At reversed order it recovered 15 and lost 15. The effect of reversing the option cycle changed from a gain of 13 with the original examples to a loss of three with the alternate examples. Paired by problem and correct answer letter, reversing the cycle changed the selected answer content on 65 of 144 trials with the original examples and 66 of 144 with the alternate examples. Only two of 36 problems were correct in every one of the 16 presentations.
+
+The comparison used 432 new CUDA scores and 144 archived scores whose prompt bytes matched exactly. It measured prompt sensitivity on reused development families at fixed weights. [Factorial results and provenance](../evidence/direct-accuracy-pilot-042.json)

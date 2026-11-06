@@ -1,0 +1,558 @@
+{
+  "schema": "published-pilot042-authored-prompt-factorial-v1",
+  "status": "complete_development_diagnostic",
+  "parent_checkpoint_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "experiment_plan_sha256": "00ac9676f5cfcae129332ee26e9fa95f500b66f40828c33a34a78b2cf13b50c1",
+  "no_model_cpu_preflight_sha256": "dda580122aef6792c9665a62b8afa3125cf916cf7655141c4135357ebf0f1c80",
+  "label_free_map_sha256": "3c1edcdfbfca1d5a16447b35ce4449cba4a4b1d007460a4d3df780613e0a7dac",
+  "native_receipt_sha256": "60314624e81798164e18f498d320a11f180658edcd9221cc7f24eec05bca9fd3",
+  "factorial_audit_sha256": "eb383b0b0b20329dec5b8aa53c002a45718cfd0ca49380eb5be803c5a96549e8",
+  "preparation_source_sha256": "eb21d256b38f3053194e2556c4ca4860c2f4c85a1fb5e14486e3458acd9bea75",
+  "native_driver_source_sha256": "9e2c7fd83d8a91e1fd2a3a4d1137ff7f159adf62cd90d4aa19bfb2dbf3304ea7",
+  "grading_source_sha256": "2755ae2ceebadb47a0b5d7066968009c21e88d5c24a616d6b5d13d6e30c7783c",
+  "native_binary_sha256": "be94288eed5b3f8084a6632a595420a90fd8a9a32ef449d4f54e05bdd9eefa48",
+  "runtime_binary_sha256": {
+    "llama.dll": "af13ed8cb1454a80689dbd390310995b6c4b23333e096152453fe6d0fef17356",
+    "ggml.dll": "d2e63157b90c0fd15f010fb2952d032d9f3296b8406b78ff0950211cc144705b",
+    "ggml-base.dll": "200cd9b6f0a7934c2e1c85e55289d5498332713321b03e83eb2ae3da5eeb6137",
+    "ggml-cuda.dll": "85f2cb5707e6dc50c30cdcdc5c23c5e438149bb48638421d0a705866b8e31f94",
+    "ggml-cpu-x64.dll": "af7233344eec5587d531b4e875ec5bf2b1aa62c2be57b657f69cca503f0db918"
+  },
+  "cases": 36,
+  "native_prompt_hashes_exact": 576,
+  "archived_original_prompt_bytes_exact": 144,
+  "freshly_scored_cuda_rows": 432,
+  "archived_cuda_rows": 144,
+  "arm_design": {
+    "a": "original demos, cyclic",
+    "b": "alternate demos, cyclic",
+    "c": "alternate demos, reversed",
+    "d": "original demos, reversed"
+  },
+  "pairing_methods": [
+    "same authored stem and rotation",
+    "same authored stem and correct displayed answer letter"
+  ],
+  "demonstration_context": "Deterministically reorder the same five authored examples and permute their displayed options with the key remapped to the same answer content. Keep each subject's answer-letter histogram.",
+  "order_context": "Use all four cyclic orders and all four reverse cyclic orders. At each fixed rotation the first and third displayed options stay fixed under reversal.",
+  "native_settings": {
+    "schema": "windows-mmlu-next-choice-logits-v1",
+    "backend": "CUDA0",
+    "llama_build": "8642541b2",
+    "choice_pieces": [
+      " A",
+      " B",
+      " C",
+      " D"
+    ],
+    "choice_token_ids": [
+      357,
+      417,
+      351,
+      414
+    ],
+    "context": 4096,
+    "batch": 64,
+    "threads": 4,
+    "generation_tokens": 0,
+    "prompt_token_cap": 2048
+  },
+  "prompt_manifests_sha256": {
+    "a": "6f5ecc407c9018ff860e453689b49dff384c9fbd1c25ee70614b26d988a1baa4",
+    "b": "8c50749fc3311b04889fd7055c26402308e6f7a48a4608fdd9cfb2948f41d8c8",
+    "c": "a749afd2619bd3a19260b495e2cb1caf183e34944aac4141d68193bbdad9e0e0",
+    "d": "07b5a91bda7d36852551aea99c2264d95bda608702192bc91aaad5384aa293ce"
+  },
+  "raw_score_sha256": {
+    "a": "78006b8432050cb45f36052f86ff816cba29891e7287177b3213e2d61b44adb2",
+    "b": "74e9192f6e447794f62d1d15f695b610b540283d734e9cfb5575f6caab16d8e5",
+    "c": "94df1d9f7c38504dea7968fa1d655d0376772945f5bc082bac30524751948a33",
+    "d": "0aa49ee04868730d659d21285751309aeb8cefe5d61babff9d46eec9e88b8172"
+  },
+  "pooled": {
+    "arms": {
+      "a": {
+        "rows": 144,
+        "correct": 55,
+        "stems": 36,
+        "all_four": 2,
+        "selected_letters": {
+          "A": 45,
+          "B": 63,
+          "C": 12,
+          "D": 24
+        },
+        "correct_letters": {
+          "A": 36,
+          "B": 36,
+          "C": 36,
+          "D": 36
+        },
+        "ties": 0
+      },
+      "b": {
+        "rows": 144,
+        "correct": 71,
+        "stems": 36,
+        "all_four": 5,
+        "selected_letters": {
+          "A": 37,
+          "B": 64,
+          "C": 21,
+          "D": 22
+        },
+        "correct_letters": {
+          "A": 36,
+          "B": 36,
+          "C": 36,
+          "D": 36
+        },
+        "ties": 0
+      },
+      "c": {
+        "rows": 144,
+        "correct": 68,
+        "stems": 36,
+        "all_four": 7,
+        "selected_letters": {
+          "A": 32,
+          "B": 64,
+          "C": 22,
+          "D": 26
+        },
+        "correct_letters": {
+          "A": 36,
+          "B": 36,
+          "C": 36,
+          "D": 36
+        },
+        "ties": 0
+      },
+      "d": {
+        "rows": 144,
+        "correct": 68,
+        "stems": 36,
+        "all_four": 5,
+        "selected_letters": {
+          "A": 46,
+          "B": 58,
+          "C": 16,
+          "D": 24
+        },
+        "correct_letters": {
+          "A": 36,
+          "B": 36,
+          "C": 36,
+          "D": 36
+        },
+        "ties": 0
+      }
+    },
+    "paired_by_correct_letter": {
+      "demo_at_cyclic": {
+        "paired": 144,
+        "same_correct_letter": 144,
+        "gains": 20,
+        "losses": 4,
+        "net": 16,
+        "chosen_content_changed": 31,
+        "mean_correct_margin_change": 0.14579190810521445
+      },
+      "demo_at_reverse": {
+        "paired": 144,
+        "same_correct_letter": 144,
+        "gains": 15,
+        "losses": 15,
+        "net": 0,
+        "chosen_content_changed": 37,
+        "mean_correct_margin_change": 0.038179139296213783
+      },
+      "order_at_original_demo": {
+        "paired": 144,
+        "same_correct_letter": 144,
+        "gains": 25,
+        "losses": 12,
+        "net": 13,
+        "chosen_content_changed": 65,
+        "mean_correct_margin_change": 0.18340639935599434
+      },
+      "order_at_alternate_demo": {
+        "paired": 144,
+        "same_correct_letter": 144,
+        "gains": 18,
+        "losses": 21,
+        "net": -3,
+        "chosen_content_changed": 66,
+        "mean_correct_margin_change": 0.07579363054699367
+      }
+    },
+    "paired_by_rotation": {
+      "demo_at_cyclic": {
+        "paired": 144,
+        "same_correct_letter": 144,
+        "gains": 20,
+        "losses": 4,
+        "net": 16,
+        "chosen_content_changed": 31,
+        "mean_correct_margin_change": 0.14579190810521445
+      },
+      "demo_at_reverse": {
+        "paired": 144,
+        "same_correct_letter": 144,
+        "gains": 15,
+        "losses": 15,
+        "net": 0,
+        "chosen_content_changed": 37,
+        "mean_correct_margin_change": 0.038179139296213783
+      },
+      "order_at_original_demo": {
+        "paired": 144,
+        "same_correct_letter": 72,
+        "gains": 30,
+        "losses": 17,
+        "net": 13,
+        "chosen_content_changed": 65,
+        "mean_correct_margin_change": 0.18340639935599434
+      },
+      "order_at_alternate_demo": {
+        "paired": 144,
+        "same_correct_letter": 72,
+        "gains": 26,
+        "losses": 29,
+        "net": -3,
+        "chosen_content_changed": 76,
+        "mean_correct_margin_change": 0.07579363054699367
+      }
+    },
+    "demo_effect_mean_percentage_points": 5.555555555555555,
+    "order_effect_mean_percentage_points": 3.4722222222222223,
+    "interaction_percentage_points": -11.11111111111111,
+    "stems_correct_all_16": 2
+  },
+  "subjects": {
+    "college_mathematics": {
+      "arms": {
+        "a": {
+          "rows": 72,
+          "correct": 31,
+          "stems": 18,
+          "all_four": 1,
+          "selected_letters": {
+            "A": 28,
+            "B": 30,
+            "C": 3,
+            "D": 11
+          },
+          "correct_letters": {
+            "A": 18,
+            "B": 18,
+            "C": 18,
+            "D": 18
+          },
+          "ties": 0
+        },
+        "b": {
+          "rows": 72,
+          "correct": 40,
+          "stems": 18,
+          "all_four": 3,
+          "selected_letters": {
+            "A": 22,
+            "B": 30,
+            "C": 13,
+            "D": 7
+          },
+          "correct_letters": {
+            "A": 18,
+            "B": 18,
+            "C": 18,
+            "D": 18
+          },
+          "ties": 0
+        },
+        "c": {
+          "rows": 72,
+          "correct": 38,
+          "stems": 18,
+          "all_four": 5,
+          "selected_letters": {
+            "A": 18,
+            "B": 29,
+            "C": 13,
+            "D": 12
+          },
+          "correct_letters": {
+            "A": 18,
+            "B": 18,
+            "C": 18,
+            "D": 18
+          },
+          "ties": 0
+        },
+        "d": {
+          "rows": 72,
+          "correct": 39,
+          "stems": 18,
+          "all_four": 4,
+          "selected_letters": {
+            "A": 27,
+            "B": 27,
+            "C": 6,
+            "D": 12
+          },
+          "correct_letters": {
+            "A": 18,
+            "B": 18,
+            "C": 18,
+            "D": 18
+          },
+          "ties": 0
+        }
+      },
+      "paired_by_correct_letter": {
+        "demo_at_cyclic": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 12,
+          "losses": 3,
+          "net": 9,
+          "chosen_content_changed": 20,
+          "mean_correct_margin_change": 0.09246753321753608
+        },
+        "demo_at_reverse": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 8,
+          "losses": 9,
+          "net": -1,
+          "chosen_content_changed": 21,
+          "mean_correct_margin_change": -0.05310328801472982
+        },
+        "order_at_original_demo": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 15,
+          "losses": 7,
+          "net": 8,
+          "chosen_content_changed": 36,
+          "mean_correct_margin_change": 0.20634706815083823
+        },
+        "order_at_alternate_demo": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 11,
+          "losses": 13,
+          "net": -2,
+          "chosen_content_changed": 38,
+          "mean_correct_margin_change": 0.06077624691857232
+        }
+      },
+      "paired_by_rotation": {
+        "demo_at_cyclic": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 12,
+          "losses": 3,
+          "net": 9,
+          "chosen_content_changed": 20,
+          "mean_correct_margin_change": 0.09246753321753608
+        },
+        "demo_at_reverse": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 8,
+          "losses": 9,
+          "net": -1,
+          "chosen_content_changed": 21,
+          "mean_correct_margin_change": -0.05310328801472982
+        },
+        "order_at_original_demo": {
+          "paired": 72,
+          "same_correct_letter": 36,
+          "gains": 16,
+          "losses": 8,
+          "net": 8,
+          "chosen_content_changed": 31,
+          "mean_correct_margin_change": 0.20634706815083823
+        },
+        "order_at_alternate_demo": {
+          "paired": 72,
+          "same_correct_letter": 36,
+          "gains": 14,
+          "losses": 16,
+          "net": -2,
+          "chosen_content_changed": 41,
+          "mean_correct_margin_change": 0.06077624691857232
+        }
+      },
+      "demo_effect_mean_percentage_points": 5.555555555555555,
+      "order_effect_mean_percentage_points": 4.166666666666667,
+      "interaction_percentage_points": -13.88888888888889,
+      "stems_correct_all_16": 1
+    },
+    "high_school_mathematics": {
+      "arms": {
+        "a": {
+          "rows": 72,
+          "correct": 24,
+          "stems": 18,
+          "all_four": 1,
+          "selected_letters": {
+            "A": 17,
+            "B": 33,
+            "C": 9,
+            "D": 13
+          },
+          "correct_letters": {
+            "A": 18,
+            "B": 18,
+            "C": 18,
+            "D": 18
+          },
+          "ties": 0
+        },
+        "b": {
+          "rows": 72,
+          "correct": 31,
+          "stems": 18,
+          "all_four": 2,
+          "selected_letters": {
+            "A": 15,
+            "B": 34,
+            "C": 8,
+            "D": 15
+          },
+          "correct_letters": {
+            "A": 18,
+            "B": 18,
+            "C": 18,
+            "D": 18
+          },
+          "ties": 0
+        },
+        "c": {
+          "rows": 72,
+          "correct": 30,
+          "stems": 18,
+          "all_four": 2,
+          "selected_letters": {
+            "A": 14,
+            "B": 35,
+            "C": 9,
+            "D": 14
+          },
+          "correct_letters": {
+            "A": 18,
+            "B": 18,
+            "C": 18,
+            "D": 18
+          },
+          "ties": 0
+        },
+        "d": {
+          "rows": 72,
+          "correct": 29,
+          "stems": 18,
+          "all_four": 1,
+          "selected_letters": {
+            "A": 19,
+            "B": 31,
+            "C": 10,
+            "D": 12
+          },
+          "correct_letters": {
+            "A": 18,
+            "B": 18,
+            "C": 18,
+            "D": 18
+          },
+          "ties": 0
+        }
+      },
+      "paired_by_correct_letter": {
+        "demo_at_cyclic": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 8,
+          "losses": 1,
+          "net": 7,
+          "chosen_content_changed": 11,
+          "mean_correct_margin_change": 0.1991162829928928
+        },
+        "demo_at_reverse": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 7,
+          "losses": 6,
+          "net": 1,
+          "chosen_content_changed": 16,
+          "mean_correct_margin_change": 0.12946156660715738
+        },
+        "order_at_original_demo": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 10,
+          "losses": 5,
+          "net": 5,
+          "chosen_content_changed": 29,
+          "mean_correct_margin_change": 0.16046573056115043
+        },
+        "order_at_alternate_demo": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 7,
+          "losses": 8,
+          "net": -1,
+          "chosen_content_changed": 28,
+          "mean_correct_margin_change": 0.09081101417541504
+        }
+      },
+      "paired_by_rotation": {
+        "demo_at_cyclic": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 8,
+          "losses": 1,
+          "net": 7,
+          "chosen_content_changed": 11,
+          "mean_correct_margin_change": 0.1991162829928928
+        },
+        "demo_at_reverse": {
+          "paired": 72,
+          "same_correct_letter": 72,
+          "gains": 7,
+          "losses": 6,
+          "net": 1,
+          "chosen_content_changed": 16,
+          "mean_correct_margin_change": 0.12946156660715738
+        },
+        "order_at_original_demo": {
+          "paired": 72,
+          "same_correct_letter": 36,
+          "gains": 14,
+          "losses": 9,
+          "net": 5,
+          "chosen_content_changed": 34,
+          "mean_correct_margin_change": 0.16046573056115043
+        },
+        "order_at_alternate_demo": {
+          "paired": 72,
+          "same_correct_letter": 36,
+          "gains": 12,
+          "losses": 13,
+          "net": -1,
+          "chosen_content_changed": 35,
+          "mean_correct_margin_change": 0.09081101417541504
+        }
+      },
+      "demo_effect_mean_percentage_points": 5.555555555555555,
+      "order_effect_mean_percentage_points": 2.7777777777777777,
+      "interaction_percentage_points": -8.333333333333334,
+      "stems_correct_all_16": 1
+    }
+  },
+  "labels_passed_to_native": false,
+  "checkpoint_edited": false,
+  "protected_or_benchmark_inputs_used": false,
+  "scope": "Fixed next-choice CUDA scores on reused authored development stems. The alternate demo context combines example order and per-example answer positions. The reported interaction describes these two contexts."
+}
