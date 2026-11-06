@@ -1,0 +1,702 @@
+{
+  "schema": "public-direct-accuracy-pilots-156-163-four-row-v1",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "historical_authored_geometry": {
+    "receipt_sha256": "c1bfaf0cbab38fd85f17eeea66e1f210ccb2ea555d6628626b32d25e7876eaf5",
+    "plan_sha256": "3cc57ffdafbacfe93e7d57ae30c9f9a44f4ea766336782ca1e6fff648c10e0f2",
+    "scope": {
+      "p105_states": 512,
+      "p105_pairs": 256,
+      "p117_ordinary": 60,
+      "q8_corrections": 0,
+      "ordinary_q8_corrections": 0,
+      "official_fresh_protected_or_p150_used": false,
+      "gpu_or_checkpoint_write": false
+    },
+    "single_D_capacity": {
+      "all_choice_misses": 187,
+      "unlimited_raise_reachable": 68,
+      "unlimited_lower_reachable": 26,
+      "structurally_unreachable": 93,
+      "within_abs_004": 1,
+      "within_abs_0095": 3,
+      "relevant_pair_presentations": 128,
+      "irrelevant_pair_presentations": 128
+    },
+    "four_row_gradient": {
+      "same_condition_arm_cross_rotation_comparisons": 384,
+      "mean_hidden_difference_cosine": 0.18951688706874847,
+      "mean_full_output_gradient_cosine": -0.0534331922996595,
+      "negative_full_output_gradient_fraction": 0.3854166666666667,
+      "zero_display_gradient_dot_fraction": 0.4583333333333333,
+      "exact_all_rotations_sum_to_zero_display_pairs": true
+    },
+    "single_row_replays": [
+      {
+        "pilot": "p144",
+        "all": {
+          "total": 512,
+          "before": 325,
+          "after": 325,
+          "gains": 1,
+          "losses": 1
+        },
+        "all_four_orbits": {
+          "total": 128,
+          "before": 46,
+          "after": 46,
+          "gains": 0,
+          "losses": 0
+        },
+        "paired": {
+          "total": 256,
+          "before": 99,
+          "after": 99,
+          "gains": 1,
+          "losses": 1
+        },
+        "aligned_rotation_consistent_energy": 0.10121795870201272
+      },
+      {
+        "pilot": "p149",
+        "all": {
+          "total": 512,
+          "before": 325,
+          "after": 326,
+          "gains": 1,
+          "losses": 0
+        },
+        "all_four_orbits": {
+          "total": 128,
+          "before": 46,
+          "after": 46,
+          "gains": 0,
+          "losses": 0
+        },
+        "paired": {
+          "total": 256,
+          "before": 99,
+          "after": 100,
+          "gains": 1,
+          "losses": 0
+        },
+        "aligned_rotation_consistent_energy": 0.11333524170966955
+      }
+    ],
+    "ridge_controls": [
+      {
+        "kind": "D_only",
+        "held": {
+          "total": 512,
+          "before": 325,
+          "after": 325,
+          "gains": 0,
+          "losses": 0
+        },
+        "pairs": {
+          "total": 256,
+          "before": 99,
+          "after": 99,
+          "gains": 0,
+          "losses": 0
+        },
+        "mean_condition_delta": -0.0005853958427906036
+      },
+      {
+        "kind": "all_four",
+        "held": {
+          "total": 512,
+          "before": 325,
+          "after": 325,
+          "gains": 0,
+          "losses": 0
+        },
+        "pairs": {
+          "total": 256,
+          "before": 99,
+          "after": 99,
+          "gains": 0,
+          "losses": 0
+        },
+        "mean_condition_delta": -0.0003044344484806061
+      }
+    ],
+    "shared_norm_probe": {
+      "receipt_sha256": "6886d1a54728ef6a393bf484217941fd78f2896af4fa0230a018ec22897b6413",
+      "ordinary_null_dimensions": 4880,
+      "gradient_energy_retained": 0.8962989397042633,
+      "projected": {
+        "mean_cross_rotation_cosine": -0.03901104031135221,
+        "negative_cross_rotation_fraction": 0.5260416666666666,
+        "min_pair_gradient_norm": 0.028076681071630628
+      }
+    }
+  },
+  "continuous_fit": {
+    "receipt_sha256": "1adae16dec0b5cce901c09ae7f2fd3b7dfde0cd11497e517bd9de27538165834",
+    "plan": {
+      "bytes": 1105,
+      "sha256": "94b3d0e40517de1a508326ce11fbec5a5f574e913b23fe5161f6d84742e10cef",
+      "name": "paired-midpoint-fit-plan-v2.json"
+    },
+    "author_fit_states": 512,
+    "legacy_guards": 1204,
+    "ordinary_guards": 60,
+    "trials": [
+      {
+        "scenario": 1,
+        "solver": {
+          "rank": 48,
+          "maximum_math_shift": 0.14,
+          "maximum_pair_midpoint_gap_shift": 0.045,
+          "targets": 13,
+          "linear_rows": 16971,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective": -0.09325237601370377
+        },
+        "advances_to_packed": true,
+        "raw_replay_ordinary_shift": 1.0591094007209902E-07,
+        "raw_replay_math_shift": 0.140000055093935,
+        "outcomes": {
+          "train_before": 325,
+          "train_after": 333,
+          "total_previously_correct_losses": 0,
+          "math_legacy_losses": 0,
+          "paired_before": 99,
+          "paired_after": 106,
+          "paired_gains": 7,
+          "paired_losses": 0,
+          "pair_gains_by_family_count": 3,
+          "distinct_gained_pairs": 4,
+          "all_four_before": 46,
+          "all_four_after": 50,
+          "families_with_gains": 4,
+          "choice_gains_by_letter": {
+            "D": 3,
+            "A": 3,
+            "B": 1,
+            "C": 1
+          },
+          "gained_choice_position_count": 4,
+          "max_abs_ordinary_shift": 2.706888994202794E-09,
+          "max_abs_math_shift": 0.14000006866412304,
+          "minimum_prior_margin": 0.00043651853403403607
+        },
+        "exact_f64_delta": {
+          "bytes": 163840,
+          "sha256": "d1bd5498de2f123d107dda3dfae56483770ff019bf55b5b99bf03794d6b8b13a",
+          "name": "continuous-four-row-v2-01.f64le"
+        }
+      },
+      {
+        "scenario": 2,
+        "solver": {
+          "rank": 80,
+          "maximum_math_shift": 0.26,
+          "maximum_pair_midpoint_gap_shift": 0.065,
+          "targets": 29,
+          "linear_rows": 17067,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective": -0.14213467755904874
+        },
+        "advances_to_packed": true,
+        "raw_replay_ordinary_shift": 3.1843881815978026E-07,
+        "raw_replay_math_shift": 0.26000011482049534,
+        "outcomes": {
+          "train_before": 325,
+          "train_after": 334,
+          "total_previously_correct_losses": 0,
+          "math_legacy_losses": 0,
+          "paired_before": 99,
+          "paired_after": 105,
+          "paired_gains": 6,
+          "paired_losses": 0,
+          "pair_gains_by_family_count": 3,
+          "distinct_gained_pairs": 4,
+          "all_four_before": 46,
+          "all_four_after": 50,
+          "families_with_gains": 4,
+          "choice_gains_by_letter": {
+            "D": 2,
+            "A": 4,
+            "B": 1,
+            "C": 2
+          },
+          "gained_choice_position_count": 4,
+          "max_abs_ordinary_shift": 6.758033344739234E-09,
+          "max_abs_math_shift": 0.2600001275275073,
+          "minimum_prior_margin": 0.00043650988584076345
+        },
+        "exact_f64_delta": {
+          "bytes": 163840,
+          "sha256": "ff31583de7cb4c0c244d7c3464bb0968bde60fb63e29119d5c025269526f2e8d",
+          "name": "continuous-four-row-v2-02.f64le"
+        }
+      },
+      {
+        "scenario": 3,
+        "solver": {
+          "rank": 112,
+          "maximum_math_shift": 0.4,
+          "maximum_pair_midpoint_gap_shift": 0.085,
+          "targets": 49,
+          "linear_rows": 17187,
+          "solver_status": 1,
+          "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "objective": null
+        },
+        "advances_to_packed": false
+      }
+    ]
+  },
+  "packed_nibble_search": {
+    "receipt_sha256": "15aed928b111f74abaad90f82a5d204a56d54af23974b78cce85d432684ebc93",
+    "plan": {
+      "bytes": 1034,
+      "sha256": "ea5a91edc2438bd546a37bc736ea0ba66760936c2661476792649e033c3cd632",
+      "name": "packed-four-row-plan.json"
+    },
+    "trials": [
+      {
+        "scenario": 1,
+        "solver": {
+          "support": 518,
+          "max_code_jump": 2,
+          "enforced_condition_pairs": 3,
+          "constraints": 12897,
+          "status": 1,
+          "status_text": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "incumbent": false,
+          "objective": null
+        }
+      },
+      {
+        "scenario": 2,
+        "solver": {
+          "support": 733,
+          "max_code_jump": 2,
+          "enforced_condition_pairs": 2,
+          "constraints": 13321,
+          "status": 1,
+          "status_text": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "incumbent": false,
+          "objective": null
+        }
+      },
+      {
+        "scenario": 3,
+        "solver": {
+          "support": 891,
+          "max_code_jump": 3,
+          "enforced_condition_pairs": 2,
+          "constraints": 13637,
+          "status": 1,
+          "status_text": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+          "incumbent": false,
+          "objective": null
+        }
+      }
+    ]
+  },
+  "binary16_half_scale_search": {
+    "receipt_sha256": "e37b7437de31d03f08ea61fd9355aa0113e227d9c65f597740a6c857f4fa680d",
+    "plan": {
+      "bytes": 814,
+      "sha256": "75081cb5ad34493fd5cfca781c658d0f800dd21ecb9403cfbffee6d3c731bd52",
+      "name": "half-field-plan.json"
+    },
+    "trials": [
+      {
+        "scenario": 1,
+        "iteration": 1,
+        "solver": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "goals": 9,
+          "constraints": 17667,
+          "objective": -0.05304011462584866
+        },
+        "exact_packed": {
+          "train_before": 325,
+          "train_after": 328,
+          "total_previously_correct_losses": 1,
+          "math_legacy_losses": 0,
+          "paired_before": 99,
+          "paired_after": 103,
+          "paired_gains": 4,
+          "paired_losses": 0,
+          "pair_gains_by_family_count": 2,
+          "distinct_gained_pairs": 3,
+          "all_four_before": 46,
+          "all_four_after": 47,
+          "families_with_gains": 2,
+          "choice_gains_by_letter": {
+            "A": 3,
+            "C": 1
+          },
+          "gained_choice_position_count": 2,
+          "max_abs_ordinary_shift": 0.02309661451363354,
+          "max_abs_math_shift": 0.10002422332763672,
+          "minimum_prior_margin": -0.0005512237548828125,
+          "changed_halves": 158,
+          "math_floor_slack": -0.0009229278564453125,
+          "ordinary_floor_slack": 12.720947494506836,
+          "maximum_midpoint_shift": 0.05652284967254673,
+          "maximum_mean_shift": 0.00556319281610218,
+          "ordinary_winner_changes": 0
+        },
+        "passed": false
+      },
+      {
+        "scenario": 1,
+        "iteration": 2,
+        "solver": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "goals": 9,
+          "constraints": 17667,
+          "objective": -0.053040114625849004
+        },
+        "exact_packed": {
+          "train_before": 325,
+          "train_after": 329,
+          "total_previously_correct_losses": 0,
+          "math_legacy_losses": 0,
+          "paired_before": 99,
+          "paired_after": 103,
+          "paired_gains": 4,
+          "paired_losses": 0,
+          "pair_gains_by_family_count": 2,
+          "distinct_gained_pairs": 3,
+          "all_four_before": 46,
+          "all_four_after": 48,
+          "families_with_gains": 2,
+          "choice_gains_by_letter": {
+            "A": 3,
+            "C": 1
+          },
+          "gained_choice_position_count": 2,
+          "max_abs_ordinary_shift": 0.02553852798337175,
+          "max_abs_math_shift": 0.10145950317382812,
+          "minimum_prior_margin": 0.0015468597412109375,
+          "changed_halves": 159,
+          "math_floor_slack": -0.00313568115234375,
+          "ordinary_floor_slack": 12.719443550109863,
+          "maximum_midpoint_shift": 0.05623569731051248,
+          "maximum_mean_shift": 0.008022923128430384,
+          "ordinary_winner_changes": 0
+        },
+        "passed": false
+      },
+      {
+        "scenario": 1,
+        "iteration": 3,
+        "solver": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "goals": 9,
+          "constraints": 17667,
+          "objective": -0.05304011462584821
+        },
+        "exact_packed": {
+          "train_before": 325,
+          "train_after": 328,
+          "total_previously_correct_losses": 1,
+          "math_legacy_losses": 0,
+          "paired_before": 99,
+          "paired_after": 103,
+          "paired_gains": 4,
+          "paired_losses": 0,
+          "pair_gains_by_family_count": 2,
+          "distinct_gained_pairs": 3,
+          "all_four_before": 46,
+          "all_four_after": 47,
+          "families_with_gains": 2,
+          "choice_gains_by_letter": {
+            "A": 3,
+            "C": 1
+          },
+          "gained_choice_position_count": 2,
+          "max_abs_ordinary_shift": 0.024724093436816474,
+          "max_abs_math_shift": 0.10164642333984375,
+          "minimum_prior_margin": -0.0022602081298828125,
+          "changed_halves": 158,
+          "math_floor_slack": -0.0034473419189453122,
+          "ordinary_floor_slack": 12.720059623718262,
+          "maximum_midpoint_shift": 0.0567064582007788,
+          "maximum_mean_shift": 0.007565810422099695,
+          "ordinary_winner_changes": 0
+        },
+        "passed": false
+      },
+      {
+        "scenario": 2,
+        "iteration": 1,
+        "solver": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "goals": 23,
+          "constraints": 17751,
+          "objective": -0.047660496318223146
+        },
+        "exact_packed": {
+          "train_before": 325,
+          "train_after": 330,
+          "total_previously_correct_losses": 0,
+          "math_legacy_losses": 0,
+          "paired_before": 99,
+          "paired_after": 104,
+          "paired_gains": 5,
+          "paired_losses": 0,
+          "pair_gains_by_family_count": 3,
+          "distinct_gained_pairs": 4,
+          "all_four_before": 46,
+          "all_four_after": 49,
+          "families_with_gains": 3,
+          "choice_gains_by_letter": {
+            "A": 3,
+            "B": 1,
+            "C": 1
+          },
+          "gained_choice_position_count": 3,
+          "max_abs_ordinary_shift": 0.023730428881208354,
+          "max_abs_math_shift": 0.10132312774658203,
+          "minimum_prior_margin": 0.0020198822021484375,
+          "changed_halves": 159,
+          "math_floor_slack": -0.004279052734375,
+          "ordinary_floor_slack": 12.752631416320801,
+          "maximum_midpoint_shift": 0.0778448354617467,
+          "maximum_mean_shift": 0.00788445982507735,
+          "ordinary_winner_changes": 0
+        },
+        "passed": false
+      },
+      {
+        "scenario": 2,
+        "iteration": 2,
+        "solver": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "goals": 23,
+          "constraints": 17751,
+          "objective": -0.047660496318223396
+        },
+        "exact_packed": {
+          "train_before": 325,
+          "train_after": 330,
+          "total_previously_correct_losses": 0,
+          "math_legacy_losses": 0,
+          "paired_before": 99,
+          "paired_after": 104,
+          "paired_gains": 5,
+          "paired_losses": 0,
+          "pair_gains_by_family_count": 3,
+          "distinct_gained_pairs": 4,
+          "all_four_before": 46,
+          "all_four_after": 49,
+          "families_with_gains": 3,
+          "choice_gains_by_letter": {
+            "A": 3,
+            "B": 1,
+            "C": 1
+          },
+          "gained_choice_position_count": 3,
+          "max_abs_ordinary_shift": 0.025504847293632338,
+          "max_abs_math_shift": 0.09858226776123047,
+          "minimum_prior_margin": 0.0046844482421875,
+          "changed_halves": 158,
+          "math_floor_slack": -0.0030564422607421877,
+          "ordinary_floor_slack": 12.75213264465332,
+          "maximum_midpoint_shift": 0.07702216858479005,
+          "maximum_mean_shift": 0.008310060046073734,
+          "ordinary_winner_changes": 0
+        },
+        "passed": false
+      },
+      {
+        "scenario": 2,
+        "iteration": 3,
+        "solver": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "goals": 23,
+          "constraints": 17751,
+          "objective": -0.04766049631822308
+        },
+        "exact_packed": {
+          "train_before": 325,
+          "train_after": 330,
+          "total_previously_correct_losses": 0,
+          "math_legacy_losses": 0,
+          "paired_before": 99,
+          "paired_after": 104,
+          "paired_gains": 5,
+          "paired_losses": 0,
+          "pair_gains_by_family_count": 3,
+          "distinct_gained_pairs": 4,
+          "all_four_before": 46,
+          "all_four_after": 49,
+          "families_with_gains": 3,
+          "choice_gains_by_letter": {
+            "A": 3,
+            "B": 1,
+            "C": 1
+          },
+          "gained_choice_position_count": 3,
+          "max_abs_ordinary_shift": 0.024416791666226345,
+          "max_abs_math_shift": 0.10470008850097656,
+          "minimum_prior_margin": 0.0039005279541015625,
+          "changed_halves": 158,
+          "math_floor_slack": -0.0038212890625000002,
+          "ordinary_floor_slack": 12.752138366699219,
+          "maximum_midpoint_shift": 0.07562682503839824,
+          "maximum_mean_shift": 0.008124497242618212,
+          "ordinary_winner_changes": 0
+        },
+        "passed": false
+      },
+      {
+        "scenario": 3,
+        "iteration": 1,
+        "solver": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "goals": 46,
+          "constraints": 17889,
+          "objective": -0.03794037903187678
+        },
+        "exact_packed": {
+          "train_before": 325,
+          "train_after": 330,
+          "total_previously_correct_losses": 0,
+          "math_legacy_losses": 0,
+          "paired_before": 99,
+          "paired_after": 104,
+          "paired_gains": 5,
+          "paired_losses": 0,
+          "pair_gains_by_family_count": 3,
+          "distinct_gained_pairs": 4,
+          "all_four_before": 46,
+          "all_four_after": 49,
+          "families_with_gains": 3,
+          "choice_gains_by_letter": {
+            "A": 3,
+            "B": 1,
+            "C": 1
+          },
+          "gained_choice_position_count": 3,
+          "max_abs_ordinary_shift": 0.023732153463242867,
+          "max_abs_math_shift": 0.11332511901855469,
+          "minimum_prior_margin": 0.0064296722412109375,
+          "changed_halves": 159,
+          "math_floor_slack": -0.0026902313232421877,
+          "ordinary_floor_slack": 12.733982315063477,
+          "maximum_midpoint_shift": 0.11037042528369057,
+          "maximum_mean_shift": 0.007784778900815696,
+          "ordinary_winner_changes": 0
+        },
+        "passed": false
+      },
+      {
+        "scenario": 3,
+        "iteration": 2,
+        "solver": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "goals": 46,
+          "constraints": 17889,
+          "objective": -0.037940379031876754
+        },
+        "exact_packed": {
+          "train_before": 325,
+          "train_after": 330,
+          "total_previously_correct_losses": 1,
+          "math_legacy_losses": 1,
+          "paired_before": 99,
+          "paired_after": 104,
+          "paired_gains": 5,
+          "paired_losses": 0,
+          "pair_gains_by_family_count": 3,
+          "distinct_gained_pairs": 4,
+          "all_four_before": 46,
+          "all_four_after": 49,
+          "families_with_gains": 3,
+          "choice_gains_by_letter": {
+            "A": 3,
+            "B": 1,
+            "C": 1
+          },
+          "gained_choice_position_count": 3,
+          "max_abs_ordinary_shift": 0.024360654507290747,
+          "max_abs_math_shift": 0.11122703552246094,
+          "minimum_prior_margin": -0.0006771087646484375,
+          "changed_halves": 160,
+          "math_floor_slack": -0.005915557861328125,
+          "ordinary_floor_slack": 12.731272926330567,
+          "maximum_midpoint_shift": 0.11161493374311249,
+          "maximum_mean_shift": 0.00789654840189865,
+          "ordinary_winner_changes": 0
+        },
+        "passed": false
+      },
+      {
+        "scenario": 3,
+        "iteration": 3,
+        "solver": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "goals": 46,
+          "constraints": 17889,
+          "objective": -0.03794037903187742
+        },
+        "exact_packed": {
+          "train_before": 325,
+          "train_after": 330,
+          "total_previously_correct_losses": 0,
+          "math_legacy_losses": 0,
+          "paired_before": 99,
+          "paired_after": 104,
+          "paired_gains": 5,
+          "paired_losses": 0,
+          "pair_gains_by_family_count": 3,
+          "distinct_gained_pairs": 4,
+          "all_four_before": 46,
+          "all_four_after": 49,
+          "families_with_gains": 3,
+          "choice_gains_by_letter": {
+            "A": 3,
+            "B": 1,
+            "C": 1
+          },
+          "gained_choice_position_count": 3,
+          "max_abs_ordinary_shift": 0.02462885344903043,
+          "max_abs_math_shift": 0.11144638061523438,
+          "minimum_prior_margin": 0.0054225921630859375,
+          "changed_halves": 157,
+          "math_floor_slack": -0.0031880493164062502,
+          "ordinary_floor_slack": 12.735590209960938,
+          "maximum_midpoint_shift": 0.11260092770407937,
+          "maximum_mean_shift": 0.006240689251738639,
+          "ordinary_winner_changes": 0
+        },
+        "passed": false
+      }
+    ],
+    "qualified_checkpoint": false
+  },
+  "new_authored_pairs": {
+    "independent_key_audit_sha256": "bb68a28b59681c4d9be3247bcc2108de47d2f3404257adbcc615ed631d4368de",
+    "problem_sha256": "521a5f5bab9187bea133299538b0f578408028db4b10673eca2f166f14f97955",
+    "answer_agreements": 32,
+    "condition_pairs": 16,
+    "subjects": {
+      "high_school_mathematics": 16,
+      "college_mathematics": 16
+    },
+    "independent_solutions_frozen_before_key": true,
+    "used_in_these_fits": false
+  },
+  "official_or_final_blinded_or_protected_scored_for_this_branch": false
+}
