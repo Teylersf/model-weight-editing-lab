@@ -1,0 +1,210 @@
+[
+  {
+    "id": "sphere-and-hemisphere-mensuration",
+    "title": "Find sphere and hemisphere area and volume",
+    "domain": "geometry",
+    "level": "high-school",
+    "aliases": [
+      "sphere volume",
+      "surface area of a hemisphere",
+      "hemisphere curved surface area",
+      "closed hemisphere total area",
+      "sphere and hemisphere mensuration"
+    ],
+    "pattern": "For radius r, a sphere has area 4πr² and volume 4πr³/3. A hemisphere has volume 2πr³/3 and curved area 2πr². A closed hemisphere also includes a circular base of area πr².",
+    "applies": [
+      "The shape is a sphere, a hemisphere, or a solid assembled from these and other familiar shapes.",
+      "The area question specifies the exposed surface or provides enough information to identify it."
+    ],
+    "steps": [
+      "Convert the diameter to the radius and express all lengths in one unit.",
+      "For volume, use the full-sphere or half-sphere formula and add or subtract volumes when the solid is composite.",
+      "For surface area, list exposed pieces. Add the hemisphere's circular base when it is exposed and leave out faces covered by a join."
+    ],
+    "pitfalls": [
+      "Using the diameter as the radius changes the area by a factor of four and the volume by a factor of eight.",
+      "Halving the sphere's area gives only the hemisphere's curved area."
+    ],
+    "checks": [
+      "Area units are squared and volume units are cubed.",
+      "A closed hemisphere has area 3πr². Two matching hemispheres joined along their bases expose 4πr²."
+    ],
+    "example": {
+      "problem": "A solid closed hemisphere has diameter 12 cm. Find its total exterior area and volume in terms of π.",
+      "answer": "The radius is 6 cm. The exposed area is (2+1)π·6²=108π cm², and its volume is 2π·6³/3=144π cm³."
+    }
+  },
+  {
+    "id": "probability-tree-dependent-stages",
+    "title": "Calculate multistage probabilities with a tree diagram",
+    "domain": "probability",
+    "level": "high-school",
+    "aliases": [
+      "probability tree",
+      "tree diagram probability",
+      "dependent draws without replacement",
+      "multiply probabilities along branches",
+      "draw without replacement probability"
+    ],
+    "pattern": "A path has probability equal to the product of its successive conditional branch probabilities. Add the probabilities of disjoint paths that satisfy the event.",
+    "applies": [
+      "Outcomes occur in stages and earlier outcomes can alter later probabilities.",
+      "At each reachable node, the next possibilities form a mutually exclusive and exhaustive list."
+    ],
+    "steps": [
+      "Draw one branch per possible outcome at each stage and label its conditional probability given the preceding path.",
+      "Update the remaining counts after any draw without replacement. Stop paths whose probability is zero.",
+      "Mark every complete path that meets the event. Multiply along each marked path and add the products."
+    ],
+    "pitfalls": [
+      "Without replacement, update both the total and the appropriate category count.",
+      "Different orders can give the same event and need separate branches unless counted by an equivalent method.",
+      "Add across disjoint paths. Multiply along one path."
+    ],
+    "checks": [
+      "Outgoing branch probabilities at every reachable node sum to one, and the terminal path probabilities sum to one.",
+      "For an at-least-one event, compare the sum of qualifying paths with one minus the probability of none."
+    ],
+    "example": {
+      "problem": "A tray holds five copper washers and three zinc washers. Two washers are drawn uniformly without replacement. Find the probability of exactly one zinc washer.",
+      "answer": "The two paths are zinc then copper and copper then zinc. Their probabilities sum to (3/8)(5/7)+(5/8)(3/7)=30/56=15/28."
+    }
+  },
+  {
+    "id": "infinite-geometric-series",
+    "title": "Sum a convergent infinite geometric series",
+    "domain": "precalculus",
+    "level": "high-school",
+    "aliases": [
+      "infinite geometric sum",
+      "sum to infinity of a geometric progression",
+      "infinite geometric series convergence",
+      "common ratio convergence"
+    ],
+    "pattern": "For a geometric series with nonzero first term a and real common ratio r, the partial sums tend to a/(1−r) exactly when |r|<1.",
+    "applies": [
+      "Successive terms have a fixed ratio and the question asks for a sum of infinitely many terms.",
+      "For a nonzero series, the common ratio is defined using two successive terms with nonzero denominator."
+    ],
+    "steps": [
+      "Identify the first term a and common ratio r. If all terms are zero, the sum is zero.",
+      "Check |r|<1 before using the infinite-sum formula.",
+      "Use a/(1−r) when the condition holds. For a nonzero geometric series with |r|≥1, the terms fail to approach zero, so the series diverges."
+    ],
+    "pitfalls": [
+      "Use the absolute value of r to decide convergence, then keep the sign of r in the sum formula.",
+      "When the index starts above zero, find the first included term before applying the formula."
+    ],
+    "checks": [
+      "For r≠1, the n-term partial sum is a(1−rⁿ)/(1−r). Verify it approaches the claimed sum when |r|<1.",
+      "For a convergent series, the signed tail after n terms is arⁿ/(1−r)."
+    ],
+    "example": {
+      "problem": "Find the sum to infinity of 18 − 6 + 2 − 2/3 + ⋯.",
+      "answer": "The first term is 18 and the ratio is −1/3. Since |−1/3|<1, the sum is 18/(1+1/3)=27/2."
+    }
+  },
+  {
+    "id": "parabola-focus-and-directrix",
+    "title": "Find a parabola from its focus and directrix",
+    "domain": "precalculus",
+    "level": "high-school",
+    "aliases": [
+      "parabola focus and directrix",
+      "focus directrix equation",
+      "parabola vertex from focus",
+      "parabolic locus equidistant"
+    ],
+    "pattern": "A parabola contains points equally distant from its focus and directrix. For an axis-parallel parabola with vertex (h,k), use (x−h)²=4p(y−k) on a vertical axis or (y−k)²=4p(x−h) on a horizontal axis.",
+    "applies": [
+      "The focus is a point off the directrix. The vertex formulas shown here apply to a horizontal or vertical directrix."
+    ],
+    "steps": [
+      "Project the focus perpendicularly onto the directrix. The vertex is the midpoint between the focus and this projection.",
+      "Decide whether the axis is vertical or horizontal. Let p be the signed coordinate difference from vertex to focus along that axis.",
+      "Substitute h, k and p in the matching standard form. The parabola opens toward the focus."
+    ],
+    "pitfalls": [
+      "The distance from the focus to the directrix is 2|p|.",
+      "A horizontal directrix gives a vertical axis and a squared x term."
+    ],
+    "checks": [
+      "The vertex satisfies the equation and is equally distant from the focus and directrix.",
+      "For another point on the curve, compare the ordinary distance to the focus with the perpendicular distance to the directrix."
+    ],
+    "example": {
+      "problem": "Find the equation of the parabola with focus (−2,4) and directrix y=−2.",
+      "answer": "The projection of the focus onto the directrix is (−2,−2), so the vertex is (−2,1). The vertical axis has p=4−1=3, giving (x+2)²=12(y−1)."
+    }
+  },
+  {
+    "id": "scatterplot-association-and-residuals",
+    "title": "Interpret scatterplot association and residuals",
+    "domain": "statistics",
+    "level": "high-school",
+    "aliases": [
+      "scatter graph association",
+      "scatter diagram trend",
+      "interpret a scatterplot",
+      "residual from a line of best fit",
+      "observed minus predicted"
+    ],
+    "pattern": "Read the overall direction, shape, strength and unusual points in a scatterplot. For a specified line of fit, the signed vertical residual is observed y minus predicted ŷ at the same x.",
+    "applies": [
+      "Each plotted point pairs a quantitative explanatory value with a quantitative response value.",
+      "A line of fit is supplied or can be read from the chart when a numerical prediction or residual is requested."
+    ],
+    "steps": [
+      "Read both axis labels and units. Describe whether the cloud rises, falls or has no clear direction, and whether it is roughly linear, curved or clustered.",
+      "Describe how tightly the points follow the pattern and identify unusual points. Check whether any pattern makes a line unsuitable.",
+      "At the requested x, read or calculate the line's predicted response. Subtract it from the observed y and interpret the sign in context."
+    ],
+    "pitfalls": [
+      "The residual is a vertical difference in response units. A point below the line has a negative residual.",
+      "A correlation describes association, and a causal claim needs evidence from the study design.",
+      "Predictions outside the observed range require additional justification."
+    ],
+    "checks": [
+      "If the observation sits on the fitted line, its residual is zero.",
+      "A predicted y plus its signed residual must equal the observed y."
+    ],
+    "example": {
+      "problem": "A scatterplot of practice hours x and quiz marks y has points (1,8), (2,11), (3,15), (4,14), and (5,18). The fitted line is ŷ=6.3+2.3x. Describe the overall direction and find the residual at x=4.",
+      "answer": "The plot shows positive association overall. At x=4, the line predicts 15.5 marks. The observed 14 marks gives residual 14−15.5=−1.5 marks, so the point lies 1.5 marks below the line."
+    }
+  },
+  {
+    "id": "prove-by-contradiction",
+    "title": "Prove a mathematical claim by contradiction",
+    "domain": "proof-techniques",
+    "level": "high-school",
+    "aliases": [
+      "proof by contradiction",
+      "contradiction proof",
+      "reductio ad absurdum",
+      "assume the opposite in a proof"
+    ],
+    "pattern": "Assume the negation of the claim alongside the given hypotheses. Derive an impossibility using justified steps, then conclude the claim.",
+    "applies": [
+      "The negation can be stated precisely and combined with the hypotheses to reach a concrete contradiction.",
+      "For an implication, keep its hypotheses and assume that its conclusion fails."
+    ],
+    "steps": [
+      "State the claim with its domain and quantifiers, then write its exact negation.",
+      "Combine the negation with the given assumptions and any proved facts that apply.",
+      "Derive two incompatible consequences, or a direct conflict with a premise. Identify that conflict and discharge the temporary assumption."
+    ],
+    "pitfalls": [
+      "The negation of an implication P⇒Q is P and not Q. The converse is a different statement.",
+      "An unexpected intermediate result needs a specific contradiction, such as an integer being both even and odd."
+    ],
+    "checks": [
+      "Identify which step uses the temporary assumption and verify the conflicting statements concern the same object.",
+      "For a rational number written in lowest terms, a common prime divisor of numerator and denominator contradicts that choice."
+    ],
+    "example": {
+      "problem": "Prove that √45 is irrational.",
+      "answer": "Assume √45=p/q with coprime integers p and q>0. Then p²=45q², so prime 5 divides p. Writing p=5k gives 5k²=9q². Since 5 does not divide 9, prime 5 also divides q, contradicting coprimality."
+    }
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "abstract-algebra-one-step-subgroup-test",
+    "title": "Prove a subgroup with the one-step subgroup test",
+    "domain": "abstract-algebra",
+    "level": "undergraduate",
+    "aliases": ["one-step subgroup test", "subgroup criterion", "closure under xy inverse", "subgroup difference test"],
+    "pattern": "A nonempty subset H of a group G is a subgroup if and only if xy⁻¹ ∈ H for every x,y ∈ H. In additive notation, test x − y ∈ H.",
+    "applies": ["The ambient set is already a group, and the subset uses the inherited operation."],
+    "steps": ["Exhibit one element of H to establish nonemptiness.", "Take arbitrary x,y ∈ H and use their membership conditions to prove xy⁻¹ ∈ H.", "If the test fails, identify a pair in H whose product with the second element inverted is outside H."],
+    "pitfalls": ["Closure under the group operation alone may fail to guarantee inverses, especially for infinite subsets.", "A subset can be a subgroup without being normal."],
+    "checks": ["Taking x=y yields the identity, taking x=e yields inverses, and using an inverse for y yields products."],
+    "example": {
+      "problem": "Is H = {(m,n) ∈ ℤ² : m − 2n is divisible by 5} a subgroup of ℤ² under addition?",
+      "answer": "Yes. The pair (0,0) belongs to H. If (m,n) and (p,q) are in H, their difference has (m−p)−2(n−q) = (m−2n)−(p−2q), which is divisible by 5. The subgroup test applies."
+    }
+  },
+  {
+    "id": "analysis-heine-borel-compactness",
+    "title": "Prove compactness using the Heine–Borel theorem",
+    "domain": "real-analysis",
+    "level": "undergraduate",
+    "aliases": ["Heine Borel theorem", "closed and bounded compact", "Euclidean compactness test", "compact subset of R n"],
+    "pattern": "A subset of Euclidean ℝⁿ is compact exactly when it is both closed and bounded.",
+    "applies": ["Use for a subset of finite-dimensional Euclidean space with its usual topology."],
+    "steps": ["Show closedness, for example by writing the set as an intersection of continuous preimages of closed intervals.", "Find a finite radius or a bounded box containing every point of the set.", "Conclude compactness. To disprove compactness in ℝⁿ, show that one of these conditions fails."],
+    "pitfalls": ["Closed and bounded sets in an arbitrary metric space need not be compact.", "A strict inequality can exclude limit points. Check the actual boundary rather than relying on the inequality alone."],
+    "checks": ["Test a sequence approaching each suspect boundary and check that no coordinate can grow without limit."],
+    "example": {
+      "problem": "Show that K = {(x,y) ∈ ℝ² : x ≥ 0, y ≥ 0, x² + 4y² ≤ 16} is compact.",
+      "answer": "Each inequality is a continuous preimage of a closed interval or half-line, so K is closed. Every point satisfies 0 ≤ x ≤ 4 and 0 ≤ y ≤ 2, so K is bounded. Heine–Borel gives compactness."
+    }
+  },
+  {
+    "id": "analysis-banach-contraction-fixed-point",
+    "title": "Establish convergence with the contraction mapping theorem",
+    "domain": "real-analysis",
+    "level": "undergraduate",
+    "aliases": ["Banach fixed point theorem", "contraction mapping", "contractive fixed point iteration", "Lipschitz constant less than one"],
+    "pattern": "A self-map T of a nonempty complete metric space with d(Tx,Ty) ≤ k d(x,y) for one k < 1 has a unique fixed point. Iterating T converges to it from any starting point in that space.",
+    "applies": ["You want to prove existence, uniqueness, or convergence of a fixed-point iteration on a specified domain."],
+    "steps": ["Show the domain is nonempty and complete, and that T sends the whole domain into itself.", "Bound the Lipschitz constant uniformly by k < 1. On a real interval, a uniform derivative bound suffices via the mean value theorem.", "Invoke the theorem. An error bound after n steps is d(xₙ,x*) ≤ kⁿ d(x₁,x₀)/(1−k)."],
+    "pitfalls": ["A derivative bound near a suspected root does not establish convergence from every starting point in a larger domain.", "A nonexpansive bound k = 1 is insufficient."],
+    "checks": ["Verify a proposed fixed point lies in the domain and satisfies T(x*) = x*."],
+    "example": {
+      "problem": "Prove that xₙ₊₁ = 1/2 + 1/(xₙ+2) converges to the same limit for all x₀ ∈ [0,1]. Find the limit.",
+      "answer": "T maps the complete interval [0,1] into [5/6,1], and |T′(x)| = 1/(x+2)² ≤ 1/4. The contraction theorem gives convergence to the unique fixed point. Solving 2x²+3x−4=0 yields the root (√41−3)/4 in [0,1]."
+    }
+  },
+  {
+    "id": "calculus-trig-sine-cosine-power-integration",
+    "title": "Integrate products of sine and cosine powers",
+    "domain": "calculus",
+    "level": "undergraduate",
+    "aliases": ["integrate sine cosine powers", "trig power integration", "odd sine even cosine integral", "sine cosine power reduction", "half angle integrals"],
+    "pattern": "For ∫ sinᵐ(x) cosⁿ(x) dx with nonnegative integer powers, save one factor from an odd power and substitute the opposite function. If both powers are even, use the half-angle identities.",
+    "applies": ["The integrand is a product of nonnegative integer powers of sine and cosine with a common argument."],
+    "steps": ["If the sine power is odd, save sin(x) dx, replace the remaining sine pairs by 1−cos²(x), and set u=cos(x).",
+      "If the cosine power is odd, save cos(x) dx, replace its remaining pairs by 1−sin²(x), and set u=sin(x). Either route works if both powers are odd.",
+      "If both powers are even, use sin²(x)=(1−cos(2x))/2 and cos²(x)=(1+cos(2x))/2 to lower the powers."],
+    "pitfalls": ["The substitution u=cos(x) introduces a negative sign.", "For a definite integral, transform the limits with u or return to x before applying the original limits."],
+    "checks": ["Differentiate the antiderivative. If the common argument is ax+b, include the derivative factor a when substituting."],
+    "example": {
+      "problem": "Evaluate ∫₀^{π/2} sin³(x) cos²(x) dx.",
+      "answer": "Save sin(x) dx and use sin²(x)=1−cos²(x). With u=cos(x), the limits change from 1 to 0 and du=−sin(x) dx, so the integral is ∫₀¹ (u²−u⁴) du=1/3−1/5=2/15."
+    }
+  },
+  {
+    "id": "markov-absorption-first-step-equations",
+    "title": "Find Markov-chain absorption probabilities with first-step equations",
+    "domain": "probability",
+    "level": "undergraduate",
+    "aliases": ["absorbing Markov chain", "absorption probability", "first step analysis", "Markov expected hitting time", "transient states absorption"],
+    "pattern": "On transient states, write h = Qh + r for the probability of reaching a selected absorbing class, or t = 1 + Qt for the expected time until any absorption. Q contains transient-to-transient transitions.",
+    "applies": ["The Markov chain is finite, and the states used in Q are transient with eventual absorption almost surely from each one."],
+    "steps": ["Identify the transient and absorbing states and fix a row-stochastic transition convention.", "For the selected absorbing class use boundary probability 1, and use 0 for other absorbing classes. Put the one-step probability of entering the selected class in r.", "Solve (I−Q)h=r. For the expected number of steps until any absorption, use boundary time 0 and solve (I−Q)t=1."],
+    "pitfalls": ["If a closed non-target class is omitted, the assumed transient block may be wrong and I−Q may be singular.", "Time to any absorption and time to a specific absorbing class are different random variables."],
+    "checks": ["Substitute the solutions into the first-step equations. Probabilities must lie between 0 and 1 and sum to 1 across all absorbing classes."],
+    "example": {
+      "problem": "From C, move to C, D, or win with probabilities 1/4, 1/4, 1/2. From D, move to C or lose with probabilities 1/3, 2/3. Win and lose are absorbing. Find the chance of winning from C and the expected number of steps to absorption from C.",
+      "answer": "The probabilities satisfy hC=hC/4+hD/4+1/2 and hD=hC/3, giving hC=3/4. The times satisfy tC=1+tC/4+tD/4 and tD=1+tC/3, giving tC=15/8."
+    }
+  },
+  {
+    "id": "linear-qr-least-squares-triangular-solve",
+    "title": "Solve least squares with thin QR and back substitution",
+    "domain": "linear-algebra",
+    "level": "undergraduate",
+    "aliases": ["QR least squares", "thin QR least squares", "QR decomposition overdetermined system", "orthogonal triangular least squares", "Householder least squares"],
+    "pattern": "For a real m×n matrix A of full column rank, write thin QR as A=QR with QᵀQ=I. Minimizing ‖Ax−b‖₂ reduces to solving the triangular system Rx=Qᵀb.",
+    "applies": ["There are at least as many rows as columns, and the columns are linearly independent. Use Householder QR for floating-point work."],
+    "steps": ["Factor A into an orthonormal-column matrix Q and an upper triangular matrix R.", "Compute c=Qᵀb, or apply the stored Householder reflectors to b and keep its first n transformed entries.", "Solve Rx=c by back substitution and evaluate the residual b−Ax."],
+    "pitfalls": ["If A is rank deficient, ordinary back substitution can divide by zero. Use a rank-aware solver, such as SVD for a minimum-norm answer.", "Forming AᵀA squares the 2-norm condition number of a full-column-rank A and can lose numerical accuracy."],
+    "checks": ["Check A≈QR, QᵀQ≈I, and Qᵀ(b−Ax)≈0. Use exact equality if working symbolically."],
+    "example": {
+      "problem": "Find the least-squares solution for A with columns (1,1,0) and (1,1,2), and b=(2,0,4), by thin QR.",
+      "answer": "Use q₁=(1,1,0)/√2 and q₂=(0,0,1). Then R=[[√2,√2],[0,2]] and Qᵀb=(√2,4). Back substitution gives x₂=2 and x₁=−1. The residual (1,−1,0) is perpendicular to both columns."
+    }
+  }
+]
