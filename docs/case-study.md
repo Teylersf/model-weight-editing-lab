@@ -713,3 +713,15 @@ Pilot 055 captured the final feed-forward input, gate and up projections on four
 Pilot 056 incremented one Q4_K code on the CUDA device in an isolated process and read back the exact edited row. The input, gate and pre-feed-forward residual remained byte-identical. Only the targeted neuron changed in the up and gated activation arrays. The measured up change agreed with the CPU estimate to **8.78 × 10⁻⁸** and the gated change to **6.94 × 10⁻⁹**. The largest choice-logit change was **0.000353**, and the four choices stayed the same. The source GGUF passed its full before-and-after hash check. [Exact one-byte recipe, native receipts, and response errors](../evidence/direct-accuracy-pilots-055-056-up-projection.json)
 
 With the exact Pilot 024 parent GGUF and Python 3.11 or later, run `python prototypes/verify-pilot056-packed-row.py <parent.gguf>` from the repository root. The verifier hashes the entire source, reconstructs the edited row in memory, and checks the published digest. This command reproduces the packed byte change. The recorded activation changes came from the separate CUDA replay. [Read-only verifier](../prototypes/verify-pilot056-packed-row.py)
+
+## Pilots 057 and 058 with signed packed up-projection edits
+
+Pilot 058 replayed **90 positions across nine independently reviewed ordinary solutions**. The added upstream readbacks preserved all 90 archived winners, 5,760 top-64 logits, 540 selected logits, and the original activation arrays exactly.
+
+Pilot 057 used those controls and searched **33** direct edits to Q4_K codes in the final up projection across three training folds. Seven proposals improved paired answers while preserving every previously correct training choice. Each still crossed a signed margin floor, with three to seven violations per proposal. All frozen held patches were numerical no-ops. The both-correct score stayed at **42/384**, and no checkpoint was written. [Search tradeoffs and ordinary replay](../evidence/direct-accuracy-pilots-057-058-packed-up.json)
+
+## Pilot 060 with paired answer-margin attribution
+
+On the same 384 aligned presentations, changing the mathematical condition moved the two relevant answer logits in the intended direction **291** times. It changed which of those two answers led in the intended direction **72** times. On 30 of those 72 presentations, another option still prevented both correct answers from winning. Across the five traced activation stages, the mean relative change induced by the condition was **47–49%** of the change induced by a cyclic option rotation.
+
+A local decomposition of the two-answer logit gap estimated a mean **−0.423** contribution from the up branch, **+0.252** from the gate branch, and **+1.594** from the attention residual. The up and gate terms pointed in opposite directions on **242/384** presentations. These are local contributions on the authored pairs. The audit includes family-level uncertainty and CPU reconstruction error. [Paired effects, attribution, and limitations](../evidence/direct-accuracy-pilot-060-condition-alignment.json)

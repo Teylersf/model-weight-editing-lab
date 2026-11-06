@@ -1,0 +1,166 @@
+{
+  "schema": "published-pilots057-058-packed-up-condition-v1",
+  "status": "no_qualifying_packed_edit",
+  "method": "Train-only paired gradient ranks legal signed unit changes in Q4_K up-projection rows. Exact repacking and CPU replay evaluate the anchored rounded activation and quantized head changes. Training guards preserve signed margins and ordinary choices.",
+  "artifacts_sha256": {
+    "fit_source": "a688683d4099689d8a9fc768cafa8f9cfa28b7ad8f898571a958387cf4d6a353",
+    "fit_plan": "ee592b00d8c6a7ad82570e0999e5249e9653f6b3dc4f651f67a1236e8f0a4816",
+    "fit_input_binding": "2c65348da5134ed2b0655a2443a2ee8e6f4111597260aa5e0675754f05d08281",
+    "grouped_report": "1252a76353193c6a20dbd25a96ae30bc01dd12de277b70eab53950ce6dcf8b8b",
+    "ordinary_capture": "3b6979579e32f7d5ad7368a83b8fe21883619e8faf4fcfcdea3ce3ff16baddad",
+    "ordinary_native_receipt": "8e230f71aef3898e426e28d62b1fb7d85853762071e10094edd7b8ff5cba906a",
+    "ordinary_cpu_preflight": "891e8f22558ab618259811ccf83461234b7a227f9141a6a80b0bbea16d10fe04"
+  },
+  "ordinary_parent_capture": {
+    "native_backend": "CUDA0",
+    "trajectories": 9,
+    "states": 90,
+    "exact_archived_winners": 90,
+    "exact_top64_binary32_logits": 5760,
+    "exact_selected_binary32_logits": 540,
+    "exact_original_activation_states": {
+      "a": 90,
+      "p": 90,
+      "r": 90,
+      "h": 90
+    },
+    "swiglu_cpu_max_absolute_error": 4.954879411656066e-06
+  },
+  "tensor": {
+    "name": "blk.63.ffn_up.weight",
+    "offset": 11272983456,
+    "bytes": 50135040,
+    "parent_sha256": "58b3b02ef9f288d31bf5546f8fd6c76c7b59fc13c8816c71e8dacbd9777c0c7c"
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "fit_receipt_sha256": "9d9907be64f5929b9e0d28261f4b87d849d70b30c448c72390904375e1f0bafe",
+      "training_paired_targets": 10,
+      "shortlisted_neurons": 13,
+      "legal_code_moves_shortlisted": 208,
+      "q8_proposals_scored": 11,
+      "minimum_signed_floor_violations": 2,
+      "accepted_proposals": 0,
+      "paired_gain_proposals_preserving_each_prior_correct_choice": [
+        {
+          "changed_codes": 1,
+          "pair_gains": 1,
+          "pair_losses": 0,
+          "signed_floor_violations": 6,
+          "minimum_signed_slack": -0.04942035675048828
+        },
+        {
+          "changed_codes": 1,
+          "pair_gains": 1,
+          "pair_losses": 0,
+          "signed_floor_violations": 5,
+          "minimum_signed_slack": -0.03575420379638672
+        },
+        {
+          "changed_codes": 1,
+          "pair_gains": 1,
+          "pair_losses": 0,
+          "signed_floor_violations": 5,
+          "minimum_signed_slack": -0.03068485260009765
+        }
+      ],
+      "frozen_rows": 0
+    },
+    {
+      "fold": 1,
+      "fit_receipt_sha256": "8b5deb370d6a51093a1773651b30114db830b2afac0192a1b0fb13ef7924bd4d",
+      "training_paired_targets": 17,
+      "shortlisted_neurons": 14,
+      "legal_code_moves_shortlisted": 224,
+      "q8_proposals_scored": 11,
+      "minimum_signed_floor_violations": 3,
+      "accepted_proposals": 0,
+      "paired_gain_proposals_preserving_each_prior_correct_choice": [
+        {
+          "changed_codes": 1,
+          "pair_gains": 1,
+          "pair_losses": 0,
+          "signed_floor_violations": 7,
+          "minimum_signed_slack": -0.04942035675048828
+        },
+        {
+          "changed_codes": 1,
+          "pair_gains": 1,
+          "pair_losses": 0,
+          "signed_floor_violations": 6,
+          "minimum_signed_slack": -0.03575420379638672
+        },
+        {
+          "changed_codes": 1,
+          "pair_gains": 1,
+          "pair_losses": 0,
+          "signed_floor_violations": 5,
+          "minimum_signed_slack": -0.024741172790527344
+        },
+        {
+          "changed_codes": 1,
+          "pair_gains": 2,
+          "pair_losses": 0,
+          "signed_floor_violations": 3,
+          "minimum_signed_slack": -0.043067836761474604
+        }
+      ],
+      "frozen_rows": 0
+    },
+    {
+      "fold": 2,
+      "fit_receipt_sha256": "809dd43fa39c79ea510d027a508ecbac482f2005f30065c65bd3e46acc26880b",
+      "training_paired_targets": 13,
+      "shortlisted_neurons": 13,
+      "legal_code_moves_shortlisted": 208,
+      "q8_proposals_scored": 11,
+      "minimum_signed_floor_violations": 3,
+      "accepted_proposals": 0,
+      "paired_gain_proposals_preserving_each_prior_correct_choice": [],
+      "frozen_rows": 0
+    }
+  ],
+  "held_053_paired": {
+    "matches": 384,
+    "baseline_both_correct": 42,
+    "candidate_both_correct": 42,
+    "gains": 0,
+    "losses": 0,
+    "by_arm": {
+      "a": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "b": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      },
+      "c": {
+        "matches": 96,
+        "baseline_both_correct": 10,
+        "candidate_both_correct": 10,
+        "gains": 0,
+        "losses": 0
+      },
+      "d": {
+        "matches": 96,
+        "baseline_both_correct": 11,
+        "candidate_both_correct": 11,
+        "gains": 0,
+        "losses": 0
+      }
+    }
+  },
+  "held_053_individual_losses": 0,
+  "held_ordinary_archived_top64_winner_changes": 0,
+  "native_candidate_run": false,
+  "checkpoint_written": false,
+  "scope": "The unchanged held results came from three numerical no-ops. The scored nonzero trials were training-only."
+}

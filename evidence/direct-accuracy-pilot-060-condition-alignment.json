@@ -1,0 +1,1493 @@
+{
+  "schema": "windows-pilot060-condition-alignment-audit-v1",
+  "source_sha256": "7ca6236a238a7c8e01f8a4748643c0c99e2950b978d9e2c78faf6e965a064c56",
+  "capture_sha256": "722001c8ee9f1995bcf609452883798343a02dcc8dad69e2886bdeae2a1ba42e",
+  "baseline_sha256": "10bc93edbb8e50959fa61839e83c6f2d3fcf55776b6e1124a0d391759f68c661",
+  "parent_sha256": "674c1e84a2adbf0232b6bb3d4d24a4d00f7c60b109d665f3fe5c88a484589db3",
+  "native_binary32_logits_verified": 3072,
+  "population": {
+    "condition_pairs": 24,
+    "families": 12,
+    "pairs_per_family": 2,
+    "states": 768,
+    "paired_matches": 384
+  },
+  "measure": {
+    "logit": "Canonical content gap z(variant-1 correct content)-z(variant-0 correct content). The positive condition effect is its variant-1 minus variant-0 difference with display order fixed.",
+    "nuisance": "Single-factor changes on the same variant and rotation: demo B-A/C-D; reversal D-A/C-B. Cyclic position compares adjacent rotations within a fixed variant and arm.",
+    "activation_size": "L2 difference divided by mean endpoint L2 norm; conditions and nuisances use the same metric.",
+    "alignment": "Project observed condition differences on the fixed-pair native head margin. For upstream attribution use the analytic midpoint learned-RMS gradient, the exact symmetric SiLU/up product decomposition, and a CPU VJP through the unchanged stored IQ4_XS/Q4_K weights.",
+    "uncertainty": "2048 deterministic subject-stratified family-block bootstrap replicates. Each draw retains both pairs and all presentations in each sampled family. Intervals describe variation across these authored families only."
+  },
+  "scores": {
+    "condition_signed": {
+      "n": 384,
+      "mean": 1.4102592319250107,
+      "median": 0.5749120712280273,
+      "rms": 2.4795859061121384,
+      "minimum": -1.7933645248413086,
+      "maximum": 9.756184577941895,
+      "positive": 291,
+      "zero": 0,
+      "pair_mean_family_bootstrap_95": [
+        0.9235363110279043,
+        1.913141096693774
+      ]
+    },
+    "absolute_effects": {
+      "effects": {
+        "condition": {
+          "n": 384,
+          "mean": 1.5277971078952153,
+          "median": 0.6624250411987305,
+          "rms": 2.4795859061121384,
+          "minimum": 0.0002536773681640625,
+          "maximum": 9.756184577941895,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            1.0401145037884514,
+            2.0328711261351904
+          ]
+        },
+        "demo": {
+          "n": 384,
+          "mean": 0.6085767100254694,
+          "median": 0.4899015426635742,
+          "rms": 0.78157705901949,
+          "minimum": 0.008878707885742188,
+          "maximum": 3.277456283569336,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.5254229839891195,
+            0.7065188717097044
+          ]
+        },
+        "order_reversal": {
+          "n": 384,
+          "mean": 1.3882014254728954,
+          "median": 1.098444938659668,
+          "rms": 1.8042166509293052,
+          "minimum": 0.009683609008789062,
+          "maximum": 6.030832290649414,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            1.074662732332945,
+            1.791148301586509
+          ]
+        },
+        "cyclic_position": {
+          "n": 768,
+          "mean": 1.4976609572768211,
+          "median": 1.0734319686889648,
+          "rms": 2.0320239056050675,
+          "minimum": 0.000202178955078125,
+          "maximum": 7.401815414428711,
+          "positive": 768,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            1.2400849497566622,
+            1.761742198218902
+          ]
+        }
+      },
+      "condition_against_nuisance": {
+        "demo": {
+          "condition_smaller_pairs": 12,
+          "condition_to_nuisance_mean_ratio": 2.510442944540674,
+          "paired_mean_difference": 0.9192203978697459,
+          "paired_mean_difference_family_bootstrap_95": [
+            0.4726964045315981,
+            1.3641588516533376
+          ]
+        },
+        "order_reversal": {
+          "condition_smaller_pairs": 16,
+          "condition_to_nuisance_mean_ratio": 1.1005586652345976,
+          "paired_mean_difference": 0.13959568242232004,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.34893248168130714,
+            0.6642870494474967
+          ]
+        },
+        "cyclic_position": {
+          "condition_smaller_pairs": 16,
+          "condition_to_nuisance_mean_ratio": 1.0201221447831492,
+          "paired_mean_difference": 0.030136150618394215,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.4232858052477241,
+            0.507517325381438
+          ]
+        }
+      }
+    },
+    "factorial_average_effects": {
+      "demo": {
+        "n": 192,
+        "mean": 0.035609895984331764,
+        "median": -0.012130260467529297,
+        "rms": 0.6484809050090922,
+        "minimum": -1.6176090240478516,
+        "maximum": 2.3042736053466797,
+        "positive": 95,
+        "zero": 0,
+        "pair_mean_family_bootstrap_95": [
+          -0.1043847865735491,
+          0.17102345886329817
+        ]
+      },
+      "order_reversal": {
+        "n": 192,
+        "mean": -0.1360878199338913,
+        "median": -0.18239927291870117,
+        "rms": 1.750674872289659,
+        "minimum": -5.79786491394043,
+        "maximum": 4.974382400512695,
+        "positive": 88,
+        "zero": 0,
+        "pair_mean_family_bootstrap_95": [
+          -0.3681555058186253,
+          0.07586237868915002
+        ]
+      },
+      "interaction": {
+        "n": 192,
+        "mean": 0.06083577871322632,
+        "median": 0.05000734329223633,
+        "rms": 0.872548485814156,
+        "minimum": -3.07181453704834,
+        "maximum": 2.979290008544922,
+        "positive": 102,
+        "zero": 0,
+        "pair_mean_family_bootstrap_95": [
+          -0.06622181062897044,
+          0.16865134487549466
+        ]
+      }
+    },
+    "intended_two_answer_flip": 72,
+    "both_full_choices_correct": 42,
+    "intended_flip_but_distractor_wins": 30,
+    "both_full_choices_without_strict_two_answer_flip": 0,
+    "same_selected_content": 270,
+    "cross_pair_opposite_wrong_direction": 9,
+    "per_arm": {
+      "a": {
+        "matches": 96,
+        "positive_condition": 74,
+        "directed_two_answer_flip": 19,
+        "both_full_choices_correct": 10,
+        "same_selected_content": 68
+      },
+      "b": {
+        "matches": 96,
+        "positive_condition": 69,
+        "directed_two_answer_flip": 17,
+        "both_full_choices_correct": 11,
+        "same_selected_content": 65
+      },
+      "c": {
+        "matches": 96,
+        "positive_condition": 72,
+        "directed_two_answer_flip": 18,
+        "both_full_choices_correct": 10,
+        "same_selected_content": 70
+      },
+      "d": {
+        "matches": 96,
+        "positive_condition": 76,
+        "directed_two_answer_flip": 18,
+        "both_full_choices_correct": 11,
+        "same_selected_content": 67
+      }
+    },
+    "family_descriptive": [
+      {
+        "subject": "college_mathematics",
+        "family": "abstract_algebra",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 10,
+        "negative_condition": 22,
+        "directed_two_answer_flip": 0,
+        "both_full_choices_correct": 0,
+        "same_selected_content": 30,
+        "mean_abs_condition": 0.1722181737422943,
+        "mean_abs_demo": 0.5562152564525604,
+        "mean_abs_reversal": 1.685605376958847,
+        "mean_abs_cyclic_position": 1.6817808151245117,
+        "both_pairs_cyclic_exceeds_condition": true,
+        "both_pairs_reversal_exceeds_condition": true,
+        "both_pairs_positive_median_condition": false
+      },
+      {
+        "subject": "college_mathematics",
+        "family": "numerical_optimization",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 11,
+        "negative_condition": 21,
+        "directed_two_answer_flip": 1,
+        "both_full_choices_correct": 0,
+        "same_selected_content": 23,
+        "mean_abs_condition": 0.2925872504711151,
+        "mean_abs_demo": 0.4541133940219879,
+        "mean_abs_reversal": 1.0909211933612823,
+        "mean_abs_cyclic_position": 0.772740364074707,
+        "both_pairs_cyclic_exceeds_condition": true,
+        "both_pairs_reversal_exceeds_condition": true,
+        "both_pairs_positive_median_condition": false
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "sequences_and_modelling",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 19,
+        "negative_condition": 13,
+        "directed_two_answer_flip": 2,
+        "both_full_choices_correct": 0,
+        "same_selected_content": 28,
+        "mean_abs_condition": 1.1431892216205597,
+        "mean_abs_demo": 0.3447760045528412,
+        "mean_abs_reversal": 1.0897893607616425,
+        "mean_abs_cyclic_position": 1.2866791784763336,
+        "both_pairs_cyclic_exceeds_condition": false,
+        "both_pairs_reversal_exceeds_condition": false,
+        "both_pairs_positive_median_condition": false
+      },
+      {
+        "subject": "college_mathematics",
+        "family": "complex_analysis",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 28,
+        "negative_condition": 4,
+        "directed_two_answer_flip": 2,
+        "both_full_choices_correct": 0,
+        "same_selected_content": 24,
+        "mean_abs_condition": 0.673798680305481,
+        "mean_abs_demo": 0.4699646830558777,
+        "mean_abs_reversal": 0.966102123260498,
+        "mean_abs_cyclic_position": 1.0674500465393066,
+        "both_pairs_cyclic_exceeds_condition": true,
+        "both_pairs_reversal_exceeds_condition": true,
+        "both_pairs_positive_median_condition": true
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "statistics_and_data",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 29,
+        "negative_condition": 3,
+        "directed_two_answer_flip": 3,
+        "both_full_choices_correct": 0,
+        "same_selected_content": 23,
+        "mean_abs_condition": 0.5841260850429535,
+        "mean_abs_demo": 0.6050300300121307,
+        "mean_abs_reversal": 1.1599343717098236,
+        "mean_abs_cyclic_position": 1.1296039521694183,
+        "both_pairs_cyclic_exceeds_condition": true,
+        "both_pairs_reversal_exceeds_condition": true,
+        "both_pairs_positive_median_condition": true
+      },
+      {
+        "subject": "college_mathematics",
+        "family": "real_analysis",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 29,
+        "negative_condition": 3,
+        "directed_two_answer_flip": 1,
+        "both_full_choices_correct": 1,
+        "same_selected_content": 30,
+        "mean_abs_condition": 0.6216981709003448,
+        "mean_abs_demo": 0.7686751782894135,
+        "mean_abs_reversal": 1.0224246680736542,
+        "mean_abs_cyclic_position": 1.7059897184371948,
+        "both_pairs_cyclic_exceeds_condition": true,
+        "both_pairs_reversal_exceeds_condition": true,
+        "both_pairs_positive_median_condition": true
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "discrete_and_number_theory",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 32,
+        "negative_condition": 0,
+        "directed_two_answer_flip": 7,
+        "both_full_choices_correct": 3,
+        "same_selected_content": 21,
+        "mean_abs_condition": 1.6223620772361755,
+        "mean_abs_demo": 0.4727361798286438,
+        "mean_abs_reversal": 1.4214691519737244,
+        "mean_abs_cyclic_position": 1.976923555135727,
+        "both_pairs_cyclic_exceeds_condition": false,
+        "both_pairs_reversal_exceeds_condition": false,
+        "both_pairs_positive_median_condition": true
+      },
+      {
+        "subject": "college_mathematics",
+        "family": "differential_equations",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 21,
+        "negative_condition": 11,
+        "directed_two_answer_flip": 12,
+        "both_full_choices_correct": 5,
+        "same_selected_content": 18,
+        "mean_abs_condition": 2.0426654517650604,
+        "mean_abs_demo": 1.0095997154712677,
+        "mean_abs_reversal": 2.2203201949596405,
+        "mean_abs_cyclic_position": 2.3106037378311157,
+        "both_pairs_cyclic_exceeds_condition": false,
+        "both_pairs_reversal_exceeds_condition": false,
+        "both_pairs_positive_median_condition": false
+      },
+      {
+        "subject": "college_mathematics",
+        "family": "probability",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 26,
+        "negative_condition": 6,
+        "directed_two_answer_flip": 12,
+        "both_full_choices_correct": 5,
+        "same_selected_content": 16,
+        "mean_abs_condition": 1.8412035405635834,
+        "mean_abs_demo": 0.6711589395999908,
+        "mean_abs_reversal": 1.301306813955307,
+        "mean_abs_cyclic_position": 1.2803626358509064,
+        "both_pairs_cyclic_exceeds_condition": false,
+        "both_pairs_reversal_exceeds_condition": false,
+        "both_pairs_positive_median_condition": true
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "geometry_and_trigonometry",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 28,
+        "negative_condition": 4,
+        "directed_two_answer_flip": 8,
+        "both_full_choices_correct": 6,
+        "same_selected_content": 18,
+        "mean_abs_condition": 2.9695111513137817,
+        "mean_abs_demo": 0.5244405269622803,
+        "mean_abs_reversal": 0.8704253435134888,
+        "mean_abs_cyclic_position": 1.7544410228729248,
+        "both_pairs_cyclic_exceeds_condition": false,
+        "both_pairs_reversal_exceeds_condition": false,
+        "both_pairs_positive_median_condition": true
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "probability_and_counting",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 26,
+        "negative_condition": 6,
+        "directed_two_answer_flip": 12,
+        "both_full_choices_correct": 10,
+        "same_selected_content": 19,
+        "mean_abs_condition": 3.1676141023635864,
+        "mean_abs_demo": 0.7244526147842407,
+        "mean_abs_reversal": 3.0598889589309692,
+        "mean_abs_cyclic_position": 2.0227372348308563,
+        "both_pairs_cyclic_exceeds_condition": false,
+        "both_pairs_reversal_exceeds_condition": false,
+        "both_pairs_positive_median_condition": true
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "algebra_and_functions",
+        "pairs": 2,
+        "matches": 32,
+        "positive_condition": 32,
+        "negative_condition": 0,
+        "directed_two_answer_flip": 12,
+        "both_full_choices_correct": 12,
+        "same_selected_content": 20,
+        "mean_abs_condition": 3.2025913894176483,
+        "mean_abs_demo": 0.7017579972743988,
+        "mean_abs_reversal": 0.7702295482158661,
+        "mean_abs_cyclic_position": 0.9826192259788513,
+        "both_pairs_cyclic_exceeds_condition": false,
+        "both_pairs_reversal_exceeds_condition": false,
+        "both_pairs_positive_median_condition": true
+      }
+    ]
+  },
+  "activation_magnitude": {
+    "ffn_input": {
+      "effects": {
+        "condition": {
+          "n": 384,
+          "mean": 0.2066778469789924,
+          "median": 0.15816570123913576,
+          "rms": 0.258127138518324,
+          "minimum": 0.03477666363846826,
+          "maximum": 0.7557415738636596,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.16948989300506465,
+            0.24434068612996607
+          ]
+        },
+        "demo": {
+          "n": 384,
+          "mean": 0.30992355175946734,
+          "median": 0.2771348612407533,
+          "rms": 0.34066719069301327,
+          "minimum": 0.1118825175563762,
+          "maximum": 0.8493375792325403,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.27396149140981624,
+            0.3457505504778177
+          ]
+        },
+        "order_reversal": {
+          "n": 384,
+          "mean": 0.41144968253594455,
+          "median": 0.358785330546443,
+          "rms": 0.46441810388362653,
+          "minimum": 0.0988343352039775,
+          "maximum": 0.9422706170056747,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.3597510303615835,
+            0.45829253353383087
+          ]
+        },
+        "cyclic_position": {
+          "n": 768,
+          "mean": 0.43476342699512843,
+          "median": 0.3999331625475948,
+          "rms": 0.4794806984285332,
+          "minimum": 0.1108106432841601,
+          "maximum": 0.9534002278608642,
+          "positive": 768,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.3877417925685814,
+            0.47341829309247896
+          ]
+        }
+      },
+      "condition_against_nuisance": {
+        "demo": {
+          "condition_smaller_pairs": 19,
+          "condition_to_nuisance_mean_ratio": 0.6668671864582779,
+          "paired_mean_difference": -0.10324570478047486,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.15544537579108794,
+            -0.05336758393692268
+          ]
+        },
+        "order_reversal": {
+          "condition_smaller_pairs": 22,
+          "condition_to_nuisance_mean_ratio": 0.5023162144764493,
+          "paired_mean_difference": -0.20477183555695208,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.25708830143643724,
+            -0.15619146279939367
+          ]
+        },
+        "cyclic_position": {
+          "condition_smaller_pairs": 24,
+          "condition_to_nuisance_mean_ratio": 0.4753800208252298,
+          "paired_mean_difference": -0.22808558001613602,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.2612291794382122,
+            -0.1908519479700844
+          ]
+        }
+      }
+    },
+    "ffn_gate": {
+      "effects": {
+        "condition": {
+          "n": 384,
+          "mean": 0.08203001213879443,
+          "median": 0.061928731730725564,
+          "rms": 0.1031072621749741,
+          "minimum": 0.012787149850396976,
+          "maximum": 0.30927713386692357,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.06631559415504391,
+            0.09788181201987875
+          ]
+        },
+        "demo": {
+          "n": 384,
+          "mean": 0.12507633571793278,
+          "median": 0.1097334849450883,
+          "rms": 0.13776270786813322,
+          "minimum": 0.03864832497275265,
+          "maximum": 0.3710630850612974,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.10970043547947458,
+            0.14040555012470027
+          ]
+        },
+        "order_reversal": {
+          "n": 384,
+          "mean": 0.16078781528959163,
+          "median": 0.14408410025847973,
+          "rms": 0.18172929097776622,
+          "minimum": 0.04012476474693822,
+          "maximum": 0.38493654282973544,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.141995780710554,
+            0.17764825395847206
+          ]
+        },
+        "cyclic_position": {
+          "n": 768,
+          "mean": 0.17102159665933966,
+          "median": 0.158971559507257,
+          "rms": 0.18938898097452375,
+          "minimum": 0.0405764063818151,
+          "maximum": 0.39831912073236314,
+          "positive": 768,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.15326135062888482,
+            0.18624023187136404
+          ]
+        }
+      },
+      "condition_against_nuisance": {
+        "demo": {
+          "condition_smaller_pairs": 19,
+          "condition_to_nuisance_mean_ratio": 0.6558395852256599,
+          "paired_mean_difference": -0.043046323579138346,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.06590911754342604,
+            -0.021350147599646273
+          ]
+        },
+        "order_reversal": {
+          "condition_smaller_pairs": 23,
+          "condition_to_nuisance_mean_ratio": 0.5101755502495748,
+          "paired_mean_difference": -0.07875780315079721,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.09892245511228519,
+            -0.05948688296473586
+          ]
+        },
+        "cyclic_position": {
+          "condition_smaller_pairs": 24,
+          "condition_to_nuisance_mean_ratio": 0.4796470956951195,
+          "paired_mean_difference": -0.08899158452054522,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.10214401754835778,
+            -0.07508106660138135
+          ]
+        }
+      }
+    },
+    "ffn_up": {
+      "effects": {
+        "condition": {
+          "n": 384,
+          "mean": 0.09816608569774014,
+          "median": 0.07151566823715295,
+          "rms": 0.12417912783977894,
+          "minimum": 0.013141683421246003,
+          "maximum": 0.37874853657214996,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.07893647736857648,
+            0.11768939644201416
+          ]
+        },
+        "demo": {
+          "n": 384,
+          "mean": 0.15789572938667865,
+          "median": 0.14034801106096384,
+          "rms": 0.174384429911049,
+          "minimum": 0.04075409907968484,
+          "maximum": 0.4974642042396918,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.13740327914858122,
+            0.17885533533018133
+          ]
+        },
+        "order_reversal": {
+          "n": 384,
+          "mean": 0.1958794605131727,
+          "median": 0.17301993660342088,
+          "rms": 0.22380980252475557,
+          "minimum": 0.04609005888401834,
+          "maximum": 0.5347184508286952,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.17303158532143648,
+            0.2159930341767897
+          ]
+        },
+        "cyclic_position": {
+          "n": 768,
+          "mean": 0.20803301690536205,
+          "median": 0.19184776267438156,
+          "rms": 0.23358003004632485,
+          "minimum": 0.04424662439852667,
+          "maximum": 0.5482533590292097,
+          "positive": 768,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.1853080169222791,
+            0.22734928578202618
+          ]
+        }
+      },
+      "condition_against_nuisance": {
+        "demo": {
+          "condition_smaller_pairs": 19,
+          "condition_to_nuisance_mean_ratio": 0.6217146345822715,
+          "paired_mean_difference": -0.059729643688938495,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.09110833606189196,
+            -0.03025229924827116
+          ]
+        },
+        "order_reversal": {
+          "condition_smaller_pairs": 22,
+          "condition_to_nuisance_mean_ratio": 0.5011555853817484,
+          "paired_mean_difference": -0.09771337481543256,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.12173822326770738,
+            -0.07482531228363702
+          ]
+        },
+        "cyclic_position": {
+          "condition_smaller_pairs": 24,
+          "condition_to_nuisance_mean_ratio": 0.47187743156365247,
+          "paired_mean_difference": -0.1098669312076219,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.1266293147237856,
+            -0.0931003453283369
+          ]
+        }
+      }
+    },
+    "a": {
+      "effects": {
+        "condition": {
+          "n": 384,
+          "mean": 0.22995524800841183,
+          "median": 0.1740181258380648,
+          "rms": 0.29200945476012596,
+          "minimum": 0.03134544424252359,
+          "maximum": 0.9687290532554504,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.18516755605572668,
+            0.27558052076364364
+          ]
+        },
+        "demo": {
+          "n": 384,
+          "mean": 0.36855010429623425,
+          "median": 0.3333034534002013,
+          "rms": 0.4048066500907978,
+          "minimum": 0.1470693720873219,
+          "maximum": 1.0753804471517403,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.3278762815359581,
+            0.4117745544582877
+          ]
+        },
+        "order_reversal": {
+          "n": 384,
+          "mean": 0.43301363378747254,
+          "median": 0.39943701636703843,
+          "rms": 0.48576010414080906,
+          "minimum": 0.11032361073290395,
+          "maximum": 1.0774961872805342,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.38345848206226313,
+            0.4805580872089298
+          ]
+        },
+        "cyclic_position": {
+          "n": 768,
+          "mean": 0.46820113305059935,
+          "median": 0.4434230926828042,
+          "rms": 0.5147873156948899,
+          "minimum": 0.11955437878954119,
+          "maximum": 1.1158687849512061,
+          "positive": 768,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.4178387629622053,
+            0.5125478951124768
+          ]
+        }
+      },
+      "condition_against_nuisance": {
+        "demo": {
+          "condition_smaller_pairs": 19,
+          "condition_to_nuisance_mean_ratio": 0.6239456869711743,
+          "paired_mean_difference": -0.13859485628782242,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.20371574774178583,
+            -0.07967458767155315
+          ]
+        },
+        "order_reversal": {
+          "condition_smaller_pairs": 22,
+          "condition_to_nuisance_mean_ratio": 0.5310577544569328,
+          "paired_mean_difference": -0.20305838577906074,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.254321469900931,
+            -0.1537326391115558
+          ]
+        },
+        "cyclic_position": {
+          "condition_smaller_pairs": 24,
+          "condition_to_nuisance_mean_ratio": 0.49114628687487627,
+          "paired_mean_difference": -0.23824588504218758,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.2712962278098061,
+            -0.2021386865884301
+          ]
+        }
+      }
+    },
+    "h": {
+      "effects": {
+        "condition": {
+          "n": 384,
+          "mean": 0.21272821571405442,
+          "median": 0.16389128493028454,
+          "rms": 0.26486954246342304,
+          "minimum": 0.03608539138047218,
+          "maximum": 0.7580280940062346,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.17588784931325913,
+            0.2501029594691284
+          ]
+        },
+        "demo": {
+          "n": 384,
+          "mean": 0.3280305113938627,
+          "median": 0.29194477786358264,
+          "rms": 0.35884056240800205,
+          "minimum": 0.1375550147002718,
+          "maximum": 0.9103979516556326,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.290980124262488,
+            0.3660698806297893
+          ]
+        },
+        "order_reversal": {
+          "n": 384,
+          "mean": 0.4166777234514983,
+          "median": 0.36858934207188376,
+          "rms": 0.4678707544182272,
+          "minimum": 0.1036250959881475,
+          "maximum": 0.9482199134349423,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.36697008616639576,
+            0.46179573498251897
+          ]
+        },
+        "cyclic_position": {
+          "n": 768,
+          "mean": 0.44228242069664975,
+          "median": 0.4092807724382979,
+          "rms": 0.48543752930191153,
+          "minimum": 0.12314416929418054,
+          "maximum": 0.9393653293724238,
+          "positive": 768,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.3983159437886511,
+            0.47926685273098296
+          ]
+        }
+      },
+      "condition_against_nuisance": {
+        "demo": {
+          "condition_smaller_pairs": 19,
+          "condition_to_nuisance_mean_ratio": 0.6485013080342209,
+          "paired_mean_difference": -0.11530229567980836,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.16865494806372777,
+            -0.0652043987292265
+          ]
+        },
+        "order_reversal": {
+          "condition_smaller_pairs": 22,
+          "condition_to_nuisance_mean_ratio": 0.5105341700342092,
+          "paired_mean_difference": -0.2039495077374439,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.2555428110102549,
+            -0.1548239654287082
+          ]
+        },
+        "cyclic_position": {
+          "condition_smaller_pairs": 24,
+          "condition_to_nuisance_mean_ratio": 0.4809782296546651,
+          "paired_mean_difference": -0.22955420498259535,
+          "paired_mean_difference_family_bootstrap_95": [
+            -0.26307596226744034,
+            -0.19217113074061182
+          ]
+        }
+      }
+    }
+  },
+  "upstream_margin_alignment": {
+    "alignments": {
+      "gated_output": {
+        "contribution_logits": {
+          "n": 384,
+          "mean": -0.17074256734595142,
+          "median": -0.04987645594324318,
+          "rms": 0.7137863594117765,
+          "minimum": -2.765306969032829,
+          "maximum": 2.750055946494308,
+          "positive": 160,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            -0.3511469933689869,
+            -0.007659031253557068
+          ]
+        },
+        "signed_cosine": {
+          "n": 384,
+          "mean": -0.005597359728709671,
+          "median": -0.003852750164344029,
+          "rms": 0.02830990311412826,
+          "minimum": -0.11032219388490506,
+          "maximum": 0.08868401980833059,
+          "positive": 160,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            -0.011026175967972989,
+            -0.0007019876818710563
+          ]
+        },
+        "absolute_cosine": {
+          "n": 384,
+          "mean": 0.021634046695115445,
+          "median": 0.016618810775613245,
+          "rms": 0.02830990311412826,
+          "minimum": 9.462474423314554e-05,
+          "maximum": 0.11032219388490506,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.01819345809926271,
+            0.02488338247818641
+          ]
+        },
+        "condition_positive_sign_agreement": 109,
+        "condition_sign_agreement": 151,
+        "pearson_contribution_to_native_condition": -0.25803205079878655
+      },
+      "ffn_up": {
+        "contribution_logits": {
+          "n": 384,
+          "mean": -0.4230266161058293,
+          "median": -0.14787400140624277,
+          "rms": 0.8557828135168087,
+          "minimum": -3.4353576900824034,
+          "maximum": 0.9927966978294261,
+          "positive": 116,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            -0.6228543677579444,
+            -0.2588391530279549
+          ]
+        },
+        "signed_cosine": {
+          "n": 384,
+          "mean": -0.011918459025925343,
+          "median": -0.00855449907176785,
+          "rms": 0.023035112590037446,
+          "minimum": -0.07519133486043231,
+          "maximum": 0.035934163021899806,
+          "positive": 116,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            -0.015876299321888665,
+            -0.008012556881273692
+          ]
+        },
+        "absolute_cosine": {
+          "n": 384,
+          "mean": 0.01707127946655108,
+          "median": 0.011892347397527831,
+          "rms": 0.023035112590037446,
+          "minimum": 1.9417307418054663e-05,
+          "maximum": 0.07519133486043231,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.013971252504853036,
+            0.02018319991021187
+          ]
+        },
+        "condition_positive_sign_agreement": 52,
+        "condition_sign_agreement": 81,
+        "pearson_contribution_to_native_condition": -0.7868934889572319
+      },
+      "ffn_gate": {
+        "contribution_logits": {
+          "n": 384,
+          "mean": 0.25228404027731915,
+          "median": 0.09140738757835945,
+          "rms": 0.5524124136269626,
+          "minimum": -0.5289456584471898,
+          "maximum": 2.659119729255698,
+          "positive": 270,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.14096711880549584,
+            0.37498204872787505
+          ]
+        },
+        "signed_cosine": {
+          "n": 384,
+          "mean": 0.01945131288234735,
+          "median": 0.010216727994083269,
+          "rms": 0.04042628485463997,
+          "minimum": -0.049170792194262916,
+          "maximum": 0.17038690451803423,
+          "positive": 270,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.011114353255319377,
+            0.028148614310720597
+          ]
+        },
+        "absolute_cosine": {
+          "n": 384,
+          "mean": 0.026792948493873286,
+          "median": 0.015303657719930775,
+          "rms": 0.04042628485463997,
+          "minimum": 5.511203802762517e-05,
+          "maximum": 0.17038690451803423,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.02020098329886803,
+            0.03399999956759787
+          ]
+        },
+        "condition_positive_sign_agreement": 238,
+        "condition_sign_agreement": 299,
+        "pearson_contribution_to_native_condition": 0.8272661020321754
+      },
+      "ffn_input": {
+        "contribution_logits": {
+          "n": 384,
+          "mean": -0.1711618684328403,
+          "median": -0.04859628149672855,
+          "rms": 0.7137493957073149,
+          "minimum": -2.792661194887364,
+          "maximum": 2.7487748570558033,
+          "positive": 164,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            -0.351412578116995,
+            -0.008812358132481452
+          ]
+        },
+        "signed_cosine": {
+          "n": 384,
+          "mean": -0.0059907600372066,
+          "median": -0.00661869225944272,
+          "rms": 0.04706795874429715,
+          "minimum": -0.13604942285547147,
+          "maximum": 0.18358832568691907,
+          "positive": 164,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            -0.014495758962583621,
+            0.0022470572634730223
+          ]
+        },
+        "absolute_cosine": {
+          "n": 384,
+          "mean": 0.03438998819544886,
+          "median": 0.024594426927717412,
+          "rms": 0.04706795874429715,
+          "minimum": 1.2819093280033336e-05,
+          "maximum": 0.18358832568691907,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.02872417697592525,
+            0.03985759449870923
+          ]
+        },
+        "condition_positive_sign_agreement": 110,
+        "condition_sign_agreement": 149,
+        "pearson_contribution_to_native_condition": -0.2589248878132036
+      },
+      "ffn_input_q8": {
+        "contribution_logits": {
+          "n": 384,
+          "mean": -0.17074166349008016,
+          "median": -0.04987659894422909,
+          "rms": 0.7137860044107159,
+          "minimum": -2.7653067992572042,
+          "maximum": 2.7500557363834526,
+          "positive": 160,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            -0.35114496767132003,
+            -0.007659080664417591
+          ]
+        },
+        "signed_cosine": {
+          "n": 384,
+          "mean": -0.005972640905044347,
+          "median": -0.006334122349400896,
+          "rms": 0.046850057799290606,
+          "minimum": -0.13669109684148048,
+          "maximum": 0.18413694317539456,
+          "positive": 160,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            -0.014422463351052382,
+            0.0023104854979459116
+          ]
+        },
+        "absolute_cosine": {
+          "n": 384,
+          "mean": 0.0342201086687755,
+          "median": 0.0250132839622427,
+          "rms": 0.046850057799290606,
+          "minimum": 0.00011445296484656928,
+          "maximum": 0.18413694317539456,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.02853682472124326,
+            0.03969056320182447
+          ]
+        },
+        "condition_positive_sign_agreement": 109,
+        "condition_sign_agreement": 151,
+        "pearson_contribution_to_native_condition": -0.25803251152835016
+      },
+      "final_h": {
+        "contribution_logits": {
+          "n": 384,
+          "mean": 1.409498327246886,
+          "median": 0.5756943995669148,
+          "rms": 2.478195499872319,
+          "minimum": -1.783415814850378,
+          "maximum": 9.795993437245045,
+          "positive": 290,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.9225126596206686,
+            1.9129902268423686
+          ]
+        },
+        "signed_cosine": {
+          "n": 384,
+          "mean": 0.05122791903281165,
+          "median": 0.03176401078208282,
+          "rms": 0.08392118593046693,
+          "minimum": -0.10406753557496257,
+          "maximum": 0.3076559266890052,
+          "positive": 290,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.03566843389831305,
+            0.06697210073864787
+          ]
+        },
+        "absolute_cosine": {
+          "n": 384,
+          "mean": 0.05969979176034185,
+          "median": 0.03729393284799389,
+          "rms": 0.08392118593046693,
+          "minimum": 7.106209823882507e-05,
+          "maximum": 0.3076559266890052,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.047040771373987544,
+            0.07275111055655151
+          ]
+        },
+        "condition_positive_sign_agreement": 288,
+        "condition_sign_agreement": 379,
+        "pearson_contribution_to_native_condition": 0.9999656751906045
+      },
+      "final_h_q8": {
+        "contribution_logits": {
+          "n": 384,
+          "mean": 1.4102597941613801,
+          "median": 0.574913637906775,
+          "rms": 2.4795863959766447,
+          "minimum": -1.7933664005881838,
+          "maximum": 9.75618563584112,
+          "positive": 291,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.9235368547226293,
+            1.9131420537254527
+          ]
+        },
+        "signed_cosine": {
+          "n": 384,
+          "mean": 0.05109190394301599,
+          "median": 0.03217218063323017,
+          "rms": 0.08375809041594609,
+          "minimum": -0.10256781878698369,
+          "maximum": 0.3063575543278196,
+          "positive": 291,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.03554953071477489,
+            0.06678999797391244
+          ]
+        },
+        "absolute_cosine": {
+          "n": 384,
+          "mean": 0.05957113530533953,
+          "median": 0.03659458307228425,
+          "rms": 0.08375809041594609,
+          "minimum": 4.4116439379464286e-05,
+          "maximum": 0.3063575543278196,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.04695572732025344,
+            0.07258987169752715
+          ]
+        },
+        "condition_positive_sign_agreement": 291,
+        "condition_sign_agreement": 384,
+        "pearson_contribution_to_native_condition": 0.9999999999808233
+      },
+      "attention_residual_p": {
+        "contribution_logits": {
+          "n": 384,
+          "mean": 1.5943819302021067,
+          "median": 0.6148644232241881,
+          "rms": 2.8329676903052317,
+          "minimum": -1.393605553342916,
+          "maximum": 10.35227126014253,
+          "positive": 290,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            1.03350914881578,
+            2.2146140496389606
+          ]
+        },
+        "signed_cosine": {
+          "n": 384,
+          "mean": 0.06370861201434838,
+          "median": 0.04899981037860182,
+          "rms": 0.10408121893336666,
+          "minimum": -0.1301739771597534,
+          "maximum": 0.31569859120399874,
+          "positive": 290,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.04508054168392011,
+            0.08274380001019395
+          ]
+        },
+        "absolute_cosine": {
+          "n": 384,
+          "mean": 0.07579833424308738,
+          "median": 0.053589749686822966,
+          "rms": 0.10408121893336666,
+          "minimum": 9.115265369812053e-05,
+          "maximum": 0.31569859120399874,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.06113449308080585,
+            0.09081993495529711
+          ]
+        },
+        "condition_positive_sign_agreement": 276,
+        "condition_sign_agreement": 355,
+        "pearson_contribution_to_native_condition": 0.9572757612228969
+      },
+      "combined_residual_r": {
+        "contribution_logits": {
+          "n": 384,
+          "mean": 1.4236393668194036,
+          "median": 0.5758232665877496,
+          "rms": 2.5066421545718556,
+          "minimum": -1.7947721877317475,
+          "maximum": 9.936412680927635,
+          "positive": 290,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.9298635814636343,
+            1.9367035243629411
+          ]
+        },
+        "signed_cosine": {
+          "n": 384,
+          "mean": 0.04888590518449067,
+          "median": 0.030900842853219576,
+          "rms": 0.07988055210670356,
+          "minimum": -0.10285310685789294,
+          "maximum": 0.28311275662958874,
+          "positive": 290,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.03381103528293695,
+            0.06387033167150902
+          ]
+        },
+        "absolute_cosine": {
+          "n": 384,
+          "mean": 0.057110830334908165,
+          "median": 0.03696677338031612,
+          "rms": 0.07988055210670356,
+          "minimum": 4.191680422756413e-05,
+          "maximum": 0.28311275662958874,
+          "positive": 384,
+          "zero": 0,
+          "pair_mean_family_bootstrap_95": [
+            0.04519225750234642,
+            0.0692125762987948
+          ]
+        },
+        "condition_positive_sign_agreement": 288,
+        "condition_sign_agreement": 379,
+        "pearson_contribution_to_native_condition": 0.9998588696205336
+      }
+    },
+    "family_alignment": [
+      {
+        "subject": "college_mathematics",
+        "family": "real_analysis",
+        "matches": 32,
+        "up_median_contribution": -0.08654581327584662,
+        "gate_median_contribution": 0.0763129720391656,
+        "attention_median_contribution": 0.5016749212582408,
+        "gate_up_opposite_contributions": 23
+      },
+      {
+        "subject": "college_mathematics",
+        "family": "abstract_algebra",
+        "matches": 32,
+        "up_median_contribution": 0.0011236025425604402,
+        "gate_median_contribution": -0.007270212519662069,
+        "attention_median_contribution": -0.05680516520414421,
+        "gate_up_opposite_contributions": 18
+      },
+      {
+        "subject": "college_mathematics",
+        "family": "complex_analysis",
+        "matches": 32,
+        "up_median_contribution": -0.06701473076619627,
+        "gate_median_contribution": 0.10861338631350034,
+        "attention_median_contribution": 0.3315740918516902,
+        "gate_up_opposite_contributions": 18
+      },
+      {
+        "subject": "college_mathematics",
+        "family": "probability",
+        "matches": 32,
+        "up_median_contribution": -0.44214062025915535,
+        "gate_median_contribution": 0.06330697469213946,
+        "attention_median_contribution": 1.628580784944175,
+        "gate_up_opposite_contributions": 17
+      },
+      {
+        "subject": "college_mathematics",
+        "family": "numerical_optimization",
+        "matches": 32,
+        "up_median_contribution": 0.08703476645253908,
+        "gate_median_contribution": -0.021638321019211027,
+        "attention_median_contribution": -0.1885934574431826,
+        "gate_up_opposite_contributions": 13
+      },
+      {
+        "subject": "college_mathematics",
+        "family": "differential_equations",
+        "matches": 32,
+        "up_median_contribution": -0.0792854330513036,
+        "gate_median_contribution": 0.17880357911998607,
+        "attention_median_contribution": 1.5403986110537482,
+        "gate_up_opposite_contributions": 21
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "algebra_and_functions",
+        "matches": 32,
+        "up_median_contribution": -1.0923486575091257,
+        "gate_median_contribution": 0.2069328927913633,
+        "attention_median_contribution": 3.670535736068733,
+        "gate_up_opposite_contributions": 18
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "geometry_and_trigonometry",
+        "matches": 32,
+        "up_median_contribution": -0.22541623318121665,
+        "gate_median_contribution": 0.4778941899298934,
+        "attention_median_contribution": 2.120041868673149,
+        "gate_up_opposite_contributions": 24
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "probability_and_counting",
+        "matches": 32,
+        "up_median_contribution": -0.3046532607382336,
+        "gate_median_contribution": 0.33869763865233443,
+        "attention_median_contribution": 2.1526116823109387,
+        "gate_up_opposite_contributions": 24
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "sequences_and_modelling",
+        "matches": 32,
+        "up_median_contribution": -0.03401301280993236,
+        "gate_median_contribution": 0.062222728594857064,
+        "attention_median_contribution": 0.14123285542850567,
+        "gate_up_opposite_contributions": 17
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "statistics_and_data",
+        "matches": 32,
+        "up_median_contribution": -0.21238840184812208,
+        "gate_median_contribution": 0.07498521779988097,
+        "attention_median_contribution": 0.6730888876200899,
+        "gate_up_opposite_contributions": 22
+      },
+      {
+        "subject": "high_school_mathematics",
+        "family": "discrete_and_number_theory",
+        "matches": 32,
+        "up_median_contribution": -0.5601569040068339,
+        "gate_median_contribution": 0.33618944708170545,
+        "attention_median_contribution": 2.041505076997432,
+        "gate_up_opposite_contributions": 27
+      }
+    ],
+    "parent_head_q8_anchor_max_error": 0.00048018771667557303,
+    "parent_rms_max_error": 5.689896156013674e-06,
+    "condition_logit_margin_q8_replay_error": {
+      "n": 384,
+      "mean": 5.622363694612886e-07,
+      "median": -1.1516476661199704e-08,
+      "rms": 1.2644581895343413e-05,
+      "minimum": -9.820778905123007e-05,
+      "maximum": 0.0002023221313720569,
+      "positive": 191,
+      "zero": 0
+    },
+    "gate_up_opposite_contributions": 242,
+    "gate_up_cancellation_fraction": {
+      "n": 384,
+      "mean": 0.33914542120479646,
+      "median": 0.284428992978604,
+      "rms": 0.48123091893416564,
+      "minimum": 0.0,
+      "maximum": 0.9945617608171035,
+      "positive": 242,
+      "zero": 142,
+      "pair_mean_family_bootstrap_95": [
+        0.29343716878138626,
+        0.38485787452737513
+      ]
+    },
+    "gate_plus_up_vs_gated_output_error": {
+      "n": 384,
+      "mean": 8.482558727835555e-09,
+      "median": 9.880433401998623e-09,
+      "rms": 8.582138627307507e-08,
+      "minimum": -2.653448114564583e-07,
+      "maximum": 4.698755976528801e-07,
+      "positive": 219,
+      "zero": 0
+    },
+    "gate_plus_up_vs_gated_output_activation_max_absolute_error": 8.611521913337583e-06,
+    "down_plus_attention_vs_combined_residual_error": {
+      "n": 384,
+      "mean": 3.963247968713111e-09,
+      "median": 5.7189849522742975e-09,
+      "rms": 1.571680031233794e-07,
+      "minimum": -5.559952684919267e-07,
+      "maximum": 4.894109064679242e-07,
+      "positive": 198,
+      "zero": 0
+    },
+    "midpoint_vs_exact_continuous_rms_error": {
+      "n": 384,
+      "mean": 0.0141410311240735,
+      "median": 0.0008662367582954467,
+      "rms": 0.041433124816750856,
+      "minimum": -0.015269667253304114,
+      "maximum": 0.3821952677724356,
+      "positive": 293,
+      "zero": 0
+    },
+    "q8_input_contribution_vs_gate_up_error": {
+      "n": 384,
+      "mean": 9.123384299439816e-07,
+      "median": 3.86540146765646e-09,
+      "rms": 1.356663460504613e-05,
+      "minimum": -4.17951155229114e-05,
+      "maximum": 0.00019981740944356036,
+      "positive": 197,
+      "zero": 0
+    },
+    "native_up_gate_condition_reconstruction_relative_rms": {
+      "up": 9.964060941458847e-05,
+      "gate": 0.00012053433404821241
+    },
+    "native_checkpoint_extent_sha256": {
+      "blk.63.ffn_up.weight": "58b3b02ef9f288d31bf5546f8fd6c76c7b59fc13c8816c71e8dacbd9777c0c7c",
+      "blk.63.ffn_gate.weight": "8f725f3a5399039dc92190cc1fd0c41dee06072b7bc3f31ad65040c920d9d864",
+      "blk.63.ffn_down.weight": "0c98f90b2c64baa071ada49e9db216040932261a54d791c8656deb07c637d97a",
+      "output.weight": "a88fc5a0ab6c96f69fce68d9d5a3ade7860defdefd46de152e17573d7ce75098"
+    }
+  },
+  "limitations": "The intervention is the authored condition wording, with factor contexts fixed where stated. The FFN decomposition is a local continuous attribution anchored to exact observed binary32 states. It does not establish causal circuit necessity or guarantee transfer of an edit. The CPU Q8 reconstruction is checked against native scores but is an approximation for new weights. No evaluation of official, fresh, protected-proof, or withheld transfer items was performed.",
+  "held_case_identifiers_exported": false,
+  "checkpoint_written": false,
+  "gpu_used": false,
+  "fit_inputs_or_sources_changed": false,
+  "local_audit_receipt_sha256": "5018ce43a1e47edbfada4d2c6756ed5fc9f8f3d2970c8709a355d4b84d6d2fb2"
+}
